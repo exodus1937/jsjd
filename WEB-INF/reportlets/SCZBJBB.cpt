@@ -1,0 +1,4627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="CREATE_DATE"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select to_number(to_char(t.CREATE_DATE,'mm'))  no_date
+  from  TES_PS_GENERAL_MAIN t 
+ where  to_number(to_char(t.CREATE_DATE,'mm')) >= '1'
+   and  to_number(to_char(t.CREATE_DATE,'mm')) <= '3'   
+   and  to_number(trunc(to_char(t.CREATE_DATE,'yyyy')))='${CREATE_DATE}']]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="CREATE_DATE"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select to_number(to_char(t.CREATE_DATE,'mm'))  no_date
+  from  TES_PS_GENERAL_MAIN t 
+ where  to_number(to_char(t.CREATE_DATE,'mm')) >= '4'
+   and  to_number(to_char(t.CREATE_DATE,'mm')) <= '6'   
+   and  to_number(trunc(to_char(t.CREATE_DATE,'yyyy')))='${CREATE_DATE}']]></Query>
+</TableData>
+<TableData name="ds3" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="CREATE_DATE"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select to_number(to_char(t.CREATE_DATE,'mm'))  no_date
+  from  TES_PS_GENERAL_MAIN t 
+ where  to_number(to_char(t.CREATE_DATE,'mm')) >= '7'
+   and  to_number(to_char(t.CREATE_DATE,'mm')) <= '9'   
+   and  to_number(trunc(to_char(t.CREATE_DATE,'yyyy')))='${CREATE_DATE}']]></Query>
+</TableData>
+<TableData name="ds4" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="CREATE_DATE"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select to_number(to_char(t.CREATE_DATE,'mm'))  no_date
+  from  TES_PS_GENERAL_MAIN t 
+ where  to_number(to_char(t.CREATE_DATE,'mm')) >= '10'
+   and  to_number(to_char(t.CREATE_DATE,'mm')) <= '12'   
+   and  to_number(trunc(to_char(t.CREATE_DATE,'yyyy')))='${CREATE_DATE}']]></Query>
+</TableData>
+<TableData name="ds5" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="CREATE_DATE"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select to_number(to_char(t.CREATE_DATE,'mm'))  no_date
+  from  TES_PS_GENERAL_MAIN t 
+ where  to_number(to_char(t.CREATE_DATE,'mm')) >= '1'
+   and  to_number(to_char(t.CREATE_DATE,'mm')) <= '6'   
+   and  to_number(trunc(to_char(t.CREATE_DATE,'yyyy')))='${CREATE_DATE}']]></Query>
+</TableData>
+<TableData name="ds6" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="CREATE_DATE"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select to_number(to_char(t.CREATE_DATE,'mm'))  no_date
+  from  TES_PS_GENERAL_MAIN t 
+ where  to_number(to_char(t.CREATE_DATE,'mm')) >= '7'
+   and  to_number(to_char(t.CREATE_DATE,'mm')) <= '12'   
+   and  to_number(trunc(to_char(t.CREATE_DATE,'yyyy')))='${CREATE_DATE}']]></Query>
+</TableData>
+<TableData name="ds7" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="CREATE_DATE"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select to_number(to_char(t.CREATE_DATE,'mm'))  no_date
+  from  TES_PS_GENERAL_MAIN t 
+ where  to_number(to_char(t.CREATE_DATE,'mm')) >= '1'
+   and  to_number(to_char(t.CREATE_DATE,'mm')) <= '12'   
+   and  to_number(trunc(to_char(t.CREATE_DATE,'yyyy')))='${CREATE_DATE}']]></Query>
+</TableData>
+<TableData name="ds8" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select  DISTINCT sum(  t.MONTH_PLAN)  ,o.org_name
+  from  TES_PS_PRODUCTION_MONTHLY t  , TES_PS_GENERAL_MAIN a , xip_pub_orgs  o
+ where  to_number(to_char(a.CREATE_DATE,'mm')) >= '1'
+   and  to_number(to_char(a.CREATE_DATE,'mm')) <= '12'   
+   and  t.quota1='发电量'
+   and t.quota2='全厂'
+   and a.org_id = o.org_id
+   group by o.org_name]]></Query>
+</TableData>
+<TableData name="ds9" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select  DISTINCT sum(  t.MONTH_FINISH)  ,o.org_name
+  from  TES_PS_PRODUCTION_MONTHLY t  , TES_PS_GENERAL_MAIN a , xip_pub_orgs  o
+ where  to_number(to_char(a.CREATE_DATE,'mm')) >= '1'
+   and  to_number(to_char(a.CREATE_DATE,'mm')) <= '12'   
+   and  t.quota1='发电量'
+   and t.quota2='全厂'
+   and a.org_id = o.org_id
+   group by o.org_name]]></Query>
+</TableData>
+<TableData name="ds10" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select  DISTINCT sum(  t.LAST_YEAR)  ,o.org_name
+  from  TES_PS_PRODUCTION_MONTHLY t  , TES_PS_GENERAL_MAIN a , xip_pub_orgs  o
+ where  to_number(to_char(a.CREATE_DATE,'mm')) >= '1'
+   and  to_number(to_char(a.CREATE_DATE,'mm')) <= '12'   
+   and  t.quota1='发电量'
+   and t.quota2='全厂'
+   and a.org_id = o.org_id
+   group by o.org_name]]></Query>
+</TableData>
+<TableData name="ds11" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select  DISTINCT sum(  t.COMPARE_IN_DECREASE)  ,o.org_name
+  from  TES_PS_PRODUCTION_MONTHLY t  , TES_PS_GENERAL_MAIN a , xip_pub_orgs  o
+ where  to_number(to_char(a.CREATE_DATE,'mm')) >= '1'
+   and  to_number(to_char(a.CREATE_DATE,'mm')) <= '12'   
+   and  t.quota1='发电量'
+   and t.quota2='全厂'
+   and a.org_id = o.org_id
+   group by o.org_name]]></Query>
+</TableData>
+<TableData name="ds12" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select  DISTINCT sum(  t.MONTH_FINISH)  ,o.org_name,t.quota1,t.quota2
+  from  TES_PS_PRODUCTION_MONTHLY t  , TES_PS_GENERAL_MAIN a , xip_pub_orgs  o
+ where  to_number(to_char(a.CREATE_DATE,'mm')) >= '1'
+   and  to_number(to_char(a.CREATE_DATE,'mm')) <= '3' 
+   and a.org_id = o.org_id
+   group by o.org_name  ,t.quota1,t.quota2
+   order by sum(  t.MONTH_FINISH) desc ]]></Query>
+</TableData>
+<TableData name="ds13" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select  DISTINCT sum(  t.LAST_YEAR)  ,o.org_name,t.quota1,t.quota2
+  from  TES_PS_PRODUCTION_MONTHLY t  , TES_PS_GENERAL_MAIN a , xip_pub_orgs  o
+ where  to_number(to_char(a.CREATE_DATE,'mm')) >= '1'
+   and  to_number(to_char(a.CREATE_DATE,'mm')) <= '3'   
+   and a.org_id = o.org_id
+   group by o.org_name  ,t.quota1,t.quota2]]></Query>
+</TableData>
+<TableData name="ds14" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select  DISTINCT sum(  t.COMPARE_IN_DECREASE)  ,o.org_name,t.quota1,t.quota2
+  from  TES_PS_PRODUCTION_MONTHLY t  , TES_PS_GENERAL_MAIN a , xip_pub_orgs  o
+ where  to_number(to_char(a.CREATE_DATE,'mm')) >= '1'
+   and  to_number(to_char(a.CREATE_DATE,'mm')) <= '3'   
+   and a.org_id = o.org_id
+   group by o.org_name  ,t.quota1,t.quota2]]></Query>
+</TableData>
+<TableData name="ds15" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select  DISTINCT sum(  t.MONTH_FINISH)  ,o.org_name,t.quota1,t.quota2
+  from  TES_PS_PRODUCTION_MONTHLY t  , TES_PS_GENERAL_MAIN a , xip_pub_orgs  o
+ where  to_number(to_char(a.CREATE_DATE,'mm')) >= '4'
+   and  to_number(to_char(a.CREATE_DATE,'mm')) <= '6'   
+   and a.org_id = o.org_id
+   group by o.org_name  ,t.quota1,t.quota2]]></Query>
+</TableData>
+<TableData name="ds16" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select  DISTINCT sum(  t.LAST_YEAR)  ,o.org_name,t.quota1,t.quota2
+  from  TES_PS_PRODUCTION_MONTHLY t  , TES_PS_GENERAL_MAIN a , xip_pub_orgs  o
+ where  to_number(to_char(a.CREATE_DATE,'mm')) >= '4'
+   and  to_number(to_char(a.CREATE_DATE,'mm')) <= '6'   
+   and a.org_id = o.org_id
+   group by o.org_name  ,t.quota1,t.quota2]]></Query>
+</TableData>
+<TableData name="ds17" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select  DISTINCT sum(  t.COMPARE_IN_DECREASE)  ,o.org_name,t.quota1,t.quota2
+  from  TES_PS_PRODUCTION_MONTHLY t  , TES_PS_GENERAL_MAIN a , xip_pub_orgs  o
+ where  to_number(to_char(a.CREATE_DATE,'mm')) >= '4'
+   and  to_number(to_char(a.CREATE_DATE,'mm')) <= '6'   
+   and a.org_id = o.org_id
+   group by o.org_name  ,t.quota1,t.quota2]]></Query>
+</TableData>
+<TableData name="ds18" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select  DISTINCT sum(  t.MONTH_FINISH)  ,o.org_name,t.quota1,t.quota2
+  from  TES_PS_PRODUCTION_MONTHLY t  , TES_PS_GENERAL_MAIN a , xip_pub_orgs  o
+ where  to_number(to_char(a.CREATE_DATE,'mm')) >= '7'
+   and  to_number(to_char(a.CREATE_DATE,'mm')) <= '9'   
+   and a.org_id = o.org_id
+   group by o.org_name  ,t.quota1,t.quota2]]></Query>
+</TableData>
+<TableData name="ds19" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select  DISTINCT sum(  t.LAST_YEAR)  ,o.org_name,t.quota1,t.quota2
+  from  TES_PS_PRODUCTION_MONTHLY t  , TES_PS_GENERAL_MAIN a , xip_pub_orgs  o
+ where  to_number(to_char(a.CREATE_DATE,'mm')) >= '7'
+   and  to_number(to_char(a.CREATE_DATE,'mm')) <= '9'   
+   and a.org_id = o.org_id
+   group by o.org_name  ,t.quota1,t.quota2]]></Query>
+</TableData>
+<TableData name="ds20" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select  DISTINCT sum(  t.COMPARE_IN_DECREASE)  ,o.org_name,t.quota1,t.quota2
+  from  TES_PS_PRODUCTION_MONTHLY t  , TES_PS_GENERAL_MAIN a , xip_pub_orgs  o
+ where  to_number(to_char(a.CREATE_DATE,'mm')) >= '7'
+   and  to_number(to_char(a.CREATE_DATE,'mm')) <= '9'   
+   and a.org_id = o.org_id
+   group by o.org_name  ,t.quota1,t.quota2]]></Query>
+</TableData>
+<TableData name="ds21" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select  DISTINCT sum(  t.MONTH_FINISH)  ,o.org_name,t.quota1,t.quota2
+  from  TES_PS_PRODUCTION_MONTHLY t  , TES_PS_GENERAL_MAIN a , xip_pub_orgs  o
+ where  to_number(to_char(a.CREATE_DATE,'mm')) >= '1'
+   and  to_number(to_char(a.CREATE_DATE,'mm')) <= '12'   
+   and a.org_id = o.org_id
+   group by o.org_name  ,t.quota1,t.quota2]]></Query>
+</TableData>
+<TableData name="ds22" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select  DISTINCT sum(  t.MONTH_FINISH)  ,o.org_name,t.quota1,t.quota2
+  from  TES_PS_PRODUCTION_MONTHLY t  , TES_PS_GENERAL_MAIN a , xip_pub_orgs  o
+ where  to_number(to_char(a.CREATE_DATE,'mm')) >= '10'
+   and  to_number(to_char(a.CREATE_DATE,'mm')) <= '12'   
+   and a.org_id = o.org_id
+   group by o.org_name  ,t.quota1,t.quota2]]></Query>
+</TableData>
+<TableData name="ds23" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select  DISTINCT sum(  t.LAST_YEAR)  ,o.org_name,t.quota1,t.quota2
+  from  TES_PS_PRODUCTION_MONTHLY t  , TES_PS_GENERAL_MAIN a , xip_pub_orgs  o
+ where  to_number(to_char(a.CREATE_DATE,'mm')) >= '10'
+   and  to_number(to_char(a.CREATE_DATE,'mm')) <= '12'   
+   and a.org_id = o.org_id
+   group by o.org_name  ,t.quota1,t.quota2]]></Query>
+</TableData>
+<TableData name="ds24" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select  DISTINCT sum(  t.COMPARE_IN_DECREASE)  ,o.org_name,t.quota1,t.quota2
+  from  TES_PS_PRODUCTION_MONTHLY t  , TES_PS_GENERAL_MAIN a , xip_pub_orgs  o
+ where  to_number(to_char(a.CREATE_DATE,'mm')) >= '10'
+   and  to_number(to_char(a.CREATE_DATE,'mm')) <= '12'   
+   and a.org_id = o.org_id
+   group by o.org_name  ,t.quota1,t.quota2]]></Query>
+</TableData>
+<TableData name="ds25" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select  DISTINCT sum(  t.COMPARE_IN_DECREASE)  ,o.org_name ,o.unit_power
+  from  TES_PS_PRODUCTION_MONTHLY t  , TES_PS_GENERAL_MAIN a , xip_pub_orgs  o
+ where  to_number(to_char(a.CREATE_DATE,'mm')) >= '1'
+   and  to_number(to_char(a.CREATE_DATE,'mm')) <= '12'   
+   and  t.quota1='发电量'
+   and t.quota2='全厂'
+   and a.org_id = o.org_id
+   group by o.org_name,o.unit_power]]></Query>
+</TableData>
+<TableData name="ds26" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select  DISTINCT sum(  t.LAST_YEAR)  ,o.org_name
+  from  TES_PS_PRODUCTION_MONTHLY t  , TES_PS_GENERAL_MAIN a , xip_pub_orgs  o
+ where  to_number(to_char(a.CREATE_DATE,'mm')) >= '1'
+   and  to_number(to_char(a.CREATE_DATE,'mm')) <= '12'   
+   and  t.quota1='利用小时'
+  --and t.quota2='全厂'
+   and a.org_id = o.org_id
+   group by o.org_name]]></Query>
+</TableData>
+<TableData name="ds27" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select  DISTINCT sum(  t.MONTH_FINISH)  ,o.org_name
+  from  TES_PS_PRODUCTION_MONTHLY t  , TES_PS_GENERAL_MAIN a , xip_pub_orgs  o
+ where  to_number(to_char(a.CREATE_DATE,'mm')) >= '1'
+   and  to_number(to_char(a.CREATE_DATE,'mm')) <= '12'   
+   and  t.quota1='利用小时'
+  and t.quota2='全厂'
+   and a.org_id = o.org_id
+   group by o.org_name]]></Query>
+</TableData>
+<TableData name="ds28" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select  DISTINCT sum(  t.COMPARE_IN_DECREASE)  ,o.org_name
+  from  TES_PS_PRODUCTION_MONTHLY t  , TES_PS_GENERAL_MAIN a , xip_pub_orgs  o
+ where  to_number(to_char(a.CREATE_DATE,'mm')) >= '1'
+   and  to_number(to_char(a.CREATE_DATE,'mm')) <= '12'   
+   and  t.quota1='利用小时'
+  and t.quota2='全厂'
+   and a.org_id = o.org_id
+   group by o.org_name]]></Query>
+</TableData>
+<TableData name="ds29" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select  DISTINCT sum(  t.MONTH_FINISH)  ,o.org_name
+  from  TES_PS_PRODUCTION_MONTHLY t  , TES_PS_GENERAL_MAIN a , xip_pub_orgs  o
+ where  to_number(to_char(a.CREATE_DATE,'mm')) >= '1'
+   and  to_number(to_char(a.CREATE_DATE,'mm')) <= '12'   
+   and  t.quota1='负荷率'
+  and t.quota2='全厂'
+   and a.org_id = o.org_id
+   group by o.org_name]]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="季度发电量统计表">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="72000000" height="72000000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,723900,1008000,1008000,1008000,1008000,1008000,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,2743200,5295900,3200400,2971800,2743200,2933700,2971800,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="1" r="0" cs="12" rs="2" s="0">
+<O>
+<![CDATA[生产指标季报表-季度发电量统计表]]></O>
+<Expand/>
+</C>
+<C c="1" r="2" rs="3" s="1">
+<O>
+<![CDATA[序号]]></O>
+<Expand/>
+</C>
+<C c="2" r="2" cs="2" rs="3" s="2">
+<O>
+<![CDATA[单位名称]]></O>
+<Expand/>
+</C>
+<C c="4" r="2" rs="2" s="3">
+<O>
+<![CDATA[计划发电量]]></O>
+<Expand/>
+</C>
+<C c="5" r="2" rs="2" s="3">
+<O>
+<![CDATA[完成发电量]]></O>
+<Expand/>
+</C>
+<C c="6" r="2" rs="2" s="3">
+<O>
+<![CDATA[完成计划]]></O>
+<Expand/>
+</C>
+<C c="7" r="2" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$CREATE_DATE-1+'年同期']]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="2" rs="2" s="3">
+<O>
+<![CDATA[同比]]></O>
+<Expand/>
+</C>
+<C c="9" r="2" rs="2" s="3">
+<O>
+<![CDATA[本期装机容量MW]]></O>
+<Expand/>
+</C>
+<C c="10" r="2" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$CREATE_DATE-1+'年同期']]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="2" rs="2" s="3">
+<O>
+<![CDATA[利用小时]]></O>
+<Expand/>
+</C>
+<C c="12" r="2" rs="2" s="3">
+<O>
+<![CDATA[同比利用小时]]></O>
+<Expand/>
+</C>
+<C c="13" r="2" rs="2" s="3">
+<O>
+<![CDATA[负荷率]]></O>
+<Expand/>
+</C>
+<C c="14" r="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="7" r="3" s="3">
+<O>
+<![CDATA[发电量]]></O>
+<Expand/>
+</C>
+<C c="10" r="3" s="3">
+<O>
+<![CDATA[利用小时]]></O>
+<Expand/>
+</C>
+<C c="4" r="4" s="3">
+<O>
+<![CDATA[（亿千瓦时）]]></O>
+<Expand/>
+</C>
+<C c="5" r="4" s="3">
+<O>
+<![CDATA[（亿千瓦时）]]></O>
+<Expand/>
+</C>
+<C c="6" r="4" s="4">
+<O>
+<![CDATA[（%）]]></O>
+<Expand/>
+</C>
+<C c="7" r="4" s="3">
+<O>
+<![CDATA[（亿千瓦时）]]></O>
+<Expand/>
+</C>
+<C c="8" r="4" s="3">
+<O>
+<![CDATA[（亿千瓦时）]]></O>
+<Expand/>
+</C>
+<C c="9" r="4" s="3">
+<O>
+<![CDATA[（权重）]]></O>
+<Expand/>
+</C>
+<C c="10" r="4" s="3">
+<O>
+<![CDATA[（小时）]]></O>
+<Expand/>
+</C>
+<C c="11" r="4" s="3">
+<O>
+<![CDATA[（小时）]]></O>
+<Expand/>
+</C>
+<C c="12" r="4" s="3">
+<O>
+<![CDATA[（小时）]]></O>
+<Expand/>
+</C>
+<C c="13" r="4" s="5">
+<O>
+<![CDATA[（%）]]></O>
+<Expand/>
+</C>
+<C c="1" r="5" rs="3" s="3">
+<O>
+<![CDATA[集团层]]></O>
+<Expand/>
+</C>
+<C c="2" r="5" cs="2" s="3">
+<O>
+<![CDATA[集团]]></O>
+<Expand/>
+</C>
+<C c="4" r="5" s="6">
+<Expand/>
+</C>
+<C c="5" r="5" s="6">
+<Expand/>
+</C>
+<C c="6" r="5" s="6">
+<Expand/>
+</C>
+<C c="7" r="5" s="6">
+<Expand/>
+</C>
+<C c="8" r="5" s="6">
+<Expand/>
+</C>
+<C c="9" r="5" s="6">
+<Expand/>
+</C>
+<C c="10" r="5" s="6">
+<Expand/>
+</C>
+<C c="11" r="5" s="6">
+<Expand/>
+</C>
+<C c="12" r="5" s="6">
+<Expand/>
+</C>
+<C c="13" r="5" s="6">
+<Expand/>
+</C>
+<C c="2" r="6" rs="2" s="3">
+<O>
+<![CDATA[其中]]></O>
+<Expand/>
+</C>
+<C c="3" r="6" s="3">
+<O>
+<![CDATA[燃煤机组]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" s="6">
+<Expand/>
+</C>
+<C c="5" r="6" s="6">
+<Expand/>
+</C>
+<C c="6" r="6" s="6">
+<Expand/>
+</C>
+<C c="7" r="6" s="6">
+<Expand/>
+</C>
+<C c="8" r="6" s="6">
+<Expand/>
+</C>
+<C c="9" r="6" s="6">
+<Expand/>
+</C>
+<C c="10" r="6" s="6">
+<Expand/>
+</C>
+<C c="11" r="6" s="6">
+<Expand/>
+</C>
+<C c="12" r="6" s="6">
+<Expand/>
+</C>
+<C c="13" r="6" s="6">
+<Expand/>
+</C>
+<C c="3" r="7" s="3">
+<O>
+<![CDATA[燃气机组]]></O>
+<Expand/>
+</C>
+<C c="4" r="7" s="6">
+<Expand/>
+</C>
+<C c="5" r="7" s="6">
+<Expand/>
+</C>
+<C c="6" r="7" s="6">
+<Expand/>
+</C>
+<C c="7" r="7" s="6">
+<Expand/>
+</C>
+<C c="8" r="7" s="6">
+<Expand/>
+</C>
+<C c="9" r="7" s="6">
+<Expand/>
+</C>
+<C c="10" r="7" s="6">
+<Expand/>
+</C>
+<C c="11" r="7" s="6">
+<Expand/>
+</C>
+<C c="12" r="7" s="6">
+<Expand/>
+</C>
+<C c="13" r="7" s="6">
+<Expand/>
+</C>
+<C c="0" r="8" s="7">
+<Expand/>
+</C>
+<C c="1" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=COUNT(I9[!0;!0]A{I9 > $I9}) + 1]]></Attributes>
+</O>
+<Expand leftParentDefault="false" left="C9"/>
+</C>
+<C c="2" r="8" cs="2" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds8" columnName="ORG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" order="2">
+<SortFormula>
+<![CDATA[I9]]></SortFormula>
+</Expand>
+</C>
+<C c="4" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds8" columnName="SUM(T.MONTH_PLAN)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="2" row="8"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds9" columnName="SUM(T.MONTH_FINISH)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="2" row="8"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="8" s="8">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=F9/E9]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds10" columnName="SUM(T.LAST_YEAR)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="2" row="8"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="SUM(T.COMPARE_IN_DECREASE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="2" row="8"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds25" columnName="UNIT_POWER"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="2" row="8"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds26" columnName="SUM(T.LAST_YEAR)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="2" row="8"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds27" columnName="SUM(T.MONTH_FINISH)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="2" row="8"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds28" columnName="SUM(T.COMPARE_IN_DECREASE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="2" row="8"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds29" columnName="SUM(T.MONTH_FINISH)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="2" row="8"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="8" s="7">
+<Expand/>
+</C>
+<C c="1" r="9">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="1" r="10">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="1" r="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="4" r="11" s="7">
+<Expand/>
+</C>
+<C c="1" r="13">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<Report class="com.fr.report.WorkSheet" name="集团供热量统计表">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="85536000" height="121104000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,723900,1143000,0,1008000,0,1008000,1008000,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,1866900,2743200,7734300,2743200,2743200,2743200,2514600,2743200,2743200,2160000,2743200,2743200,2160000,2743200,2743200,2160000,2743200,2743200,2160000,2743200,2743200,2160000,2743200,2743200,2438400,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="2" r="2" cs="24" rs="2" s="0">
+<O>
+<![CDATA[生产指标季报表-集团供热量统计表]]></O>
+<Expand/>
+</C>
+<C c="2" r="4" rs="3" s="3">
+<O>
+<![CDATA[序号]]></O>
+<Expand/>
+</C>
+<C c="3" r="4" rs="3" s="3">
+<O>
+<![CDATA[单位名称]]></O>
+<Expand/>
+</C>
+<C c="4" r="4" rs="3" s="3">
+<O>
+<![CDATA[单位]]></O>
+<Expand/>
+</C>
+<C c="5" r="4" cs="3" s="3">
+<O>
+<![CDATA[一季度]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="13">
+<Parameter>
+<Attributes name="no_date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="8" r="4" cs="3" s="3">
+<O>
+<![CDATA[二季度]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="13">
+<Parameter>
+<Attributes name="no_date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="11" r="4" cs="3" s="3">
+<O>
+<![CDATA[三季度]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="13">
+<Parameter>
+<Attributes name="no_date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="14" r="4" cs="3" s="3">
+<O>
+<![CDATA[四季度]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="13">
+<Parameter>
+<Attributes name="no_date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="17" r="4" cs="3" s="3">
+<O>
+<![CDATA[上半年]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="13">
+<Parameter>
+<Attributes name="no_date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="20" r="4" cs="3" s="3">
+<O>
+<![CDATA[下半年]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="13">
+<Parameter>
+<Attributes name="no_date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="23" r="4" cs="3" s="3">
+<O>
+<![CDATA[全年]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="13">
+<Parameter>
+<Attributes name="no_date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="26" r="4">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="1" r="5" s="7">
+<Expand/>
+</C>
+<C c="5" r="5" s="3">
+<O t="I">
+<![CDATA[1]]></O>
+<Expand/>
+</C>
+<C c="6" r="5" s="3">
+<O t="I">
+<![CDATA[2]]></O>
+<Expand/>
+</C>
+<C c="7" r="5" s="3">
+<O t="I">
+<![CDATA[3]]></O>
+<Expand/>
+</C>
+<C c="8" r="5" s="3">
+<O t="I">
+<![CDATA[4]]></O>
+<Expand/>
+</C>
+<C c="9" r="5" s="3">
+<O t="I">
+<![CDATA[5]]></O>
+<Expand/>
+</C>
+<C c="10" r="5" s="3">
+<O t="I">
+<![CDATA[6]]></O>
+<Expand/>
+</C>
+<C c="11" r="5" s="3">
+<O t="I">
+<![CDATA[7]]></O>
+<Expand/>
+</C>
+<C c="12" r="5" s="3">
+<O t="I">
+<![CDATA[8]]></O>
+<Expand/>
+</C>
+<C c="13" r="5" s="3">
+<O t="I">
+<![CDATA[9]]></O>
+<Expand/>
+</C>
+<C c="14" r="5" s="3">
+<O t="I">
+<![CDATA[10]]></O>
+<Expand/>
+</C>
+<C c="15" r="5" s="3">
+<O t="I">
+<![CDATA[11]]></O>
+<Expand/>
+</C>
+<C c="16" r="5" s="3">
+<O t="I">
+<![CDATA[12]]></O>
+<Expand/>
+</C>
+<C c="17" r="5" s="3">
+<O>
+<![CDATA[1,2]]></O>
+<Expand/>
+</C>
+<C c="18" r="5" s="3">
+<O>
+<![CDATA[3,4]]></O>
+<Expand/>
+</C>
+<C c="19" r="5" s="3">
+<O>
+<![CDATA[5,6]]></O>
+<Expand/>
+</C>
+<C c="20" r="5" s="3">
+<O>
+<![CDATA[7,8]]></O>
+<Expand/>
+</C>
+<C c="21" r="5" s="3">
+<O>
+<![CDATA[9,10]]></O>
+<Expand/>
+</C>
+<C c="22" r="5" s="3">
+<O>
+<![CDATA[11,12]]></O>
+<Expand/>
+</C>
+<C c="23" r="5" s="3">
+<O>
+<![CDATA[1,2,3,4]]></O>
+<Expand/>
+</C>
+<C c="24" r="5" s="3">
+<O>
+<![CDATA[5,6,7,8]]></O>
+<Expand/>
+</C>
+<C c="25" r="5" s="3">
+<O>
+<![CDATA[9,10,11,12]]></O>
+<Expand/>
+</C>
+<C c="26" r="5" s="7">
+<Expand/>
+</C>
+<C c="27" r="5" s="7">
+<Expand/>
+</C>
+<C c="5" r="6" s="3">
+<O>
+<![CDATA[完成供热量]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" s="3">
+<O>
+<![CDATA[上年同期]]></O>
+<Expand/>
+</C>
+<C c="7" r="6" s="3">
+<O>
+<![CDATA[同比]]></O>
+<Expand/>
+</C>
+<C c="8" r="6" s="3">
+<O>
+<![CDATA[完成供热量]]></O>
+<Expand/>
+</C>
+<C c="9" r="6" s="3">
+<O>
+<![CDATA[上年同期]]></O>
+<Expand/>
+</C>
+<C c="10" r="6" s="3">
+<O>
+<![CDATA[同比]]></O>
+<Expand/>
+</C>
+<C c="11" r="6" s="3">
+<O>
+<![CDATA[完成供热量]]></O>
+<Expand/>
+</C>
+<C c="12" r="6" s="3">
+<O>
+<![CDATA[上年同期]]></O>
+<Expand/>
+</C>
+<C c="13" r="6" s="3">
+<O>
+<![CDATA[同比]]></O>
+<Expand/>
+</C>
+<C c="14" r="6" s="3">
+<O>
+<![CDATA[完成供热量]]></O>
+<Expand/>
+</C>
+<C c="15" r="6" s="3">
+<O>
+<![CDATA[上年同期]]></O>
+<Expand/>
+</C>
+<C c="16" r="6" s="3">
+<O>
+<![CDATA[同比]]></O>
+<Expand/>
+</C>
+<C c="17" r="6" s="3">
+<O>
+<![CDATA[完成供热量]]></O>
+<Expand/>
+</C>
+<C c="18" r="6" s="3">
+<O>
+<![CDATA[上年同期]]></O>
+<Expand/>
+</C>
+<C c="19" r="6" s="3">
+<O>
+<![CDATA[同比]]></O>
+<Expand/>
+</C>
+<C c="20" r="6" s="3">
+<O>
+<![CDATA[完成供热量]]></O>
+<Expand/>
+</C>
+<C c="21" r="6" s="3">
+<O>
+<![CDATA[上年同期]]></O>
+<Expand/>
+</C>
+<C c="22" r="6" s="3">
+<O>
+<![CDATA[同比]]></O>
+<Expand/>
+</C>
+<C c="23" r="6" s="3">
+<O>
+<![CDATA[完成供热量]]></O>
+<Expand/>
+</C>
+<C c="24" r="6" s="3">
+<O>
+<![CDATA[上年同期]]></O>
+<Expand/>
+</C>
+<C c="25" r="6" s="3">
+<O>
+<![CDATA[同比]]></O>
+<Expand/>
+</C>
+<C c="27" r="6">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="2" r="7" s="6">
+<Expand/>
+</C>
+<C c="3" r="7" s="6">
+<Expand/>
+</C>
+<C c="4" r="7" s="6">
+<Expand/>
+</C>
+<C c="5" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[5]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[6]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[7]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[8]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[9]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[10]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="15" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[11]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="16" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[12]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="17" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="18" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="19" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[5]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[6]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="20" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[7]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[8]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="21" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[9]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[10]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="22" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[11]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[12]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="23" r="7">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="24" r="7">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[5]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[6]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[7]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[8]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="25" r="7">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[9]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[10]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[11]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[12]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="8" s="7">
+<Expand/>
+</C>
+<C c="1" r="8" s="7">
+<Expand/>
+</C>
+<C c="2" r="8" s="3">
+<Expand dir="0" leftParentDefault="false" left="D9"/>
+</C>
+<C c="3" r="8" s="3">
+<O>
+<![CDATA[集团]]></O>
+<Expand/>
+</C>
+<C c="4" r="8" s="3">
+<O>
+<![CDATA[万吉焦]]></O>
+<Expand/>
+</C>
+<C c="5" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(F10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(G10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(H10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(I10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="9" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(J10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="10" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(K10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="8" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(L10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="12" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(M10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="13" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(N10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="14" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(O10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="15" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(P10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="16" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(Q10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="17" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(R10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="18" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(S10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="19" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(T10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="20" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(U10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="21" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(V10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="22" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(W10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="23" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(X10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="24" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(Y10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="25" r="8" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(Z10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="26" r="8" s="7">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="27" r="8" s="7">
+<Expand/>
+</C>
+<C c="0" r="9">
+<Expand/>
+</C>
+<C c="1" r="9" s="7">
+<Expand/>
+</C>
+<C c="2" r="9" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=COUNT(X10[!0;!0]A{X10 > $X10}) + 1]]></Attributes>
+</O>
+<Expand leftParentDefault="false" left="D10"/>
+</C>
+<C c="3" r="9" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds21" columnName="ORG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" order="2">
+<SortFormula>
+<![CDATA[X10]]></SortFormula>
+</Expand>
+</C>
+<C c="4" r="9" s="3">
+<O>
+<![CDATA[万吉焦]]></O>
+<Expand/>
+</C>
+<C c="5" r="9" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds12" columnName="SUM(T.MONTH_FINISH)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="9"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="9" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds13" columnName="SUM(T.LAST_YEAR)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="9"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="9" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="SUM(T.COMPARE_IN_DECREASE)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="9"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="9" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds15" columnName="SUM(T.MONTH_FINISH)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="9"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="9" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="SUM(T.LAST_YEAR)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="9"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="9" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds17" columnName="SUM(T.COMPARE_IN_DECREASE)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="9"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="9" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds18" columnName="SUM(T.MONTH_FINISH)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="9"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="9" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds19" columnName="SUM(T.LAST_YEAR)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="9"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="9" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds20" columnName="SUM(T.COMPARE_IN_DECREASE)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="9"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="9" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds22" columnName="SUM(T.MONTH_FINISH)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="9"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="15" r="9" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds23" columnName="SUM(T.LAST_YEAR)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="9"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="16" r="9" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds24" columnName="SUM(T.COMPARE_IN_DECREASE)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="9"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="17" r="9" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=F10 + I10]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="18" r="9" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=G10 + J10]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="19" r="9" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=H10 + K10]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="20" r="9" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=L10 + O10]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="21" r="9" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=M10 + P10]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="22" r="9" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=N10 + Q10]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="23" r="9" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=R10 + U10]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="24" r="9" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=S10 + V10]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="25" r="9" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=T10 + W10]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="26" r="9" s="7">
+<Expand/>
+</C>
+<C c="27" r="9" s="7">
+<Expand/>
+</C>
+<C c="2" r="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<Report class="com.fr.report.WorkSheet" name="集团供热煤（汽）统计表">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="100800000" height="115200000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,1008000,1008000,0,1008000,0,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[1257300,2743200,8686800,2743200,3924300,2743200,2743200,4032000,2743200,2743200,4032000,2743200,2743200,4610100,2743200,2743200,4381500,2743200,2743200,4305300,2743200,2743200,4381500,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="1" r="2" cs="21" rs="2" s="9">
+<O>
+<![CDATA[生产指标季报表-集团供热煤（汽）统计表]]></O>
+<Expand/>
+</C>
+<C c="1" r="4" rs="3" s="3">
+<O>
+<![CDATA[序号]]></O>
+<Expand/>
+</C>
+<C c="2" r="4" rs="3" s="3">
+<O>
+<![CDATA[单位名称]]></O>
+<Expand/>
+</C>
+<C c="3" r="4" rs="3" s="3">
+<O>
+<![CDATA[单位]]></O>
+<Expand/>
+</C>
+<C c="4" r="4" cs="3" s="3">
+<O>
+<![CDATA[一季度]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="13">
+<Parameter>
+<Attributes name="no_date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="7" r="4" cs="3" s="3">
+<O>
+<![CDATA[二季度]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="13">
+<Parameter>
+<Attributes name="no_date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="10" r="4" cs="3" s="3">
+<O>
+<![CDATA[三季度]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="13">
+<Parameter>
+<Attributes name="no_date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="13" r="4" cs="3" s="3">
+<O>
+<![CDATA[四季度]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="13">
+<Parameter>
+<Attributes name="no_date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="16" r="4" cs="3" s="3">
+<O>
+<![CDATA[上半年]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="13">
+<Parameter>
+<Attributes name="no_date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="19" r="4" cs="3" s="3">
+<O>
+<![CDATA[下半年]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="13">
+<Parameter>
+<Attributes name="no_date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="22" r="4" cs="3" s="3">
+<O>
+<![CDATA[全年]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="13">
+<Parameter>
+<Attributes name="no_date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="4" r="5" s="3">
+<O t="I">
+<![CDATA[1]]></O>
+<Expand/>
+</C>
+<C c="5" r="5" s="3">
+<O t="I">
+<![CDATA[2]]></O>
+<Expand/>
+</C>
+<C c="6" r="5" s="3">
+<O t="I">
+<![CDATA[3]]></O>
+<Expand/>
+</C>
+<C c="7" r="5" s="3">
+<O t="I">
+<![CDATA[4]]></O>
+<Expand/>
+</C>
+<C c="8" r="5" s="3">
+<O t="I">
+<![CDATA[5]]></O>
+<Expand/>
+</C>
+<C c="9" r="5" s="3">
+<O t="I">
+<![CDATA[6]]></O>
+<Expand/>
+</C>
+<C c="10" r="5" s="3">
+<O t="I">
+<![CDATA[7]]></O>
+<Expand/>
+</C>
+<C c="11" r="5" s="3">
+<O t="I">
+<![CDATA[8]]></O>
+<Expand/>
+</C>
+<C c="12" r="5" s="3">
+<O t="I">
+<![CDATA[9]]></O>
+<Expand/>
+</C>
+<C c="13" r="5" s="3">
+<O t="I">
+<![CDATA[10]]></O>
+<Expand/>
+</C>
+<C c="14" r="5" s="3">
+<O t="I">
+<![CDATA[11]]></O>
+<Expand/>
+</C>
+<C c="15" r="5" s="3">
+<O t="I">
+<![CDATA[12]]></O>
+<Expand/>
+</C>
+<C c="16" r="5" s="3">
+<O>
+<![CDATA[1,2]]></O>
+<Expand/>
+</C>
+<C c="17" r="5" s="3">
+<O>
+<![CDATA[3,4]]></O>
+<Expand/>
+</C>
+<C c="18" r="5" s="3">
+<O>
+<![CDATA[5,6]]></O>
+<Expand/>
+</C>
+<C c="19" r="5" s="3">
+<O>
+<![CDATA[7,8]]></O>
+<Expand/>
+</C>
+<C c="20" r="5" s="3">
+<O>
+<![CDATA[9,10]]></O>
+<Expand/>
+</C>
+<C c="21" r="5" s="3">
+<O>
+<![CDATA[11,12]]></O>
+<Expand/>
+</C>
+<C c="22" r="5" s="3">
+<O>
+<![CDATA[1,2,3,4]]></O>
+<Expand/>
+</C>
+<C c="23" r="5" s="3">
+<O>
+<![CDATA[5,6,7,8]]></O>
+<Expand/>
+</C>
+<C c="24" r="5" s="3">
+<O>
+<![CDATA[9,10,11,12]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" s="3">
+<O>
+<![CDATA[完成供热煤(汽)耗]]></O>
+<Expand/>
+</C>
+<C c="5" r="6" s="3">
+<O>
+<![CDATA[上年同期]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" s="3">
+<O>
+<![CDATA[同比]]></O>
+<Expand/>
+</C>
+<C c="7" r="6" s="3">
+<O>
+<![CDATA[完成供热煤(汽)耗]]></O>
+<Expand/>
+</C>
+<C c="8" r="6" s="3">
+<O>
+<![CDATA[上年同期]]></O>
+<Expand/>
+</C>
+<C c="9" r="6" s="3">
+<O>
+<![CDATA[同比]]></O>
+<Expand/>
+</C>
+<C c="10" r="6" s="3">
+<O>
+<![CDATA[完成供热煤(汽)耗]]></O>
+<Expand/>
+</C>
+<C c="11" r="6" s="3">
+<O>
+<![CDATA[上年同期]]></O>
+<Expand/>
+</C>
+<C c="12" r="6" s="3">
+<O>
+<![CDATA[同比]]></O>
+<Expand/>
+</C>
+<C c="13" r="6" s="3">
+<O>
+<![CDATA[完成供热煤(汽)耗]]></O>
+<Expand/>
+</C>
+<C c="14" r="6" s="3">
+<O>
+<![CDATA[上年同期]]></O>
+<Expand/>
+</C>
+<C c="15" r="6" s="3">
+<O>
+<![CDATA[同比]]></O>
+<Expand/>
+</C>
+<C c="16" r="6" s="3">
+<O>
+<![CDATA[完成供热煤(汽)耗]]></O>
+<Expand/>
+</C>
+<C c="17" r="6" s="3">
+<O>
+<![CDATA[上年同期]]></O>
+<Expand/>
+</C>
+<C c="18" r="6" s="3">
+<O>
+<![CDATA[同比]]></O>
+<Expand/>
+</C>
+<C c="19" r="6" s="3">
+<O>
+<![CDATA[完成供热煤(汽)耗]]></O>
+<Expand/>
+</C>
+<C c="20" r="6" s="3">
+<O>
+<![CDATA[上年同期]]></O>
+<Expand/>
+</C>
+<C c="21" r="6" s="3">
+<O>
+<![CDATA[同比]]></O>
+<Expand/>
+</C>
+<C c="22" r="6" s="3">
+<O>
+<![CDATA[完成供热煤(汽)耗]]></O>
+<Expand/>
+</C>
+<C c="23" r="6" s="3">
+<O>
+<![CDATA[上年同期]]></O>
+<Expand/>
+</C>
+<C c="24" r="6" s="3">
+<O>
+<![CDATA[同比]]></O>
+<Expand/>
+</C>
+<C c="26" r="6">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="1" r="7" s="6">
+<Expand/>
+</C>
+<C c="2" r="7" s="6">
+<Expand/>
+</C>
+<C c="3" r="7" s="6">
+<Expand/>
+</C>
+<C c="4" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[5]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[6]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[7]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[8]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[9]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[10]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[11]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="15" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[12]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="16" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="17" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="18" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[5]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[6]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="19" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[7]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[8]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="20" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[9]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[10]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="21" r="7" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[11]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[12]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="22" r="7">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="23" r="7">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[5]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[6]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[7]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[8]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="24" r="7">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="NO_DATE"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[9]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[10]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[11]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NO_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[12]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="8" rs="2" s="6">
+<Expand/>
+</C>
+<C c="2" r="8" s="3">
+<O>
+<![CDATA[燃煤机组]]></O>
+<Expand/>
+</C>
+<C c="3" r="8" s="3">
+<O>
+<![CDATA[千克/吉焦]]></O>
+<Expand/>
+</C>
+<C c="4" r="8" s="6">
+<Expand/>
+</C>
+<C c="5" r="8" s="6">
+<Expand/>
+</C>
+<C c="6" r="8" s="6">
+<Expand/>
+</C>
+<C c="7" r="8" s="6">
+<Expand/>
+</C>
+<C c="8" r="8" s="6">
+<Expand/>
+</C>
+<C c="9" r="8" s="6">
+<Expand/>
+</C>
+<C c="10" r="8" s="6">
+<Expand/>
+</C>
+<C c="11" r="8" s="6">
+<Expand/>
+</C>
+<C c="12" r="8" s="6">
+<Expand/>
+</C>
+<C c="13" r="8" s="6">
+<Expand/>
+</C>
+<C c="14" r="8" s="6">
+<Expand/>
+</C>
+<C c="15" r="8" s="6">
+<Expand/>
+</C>
+<C c="16" r="8" s="6">
+<Expand/>
+</C>
+<C c="17" r="8" s="6">
+<Expand/>
+</C>
+<C c="18" r="8" s="6">
+<Expand/>
+</C>
+<C c="19" r="8" s="6">
+<Expand/>
+</C>
+<C c="20" r="8" s="6">
+<Expand/>
+</C>
+<C c="21" r="8" s="6">
+<Expand/>
+</C>
+<C c="22" r="8" s="6">
+<Expand/>
+</C>
+<C c="23" r="8" s="6">
+<Expand/>
+</C>
+<C c="24" r="8" s="6">
+<Expand/>
+</C>
+<C c="2" r="9" s="3">
+<O>
+<![CDATA[燃气机组]]></O>
+<Expand/>
+</C>
+<C c="3" r="9" s="6">
+<O>
+<![CDATA[标立方/吉焦]]></O>
+<Expand/>
+</C>
+<C c="4" r="9" s="6">
+<Expand/>
+</C>
+<C c="5" r="9" s="6">
+<Expand/>
+</C>
+<C c="6" r="9" s="6">
+<Expand/>
+</C>
+<C c="7" r="9" s="6">
+<Expand/>
+</C>
+<C c="8" r="9" s="6">
+<Expand/>
+</C>
+<C c="9" r="9" s="6">
+<Expand/>
+</C>
+<C c="10" r="9" s="6">
+<Expand/>
+</C>
+<C c="11" r="9" s="6">
+<Expand/>
+</C>
+<C c="12" r="9" s="6">
+<Expand/>
+</C>
+<C c="13" r="9" s="6">
+<Expand/>
+</C>
+<C c="14" r="9" s="6">
+<Expand/>
+</C>
+<C c="15" r="9" s="6">
+<Expand/>
+</C>
+<C c="16" r="9" s="6">
+<Expand/>
+</C>
+<C c="17" r="9" s="6">
+<Expand/>
+</C>
+<C c="18" r="9" s="6">
+<Expand/>
+</C>
+<C c="19" r="9" s="6">
+<Expand/>
+</C>
+<C c="20" r="9" s="6">
+<Expand/>
+</C>
+<C c="21" r="9" s="6">
+<Expand/>
+</C>
+<C c="22" r="9" s="6">
+<Expand/>
+</C>
+<C c="23" r="9" s="6">
+<Expand/>
+</C>
+<C c="24" r="9" s="6">
+<Expand/>
+</C>
+<C c="0" r="10" s="7">
+<Expand/>
+</C>
+<C c="1" r="10" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=COUNT(W11[!0;!0]A{W11 > $W11}) + 1]]></Attributes>
+</O>
+<Expand leftParentDefault="false" left="C11"/>
+</C>
+<C c="2" r="10" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds21" columnName="ORG_NAME"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0" order="2">
+<SortFormula>
+<![CDATA[W11]]></SortFormula>
+</Expand>
+</C>
+<C c="3" r="10" s="3">
+<O>
+<![CDATA[万吉焦]]></O>
+<Expand/>
+</C>
+<C c="4" r="10" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds12" columnName="SUM(T.MONTH_FINISH)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="2" row="10"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="10" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds13" columnName="SUM(T.LAST_YEAR)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="2" row="10"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="10" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="SUM(T.COMPARE_IN_DECREASE)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="2" row="10"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="10" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds15" columnName="SUM(T.MONTH_FINISH)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="2" row="10"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="10" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="SUM(T.LAST_YEAR)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="2" row="10"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="10" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds17" columnName="SUM(T.COMPARE_IN_DECREASE)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="2" row="10"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="10" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds18" columnName="SUM(T.MONTH_FINISH)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="2" row="10"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="10" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds19" columnName="SUM(T.LAST_YEAR)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="2" row="10"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="10" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds20" columnName="SUM(T.COMPARE_IN_DECREASE)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="2" row="10"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="10" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds22" columnName="SUM(T.MONTH_FINISH)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="2" row="10"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="10" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds23" columnName="SUM(T.LAST_YEAR)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="2" row="10"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="15" r="10" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds24" columnName="SUM(T.COMPARE_IN_DECREASE)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_NAME]]></CNAME>
+<Compare op="0">
+<ColumnRow column="2" row="10"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="16" r="10" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E11+H11]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="17" r="10" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=F11+I11]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="18" r="10" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=G11+J11]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="19" r="10" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=K11+N11]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="20" r="10" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=L11+O11]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="21" r="10" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=M11+P11]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="22" r="10" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E11+H11+K11+N11]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="23" r="10" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=F11+I11+L11+O11]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="24" r="10" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=G11+J11+M11+P11]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="25" r="10" s="7">
+<Expand/>
+</C>
+<C c="26" r="10" s="7">
+<Expand/>
+</C>
+<C c="2" r="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="3" r="17" s="7">
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="false" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[722880,722880,723900,722880,722880,722880,722880,722880,722880,722880,722880,722880,722880,722880,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[3048000,3048000,2743200,4724400,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="1" s="10">
+<O>
+<![CDATA[年份：]]></O>
+<Expand/>
+</C>
+<C c="1" r="1" s="7">
+<O t="I">
+<![CDATA[2015]]></O>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetName name="CREATE_DATE"/>
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="0" vi="0"/>
+<Formula>
+<![CDATA[select distinct to_number(trunc(to_char(t.W_DATE,'yyyy'))) 
+ from  tes_ba_t_p_w_list t]]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Widget>
+<Expand/>
+</C>
+<C c="2" r="1" s="10">
+<O>
+<![CDATA[季度：]]></O>
+<Expand/>
+</C>
+<C c="3" r="1" s="7">
+<O>
+<![CDATA[一季度]]></O>
+<Widget class="com.fr.report.web.ui.ComboCheckBox">
+<WidgetName name="no_date"/>
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="一季度" value="一季度"/>
+<Dict key="二季度" value="二季度"/>
+<Dict key="三季度" value="三季度"/>
+<Dict key="四季度" value="四季度"/>
+<Dict key="上半年" value="上半年"/>
+<Dict key="下半年" value="下半年"/>
+<Dict key="全年" value="全年"/>
+</CustomDictAttr>
+</Dictionary>
+</Widget>
+<Expand/>
+</C>
+<C c="4" r="1">
+<O>
+<![CDATA[查询]]></O>
+<Widget class="com.fr.report.web.ui.impl.form.FormSubmitButton">
+<WidgetAttr/>
+<Hotkeys>
+<![CDATA[enter]]></Hotkeys>
+</Widget>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</ParameterUI>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="104"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="88"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="80"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00%]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="108" foreground="-16737895"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+</WorkBook>

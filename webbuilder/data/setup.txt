@@ -1,0 +1,67 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>兴竹集成开发平台2.0安装</title>
+<link rel="stylesheet" href="webbuilder/controls/ext/resources/css/ext-all.css" type="text/css">
+<link rel="stylesheet" href="webbuilder/css/style.css" type="text/css">
+<script type="text/javascript" src="webbuilder/script/locale/wb-lang-en.js"></script>
+<script type="text/javascript" src="webbuilder/controls/ext/ext-all.js"></script>
+<script type="text/javascript" src="webbuilder/controls/ext/locale/ext-lang-en.js"></script>
+<script type="text/javascript" src="webbuilder/script/wb.js"></script>
+</head>
+<body>
+<script language="javascript" type="text/javascript">
+Ext.onReady(function(){
+Wb.initialize(null,480);
+Wd.installAjax={request:function(p){Wb.request(installAjax,p)},message:"正在安装平台2.0数据库, 请稍后...",output:"jndi, dbType",timeout:-1,url:"main?xwl=xwlfist",params:{},success:function(response,options){
+Ext.Msg.show({
+title:Str.information,
+msg:'安装兴竹集成平台2.0成功',
+buttons:Ext.Msg.OK,
+closable:false,
+icon:Ext.MessageBox.INFO,
+fn:function(){window.location='platformAction.do?method=reloadXipConfig&op=setup';}
+});
+}};
+Wd.window1=new Ext.window.Window({
+width:600,closeAction:"hide",iconCls:"computer_icon",id:"window1",autoShow:true,title:"兴竹集成平台安装",height:384,closable:false,layout:"border",resizable:false,listeners:{hide:function(win,options){
+Wb.reset(win);
+},show:function(win,options){
+jndi.focus(false,true);
+}},items:[
+{id:"panel1",region:"center",layout:"absolute",xtype:"panel",items:[
+{id:"titleLbl",text:"XIP2.0安装",width:248,x:16,xtype:"label",y:16+4,style:"text-shadow:0 -1px 1px #FFFFFF;font-size: 22px;font-weight: bold;"
+}
+,{id:"warnLbl",text:"WARNING: This program is protected by copyright law and international treaties.",width:248,x:16,xtype:"label",y:226+4
+}
+,{id:"infoLbl",text:"本次安装会在数据库服务器中创建数据库对象并将系统初始化数据导入到数据库中。 为了完成数据库对象的创建和数据导入，请选择数据库类型，并点击安装按钮。",width:248,x:16,xtype:"label",y:88+4
+}
+,{id:"fieldSet1",title:"数据库信息",height:176,layout:"absolute",width:287,y:88,x:280,xtype:"fieldset",items:[
+{id:"jndiLbl",text:"JNDI:",width:40,x:8,xtype:"hidden",y:16+4
+}
+,{id:"jndi",allowBlank:false,width:208,y:16,x:48,xtype:"hidden",value:"x"
+}
+,{id:"egLbl",text:"eg: java:comp/env/jdbc/mydb",width:208,x:48,xtype:"label",y:40+4,style:"color:#8c8c8c;",xtype:"hidden"
+}
+,{id:"dbTypeLbl",text:"数据库：",width:60,x:8,xtype:"label",y:48
+}
+,{id:"dbType",allowBlank:false,listConfig:{maxHeight:180},width:208,y:48,editable:false,x:48,xtype:"combobox",minChars:0,store:['mysql','oracle']
+}
+,{id:"installBtn",width:128,y:72,x:79,xtype:"button",text:"安装",height:22,listeners:{click:function(button,event,options){
+if(Wb.verify(fieldSet1))
+Wb.confirm('你确定要安装兴竹集成平台2.0吗？<br>警告，如果已经存在数据库对象，数据将被覆盖，可能造成数据丢失。',installAjax.request);
+}}
+}
+]}
+]}
+,{id:"panel2",region:"south",frame:true,height:73,layout:"absolute",xtype:"panel",items:[
+{id:"copyrightLbl",text:"Copyright (c) xz-soft.com, All Rights Reserved.",width:408,x:8,xtype:"label",y:6+4
+}
+,{id:"putdbLbl",width:408,html:"For license and more information, please visit <a href='http://www.xz-soft.com' target='_blank'>http://www.xz-soft.com<\/a>.",x:8,xtype:"label",y:35+4
+}
+]}
+]});
+});
+</script>
+</body>
+</html>

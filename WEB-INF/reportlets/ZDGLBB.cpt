@@ -1,0 +1,1639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="72000000" height="101808000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,1409700,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,3619500,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="3" r="3" cs="11" s="0">
+<O>
+<![CDATA[振动管理报表]]></O>
+<Expand/>
+</C>
+<C c="9" r="4">
+<O>
+<![CDATA[数据记录时间：]]></O>
+<Expand/>
+</C>
+<C c="10" r="4" cs="4">
+<O>
+<![CDATA[2014年 01月 12 日09 时 54分]]></O>
+<Expand/>
+</C>
+<C c="0" r="5" s="1">
+<Expand/>
+</C>
+<C c="1" r="5" s="1">
+<Expand/>
+</C>
+<C c="2" r="5" s="1">
+<Expand/>
+</C>
+<C c="3" r="5" cs="2" s="2">
+<O>
+<![CDATA[轴承序号]]></O>
+<Expand/>
+</C>
+<C c="5" r="5" s="3">
+<O t="I">
+<![CDATA[1]]></O>
+<Expand/>
+</C>
+<C c="6" r="5" s="3">
+<O t="I">
+<![CDATA[2]]></O>
+<Expand/>
+</C>
+<C c="7" r="5" s="3">
+<O t="I">
+<![CDATA[3]]></O>
+<Expand/>
+</C>
+<C c="8" r="5" s="3">
+<O t="I">
+<![CDATA[4]]></O>
+<Expand/>
+</C>
+<C c="9" r="5" s="3">
+<O t="I">
+<![CDATA[5]]></O>
+<Expand/>
+</C>
+<C c="10" r="5" s="3">
+<O t="I">
+<![CDATA[6]]></O>
+<Expand/>
+</C>
+<C c="11" r="5" s="3">
+<O t="I">
+<![CDATA[7]]></O>
+<Expand/>
+</C>
+<C c="12" r="5" s="3">
+<O t="I">
+<![CDATA[8]]></O>
+<Expand/>
+</C>
+<C c="13" r="5" s="4">
+<O t="I">
+<![CDATA[9]]></O>
+<Expand/>
+</C>
+<C c="0" r="6" s="1">
+<Expand/>
+</C>
+<C c="1" r="6" s="1">
+<Expand/>
+</C>
+<C c="2" r="6" s="1">
+<Expand/>
+</C>
+<C c="3" r="6" rs="6" s="5">
+<O>
+<![CDATA[转轴振动um]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" s="6">
+<O>
+<![CDATA[X 方向 通频]]></O>
+<Expand/>
+</C>
+<C c="5" r="6" s="6">
+<O t="I">
+<![CDATA[77]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" s="6">
+<O t="I">
+<![CDATA[99]]></O>
+<Expand/>
+</C>
+<C c="7" r="6" s="6">
+<O t="I">
+<![CDATA[37]]></O>
+<Expand/>
+</C>
+<C c="8" r="6" s="6">
+<O t="I">
+<![CDATA[56]]></O>
+<Expand/>
+</C>
+<C c="9" r="6" s="6">
+<O t="I">
+<![CDATA[48]]></O>
+<Expand/>
+</C>
+<C c="10" r="6" s="6">
+<O t="I">
+<![CDATA[32]]></O>
+<Expand/>
+</C>
+<C c="11" r="6" s="6">
+<O t="I">
+<![CDATA[82]]></O>
+<Expand/>
+</C>
+<C c="12" r="6" s="6">
+<O t="I">
+<![CDATA[67]]></O>
+<Expand/>
+</C>
+<C c="13" r="6" s="7">
+<Expand/>
+</C>
+<C c="0" r="7" s="1">
+<Expand/>
+</C>
+<C c="1" r="7" s="1">
+<Expand/>
+</C>
+<C c="2" r="7" s="1">
+<Expand/>
+</C>
+<C c="4" r="7" s="6">
+<O>
+<![CDATA[X 方向 工频]]></O>
+<Expand/>
+</C>
+<C c="5" r="7" s="6">
+<O t="I">
+<![CDATA[52]]></O>
+<Expand/>
+</C>
+<C c="6" r="7" s="6">
+<O t="I">
+<![CDATA[76]]></O>
+<Expand/>
+</C>
+<C c="7" r="7" s="6">
+<O t="I">
+<![CDATA[19]]></O>
+<Expand/>
+</C>
+<C c="8" r="7" s="6">
+<O t="I">
+<![CDATA[40]]></O>
+<Expand/>
+</C>
+<C c="9" r="7" s="6">
+<O t="I">
+<![CDATA[27]]></O>
+<Expand/>
+</C>
+<C c="10" r="7" s="6">
+<O t="I">
+<![CDATA[7]]></O>
+<Expand/>
+</C>
+<C c="11" r="7" s="6">
+<O t="I">
+<![CDATA[45]]></O>
+<Expand/>
+</C>
+<C c="12" r="7" s="6">
+<O t="I">
+<![CDATA[62]]></O>
+<Expand/>
+</C>
+<C c="13" r="7" s="7">
+<Expand/>
+</C>
+<C c="0" r="8" s="1">
+<Expand/>
+</C>
+<C c="1" r="8" s="1">
+<Expand/>
+</C>
+<C c="2" r="8" s="1">
+<Expand/>
+</C>
+<C c="4" r="8" s="6">
+<O>
+<![CDATA[X 方向相位 °]]></O>
+<Expand/>
+</C>
+<C c="5" r="8" s="6">
+<O t="I">
+<![CDATA[122]]></O>
+<Expand/>
+</C>
+<C c="6" r="8" s="6">
+<O t="I">
+<![CDATA[152]]></O>
+<Expand/>
+</C>
+<C c="7" r="8" s="6">
+<O t="I">
+<![CDATA[17]]></O>
+<Expand/>
+</C>
+<C c="8" r="8" s="6">
+<O t="I">
+<![CDATA[213]]></O>
+<Expand/>
+</C>
+<C c="9" r="8" s="6">
+<O t="I">
+<![CDATA[289]]></O>
+<Expand/>
+</C>
+<C c="10" r="8" s="6">
+<O t="I">
+<![CDATA[200]]></O>
+<Expand/>
+</C>
+<C c="11" r="8" s="6">
+<O t="I">
+<![CDATA[190]]></O>
+<Expand/>
+</C>
+<C c="12" r="8" s="6">
+<O t="I">
+<![CDATA[315]]></O>
+<Expand/>
+</C>
+<C c="13" r="8" s="7">
+<Expand/>
+</C>
+<C c="0" r="9" s="1">
+<Expand/>
+</C>
+<C c="1" r="9" s="1">
+<Expand/>
+</C>
+<C c="2" r="9" s="1">
+<Expand/>
+</C>
+<C c="4" r="9" s="6">
+<O>
+<![CDATA[Y 方向 通频]]></O>
+<Expand/>
+</C>
+<C c="5" r="9" s="6">
+<O t="I">
+<![CDATA[76]]></O>
+<Expand/>
+</C>
+<C c="6" r="9" s="6">
+<O t="I">
+<![CDATA[83]]></O>
+<Expand/>
+</C>
+<C c="7" r="9" s="6">
+<O t="I">
+<![CDATA[40]]></O>
+<Expand/>
+</C>
+<C c="8" r="9" s="6">
+<O t="I">
+<![CDATA[53]]></O>
+<Expand/>
+</C>
+<C c="9" r="9" s="6">
+<O t="I">
+<![CDATA[36]]></O>
+<Expand/>
+</C>
+<C c="10" r="9" s="6">
+<O t="I">
+<![CDATA[28]]></O>
+<Expand/>
+</C>
+<C c="11" r="9" s="6">
+<O t="I">
+<![CDATA[82]]></O>
+<Expand/>
+</C>
+<C c="12" r="9" s="6">
+<O t="I">
+<![CDATA[57]]></O>
+<Expand/>
+</C>
+<C c="13" r="9" s="7">
+<Expand/>
+</C>
+<C c="0" r="10" s="1">
+<Expand/>
+</C>
+<C c="1" r="10" s="1">
+<Expand/>
+</C>
+<C c="2" r="10" s="1">
+<Expand/>
+</C>
+<C c="4" r="10" s="6">
+<O>
+<![CDATA[Y 方向 工频]]></O>
+<Expand/>
+</C>
+<C c="5" r="10" s="6">
+<O t="I">
+<![CDATA[52]]></O>
+<Expand/>
+</C>
+<C c="6" r="10" s="6">
+<O t="I">
+<![CDATA[61]]></O>
+<Expand/>
+</C>
+<C c="7" r="10" s="6">
+<O t="I">
+<![CDATA[28]]></O>
+<Expand/>
+</C>
+<C c="8" r="10" s="6">
+<O t="I">
+<![CDATA[42]]></O>
+<Expand/>
+</C>
+<C c="9" r="10" s="6">
+<O t="I">
+<![CDATA[15]]></O>
+<Expand/>
+</C>
+<C c="10" r="10" s="6">
+<O t="I">
+<![CDATA[10]]></O>
+<Expand/>
+</C>
+<C c="11" r="10" s="6">
+<O t="I">
+<![CDATA[49]]></O>
+<Expand/>
+</C>
+<C c="12" r="10" s="6">
+<O t="I">
+<![CDATA[52]]></O>
+<Expand/>
+</C>
+<C c="13" r="10" s="7">
+<Expand/>
+</C>
+<C c="0" r="11" s="1">
+<Expand/>
+</C>
+<C c="1" r="11" s="1">
+<Expand/>
+</C>
+<C c="2" r="11" s="1">
+<Expand/>
+</C>
+<C c="4" r="11" s="6">
+<O>
+<![CDATA[Y 方向相位 °]]></O>
+<Expand/>
+</C>
+<C c="5" r="11" s="6">
+<O t="I">
+<![CDATA[212]]></O>
+<Expand/>
+</C>
+<C c="6" r="11" s="6">
+<O t="I">
+<![CDATA[246]]></O>
+<Expand/>
+</C>
+<C c="7" r="11" s="6">
+<O t="I">
+<![CDATA[88]]></O>
+<Expand/>
+</C>
+<C c="8" r="11" s="6">
+<O t="I">
+<![CDATA[286]]></O>
+<Expand/>
+</C>
+<C c="9" r="11" s="6">
+<O t="I">
+<![CDATA[30]]></O>
+<Expand/>
+</C>
+<C c="10" r="11" s="6">
+<O t="I">
+<![CDATA[256]]></O>
+<Expand/>
+</C>
+<C c="11" r="11" s="6">
+<O t="I">
+<![CDATA[283]]></O>
+<Expand/>
+</C>
+<C c="12" r="11" s="6">
+<O t="I">
+<![CDATA[46]]></O>
+<Expand/>
+</C>
+<C c="13" r="11" s="7">
+<Expand/>
+</C>
+<C c="0" r="12" s="1">
+<Expand/>
+</C>
+<C c="1" r="12" s="1">
+<Expand/>
+</C>
+<C c="2" r="12" s="1">
+<Expand/>
+</C>
+<C c="3" r="12" rs="3" s="5">
+<O>
+<![CDATA[瓦振um]]></O>
+<Expand/>
+</C>
+<C c="4" r="12" s="6">
+<O>
+<![CDATA[垂直 ⊥]]></O>
+<Expand/>
+</C>
+<C c="5" r="12" s="6">
+<O t="BiasTextPainter">
+<IsBackSlash value="true"/>
+<![CDATA[ | ]]></O>
+<Expand/>
+</C>
+<C c="6" r="12" s="6">
+<O t="BiasTextPainter">
+<IsBackSlash value="true"/>
+<![CDATA[ | ]]></O>
+<Expand/>
+</C>
+<C c="7" r="12" s="6">
+<O t="I">
+<![CDATA[13]]></O>
+<Expand/>
+</C>
+<C c="8" r="12" s="6">
+<O t="I">
+<![CDATA[14]]></O>
+<Expand/>
+</C>
+<C c="9" r="12" s="6">
+<O t="I">
+<![CDATA[10]]></O>
+<Expand/>
+</C>
+<C c="10" r="12" s="6">
+<O t="I">
+<![CDATA[12]]></O>
+<Expand/>
+</C>
+<C c="11" r="12" s="6">
+<O t="I">
+<![CDATA[14]]></O>
+<Expand/>
+</C>
+<C c="12" r="12" s="6">
+<O t="I">
+<![CDATA[8]]></O>
+<Expand/>
+</C>
+<C c="13" r="12" s="7">
+<O t="BiasTextPainter">
+<IsBackSlash value="true"/>
+<![CDATA[ | ]]></O>
+<Expand/>
+</C>
+<C c="0" r="13" s="1">
+<Expand/>
+</C>
+<C c="1" r="13" s="1">
+<Expand/>
+</C>
+<C c="2" r="13" s="1">
+<Expand/>
+</C>
+<C c="4" r="13" s="6">
+<O>
+<![CDATA[水平 —]]></O>
+<Expand/>
+</C>
+<C c="5" r="13" s="6">
+<O t="BiasTextPainter">
+<IsBackSlash value="true"/>
+<![CDATA[ | ]]></O>
+<Expand/>
+</C>
+<C c="6" r="13" s="6">
+<O t="BiasTextPainter">
+<IsBackSlash value="true"/>
+<![CDATA[ | ]]></O>
+<Expand/>
+</C>
+<C c="7" r="13" s="6">
+<O t="I">
+<![CDATA[9]]></O>
+<Expand/>
+</C>
+<C c="8" r="13" s="6">
+<O t="I">
+<![CDATA[10]]></O>
+<Expand/>
+</C>
+<C c="9" r="13" s="6">
+<O t="I">
+<![CDATA[8]]></O>
+<Expand/>
+</C>
+<C c="10" r="13" s="6">
+<O t="I">
+<![CDATA[8]]></O>
+<Expand/>
+</C>
+<C c="11" r="13" s="6">
+<O t="I">
+<![CDATA[8]]></O>
+<Expand/>
+</C>
+<C c="12" r="13" s="6">
+<O t="I">
+<![CDATA[11]]></O>
+<Expand/>
+</C>
+<C c="13" r="13" s="7">
+<O t="BiasTextPainter">
+<IsBackSlash value="true"/>
+<![CDATA[ | ]]></O>
+<Expand/>
+</C>
+<C c="0" r="14" s="1">
+<Expand/>
+</C>
+<C c="1" r="14" s="1">
+<Expand/>
+</C>
+<C c="2" r="14" s="1">
+<Expand/>
+</C>
+<C c="4" r="14" s="6">
+<O>
+<![CDATA[轴向 ⊙]]></O>
+<Expand/>
+</C>
+<C c="5" r="14" s="6">
+<O t="BiasTextPainter">
+<IsBackSlash value="true"/>
+<![CDATA[ | ]]></O>
+<Expand/>
+</C>
+<C c="6" r="14" s="6">
+<O t="BiasTextPainter">
+<IsBackSlash value="true"/>
+<![CDATA[ | ]]></O>
+<Expand/>
+</C>
+<C c="7" r="14" s="6">
+<O t="I">
+<![CDATA[6]]></O>
+<Expand/>
+</C>
+<C c="8" r="14" s="6">
+<O t="I">
+<![CDATA[18]]></O>
+<Expand/>
+</C>
+<C c="9" r="14" s="6">
+<O t="I">
+<![CDATA[17]]></O>
+<Expand/>
+</C>
+<C c="10" r="14" s="6">
+<O t="I">
+<![CDATA[11]]></O>
+<Expand/>
+</C>
+<C c="11" r="14" s="6">
+<O t="I">
+<![CDATA[12]]></O>
+<Expand/>
+</C>
+<C c="12" r="14" s="6">
+<O t="I">
+<![CDATA[9]]></O>
+<Expand/>
+</C>
+<C c="13" r="14" s="7">
+<O t="BiasTextPainter">
+<IsBackSlash value="true"/>
+<![CDATA[ | ]]></O>
+<Expand/>
+</C>
+<C c="0" r="15" s="1">
+<Expand/>
+</C>
+<C c="1" r="15" s="1">
+<Expand/>
+</C>
+<C c="2" r="15" s="1">
+<Expand/>
+</C>
+<C c="3" r="15" cs="2" s="5">
+<O>
+<![CDATA[轴承座振动（TSI）]]></O>
+<Expand/>
+</C>
+<C c="5" r="15" s="6">
+<O t="D">
+<![CDATA[33.23]]></O>
+<Expand/>
+</C>
+<C c="6" r="15" s="6">
+<O t="D">
+<![CDATA[9.23]]></O>
+<Expand/>
+</C>
+<C c="7" r="15" s="6">
+<O t="D">
+<![CDATA[9.84]]></O>
+<Expand/>
+</C>
+<C c="8" r="15" s="6">
+<O t="D">
+<![CDATA[12.79]]></O>
+<Expand/>
+</C>
+<C c="9" r="15" s="6">
+<O t="D">
+<![CDATA[7.81]]></O>
+<Expand/>
+</C>
+<C c="10" r="15" s="6">
+<O t="D">
+<![CDATA[4.35]]></O>
+<Expand/>
+</C>
+<C c="11" r="15" s="6">
+<O t="D">
+<![CDATA[5.59]]></O>
+<Expand/>
+</C>
+<C c="12" r="15" s="6">
+<O t="D">
+<![CDATA[9.28]]></O>
+<Expand/>
+</C>
+<C c="13" r="15" s="7">
+<O t="D">
+<![CDATA[2.83]]></O>
+<Expand/>
+</C>
+<C c="0" r="16" s="1">
+<Expand/>
+</C>
+<C c="1" r="16" s="1">
+<Expand/>
+</C>
+<C c="2" r="16" s="1">
+<Expand/>
+</C>
+<C c="3" r="16" rs="2" s="5">
+<O>
+<![CDATA[间隙 电压 V]]></O>
+<Expand/>
+</C>
+<C c="4" r="16" s="6">
+<O>
+<![CDATA[X 方向]]></O>
+<Expand/>
+</C>
+<C c="5" r="16" cs="2" rs="2" s="6">
+<O>
+<![CDATA[TDM无显示]]></O>
+<Expand/>
+</C>
+<C c="7" r="16" s="6">
+<Expand/>
+</C>
+<C c="8" r="16" s="6">
+<Expand/>
+</C>
+<C c="9" r="16" s="6">
+<Expand/>
+</C>
+<C c="10" r="16" s="6">
+<Expand/>
+</C>
+<C c="11" r="16" s="6">
+<Expand/>
+</C>
+<C c="12" r="16" s="6">
+<Expand/>
+</C>
+<C c="13" r="16" s="7">
+<Expand/>
+</C>
+<C c="0" r="17" s="1">
+<Expand/>
+</C>
+<C c="1" r="17" s="1">
+<Expand/>
+</C>
+<C c="2" r="17" s="1">
+<Expand/>
+</C>
+<C c="4" r="17" s="6">
+<O>
+<![CDATA[Y 方向]]></O>
+<Expand/>
+</C>
+<C c="7" r="17" s="6">
+<Expand/>
+</C>
+<C c="8" r="17" s="6">
+<Expand/>
+</C>
+<C c="9" r="17" s="6">
+<Expand/>
+</C>
+<C c="10" r="17" s="6">
+<Expand/>
+</C>
+<C c="11" r="17" s="6">
+<Expand/>
+</C>
+<C c="12" r="17" s="6">
+<Expand/>
+</C>
+<C c="13" r="17" s="7">
+<Expand/>
+</C>
+<C c="0" r="18" s="1">
+<Expand/>
+</C>
+<C c="1" r="18" s="1">
+<Expand/>
+</C>
+<C c="2" r="18" s="1">
+<Expand/>
+</C>
+<C c="3" r="18" cs="2" s="5">
+<O>
+<![CDATA[润滑油温度 ℃]]></O>
+<Expand/>
+</C>
+<C c="5" r="18" cs="9" s="7">
+<O t="I">
+<![CDATA[42]]></O>
+<Expand/>
+</C>
+<C c="0" r="19" s="1">
+<Expand/>
+</C>
+<C c="1" r="19" s="1">
+<Expand/>
+</C>
+<C c="2" r="19" s="1">
+<Expand/>
+</C>
+<C c="3" r="19" cs="2" s="5">
+<O>
+<![CDATA[轴承温度 ℃]]></O>
+<Expand/>
+</C>
+<C c="5" r="19" s="6">
+<O>
+<![CDATA[71.5/73.3]]></O>
+<Expand/>
+</C>
+<C c="6" r="19" s="6">
+<O>
+<![CDATA[77.8/73.7]]></O>
+<Expand/>
+</C>
+<C c="7" r="19" s="6">
+<O>
+<![CDATA[71.9/74.03]]></O>
+<Expand/>
+</C>
+<C c="8" r="19" s="6">
+<O>
+<![CDATA[78.1/74.3]]></O>
+<Expand/>
+</C>
+<C c="9" r="19" s="6">
+<O>
+<![CDATA[78.4/75.6]]></O>
+<Expand/>
+</C>
+<C c="10" r="19" s="6">
+<O>
+<![CDATA[80.6/77.4]]></O>
+<Expand/>
+</C>
+<C c="11" r="19" s="6">
+<O t="D">
+<![CDATA[60.4]]></O>
+<Expand/>
+</C>
+<C c="12" r="19" s="6">
+<O t="D">
+<![CDATA[60.5]]></O>
+<Expand/>
+</C>
+<C c="13" r="19" s="7">
+<O t="D">
+<![CDATA[56.7]]></O>
+<Expand/>
+</C>
+<C c="0" r="20" s="1">
+<Expand/>
+</C>
+<C c="1" r="20" s="1">
+<Expand/>
+</C>
+<C c="2" r="20" s="1">
+<Expand/>
+</C>
+<C c="3" r="20" cs="2" s="5">
+<O>
+<![CDATA[回油温度 ℃]]></O>
+<Expand/>
+</C>
+<C c="5" r="20" s="6">
+<O t="D">
+<![CDATA[56.32]]></O>
+<Expand/>
+</C>
+<C c="6" r="20" s="6">
+<O t="D">
+<![CDATA[58.87]]></O>
+<Expand/>
+</C>
+<C c="7" r="20" s="6">
+<O t="D">
+<![CDATA[59.06]]></O>
+<Expand/>
+</C>
+<C c="8" r="20" s="6">
+<O t="D">
+<![CDATA[58.61]]></O>
+<Expand/>
+</C>
+<C c="9" r="20" s="6">
+<O t="D">
+<![CDATA[58.23]]></O>
+<Expand/>
+</C>
+<C c="10" r="20" s="6">
+<O t="D">
+<![CDATA[58.8]]></O>
+<Expand/>
+</C>
+<C c="11" r="20" s="6">
+<O t="D">
+<![CDATA[58.17]]></O>
+<Expand/>
+</C>
+<C c="12" r="20" s="6">
+<O t="D">
+<![CDATA[58.3]]></O>
+<Expand/>
+</C>
+<C c="13" r="20" s="7">
+<O t="D">
+<![CDATA[44.9]]></O>
+<Expand/>
+</C>
+<C c="0" r="21" s="1">
+<Expand/>
+</C>
+<C c="1" r="21" s="1">
+<Expand/>
+</C>
+<C c="2" r="21" s="1">
+<Expand/>
+</C>
+<C c="3" r="21" cs="2" s="5">
+<O>
+<![CDATA[油膜压力 Mpa]]></O>
+<Expand/>
+</C>
+<C c="5" r="21" s="6">
+<O t="BiasTextPainter">
+<IsBackSlash value="true"/>
+<![CDATA[ | ]]></O>
+<Expand/>
+</C>
+<C c="6" r="21" s="6">
+<O t="BiasTextPainter">
+<IsBackSlash value="true"/>
+<![CDATA[ | ]]></O>
+<Expand/>
+</C>
+<C c="7" r="21" s="6">
+<O t="D">
+<![CDATA[3.8]]></O>
+<Expand/>
+</C>
+<C c="8" r="21" s="6">
+<O t="D">
+<![CDATA[4.2]]></O>
+<Expand/>
+</C>
+<C c="9" r="21" s="6">
+<O t="D">
+<![CDATA[4.5]]></O>
+<Expand/>
+</C>
+<C c="10" r="21" s="6">
+<O t="I">
+<![CDATA[7]]></O>
+<Expand/>
+</C>
+<C c="11" r="21" s="6">
+<O t="I">
+<![CDATA[8]]></O>
+<Expand/>
+</C>
+<C c="12" r="21" s="6">
+<O t="D">
+<![CDATA[4.6]]></O>
+<Expand/>
+</C>
+<C c="13" r="21" s="7">
+<O t="BiasTextPainter">
+<IsBackSlash value="true"/>
+<![CDATA[ | ]]></O>
+<Expand/>
+</C>
+<C c="0" r="22" s="1">
+<Expand/>
+</C>
+<C c="1" r="22" s="1">
+<Expand/>
+</C>
+<C c="2" r="22" s="1">
+<Expand/>
+</C>
+<C c="3" r="22" cs="2" rs="2" s="5">
+<O>
+<![CDATA[推力轴承温度 ℃]]></O>
+<Expand/>
+</C>
+<C c="5" r="22" cs="5" s="6">
+<O>
+<![CDATA[工作瓦]]></O>
+<Expand/>
+</C>
+<C c="10" r="22" cs="4" s="7">
+<O>
+<![CDATA[非工作瓦]]></O>
+<Expand/>
+</C>
+<C c="0" r="23" s="1">
+<Expand/>
+</C>
+<C c="1" r="23" s="1">
+<Expand/>
+</C>
+<C c="2" r="23" s="1">
+<Expand/>
+</C>
+<C c="5" r="23" cs="5" s="6">
+<O>
+<![CDATA[54.80/57.34   ]]></O>
+<Expand/>
+</C>
+<C c="10" r="23" cs="4" s="7">
+<O>
+<![CDATA[47.57/47.70  ]]></O>
+<Expand/>
+</C>
+<C c="0" r="24" s="1">
+<Expand/>
+</C>
+<C c="1" r="24" s="1">
+<Expand/>
+</C>
+<C c="2" r="24" s="1">
+<Expand/>
+</C>
+<C c="3" r="24" rs="10" s="8">
+<O>
+<![CDATA[机组主要参数]]></O>
+<Expand/>
+</C>
+<C c="4" r="24" cs="2" s="6">
+<O>
+<![CDATA[有功功率 MW]]></O>
+<Expand/>
+</C>
+<C c="6" r="24" cs="2" s="6">
+<O>
+<![CDATA[主汽压力 Mpa]]></O>
+<Expand/>
+</C>
+<C c="8" r="24" cs="2" s="6">
+<O>
+<![CDATA[调节级金属温度℃]]></O>
+<Expand/>
+</C>
+<C c="10" r="24" cs="2" s="6">
+<O>
+<![CDATA[高压缸上下温差℃]]></O>
+<Expand/>
+</C>
+<C c="12" r="24" cs="2" s="7">
+<O>
+<![CDATA[高压胀差 mm]]></O>
+<Expand/>
+</C>
+<C c="0" r="25" s="1">
+<Expand/>
+</C>
+<C c="1" r="25" s="1">
+<Expand/>
+</C>
+<C c="2" r="25" s="1">
+<Expand/>
+</C>
+<C c="4" r="25" cs="2" s="6">
+<O t="I">
+<![CDATA[659]]></O>
+<Expand/>
+</C>
+<C c="6" r="25" cs="2" s="6">
+<O t="D">
+<![CDATA[25.29]]></O>
+<Expand/>
+</C>
+<C c="8" r="25" cs="2" s="6">
+<O t="D">
+<![CDATA[508.1]]></O>
+<Expand/>
+</C>
+<C c="10" r="25" cs="2" s="6">
+<O t="I">
+<![CDATA[15]]></O>
+<Expand/>
+</C>
+<C c="12" r="25" cs="2" s="7">
+<O t="D">
+<![CDATA[5.92]]></O>
+<Expand/>
+</C>
+<C c="0" r="26" s="1">
+<Expand/>
+</C>
+<C c="1" r="26" s="1">
+<Expand/>
+</C>
+<C c="2" r="26" s="1">
+<Expand/>
+</C>
+<C c="4" r="26" cs="2" s="6">
+<O>
+<![CDATA[无功功率 MW]]></O>
+<Expand/>
+</C>
+<C c="6" r="26" cs="2" s="6">
+<O>
+<![CDATA[主汽温度 ℃]]></O>
+<Expand/>
+</C>
+<C c="8" r="26" cs="2" s="6">
+<O>
+<![CDATA[中压一级金属温度℃]]></O>
+<Expand/>
+</C>
+<C c="10" r="26" cs="2" s="6">
+<O>
+<![CDATA[中压缸上下温差℃]]></O>
+<Expand/>
+</C>
+<C c="12" r="26" cs="2" s="7">
+<O>
+<![CDATA[中压胀差 mm]]></O>
+<Expand/>
+</C>
+<C c="0" r="27" s="1">
+<Expand/>
+</C>
+<C c="1" r="27" s="1">
+<Expand/>
+</C>
+<C c="2" r="27" s="1">
+<Expand/>
+</C>
+<C c="4" r="27" cs="2" s="6">
+<O t="D">
+<![CDATA[98.92]]></O>
+<Expand/>
+</C>
+<C c="6" r="27" cs="2" s="6">
+<O t="D">
+<![CDATA[556.2]]></O>
+<Expand/>
+</C>
+<C c="8" r="27" cs="2" s="6">
+<Expand/>
+</C>
+<C c="10" r="27" cs="2" s="6">
+<O t="D">
+<![CDATA[15.6]]></O>
+<Expand/>
+</C>
+<C c="12" r="27" cs="2" s="7">
+<Expand/>
+</C>
+<C c="0" r="28" s="1">
+<Expand/>
+</C>
+<C c="1" r="28" s="1">
+<Expand/>
+</C>
+<C c="2" r="28" s="1">
+<Expand/>
+</C>
+<C c="4" r="28" cs="2" s="6">
+<O>
+<![CDATA[励磁电流 A]]></O>
+<Expand/>
+</C>
+<C c="6" r="28" cs="2" s="6">
+<O>
+<![CDATA[再热压力 MPa]]></O>
+<Expand/>
+</C>
+<C c="8" r="28" cs="2" s="6">
+<O>
+<![CDATA[高排压力 MPa]]></O>
+<Expand/>
+</C>
+<C c="10" r="28" cs="2" s="6">
+<O>
+<![CDATA[汽缸膨胀1 mm]]></O>
+<Expand/>
+</C>
+<C c="12" r="28" cs="2" s="7">
+<O>
+<![CDATA[低压胀差1 mm]]></O>
+<Expand/>
+</C>
+<C c="0" r="29" s="1">
+<Expand/>
+</C>
+<C c="1" r="29" s="1">
+<Expand/>
+</C>
+<C c="2" r="29" s="1">
+<Expand/>
+</C>
+<C c="4" r="29" cs="2" s="6">
+<O t="D">
+<![CDATA[3490.6]]></O>
+<Expand/>
+</C>
+<C c="6" r="29" cs="2" s="6">
+<O t="D">
+<![CDATA[3.88]]></O>
+<Expand/>
+</C>
+<C c="8" r="29" cs="2" s="6">
+<O t="D">
+<![CDATA[4.26]]></O>
+<Expand/>
+</C>
+<C c="10" r="29" cs="2" s="6">
+<O t="D">
+<![CDATA[19.4]]></O>
+<Expand/>
+</C>
+<C c="12" r="29" cs="2" s="7">
+<O t="D">
+<![CDATA[19.4]]></O>
+<Expand/>
+</C>
+<C c="0" r="30" s="1">
+<Expand/>
+</C>
+<C c="1" r="30" s="1">
+<Expand/>
+</C>
+<C c="2" r="30" s="1">
+<Expand/>
+</C>
+<C c="4" r="30" cs="2" s="6">
+<O>
+<![CDATA[背压 kPa]]></O>
+<Expand/>
+</C>
+<C c="6" r="30" cs="2" s="6">
+<O>
+<![CDATA[再热温度 ℃]]></O>
+<Expand/>
+</C>
+<C c="8" r="30" cs="2" s="6">
+<O>
+<![CDATA[高排温度 ℃]]></O>
+<Expand/>
+</C>
+<C c="10" r="30" cs="2" s="6">
+<O>
+<![CDATA[汽缸膨胀2 mm]]></O>
+<Expand/>
+</C>
+<C c="12" r="30" cs="2" s="7">
+<O>
+<![CDATA[低压胀差2 mm]]></O>
+<Expand/>
+</C>
+<C c="0" r="31" s="1">
+<Expand/>
+</C>
+<C c="1" r="31" s="1">
+<Expand/>
+</C>
+<C c="2" r="31" s="1">
+<Expand/>
+</C>
+<C c="4" r="31" cs="2" s="6">
+<O t="D">
+<![CDATA[6.88]]></O>
+<Expand/>
+</C>
+<C c="6" r="31" cs="2" s="6">
+<O t="D">
+<![CDATA[570.5]]></O>
+<Expand/>
+</C>
+<C c="8" r="31" cs="2" s="6">
+<O t="D">
+<![CDATA[315.16]]></O>
+<Expand/>
+</C>
+<C c="10" r="31" cs="2" s="6">
+<O t="D">
+<![CDATA[18.48]]></O>
+<Expand/>
+</C>
+<C c="12" r="31" cs="2" s="7">
+<Expand/>
+</C>
+<C c="0" r="32" s="1">
+<Expand/>
+</C>
+<C c="1" r="32" s="1">
+<Expand/>
+</C>
+<C c="2" r="32" s="1">
+<Expand/>
+</C>
+<C c="4" r="32" cs="2" s="6">
+<O>
+<![CDATA[轴封供汽压力 kPa]]></O>
+<Expand/>
+</C>
+<C c="6" r="32" cs="2" s="6">
+<O>
+<![CDATA[轴封供汽温度 ℃]]></O>
+<Expand/>
+</C>
+<C c="8" r="32" cs="2" s="6">
+<O>
+<![CDATA[发电机氢压 MPa]]></O>
+<Expand/>
+</C>
+<C c="10" r="32" cs="2" s="6">
+<O>
+<![CDATA[发电机氢温 ℃]]></O>
+<Expand/>
+</C>
+<C c="12" r="32" cs="2" s="7">
+<O>
+<![CDATA[轴向位移 mm]]></O>
+<Expand/>
+</C>
+<C c="0" r="33" s="1">
+<Expand/>
+</C>
+<C c="1" r="33" s="1">
+<Expand/>
+</C>
+<C c="2" r="33" s="1">
+<Expand/>
+</C>
+<C c="4" r="33" cs="2" s="9">
+<O t="D">
+<![CDATA[52.2]]></O>
+<Expand/>
+</C>
+<C c="6" r="33" cs="2" s="9">
+<O>
+<![CDATA[253.3/149.4]]></O>
+<Expand/>
+</C>
+<C c="8" r="33" cs="2" s="9">
+<O t="D">
+<![CDATA[0.5]]></O>
+<Expand/>
+</C>
+<C c="10" r="33" cs="2" s="9">
+<O t="I">
+<![CDATA[42]]></O>
+<Expand/>
+</C>
+<C c="12" r="33" cs="2" s="10">
+<O>
+<![CDATA[0.52/0.48/0.62/0.59]]></O>
+<Expand/>
+</C>
+<C c="15" r="33">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="3" r="34">
+<O>
+<![CDATA[编制：]]></O>
+<Expand/>
+</C>
+<C c="4" r="34" cs="2">
+<Expand/>
+</C>
+<C c="6" r="34">
+<O>
+<![CDATA[审核：]]></O>
+<Expand/>
+</C>
+<C c="7" r="34" cs="2">
+<Expand/>
+</C>
+<C c="9" r="34">
+<O>
+<![CDATA[批准：]]></O>
+<Expand/>
+</C>
+<C c="10" r="34" cs="2">
+<Expand/>
+</C>
+<C c="3" r="39">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="108" foreground="-16737895"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2"/>
+<Bottom style="1"/>
+<Left style="2"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="2"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="2"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="2"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="2"/>
+<Left style="2"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="2"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="2"/>
+<Left style="1"/>
+<Right style="2"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

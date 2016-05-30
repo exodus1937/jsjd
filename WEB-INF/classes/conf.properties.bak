@@ -1,0 +1,9 @@
+
+ D:/software/swtfools/gpdf2swf.exe
+realpath=D:\\WeblogicTest\\jsjd\\flash\\swf\\
+swtfoolpath=D:/software/swtfools/gpdf2swf.exe
+
+driver=oracle.jdbc.driver.OracleDriver
+url=jdbc:oracle:thin:@182.18.19.152:1521:TEST
+username=jsjd
+password=jsjd

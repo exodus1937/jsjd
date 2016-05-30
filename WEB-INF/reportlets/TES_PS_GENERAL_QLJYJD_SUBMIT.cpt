@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[{CALL TES_PS_GENERAL_MAIN_SUB.ORG_COMBOX_SUB('${instanceCode}',?)}]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[{CALL TES_PS_GENERAL_MAIN_SUB.LIST_NAME_SUB('${instanceCode}',?)}]]></Query>
+</TableData>
+<TableData name="ds3" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select t.metal_crew,
+       t.supervision_time,
+       t.oil_variety,
+       t.shape,
+       t.water_content,
+       t.particle_size,
+       t.acid_value,
+       t.viscosity,
+       t.open_flash_point,
+       t.liquid_phase_corrosion,
+       t.demulsification,
+       t.foam_property,
+       t.air_release_value,
+       t.oil_quality,
+       t.QUALIFIED_RATE,
+       G.G_NAME
+  from TURBINE_OIL_SUPERVISION t, TES_PS_GENERAL_MAIN s,TES_BA_GENERATOR G
+  ${if(len(instanceCode) == 0, " where 1=2",
+ " where  t.general_id = s.general_id
+   and  G.G_ID=t.METAL_CREW
+   AND S.INST_CODE ='"+instanceCode+"'")}
+
+
+ ]]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars/>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="54720000" height="42768000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,1104900,1028700,723900,723900,1008000,1008000,1008000,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[3162300,0,0,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2590800,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="3" r="2" cs="14" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="GENERAL_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="3" s="1">
+<O>
+<![CDATA[填报单位：]]></O>
+<Expand/>
+</C>
+<C c="5" r="3" cs="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="3" s="1">
+<O>
+<![CDATA[填报日期：]]></O>
+<Expand/>
+</C>
+<C c="13" r="3" cs="2">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="CREATE_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="4" s="2">
+<Expand/>
+</C>
+<C c="1" r="4" s="2">
+<Expand/>
+</C>
+<C c="2" r="4" s="2">
+<Expand/>
+</C>
+<C c="3" r="4" rs="2" s="3">
+<O>
+<![CDATA[机组]]></O>
+<Expand/>
+</C>
+<C c="4" r="4" rs="2" s="3">
+<O>
+<![CDATA[日期]]></O>
+<Expand/>
+</C>
+<C c="5" r="4" rs="2" s="3">
+<O>
+<![CDATA[油种牌号]]></O>
+<Expand/>
+</C>
+<C c="6" r="4" rs="2" s="3">
+<O>
+<![CDATA[外状]]></O>
+<Expand/>
+</C>
+<C c="7" r="4" rs="2" s="3">
+<O>
+<![CDATA[水分]]></O>
+<Expand/>
+</C>
+<C c="8" r="4" rs="2" s="3">
+<O>
+<![CDATA[颗粒度NAS1638]]></O>
+<Expand/>
+</C>
+<C c="9" r="4" rs="2" s="3">
+<O>
+<![CDATA[酸值]]></O>
+<Expand/>
+</C>
+<C c="10" r="4" s="4">
+<O>
+<![CDATA[黏度]]></O>
+<Expand/>
+</C>
+<C c="11" r="4" rs="2" s="3">
+<O>
+<![CDATA[开口闪点]]></O>
+<Expand/>
+</C>
+<C c="12" r="4" rs="2" s="3">
+<O>
+<![CDATA[液相锈蚀]]></O>
+<Expand/>
+</C>
+<C c="13" r="4" rs="2" s="3">
+<O>
+<![CDATA[破乳化度]]></O>
+<Expand/>
+</C>
+<C c="14" r="4" rs="2" s="3">
+<O>
+<![CDATA[泡沫特性]]></O>
+<Expand/>
+</C>
+<C c="15" r="4" rs="2" s="3">
+<O>
+<![CDATA[空气释放值(50℃)]]></O>
+<Expand/>
+</C>
+<C c="16" r="4" s="4">
+<O>
+<![CDATA[油质]]></O>
+<Expand/>
+</C>
+<C c="0" r="5" s="2">
+<Expand/>
+</C>
+<C c="1" r="5" s="2">
+<Expand/>
+</C>
+<C c="2" r="5" s="2">
+<Expand/>
+</C>
+<C c="10" r="5" s="5">
+<O>
+<![CDATA[(40℃)]]></O>
+<Expand/>
+</C>
+<C c="16" r="5" s="5">
+<O>
+<![CDATA[合格率]]></O>
+<Expand/>
+</C>
+<C c="0" r="6" s="2">
+<Expand/>
+</C>
+<C c="1" r="6" s="2">
+<Expand/>
+</C>
+<C c="2" r="6" s="2">
+<Expand/>
+</C>
+<C c="3" r="6" s="3">
+<O>
+<![CDATA[单位]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" s="3">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="5" r="6" s="3">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" s="3">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="7" r="6" s="3">
+<O>
+<![CDATA[mg/kg]]></O>
+<Expand/>
+</C>
+<C c="8" r="6" s="3">
+<O>
+<![CDATA[级]]></O>
+<Expand/>
+</C>
+<C c="9" r="6" s="3">
+<O>
+<![CDATA[mgKOH/g]]></O>
+<Expand/>
+</C>
+<C c="10" r="6" s="3">
+<O>
+<![CDATA[mm2/s]]></O>
+<Expand/>
+</C>
+<C c="11" r="6" s="3">
+<O>
+<![CDATA[℃]]></O>
+<Expand/>
+</C>
+<C c="12" r="6" s="3">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="13" r="6" s="3">
+<O>
+<![CDATA[min]]></O>
+<Expand/>
+</C>
+<C c="14" r="6" s="3">
+<O>
+<![CDATA[mL/mL]]></O>
+<Expand/>
+</C>
+<C c="15" r="6" s="3">
+<O>
+<![CDATA[min]]></O>
+<Expand/>
+</C>
+<C c="16" r="6" s="3">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="3" r="7" s="3">
+<O>
+<![CDATA[标准值]]></O>
+<Expand/>
+</C>
+<C c="4" r="7" s="3">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="5" r="7" s="3">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="6" r="7" s="3">
+<O>
+<![CDATA[透明、无杂质]]></O>
+<Expand/>
+</C>
+<C c="7" r="7" s="3">
+<O>
+<![CDATA[≤80]]></O>
+<Expand/>
+</C>
+<C c="8" r="7" s="3">
+<O>
+<![CDATA[≤8]]></O>
+<Expand/>
+</C>
+<C c="9" r="7" s="3">
+<O>
+<![CDATA[≤0.3]]></O>
+<Expand/>
+</C>
+<C c="10" r="7" s="3">
+<O>
+<![CDATA[28.8～35.2]]></O>
+<Expand/>
+</C>
+<C c="11" r="7" s="3">
+<O>
+<![CDATA[≥180]]></O>
+<Expand/>
+</C>
+<C c="12" r="7" s="3">
+<O>
+<![CDATA[无锈]]></O>
+<Expand/>
+</C>
+<C c="13" r="7" s="3">
+<O>
+<![CDATA[≤30]]></O>
+<Expand/>
+</C>
+<C c="14" r="7" s="3">
+<O>
+<![CDATA[≤500/10]]></O>
+<Expand/>
+</C>
+<C c="15" r="7" s="3">
+<O>
+<![CDATA[≤10]]></O>
+<Expand/>
+</C>
+<C c="16" r="7" s="3">
+<Expand/>
+</C>
+<C c="3" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="G_NAME"/>
+<Complex order="1"/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<SortFormula>
+<![CDATA[G_NAME]]></SortFormula>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="SUPERVISION_TIME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="OIL_VARIETY"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="SHAPE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="WATER_CONTENT"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="PARTICLE_SIZE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="ACID_VALUE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="VISCOSITY"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="OPEN_FLASH_POINT"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="LIQUID_PHASE_CORROSION"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="DEMULSIFICATION"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="FOAM_PROPERTY"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="15" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AIR_RELEASE_VALUE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="16" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="OIL_QUALITY"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="9" s="3">
+<O>
+<![CDATA[全厂合格率]]></O>
+<Expand/>
+</C>
+<C c="4" r="9" cs="13" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="QUALIFIED_RATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="10" s="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="4" r="10" s="2">
+<Expand/>
+</C>
+<C c="5" r="10" s="2">
+<Expand/>
+</C>
+<C c="6" r="10" s="1">
+<O>
+<![CDATA[批准人：]]></O>
+<Expand/>
+</C>
+<C c="7" r="10">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="EXAMINE_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="10" s="2">
+<Expand/>
+</C>
+<C c="9" r="10" s="2">
+<Expand/>
+</C>
+<C c="10" r="10" s="1">
+<O>
+<![CDATA[审核人：]]></O>
+<Expand/>
+</C>
+<C c="11" r="10">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="APPROVAL_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="10" s="2">
+<Expand/>
+</C>
+<C c="13" r="10" s="2">
+<Expand/>
+</C>
+<C c="14" r="10" s="1">
+<O>
+<![CDATA[填报人：]]></O>
+<Expand/>
+</C>
+<C c="15" r="10">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="CREATE_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="16" r="10" s="2">
+<Expand/>
+</C>
+<C c="6" r="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="108" foreground="-16737895"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

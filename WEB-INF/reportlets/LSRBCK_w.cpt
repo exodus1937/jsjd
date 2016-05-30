@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="E_CREATE_DATE"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="S_CREATE_DATE"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="E_FILL_DATE"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="S_FILL_DATE"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select DISTINCT A.general_id,
+           A.GENERAL_CODE,
+           A.GENERAL_NAME,
+           A.FILL_DATE,
+           A.CREATE_DATE,
+           X.ORG_NAME,
+           A.ADUIT_STATUS,
+           U.EMP_NAME
+     from tes_ps_general_main A,
+          tes_ps_production_daily_detail T,
+          xip_pub_orgs X,
+          XIP_PUB_USERS_EMPS_V  U
+     where A.general_id = T.PRODUCTION_DAILY_ID
+       and A.ORG_ID = X.ORG_ID 
+       AND U.USER_ID =T.FILL_PERSON
+       AND (TO_CHAR(A.FILL_DATE,'YYYY/MM/DD')>= '${S_FILL_DATE}'
+           AND TO_CHAR(A.FILL_DATE,'YYYY/MM/DD')<= '${E_FILL_DATE}') 
+       AND (TO_CHAR(A.CREATE_DATE,'YYYY/MM/DD')>= '${S_CREATE_DATE}'
+           AND TO_CHAR(A.CREATE_DATE,'YYYY/MM/DD')<= '${E_CREATE_DATE}')
+
+
+
+]]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<Listener event="afterload">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[ //框架
+var wrap = $('.reportPane');
+//主体内容
+var body = $('.page-block');
+//计算偏移
+var dif = (wrap.width() - body.width()) / 2;
+//设置属性
+body.css({'margin-left': dif});]]></Content>
+</JavaScript>
+</Listener>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<Listener event="afterload">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[ //框架
+var wrap = $('.reportPane');
+//主体内容
+var body = $('.page-block');
+//计算偏移
+var dif = (wrap.width() - body.width()) / 2;
+//设置属性
+body.css({'margin-left': dif});]]></Content>
+</JavaScript>
+</Listener>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings isHorizontalCenterOnPage="true" headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="72000000" height="101808000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,1440000,723900,1008000,1066800,1008000,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[495300,2667000,0,2133600,10020300,9525000,2743200,2743200,2743200,9867900,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="0">
+<Expand/>
+</C>
+<C c="1" r="0" s="0">
+<Expand/>
+</C>
+<C c="2" r="0" s="0">
+<Expand/>
+</C>
+<C c="3" r="0" s="0">
+<Expand/>
+</C>
+<C c="4" r="0" s="0">
+<Expand/>
+</C>
+<C c="5" r="0" s="0">
+<Expand/>
+</C>
+<C c="6" r="0" s="0">
+<Expand/>
+</C>
+<C c="7" r="0" s="0">
+<Expand/>
+</C>
+<C c="8" r="0" s="0">
+<Expand/>
+</C>
+<C c="9" r="0" s="0">
+<Expand/>
+</C>
+<C c="10" r="0" s="0">
+<Expand/>
+</C>
+<C c="11" r="0" s="0">
+<Expand/>
+</C>
+<C c="0" r="1" s="0">
+<Expand/>
+</C>
+<C c="1" r="1" s="0">
+<Expand/>
+</C>
+<C c="2" r="1" s="0">
+<Expand/>
+</C>
+<C c="3" r="1" s="0">
+<Expand/>
+</C>
+<C c="4" r="1" s="0">
+<Expand/>
+</C>
+<C c="5" r="1" s="0">
+<Expand/>
+</C>
+<C c="6" r="1" s="0">
+<Expand/>
+</C>
+<C c="7" r="1" s="0">
+<Expand/>
+</C>
+<C c="8" r="1" s="0">
+<Expand/>
+</C>
+<C c="9" r="1" s="0">
+<Expand/>
+</C>
+<C c="10" r="1" s="0">
+<Expand/>
+</C>
+<C c="11" r="1" s="0">
+<Expand/>
+</C>
+<C c="0" r="2" s="0">
+<Expand/>
+</C>
+<C c="1" r="2" s="0">
+<Expand/>
+</C>
+<C c="2" r="2" s="0">
+<Expand/>
+</C>
+<C c="3" r="2" cs="8" s="1">
+<O>
+<![CDATA[历史生产日报]]></O>
+<Expand/>
+</C>
+<C c="11" r="2" s="0">
+<Expand/>
+</C>
+<C c="0" r="4" s="0">
+<Expand/>
+</C>
+<C c="1" r="4" s="0">
+<Expand/>
+</C>
+<C c="2" r="4" s="0">
+<Expand/>
+</C>
+<C c="3" r="4" s="2">
+<O>
+<![CDATA[序号]]></O>
+<Expand/>
+</C>
+<C c="4" r="4" s="2">
+<O>
+<![CDATA[编号]]></O>
+<Expand/>
+</C>
+<C c="5" r="4" s="2">
+<O>
+<![CDATA[名称]]></O>
+<Expand/>
+</C>
+<C c="6" r="4" s="2">
+<O>
+<![CDATA[填报人]]></O>
+<Expand/>
+</C>
+<C c="7" r="4" s="2">
+<O>
+<![CDATA[填报日期]]></O>
+<Expand/>
+</C>
+<C c="8" r="4" s="2">
+<O>
+<![CDATA[创建日期]]></O>
+<Expand/>
+</C>
+<C c="9" r="4" s="2">
+<O>
+<![CDATA[电厂名称]]></O>
+<Expand/>
+</C>
+<C c="10" r="4" s="2">
+<O>
+<![CDATA[状态]]></O>
+<Expand/>
+</C>
+<C c="11" r="4" s="0">
+<Expand/>
+</C>
+<C c="0" r="5" s="0">
+<Expand/>
+</C>
+<C c="1" r="5" s="0">
+<Expand/>
+</C>
+<C c="2" r="5" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERAL_ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="5" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=seq()]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="5" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERAL_CODE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="5" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERAL_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="网络报表1">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=C6]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<TargetFrame>
+<![CDATA[_blank]]></TargetFrame>
+<Features status="true" toolbar="true" location="true" menubar="true" resizable="true" directories="true" scrollbars="true"/>
+<ReportletName>
+<![CDATA[/LSRBCK.cpt]]></ReportletName>
+</JavaScript>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand dir="0"/>
+</C>
+<C c="6" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="EMP_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="FILL_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="CREATE_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ADUIT_STATUS"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="5" s="0">
+<Expand/>
+</C>
+<C c="13" r="5">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="15" r="5">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="6" s="0">
+<Expand/>
+</C>
+<C c="1" r="6" s="0">
+<Expand/>
+</C>
+<C c="2" r="6" s="0">
+<Expand/>
+</C>
+<C c="3" r="6" s="0">
+<Expand/>
+</C>
+<C c="4" r="6" s="0">
+<Expand/>
+</C>
+<C c="5" r="6" s="0">
+<Expand/>
+</C>
+<C c="6" r="6" s="0">
+<Expand/>
+</C>
+<C c="7" r="6" s="0">
+<Expand/>
+</C>
+<C c="8" r="6" s="0">
+<Expand/>
+</C>
+<C c="9" r="6" s="0">
+<Expand/>
+</C>
+<C c="10" r="6" s="0">
+<Expand/>
+</C>
+<C c="11" r="6" s="0">
+<Expand/>
+</C>
+<C c="0" r="7" s="0">
+<Expand/>
+</C>
+<C c="1" r="7" s="0">
+<Expand/>
+</C>
+<C c="2" r="7" s="0">
+<Expand/>
+</C>
+<C c="3" r="7" s="0">
+<Expand/>
+</C>
+<C c="4" r="7" s="0">
+<Expand/>
+</C>
+<C c="5" r="7" s="0">
+<Expand/>
+</C>
+<C c="6" r="7" s="0">
+<Expand/>
+</C>
+<C c="7" r="7" s="0">
+<Expand/>
+</C>
+<C c="8" r="7" s="0">
+<Expand/>
+</C>
+<C c="9" r="7" s="0">
+<Expand/>
+</C>
+<C c="10" r="7" s="0">
+<Expand/>
+</C>
+<C c="11" r="7" s="0">
+<Expand/>
+</C>
+<C c="0" r="8" s="0">
+<Expand/>
+</C>
+<C c="1" r="8" s="0">
+<Expand/>
+</C>
+<C c="2" r="8" s="0">
+<Expand/>
+</C>
+<C c="3" r="8" s="0">
+<Expand/>
+</C>
+<C c="4" r="8" s="0">
+<Expand/>
+</C>
+<C c="5" r="8" s="0">
+<Expand/>
+</C>
+<C c="6" r="8" s="0">
+<Expand/>
+</C>
+<C c="7" r="8" s="0">
+<Expand/>
+</C>
+<C c="8" r="8" s="0">
+<Expand/>
+</C>
+<C c="9" r="8" s="0">
+<Expand/>
+</C>
+<C c="10" r="8" s="0">
+<Expand/>
+</C>
+<C c="11" r="8" s="0">
+<Expand/>
+</C>
+<C c="0" r="9" s="0">
+<Expand/>
+</C>
+<C c="1" r="9" s="0">
+<Expand/>
+</C>
+<C c="2" r="9" s="0">
+<Expand/>
+</C>
+<C c="3" r="9" s="0">
+<Expand/>
+</C>
+<C c="4" r="9" s="0">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="5" r="9" s="0">
+<Expand/>
+</C>
+<C c="6" r="9" s="0">
+<Expand/>
+</C>
+<C c="7" r="9" s="0">
+<Expand/>
+</C>
+<C c="8" r="9" s="0">
+<Expand/>
+</C>
+<C c="9" r="9" s="0">
+<Expand/>
+</C>
+<C c="10" r="9" s="0">
+<Expand/>
+</C>
+<C c="11" r="9" s="0">
+<Expand/>
+</C>
+<C c="5" r="12">
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[914400,152400,838200,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[3505200,4686300,3429000,3848100,419100,2781300,4000500,2743200,3848100,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="6">
+<O>
+<![CDATA[填报开始日期：]]></O>
+<Expand/>
+</C>
+<C c="1" r="0" s="7">
+<Widget class="com.fr.report.web.ui.DateEditor">
+<Listener event="afteredit">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[var E_FILL_DATE=this.options.form.getWidgetByName
+("E_FILL_DATE");
+var S_FILL_DATE=this.options.form.getWidgetByName
+("S_FILL_DATE").getValue(); 
+if (S_FILL_DATE){
+    E_FILL_DATE.setValue(S_FILL_DATE);
+}]]></Content>
+</JavaScript>
+</Listener>
+<WidgetName name="S_FILL_DATE"/>
+<WidgetAttr/>
+<EMSG>
+<![CDATA[请选择开始时间！]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<DateAttr format="yyyy/MM/dd" start="" end=""/>
+</Widget>
+<Expand/>
+</C>
+<C c="2" r="0" s="6">
+<O>
+<![CDATA[填报结束日期：]]></O>
+<Expand/>
+</C>
+<C c="3" r="0" s="7">
+<Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetName name="E_FILL_DATE"/>
+<WidgetAttr/>
+<EMSG>
+<![CDATA[请选择结束时间！]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<DateAttr format="yyyy/MM/dd" start="" end=""/>
+</Widget>
+<Expand/>
+</C>
+<C c="0" r="2" s="6">
+<O>
+<![CDATA[创建开始日期：]]></O>
+<Expand/>
+</C>
+<C c="1" r="2" s="7">
+<Widget class="com.fr.report.web.ui.DateEditor">
+<Listener event="afteredit">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[var E_CREATE_DATE=this.options.form.getWidgetByName
+("E_CREATE_DATE");
+var S_CREATE_DATE=this.options.form.getWidgetByName
+("S_CREATE_DATE").getValue(); 
+if (S_CREATE_DATE){
+    E_CREATE_DATE.setValue(S_CREATE_DATE);
+}]]></Content>
+</JavaScript>
+</Listener>
+<WidgetName name="S_CREATE_DATE"/>
+<WidgetAttr/>
+<EMSG>
+<![CDATA[请选择创建开始时间！]]></EMSG>
+<DateAttr format="yyyy/MM/dd" start="" end=""/>
+</Widget>
+<Expand/>
+</C>
+<C c="2" r="2" s="6">
+<O>
+<![CDATA[创建结束日期：]]></O>
+<Expand/>
+</C>
+<C c="3" r="2" s="7">
+<Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetName name="E_CREATE_DATE"/>
+<WidgetAttr/>
+<EMSG>
+<![CDATA[请选择创建结束时间！]]></EMSG>
+<DateAttr format="yyyy/MM/dd" start="" end=""/>
+</Widget>
+<Expand/>
+</C>
+<C c="5" r="2">
+<O>
+<![CDATA[查询]]></O>
+<Widget class="com.fr.report.web.ui.impl.form.FormSubmitButton">
+<WidgetAttr/>
+<Hotkeys>
+<![CDATA[enter]]></Hotkeys>
+</Widget>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</ParameterUI>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="108"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="72"/>
+<Background name="ColorBackground" color="-6710785"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72" foreground="-16776961" underline="1"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<Format class="java.text.SimpleDateFormat">
+<![CDATA[yyyy/MM/dd]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+</WorkBook>

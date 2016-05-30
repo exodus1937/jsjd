@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>访客记录</title>
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../css/common1.css">
+    <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script type="text/javascript" src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../css/pagination.css" />
+</head>
+<body>
+<div id="wrap">
+    <div class="header">
+        <div class="page-header">
+            <h1> <small>访客统计</small></h1>
+        </div>
+        <div class="canvas1 left" id="nd"></div>
+        <div class="canvas2 left" id="yd"></div>
+
+    </div>
+    <div class="clearfix"></div>
+    <div class="select">
+
+        <form class="form-inline">
+            <div class="left form-group" style="margin:0 10px;">筛选条件</div>
+            <div class="form-group ">
+                <label class="w60 control-label left" for="org_id">单位</label>
+                <select  name="choose" class="form-control col-sm-1" id="org_id">
+                    <option value="" select="selected"></option>
+                    <option value="c21834b4-1cb0-490f-a2a8-deeaf7f7e065">岱海发电</option>
+                    <option value="472212af-1977-462b-a74a-a1f36ed6562d" >宁东发电</option>
+                    <option value="a61365e2-969d-4352-b3f8-805027ab9f1d" >集团本部</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="nameValue" class="w60 control-label left">姓名</label>
+                <input class="form-control col-sm-1" type="text" id="nameValue" >
+            </div>
+            <div class="form-group">
+                <label for="startTime" class=" control-label left">开始时间</label>
+                <!--<input class="form-control col-sm-1" type="text" id="startTime" >-->
+
+
+                <div class="input-group date form_datetime col-sm-2"  data-link-field="dtp_input1" style="position: relative;top: -3px;">
+                    <input  id="startTime" class="form-control col-sm-12" size="16"  type="text" value="" readonly style="width:105px">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                </div>
+
+                <input type="hidden" id="dtp_input1" value="" /><br/>
+            </div>
+            <div class="form-group">
+                <label for="endTime" class=" control-label left">结束时间</label>
+               <!-- <input class="form-control col-sm-1" type="text" id="endTime" >-->
+                <div class="input-group date form_datetime col-sm-2"  data-link-field="dtp_input1" style="position: relative;top: -3px;">
+                    <input  id="endTime" class="form-control col-sm-12" size="16"  type="text" value="" readonly style="width:105px">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label for="status" class=" control-label left">状态</label>
+                <select  name="choose" class="form-control col-sm-1" id="status">
+                    <option value="1">在线</option>
+                    <option value="0">离线</option>
+                </select>
+            </div>
+
+
+
+            <div class="form-group" id="query" style="margin-left:22px;">
+                <button class="form-control col-sm-1 btn btn-primary" type="button" id="submit" style="position: relative;top: -2px;">查询</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="clearfix"></div>
+    <table class="table table_bordered" style="margin-top:10px;">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>单位</th>
+                <th>姓名</th>
+                <th>登录时间</th>
+                <th>退出时间</th>
+                <th>当前状态</th>
+                <th>在线时长</th>
+            </tr>
+
+        </thead>
+        <tbody id="detail">
+
+
+        </tbody>
+    </table>
+    <div id="Pagination" class="pagination" style="float:right"><!-- 这里显示分页 --></div>
+</div>
+
+<!-- Button trigger modal -->
+<!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Launch demo modal
+</button>-->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">岱海发电  陈浩  <small id="lastTime"> 最近登陆时间 2016-5-12 12：12：12</small></h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table_bordered" style="">
+                    <thead>
+                    <tr>
+                        <th>累计登录次数</th>
+                        <th>本年登录次数</th>
+                        <th>本月登录次数</th>
+                        <th>本年在线时长</th>
+                        <th>本月在线时长</th>
+
+                    </tr>
+
+                    </thead>
+                    <tbody id="detail_2">
+                      
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script type="text/javascript" src="../js/highcharts.js"></script>
+<script type="text/javascript" src="../js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/JavaScript" src="../js/jquery.pagination.js">
+    
+</script>
+<script type="text/javascript" src="../js/base.js"></script>
+<script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0,
+        format: "yyyy-mm-dd"
+    });
+
+
+</script>
+</html>

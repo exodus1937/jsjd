@@ -1,0 +1,16 @@
+body{font-family:"微软雅黑";}
+.wj_tongzhi { position: fixed; z-index: 4000; border: 1px solid #cccccc; background: #ffffff; display: none; }
+.drsMoveHandle { height: 40px; background: #177eda; cursor: move; }
+.drsMoveHandle h1{float:right;display:inline;width:120px;height:40px;margin:0 250px 0 0;line-height:40px;text-align:center;overflow:hidden;font-size:11pt;font-family:Î¢ÈíÑÅºÚ;color:#ffffff;cursor:pointer;}
+.drsMoveHandle span { float: right; width: 30px; height: 40px; cursor: pointer; background: url(../img/wj_close.jpg) right center no-repeat; }
+.drsMoveHandle b { font-weight:800;font-size:11pt;float: right; width: 30px; height: 40px; cursor: pointer;line-height:40px;text-align:center;color:#fff;margin:0 -350px 0 0;}
+.linecontent { width: 96%; height: 330px; margin: 10px auto; overflow: hidden; text-align: center; overflow-y:auto; }
+#pa{text-align: left;}
+.wu_tab1 { width: 100%; margin: 0 auto; background: #ffffff; table-layout:fixed;jerry: expression(cellSpacing="1"); border-collapse: separate; border-spacing: 1px;}
+.wu_tab1 thead td { height: 40px; padding: 0 10px; background: #f2f2f2; text-align: center; vertical-align: middle; line-height: normal; color: #177eda; font-size: 12pt; }
+.wu_tab1 tbody td { height: 40px;  color:#000000; text-align: center; vertical-align: middle; line-height: normal; }
+.wu_tab1 tbody tr:nth-of-type(even) { background: #f2f2f2; }
+.wu_tab1 tbody tr:hover { background: #e4e4e4; }
+.wu_tab1 td[rowspan]{background:#f2f2f2;}
+#JTtz{overflow-y: scroll;}
+.border_radius{position:absolute;right:8px;top:3px;width:20px;height: 20px;background: red;border-radius:10px;-webkit-border-radius: 10px;-moz-border-radius: 10px;}

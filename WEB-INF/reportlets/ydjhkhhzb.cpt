@@ -1,0 +1,1343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="YEAR"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="DATE"/>
+<O>
+<![CDATA[1]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT DISTINCT T.ORG_ID,
+       T.ORG_NAME, 
+       TO_NUMBER(TO_CHAR(P.CREATE_DATE, 'MM')) MON,
+       P.CREATE_DATE,
+       (14 - COUNT(P.S_P_NAME))*10 W_COST,
+       P.S_P_TYPE,
+       TO_NUMBER(TO_CHAR(P.CREATE_DATE,'yyyy')) yea
+  FROM XIP_PUB_ORGS T,TES_PS_SUP_PLAN P,TES_BA_SPEC X
+ WHERE T.ORG_ID = P.ORG_ID
+   AND P.S_P_SPE = X.SPEC_ID
+   AND P.S_P_TYPE = '2'
+   AND TO_NUMBER(TO_CHAR(P.CREATE_DATE, 'Q')) IN (${DATE})
+   AND TO_NUMBER(TRUNC(TO_CHAR(P.CREATE_DATE, 'YYYY'))) = '${YEAR}'
+   AND P.IS_SUMMARIZE = '0'
+   GROUP BY T.ORG_ID,T.ORG_NAME,P.CREATE_DATE,P.S_P_TYPE]]></Query>
+</TableData>
+<TableData name="ds3" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct to_char(t.create_date,'yyyy/mm/dd') from TES_BA_T_P_W_LIST t
+ where to_char(t.create_date,'yyyy/mm') = (select distinct to_char(sysdate,'yyyy/mm') from TES_BA_T_P_W_LIST)
+   and to_number(to_char(t.create_date,'dd')) = 5
+]]></Query>
+</TableData>
+<TableData name="ds4" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct (select distinct to_char(sysdate,'yyyy/mm')||'/05' from TES_BA_T_P_W_LIST) from TES_BA_T_P_W_LIST t]]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="72000000" height="101808000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,1600200,1905000,0,1485900,914400,1143000,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[3048000,0,6934200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="2" r="2" cs="18" s="0">
+<O>
+<![CDATA[月度总结考核汇总表]]></O>
+<Expand/>
+</C>
+<C c="2" r="3" s="1">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="3" r="3">
+<Expand/>
+</C>
+<C c="4" r="3">
+<Expand/>
+</C>
+<C c="5" r="3">
+<Expand/>
+</C>
+<C c="6" r="3">
+<Expand/>
+</C>
+<C c="7" r="3">
+<Expand/>
+</C>
+<C c="8" r="3">
+<Expand/>
+</C>
+<C c="9" r="3">
+<Expand/>
+</C>
+<C c="10" r="3">
+<Expand/>
+</C>
+<C c="11" r="3">
+<Expand/>
+</C>
+<C c="12" r="3">
+<Expand/>
+</C>
+<C c="13" r="3">
+<Expand/>
+</C>
+<C c="14" r="3">
+<Expand/>
+</C>
+<C c="15" r="3">
+<Expand/>
+</C>
+<C c="16" r="3">
+<Expand/>
+</C>
+<C c="17" r="3">
+<Expand/>
+</C>
+<C c="18" r="3">
+<Expand/>
+</C>
+<C c="19" r="3">
+<Expand/>
+</C>
+<C c="2" r="4">
+<Expand/>
+</C>
+<C c="3" r="4" cs="4">
+<O t="I">
+<![CDATA[1]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="13">
+<Parameter>
+<Attributes name="date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="7" r="4" cs="4">
+<O t="I">
+<![CDATA[2]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="13">
+<Parameter>
+<Attributes name="date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="11" r="4" cs="4">
+<O t="I">
+<![CDATA[3]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="13">
+<Parameter>
+<Attributes name="date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="15" r="4" cs="4">
+<O t="I">
+<![CDATA[4]]></O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="13">
+<Parameter>
+<Attributes name="date"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ColWidthHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="2" r="5" rs="2" s="2">
+<O t="BiasTextPainter">
+<IsBackSlash value="false"/>
+<![CDATA[         考核信息 |             电厂名称 ]]></O>
+<Expand/>
+</C>
+<C c="3" r="5" cs="4" s="3">
+<O>
+<![CDATA[第一季度汇总考核]]></O>
+<Expand/>
+</C>
+<C c="7" r="5" cs="4" s="3">
+<O>
+<![CDATA[第二季度汇总考核]]></O>
+<Expand/>
+</C>
+<C c="11" r="5" cs="4" s="3">
+<O>
+<![CDATA[第三季度汇总考核]]></O>
+<Expand/>
+</C>
+<C c="15" r="5" cs="4" s="3">
+<O>
+<![CDATA[第四季度汇总考核]]></O>
+<Expand/>
+</C>
+<C c="19" r="5" rs="2" s="3">
+<O>
+<![CDATA[总计]]></O>
+<Expand/>
+</C>
+<C c="1" r="6">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="YEA"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="6" s="4">
+<O>
+<![CDATA[1月]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" s="4">
+<O>
+<![CDATA[2月]]></O>
+<Expand/>
+</C>
+<C c="5" r="6" s="4">
+<O>
+<![CDATA[3月]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" s="4">
+<O>
+<![CDATA[合计]]></O>
+<Expand/>
+</C>
+<C c="7" r="6" s="4">
+<O>
+<![CDATA[4月]]></O>
+<Expand/>
+</C>
+<C c="8" r="6" s="4">
+<O>
+<![CDATA[5月]]></O>
+<Expand/>
+</C>
+<C c="9" r="6" s="4">
+<O>
+<![CDATA[6月]]></O>
+<Expand/>
+</C>
+<C c="10" r="6" s="4">
+<O>
+<![CDATA[合计]]></O>
+<Expand/>
+</C>
+<C c="11" r="6" s="4">
+<O>
+<![CDATA[7月]]></O>
+<Expand/>
+</C>
+<C c="12" r="6" s="4">
+<O>
+<![CDATA[8月]]></O>
+<Expand/>
+</C>
+<C c="13" r="6" s="4">
+<O>
+<![CDATA[9月]]></O>
+<Expand/>
+</C>
+<C c="14" r="6" s="4">
+<O>
+<![CDATA[合计]]></O>
+<Expand/>
+</C>
+<C c="15" r="6" s="4">
+<O>
+<![CDATA[10月]]></O>
+<Expand/>
+</C>
+<C c="16" r="6" s="4">
+<O>
+<![CDATA[11月]]></O>
+<Expand/>
+</C>
+<C c="17" r="6" s="4">
+<O>
+<![CDATA[12月]]></O>
+<Expand/>
+</C>
+<C c="18" r="6" s="4">
+<O>
+<![CDATA[合计]]></O>
+<Expand/>
+</C>
+<C c="1" r="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="W_COST"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="JavaScript1">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b8]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="yea"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b7]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<Content>
+<![CDATA[FR.showIframeDialog({
+url:"ReportServer?reportlet=ydjhkhhzb_je.cpt&op=view&org_id=${org_id}&yea=${yea}&month=1",
+title:"查看明细",
+width:500,
+height:500
+})]]></Content>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="4" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="W_COST"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="JavaScript1">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b8]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="yea"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b7]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<Content>
+<![CDATA[FR.showIframeDialog({
+url:"ReportServer?reportlet=ydjhkhhzb_je.cpt&op=view&org_id=${org_id}&yea=${yea}&month=2",
+title:"查看明细",
+width:500,
+height:500
+})]]></Content>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="5" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="W_COST"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="JavaScript1">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="yea"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b7]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="org_id"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b8]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<Content>
+<![CDATA[FR.showIframeDialog({
+url:"ReportServer?reportlet=ydjhkhhzb_je.cpt&op=view&org_id=${org_id}&yea=${yea}&month=3",
+title:"查看明细",
+width:500,
+height:500
+})]]></Content>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="6" r="7" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(D8:F8)]]></Attributes>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="W_COST"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="JavaScript1">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b8]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="yea"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b7]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<Content>
+<![CDATA[FR.showIframeDialog({
+url:"ReportServer?reportlet=ydjhkhhzb_je.cpt&op=view&org_id=${org_id}&yea=${yea}&month=4",
+title:"查看明细",
+width:500,
+height:500
+})]]></Content>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="8" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="W_COST"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[5]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="JavaScript1">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b8]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="yea"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b7]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<Content>
+<![CDATA[FR.showIframeDialog({
+url:"ReportServer?reportlet=ydjhkhhzb_je.cpt&op=view&org_id=${org_id}&yea=${yea}&month=5",
+title:"查看明细",
+width:500,
+height:500
+})]]></Content>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="9" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="W_COST"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[6]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="JavaScript1">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b8]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="yea"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b7]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<Content>
+<![CDATA[FR.showIframeDialog({
+url:"ReportServer?reportlet=ydjhkhhzb_je.cpt&op=view&org_id=${org_id}&yea=${yea}&month=6",
+title:"查看明细",
+width:500,
+height:500
+})]]></Content>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="10" r="7" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(H8:J8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="W_COST"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[7]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="JavaScript1">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b8]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="yea"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b7]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<Content>
+<![CDATA[FR.showIframeDialog({
+url:"ReportServer?reportlet=ydjhkhhzb_je.cpt&op=view&org_id=${org_id}&yea=${yea}&month=7",
+title:"查看明细",
+width:500,
+height:500
+})]]></Content>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="12" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="W_COST"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[8]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="JavaScript1">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b8]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="yea"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b7]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<Content>
+<![CDATA[FR.showIframeDialog({
+url:"ReportServer?reportlet=ydjhkhhzb_je.cpt&op=view&org_id=${org_id}&yea=${yea}&month=8",
+title:"查看明细",
+width:500,
+height:500
+})]]></Content>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="13" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="W_COST"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[9]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="JavaScript1">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b8]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="yea"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b7]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<Content>
+<![CDATA[FR.showIframeDialog({
+url:"ReportServer?reportlet=ydjhkhhzb_je.cpt&op=view&org_id=${org_id}&yea=${yea}&month=9",
+title:"查看明细",
+width:500,
+height:500
+})]]></Content>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="14" r="7" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(L8:N8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="15" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="W_COST"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[10]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="JavaScript1">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b8]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="yea"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b7]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<Content>
+<![CDATA[FR.showIframeDialog({
+url:"ReportServer?reportlet=ydjhkhhzb_je.cpt&op=view&org_id=${org_id}&yea=${yea}&month=10",
+title:"查看明细",
+width:500,
+height:500
+})]]></Content>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="16" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="W_COST"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[11]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="JavaScript1">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b8]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="yea"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b7]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<Content>
+<![CDATA[FR.showIframeDialog({
+url:"ReportServer?reportlet=ydjhkhhzb_je.cpt&op=view&org_id=${org_id}&yea=${yea}&month=11",
+title:"查看明细",
+width:500,
+height:500
+})]]></Content>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="17" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="W_COST"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[12]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="JavaScript1">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b8]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="yea"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b7]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<Content>
+<![CDATA[FR.showIframeDialog({
+url:"ReportServer?reportlet=ydjhkhhzb_je.cpt&op=view&org_id=${org_id}&yea=${yea}&month=12",
+title:"查看明细",
+width:500,
+height:500
+})]]></Content>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="18" r="7" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(P8:R8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="19" r="7" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(G8, K8, O8, S8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="20" r="7">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="17" r="8" s="6">
+<O>
+<![CDATA[制表日期：]]></O>
+<Expand/>
+</C>
+<C c="18" r="8" cs="2">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="(SELECTDISTINCTTO_CHAR(SYSDATE,&apos;YYYY/MM&apos;)||&apos;/05&apos;FROMTES_BA_T_P_W_LIST)"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="21" r="8">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="3" r="10">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,1790700,4267200,1333500,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="6">
+<O>
+<![CDATA[年份：]]></O>
+<Expand/>
+</C>
+<C c="1" r="0">
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetName name="YEAR"/>
+<WidgetAttr/>
+<EMSG>
+<![CDATA[年份不能为空！]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<Editable>
+<![CDATA[false]]></Editable>
+<Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="0" vi="0"/>
+<Formula>
+<![CDATA[select distinct to_number(trunc(to_char(CREATE_DATE,'yyyy'))) 
+ from  TES_PS_SUP_PLAN t ]]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Widget>
+<Expand/>
+</C>
+<C c="2" r="0" s="6">
+<O>
+<![CDATA[季度：]]></O>
+<Expand/>
+</C>
+<C c="3" r="0">
+<Widget class="com.fr.report.web.ui.ComboCheckBox">
+<WidgetName name="date"/>
+<WidgetAttr/>
+<EMSG>
+<![CDATA[请选择季度！]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<Editable>
+<![CDATA[false]]></Editable>
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="1" value="第一季度"/>
+<Dict key="2" value="第二季度"/>
+<Dict key="3" value="第三季度"/>
+<Dict key="4" value="第四季度"/>
+</CustomDictAttr>
+</Dictionary>
+</Widget>
+<Expand/>
+</C>
+<C c="5" r="0">
+<O>
+<![CDATA[查询]]></O>
+<Widget class="com.fr.report.web.ui.impl.form.FormSubmitButton">
+<WidgetAttr/>
+<Hotkeys>
+<![CDATA[enter]]></Hotkeys>
+</Widget>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</ParameterUI>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="104"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="108" foreground="-16737895"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="104"/>
+<Background name="ColorBackground" color="-16711681"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="72"/>
+<Background name="ColorBackground" color="-16711681"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-16711681"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+</WorkBook>

@@ -1,0 +1,81 @@
+
+/****************table**************************/
+.St-table{}
+.St-table table{text-align: center; font-size:14px; color:#333; border:1px #a1d3e6 solid;word-break: break-all; word-wrap:break-word;}
+.St-table table tr{height:30px;}
+.St-table table tr td{border:1px #a1d3e6 solid;}
+.St-table .even-row{ background-color:#bae1fa;}
+.St-table .odd-row{ background-color:#f3f3f3;}
+.S_table-red{background-color:#ff5050;}
+#S_tablebg{ background-color:#ccf1ff; height:50px;}
+#S_tableh0{ background-color:#ccf1ff;}
+
+.S_rongyu_list_title{height:27px; width:100%; background-color:#ccf1ff; padding-top:8px;}
+.S_rongyu_list_title ul{margin-left:19px;}
+.S_rongyu_list_title ul li{float:left; line-height: 17px; margin-right:36px; cursor: pointer;}
+.S_rongyu_list_title ul li a{ font-size:14px; color:#333;}
+.S_rongyu_list_title ul li.S_title_a{height:20px;background:url(../imgs/yiji/shu_add.png) 0 0 no-repeat; padding-left:25px;}
+.S_rongyu_list_title ul li.S_title_b{height:20px;background:url(../imgs/yiji/shu_xiu.png) 0 0 no-repeat; padding-left:25px;}
+.S_rongyu_list_title ul li.S_title_c{height:20px;background:url(../imgs/yiji/shu_fei.png) 0 0 no-repeat; padding-left:25px;}
+.S_rongyu_list_title ul li.S_title_d{height:20px;background:url(../imgs/yiji/shu_gui.png) 0 0 no-repeat; padding-left:25px;}
+.S_rongyu_list_title ul li.S_title_e{height:20px;background:url(../imgs/yiji/shu_cha.png) 0 0 no-repeat; padding-left:25px;}
+
+
+
+
+
+/*饼状图*/
+.St-pie{width:100%;display:none;}
+.St-pie .St_pie_left{float:left; background-color: #cde9f7; border-radius:5px; border:1px #47afff solid;width:49%;}
+.St-pie .St_pie_left img{ margin:0 auto;}
+.St-pie_title{color:#114473;font-size:14px;line-height:49px; border-bottom:1px #47afff solid; display:inline-block;width: 100%; padding-left:21px;}
+.St-pie .St_pie_right{float:right;background-color: #cde9f7; border-radius:5px;width:49%;border:1px #47afff solid;}
+.St-pie .St_pie_right img{ margin:0 auto;}
+
+.St_column{ background-color: #cde9f7; border-radius:5px; border:1px #47afff solid;width:100%;}
+.St_column img{ margin:0 auto;}
+
+.S_marT{ margin-top:1%;}
+#S_marTB{ margin-top:5%; margin-bottom:10%;}
+#S_marTB1{ margin-top:5%; margin-bottom:5%;}
+
+
+
+/**2015.9.2*/
+.St_table_none{ background-color:#fff; padding:4%;}.St_table_none table{text-align: center; font-size:14px; color:#333; border:1px #ccc solid;word-break: break-all; word-wrap:break-word;}
+.St_table_none table tr{height:30px;}
+.St_table_none table tr td{border:1px #ccc solid;}
+
+.table-left{ text-align:left; padding-left:22px;}
+.table_tit{}
+.table_tit p{ font-size:19px; color:#333;    line-height: 33px;}
+
+/**2015.9.2*/
+.St_table_none{ background-color:#fff; padding:4%;}.St_table_none table{text-align: center; font-size:14px; color:#333; border:1px #ccc solid;word-break: break-all; word-wrap:break-word;}
+.St_table_none table tr{height:30px;}
+.St_table_none table tr td{border:1px #ccc solid;}
+
+.table-left{ text-align:left; padding-left:22px;}
+.table_tit{}
+.table_tit p{ font-size:19px; color:#333;    line-height: 33px;}
+
+
+.cut{display:block;}
+
+
+
+
+
+/**2015.09.14*/
+.table-caozuo a{ text-decoration:underline;color:#377dbf;}
+
+
+
+
+
+
+
+
+
+
+

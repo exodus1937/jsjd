@@ -1,0 +1,1276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select DISTINCT 
+       TO_CHAR(a.FILL_DATE,'YYYY"年"MM"月"DD"日"') FILL_DATE,
+       X.ORG_NAME,
+       A.ADUIT_STATUS,
+       X.ORG_SHORT_NAME,
+       U.EMP_NAME,
+       T.GENERATOR1,
+       T.GENERATOR2,
+       T.GENERATOR3,
+       T.GENERATOR4,
+       T.QUOTA_NAME,
+       decode(a.POWER_STATION_TYPE,'1','火电','2','水电','3','风电','4','光伏') status
+ from tes_ps_general_main A,
+      tes_ps_production_daily_detail T,
+      xip_pub_orgs X,
+      XIP_PUB_USERS_EMPS_V  U
+ where A.general_id = T.PRODUCTION_DAILY_ID
+   and A.ORG_ID = X.ORG_ID 
+   AND T.FILL_PERSON = U.USER_ID
+   AND A.GENERAL_ID = '${GENERAL_ID}'
+]]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="43200000" height="42768000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,1447800,723900,990600,990600,266700,952500,952500,952500,952500,952500,952500,952500,952500,952500,952500,952500,952500,952500,952500,952500,952500,952500,952500,952500,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,2743200,2743200,2743200,3390900,3390900,3390900,3390900,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="3" r="1" cs="6" s="0">
+<O>
+<![CDATA[生产日报查看]]></O>
+<Expand/>
+</C>
+<C c="3" r="3" s="1">
+<O>
+<![CDATA[电厂名称：]]></O>
+<Expand/>
+</C>
+<C c="4" r="3" cs="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="3" s="1">
+<O>
+<![CDATA[电厂类型：]]></O>
+<Expand/>
+</C>
+<C c="8" r="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="STATUS"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="4" s="1">
+<O>
+<![CDATA[填报日期：]]></O>
+<Expand/>
+</C>
+<C c="4" r="4" cs="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="FILL_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="4" s="1">
+<O>
+<![CDATA[填报人：]]></O>
+<Expand/>
+</C>
+<C c="8" r="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="EMP_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="6" cs="2" s="2">
+<O>
+<![CDATA[单位名称]]></O>
+<Expand/>
+</C>
+<C c="5" r="6" cs="4" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_SHORT_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="7" cs="2" s="2">
+<O>
+<![CDATA[机组名称]]></O>
+<Expand/>
+</C>
+<C c="5" r="7" s="2">
+<O>
+<![CDATA[1#机]]></O>
+<Expand/>
+</C>
+<C c="6" r="7" s="2">
+<O>
+<![CDATA[2#机]]></O>
+<Expand/>
+</C>
+<C c="7" r="7" s="2">
+<O>
+<![CDATA[3#机]]></O>
+<Expand/>
+</C>
+<C c="8" r="7" s="2">
+<O>
+<![CDATA[4#机]]></O>
+<Expand/>
+</C>
+<C c="3" r="8" cs="2" s="3">
+<O>
+<![CDATA[设备状态]]></O>
+<Expand/>
+</C>
+<C c="5" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column1]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR2"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column1]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR3"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column1]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR4"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column1]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="8">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="3" r="9" cs="2" s="3">
+<O>
+<![CDATA[安全天数（天）]]></O>
+<Expand/>
+</C>
+<C c="5" r="9" cs="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column17]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="3" r="10" cs="2" s="3">
+<O>
+<![CDATA[发电量（万kWh）]]></O>
+<Expand/>
+</C>
+<C c="5" r="10" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column2]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="10" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR2"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column2]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="10" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR3"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column2]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="10" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR4"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column2]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="3" r="11" cs="2" s="3">
+<O>
+<![CDATA[全厂发电量（万kWh）]]></O>
+<Expand/>
+</C>
+<C c="5" r="11" cs="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column3]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="3" r="12" cs="2" s="3">
+<O>
+<![CDATA[累计发电量（亿kWh）]]></O>
+<Expand/>
+</C>
+<C c="5" r="12" cs="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column4]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="3" r="13" cs="2" s="3">
+<O>
+<![CDATA[年计划发电量（亿kWh）]]></O>
+<Expand/>
+</C>
+<C c="5" r="13" cs="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column5]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="3" r="14" cs="2" s="3">
+<O>
+<![CDATA[每台机组厂用电率（%）]]></O>
+<Expand/>
+</C>
+<C c="5" r="14" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column6]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="14" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR2"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column6]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="14" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR3"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column6]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="14" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR4"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column6]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="3" r="15" cs="2" s="3">
+<O>
+<![CDATA[全厂综合厂用电率（%）]]></O>
+<Expand/>
+</C>
+<C c="5" r="15" cs="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column7]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="3" r="16" cs="2" s="3">
+<O>
+<![CDATA[最大负荷（MW）]]></O>
+<Expand/>
+</C>
+<C c="5" r="16" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column8]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="16" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR2"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column8]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="16" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR3"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column8]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="16" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR4"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column8]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="3" r="17" cs="2" s="3">
+<O>
+<![CDATA[平均负荷（MW）]]></O>
+<Expand/>
+</C>
+<C c="5" r="17" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column9]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="17" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR2"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column9]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="17" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR3"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column9]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="17" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR4"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column9]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="3" r="18" cs="2" s="3">
+<O>
+<![CDATA[供热量（吉焦）]]></O>
+<Expand/>
+</C>
+<C c="5" r="18" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column10]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="18" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR2"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column10]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="18" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR3"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column10]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="18" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR4"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column10]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="3" r="19" cs="2" s="3">
+<O>
+<![CDATA[累计供热量(万吉焦)]]></O>
+<Expand/>
+</C>
+<C c="5" r="19" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column11]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="19" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR2"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column11]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="19" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR3"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column11]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="19" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR4"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column11]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="3" r="20" cs="2" s="3">
+<O>
+<![CDATA[年计划供热量(万吉焦)]]></O>
+<Expand/>
+</C>
+<C c="5" r="20" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column12]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="20" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR2"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column12]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="20" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR3"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column12]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="20" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR4"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column12]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="3" r="21" cs="2" s="3">
+<O>
+<![CDATA[供热厂用电率(%)]]></O>
+<Expand/>
+</C>
+<C c="5" r="21" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column13]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="21" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR2"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column13]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="21" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR3"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column13]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="21" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR4"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column13]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="3" r="22" cs="2" s="3">
+<O>
+<![CDATA[补水率（%）]]></O>
+<Expand/>
+</C>
+<C c="5" r="22" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column14]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="22" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR2"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column14]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="22" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR3"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column14]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="22" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR4"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column14]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="3" r="23" cs="2" s="3">
+<O>
+<![CDATA[累计故障停机次数（次）]]></O>
+<Expand/>
+</C>
+<C c="5" r="23" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column15]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="23" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR2"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column15]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="23" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR3"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column15]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="23" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR4"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column15]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="3" r="24" cs="2" s="3">
+<O>
+<![CDATA[重要生产事件]]></O>
+<Expand/>
+</C>
+<C c="5" r="24" cs="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATOR1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[column18]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="4" r="27">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="108"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="72"/>
+<Background name="ColorBackground" color="-6710785"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

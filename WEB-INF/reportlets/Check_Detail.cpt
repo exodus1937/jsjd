@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O>
+<![CDATA[1]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select b.T_P_CODE,b.T_P_NAME,a.W_LEVEL,to_char(a.W_DATE,'yyyy-mm-dd') W_DATE,a.W_TIME,a.ORG_ID,a.W_VALUE 
+from TES_BA_T_P_W_LIST a,TES_BA_POINTS_INDEX b 
+where a.org_id = '${org_id}'
+and a.kks_code = b.kks_code]]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars/>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars/>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars/>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<JSImport>
+<![CDATA[./common/include/all_include.js]]></JSImport>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="72000000" height="101808000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,1943100,723900,1104900,1333500,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[13258800,0,0,3168000,3168000,3168000,3168000,6438900,3168000,3168000,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="6" r="1">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="3" r="2" cs="7" s="0">
+<O>
+<![CDATA[考核明细]]></O>
+<Expand/>
+</C>
+<C c="3" r="4" s="1">
+<O>
+<![CDATA[序号]]></O>
+<Expand/>
+</C>
+<C c="4" r="4" s="1">
+<O>
+<![CDATA[测点]]></O>
+<Expand/>
+</C>
+<C c="5" r="4" s="1">
+<O>
+<![CDATA[测点编码]]></O>
+<Expand/>
+</C>
+<C c="6" r="4" s="1">
+<O>
+<![CDATA[报警级别]]></O>
+<Expand/>
+</C>
+<C c="7" r="4" s="1">
+<O>
+<![CDATA[报警时间]]></O>
+<Expand/>
+</C>
+<C c="8" r="4" s="1">
+<O>
+<![CDATA[报警时长]]></O>
+<Expand/>
+</C>
+<C c="9" r="4" s="1">
+<O>
+<![CDATA[考核]]></O>
+<Expand/>
+</C>
+<C c="3" r="5" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=seq()]]></Attributes>
+</O>
+<Expand dir="0" leftParentDefault="false" left="E6"/>
+</C>
+<C c="4" r="5" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="T_P_NAME"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="5" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="T_P_CODE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="5" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="W_LEVEL"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="5" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="W_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="W_TIME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="5" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="W_VALUE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper">
+<Attr divideMode="1"/>
+</RG>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="6">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="6" r="6">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="6" r="7">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="6" r="8">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="5" r="10">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="7" r="10">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="false" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[457200,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="5" r="0">
+<O>
+<![CDATA[查询]]></O>
+<Widget class="com.fr.report.web.ui.impl.form.FormSubmitButton">
+<WidgetAttr invisible="true"/>
+<Hotkeys>
+<![CDATA[enter]]></Hotkeys>
+</Widget>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</ParameterUI>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="128"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="72"/>
+<Background name="ColorBackground" color="-1577999"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.SimpleDateFormat">
+<![CDATA[mm:ss]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

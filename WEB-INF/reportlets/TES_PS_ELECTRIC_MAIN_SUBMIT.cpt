@@ -1,0 +1,1152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[111]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select t.*,decode(t.ELEC_DATE,'1','第一季度','2','第二季度','3','第三季度','4','第四季度') GET_ELEC_DATE
+  from TES_PS_ELECTRIC_MAIN t
+${if(len(instanceCode) == 0, " where 1=2 ", " where  t.INST_CODE ='"+instanceCode+"'")}]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150724_d359e4d6-e3cb-49b1-a41b-530ebc546fa2]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select m.*,t.* from TES_PS_ELECTRIC m,TES_PS_ELECTRIC_MAIN t 
+${if(len(instanceCode) == 0, " where 1=2",
+ " where  t.ELEC_ID = m.ELEC_ID  and t.INST_CODE ='"+instanceCode+"'")}]]></Query>
+</TableData>
+<TableData name="ds3" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150724_908d1146-88ac-4d6c-a956-976d47a28d24]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select a.*,t.* from xip_pub_orgs a,TES_PS_ELECTRIC_MAIN t
+${if(len(instanceCode) == 0, " where 1=2", " where t.org_id=a.org_id and t.INST_CODE ='"+instanceCode+"'")}]]></Query>
+</TableData>
+<TableData name="ds4" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150724_d359e4d6-e3cb-49b1-a41b-530ebc546fa2]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct PROGRAME as PROGRAME_1, PROJECT as PROJECT_1, HAS_CHECK as HAS_CHECK_1,
+UNQUALIFIED as UNQUALIFIED_1, QUALIFIED as QUALIFIED_1
+from TES_PS_ELECTRIC m,TES_PS_ELECTRIC_MAIN t
+${if(len(instanceCode) == 0, " where 1=2",
+ " where  t.ELEC_ID = m.ELEC_ID and m.ELEC_TYPE = '0.1级及以上标准表'  and t.INST_CODE ='"+instanceCode+"'")}]]></Query>
+</TableData>
+<TableData name="ds5" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct PROGRAME as PROGRAME_1, PROJECT as PROJECT_1, HAS_CHECK as HAS_CHECK_1,
+UNQUALIFIED as UNQUALIFIED_1, QUALIFIED as QUALIFIED_1
+from TES_PS_ELECTRIC m,TES_PS_ELECTRIC_MAIN t
+${if(len(instanceCode) == 0, " where 1=2",
+ " where  t.ELEC_ID = m.ELEC_ID and m.ELEC_TYPE = '0.2-0.5级标准表'  and t.INST_CODE ='"+instanceCode+"'")}]]></Query>
+</TableData>
+<TableData name="ds6" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct PROGRAME as PROGRAME_1, PROJECT as PROJECT_1, HAS_CHECK as HAS_CHECK_1,
+UNQUALIFIED as UNQUALIFIED_1, QUALIFIED as QUALIFIED_1
+from TES_PS_ELECTRIC m,TES_PS_ELECTRIC_MAIN t
+${if(len(instanceCode) == 0, " where 1=2",
+ " where  t.ELEC_ID = m.ELEC_ID and m.ELEC_TYPE = '电测量变送器'  and t.INST_CODE ='"+instanceCode+"'")}]]></Query>
+</TableData>
+<TableData name="ds7" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[111]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct PROGRAME as PROGRAME_1, PROJECT as PROJECT_1, HAS_CHECK as HAS_CHECK_1,
+UNQUALIFIED as UNQUALIFIED_1, QUALIFIED as QUALIFIED_1
+from TES_PS_ELECTRIC m,TES_PS_ELECTRIC_MAIN t
+${if(len(instanceCode) == 0, " where 1=2",
+ " where  t.ELEC_ID = m.ELEC_ID and m.ELEC_TYPE = '交流采样测量装置'  and t.INST_CODE ='"+instanceCode+"'")}]]></Query>
+</TableData>
+<TableData name="ds8" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[111]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct PROGRAME as PROGRAME_1, PROJECT as PROJECT_1, HAS_CHECK as HAS_CHECK_1,
+UNQUALIFIED as UNQUALIFIED_1, QUALIFIED as QUALIFIED_1
+from TES_PS_ELECTRIC m,TES_PS_ELECTRIC_MAIN t
+${if(len(instanceCode) == 0, " where 1=2",
+ " where  t.ELEC_ID = m.ELEC_ID and m.ELEC_TYPE = '配电盘表'  and t.INST_CODE ='"+instanceCode+"'")}]]></Query>
+</TableData>
+<TableData name="ds9" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[111]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct PROGRAME as PROGRAME_1, PROJECT as PROJECT_1, HAS_CHECK as HAS_CHECK_1,
+UNQUALIFIED as UNQUALIFIED_1, QUALIFIED as QUALIFIED_1
+from TES_PS_ELECTRIC m,TES_PS_ELECTRIC_MAIN t
+${if(len(instanceCode) == 0, " where 1=2",
+ " where  t.ELEC_ID = m.ELEC_ID and m.ELEC_TYPE = '兆欧表'  and t.INST_CODE ='"+instanceCode+"'")}]]></Query>
+</TableData>
+<TableData name="ds10" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[1111]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct PROGRAME as PROGRAME_1, PROJECT as PROJECT_1, HAS_CHECK as HAS_CHECK_1,
+UNQUALIFIED as UNQUALIFIED_1, QUALIFIED as QUALIFIED_1
+from TES_PS_ELECTRIC m,TES_PS_ELECTRIC_MAIN t
+${if(len(instanceCode) == 0, " where 1=2",
+ " where  t.ELEC_ID = m.ELEC_ID and m.ELEC_TYPE = '标准电能表'  and t.INST_CODE ='"+instanceCode+"'")}]]></Query>
+</TableData>
+<TableData name="ds11" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[1111]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct PROGRAME as PROGRAME_1, PROJECT as PROJECT_1, HAS_CHECK as HAS_CHECK_1,
+UNQUALIFIED as UNQUALIFIED_1, QUALIFIED as QUALIFIED_1
+from TES_PS_ELECTRIC m,TES_PS_ELECTRIC_MAIN t
+${if(len(instanceCode) == 0, " where 1=2",
+ " where  t.ELEC_ID = m.ELEC_ID and m.ELEC_TYPE = '重要有功电能表'  and t.INST_CODE ='"+instanceCode+"'")}]]></Query>
+</TableData>
+<TableData name="ds12" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct PROGRAME as PROGRAME_1, PROJECT as PROJECT_1, HAS_CHECK as HAS_CHECK_1,
+UNQUALIFIED as UNQUALIFIED_1, QUALIFIED as QUALIFIED_1
+from TES_PS_ELECTRIC m,TES_PS_ELECTRIC_MAIN t
+${if(len(instanceCode) == 0, " where 1=2",
+ " where  t.ELEC_ID = m.ELEC_ID and m.ELEC_TYPE = '重要无功电能表'  and t.INST_CODE ='"+instanceCode+"'")}]]></Query>
+</TableData>
+<TableData name="ds13" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150724_d359e4d6-e3cb-49b1-a41b-530ebc546fa2]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT EMP_NAME FROM xip_pub_users_emps_v a,TES_PS_ELECTRIC_MAIN c
+${if(len(instanceCode) == 0, " where 1=2", " where c.CREATE_BY = a.user_id 
+and c.INST_CODE ='"+instanceCode+"'")}
+]]></Query>
+</TableData>
+<TableData name="ds14" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT EMP_NAME FROM xip_pub_users_emps_v a,TES_PS_ELECTRIC_MAIN c
+${if(len(instanceCode) == 0, " where 1=2", " where c.EXAMINE_BY= a.user_id 
+and c.INST_CODE ='"+instanceCode+"'")}]]></Query>
+</TableData>
+<TableData name="ds15" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT EMP_NAME FROM xip_pub_users_emps_v a,TES_PS_ELECTRIC_MAIN c
+${if(len(instanceCode) == 0, " where 1=2", " where c.APPROVAL_BY= a.user_id 
+and c.INST_CODE ='"+instanceCode+"'")}]]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars/>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Print">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Print")}]]></Text>
+<IconName>
+<![CDATA[print]]></IconName>
+<PrintButtons/>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.write.ImportExcelData">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Import_Excel_Data")}]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting orientation="1">
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,723900,723900,723900,723900,1028700,38100,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,1143000,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,38100,4686300,3810000,3390900,4114800,4305300,5067300,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="2" r="0">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="2" r="3" cs="6" rs="3" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ELEC_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="3">
+<Expand/>
+</C>
+<C c="9" r="3">
+<Expand/>
+</C>
+<C c="8" r="4">
+<Expand/>
+</C>
+<C c="9" r="4">
+<Expand/>
+</C>
+<C c="8" r="5">
+<Expand/>
+</C>
+<C c="9" r="5">
+<Expand/>
+</C>
+<C c="2" r="7" s="1">
+<O>
+<![CDATA[报表单位：]]></O>
+<Expand/>
+</C>
+<C c="3" r="7" cs="2" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="ORG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="7" s="1">
+<O>
+<![CDATA[创建日期：]]></O>
+<Expand/>
+</C>
+<C c="6" r="7" cs="2" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="CREATE_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="9" rs="2" s="2">
+<Expand/>
+</C>
+<C c="3" r="9" s="3">
+<O>
+<![CDATA[计划校验]]></O>
+<Expand/>
+</C>
+<C c="4" r="9" s="3">
+<O>
+<![CDATA[实际校验]]></O>
+<Expand/>
+</C>
+<C c="5" r="9" s="3">
+<O>
+<![CDATA[校验率]]></O>
+<Expand/>
+</C>
+<C c="6" r="9" s="3">
+<O>
+<![CDATA[调前不合格]]></O>
+<Expand/>
+</C>
+<C c="7" r="9" s="3">
+<O>
+<![CDATA[调前合格率]]></O>
+<Expand/>
+</C>
+<C c="3" r="10" s="3">
+<O>
+<![CDATA[（个数）]]></O>
+<Expand/>
+</C>
+<C c="4" r="10" s="3">
+<O>
+<![CDATA[（个数）]]></O>
+<Expand/>
+</C>
+<C c="5" r="10" s="3">
+<O>
+<![CDATA[（%）]]></O>
+<Expand/>
+</C>
+<C c="6" r="10" s="3">
+<O>
+<![CDATA[（个数）]]></O>
+<Expand/>
+</C>
+<C c="7" r="10" s="3">
+<O>
+<![CDATA[（%）]]></O>
+<Expand/>
+</C>
+<C c="2" r="11" s="4">
+<O>
+<![CDATA[0.1级及以上标准表]]></O>
+<Expand/>
+</C>
+<C c="3" r="11" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="PROGRAME_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="11" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="PROJECT_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="11" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="HAS_CHECK_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="11" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="UNQUALIFIED_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="11" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="QUALIFIED_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="12" s="4">
+<O>
+<![CDATA[0.2-0.5级标准表]]></O>
+<Expand/>
+</C>
+<C c="3" r="12" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="PROGRAME_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="12" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="PROJECT_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="12" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="HAS_CHECK_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="12" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="UNQUALIFIED_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="12" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="QUALIFIED_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="13" s="4">
+<O>
+<![CDATA[电测量变送器]]></O>
+<Expand/>
+</C>
+<C c="3" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="PROGRAME_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="PROJECT_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="HAS_CHECK_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="UNQUALIFIED_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="QUALIFIED_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="14" s="4">
+<O>
+<![CDATA[交流采样测量装置]]></O>
+<Expand/>
+</C>
+<C c="3" r="14" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="PROGRAME_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="14" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="PROJECT_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="14" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="HAS_CHECK_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="14" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="UNQUALIFIED_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="14" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="QUALIFIED_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="15" s="4">
+<O>
+<![CDATA[配电盘表]]></O>
+<Expand/>
+</C>
+<C c="3" r="15" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds8" columnName="PROGRAME_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="15" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds8" columnName="PROJECT_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="15" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds8" columnName="HAS_CHECK_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="15" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds8" columnName="UNQUALIFIED_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="15" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds8" columnName="QUALIFIED_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="16" s="4">
+<O>
+<![CDATA[兆欧表]]></O>
+<Expand/>
+</C>
+<C c="3" r="16" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds9" columnName="PROGRAME_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="16" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds9" columnName="PROJECT_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="16" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds9" columnName="HAS_CHECK_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="16" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds9" columnName="UNQUALIFIED_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="16" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds9" columnName="QUALIFIED_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="17" s="4">
+<O>
+<![CDATA[标准电能表]]></O>
+<Expand/>
+</C>
+<C c="3" r="17" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds10" columnName="PROGRAME_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="17" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds10" columnName="PROJECT_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="17" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds10" columnName="HAS_CHECK_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="17" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds10" columnName="UNQUALIFIED_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="17" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds10" columnName="QUALIFIED_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="18" s="4">
+<O>
+<![CDATA[重要有功电能表]]></O>
+<Expand/>
+</C>
+<C c="3" r="18" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="PROGRAME_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="18" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="PROJECT_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="18" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="HAS_CHECK_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="18" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="UNQUALIFIED_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="18" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="QUALIFIED_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="19" s="4">
+<O>
+<![CDATA[重要无功电能表]]></O>
+<Expand/>
+</C>
+<C c="3" r="19" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds12" columnName="PROGRAME_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="19" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds12" columnName="PROJECT_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="19" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds12" columnName="HAS_CHECK_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="19" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds12" columnName="UNQUALIFIED_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="19" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds12" columnName="QUALIFIED_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="20" s="6">
+<O>
+<![CDATA[总计]]></O>
+<Expand/>
+</C>
+<C c="3" r="20" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(D12,D13,D14,D15,D16,D17,D18,D19,D20)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="20" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(E12,E13,E14,E15,E16,E17,E18,E19,E20)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="5" r="20" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=round(E21/D21*100,2)+'%']]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="20" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(G12,G13,G14,G15,G16,G17,G18,G19,G20)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="20" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=round((E21-G21)/E21*100,2)+'%']]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="2" r="21">
+<O>
+<![CDATA[批准人：]]></O>
+<Expand/>
+</C>
+<C c="3" r="21">
+<O t="DSColumn">
+<Attributes dsName="ds15" columnName="EMP_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="21">
+<O>
+<![CDATA[   审核人：    ]]></O>
+<Expand/>
+</C>
+<C c="5" r="21">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="EMP_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="21" s="1">
+<O>
+<![CDATA[填报人：]]></O>
+<Expand/>
+</C>
+<C c="7" r="21">
+<O t="DSColumn">
+<Attributes dsName="ds13" columnName="EMP_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="false" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[3048000,5334000,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList/>
+</ElementCase>
+</ParameterUI>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="72"/>
+<Background name="ColorBackground" color="-1577999"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="TextureBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="TextureBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="15" color="-8355712"/>
+<Right style="15" color="-8355712"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

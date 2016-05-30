@@ -1,0 +1,59 @@
+﻿
+#正式环境地址：10.67.66.220
+#测试环境地址：10.67.66.224
+
+#正式环境数据库用户名和密码：fl/fl
+#测试环境数据库用户名和密码：fl/fl
+
+---------------------------------------------------------------
+
+#超级用户口令：admin/sxdtadmin(正式环境和测试环境一样)
+
+---------------------------------------------------------------
+
+
+
+#正式环境TNS：shanxi_prod1=
+		(DESCRIPTION= 
+			(ADDRESS=(PROTOCOL=tcp)(HOST=10.67.66.225)(PORT=1521))
+		    (CONNECT_DATA=
+			(SERVICE_NAME=PROD)
+			(INSTANCE_NAME=PROD1)
+		    )
+		 )
+#测试环境TNS：SX_DEV=
+		(DESCRIPTION= 
+			(ADDRESS=(PROTOCOL=tcp)(HOST=10.67.66.224)(PORT=1620))
+		    (CONNECT_DATA=
+			(SID=dev)
+		    )
+		)
+
+#ERP环境HOST
+10.67.66.224 erptest.dtsxfdpower.com erptest
+10.67.66.225 erpdb1.dtsxfdpower.com erpdb1
+10.67.66.226 erpdb2.dtsxfdpower.com erpdb2
+
+#正式环境登录地址：http://10.67.66.220:8090/FL/pub/login/login.jsp
+#测试环境登录地址：http://10.67.66.224:8080/FL/pub/login/login.jsp
+
+
+#正式环境FTP登录用户名和密码：apache/Hy8wiEWi
+#测试环境FTP登录用户名和密码：apache/apache
+
+#正式环境CRT登录用户名和密码：apache/Hy8wiEWi
+#测试环境CRT登录用户名和密码：apache/apache
+
+#工程应用目录：/u01/apache/webapps/FL/
+
+#查看日志目录：cd /u01/apache/logs     tail -f catalina.out
+#重启应用目录: cd/u01/apache/bin       ./shutdown.sh(停服务)   ./startup.sh(起服务)
+
+#tomcat服务器用户名和密码：admin/admin
+admin/xzsoft
+
+
+
+
+
+

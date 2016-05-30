@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+	     http://www.springframework.org/schema/beans 
+	     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	     http://www.springframework.org/schema/tx
+	     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	     http://www.springframework.org/schema/aop 
+	     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	<!-- 要调度的对象  -->
+
+	<!-- 计划总结监督报表月份定期考核-->
+	<bean id="MonthKaohe" class="com.xzsoft.kaohe.server.KaoheList"/>
+	<bean id="jobDetailMonth" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+		    <ref bean="MonthKaohe"/>
+		</property>  
+    	<property name="targetMethod">
+    	    <value>monthKaohe</value>
+    	</property>
+    	<!-- 将并发设置为false   -->
+    	<property name="concurrent">
+    	   <value>false</value>
+    	 </property>
+	</bean>
+	<!-- 计划总结季度定期考核 -->
+	<bean id="QuKaohe" class="com.xzsoft.kaohe.server.KaoheList"/>
+	<bean id="jobDetailQu" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+		    <ref bean="QuKaohe"/>
+		</property>  
+    	<property name="targetMethod">
+    	    <value>quKaohe</value>
+    	</property>
+    	<!-- 将并发设置为false   -->
+    	<property name="concurrent">
+    	   <value>false</value>
+    	 </property>
+	</bean>
+		<!-- 计划总结年份定期考核 -->
+	<bean id="YearKaohe" class="com.xzsoft.kaohe.server.KaoheList"/>
+	<bean id="jobDetailYear" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+		    <ref bean="YearKaohe"/>
+		</property>  
+    	<property name="targetMethod">
+    	    <value>yearKaohe</value>
+    	</property>
+    	<!-- 将并发设置为false   -->
+    	<property name="concurrent">
+    	   <value>false</value>
+    	 </property>
+	</bean>
+	<!--设备定检考核 -->
+	<bean id="ErmKaohe" class="com.xzsoft.kaohe.server.KaoheList"/>
+	<bean id="jobDetailErm" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+		    <ref bean="ErmKaohe"/>
+		</property>  
+    	<property name="targetMethod">
+    	    <value>ErmKao</value>
+    	</property>
+    	<!-- 将并发设置为false   -->
+    	<property name="concurrent">
+    	   <value>false</value>
+    	 </property>
+	</bean>
+
+	<!--月份计划总结考核-->
+	<bean id="testTriggerMonth" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailMonth"/>  
+       <property name="cronExpression" value="0 0 0 6 * ?"/><!-- 每月6号执行  -->
+	</bean> 
+	<!--季度计划总结考核-->
+	<bean id="testTriggerQu" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailQu"/>  
+       <property name="cronExpression" value="0 0 0 6 1/3 ?"/><!-- 每季第6天执行   -->
+	</bean> 
+	<!--年度计划总结考核-->
+	<bean id="testTriggerYear" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailYear"/>  
+       <property name="cronExpression" value="0 0 0 6 1 ?"/><!-- 每年第6天执行   -->
+	</bean> 
+	<!--设备定检考核-->
+	<bean id="testTriggerErm" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailErm"/>  
+       <property name="cronExpression" value="0 0 0 * * ?"/><!-- 每天执行   -->
+	</bean> 
+	<!--  总管理类如果将lazy-init='false'那么容器启动就会执行调度程序     -->
+	<bean id="startQuertz" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="false" >  
+        <property name="triggers">
+            <list>  
+              <!--   作业调度器,list下可加入其他的调度器   -->
+                <ref bean="testTriggerMonth" />
+                <ref bean="testTriggerQu" />
+                <ref bean="testTriggerYear"/>
+                <ref bean="testTriggerErm"/>
+            </list>  
+    </property>  
+</bean>    
+</beans>

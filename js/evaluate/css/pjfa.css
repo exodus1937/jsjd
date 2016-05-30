@@ -1,0 +1,169 @@
+#tupian{
+	float: left;
+	margin-top:50px;
+	width: 50%;
+}
+
+/*改动的地方*/
+#allContent{
+	float: left;
+	width: 1000px;
+	margin: 50px 0px 0px 150px;
+}
+/*改动的地方*/
+body{
+	
+	width: 1300px; 
+	height: 3000px;
+	background: #f1f6fc;
+}
+#dayin{
+	float: left;
+	margin-left: 30px;
+	cursor: pointer;
+}
+#guanbi{
+		cursor: pointer;
+	float: right;
+	margin-right: 30px;
+	margin-bottom: 100px;
+}
+#daochu{
+	width: 20px;
+	height:20px;
+	cursor: pointer;
+	float: left;
+	margin-left: 30px;
+}
+#title{
+	margin-top:60px;
+	font-family: "微软雅黑";
+	font-size: 47px;
+	float: left;
+	text-align: center;
+	width: 100%;
+	
+}
+/*改动的地方*/
+.biaoti{
+	line-height: 30px;
+	margin-top: 85px;
+	margin-left: 30px;
+	width: 120px;
+	height:30px;
+	font-family: "微软雅黑";
+	font-size: 20px;
+	color: white;
+	float: left;
+	text-align: center;
+	background-color:#145a96;
+}
+/*改动的地方*/
+.bt_2{
+	line-height: 30px;
+	margin-left: 30px;
+	width: 120px;
+	height:30px;
+	font-family: "微软雅黑";
+	font-size: 20px;
+	color: white;
+	float: left;
+	text-align: center;
+	background-color:#145a96;
+}
+.xm_1{
+	float:left;
+	width: 100%;
+	
+}
+.xiantiao{
+	float: left;
+	height: 1px;
+	width: 76%;
+	background-color: rgb(81,102,207);
+	border:1px solid rgb(81,102,207);
+	margin-top:152px;
+	
+}
+.xt_2{
+	float: left;
+	height: 1px;
+	width: 76%;
+	background-color: rgb(81,102,207);
+	border:1px solid rgb(81,102,207);
+	margin-top:67px;
+	
+}
+.sanjiao{
+	float: left;
+	width: 52px;
+	height:52px;
+	margin-left: 30px;
+}
+.xiantiao2{
+	float: left;
+	height:550px;
+	width: 1px;
+		background-color: rgb(58,77,172);
+	border:2px solid rgb(58,77,172);
+}
+.xt_3{
+	float: left;
+	height:800px;
+	width: 1px;
+		background-color: rgb(58,77,172);
+	border:2px solid rgb(58,77,172);
+}
+.content{
+	float: left;
+}
+.ct_1{
+	float: left;
+	border-top:3px solid rgb(81,102,207); 
+	border-left: 5px solid rgb(58,77,172);
+}
+.ta_1{
+	margin:70px 50px;
+	font-family: "黑体";
+	font-size: 21px;
+	float: left;
+	min-height:20px;
+	_height:20px;
+	width:800px;
+	background-color: white;
+	/*lawngreen*/  
+}
+.ta_2{
+	margin:70px 50px 0;
+	margin-bottom: 70px;
+	float: left;
+	width: 800px;
+}
+.jmmx{
+	
+	margin:40px 0px 30px 0px;
+	float: left;
+	height:40px;
+	width: 100%;
+	font-size: 25px;
+	font-weight: bold;
+	color:rgb(244,92,42);
+	
+}
+.mx_1{
+	float: left;
+	width:892PX;
+	height:200px;
+	border:2px solid black;
+}
+/*改动的地方*/
+.sy_1{
+	
+margin-top:70px;
+	font-size: 23px;
+	font-family: "黑体";
+	float: left;
+	width:800PX;
+	height:200px;
+	border:2px solid black;
+}

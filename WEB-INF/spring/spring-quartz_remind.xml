@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+				        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+<!-- 计划总结月份定期提醒 -->
+	<bean id="MonthRemind" class="com.xzsoft.regularRemind.server.RemindList"/>
+	<bean id="jobDetailmonth" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+		    <ref bean="MonthRemind"/>
+		</property>  
+    	<property name="targetMethod">
+    	    <value>createMonthRemind</value>
+    	</property>
+    	<!-- 将并发设置为false   -->
+    	<property name="concurrent">
+    	   <value>false</value>
+    	 </property>
+	</bean>
+	<!-- 计划总结季度定期提醒 -->
+	<bean id="QuRemind" class="com.xzsoft.regularRemind.server.RemindList"/>
+	<bean id="jobDetailqu" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+		    <ref bean="QuRemind"/>
+		</property>  
+    	<property name="targetMethod">
+    	    <value>createQuarterRemind</value>
+    	</property>
+    	<!-- 将并发设置为false   -->
+    	<property name="concurrent">
+    	   <value>false</value>
+    	 </property>
+	</bean>
+		
+	<!--设备定检提醒 -->
+	<bean id="ErmRemind" class="com.xzsoft.regularRemind.server.RemindList"/>
+	<bean id="jobDetailerm" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+		    <ref bean="ErmRemind"/>
+		</property>  
+    	<property name="targetMethod">
+    	    <value>createErmRemind</value>
+    	</property>
+    	<!-- 将并发设置为false   -->
+    	<property name="concurrent">
+    	   <value>false</value>
+    	 </property>
+	</bean>
+
+	<!-- 计划总结年份定期提醒 -->
+	<bean id="YearRemind" class="com.xzsoft.regularRemind.server.RemindList"/>
+	<bean id="jobDetailyear" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+		    <ref bean="YearRemind"/>
+		</property>  
+    	<property name="targetMethod">
+    	    <value>createYearRemind</value>
+    	</property>
+    	<!-- 将并发设置为false   -->
+    	<property name="concurrent">
+    	   <value>false</value>
+    	 </property>
+	</bean>
+    <!--设备轮换定期提醒 -->
+	 <bean id="LHNotice" class="com.xzsoft.interfaces.LHExecute"/>
+	<bean id="jobDetailLH" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+		    <ref bean="LHNotice"/>
+		</property>  
+    	<property name="targetMethod">
+    	    <value>LHNoticeExecute</value>
+    	</property>
+    	<!-- 将并发设置为false   -->
+    	<property name="concurrent">
+    	   <value>false</value>
+    	 </property>
+	</bean>
+<!--定期试验定期提醒 -->
+	 <bean id="SYNotice" class="com.xzsoft.interfaces.SYExecute"/>
+	<bean id="jobDetailSY" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+		    <ref bean="SYNotice"/>
+		</property>  
+    	<property name="targetMethod">
+    	    <value>SYNoticeExecute</value>
+    	</property>
+    	<!-- 将并发设置为false   -->
+    	<property name="concurrent">
+    	   <value>false</value>
+    	 </property>
+	</bean>
+	
+<!--定期试验定期考核 -->
+	<bean id="SYCheck" class="com.xzsoft.interfaces.SYExecute"/>
+	<bean id="jobDetailSYC" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+		    <ref bean="SYCheck"/>
+		</property>  
+    	<property name="targetMethod">
+    	    <value>SYCheckExecute</value>
+    	</property>
+    	<!-- 将并发设置为false   -->
+    	<property name="concurrent">
+    	   <value>false</value>
+    	 </property>
+	</bean>
+	
+ <!--设备轮换定期考核 -->
+	<bean id="LHCheck" class="com.xzsoft.interfaces.LHExecute"/>
+	<bean id="jobDetailLHC" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+		    <ref bean="LHCheck"/>
+		</property>  
+    	<property name="targetMethod">
+    	    <value>LHCheckExecute</value>
+    	</property>
+    	<!-- 将并发设置为false   -->
+    	<property name="concurrent">
+    	   <value>false</value>
+    	 </property>
+	</bean>
+
+	<!--月份计划总结提醒-->
+	<bean id="testTriggermonth" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailmonth"/>  
+       <property name="cronExpression" value="0 0 0 1 * ?"/><!-- 每月1号执行  -->
+	</bean> 
+
+	<!--季度计划总结提醒-->
+	<bean id="testTriggerqu" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailqu"/>  
+       <property name="cronExpression" value="0 0 0 1 1/3 ?"/><!-- 每季第一天执行   -->
+	</bean> 
+
+	<!--设备定检提醒-->
+	<bean id="testTriggererm" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailerm"/>  
+       <property name="cronExpression" value="0 0 0 * * ?"/><!-- 每天执行   -->
+	</bean> 
+
+	<!--年度计划总结提醒-->
+	<bean id="testTriggeryear" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailyear"/>  
+       <property name="cronExpression" value="0 0 0 1 1 ?"/><!-- 每年第一天执行   -->
+	</bean> 
+	
+	  <!-- 设备轮换定期提醒-->
+	<bean id="testTriggerLH" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailLH"/>  
+       <property name="cronExpression" value="0 0 2 * * ?"/><!-- 每天凌晨2点更新-->
+	</bean> 
+
+	  <!-- 定期试验定期提醒-->
+   <bean id="testTriggerSY" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailSY"/>  
+       <property name="cronExpression" value="0 0 3 * * ?"/><!-- 每天凌晨3点更新-->
+	</bean> 
+
+    <!-- 定期试验定期考核-->
+   <bean id="testTriggerSYC" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailSYC"/>  
+       <property name="cronExpression" value="0 0 0 * * ?"/>   <!-- 每天凌晨0点更新 -->
+	</bean>  
+	
+	<!-- 设备轮换定期考核-->
+   <bean id="testTriggerLHC" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailLHC"/>  
+       <property name="cronExpression" value="0 0 1 * * ?"/>   <!-- 每天凌晨1点更新 -->
+	</bean>  
+
+	<!--  总管理类如果将lazy-init='false'那么容器启动就会执行调度程序     -->
+	<bean id="remind" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="false" >  
+        <property name="triggers">
+            <list>  
+              <!--   作业调度器,list下可加入其他的调度器   -->
+                <ref bean="testTriggermonth"/>   <!--月份计划总结提醒-->
+                <ref bean="testTriggerqu"/>      <!--季度计划总结提醒-->
+                <ref bean="testTriggererm"/>     <!--设备定检提醒-->
+                <ref bean="testTriggeryear"/>    <!--年度计划总结提醒-->
+				<ref bean="testTriggerLH"/>     <!-- 设备轮换定期提醒-->
+				<ref bean="testTriggerSY"/>     <!-- 定期试验定期提醒-->
+				<ref bean="testTriggerSYC"/>     <!-- 定期试验定期考核 --> 
+				<ref bean="testTriggerLHC"/>     <!-- 设备轮换定期考核 --> 
+            </list>  
+    </property>  
+</bean>    
+</beans>

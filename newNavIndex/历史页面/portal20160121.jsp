@@ -1,0 +1,587 @@
+﻿<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.SQLException" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.ResourceBundle" %>
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>京能集团实时技术监督生产管理系统</title>
+	<c:set var="ctx" value="${pageContext.request.contextPath}"
+		scope="request" />
+	<link rel="stylesheet" href="${ctx}/newNavIndex/css/style1-14.css" />
+	<link rel="stylesheet" href="${ctx}/newNavIndex/css/yz.css" />
+	<link rel="stylesheet" href="${ctx}/newNavIndex/css/style1-18wl.css" />
+	<link rel="stylesheet" href="${ctx}/newNavIndex/css/wj_0118.css" />
+	<script type="text/javascript">
+		var ctx = "${ctx}";
+	</script>
+	<% 
+  HashMap map=(HashMap)session.getAttribute("XzSessionVars");
+  String _userId=(String)map.get("userId");
+  String _userName=(String)map.get("userName");
+  String path=request.getContextPath();
+  %>
+	</head>
+	<body>
+<div id="main" class="fl">
+      <div id="du_main">
+    <div class="wj_top"> <span id="time"><script type="text/javascript"> 
+						  function showLocale(objD)
+						  {
+							  var myDate = new Date();
+							  	var month=myDate.getMonth()+1;
+							  	if(month<10){
+							  		month="0"+month;
+							  	}
+							  	var Day = myDate.getDate();
+							  	if(Day<10){
+							  		Day="0"+Day;
+							  	}
+							  	var hours=myDate.getHours();
+							  	if(hours<10){
+							  		hours="0"+hours;
+							  	}
+							  	var min=myDate.getMinutes();
+							  	var ss=myDate.getSeconds();
+							  	if(min<10){
+							  		min="0"+min;
+							  	}
+							  	if(ss<10){
+							  		ss="0"+ss;
+							  	}
+							  	var str=myDate.getFullYear()+"年"+month+"月"+Day+"日      "+hours+"时"+ min+"分"+ ss+"秒";
+
+							  return(str);
+						  }
+						  function tick()
+						  {
+						  var today;
+						  today = new Date();
+						  document.getElementById("time").innerHTML = showLocale(today);
+						  window.setTimeout("tick()", 1000);
+						  }
+						  tick();
+						</script></span>
+          <ul>
+        <select id="spec" name="language" class="pull_down">
+              <!--<c:forEach items="${specList}" var="spec">
+						<option id="#wj_spec"  value="${spec.ID}">${spec.NAME}</option> 
+						
+					</c:forEach> -->
+              
+              <c:forEach items="${specList}" var="spec">
+            <option id="wj_spec" value="${spec.ID}">${spec.NAME}</option>
+          </c:forEach>
+              <option  value="2c89e177-26e1-48dd-a844-b4661bb6e00f">绝缘</option>
+              <option  value="7ebef882-8cbf-4729-8c25-1b2558ed9a60">金属</option>
+              <option  value="93188b01-4b8b-461a-8e28-65cd03fade65">化学</option>
+              <option  value="af3f2df3-4030-47ce-828b-4f02f6f39243">电测</option>
+              <option  value="4cfbad50-6b92-4b78-a6dd-fcadf6e5fdac">电能</option>
+              <option  value="2dcd1a02-3b3d-4dd3-a554-c6b33f254de0">热工</option>
+              <option  value="f2df9251-e408-4073-90a2-967f4c85cab6">环保</option>
+              <option  value="5daeaa7d-5141-46b1-b857-ebd74be42118">节能</option>
+              <option  value="e4fd5a5f-f21b-4608-9104-49d82b4a45f7">继保</option>
+              <option  value="7491dd42-c94c-46fa-b82d-65e7c320593b">压力容器</option>
+              <option  value="cca16d73-e72a-4643-9b95-a8e7328e9b94">计量</option>
+              <option  value="12b4521c-090b-427d-800b-c23d2a6af8f5">励磁系统</option>
+              <option  value="a9b32dc4-e5ee-44cf-b98e-9009d30b3a54">振动</option>
+              <option  value="c8a1b764-b850-4f25-8dca-7ca1d9f6bfbc">特种设备</option>
+            </select>
+        <select id="org" class="pull_down">
+              <option value="c21834b4-1cb0-490f-a2a8-deeaf7f7e065">岱海发电</option>
+              <option value="472212af-1977-462b-a74a-a1f36ed6562d">宁东发电</option>
+              <option value="a61365e2-969d-4352-b3f8-805027ab9f1d">京能集团</option>
+            </select>
+      </ul>
+        </div>
+    <!--table1-->
+    <div class="class_main1 fl">
+          <h3>实时监控</h3>
+          <div class="du_more"></div>
+          <div class="clearfix"></div>
+          <div id="yibiaopan" style="width:383px;height:220px; display:none;margin:0 auto;"></div>
+          <div class="class_main1_main">
+        <div class="circle">
+              <div class="fl circle1" style="line-height: 60px;background-image: url('${ctx}/newNavIndex/img/pause.png');">#1机组</div>
+              <div class="fl circle1 circle2"
+							style="text-align: right; line-height: 60px;background-image: url('${ctx}/newNavIndex/img/pause.png')">#2机组</div>
+              <div class="fl circle1 circle3" style="line-height: 150px;background-image: url('${ctx}/newNavIndex/img/pause.png')">#3机组</div>
+              <div class="fl circle1 circle4"
+							style="text-align: right; line-height: 150px;background-image: url('${ctx}/newNavIndex/img/pause.png')">#4机组</div>
+              <div class="circle_data circle_data1" style="">0.0%</div>
+              <div class="circle_data circle_data2" style="">0.0%</div>
+              <div class="circle_data circle_data3" style="">0.0%</div>
+              <div class="circle_data circle_data4" style="">0.0%</div>
+              <!--双机组-->
+              <div class="fl circle5"  style="display:none;">#1机组</div>
+              <div class="fl circle6"  style="display:none;">#2机组</div>
+              <!--单机组-->
+              <div class="fl circle7"  style="display:none;"></div>
+              <div class="circle_data5 "  style="display:none;">98%</div>
+              <div class="circle_data6 "  style="display:none;">98%</div>
+              <!--单机组-->
+              <div class="circle_data7"  style="display:none;">77%</div>
+              
+              <!--  -->
+              <div id="circle_data21"> <span id="fhl" title="全厂负荷率">负荷率</span><br/>
+            <span id="zfh" title="总负荷">总负荷</span> </div>
+            </div>
+        <div class="class_main1_right">
+              <div>
+            <div
+								style="height: 20px; width: 20px; background: red; border-radius: 7px;"></div>
+            &nbsp;&nbsp;&nbsp;运&nbsp;&nbsp;行 </div>
+              <div>
+            <div
+								style="height: 20px; width: 20px; background: green; border-radius: 7px;"></div>
+            &nbsp;&nbsp;&nbsp;停&nbsp;&nbsp;机 </div>
+              <div>
+            <div
+								style="height: 20px; width: 20px; background: yellow; border-radius: 7px;"></div>
+            &nbsp;通讯中断 </div>
+            </div>
+      </div>
+          <div class="clearfix"></div>
+          <table style="width:100%;margin-top: -5px;">
+        <tr class="du_href">
+              <td><a class="tiaozhuan">机组状态参数</a></td>
+              <td><a href="http://10.44.1.159/Coresight">全厂系统总览</a></td>
+            </tr>
+      </table>
+        </div>
+    <!--table2-->
+    
+    <div class="class_main1 fl">
+          <h3>指标一览</h3>
+          
+          <!--<div class="du_more">更多></div>-->
+          <div class="clearfix"></div>
+          <!-- 电厂视图 --> 
+          <!-- <div class="btn" style="margin-left:14%;margin-top: 6px;line-height: 27px;background: #fff;color:#177EDA;border: 1px solid #177EDA">电量指标</div>
+            <div class="btn" style="float: right;margin-right: 11%;margin-top: 6px;line-height: 27px;background: #fff;color:#177EDA;border: 1px solid #177EDA">发电指标</div>
+            <div class="clearfix"></div>-->
+          <div id="dczb" style="display:none;margin-top:15px;width:90%;margin-left:5%;">
+        <div class="bianse"> <span class="aaa"><a onclick="clickOpenWindow('NMDH:PE:ZJRL','总装机容量','','','ces312adfashi','ceshi2')" href="javascript:void(0)" id="NMDH:PE:ZJRL">总装机容量</a></span> <span>111111111</span> </div>
+        <div class="bianse"> <span class="aaa"><a onclick="clickOpenWindow('NMDH:PE:ZJRL','总装机容量','','','ces312adfashi','ceshi2')" href="javascript:void(0)" id="NMDH:PE:ZJRL">总电荷</a></span> <span>111111111</span> </div>
+        <div> <span class="aaa"><a onclick="clickOpenWindow('NMDH:PE:ZJRL','总装机容量','','','ces312adfashi','ceshi2')" href="javascript:void(0)" id="NMDH:PE:ZJRL">昨日发电量</a></span> <span>111111111</span> </div>
+        <div> <span class="aaa"><a onclick="clickOpenWindow('NMDH:PE:ZJRL','总装机容量','','','ces312adfashi','ceshi2')" href="javascript:void(0)" id="NMDH:PE:ZJRL">全厂负荷率</a></span> <span>111111111</span> </div>
+        <div class="bianse"> <span class="aaa"><a onclick="clickOpenWindow('NMDH:PE:ZJRL','总装机容量','','','ces312adfashi','ceshi2')" href="javascript:void(0)" id="NMDH:PE:ZJRL">综合厂用电率</a></span> <span>111111111</span> </div>
+        <div class="bianse"> <span class="aaa"><a onclick="clickOpenWindow('NMDH:PE:ZJRL','总装机容量','','','ces312adfashi','ceshi2')" href="javascript:void(0)" id="NMDH:PE:ZJRL">发电厂用电率</a></span> <span>111111111</span> </div>
+        <div> <span class="aaa"><a onclick="clickOpenWindow('NMDH:PE:ZJRL','总装机容量','','','ces312adfashi','ceshi2')" href="javascript:void(0)" id="NMDH:PE:ZJRL">供电煤耗</a></span> <span>111111111</span> </div>
+        <div> <span class="aaa"><a onclick="clickOpenWindow('NMDH:PE:ZJRL','总装机容量','','','ces312adfashi','ceshi2')" href="javascript:void(0)" id="NMDH:PE:ZJRL">发电煤耗</a></span> <span>111111111</span> </div>
+        <div class="bianse"> <span class="aaa"><a onclick="clickOpenWindow('NMDH:PE:ZJRL','总装机容量','','','ces312adfashi','ceshi2')" href="javascript:void(0)" id="NMDH:PE:ZJRL">发电水耗</a></span> <span>111111111</span> </div>
+        <div class="bianse"> <span class="aaa"><a onclick="clickOpenWindow('NMDH:PE:ZJRL','总装机容量','','','ces312adfashi','ceshi2')" href="javascript:void(0)" id="NMDH:PE:ZJRL">年计划发电量</a></span> <span>111111111</span> </div>
+        <div> <span class="aaa"><a onclick="clickOpenWindow('NMDH:PE:ZJRL','总装机容量','','','ces312adfashi','ceshi2')" href="javascript:void(0)" id="NMDH:PE:ZJRL">年累计发电量</a></span> <span>111111111</span> </div>
+        <div> <span class="aaa"><a onclick="clickOpenWindow('NMDH:PE:ZJRL','总装机容量','','','ces312adfashi','ceshi2')" href="javascript:void(0)" id="NMDH:PE:ZJRL">年度发电量完</a></span> <span>111111111</span> </div>
+        <div class="bianse"> <span class="aaa"><a onclick="clickOpenWindow('NMDH:PE:ZJRL','总装机容量','','','ces312adfashi','ceshi2')" href="javascript:void(0)" id="NMDH:PE:ZJRL">月度计划发电</a></span> <span>111111111</span> </div>
+        <div class="bianse"> <span class="aaa"><a onclick="clickOpenWindow('NMDH:PE:ZJRL','总装机容量','','','ces312adfashi','ceshi2')" href="javascript:void(0)" id="NMDH:PE:ZJRL">月度累计发电</a></span> <span>111111111</span> </div>
+      </div>
+          <!-- 集团视图 -->
+          <div id	="jituanzhibiao" style="display:none;margin-top:10px;width:90%;margin-left:5%;height:32px;line-height: 16px;">
+        <div class="jituan_wrap fl">
+              <div class="fl"> 实时负荷<br>
+            (MW) </div>
+              <div class="jituanzhibiao1 fl">1335</div>
+            </div>
+        <div class="jituan_wrap fl">
+              <div class="fl"> 本月计划<br>
+            (万kWh) </div>
+              <div class="jituanzhibiao1 fl">0</div>
+            </div>
+        <div class="jituan_wrap fl">
+              <div class="fl"> 今日发电量<br>
+            (万kWh) </div>
+              <div class="jituanzhibiao1 fl">1779.0</div>
+            </div>
+        <div class="jituan_wrap fl">
+              <div class="fl"> 昨日发电量<br>
+            (万kWh) </div>
+              <div class="jituanzhibiao1 fl">2667.09</div>
+            </div>
+        <div class="jituan_wrap fl">
+              <div class="fl"> 本月发电量<br>
+            (亿kWh) </div>
+              <div class="jituanzhibiao1 fl">5.09</div>
+            </div>
+        <div class="jituan_wrap fl">
+              <div class="fl"> 上月发电量<br>
+            (亿kWh) </div>
+              <div class="jituanzhibiao1 fl">12.11</div>
+            </div>
+        <div class="jituan_wrap fl">
+              <div class="fl"> 年累计发电量<br>
+            (亿kWh) </div>
+              <div class="jituanzhibiao1 fl">5.09</div>
+            </div>
+        <div class="jituan_wrap fl">
+              <div class="fl"> 年计划发电量<br>
+            (亿kWh) </div>
+              <div class="jituanzhibiao1 fl">0</div>
+            </div>
+        <!--
+
+
+
+
+
+                 <div class="jituan_wrap fl" style="margin-left:3.5%;margin-right:2px;background:#fff">
+                     <div class="fl" style="width:60%;height:63px;line-height:18px;margin-right:1px;border-right:1px solid #fff;padding-top:10px;">
+                         年累计发电量<br>(亿kWh)
+                     </div>
+                     <div class="jituanzhibiao1 fl" style="">5.08</div>
+                 </div>
+
+                 <div class="jituan_wrap fl" style="margin-left:0%;margin-right:2px;background:#fff">
+                     <div class="fl" style="width:60%;height:63px;line-height:18px;margin-right:1px;border-right:1px solid #fff;padding-top:10px;">
+                         年计划发电量<br>(亿kWh)
+                     </div>
+                     <div class="jituanzhibiao1 fl" style="">0</div>
+                 </div>--> 
+        
+      </div>
+        </div>
+    
+    <!--table3-->
+    
+    <div class="class_main1 class_main5 fl"> 
+          <!-- <h3>报警信息</h3>-->
+          <h3 class="pointer"><b class="title_active1" onclick="changeBaojing(0);">运行机组报警</b><b
+                    onclick="changeBaojing(1)">停机机组报警</b><b onclick="yjtz_show()">预警通知单</b></h3>
+          <div class="du_more">更多></div>
+          <div class="clearfix"></div>
+          <!--<div style="height:32px;font-size: 14px; ">
+                <div class="fl title_active pointer" style="height: 28px;line-height: 32px; margin: 0 10px;">
+                    <a>运行机组报警</a>
+                </div>
+                <div class="fl pointer" style="height: 28px;line-height: 32px"><a>停机机组报警</a></div>
+                <div class="clearfix"></div>
+            </div>-->
+          <div id="rongqi2" style="display: block;">
+        <table id="baojingxinxi" style="width: 100%;">
+              <thead>
+            <tr>
+                  <td style="width:22%;overflow:hidden;">测点名称</td>
+                  <td style="width:18%;ovflow:hidden">级别</td>
+                  <td style="width:20%;overflow:hidden">报警值</td>
+                  <td style="width:22%;overflow:hidden">报警时间</td>
+                  <td style="width:18%;overflow:hidden">时长</td>
+                </tr>
+          </thead>
+              <!-- <tbody>
+                <tr>
+                    <td class="ellipsis" style="max-width: 18%; overflow: hidden;">
+                        <a title="DHFD201512210035" class="ellipsis"
+                           style="max-width: 44px; overflow: hidden;">DHFD201512210035</a>
+                    </td>
+                    <td class="ellipsis" style="max-width: 62%; overflow: hidden;">
+                        <a title="振动实验管理" class="ellipsis" style="max-width: 152px; overflow: hidden;">振动实验管理</a>
+                    </td>
+
+                    <td class="ellipsis"><a title="2015-12-21" class="ellipsis">2015-12-21</a>
+                    </td>
+                    <td>1</td>
+                </tr>
+                 <tr>
+                    <td class="ellipsis" style="max-width: 18%; overflow: hidden;">
+                        <a title="DHFD201512210035" class="ellipsis"
+                           style="max-width: 44px; overflow: hidden;">DHFD201512210035</a>
+                    </td>
+                    <td class="ellipsis" style="max-width: 62%; overflow: hidden;">
+                        <a title="振动实验管理" class="ellipsis" style="max-width: 152px; overflow: hidden;">振动实验管理</a>
+                    </td>
+
+                    <td class="ellipsis"><a title="2015-12-21" class="ellipsis">2015-12-21</a>
+                    </td>
+                    <td>1</td>
+                </tr>
+                 <tr>
+                    <td class="ellipsis" style="max-width: 18%; overflow: hidden;">
+                        <a title="DHFD201512210035" class="ellipsis"
+                           style="max-width: 44px; overflow: hidden;">DHFD201512210035</a>
+                    </td>
+                    <td class="ellipsis" style="max-width: 62%; overflow: hidden;">
+                        <a title="振动实验管理" class="ellipsis" style="max-width: 152px; overflow: hidden;">振动实验管理</a>
+                    </td>
+
+                    <td class="ellipsis"><a title="2015-12-21" class="ellipsis">2015-12-21</a>
+                    </td>
+                    <td>1</td>
+                </tr>
+                 <tr>
+                    <td class="ellipsis" style="max-width: 18%; overflow: hidden;">
+                        <a title="DHFD201512210035" class="ellipsis"
+                           style="max-width: 44px; overflow: hidden;">DHFD201512210035</a>
+                    </td>
+                    <td class="ellipsis" style="max-width: 62%; overflow: hidden;">
+                        <a title="振动实验管理" class="ellipsis" style="max-width: 152px; overflow: hidden;">振动实验管理</a>
+                    </td>
+
+                    <td class="ellipsis"><a title="2015-12-21" class="ellipsis">2015-12-21</a>
+                    </td>
+                    <td>1</td>
+                </tr>
+                 <tr>
+                    <td class="ellipsis" style="max-width: 18%; overflow: hidden;">
+                        <a title="DHFD201512210035" class="ellipsis"
+                           style="max-width: 44px; overflow: hidden;">DHFD201512210035</a>
+                    </td>
+                    <td class="ellipsis" style="max-width: 62%; overflow: hidden;">
+                        <a title="振动实验管理" class="ellipsis" style="max-width: 152px; overflow: hidden;">振动实验管理</a>
+                    </td>
+
+                    <td class="ellipsis"><a title="2015-12-21" class="ellipsis">2015-12-21</a>
+                    </td>
+                    <td>1</td>
+                </tr><tr>
+                    <td class="ellipsis" style="max-width: 18%; overflow: hidden;">
+                        <a title="DHFD201512210035" class="ellipsis"
+                           style="max-width: 44px; overflow: hidden;">DHFD201512210035</a>
+                    </td>
+                    <td class="ellipsis" style="max-width: 62%; overflow: hidden;">
+                        <a title="振动实验管理" class="ellipsis" style="max-width: 152px; overflow: hidden;">振动实验管理</a>
+                    </td>
+
+                    <td class="ellipsis"><a title="2015-12-21" class="ellipsis">2015-12-21</a>
+                    </td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                
+                </tbody>-->
+            </table>
+      </div>
+          <div id="rongqi" style="display: none">
+        <table id="yujingtongzhidan" style="width: 100%;">
+              <thead>
+            <tr style="height: 32px; line-height: 32px;">
+                  <td style="width:18%;">预警级别</td>
+                  <td style="width:31%;">预警名称</td>
+                  <td style="width:29%;">预警时间</td>
+                  <td style="width:22%;">状态</td>
+                </tr>
+          </thead>
+              <tbody id="yujingTable">
+          </tbody>
+            </table>
+      </div>
+        </div>
+    
+    <!--table4-->
+    <div class="class_main1 fl">
+          <h3>监督执行</h3>
+          <div class="du_more"><a href="${ctx}/newNavIndex/jianduzhixing.jsp">更多></a></div>
+          <div class="clearfix"></div>
+          <table class="jdzx">
+        <thead>
+              <tr>
+            <td style="width:30%;overflow:hidden;">编号</td>
+            <td style="width:40%;overflow:hidden">执行项目</td>
+            <td style="width:30%;overflow:hidden">上报时间</td>
+          </tr>
+            </thead>
+        <tbody id="jianduzhixingTable">
+            </tbody>
+      </table>
+        </div>
+    <!--table5  -->
+    <div class="class_main1 class_main5 fl">
+          <h3 class="pointer"> <b class="title_active1" onclick="jiandubaobiao_show()">监督报表</b> <b  onclick="shengchanbaobiao_show()">生产报表</b> </h3>
+          <div class="du_more"><a href="${ctx}/main?xwl=23WPD5TO7GWT">更多></a></div>
+          <div class="clearfix"></div>
+          <table class="jiandubaobiao_view">
+        <thead>
+              <tr>
+            <td style="width:30%;overflow:hidden;">报表编号</td>
+            <td style="width:40%;overflow:hidden;">报表名称</td>
+            <td style="width:30%;overflow:hidden;">上报时间</td>
+          </tr>
+            </thead>
+        <tbody id="jianduTable">
+            </tbody>
+      </table>
+          <table style="display: none;" class="shengchanbaobiao_view" id="yzs">
+        <!--  集团视图  -->
+        <tbody class = "jituan_view">
+              <tr>
+            <td><div> <a href="${ctx}/ReportServer?reportlet=dcscybb_hd_sc.cpt&op=view&GENERAL_ID=8ba07335-0875-49cd-b246-768ece3b7cdd" class="ellipsis" style="height:100px;color:#fff; line-height:135px;font-size:12px;font-family: '黑体';  background: url(${ctx}/newNavIndex/img/report1.png) no-repeat 20px 0;"> 集团生产日报 </a> </div></td>
+            <td><div> <a href="${ctx}/ReportServer?reportlet=TES_PS_GENERAL_DCSCZB_VIEW.cpt&op=view" class="ellipsis" style="height:100px;color:#fff; line-height:135px;font-size:12px;font-family: '黑体';  background: url(${ctx}/newNavIndex/img/report1.png) no-repeat 20px 0;"> 集团生产周报 </a> </div></td>
+            <td><div> <a href="${ctx}/ReportServer?reportlet=SCZBYBB.cpt&op=view" class="ellipsis" style="height:100px;color:#fff; line-height:135px;font-size:12px;font-family: '黑体';  background: url(${ctx}/newNavIndex/img/report1.png) no-repeat 20px 0;"> 集团生产月报 </a> </div></td>
+          </tr>
+              <tr>
+            <td><div> <a href="${ctx}/ReportServer?reportlet=TES_PS_GENERAL_JTSCNB_VIEW.cpt&op=view" class="ellipsis" style="height:100px;color:#fff; line-height:135px;font-size:12px;font-family: '黑体';  background: url(${ctx}/newNavIndex/img/report1.png) no-repeat 20px 0;"> 集团生产年报 </a> </div></td>
+            <td><div> <a href="${ctx}/ReportServer?reportlet=2014JTSCZBFJ.cpt&op=view" class="ellipsis" style="height:100px;color:#fff; line-height:135px;font-size:12px;font-family: '黑体';  background: url(${ctx}/newNavIndex/img/report1.png) no-repeat 20px 0;"> 集团指标分解 </a> </div></td>
+            <td><div> <a href="${ctx}/ReportServer?reportlet=JJXZBHZ.cpt&op=view" class="ellipsis" style="height:100px;color:#fff; line-height:135px;font-size:12px;font-family: '黑体';  background: url(${ctx}/newNavIndex/img/report1.png) no-repeat 20px 0;"> 经济指标汇总 </a> </div></td>
+          </tr>
+            </tbody>
+        <!--  电厂视图-->
+        <tbody class="dianchang_view">
+              <tr>
+            <td ><div> <a href="${ctx}/newNavIndex/ribao.html" class="ellipsis" style="height:100px;color:#fff; line-height:135px;font-size:12px;font-family: '黑体';  background: url(${ctx}/newNavIndex/img/report1.png) no-repeat 20px 0;"> 生产日报 </a> </div></td>
+            <td><div> <a href="${ctx}/newNavIndex/zhoubao.html" class="ellipsis" style="height:100px;color:#fff; line-height:135px;font-size:12px;font-family: '黑体';  background: url(${ctx}/newNavIndex/img/report1.png) no-repeat 20px 0;"> 生产周报 </a>
+                <%-- <a href="${ctx}/newNavIndex/zhoubao.html"> <img src="${ctx}/newNavIndex/img/report1.jpg" title="生产周报" />
+									</a> --%>
+              </div></td>
+            <td><div> <a href="${ctx}/newNavIndex/yuebao.html" class="ellipsis" style="height:100px;color:#fff; line-height:135px;font-size:12px;font-family: '黑体';  background: url(${ctx}/newNavIndex/img/report1.png) no-repeat 20px 0;"> 生产月报 </a>
+                <%-- <a href="${ctx}/newNavIndex/yuebao.html"> <img src="${ctx}/newNavIndex/img/report3.jpg" title="生产月报" />
+									</a> --%>
+              </div></td>
+          </tr>
+              <tr>
+            <td><div> <a href="#" class="ellipsis" style="height:100px;color:#fff; line-height:135px;font-size:12px;font-family: '黑体';  background: url(${ctx}/newNavIndex/img/report1.png) no-repeat 20px 0;"> 生产年报 </a> </div></td>
+            <td><div> <a href="#" class="ellipsis" style="height:100px;color:#fff; line-height:135px;font-size:12px;font-family: '黑体';  background: url(${ctx}/newNavIndex/img/report1.png) no-repeat 20px 0;"> 考核分解 </a> </div></td>
+            <td><div> <a href="#" class="ellipsis" style="height:100px;color:#fff; line-height:135px;font-size:12px;font-family: '黑体';  background: url(${ctx}/newNavIndex/img/report1.png) no-repeat 20px 0;"> 经济指标汇总 </a> </div></td>
+          </tr>
+            </tbody>
+      </table>
+        </div>
+    <!--table6-->
+    <div class="class_main1 class_main5 fl"> 
+          <!--<h3>监督计划·总结</h3>-->
+          <h3 class="pointer"> <b class="title_active1" onclick="jiandujihuan_show()">监督计划</b> <b onclick="jianduzongjie_show()">监督总结</b></h3>
+          <div class="du_more"><a href="${ctx}/newNavIndex/jiandu-zj.jsp">更多></a></div>
+          <div class="clearfix"></div>
+          <!--监督计划-->
+          <table class="jdjh">
+        <thead>
+              <tr>
+            <td style="width:30%;overflow:hidden;">编号</td>
+            <td style="width:40%;overflow:hidden;">名称</td>
+            <td style="width:30%;overflow:hidden;">上报时间</td>
+          </tr>
+            </thead>
+        <tbody id="jihuaTable">
+            </tbody>
+      </table>
+          <!--jianduzongjie-->
+          <div class="jdzj"  style="display: none;width:100%;" >
+        <table style="width:100%;">
+              <thead style="width:100%;">
+            <tr style="width:100%;">
+                  <td style="width:30%;overflow:hidden;">编号</td>
+                  <td style="width:40%;overflow:hidden;">名称</td>
+                  <td style="width:30%;overflow:hidden;">上报时间</td>
+                </tr>
+          </thead>
+              <tbody id="zongjieTable">
+          </tbody>
+            </table>
+      </div>
+        </div>
+    
+    <!--7table-->
+    <div class="class_main1 fl"> 
+          <!-- 技改项目  -->
+          <h3>技改项目</h3>
+          <div class="du_more"><a href="${ctx}/newNavIndex/zaixian.html"></a></div>
+          <div class="clearfix"></div>
+          <div style="margin: 10px 0;z-index:1000000; display:none;" >
+        <div id="projectId1" class="fl title_active" style="margin: 0 2%; cursor: pointer "> </div>
+        <div id="projectId2" class="fl" style="cursor: pointer"></div>
+        <a href="###" id="jigaiInf" style="color:#6DB1E0">查看详情</a>
+        <div class="clearfix"></div>
+      </div>
+          <div id="my_echart" style="width: 420px; height: 250px; position: absolute; left:0; top: 60px; display:none;"> </div>
+        </div>
+    
+    <!--8table-->
+    <div class="class_main1 class_main5 fl">
+          <h3 class="pointer"> <b class="title_active1" onclick="jdgz_view()">监督工作</b> <b class="" onclick="gztx_view()">工作提醒</b> </h3>
+          <div class="du_more"></div>
+          <div class="clearfix"></div>
+          <div id="jdgz">
+        <table class="wj_jd">
+              <thead>
+            <tr>
+                  <td>序号</td>
+                  <td style="width:75%">任务描述</td>
+                </tr>
+          </thead>
+            </table>
+        <div id="works" > </div>
+      </div>
+          <div id="gztx" style="display:none">
+        <table class="wj_jd">
+              <thead>
+            <tr>
+                  <td>工作提醒</td>
+                  <td>消息描述</td>
+                  <td>提醒时间</td>
+                  <td>倒计时（天）</td>
+                </tr>
+          </thead>
+            </table>
+        <div id="mission" > </div>
+      </div>
+        </div>
+    
+    <!--9table-->
+    <div class="class_main1 fl">
+          <h3>快速导航</h3>
+          <div class="du_more"></div>
+          <div class="clearfix"></div>
+          <ul class="wj_dh">
+        <li style="background-image:url(img/wddb.png);"> <a href="${ctx}/main?xwl=23VKVPUL841Y">我的待办</a> </li>
+        <li style="background-image:url(img/jtbz.png);"> <a href="${ctx}/main?xwl=23YUMQF1SP5Q">标准法规</a> </li>
+        <li style="background-image:url(img/jdwl.png);"> <a href="${ctx}/graph.do?method=initPage">监督网络</a> </li>
+        <li style="background-image:url(img/zlxz.png);"> <a href="${ctx}/main?xwl=23X1WI0JO26Q">资料下载</a> </li>
+      </ul>
+        </div>
+    <div class="clearfix"></div>
+  </div>
+    </div>
+
+<!--<script src="../jquery-1.11.1.min.js"></script>--> 
+<!--<script src="select2css.js"></script>-->
+
+<div class="lineDiv" id="lineDiv" style="overflow:auto" > 
+      <!-- 关闭div -->
+      <div style="border:0px black solid;height: 20px;text-align:right;"> <a id="closeDiv" onclick="closeDiv()" href='javascript:void(0)' style="font-size:1.1em;line-height:25px;font-family:'微软雅黑'" >关闭&nbsp;</a> </div>
+      <input hidden="true" value="" id="selectPicode">
+      <input hidden="true" value="" id="selectPiname">
+      <input hidden="true" value="" id="method">
+      <input hidden="true" value="" id="points">
+      <!-- 折线图显示的div -->
+      <div id="myChart" style="height:300px;width:660px" > </div>
+      <!-- 测点数据的信息 -->
+      <div id="pointsInfo" style="height:40px;font-size:17px"></div>
+      <!-- <div id="methods" style="height: 20px"></div> --> 
+    </div>
+<script src="${ctx}/newNavIndex/js/echarts-all.js"></script> 
+<!--<script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>--> 
+<script src="<%=path %>/final/js/jquery-1.9.1.js" type="text/javascript"></script> 
+<script type="text/javascript" src="<%=path %>/final/js/line.js"></script> 
+<script src="<%= request.getContextPath() %>/echars/dist/echarts.js"></script> 
+<script src="<%= request.getContextPath() %>/echars/asset/js/esl/esl.js"></script> 
+<script src="<%= request.getContextPath() %>/tab/sssj_util.js"></script> 
+<script src="${ctx}/newNavIndex/js/jquery.js"></script> 
+<script src="${ctx}/newNavIndex/js/portal.js"></script> 
+<script type="text/javascript" src="js/index1-18wl.js"></script> 
+<script type="text/javascript">
+					//加载echarts组件
+					var myChart;
+					var option;
+					require.config({
+						paths : {
+							echarts : '<%=request.getContextPath() %>/echars/www/js/'
+						}
+					});
+					require([ 'echarts', 
+						          'echarts/chart/line' // 使用柱状图就加载bar模块，按需加载
+						],function(ec){
+							initEcharts(ec);
+						}
+					);
+			
+					</script>
+</body>
+</html>

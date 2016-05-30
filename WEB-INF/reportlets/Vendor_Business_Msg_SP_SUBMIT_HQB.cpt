@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select t.*,
+   decode(t.sex,'0','女','1','男')SEX_NAME
+   from trd_ba_vendor t
+    where t.vendor_id in(
+         select a.vendor_id from trd_ba_vendor_mt a
+         ${if(len(instanceCode) == 0, " where 1=2 ", " where  a.inst_code ='"+instanceCode+"'")}
+    )]]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars/>
+<WebPage isPage="true" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars/>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars/>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<JSImport>
+<![CDATA[./webbuilder/script/locale/wb-lang-zh_CN.js]]></JSImport>
+<JSImport>
+<![CDATA[./webbuilder/controls/ext/ext-all.js]]></JSImport>
+<JSImport>
+<![CDATA[./workflow/util/workflowUtil4.0.js]]></JSImport>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting orientation="1">
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,685800,1562100,1676400,2019300,685800,723900,723900,723900,723900,0,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,3695700,2743200,2743200,2743200,2743200,914400,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="1" r="0" s="0">
+<Expand/>
+</C>
+<C c="2" r="0" s="0">
+<Expand/>
+</C>
+<C c="3" r="0" s="0">
+<Expand/>
+</C>
+<C c="4" r="0" s="0">
+<Expand/>
+</C>
+<C c="5" r="0" s="0">
+<Expand/>
+</C>
+<C c="6" r="0" s="0">
+<Expand/>
+</C>
+<C c="7" r="0" s="0">
+<Expand/>
+</C>
+<C c="8" r="0" s="0">
+<Expand/>
+</C>
+<C c="9" r="0" s="0">
+<Expand/>
+</C>
+<C c="10" r="0" s="0">
+<Expand/>
+</C>
+<C c="1" r="1" s="0">
+<Expand/>
+</C>
+<C c="2" r="1" cs="9" rs="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="VENDOR_NAME"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[CONCATENATE(VENDOR_NAME,'业务账号信息')]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="2" s="0">
+<Expand/>
+</C>
+<C c="1" r="3" s="0">
+<Expand/>
+</C>
+<C c="2" r="3" s="0">
+<Expand/>
+</C>
+<C c="3" r="3" s="0">
+<Expand/>
+</C>
+<C c="4" r="3" s="0">
+<Expand/>
+</C>
+<C c="5" r="3" s="0">
+<Expand/>
+</C>
+<C c="6" r="3" s="0">
+<Expand/>
+</C>
+<C c="7" r="3" s="0">
+<Expand/>
+</C>
+<C c="8" r="3" s="0">
+<Expand/>
+</C>
+<C c="9" r="3" s="0">
+<Expand/>
+</C>
+<C c="10" r="3" s="0">
+<Expand/>
+</C>
+<C c="1" r="4" s="0">
+<Expand/>
+</C>
+<C c="2" r="4" s="0">
+<Expand/>
+</C>
+<C c="3" r="4" s="0">
+<Expand/>
+</C>
+<C c="4" r="4" s="0">
+<Expand/>
+</C>
+<C c="5" r="4" s="0">
+<Expand/>
+</C>
+<C c="6" r="4" s="0">
+<Expand/>
+</C>
+<C c="7" r="4" s="0">
+<Expand/>
+</C>
+<C c="8" r="4" s="0">
+<Expand/>
+</C>
+<C c="9" r="4" s="0">
+<Expand/>
+</C>
+<C c="10" r="4" s="0">
+<Expand/>
+</C>
+<C c="1" r="5" s="0">
+<Expand/>
+</C>
+<C c="2" r="5" cs="2" rs="2" s="2">
+<O>
+<![CDATA[供应商名称：]]></O>
+<Expand/>
+</C>
+<C c="4" r="5" cs="2" rs="2" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="VENDOR_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="5" s="0">
+<Expand/>
+</C>
+<C c="7" r="5" cs="2" rs="2" s="2">
+<O>
+<![CDATA[姓名：]]></O>
+<Expand/>
+</C>
+<C c="9" r="5" cs="2" rs="2" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MEMBER_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="6" s="0">
+<Expand/>
+</C>
+<C c="6" r="6" s="0">
+<Expand/>
+</C>
+<C c="1" r="7" s="0">
+<Expand/>
+</C>
+<C c="2" r="7" cs="2" rs="2" s="2">
+<O>
+<![CDATA[业务账号：]]></O>
+<Expand/>
+</C>
+<C c="4" r="7" cs="2" rs="2" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MEMBER_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="7" s="0">
+<Expand/>
+</C>
+<C c="7" r="7" cs="2" rs="2" s="4">
+<O>
+<![CDATA[性别：]]></O>
+<Expand/>
+</C>
+<C c="9" r="7" cs="2" rs="2" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="SEX_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="8" s="0">
+<Expand/>
+</C>
+<C c="6" r="8" s="0">
+<Expand/>
+</C>
+<C c="1" r="9" s="0">
+<Expand/>
+</C>
+<C c="2" r="9" cs="2" rs="2" s="2">
+<O>
+<![CDATA[邮箱：]]></O>
+<Expand/>
+</C>
+<C c="4" r="9" cs="2" rs="2" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="EMAIL"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="9" s="0">
+<Expand/>
+</C>
+<C c="7" r="9" cs="2" rs="2" s="4">
+<O>
+<![CDATA[手机：]]></O>
+<Expand/>
+</C>
+<C c="9" r="9" cs="2" rs="2" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MOBILE_PHONE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="10" s="0">
+<Expand/>
+</C>
+<C c="6" r="10" s="0">
+<Expand/>
+</C>
+<C c="1" r="11" s="0">
+<Expand/>
+</C>
+<C c="2" r="11" cs="2" rs="2" s="4">
+<O>
+<![CDATA[传真：]]></O>
+<Expand/>
+</C>
+<C c="4" r="11" cs="2" rs="2" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="FAX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="11" s="0">
+<Expand/>
+</C>
+<C c="7" r="11" cs="2" rs="2" s="4">
+<O>
+<![CDATA[电话：]]></O>
+<Expand/>
+</C>
+<C c="9" r="11" cs="2" rs="2" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="PHONE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="12" s="0">
+<Expand/>
+</C>
+<C c="6" r="12" s="0">
+<Expand/>
+</C>
+<C c="1" r="13" s="0">
+<Expand/>
+</C>
+<C c="1" r="14" s="0">
+<Expand/>
+</C>
+<C c="2" r="14" cs="2" rs="2" s="4">
+<O>
+<![CDATA[物资类型：]]></O>
+<Expand/>
+</C>
+<C c="4" r="14" cs="7" rs="2" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="PENDING_COMMENTS"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="15" s="0">
+<Expand/>
+</C>
+<C c="1" r="16" s="0">
+<Expand/>
+</C>
+<C c="2" r="16" cs="2" rs="2" s="6">
+<O>
+<![CDATA[委托授权书查看]]></O>
+<NameJavaScriptGroup>
+<NameJavaScript name="JavaScript1">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="vendor_id"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=B23]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<Content>
+<![CDATA[showAttachmentManager("f92c688a-df48-d4e2-e040-a8c021824389", vendor_id,'', 'VENDOR_FJ', 'Y', 'Y', 'Y', null);]]></Content>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="4" r="16" s="0">
+<Expand/>
+</C>
+<C c="5" r="16" s="7">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="6" r="16" s="0">
+<Expand/>
+</C>
+<C c="7" r="16" cs="2" rs="2" s="6">
+<O>
+<![CDATA[廉政协议授权书查看]]></O>
+<NameJavaScriptGroup>
+<NameJavaScript name="JavaScript1">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[null]]></Content>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="9" r="16" s="0">
+<Expand/>
+</C>
+<C c="10" r="16" s="0">
+<Expand/>
+</C>
+<C c="1" r="17" s="0">
+<Expand/>
+</C>
+<C c="4" r="17" s="0">
+<Expand/>
+</C>
+<C c="5" r="17" s="0">
+<Expand/>
+</C>
+<C c="6" r="17" s="0">
+<Expand/>
+</C>
+<C c="9" r="17" s="0">
+<Expand/>
+</C>
+<C c="10" r="17" s="0">
+<Expand/>
+</C>
+<C c="1" r="22">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="VENDOR_ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="true" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<StyleList>
+<Style>
+<FRFont name="微软雅黑" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="微软雅黑" style="1" size="108"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="微软雅黑" style="1" size="72"/>
+<Background name="ColorBackground" color="-3214863"/>
+<Border>
+<Top style="1" color="-13382452"/>
+<Bottom style="1" color="-13382452"/>
+<Left style="1" color="-13382452"/>
+<Right style="1" color="-13382452"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="微软雅黑" style="1" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-13382452"/>
+<Bottom style="1" color="-13382452"/>
+<Left style="1" color="-13382452"/>
+<Right style="1" color="-13382452"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="微软雅黑" style="1" size="72"/>
+<Background name="ColorBackground" color="-3214863"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="微软雅黑" style="1" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="微软雅黑" style="1" size="72" foreground="-16776961" underline="1"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="微软雅黑" style="1" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+</WorkBook>

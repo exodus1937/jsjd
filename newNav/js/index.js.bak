@@ -1,0 +1,576 @@
+/**
+ * Created by lswpc on 2016-01-14.
+ */
+ function SetWinHeight(obj) { 
+	var win=obj; 
+	if (document.getElementById) { 
+		if (win && !window.opera) { 
+			if (win.contentDocument && win.contentDocument.body.offsetHeight) 
+					win.height = win.contentDocument.body.offsetHeight; 
+			else if(win.Document && win.Document.body.scrollHeight) 
+				win.height = win.Document.body.scrollHeight; 
+		} 
+	} 
+} 
+$('b').click(function () {
+    $(this).addClass('title_active1').siblings().removeClass('title_active1');
+});
+$(".jituan_wrap").each(function(i){
+    if(i==0||i==1||i==4||i==5){
+        $(this).css({background:"#f1f1f1"})
+    }
+});
+/*��������ã�����ʽ��ɾ��??*/
+$("#dczb>.fl").each(function (i) {
+    if(i==0||i==1||i==4||i==5||i==8||i==9||i==13||i==14){
+        $(this).css({background:"#f1f1f1"})
+    }
+});
+
+function view(){
+	$('.nav-btn').on("click",function(){
+		var _this = $(this)
+		$(".secMenuDiv").hide();
+		//$(this).parent().siblings().find(".secMenuDiv").empty();
+		$(this).parent().siblings().find(".nav-btn").removeClass("nav-btn-active");
+		$(this).addClass("nav-btn-active").find(".secMenuDiv").show()		
+	})	
+}
+		
+function stopBubble(ev){
+	 if(ev.stopPropagation){
+		ev.stopPropagation();		
+	}else{
+		ev.cancelBubble = true;
+	}
+}
+
+/*
+ * 登出
+ *  
+ * */
+function logout(e){	
+	ev = e||event;
+	
+	ev.preventDefault();
+	$('#logoutcheck').addClass('is-visible');
+	
+	$('#logoutcheck').on('click', function(event){
+		if( $(event.target).is('#logoutcheck-container') || $(event.target).is('.cd-popup') ) {
+			event.preventDefault();
+			$(this).removeClass('is-visible');
+		}
+	});
+
+}
+/**
+ * 确定注销
+ */
+function logoutYes(){	
+	$.post("../frameAction.do?method=logout",{}, function(data) {
+		var obj = eval(data);
+		//console.log(obj)
+		if(obj.flag=='1'){
+			var logoutUrl = obj.logoutUrl ;
+            var callbackUrl = obj.callbackUrl ;
+            window.location.href = logoutUrl + callbackUrl ;
+		}else{
+			alert(obj.msg);
+		}
+	});
+}
+/**
+ * 取消注销
+ */
+function logoutNo(e){
+	ev=e||event;
+	ev.preventDefault();
+
+	$('#logoutcheck').removeClass('is-visible');
+}
+
+
+/**
+ * 修改密码
+ */
+function changePWD(){
+	
+	var win=Ext.create('Ext.window.Window',{
+		id :'passWin',
+		title: '密码修改',
+        closable: true,
+        closeAction: 'destroy',
+        height:200,
+        width:380,
+        buttonAlign:'hide',        
+      	layout:'fit',
+      		items:[{xtype:'form',
+	      			bodyStyle: 'padding: 10px;',
+	      			id:'modifyPwdForm',
+	        		frame:true,
+	        		defaults: {
+		                labelWidth: 60,
+		                anchor:'98%',
+		                inputType:'password',
+		                afterLabelTextTpl:getspan(),
+		                allowBlank:false
+		            },
+      			    items:[{xtype:'textfield',
+		            		fieldLabel:'原密码',
+		            		id:'oldPwd',
+		            		name:'oldPwd'      			    	
+      			    },{xtype:'textfield',
+	            		fieldLabel:'新密码',
+	            		id:'newPwd',
+	            		name:'newPwd'      			    	
+      			    },{xtype:'textfield',
+	            		fieldLabel:'确认密码',
+	            		id:'confirmNewPwd',
+	            		name:'confirmNewPwd'      			    	
+      			    }]
+      		}],
+      		buttons:[{text:'保存',
+     			  formBind: true,
+     			  scope: this,
+     			  handler: function(){
+     				  var w=Ext.getCmp('passWin');
+     				  var form=Ext.getCmp('modifyPwdForm');
+	     				 var op = Ext.getCmp('oldPwd').getValue(); 
+	     				 if(op === null || op === "" || op === "undefined"){
+	     				   Ext.Msg.alert("提示","请输入原密码!") ;
+	     				   return false;
+	     				 }
+	     				var np = Ext.getCmp('newPwd').getValue(); 
+	     				if(np === null || np === "" || np === "undefined"){
+	     				  Ext.Msg.alert("提示","请输入新密码!") ;
+	     				  return false;
+	     				}
+	     				var cnp = Ext.getCmp('confirmNewPwd').getValue();
+	     				var _tmpLen = '{#PW_LEN_LIMIT#}';
+	     				if(cnp === null || cnp === "" || cnp === "undefined"){
+	     				  Ext.Msg.alert("提示","请输入确认密码!") ;
+	     				  return false;				
+	     				}
+	     				if(!form.getForm().isValid()){
+	     					  Ext.Msg.alert("提示","密码长度不正确!") ;
+	     					  return false;
+	     				}
+	     				if('{#PW_INCLUDE_CHAR#}'=='Y'){
+	     					  var re = new RegExp("[A-Za-z\x21-\x2f\x3a-\x40\x5b-\x60\x7b-\x7e]");
+	     					  if(!re.test(np)){
+	     					    Ext.Msg.alert("提示","新密码必须要包含字母或者特殊字符!");
+	     					    return;
+	     					  }
+	     					}
+	     				if(!form.getForm().isValid()){
+	     					  if(Ext.isEmpty(_tmpLen) || _tmpLen===0){
+	     					  Wb.warning('密码长度不能少于6位！');
+	     					    return false;
+	     					  }else{
+	     					      Wb.warning('密码长度不能少于'+_tmpLen+'位！');
+	     					    return false;
+	     					  }
+	     					}
+	     				if(np != cnp){
+	     					  Ext.Msg.alert("提示","新密码与确认密码不一致!") ;
+	     					  return false;					
+	     				}
+	     				Ext.Msg.wait('正在修改,请稍后...');
+	     			// 提交请求
+	     				Ext.Ajax.request({
+	     				  url 	: '../frameAction.do?method=modifyUserPassword',
+	     				  params	: {
+	     				    'oldPwd'   :	hex_md5(op),
+	     				    'password' : 	hex_md5(cnp)
+	     				  },
+	     				  method 	: 'post',
+	     				  success : function(response, options) {
+	     				    //Ext.Msg.hide();
+	     				    var resp = Ext.JSON.decode(response.responseText);
+	     				    
+	     				    if(resp.flag == 1){
+	     				      var logoutUrl = resp.logoutUrl ;
+	     				      var callbackUrl = resp.callbackUrl ;
+	     				      // 对于open , window.opener
+	     				      Ext.Msg.alert("提示", "密码修改成功！",function(){
+	     				        w.hide();
+	     				      });
+	     				    }else{
+	     				      Ext.Msg.alert("提示", resp.msg);
+	     				    }
+	     				  },
+	     				  failure : function(reponse, options) {
+	     				    Ext.Msg.hide();
+	     				    var response = Ext.JSON.decode(response.responseText);
+	     				    Ext.Msg.alert("提示", response.msg);
+	     				  }
+	     				});
+     			  }
+     		   },{text:'重置',
+     		   	  scope: this,
+     		   	  handler: this.close
+     		   }]
+	}).show();
+}
+function getspan(){
+	var required = '<span style="color:red;font-weight:bold" data-qtip="Required">*</span>';
+	return required;
+}
+//tab5
+function jiandubaobiao_show(){
+    $('.shengchanbaobiao_view').hide();
+    $('.jiandubaobiao_view').show();
+}
+
+function shengchanbaobiao_show(){
+    $('.shengchanbaobiao_view').css({display:"block"})
+    $('.jiandubaobiao_view').css({display:"none"})
+    $('.dianchang_view').find('a').css({backgrond:"#fff"});
+    $('.dianchang_view').find("td").css({backgrond:'#fff'});
+}
+
+
+function wload(){
+    var curWwwPath = window.document.location.href;
+    //console.log(curWwwPath);
+    var pathName = window.document.location.pathname;
+    //console.log(pathName);
+    var pos = curWwwPath.indexOf(pathName); 
+    var localhostPath = curWwwPath.substring(0, pos);
+    var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
+    var rootPath = localhostPath + projectName;
+    //console.log(rootPath);
+    document.getElementById("url").value=rootPath;
+    treeLoad(rootPath);
+	$("#index_page").attr("src",$(".nav-btn-active").attr("href"));
+}
+wload();
+function treeLoad(rootPath){
+    //alert(rootPath);
+    var firstMenu=$("#navFirst");
+    $("#navFirst dd").remove();
+    var homePage="<dd class='current'><a  class='nav-btn nav-btn-active' target='page' href='"+rootPath+"/portal.do' secMenuId='secMenu_1'>首页</a></dd>";
+    firstMenu.append(homePage);
+    $.ajax({
+        url : "../newPage.do?method=loadMenuTree",
+        async: false,
+        type : "POST",
+        //data: {menuId:menuId},
+        success : function(data) {
+            var obj = eval(data);
+            for(var i=0;i<obj.length;i++){
+                var node=obj[i];
+                if(node.menuName!="首页"){
+
+                    var childDiv="<dd>" +
+                    		"<a class='nav-btn' target='page' href='javascript:void(0);'" +
+                    		" secMenuId='" +node.menuId +"'" +
+                    		" onclick='loadMenuTreeNext_Sec(event,\"" +node.menuId +"\", \"" +node.nodeType +"\", \"" +node.url +"\", \"" +node.menuName +"\",this);'>"+node.menuName+"<div class='secMenuDiv'><ul></ul></div></a></dd>";
+                    
+                    firstMenu.append(childDiv);
+                }
+            }
+            view();
+			
+			//console.log($(".nav-btn-active").attr("href"))	
+			//$("#index_page").attr("src",$(".nav-btn-active").attr("href"));
+			//$(".nav-btn-active").href
+			
+            $(".secMenuDiv").on("mouseover",function(){
+            	$(this).show();
+            })
+            $(".secMenuDiv").on("mouseout",function(){
+            	$(this).hide();
+            	//$(this).empty();
+            })
+            
+        }
+    }); 
+    
+}
+//二级菜单
+
+ function loadMenuTreeNext_Sec(event,menuId,nodeType,url,menuName,self){
+	
+	ev=window.event||event;
+	//console.log(ev);
+	//console.log(ev.target.className)
+	
+		
+	if(nodeType=="F"){ 
+		//跳转wb
+		showIndex(url,menuName);
+		//console.log("2级菜单加载叶子")
+		//ev.stopPropagation();		
+		 stopBubble(ev)
+	}else{
+		
+		
+		//非IE浏览器下字体响应
+//			$('.top_txt').fontFlex(26, 50, 18);
+//			$('.top_date').fontFlex(13, 100, 10);
+		//console.log(self)
+		$(self).find('ul:first').each(function(){
+			
+			var _this=$(this);
+			//console.log("2即菜单加载非叶子")
+			_this.attr("id",menuId);
+			_this.children().remove();	
+			
+			$.ajax({
+				url : "../newPage.do?method=loadMenuTreeNext",
+				async: false,
+				type : "POST", 
+				data: {menuId:menuId},
+				success : function(data) {
+					var obj = eval(data);
+					var cDiv="";
+					for(var i=0;i<obj.length;i++){
+						var node=obj[i];
+						var childDiv="";
+						if(node.nodeType=="F"){
+							//叶子节点
+							childDiv="<li><a target='page' href='javascript:void(0);' secMenuId='" +node.menuId +"' " +
+									"onclick='loadMenuTreeNext_Thr(event,\"" +node.menuId +"\", \"" +node.nodeType +"\", \"" +node.url +"\", \"" +node.menuName +"\",this);'>"+node.menuName+"<div class='thrMenuDiv'><ul></ul></div></a></li>";
+						}else{
+							
+							childDiv="<li><a target='page' href='javascript:void(0);' secMenuId='" +node.menuId +"' " +
+									"onclick='loadMenuTreeNext_Thr(event,\"" +node.menuId +"\", \"" +node.nodeType +"\", \"" +node.url +"\", \"" +node.menuName +"\",this);'>"+node.menuName+"-><div class='thrMenuDiv'><ul></ul></div></a></li>";		
+						}						
+						cDiv+=childDiv;
+					}
+					_this.append(cDiv);
+					
+					
+					
+				}
+			});
+			
+		})
+		//ev.stopPropagation();		
+		 stopBubble(ev)
+	}
+		
+	
+}
+ //3级菜单！
+
+function loadMenuTreeNext_Thr (event,menuId,nodeType,url,menuName,self){
+	//console.log("加载3级菜单")
+	
+	ev =window.event||event;
+	if(nodeType=="F"){
+		//alert("叶子节点,跳转到WB平台");
+		//console.log("3级菜单1")
+		//console.log(url);
+		showIndex(url,menuName);
+		//ev.stopPropagation();
+		 stopBubble(ev)
+	}else{
+		
+		//非IE浏览器下字体响应
+		/*$('.top_txt').fontFlex(26, 50, 18);
+		$('.top_date').fontFlex(13, 100, 10);*/
+		//console.log(self);
+		//var secMenuDiv=$("#secMenuDiv");
+		$(self).find(".thrMenuDiv > ul").each(function(){
+			//console.log("3级菜单非叶子")
+				
+			var _this=$(this);						
+			_this.attr("id",menuId);
+			_this.children().remove();
+			$.post("../newPage.do?method=loadMenuTreeNext",{menuId:menuId}, function(data) {
+				//生成子菜单样式
+				
+				var obj = eval(data);
+				var cDiv="";
+				for(var i=0;i<obj.length;i++){
+					var node=obj[i];
+					var childDiv="";
+					if(node.nodeType=="F"){
+						//叶子节点
+						childDiv="<li><a target='page' href='javascript:void(0);' secMenuId='" +node.menuId +"' onclick='loadMenuTreeNext_fou(event,\"" +node.menuId +"\", \"" +node.nodeType +"\", \"" +node.url +"\", \"" +node.menuName +"\",this);'>"+node.menuName+"<div class='fouMenuDiv'><ul></ul></div></a></li>";
+					}else{
+						//非叶子节点
+						childDiv="<dd><a target='page' href='javascript:void(0);' secMenuId='" +node.menuId +"' onclick='loadMenuTreeNext_fou(event,\"" +node.menuId +"\", \"" +node.nodeType +"\", \"" +node.url +"\", \"" +node.menuName +"\",this);'>"+node.menuName+"-><div class='fouMenuDiv'><ul></ul></div></a></dd>";
+					}
+					
+					cDiv+=childDiv;
+				}
+				_this.append(cDiv);
+				
+				var $self = $(self);
+				$self.on("hover",function(){
+					//console.log(1);
+					//console.log(this);
+					$(this).find(".thrMenuDiv").hide();
+					
+				})
+				$self.parent().siblings().find(".thrMenuDiv").hide();
+				$self.find(".thrMenuDiv").show();
+				var top;
+				if((_this.height()/40)%2){
+					//console.log(1);
+					top = $self.context.offsetTop-_this.height()/2-20;
+				} else {
+					top = $self.context.offsetTop-_this.height()/2;
+				}
+				
+				if(_this.height()==40){
+					top=$self.context.offsetTop;
+				}
+				console.log("this top"+top);
+			//	console.log(_this.height());
+				
+				_this.parent().css({top:top,left:194});
+				
+				
+				showChildMenu(menuId,"secMenuDiv");
+				});
+				
+			})
+			//ev.stopPropagation();
+			 stopBubble(ev)
+			
+		}
+	//ev.stopPropagation();
+	 stopBubble(ev)
+}
+ 
+ 
+ //四级菜单
+ function loadMenuTreeNext_fou(event,menuId,nodeType,url,menuName,self){
+	console.log("加载4级菜单")
+	ev =window.event||event;
+	if(nodeType=="F"){
+		console.log("4级菜单1")
+		showIndex(url,menuName);
+		//ev.stopPropagation();
+		 stopBubble(ev)
+	}else{
+		//非IE浏览器下字体响应
+		/*$('.top_txt').fontFlex(26, 50, 18);
+		$('.top_date').fontFlex(13, 100, 10);*/
+		console.log("4级菜单非叶子")
+		$(self).find(".fouMenuDiv > ul").each(function(){
+			var _this=$(this);
+			_this.attr("id",menuId);
+			_this.children().remove();
+			$.post("../newPage.do?method=loadMenuTreeNext",{menuId:menuId}, function(data) {
+				//生成子菜单样式
+				
+				var obj = eval(data);
+				var cDiv="";
+				for(var i=0;i<obj.length;i++){
+					var node=obj[i];
+					var childDiv="";
+					if(node.nodeType=="F"){
+						//叶子节点
+						childDiv="<li><a target='page' href='javascript:void(0);' secMenuId='" +node.menuId +"' onclick='loadMenuTreeNext_fiv(event,\"" +node.menuId +"\", \"" +node.nodeType +"\", \"" +node.url +"\", \"" +node.menuName +"\",this);'>"+node.menuName+"<div class='fivMenuDiv'><ul></ul></div></a></li>";
+					}else{
+						//非叶子节点
+						childDiv="<dd><a target='page' href='javascript:void(0);' secMenuId='" +node.menuId +"' onclick='loadMenuTreeNext_fiv(event,\"" +node.menuId +"\", \"" +node.nodeType +"\", \"" +node.url +"\", \"" +node.menuName +"\",this);'>"+node.menuName+"-><div class='fivMenuDiv'><ul></ul></div></a></dd>";
+					}
+					
+					cDiv+=childDiv;
+				}
+				_this.append(cDiv);	
+				var $self = $(self);
+				$self.parent().siblings().find(".fouMenuDiv").hide();
+				$self.find(".fouMenuDiv").show();
+				_this.parent().css({top:$self.context.offsetTop,left:194});
+				showChildMenu(menuId,"thrMenuDiv");
+			});
+		})
+		//ev.stopPropagation();
+		 stopBubble(ev)
+	}
+	//ev.stopPropagation();
+	 stopBubble(ev)
+}
+ 
+//五级菜单； 
+ 
+function loadMenuTreeNext_fiv (event,menuId,nodeType,url,menuName,self){
+	console.log("加载5级菜单")
+	ev =window.event||event;
+	
+	if(nodeType=="F"){
+		console.log("加载5级菜单1")
+		//alert("叶子节点,跳转到WB平台");
+		//common.prototype.page.main.loginAgain(menuId);
+		showIndex(url,menuName);
+		 stopBubble(ev)
+	}else{
+		//非IE浏览器下字体响应
+		/*$('.top_txt').fontFlex(26, 50, 18);
+		$('.top_date').fontFlex(13, 100, 10);*/
+		//var secMenuDiv=$("#secMenuDiv");
+		
+		$(self).find(".fivMenuDiv > ul").each(function(){
+			var _this=$(this);
+			_this.attr("id",menuId);	
+			console.log("加载5级菜单飞叶子")
+			$.post("../newPage.do?method=loadMenuTreeNext",{menuId:menuId}, function(data) {
+				//生成子菜单样式
+				var obj = eval(data);
+				var cDiv="";
+				for(var i=0;i<obj.length;i++){
+					var node=obj[i];
+					var childDiv="";
+					if(node.nodeType=="F"){
+						//叶子节点
+						childDiv="<li><a target='page' href='javascript:void(0);' secMenuId='" +node.menuId +"' onclick='common.prototype.page.fork.loadMenuTreeNext_six(\"" +node.menuId +"\", \"" +node.nodeType +"\", \"" +node.url +"\", \"" +node.menuName +"\");'>"+node.menuName+"</a></li>";
+					}else{
+						//非叶子节点
+						childDiv="<dd><a target='page' href='javascript:void(0);' secMenuId='" +node.menuId +"' onclick='common.prototype.page.fork.loadMenuTreeNext_six(\"" +node.menuId +"\", \"" +node.nodeType +"\", \"" +node.url +"\", \"" +node.menuName +"\");'>"+node.menuName+"-></a></dd>";
+					}
+					
+					cDiv+=childDiv;
+				}
+				_this.append(cDiv);	
+				var $self = $(self);
+				$self.parent().siblings().find(".fivMenuDiv").hide();
+				$self.find(".fivMenuDiv").show();
+				_this.parent().css({top:$self.context.offsetTop,left:194});
+				
+				showChildMenu(menuId,"fouMenuDiv");
+			});
+		})
+		 stopBubble(ev)
+	}
+	//ev.stopPropagation();
+	 stopBubble(ev)
+}
+ 
+  
+ 
+function showIndex(url,menuName){
+	//console.log(url)
+	//console.log(menuName)
+	
+	if(url.indexOf('ztt.jsp') > 0 ){
+		var win=Ext.create('Ext.window.Window',{
+			id :'c_win',
+			title: menuName,
+	        closable: true,
+	        closeAction: 'destroy',
+	      	layout:'fit',
+	      		items:[{html:"<iframe width='100%'  height='100%' class='iframeCon' src='.." +url +"'  name='page' frameborder='0'></iframe>"}]
+		}).show();
+		win.maximize();
+	}else{		
+		$("#index_page").attr("src",".."+url);
+	}
+}
+
+
+
+
+
+
+function showChildMenu(menuId,flag){
+	
+}
+	
+	

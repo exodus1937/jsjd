@@ -1,0 +1,416 @@
+@charset "utf-8";
+/*样式重置*/
+body, ul, ol, dl, dd, p, h1, h2, h3, h4, h5, h6, input, textarea, select {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+input, select, textarea {
+    outline: none;
+    background-color: transparent;
+    border: none;
+}
+
+textarea {
+    resize: none;
+}
+
+img {
+    border: none;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+}
+
+em, i {
+    font-style: normal;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+select {
+    -webkit-appearance: menulist;
+    box-sizing: border-box;
+    align-items: center;
+    border: 1px solid;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    color: black;
+    background-color: white;
+    cursor: default;
+}
+
+.clearfix:after, .clearfix:before {
+    content: "";
+    display: table;
+    overflow: hidden;
+    height: 0;
+    width: 0;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+a:focus {
+    outline: thin dotted #333;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+a:hover,
+a:active {
+    outline: 0;
+}
+
+a {
+    color: #0088cc;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #005580;
+    text-decoration: underline;
+}
+
+html, body {
+    font-size: 12px;
+
+    background: #F1F4F9;
+}
+body{
+    background: #F1F4F9;
+    font-family: "微软雅黑"
+}
+/*自定义开始*/
+#main {
+
+    width: 1280px;
+    height: auto !important;
+    height: 400px;
+    min-height: 400px;
+    margin: 10px auto;
+
+}
+
+#du_main {
+    width: 1280px;
+    height: auto !important;
+    height: 400px;
+}
+
+.du_top {
+    margin-top: 10px;
+    height: 60px;
+}
+
+.du_top_left {
+    margin: 0 20px;
+}
+
+.du_top_left div {
+    padding: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+
+    margin: 10px 20px;
+}
+
+
+
+.class_main1 {
+
+    width: 30%;
+    height: 300px;
+    text-align: center;
+    margin: 10px 10px;
+    float: left;
+    position: relative;
+    border: solid #EAEAEA;
+    border-width: 0 1px;
+    background-color: #FFF;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+.class_main1 table {
+    width: 97%;
+    margin: 0 7px;
+}
+.class_main1 table tr:nth-of-type(odd){
+    background: #f1f1f1;
+}
+.class_main1 h3 {
+    height:43px;
+    line-height: 43px;
+    font-size: 18px;
+    background: #6DB1E0;
+    text-align: left;
+    text-indent: 10px;
+}
+.du_more{
+    position: absolute;
+    left:330px;
+    top:0;
+    font-size: 15px;
+    height:43px;
+    line-height: 43px;
+    color: #fff;
+}
+.class_main1 table{
+    margin-top: 5px;
+
+}
+.class_main1 thead td {
+
+    font-size: 14px;
+    font-weight: bold;
+    background: #D2E5F6;
+}
+
+.class_main1 td {
+
+    height: 30px;
+    line-height: 30px;
+}
+/*控制圆环*/
+.class_main1_main{
+    width: 96%;
+    margin:0 7px;
+    height:220px;
+    background: url("images/outcircle.png") no-repeat 80px 15px;
+    position: relative;
+
+
+}
+.class_main1_right{
+    position: absolute;
+    left:300px;
+    top:10px;
+    width:74px;
+    height:73px;
+
+
+
+}
+.class_main1_right div{
+   float: left;
+    height: 23px;
+    line-height: 22px;
+}
+
+
+.circle{
+    position: absolute;
+    width:209px;
+    height:209px;
+    left:70px;
+    top:5px;
+}
+
+div[class^="circle_"]{
+    position: absolute;
+
+
+}
+.circle_data1{
+    left:45px;
+    top:50px;
+}
+.circle_data2{
+    left:145px;
+    top:50px;
+}
+.circle_data3{
+    left:45px;
+    top:145px;
+}
+.circle_data4{
+    left:145px;
+    top:145px;
+}
+
+
+.circle1{
+    width:104px;
+    height:104px;
+    background-image: url("images/no_data.png");
+    background-position: 20px 20px ;
+    background-repeat: no-repeat;
+    text-align: left;
+    z-index: 2;
+}
+.circle2{
+
+    background-image: url("images/operate.png");
+    background-position: -80px 20px ;
+    background-repeat: no-repeat;
+
+}
+.circle3{
+
+    background-image: url("images/operate.png");
+    background-position: 20px -80px ;
+    background-repeat: no-repeat;
+
+}
+.circle4{
+
+    background-image: url("images/pause.png");
+    background-position: -80px -80px ;
+    background-repeat: no-repeat;
+
+}
+
+.class_main2 td {
+    width: 19%;
+    height: 30px;
+    line-height: 30px;
+
+}
+.class_main2 td:nth-child(4) {
+    width: 23%;
+    height: 30px;
+    line-height: 30px;
+
+}
+
+.class_main3 td, .class_main6 td {
+    width: 20%;
+    height: 30px;
+    line-height: 30px;
+}
+
+.class_main3 td:nth-child(2) {
+    width: 40%;
+    height: 30px;
+    line-height: 30px;
+}
+
+.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.class_main6 td:nth-child(3) {
+    width: 40%;
+    height: 30px;
+    line-height: 30px;
+}
+
+.class_main9 td {
+    width: 33%;
+    height: 120px;
+    line-height: 30px;
+}
+
+
+.class_main7 td img {
+    width: 100px;
+    height: 100%;
+
+}
+
+
+/*控制图标*/
+.table_view {
+    width: 85%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    height: 210px;
+
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
+    position: relative;
+}
+.table_view div{
+    position: absolute;
+    top:200px;
+    left:20px;
+    width: 80px;
+
+}
+.table_view .table_view1{
+    height:110px;
+    top:100px;
+}
+.table_view .table_view2{
+    left:120px;
+    height:110px;
+    top:100px;
+}
+.table_view .table_view3{
+    left:220px;
+    height:200px;
+    top:10px;
+}
+.title_active{
+
+    color: #0084c7;
+    box-shadow: 0 0 3px rgba(0,0,0.0.14);
+    border-bottom: 2px solid #0f9ae0;
+}
+.table_view .table_left{
+    position: absolute;
+    left: -20px;
+    top:0;
+    width: 20px;
+    background: none;
+    word-wrap: break-word;
+}
+.table_view .table_bottom {
+    position: absolute;
+    left: 220px;
+    top:210px;
+    width:120px;
+    background: none;
+}
+.pointer{
+    cursor: pointer;
+}
+/**/
+.pull_down{
+    width:280px;
+    height: 44px;
+    border: solid 1px #cbcbcb;
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    background: url('images/xiala.png') no-repeat scroll right center transparent;
+    padding-right: 14px;
+    font-size: 26px;
+}
+.pull_down::-ms-expand { display: none; }
+.styled-select {
+    width: 240px;
+    height: 44px;
+    overflow: hidden;
+}
+.class_main7 table tr:nth-of-type(odd){
+    background: #fff;
+}
+
+/*模拟select！*/

@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds6" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="DATE_"/>
+<O>
+<![CDATA[2015/11]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="ORG_ID"/>
+<O>
+<![CDATA[c21834b4-1cb0-490f-a2a8-deeaf7f7e065]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[{CALL TES_PS_GENERAL_MAIN_VIEW.SELECT_KAOHE('${ORG_ID}','${DATE_}',?)}]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="57600000" height="42768000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,723900,1485900,914400,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,6400800,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$DATE]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="2" r="4" rs="2" s="0">
+<O t="BiasTextPainter">
+<IsBackSlash value="false"/>
+<![CDATA[              类别|          单位]]></O>
+<Expand/>
+</C>
+<C c="3" r="4" cs="2" s="1">
+<O>
+<![CDATA[报警信息考核]]></O>
+<Expand/>
+</C>
+<C c="5" r="4" cs="2" s="1">
+<O>
+<![CDATA[计划考核]]></O>
+<Expand/>
+</C>
+<C c="7" r="4" cs="2" s="1">
+<O>
+<![CDATA[总结考核]]></O>
+<Expand/>
+</C>
+<C c="9" r="4" cs="2" s="1">
+<O>
+<![CDATA[超期未完成任务]]></O>
+<Expand/>
+</C>
+<C c="11" r="4" cs="2" s="1">
+<O>
+<![CDATA[定期工作]]></O>
+<Expand/>
+</C>
+<C c="13" r="4" cs="2" s="1">
+<O>
+<![CDATA[合计]]></O>
+<Expand/>
+</C>
+<C c="0" r="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="5" s="1">
+<O>
+<![CDATA[次数]]></O>
+<Expand/>
+</C>
+<C c="4" r="5" s="1">
+<O>
+<![CDATA[得分]]></O>
+<Expand/>
+</C>
+<C c="5" r="5" s="1">
+<O>
+<![CDATA[次数]]></O>
+<Expand/>
+</C>
+<C c="6" r="5" s="1">
+<O>
+<![CDATA[得分]]></O>
+<Expand/>
+</C>
+<C c="7" r="5" s="1">
+<O>
+<![CDATA[次数]]></O>
+<Expand/>
+</C>
+<C c="8" r="5" s="1">
+<O>
+<![CDATA[得分]]></O>
+<Expand/>
+</C>
+<C c="9" r="5" s="1">
+<O>
+<![CDATA[次数]]></O>
+<Expand/>
+</C>
+<C c="10" r="5" s="1">
+<O>
+<![CDATA[得分]]></O>
+<Expand/>
+</C>
+<C c="11" r="5" s="1">
+<O>
+<![CDATA[次数]]></O>
+<Expand/>
+</C>
+<C c="12" r="5" s="1">
+<O>
+<![CDATA[得分]]></O>
+<Expand/>
+</C>
+<C c="13" r="5" s="1">
+<O>
+<![CDATA[次数]]></O>
+<Expand/>
+</C>
+<C c="14" r="5" s="1">
+<O>
+<![CDATA[得分]]></O>
+<Expand/>
+</C>
+<C c="2" r="6" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="ORG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="0">
+<ColumnRow column="2" row="2"/>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.RowHeightHighlightAction"/>
+</Highlight>
+</HighlightList>
+<Expand dir="0"/>
+</C>
+<C c="3" r="6" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="COST_COUNT"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[COST_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[报警信息考核]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="网络报表1">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<Parameters>
+<Parameter>
+<Attributes name="ORG_ID"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=A6]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="DATE"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=A5]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="NAME"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D5]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<TargetFrame>
+<![CDATA[_blank]]></TargetFrame>
+<Features status="true" toolbar="true" location="true" menubar="true" resizable="true" directories="true" scrollbars="true"/>
+<ReportletName>
+<![CDATA[]]></ReportletName>
+</JavaScript>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="4" r="6" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="COST_NUM"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[COST_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[报警信息考核]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="5" r="6" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="COST_COUNT"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[COST_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[计划考核]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="网络报表1">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<Parameters>
+<Parameter>
+<Attributes name="ORG_ID"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=A6]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="DATE"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=A5]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="NAME"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D5]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<TargetFrame>
+<![CDATA[_blank]]></TargetFrame>
+<Features status="true" toolbar="true" location="true" menubar="true" resizable="true" directories="true" scrollbars="true"/>
+<ReportletName>
+<![CDATA[]]></ReportletName>
+</JavaScript>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand dir="0"/>
+</C>
+<C c="6" r="6" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="COST_NUM"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[COST_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[计划考核]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="6" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="COST_COUNT"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[COST_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[总结考核]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="网络报表1">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<Parameters>
+<Parameter>
+<Attributes name="ORG_ID"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=A6]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="DATE"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=A5]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="NAME"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D5]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<TargetFrame>
+<![CDATA[_blank]]></TargetFrame>
+<Features status="true" toolbar="true" location="true" menubar="true" resizable="true" directories="true" scrollbars="true"/>
+<ReportletName>
+<![CDATA[]]></ReportletName>
+</JavaScript>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand leftParentDefault="false" left="C7"/>
+</C>
+<C c="8" r="6" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="COST_NUM"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[COST_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[总结考核]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false" left="H7"/>
+</C>
+<C c="9" r="6" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="COST_COUNT"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[COST_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[超期未完成考核]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="网络报表1">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<Parameters>
+<Parameter>
+<Attributes name="ORG_ID"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=A6]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="DATE"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=A5]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="NAME"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D5]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<TargetFrame>
+<![CDATA[_blank]]></TargetFrame>
+<Features status="true" toolbar="true" location="true" menubar="true" resizable="true" directories="true" scrollbars="true"/>
+<ReportletName>
+<![CDATA[]]></ReportletName>
+</JavaScript>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand leftParentDefault="false" left="C7"/>
+</C>
+<C c="10" r="6" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="COST_NUM"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[COST_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[超期未完成考核]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false" left="I7"/>
+</C>
+<C c="11" r="6" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="COST_COUNT"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[COST_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[定期工作]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="网络报表1">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<Parameters>
+<Parameter>
+<Attributes name="ORG_ID"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=A6]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="DATE"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=A5]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="NAME"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D5]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<TargetFrame>
+<![CDATA[_blank]]></TargetFrame>
+<Features status="true" toolbar="true" location="true" menubar="true" resizable="true" directories="true" scrollbars="true"/>
+<ReportletName>
+<![CDATA[]]></ReportletName>
+</JavaScript>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand leftParentDefault="false" left="C7"/>
+</C>
+<C c="12" r="6" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="COST_NUM"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[COST_NAME]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[定期工作]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false" left="L7"/>
+</C>
+<C c="13" r="6" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D7+F7+H7+J7+L7]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="14" r="6" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E7+G7+I7+K7+M7]]></Attributes>
+</O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="96"/>
+<Background name="ImageBackground" specifiedImageWidth="-1.0" specifiedImageHeight="-1.0" layout="2">
+<IM>
+<![CDATA[lO<9(kN.ld@UNU%p%320@UNU)#I6cXfRW$ncQ/@&<0O5<@n=S@[oX!K%L!+t*8LGkV28*<fV
+1DR2+&2#M*'iG9!?fn`jEHhj.>Qf/%>^"4u8^;2W-f-"/[-Ps"#=CT4LGm?)6rkX]Ap9;)cg,
+:Xp=M>^R`IX>57);OBFYLBS"_e1Gss7S9)tL+\09b!LY7c2&TIA?%9m4n<NhHK^]A5-XNuS&?
+,PUblK>Iu.A7%J~
+]]></IM>
+</Background>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ImageBackground" specifiedImageWidth="-1.0" specifiedImageHeight="-1.0" layout="2">
+<IM>
+<![CDATA[lO<9(kN.ld@UNU%p%320@UNU)#I6cXfRW$ncQ/@&<0O5<@n=S@[oX!K%L!+t*8LGkV28*<fV
+1DR2+&2#M*'iG9!?fn`jEHhj.>Qf/%>^"4u8^;2W-f-"/[-Ps"#=CT4LGm?)6rkX]Ap9;)cg,
+:Xp=M>^R`IX>57);OBFYLBS"_e1Gss7S9)tL+\09b!LY7c2&TIA?%9m4n<NhHK^]A5-XNuS&?
+,PUblK>Iu.A7%J~
+]]></IM>
+</Background>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

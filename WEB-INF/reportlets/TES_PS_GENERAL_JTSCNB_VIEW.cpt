@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="YEAR"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT distinct  m.general_id,
+       M.GENERAL_NAME,
+       A.ORG_SHORT_NAME,
+       I.INDEX_TYPE,
+       I.GROUP_ANNUAL,
+       I.ANNUAL,
+       TO_CHAR(M.CREATE_DATE,'yyyy"年"mm"月"')||'1日' Y_date,
+       '集团控股发电企业'||m.year||'年生产指标报表'
+  from tes_ps_general_main    m  ,
+       XIP_PUB_ORGS         A,
+       TES_PS_ASSESS_INDEX  I
+ WHERE   I.GENERAL_ID = M.GENERAL_ID
+   and M.ORG_ID  = A.ORG_ID
+   and i.index_type in ('发电量','供热量')
+   and TO_NUMBER(TO_CHAR(M.CREATE_DATE,'YYYY'))='${YEAR}'
+]]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="true" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="50400000" height="50832000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,800100,990600,1008000,1440000,1008000,1008000,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,4152900,3600000,3600000,3429000,3600000,4000500,3600000,2286000,2590800,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="3" r="2" cs="6" rs="2" s="0">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[="集团控股发电企业"+$YEAR+"年生产指标报表"]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="9" r="3" s="1">
+<Expand/>
+</C>
+<C c="7" r="4" s="2">
+<O>
+<![CDATA[制表日期：]]></O>
+<Expand/>
+</C>
+<C c="8" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="Y_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="5" s="4">
+<O>
+<![CDATA[累计发电量]]></O>
+<Expand/>
+</C>
+<C c="4" r="5" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(G8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="5" r="5" s="4">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="6" r="5" s="4">
+<O>
+<![CDATA[累计供热量]]></O>
+<Expand/>
+</C>
+<C c="7" r="5" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(I8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="5" s="4">
+<O>
+<![CDATA[万吉焦]]></O>
+<Expand/>
+</C>
+<C c="9" r="5" s="1">
+<Expand/>
+</C>
+<C c="0" r="6" s="1">
+<Expand/>
+</C>
+<C c="1" r="6" s="1">
+<Expand/>
+</C>
+<C c="2" r="6" s="1">
+<Expand/>
+</C>
+<C c="3" r="6" s="5">
+<O>
+<![CDATA[序号]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" s="5">
+<O>
+<![CDATA[单位名称]]></O>
+<Expand/>
+</C>
+<C c="5" r="6" s="6">
+<O>
+<![CDATA[ 年计划发电量 （亿kWh）]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" s="6">
+<O>
+<![CDATA[年累计发电量  （亿kWh）]]></O>
+<Expand/>
+</C>
+<C c="7" r="6" s="5">
+<O>
+<![CDATA[ 年计划供热量 （万吉焦）]]></O>
+<Expand/>
+</C>
+<C c="8" r="6" s="5">
+<O>
+<![CDATA[ 年累计供热量  （万吉焦）]]></O>
+<Expand/>
+</C>
+<C c="9" r="6" s="1">
+<Expand/>
+</C>
+<C c="3" r="7" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SEQ()]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="7" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_SHORT_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GROUP_ANNUAL"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ANNUAL"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GROUP_ANNUAL"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ANNUAL"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="8" cs="6" s="8">
+<O>
+<![CDATA[电力生产经营部  ]]></O>
+<Expand/>
+</C>
+<C c="9" r="8" s="1">
+<Expand/>
+</C>
+<C c="9" r="9" s="1">
+<Expand/>
+</C>
+<C c="9" r="10" s="1">
+<Expand/>
+</C>
+<C c="9" r="11" s="1">
+<Expand/>
+</C>
+<C c="9" r="12" s="1">
+<Expand/>
+</C>
+<C c="9" r="13" s="1">
+<Expand/>
+</C>
+<C c="3" r="14" s="1">
+<Expand/>
+</C>
+<C c="4" r="14" s="1">
+<Expand/>
+</C>
+<C c="5" r="14" s="1">
+<Expand/>
+</C>
+<C c="6" r="14" s="1">
+<Expand/>
+</C>
+<C c="7" r="14" s="1">
+<Expand/>
+</C>
+<C c="8" r="14" s="1">
+<Expand/>
+</C>
+<C c="9" r="14" s="1">
+<Expand/>
+</C>
+<C c="3" r="15" s="1">
+<Expand/>
+</C>
+<C c="4" r="15" s="1">
+<Expand/>
+</C>
+<C c="5" r="15" s="1">
+<Expand/>
+</C>
+<C c="6" r="15" s="1">
+<Expand/>
+</C>
+<C c="7" r="15" s="1">
+<Expand/>
+</C>
+<C c="8" r="15" s="1">
+<Expand/>
+</C>
+<C c="9" r="15" s="1">
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[381000,876300,381000,876300,381000,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[3048000,5334000,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="1" s="2">
+<O>
+<![CDATA[年份：]]></O>
+<Expand/>
+</C>
+<C c="1" r="1">
+<O>
+<![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetName name="YEAR"/>
+<WidgetAttr/>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="0" vi="1"/>
+<Formula>
+<![CDATA[SELECT DISTINCT  TO_CHAR(CREATE_DATE,'YYYY'),
+TO_CHAR(CREATE_DATE,'YYYY')||'年'
+FROM TES_PS_GENERAL_MAIN]]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Widget>
+<Expand/>
+</C>
+<C c="1" r="3" s="2">
+<Widget class="com.fr.report.web.ui.impl.form.FormSubmitButton">
+<WidgetAttr/>
+<Text>
+<![CDATA[查询]]></Text>
+<Hotkeys>
+<![CDATA[enter]]></Hotkeys>
+</Widget>
+<Expand/>
+</C>
+<C c="0" r="4">
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</ParameterUI>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="108"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-1"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="80"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="80"/>
+<Background name="ColorBackground" color="-6710785"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-6710785"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="80"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

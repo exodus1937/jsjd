@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT X.ORG_NAME,
+       X.ORG_SHORT_NAME,
+       X.ORG_SHORT_NAME||'生产年报预览' TITLE,
+       M.YEAR||'年' YEAR,
+       M.ADUIT_STATUS,
+       X.ORG_TYPE,
+       V.USER_NAME,
+       V.EMP_NAME,
+       Y.HEATING_LOAD,
+       Y.GENERATING_CAPACITY,
+       Y.CUMULATIVE_HEATING_LOAD,
+       Y.CUMULATIVE_GENERATING_CAPACITY,
+       Y.IMPORTANT_EVENT
+  FROM TES_PS_GENERAL_MAIN M,
+       TES_PS_PRODUCTION_YEAR Y,
+       XIP_PUB_ORGS   X,
+       XIP_PUB_USERS_EMPS_V  V
+ WHERE M.GENERAL_ID = Y.PRODUCTION_YEAR_ID
+   AND M.ORG_ID = X.ORG_ID
+   AND M.CREATE_BY = V.USER_ID
+   AND M.inst_code = '${instanceCode}']]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="43200000" height="42768000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[1066800,1562100,1066800,1066800,1066800,457200,1600200,1066800,1828800,1066800,1066800,1066800,1066800,1066800,1066800,1066800,1066800,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2705100,114300,2743200,4000500,2743200,1714500,3695700,3695700,4114800,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="3" r="1" cs="6" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="TITLE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="2" s="1">
+<O>
+<![CDATA[电厂名称：]]></O>
+<Expand/>
+</C>
+<C c="4" r="2" cs="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="2" s="1">
+<O>
+<![CDATA[电厂类型：]]></O>
+<Expand/>
+</C>
+<C c="8" r="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_TYPE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="3" s="1">
+<O>
+<![CDATA[年份：]]></O>
+<Expand/>
+</C>
+<C c="4" r="3" cs="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="YEAR"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="3" s="1">
+<O>
+<![CDATA[填报人：]]></O>
+<Expand/>
+</C>
+<C c="8" r="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="EMP_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="4" s="1">
+<O>
+<![CDATA[状态：]]></O>
+<Expand/>
+</C>
+<C c="4" r="4" cs="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ADUIT_STATUS"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="4">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="3" r="6" s="2">
+<O>
+<![CDATA[电厂名称]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" cs="2" s="2">
+<O>
+<![CDATA[年计划发电量]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" s="2">
+<O>
+<![CDATA[年累计发电量]]></O>
+<Expand/>
+</C>
+<C c="7" r="6" s="2">
+<O>
+<![CDATA[年计划供热量]]></O>
+<Expand/>
+</C>
+<C c="8" r="6" s="2">
+<O>
+<![CDATA[年累计供热量]]></O>
+<Expand/>
+</C>
+<C c="3" r="7" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_SHORT_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="7" cs="2" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="HEATING_LOAD"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="7" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERATING_CAPACITY"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="7" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="CUMULATIVE_HEATING_LOAD"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="7" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="CUMULATIVE_GENERATING_CAPACITY"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="8" s="2">
+<O>
+<![CDATA[重要事件]]></O>
+<Expand/>
+</C>
+<C c="4" r="8" cs="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="IMPORTANT_EVENT"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="9" s="4">
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="104"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="108"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+</WorkBook>

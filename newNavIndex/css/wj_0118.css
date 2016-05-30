@@ -1,0 +1,38 @@
+﻿@charset "utf-8";
+/* CSS Document */
+table{jerry:expression(cellSpacing="1");border-collapse: separate;border-spacing:1px;}
+.fengge { clear: both; display: block; font-size: 1px; line-height: 1px; height: 0.1px; margin: 0; padding: 0; }
+/*顶部时间和下拉框*/
+.wj_top { width: 98%; height: 30px; margin: 5px auto -13px; }
+.wj_top span { float: left; width: 500px; height: 28px; text-indent:1%; line-height: 28px; font-size: 20px; }
+.pull_down { float: right; width: 120px; height: 26px;margin:0 0 0 15px;appearance: none; -moz-appearance: none; /* Firefox */ -webkit-appearance: none; /* Safari 和 Chrome */border:1px solid #177EDA;font-family:微软雅黑; }
+
+.circle1{background-image: url(../img/pause.png);}
+
+
+/*快速导航*/
+.wj_dh { height: auto; margin: 0 auto; }
+.wj_dh li { float: left; width: 25%; height: 100px; margin: 6% 0 0; list-style: none; background-position: center center; background-repeat: no-repeat; }
+.wj_dh li a { display: block; margin: 63px 0 0 0; text-align: center; color: #ffffff; font-size: 14px; }
+.wj_dh li a:hover { text-decoration: underline; }
+/*监督工作*/
+.wj_jd { width: 96%; margin: 10px auto 0; }
+.wj_jd tbody tr { height: 33px; overflow: hidden; }
+.wj_jd td { width: 25%; height: 33px; line-height: 33px; font-size: 12px; text-align: center; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; cursor: pointer; padding: 0 5px; box-sizing: border-box; }
+.wj_jd tbody td:hover { color: #f23231; text-decoration: underline; }
+.wj_jd thead tr td { background: #f2f2f2; }
+.wj_jd tbody tr:nth-of-type(2n) { background: #F2F2F2; }
+.wj_jd tbody tr:nth-of-type(2n+1) { background: #ffffff; }
+
+.wj_cen{width: 96%; margin: 10px auto 0;table-layout: fixed;}
+
+.wj_ma{margin-top:0.4%;}
+.du_more a{color:#177EDA;}
+
+#dczb{width:96%;margin: 2.4% auto 0;}
+
+.overflow: {
+	white-space: nowrap !important; text-overflow: ellipsis !important ; overflow: hidden !important; 
+	cursor: pointer;
+	
+}

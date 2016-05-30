@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="p_yearMonth"/>
+<O>
+<![CDATA[2015-04]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * FROM XIP_PUB_ORGS O,TES_BA_T_P_W_LIST w
+where o.org_id = w.org_id
+and to_char(w.w_date,'yyyy-mm-dd') >= '${p_yearMonth}'||'-01'
+and to_char(w.w_date,'yyyy-mm-dd') <= '${p_yearMonth}'||'-31']]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select  org_id,count(*) a  from TES_BA_T_P_W_LIST t 
+where  W_STATUS = '2'   group by t.org_id ]]></Query>
+</TableData>
+<TableData name="ds3" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select org_id, sum(W_COST) as W_COST from TES_BA_T_P_W_LIST t group by t.org_id]]></Query>
+</TableData>
+<TableData name="ds4" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select  t.ntc_org_id,count(*) from tes_ps_warning_notice t 
+where to_char(t.w_date,'yyyy-mm-dd') >= '${p_yearMonth}'||'-01'
+and to_char(t.w_date,'yyyy-mm-dd') <=   '${p_yearMonth}'||'-31'
+group by t.ntc_org_id ]]></Query>
+</TableData>
+<TableData name="ds5" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="p_yearMonth"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[
+select t.ntc_org_id,sum(a.w_cost) 
+
+  from tes_ps_warning_notice t,
+       TES_BA_T_P_W_LIST     a
+ where t.ntc_org_id = a.org_id
+   and t.audit_status not like '%M%'
+   and to_char(t.PROJCECT_DATE,'yyyy-mm-dd') >= '${p_yearMonth}'||'-01'
+   and to_char(t.PROJCECT_DATE,'yyyy-mm-dd') <= '${p_yearMonth}'||'-31'
+   and to_char(t.PROJCECT_DATE,'yyyy/mm/dd')<(select to_char(sysdate,'yyyy/mm/dd') from dual)
+   group by t.ntc_org_id]]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars/>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars/>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars/>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<JSImport>
+<![CDATA[./common/include/all_include.js]]></JSImport>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting orientation="1">
+<PaperSize width="72000000" height="101808000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[0,0,0,1638300,723900,1104900,1295400,1257300,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[342900,0,11430000,0,8953500,4032000,4032000,4032000,4032000,4032000,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="4" r="3" cs="6" s="0">
+<O>
+<![CDATA[预警月度考核汇总 ]]></O>
+<Expand/>
+</C>
+<C c="4" r="5" rs="2" s="1">
+<O t="BiasTextPainter">
+<IsBackSlash value="false"/>
+<![CDATA[          考核信息  |电厂名称]]></O>
+<Expand/>
+</C>
+<C c="5" r="5" cs="2" s="2">
+<O>
+<![CDATA[报警信息考核]]></O>
+<Expand/>
+</C>
+<C c="7" r="5" cs="2" s="2">
+<O>
+<![CDATA[预警通知单考核]]></O>
+<Expand/>
+</C>
+<C c="9" r="5" rs="2" s="2">
+<O>
+<![CDATA[合计]]></O>
+<Expand/>
+</C>
+<C c="3" r="6">
+<O>
+<![CDATA[ID]]></O>
+<Expand/>
+</C>
+<C c="5" r="6" s="2">
+<O>
+<![CDATA[考核（次）]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" s="2">
+<O>
+<![CDATA[考核分数]]></O>
+<Expand/>
+</C>
+<C c="7" r="6" s="2">
+<O>
+<![CDATA[考核（次）]]></O>
+<Expand/>
+</C>
+<C c="8" r="6" s="2">
+<O>
+<![CDATA[考核分数]]></O>
+<Expand/>
+</C>
+<C c="1" r="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="7" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_NAME"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="7" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="A"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_ID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="1" row="7"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="网络报表2">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=B8]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<TargetFrame>
+<![CDATA[_blank]]></TargetFrame>
+<Features status="true" toolbar="true" location="true" menubar="true" resizable="true" directories="true" scrollbars="true"/>
+<ReportletName byPost="true">
+<![CDATA[/Check_Detail.cpt]]></ReportletName>
+</JavaScript>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand dir="0"/>
+</C>
+<C c="6" r="7" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="W_COST"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[ORG_ID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="1" row="7"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="7" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COUNT"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NTC_ORG_ID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="1" row="7"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="7" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="W_COST"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[NTC_ORG_ID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="1" row="7"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="7" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=G8 + I8]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="8">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="9" r="8">
+<Expand/>
+</C>
+<C c="11" r="9">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="12" r="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="4" r="14">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="false" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[228600,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,4648200,2057400,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="5">
+<Expand/>
+</C>
+<C c="0" r="1" s="5">
+<O>
+<![CDATA[年月]]></O>
+<Expand/>
+</C>
+<C c="1" r="1" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MONTHDELTA(today(), 0)]]></Attributes>
+</O>
+<Widget class="com.fr.report.web.ui.DateEditor">
+<WidgetName name="p_yearMonth"/>
+<WidgetAttr/>
+<DateAttr format="yyyy-MM" start="" end=""/>
+</Widget>
+<Expand/>
+</C>
+<C c="3" r="1">
+<O>
+<![CDATA[查询]]></O>
+<Widget class="com.fr.report.web.ui.impl.form.FormSubmitButton">
+<WidgetAttr/>
+<Hotkeys>
+<![CDATA[enter]]></Hotkeys>
+</Widget>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</ParameterUI>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="108" foreground="-16737895"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="112"/>
+<Background name="ColorBackground" color="-1577999"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="80"/>
+<Background name="ImageBackground" specifiedImageWidth="-1.0" specifiedImageHeight="-1.0" layout="2">
+<IM>
+<![CDATA[lO<9(kN.ld@UNU%p%320@UNU)#I6cXfRW$ncQ/@&<0O5<@n=S@[oX!K%L!+t*8LGkV28*<fV
+1DR2+&2#M*'iG9!?fn`jEHhj.>Qf/%>^"4u8^;2W-f-"/[-Ps"#=CT4LGm?)6rkX]Ap9;)cg,
+:Xp=M>^R`IX>57);OBFYLBS"_e1Gss7S9)tL+\09b!LY7c2&TIA?%9m4n<NhHK^]A5-XNuS&?
+,PUblK>Iu.A7%J~
+]]></IM>
+</Background>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72" foreground="-16776961" underline="1"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<Format class="java.text.SimpleDateFormat">
+<![CDATA[yyyy-MM]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+</WorkBook>

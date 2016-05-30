@@ -1,0 +1,50 @@
+/*table4 ==============================================*/
+.jdzx {
+	width: 100%;
+}
+
+.wj_cen tr td {
+	height: 33px;line-height:33px;margin:0;
+padding:0 5px;
+ white-space: nowrap; text-overflow: ellipsis; overflow: hidden;
+ text-align: center; 
+}
+
+#JTbaojing tr td{
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+	text-align: left;
+}
+#JTbaojing tr td:nth-child(3n+1){
+	max-width:30%;overflow: hidden;
+}
+#JTbaojing tr td:nth-child(3n+2){
+	max-width:30%;overflow: hidden;
+}
+#JTbaojing tr td:nth-child(3n+3){
+	max-width:40%;overflow: hidden;
+}
+/*table5=================================================*/
+
+.jiandubaobiao_view {
+	width: 100%;
+}
+
+.dianchang_view tr td {
+	width: 25%;
+	padding: 10px;
+	background:#fff;
+}
+/*
+.shengchanbaobiao_view tr td {
+	width: 21%;
+	padding:25px 10px 0;
+	}*/
+.shengchanbaobiao_view tr td div a{
+	display:inline-block
+	}
+/*table6*/
+.jdjh, .jdzj {
+	width: 100%;
+}

@@ -1,0 +1,1752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[5ab711ce-1783-430b-92c7-521188fa391e]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '1'
+  and t.CYCLE_COLD_WATER_NUM ='1'
+ORDER By CYCLE_COLD_WATER_NUM
+]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[5ab711ce-1783-430b-92c7-521188fa391e]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '1'
+  and t.CYCLE_COLD_WATER_NUM ='2'
+ORDER By CYCLE_COLD_WATER_NUM
+]]></Query>
+</TableData>
+<TableData name="ds3" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '1'
+  and t.CYCLE_COLD_WATER_NUM ='3'
+ORDER By CYCLE_COLD_WATER_NUM
+]]></Query>
+</TableData>
+<TableData name="ds4" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '1'
+  and t.CYCLE_COLD_WATER_NUM ='4'
+ORDER By CYCLE_COLD_WATER_NUM
+]]></Query>
+</TableData>
+<TableData name="ds5" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '1'
+  and t.CYCLE_COLD_WATER_NUM ='6'
+ORDER By CYCLE_COLD_WATER_NUM
+]]></Query>
+</TableData>
+<TableData name="ds6" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '1'
+  and t.CYCLE_COLD_WATER_NUM ='7'
+ORDER By CYCLE_COLD_WATER_NUM
+]]></Query>
+</TableData>
+<TableData name="ds7" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[5ab711ce-1783-430b-92c7-521188fa391e]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '1'
+  and t.CYCLE_COLD_WATER_NUM ='8'
+ORDER By CYCLE_COLD_WATER_NUM
+]]></Query>
+</TableData>
+<TableData name="ds8" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[5ab711ce-1783-430b-92c7-521188fa391e]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '1'
+  and t.CYCLE_COLD_WATER_NUM ='9'
+ORDER By CYCLE_COLD_WATER_NUM
+]]></Query>
+</TableData>
+<TableData name="ds9" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[5ab711ce-1783-430b-92c7-521188fa391e]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '1'
+  and t.CYCLE_COLD_WATER_NUM ='10'
+ORDER By CYCLE_COLD_WATER_NUM
+]]></Query>
+</TableData>
+<TableData name="ds10" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[5ab711ce-1783-430b-92c7-521188fa391e]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '2'
+  and t.CYCLE_COLD_WATER_NUM ='1'
+ORDER By CYCLE_COLD_WATER_NUM
+]]></Query>
+</TableData>
+<TableData name="ds11" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '2'
+  and t.CYCLE_COLD_WATER_NUM ='2'
+ORDER By CYCLE_COLD_WATER_NUM
+]]></Query>
+</TableData>
+<TableData name="ds12" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '2'
+  and t.CYCLE_COLD_WATER_NUM ='3'
+ORDER By CYCLE_COLD_WATER_NUM
+]]></Query>
+</TableData>
+<TableData name="ds13" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '2'
+  and t.CYCLE_COLD_WATER_NUM ='4'
+ORDER By CYCLE_COLD_WATER_NUM
+]]></Query>
+</TableData>
+<TableData name="ds14" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '2'
+  and t.CYCLE_COLD_WATER_NUM ='5'
+ORDER By CYCLE_COLD_WATER_NUM
+]]></Query>
+</TableData>
+<TableData name="ds15" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '2'
+  and t.CYCLE_COLD_WATER_NUM ='6'
+ORDER By CYCLE_COLD_WATER_NUM
+]]></Query>
+</TableData>
+<TableData name="ds16" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '2'
+  and t.CYCLE_COLD_WATER_NUM ='7'
+ORDER By CYCLE_COLD_WATER_NUM
+]]></Query>
+</TableData>
+<TableData name="ds17" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '2'
+  and t.CYCLE_COLD_WATER_NUM ='8'
+ORDER By CYCLE_COLD_WATER_NUM
+]]></Query>
+</TableData>
+<TableData name="ds18" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '2'
+  and t.CYCLE_COLD_WATER_NUM ='9'
+ORDER By CYCLE_COLD_WATER_NUM
+]]></Query>
+</TableData>
+<TableData name="ds19" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '2'
+  and t.CYCLE_COLD_WATER_NUM ='10'
+ORDER By CYCLE_COLD_WATER_NUM
+]]></Query>
+</TableData>
+<TableData name="dsAA" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '1'
+  and t.CYCLE_COLD_WATER_NUM ='5'
+ORDER By CYCLE_COLD_WATER_NUM
+]]></Query>
+</TableData>
+<TableData name="ds21" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[5ab711ce-1783-430b-92c7-521188fa391e]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '3'
+  and t.CYCLE_COLD_WATER_NUM ='1'
+ORDER By CYCLE_COLD_WATER_NUM]]></Query>
+</TableData>
+<TableData name="ds22" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '3'
+  and t.CYCLE_COLD_WATER_NUM ='2'
+ORDER By CYCLE_COLD_WATER_NUM]]></Query>
+</TableData>
+<TableData name="ds23" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '3'
+  and t.CYCLE_COLD_WATER_NUM ='3'
+ORDER By CYCLE_COLD_WATER_NUM]]></Query>
+</TableData>
+<TableData name="ds24" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '3'
+  and t.CYCLE_COLD_WATER_NUM ='4'
+ORDER By CYCLE_COLD_WATER_NUM]]></Query>
+</TableData>
+<TableData name="ds25" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT  CYCLE_COLD_WATER_INDEX,CYCLE_COLD_WATER_TEST  ,CYCLE_COLD_WATER_NUM
+  FROM TES_PS_GENERAL_CHEMISTRY_SEC T
+ WHERE T.GENERAL_ID = '${GENERAL_ID}'
+   and T.CHEMISTRY_DEATIL_TYPE = '3'
+  and t.CYCLE_COLD_WATER_NUM ='5'
+ORDER By CYCLE_COLD_WATER_NUM]]></Query>
+</TableData>
+<TableData name="ds20" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[{CALL TES_PS_GENERAL_MAIN_VIEW.ORG_COMBOX_VIEW('${GENERAL_ID}',?)}]]></Query>
+</TableData>
+<TableData name="ds26" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[{CALL TES_PS_GENERAL_MAIN_VIEW.LIST_NAME_VIEW('${GENERAL_ID}',?)}]]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="57600000" height="42768000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,1219200,723900,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,723900,723900,723900,1714500,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="2" r="3" cs="13" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds26" columnName="GENERAL_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="5">
+<O>
+<![CDATA[填报单位：]]></O>
+<Expand/>
+</C>
+<C c="3" r="5" cs="4">
+<O t="DSColumn">
+<Attributes dsName="ds20" columnName="ORG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="5">
+<O>
+<![CDATA[填报日期：]]></O>
+<Expand/>
+</C>
+<C c="13" r="5" cs="2">
+<O t="DSColumn">
+<Attributes dsName="ds26" columnName="CREATE_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="6" s="1">
+<Expand/>
+</C>
+<C c="1" r="6" s="1">
+<Expand/>
+</C>
+<C c="2" r="6" s="2">
+<O>
+<![CDATA[水样类别]]></O>
+<Expand/>
+</C>
+<C c="3" r="6" cs="4" s="2">
+<O>
+<![CDATA[辅机冷却塔补充水]]></O>
+<Expand/>
+</C>
+<C c="7" r="6" cs="4" s="2">
+<O>
+<![CDATA[辅机循环冷却水]]></O>
+<Expand/>
+</C>
+<C c="11" r="6" cs="4" s="2">
+<O>
+<![CDATA[间接空冷循环水]]></O>
+<Expand/>
+</C>
+<C c="2" r="7" rs="11" s="2">
+<O>
+<![CDATA[监督项目]]></O>
+<Expand/>
+</C>
+<C c="3" r="7" s="2">
+<O>
+<![CDATA[名称]]></O>
+<Expand/>
+</C>
+<C c="4" r="7" s="2">
+<O>
+<![CDATA[单位]]></O>
+<Expand/>
+</C>
+<C c="5" r="7" s="2">
+<O>
+<![CDATA[控制指标]]></O>
+<Expand/>
+</C>
+<C c="6" r="7" s="2">
+<O>
+<![CDATA[测量值]]></O>
+<Expand/>
+</C>
+<C c="7" r="7" s="2">
+<O>
+<![CDATA[名称]]></O>
+<Expand/>
+</C>
+<C c="8" r="7" s="2">
+<O>
+<![CDATA[单位]]></O>
+<Expand/>
+</C>
+<C c="9" r="7" s="2">
+<O>
+<![CDATA[控制指标]]></O>
+<Expand/>
+</C>
+<C c="10" r="7" s="2">
+<O>
+<![CDATA[测量值]]></O>
+<Expand/>
+</C>
+<C c="11" r="7" s="2">
+<O>
+<![CDATA[名称]]></O>
+<Expand/>
+</C>
+<C c="12" r="7" s="2">
+<O>
+<![CDATA[单位]]></O>
+<Expand/>
+</C>
+<C c="13" r="7" s="2">
+<O>
+<![CDATA[控制指标]]></O>
+<Expand/>
+</C>
+<C c="14" r="7" s="2">
+<O>
+<![CDATA[测量值]]></O>
+<Expand/>
+</C>
+<C c="3" r="8" s="2">
+<O>
+<![CDATA[温度]]></O>
+<Expand/>
+</C>
+<C c="4" r="8" s="2">
+<O>
+<![CDATA[℃]]></O>
+<Expand/>
+</C>
+<C c="5" r="8" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="8" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="8" s="2">
+<O>
+<![CDATA[浓缩倍率]]></O>
+<Expand/>
+</C>
+<C c="8" r="8" s="2">
+<O>
+<![CDATA[——]]></O>
+<Expand/>
+</C>
+<C c="9" r="8" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds10" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="8" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds10" columnName="CYCLE_COLD_WATER_TEST"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="8" s="2">
+<O>
+<![CDATA[浊度]]></O>
+<Expand/>
+</C>
+<C c="12" r="8" s="2">
+<O>
+<![CDATA[NTU]]></O>
+<Expand/>
+</C>
+<C c="13" r="8" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds21" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="8" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds21" columnName="CYCLE_COLD_WATER_TEST"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="15" r="8">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="3" r="9" s="2">
+<O>
+<![CDATA[pH（25℃）]]></O>
+<Expand/>
+</C>
+<C c="4" r="9" s="2">
+<O>
+<![CDATA[——]]></O>
+<Expand/>
+</C>
+<C c="5" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="9" s="2">
+<O>
+<![CDATA[总磷]]></O>
+<Expand/>
+</C>
+<C c="8" r="9" s="2">
+<O>
+<![CDATA[mg/L]]></O>
+<Expand/>
+</C>
+<C c="9" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="9" s="2">
+<O>
+<![CDATA[pH（25℃）]]></O>
+<Expand/>
+</C>
+<C c="12" r="9" s="2">
+<O>
+<![CDATA[——]]></O>
+<Expand/>
+</C>
+<C c="13" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds22" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds22" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="10" s="2">
+<O>
+<![CDATA[电导率]]></O>
+<Expand/>
+</C>
+<C c="4" r="10" s="2">
+<O>
+<![CDATA[μS/cm]]></O>
+<Expand/>
+</C>
+<C c="5" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="10" s="2">
+<O>
+<![CDATA[甲基橙碱度]]></O>
+<Expand/>
+</C>
+<C c="8" r="10" s="2">
+<O>
+<![CDATA[mmol/L]]></O>
+<Expand/>
+</C>
+<C c="9" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds12" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds12" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="10" s="2">
+<O>
+<![CDATA[铁离子]]></O>
+<Expand/>
+</C>
+<C c="12" r="10" s="2">
+<O>
+<![CDATA[mg/L]]></O>
+<Expand/>
+</C>
+<C c="13" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds23" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds23" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="11" s="2">
+<O>
+<![CDATA[甲基橙碱度]]></O>
+<Expand/>
+</C>
+<C c="4" r="11" s="2">
+<O>
+<![CDATA[mmol/L]]></O>
+<Expand/>
+</C>
+<C c="5" r="11" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="11" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="11" s="2">
+<O>
+<![CDATA[酚酞碱度]]></O>
+<Expand/>
+</C>
+<C c="8" r="11" s="2">
+<O>
+<![CDATA[mmol/L]]></O>
+<Expand/>
+</C>
+<C c="9" r="11" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds13" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="11" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds13" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="11" s="2">
+<O>
+<![CDATA[铝离子]]></O>
+<Expand/>
+</C>
+<C c="12" r="11" s="2">
+<O>
+<![CDATA[mg/L]]></O>
+<Expand/>
+</C>
+<C c="13" r="11" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds24" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="11" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds24" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="12" s="2">
+<O>
+<![CDATA[酚酞碱度]]></O>
+<Expand/>
+</C>
+<C c="4" r="12" s="2">
+<O>
+<![CDATA[mmol/L]]></O>
+<Expand/>
+</C>
+<C c="5" r="12" s="2">
+<O t="DSColumn">
+<Attributes dsName="dsAA" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="12" s="2">
+<O t="DSColumn">
+<Attributes dsName="dsAA" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="12" s="2">
+<O>
+<![CDATA[氯离子]]></O>
+<Expand/>
+</C>
+<C c="8" r="12" s="2">
+<O>
+<![CDATA[mg/L]]></O>
+<Expand/>
+</C>
+<C c="9" r="12" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="12" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="12" s="2">
+<O>
+<![CDATA[电导率]]></O>
+<Expand/>
+</C>
+<C c="12" r="12" s="2">
+<O>
+<![CDATA[μS/cm]]></O>
+<Expand/>
+</C>
+<C c="13" r="12" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds25" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="12" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds25" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="13" s="2">
+<O>
+<![CDATA[硬度]]></O>
+<Expand/>
+</C>
+<C c="4" r="13" s="2">
+<O>
+<![CDATA[mmol/L]]></O>
+<Expand/>
+</C>
+<C c="5" r="13" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="13" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="13" s="2">
+<O>
+<![CDATA[硬度]]></O>
+<Expand/>
+</C>
+<C c="8" r="13" s="2">
+<O>
+<![CDATA[mmol/L]]></O>
+<Expand/>
+</C>
+<C c="9" r="13" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds15" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="13" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds15" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="13" s="3">
+<Expand/>
+</C>
+<C c="12" r="13" s="4">
+<Expand/>
+</C>
+<C c="13" r="13" s="4">
+<Expand/>
+</C>
+<C c="14" r="13" s="5">
+<Expand/>
+</C>
+<C c="3" r="14" s="2">
+<O>
+<![CDATA[钙硬度]]></O>
+<Expand/>
+</C>
+<C c="4" r="14" s="2">
+<O>
+<![CDATA[mmol/L]]></O>
+<Expand/>
+</C>
+<C c="5" r="14" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="14" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="14" s="2">
+<O>
+<![CDATA[钙硬度]]></O>
+<Expand/>
+</C>
+<C c="8" r="14" s="2">
+<O>
+<![CDATA[mmol/L]]></O>
+<Expand/>
+</C>
+<C c="9" r="14" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="14" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="14" s="6">
+<Expand/>
+</C>
+<C c="12" r="14" s="1">
+<Expand/>
+</C>
+<C c="13" r="14" s="1">
+<Expand/>
+</C>
+<C c="14" r="14" s="7">
+<Expand/>
+</C>
+<C c="3" r="15" s="2">
+<O>
+<![CDATA[氯离子]]></O>
+<Expand/>
+</C>
+<C c="4" r="15" s="2">
+<O>
+<![CDATA[mg/L]]></O>
+<Expand/>
+</C>
+<C c="5" r="15" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="15" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="15" s="2">
+<O>
+<![CDATA[pH（25℃）]]></O>
+<Expand/>
+</C>
+<C c="8" r="15" s="2">
+<O>
+<![CDATA[——]]></O>
+<Expand/>
+</C>
+<C c="9" r="15" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds17" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="15" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds17" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="15" s="6">
+<Expand/>
+</C>
+<C c="12" r="15" s="1">
+<Expand/>
+</C>
+<C c="13" r="15" s="1">
+<Expand/>
+</C>
+<C c="14" r="15" s="7">
+<Expand/>
+</C>
+<C c="3" r="16" s="2">
+<O>
+<![CDATA[浊度]]></O>
+<Expand/>
+</C>
+<C c="4" r="16" s="2">
+<O>
+<![CDATA[NTU]]></O>
+<Expand/>
+</C>
+<C c="5" r="16" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds8" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="16" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds8" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="16" s="2">
+<O>
+<![CDATA[浊度]]></O>
+<Expand/>
+</C>
+<C c="8" r="16" s="2">
+<O>
+<![CDATA[NTU]]></O>
+<Expand/>
+</C>
+<C c="9" r="16" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds18" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="16" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds18" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="16" s="6">
+<Expand/>
+</C>
+<C c="12" r="16" s="1">
+<Expand/>
+</C>
+<C c="13" r="16" s="1">
+<Expand/>
+</C>
+<C c="14" r="16" s="7">
+<Expand/>
+</C>
+<C c="3" r="17" s="2">
+<O>
+<![CDATA[CODMn]]></O>
+<Expand/>
+</C>
+<C c="4" r="17" s="2">
+<O>
+<![CDATA[mg/L]]></O>
+<Expand/>
+</C>
+<C c="5" r="17" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds9" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="17" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds9" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="17" s="2">
+<O>
+<![CDATA[CODMn]]></O>
+<Expand/>
+</C>
+<C c="8" r="17" s="2">
+<O>
+<![CDATA[mg/L]]></O>
+<Expand/>
+</C>
+<C c="9" r="17" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds19" columnName="CYCLE_COLD_WATER_INDEX"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="17" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds19" columnName="CYCLE_COLD_WATER_TEST"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="17" s="8">
+<Expand/>
+</C>
+<C c="12" r="17" s="9">
+<Expand/>
+</C>
+<C c="13" r="17" s="9">
+<Expand/>
+</C>
+<C c="14" r="17" s="10">
+<Expand/>
+</C>
+<C c="6" r="20">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="7" r="20">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="3" r="21">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="108" foreground="-16737895"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Left style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Left style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="1"/>
+<Left style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

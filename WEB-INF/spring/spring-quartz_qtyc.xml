@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+	     http://www.springframework.org/schema/beans 
+	     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	     http://www.springframework.org/schema/tx
+	     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	     http://www.springframework.org/schema/aop 
+	     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+  <!--设备轮换-->
+	<bean id="LH" class="com.xzsoft.interfaces.LHExecute"/>
+	<bean id="jobDetailaddLH" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+		    <ref bean="LH"/>
+		</property>  
+    	<property name="targetMethod">
+    	    <value>AccessInterfaceExecuteLh</value>
+    	</property>
+    	<!-- 将并发设置为false   -->
+    	<property name="concurrent">
+    	   <value>false</value>
+    	 </property>
+	</bean>	
+ <!-- 异常情况 -->
+	<bean id="GZ" class="com.xzsoft.interfaces.GZExecute"/>
+	<bean id="jobDetailaddYC" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+		    <ref bean="GZ"/>
+		</property>  
+    	<property name="targetMethod">
+    	    <value>AccessInterfaceExecuteGZ</value>
+    	</property>
+    	<!-- 将并发设置为false   -->
+    	<property name="concurrent">
+    	   <value>false</value>
+    	 </property>
+	</bean>
+<!-- 机组启停 -->
+	<bean id="Jzqt" class="com.xzsoft.interfaces.Jzqt"/>
+	<bean id="jobDetailaddQT" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+		    <ref bean="Jzqt"/>
+		</property>  
+    	<property name="targetMethod">
+    	    <value>JzqtExecute</value>
+    	</property>
+    	<!-- 将并发设置为false   -->
+    	<property name="concurrent">
+    	   <value>false</value>
+    	 </property>
+	</bean>
+<!-- 定期试验  -->
+	<bean id="SY" class="com.xzsoft.interfaces.SYExecute"/>
+	<bean id="jobDetailaddSY" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+		    <ref bean="SY"/>
+		</property>  
+    	<property name="targetMethod">
+    	    <value>SYExecuteInterface</value>
+    	</property>
+    	<!-- 将并发设置为false   -->
+    	<property name="concurrent">
+    	   <value>false</value>
+    	 </property>
+	</bean>
+
+	
+      <!-- 设备轮换 -->
+	<bean id="testTriggeraddLH" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailaddLH"/>  
+       <property name="cronExpression" value="0 0/10 * * * ?"/><!-- 每十分钟执行一次   -->
+	</bean> 
+     <!--异常情况-->
+	<bean id="testTriggeraddYC" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailaddYC"/>  
+       <property name="cronExpression" value="0 0/3 * * * ?"/><!-- 每6分钟执行一次   -->
+	</bean> 
+	<!--机组启停-->
+	<bean id="testTriggeraddQT" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailaddQT"/>  
+       <property name="cronExpression" value="0 0/4 * * * ?"/><!-- 每4分钟执行一次   -->
+	</bean> 
+    <!--定期试验-->
+	<bean id="testTriggeraddSY" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailaddSY"/>  
+       <property name="cronExpression" value="0 0/15 * * * ?"/><!-- 每15分钟执行一次   -->
+	</bean> 
+    
+
+	<!--  总管理类如果将lazy-init='false'那么容器启动就会执行调度程序     -->
+	<bean id="addwork" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="false" >  
+        <property name="triggers">
+            <list>  
+              <!--   作业调度器,list下可加入其他的调度器   -->
+             
+			                   	 <ref bean="testTriggeraddLH" />
+                                 <ref bean="testTriggeraddYC" />
+                                 <ref bean="testTriggeraddQT" />
+                                 <ref bean="testTriggeraddSY" />
+								
+							
+            </list>  
+    </property>  
+</bean>    
+</beans>

@@ -1,0 +1,7513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select o.org_name,t.INDEX_TYPE,t.GROUP_ANNUAL,t.ANNUAL,t.MONTH1,t.MONTH2,t.MONTH3,t.MONTH4,t.MONTH5,t.MONTH6,t.MONTH7,t.MONTH8,t.MONTH9,t.MONTH10,t.MONTH11,t.MONTH12
+from TES_PS_ASSESS_INDEX t,TES_PS_GENERAL_MAIN a  ,xip_pub_orgs o 
+where t.GENERAL_ID = a.GENERAL_ID
+ and  a.org_id= o.org_id]]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="72000000" height="101808000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,864000,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2057400,6972300,3771900,2880000,2880000,2880000,2880000,2880000,2880000,2880000,2880000,2880000,2880000,2880000,2880000,2880000,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="0">
+<Expand/>
+</C>
+<C c="1" r="0" s="0">
+<Expand/>
+</C>
+<C c="2" r="0" s="0">
+<Expand/>
+</C>
+<C c="3" r="0" s="0">
+<Expand/>
+</C>
+<C c="4" r="0" s="0">
+<Expand/>
+</C>
+<C c="5" r="0" s="0">
+<Expand/>
+</C>
+<C c="6" r="0" s="0">
+<Expand/>
+</C>
+<C c="7" r="0" s="0">
+<Expand/>
+</C>
+<C c="8" r="0" s="0">
+<Expand/>
+</C>
+<C c="9" r="0" s="0">
+<Expand/>
+</C>
+<C c="10" r="0" s="0">
+<Expand/>
+</C>
+<C c="11" r="0" s="0">
+<Expand/>
+</C>
+<C c="12" r="0" s="0">
+<Expand/>
+</C>
+<C c="13" r="0" s="0">
+<Expand/>
+</C>
+<C c="14" r="0" s="0">
+<Expand/>
+</C>
+<C c="15" r="0" s="0">
+<Expand/>
+</C>
+<C c="16" r="0" s="0">
+<Expand/>
+</C>
+<C c="17" r="0" s="0">
+<Expand/>
+</C>
+<C c="0" r="1" s="0">
+<Expand/>
+</C>
+<C c="1" r="1" cs="15" s="1">
+<O>
+<![CDATA[集团公司电力企业生产经营月度分解指标计划]]></O>
+<Expand/>
+</C>
+<C c="16" r="1" s="0">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="17" r="1" s="0">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="2" s="0">
+<Expand/>
+</C>
+<C c="1" r="2" s="2">
+<O>
+<![CDATA[项目]]></O>
+<Expand/>
+</C>
+<C c="2" r="2" s="2">
+<O>
+<![CDATA[单位]]></O>
+<Expand/>
+</C>
+<C c="3" r="2" s="2">
+<O>
+<![CDATA[全年]]></O>
+<Expand/>
+</C>
+<C c="4" r="2" s="2">
+<O>
+<![CDATA[1月]]></O>
+<Expand/>
+</C>
+<C c="5" r="2" s="2">
+<O>
+<![CDATA[2月]]></O>
+<Expand/>
+</C>
+<C c="6" r="2" s="2">
+<O>
+<![CDATA[3月]]></O>
+<Expand/>
+</C>
+<C c="7" r="2" s="2">
+<O>
+<![CDATA[4月]]></O>
+<Expand/>
+</C>
+<C c="8" r="2" s="2">
+<O>
+<![CDATA[5月]]></O>
+<Expand/>
+</C>
+<C c="9" r="2" s="2">
+<O>
+<![CDATA[6月]]></O>
+<Expand/>
+</C>
+<C c="10" r="2" s="2">
+<O>
+<![CDATA[7月]]></O>
+<Expand/>
+</C>
+<C c="11" r="2" s="2">
+<O>
+<![CDATA[8月]]></O>
+<Expand/>
+</C>
+<C c="12" r="2" s="2">
+<O>
+<![CDATA[9月]]></O>
+<Expand/>
+</C>
+<C c="13" r="2" s="2">
+<O>
+<![CDATA[10月]]></O>
+<Expand/>
+</C>
+<C c="14" r="2" s="2">
+<O>
+<![CDATA[11月]]></O>
+<Expand/>
+</C>
+<C c="15" r="2" s="2">
+<O>
+<![CDATA[12月]]></O>
+<Expand/>
+</C>
+<C c="16" r="2" s="0">
+<Expand/>
+</C>
+<C c="17" r="2" s="0">
+<Expand/>
+</C>
+<C c="0" r="3" s="0">
+<Expand/>
+</C>
+<C c="1" r="3" s="3">
+<O>
+<![CDATA[发电量（集团）]]></O>
+<Expand/>
+</C>
+<C c="2" r="3" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="3" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E4:P4)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="3" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="3" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH2"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="3" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH3"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="3" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH4"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="3" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH5"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="3" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH6"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="3" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH7"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="3" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH8"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="3" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH9"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="3" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH10"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="3" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH11"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="3" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH12"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="3" s="0">
+<Expand/>
+</C>
+<C c="17" r="3" s="0">
+<Expand/>
+</C>
+<C c="0" r="4" s="0">
+<Expand/>
+</C>
+<C c="1" r="4" s="3">
+<O>
+<![CDATA[上网电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="4" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="4" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E5:P5)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[上网电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH2"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[上网电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH3"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[上网电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH4"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[上网电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH5"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[上网电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH6"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[上网电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH7"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[上网电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH8"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[上网电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH9"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[上网电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH10"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[上网电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH11"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[上网电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="4" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH12"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[上网电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="4" s="0">
+<Expand/>
+</C>
+<C c="17" r="4" s="0">
+<Expand/>
+</C>
+<C c="0" r="5" s="0">
+<Expand/>
+</C>
+<C c="1" r="5" s="3">
+<O>
+<![CDATA[集团综合厂用电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="5" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="5" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(D4*D28)/100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="5" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(E4*E28)/100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="5" r="5" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(F4*F28)/100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="5" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(G4*G28)/100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="5" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(H4*H28)/100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="5" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(I4*I28)/100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="9" r="5" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(J4*J28)/100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="10" r="5" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(K4*K28)/100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="5" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(L4*L28)/100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="12" r="5" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(M4*M28)/100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="13" r="5" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(N4*N28)/100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="14" r="5" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(O4*O28)/100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="15" r="5" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(P4*P28)/100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="16" r="5" s="0">
+<Expand/>
+</C>
+<C c="17" r="5" s="0">
+<Expand/>
+</C>
+<C c="0" r="6" s="0">
+<Expand/>
+</C>
+<C c="1" r="6" s="3">
+<O>
+<![CDATA[火力发电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="6" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="6" s="3">
+<Expand/>
+</C>
+<C c="4" r="6" s="3">
+<Expand/>
+</C>
+<C c="5" r="6" s="3">
+<Expand/>
+</C>
+<C c="6" r="6" s="3">
+<Expand/>
+</C>
+<C c="7" r="6" s="3">
+<Expand/>
+</C>
+<C c="8" r="6" s="3">
+<Expand/>
+</C>
+<C c="9" r="6" s="3">
+<Expand/>
+</C>
+<C c="10" r="6" s="3">
+<Expand/>
+</C>
+<C c="11" r="6" s="3">
+<Expand/>
+</C>
+<C c="12" r="6" s="3">
+<Expand/>
+</C>
+<C c="13" r="6" s="3">
+<Expand/>
+</C>
+<C c="14" r="6" s="3">
+<Expand/>
+</C>
+<C c="15" r="6" s="3">
+<Expand/>
+</C>
+<C c="16" r="6" s="0">
+<Expand/>
+</C>
+<C c="17" r="6" s="0">
+<Expand/>
+</C>
+<C c="0" r="7" s="0">
+<Expand/>
+</C>
+<C c="1" r="7" s="3">
+<O>
+<![CDATA[火力上网电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="7" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="7" s="3">
+<Expand/>
+</C>
+<C c="4" r="7" s="3">
+<Expand/>
+</C>
+<C c="5" r="7" s="3">
+<Expand/>
+</C>
+<C c="6" r="7" s="3">
+<Expand/>
+</C>
+<C c="7" r="7" s="3">
+<Expand/>
+</C>
+<C c="8" r="7" s="3">
+<Expand/>
+</C>
+<C c="9" r="7" s="3">
+<Expand/>
+</C>
+<C c="10" r="7" s="3">
+<Expand/>
+</C>
+<C c="11" r="7" s="3">
+<Expand/>
+</C>
+<C c="12" r="7" s="3">
+<Expand/>
+</C>
+<C c="13" r="7" s="3">
+<Expand/>
+</C>
+<C c="14" r="7" s="3">
+<Expand/>
+</C>
+<C c="15" r="7" s="3">
+<Expand/>
+</C>
+<C c="16" r="7" s="0">
+<Expand/>
+</C>
+<C c="17" r="7" s="0">
+<Expand/>
+</C>
+<C c="0" r="8" s="0">
+<Expand/>
+</C>
+<C c="1" r="8" s="3">
+<O>
+<![CDATA[火力综合厂用电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="8" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="8" s="3">
+<Expand/>
+</C>
+<C c="4" r="8" s="3">
+<Expand/>
+</C>
+<C c="5" r="8" s="3">
+<Expand/>
+</C>
+<C c="6" r="8" s="3">
+<Expand/>
+</C>
+<C c="7" r="8" s="3">
+<Expand/>
+</C>
+<C c="8" r="8" s="3">
+<Expand/>
+</C>
+<C c="9" r="8" s="3">
+<Expand/>
+</C>
+<C c="10" r="8" s="3">
+<Expand/>
+</C>
+<C c="11" r="8" s="3">
+<Expand/>
+</C>
+<C c="12" r="8" s="3">
+<Expand/>
+</C>
+<C c="13" r="8" s="3">
+<Expand/>
+</C>
+<C c="14" r="8" s="3">
+<Expand/>
+</C>
+<C c="15" r="8" s="3">
+<Expand/>
+</C>
+<C c="16" r="8" s="0">
+<Expand/>
+</C>
+<C c="17" r="8" s="0">
+<Expand/>
+</C>
+<C c="0" r="9" s="0">
+<Expand/>
+</C>
+<C c="1" r="9" s="3">
+<O>
+<![CDATA[燃煤发电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="9" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="9" s="3">
+<Expand/>
+</C>
+<C c="4" r="9" s="3">
+<Expand/>
+</C>
+<C c="5" r="9" s="3">
+<Expand/>
+</C>
+<C c="6" r="9" s="3">
+<Expand/>
+</C>
+<C c="7" r="9" s="3">
+<Expand/>
+</C>
+<C c="8" r="9" s="3">
+<Expand/>
+</C>
+<C c="9" r="9" s="3">
+<Expand/>
+</C>
+<C c="10" r="9" s="3">
+<Expand/>
+</C>
+<C c="11" r="9" s="3">
+<Expand/>
+</C>
+<C c="12" r="9" s="3">
+<Expand/>
+</C>
+<C c="13" r="9" s="3">
+<Expand/>
+</C>
+<C c="14" r="9" s="3">
+<Expand/>
+</C>
+<C c="15" r="9" s="3">
+<Expand/>
+</C>
+<C c="16" r="9" s="0">
+<Expand/>
+</C>
+<C c="17" r="9" s="0">
+<Expand/>
+</C>
+<C c="0" r="10" s="0">
+<Expand/>
+</C>
+<C c="1" r="10" s="3">
+<O>
+<![CDATA[燃煤上网电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="10" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="10" s="3">
+<Expand/>
+</C>
+<C c="4" r="10" s="3">
+<Expand/>
+</C>
+<C c="5" r="10" s="3">
+<Expand/>
+</C>
+<C c="6" r="10" s="3">
+<Expand/>
+</C>
+<C c="7" r="10" s="3">
+<Expand/>
+</C>
+<C c="8" r="10" s="3">
+<Expand/>
+</C>
+<C c="9" r="10" s="3">
+<Expand/>
+</C>
+<C c="10" r="10" s="3">
+<Expand/>
+</C>
+<C c="11" r="10" s="3">
+<Expand/>
+</C>
+<C c="12" r="10" s="3">
+<Expand/>
+</C>
+<C c="13" r="10" s="3">
+<Expand/>
+</C>
+<C c="14" r="10" s="3">
+<Expand/>
+</C>
+<C c="15" r="10" s="3">
+<Expand/>
+</C>
+<C c="16" r="10" s="0">
+<Expand/>
+</C>
+<C c="17" r="10" s="0">
+<Expand/>
+</C>
+<C c="0" r="11" s="0">
+<Expand/>
+</C>
+<C c="1" r="11" s="3">
+<O>
+<![CDATA[燃煤综合厂用电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="11" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="11" s="3">
+<Expand/>
+</C>
+<C c="4" r="11" s="3">
+<Expand/>
+</C>
+<C c="5" r="11" s="3">
+<Expand/>
+</C>
+<C c="6" r="11" s="3">
+<Expand/>
+</C>
+<C c="7" r="11" s="3">
+<Expand/>
+</C>
+<C c="8" r="11" s="3">
+<Expand/>
+</C>
+<C c="9" r="11" s="3">
+<Expand/>
+</C>
+<C c="10" r="11" s="3">
+<Expand/>
+</C>
+<C c="11" r="11" s="3">
+<Expand/>
+</C>
+<C c="12" r="11" s="3">
+<Expand/>
+</C>
+<C c="13" r="11" s="3">
+<Expand/>
+</C>
+<C c="14" r="11" s="3">
+<Expand/>
+</C>
+<C c="15" r="11" s="3">
+<Expand/>
+</C>
+<C c="16" r="11" s="0">
+<Expand/>
+</C>
+<C c="17" r="11" s="0">
+<Expand/>
+</C>
+<C c="0" r="12" s="0">
+<Expand/>
+</C>
+<C c="1" r="12" s="3">
+<O>
+<![CDATA[燃气发电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="12" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="12" s="3">
+<Expand/>
+</C>
+<C c="4" r="12" s="3">
+<Expand/>
+</C>
+<C c="5" r="12" s="3">
+<Expand/>
+</C>
+<C c="6" r="12" s="3">
+<Expand/>
+</C>
+<C c="7" r="12" s="3">
+<Expand/>
+</C>
+<C c="8" r="12" s="3">
+<Expand/>
+</C>
+<C c="9" r="12" s="3">
+<Expand/>
+</C>
+<C c="10" r="12" s="3">
+<Expand/>
+</C>
+<C c="11" r="12" s="3">
+<Expand/>
+</C>
+<C c="12" r="12" s="3">
+<Expand/>
+</C>
+<C c="13" r="12" s="3">
+<Expand/>
+</C>
+<C c="14" r="12" s="3">
+<Expand/>
+</C>
+<C c="15" r="12" s="3">
+<Expand/>
+</C>
+<C c="16" r="12" s="0">
+<Expand/>
+</C>
+<C c="17" r="12" s="0">
+<Expand/>
+</C>
+<C c="0" r="13" s="0">
+<Expand/>
+</C>
+<C c="1" r="13" s="3">
+<O>
+<![CDATA[燃气上网电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="13" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="13" s="3">
+<Expand/>
+</C>
+<C c="4" r="13" s="3">
+<Expand/>
+</C>
+<C c="5" r="13" s="3">
+<Expand/>
+</C>
+<C c="6" r="13" s="3">
+<Expand/>
+</C>
+<C c="7" r="13" s="3">
+<Expand/>
+</C>
+<C c="8" r="13" s="3">
+<Expand/>
+</C>
+<C c="9" r="13" s="3">
+<Expand/>
+</C>
+<C c="10" r="13" s="3">
+<Expand/>
+</C>
+<C c="11" r="13" s="3">
+<Expand/>
+</C>
+<C c="12" r="13" s="3">
+<Expand/>
+</C>
+<C c="13" r="13" s="3">
+<Expand/>
+</C>
+<C c="14" r="13" s="3">
+<Expand/>
+</C>
+<C c="15" r="13" s="3">
+<Expand/>
+</C>
+<C c="16" r="13" s="0">
+<Expand/>
+</C>
+<C c="17" r="13" s="0">
+<Expand/>
+</C>
+<C c="0" r="14" s="0">
+<Expand/>
+</C>
+<C c="1" r="14" s="3">
+<O>
+<![CDATA[燃气综合厂用电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="14" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="14" s="3">
+<Expand/>
+</C>
+<C c="4" r="14" s="3">
+<Expand/>
+</C>
+<C c="5" r="14" s="3">
+<Expand/>
+</C>
+<C c="6" r="14" s="3">
+<Expand/>
+</C>
+<C c="7" r="14" s="3">
+<Expand/>
+</C>
+<C c="8" r="14" s="3">
+<Expand/>
+</C>
+<C c="9" r="14" s="3">
+<Expand/>
+</C>
+<C c="10" r="14" s="3">
+<Expand/>
+</C>
+<C c="11" r="14" s="3">
+<Expand/>
+</C>
+<C c="12" r="14" s="3">
+<Expand/>
+</C>
+<C c="13" r="14" s="3">
+<Expand/>
+</C>
+<C c="14" r="14" s="3">
+<Expand/>
+</C>
+<C c="15" r="14" s="3">
+<Expand/>
+</C>
+<C c="16" r="14" s="0">
+<Expand/>
+</C>
+<C c="17" r="14" s="0">
+<Expand/>
+</C>
+<C c="0" r="15" s="0">
+<Expand/>
+</C>
+<C c="1" r="15" s="3">
+<O>
+<![CDATA[风电、水电、光伏发电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="15" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="15" s="3">
+<Expand/>
+</C>
+<C c="4" r="15" s="3">
+<Expand/>
+</C>
+<C c="5" r="15" s="3">
+<Expand/>
+</C>
+<C c="6" r="15" s="3">
+<Expand/>
+</C>
+<C c="7" r="15" s="3">
+<Expand/>
+</C>
+<C c="8" r="15" s="3">
+<Expand/>
+</C>
+<C c="9" r="15" s="3">
+<Expand/>
+</C>
+<C c="10" r="15" s="3">
+<Expand/>
+</C>
+<C c="11" r="15" s="3">
+<Expand/>
+</C>
+<C c="12" r="15" s="3">
+<Expand/>
+</C>
+<C c="13" r="15" s="3">
+<Expand/>
+</C>
+<C c="14" r="15" s="3">
+<Expand/>
+</C>
+<C c="15" r="15" s="3">
+<Expand/>
+</C>
+<C c="16" r="15" s="0">
+<Expand/>
+</C>
+<C c="17" r="15" s="0">
+<Expand/>
+</C>
+<C c="0" r="16" s="0">
+<Expand/>
+</C>
+<C c="1" r="16" s="3">
+<O>
+<![CDATA[供热量（集团）]]></O>
+<Expand/>
+</C>
+<C c="2" r="16" s="3">
+<O>
+<![CDATA[万吉焦]]></O>
+<Expand/>
+</C>
+<C c="3" r="16" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E17:P17)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="16" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="16" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH2"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="16" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH3"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="16" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH4"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="16" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH5"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="16" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH6"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="16" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH7"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="16" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH8"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="16" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH9"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="16" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH10"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="16" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH11"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="16" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH12"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="16" s="0">
+<Expand/>
+</C>
+<C c="17" r="16" s="0">
+<Expand/>
+</C>
+<C c="0" r="17" s="0">
+<Expand/>
+</C>
+<C c="1" r="17" s="3">
+<O>
+<![CDATA[燃煤供热量]]></O>
+<Expand/>
+</C>
+<C c="2" r="17" s="3">
+<O>
+<![CDATA[万吉焦]]></O>
+<Expand/>
+</C>
+<C c="3" r="17" s="3">
+<Expand/>
+</C>
+<C c="4" r="17" s="3">
+<Expand/>
+</C>
+<C c="5" r="17" s="3">
+<Expand/>
+</C>
+<C c="6" r="17" s="3">
+<Expand/>
+</C>
+<C c="7" r="17" s="3">
+<Expand/>
+</C>
+<C c="8" r="17" s="3">
+<Expand/>
+</C>
+<C c="9" r="17" s="3">
+<Expand/>
+</C>
+<C c="10" r="17" s="3">
+<Expand/>
+</C>
+<C c="11" r="17" s="3">
+<Expand/>
+</C>
+<C c="12" r="17" s="3">
+<Expand/>
+</C>
+<C c="13" r="17" s="3">
+<Expand/>
+</C>
+<C c="14" r="17" s="3">
+<Expand/>
+</C>
+<C c="15" r="17" s="3">
+<Expand/>
+</C>
+<C c="16" r="17" s="0">
+<Expand/>
+</C>
+<C c="17" r="17" s="0">
+<Expand/>
+</C>
+<C c="0" r="18" s="0">
+<Expand/>
+</C>
+<C c="1" r="18" s="3">
+<O>
+<![CDATA[燃煤供热煤耗]]></O>
+<Expand/>
+</C>
+<C c="2" r="18" s="3">
+<O>
+<![CDATA[千克/吉焦]]></O>
+<Expand/>
+</C>
+<C c="3" r="18" s="3">
+<Expand/>
+</C>
+<C c="4" r="18" s="3">
+<Expand/>
+</C>
+<C c="5" r="18" s="3">
+<Expand/>
+</C>
+<C c="6" r="18" s="3">
+<Expand/>
+</C>
+<C c="7" r="18" s="3">
+<Expand/>
+</C>
+<C c="8" r="18" s="3">
+<Expand/>
+</C>
+<C c="9" r="18" s="3">
+<Expand/>
+</C>
+<C c="10" r="18" s="3">
+<Expand/>
+</C>
+<C c="11" r="18" s="3">
+<Expand/>
+</C>
+<C c="12" r="18" s="3">
+<Expand/>
+</C>
+<C c="13" r="18" s="3">
+<Expand/>
+</C>
+<C c="14" r="18" s="3">
+<Expand/>
+</C>
+<C c="15" r="18" s="3">
+<Expand/>
+</C>
+<C c="16" r="18" s="0">
+<Expand/>
+</C>
+<C c="17" r="18" s="0">
+<Expand/>
+</C>
+<C c="0" r="19" s="0">
+<Expand/>
+</C>
+<C c="1" r="19" s="3">
+<O>
+<![CDATA[燃气供热量]]></O>
+<Expand/>
+</C>
+<C c="2" r="19" s="3">
+<O>
+<![CDATA[万吉焦]]></O>
+<Expand/>
+</C>
+<C c="3" r="19" s="3">
+<Expand/>
+</C>
+<C c="4" r="19" s="3">
+<Expand/>
+</C>
+<C c="5" r="19" s="3">
+<Expand/>
+</C>
+<C c="6" r="19" s="3">
+<Expand/>
+</C>
+<C c="7" r="19" s="3">
+<Expand/>
+</C>
+<C c="8" r="19" s="3">
+<Expand/>
+</C>
+<C c="9" r="19" s="3">
+<Expand/>
+</C>
+<C c="10" r="19" s="3">
+<Expand/>
+</C>
+<C c="11" r="19" s="3">
+<Expand/>
+</C>
+<C c="12" r="19" s="3">
+<Expand/>
+</C>
+<C c="13" r="19" s="3">
+<Expand/>
+</C>
+<C c="14" r="19" s="3">
+<Expand/>
+</C>
+<C c="15" r="19" s="3">
+<Expand/>
+</C>
+<C c="16" r="19" s="0">
+<Expand/>
+</C>
+<C c="17" r="19" s="0">
+<Expand/>
+</C>
+<C c="0" r="20" s="0">
+<Expand/>
+</C>
+<C c="1" r="20" s="3">
+<O>
+<![CDATA[燃气供热气耗]]></O>
+<Expand/>
+</C>
+<C c="2" r="20" s="3">
+<O>
+<![CDATA[立方米/吉焦]]></O>
+<Expand/>
+</C>
+<C c="3" r="20" s="3">
+<Expand/>
+</C>
+<C c="4" r="20" s="3">
+<Expand/>
+</C>
+<C c="5" r="20" s="3">
+<Expand/>
+</C>
+<C c="6" r="20" s="3">
+<Expand/>
+</C>
+<C c="7" r="20" s="3">
+<Expand/>
+</C>
+<C c="8" r="20" s="3">
+<Expand/>
+</C>
+<C c="9" r="20" s="3">
+<Expand/>
+</C>
+<C c="10" r="20" s="3">
+<Expand/>
+</C>
+<C c="11" r="20" s="3">
+<Expand/>
+</C>
+<C c="12" r="20" s="3">
+<Expand/>
+</C>
+<C c="13" r="20" s="3">
+<Expand/>
+</C>
+<C c="14" r="20" s="3">
+<Expand/>
+</C>
+<C c="15" r="20" s="3">
+<Expand/>
+</C>
+<C c="16" r="20" s="0">
+<Expand/>
+</C>
+<C c="17" r="20" s="0">
+<Expand/>
+</C>
+<C c="0" r="21" s="0">
+<Expand/>
+</C>
+<C c="1" r="21" s="3">
+<O>
+<![CDATA[综合供电煤耗（集团）]]></O>
+<Expand/>
+</C>
+<C c="2" r="21" s="3">
+<O>
+<![CDATA[克/千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="21" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E22:P22)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="21" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤耗]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="21" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH2"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤耗]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="21" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH3"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤耗]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="21" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH4"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤耗]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="21" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH5"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤耗]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="21" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH6"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤耗]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="21" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH7"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤耗]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="21" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH8"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤耗]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="21" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH9"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤耗]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="21" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH10"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤耗]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="21" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH11"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤耗]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="21" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH12"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤耗]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="21" s="0">
+<Expand/>
+</C>
+<C c="17" r="21" s="0">
+<Expand/>
+</C>
+<C c="0" r="22" s="0">
+<Expand/>
+</C>
+<C c="1" r="22" s="3">
+<O>
+<![CDATA[燃煤综合供电煤耗]]></O>
+<Expand/>
+</C>
+<C c="2" r="22" s="3">
+<O>
+<![CDATA[克/千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="22" s="3">
+<Expand/>
+</C>
+<C c="4" r="22" s="3">
+<Expand/>
+</C>
+<C c="5" r="22" s="3">
+<Expand/>
+</C>
+<C c="6" r="22" s="3">
+<Expand/>
+</C>
+<C c="7" r="22" s="3">
+<Expand/>
+</C>
+<C c="8" r="22" s="3">
+<Expand/>
+</C>
+<C c="9" r="22" s="3">
+<Expand/>
+</C>
+<C c="10" r="22" s="3">
+<Expand/>
+</C>
+<C c="11" r="22" s="3">
+<Expand/>
+</C>
+<C c="12" r="22" s="3">
+<Expand/>
+</C>
+<C c="13" r="22" s="3">
+<Expand/>
+</C>
+<C c="14" r="22" s="3">
+<Expand/>
+</C>
+<C c="15" r="22" s="3">
+<Expand/>
+</C>
+<C c="16" r="22" s="0">
+<Expand/>
+</C>
+<C c="17" r="22" s="0">
+<Expand/>
+</C>
+<C c="0" r="23" s="0">
+<Expand/>
+</C>
+<C c="1" r="23" s="3">
+<O>
+<![CDATA[燃气综合供电气耗]]></O>
+<Expand/>
+</C>
+<C c="2" r="23" s="3">
+<O>
+<![CDATA[立方米/千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="23" s="3">
+<Expand/>
+</C>
+<C c="4" r="23" s="3">
+<Expand/>
+</C>
+<C c="5" r="23" s="3">
+<Expand/>
+</C>
+<C c="6" r="23" s="3">
+<Expand/>
+</C>
+<C c="7" r="23" s="3">
+<Expand/>
+</C>
+<C c="8" r="23" s="3">
+<Expand/>
+</C>
+<C c="9" r="23" s="3">
+<Expand/>
+</C>
+<C c="10" r="23" s="3">
+<Expand/>
+</C>
+<C c="11" r="23" s="3">
+<Expand/>
+</C>
+<C c="12" r="23" s="3">
+<Expand/>
+</C>
+<C c="13" r="23" s="3">
+<Expand/>
+</C>
+<C c="14" r="23" s="3">
+<Expand/>
+</C>
+<C c="15" r="23" s="3">
+<Expand/>
+</C>
+<C c="16" r="23" s="0">
+<Expand/>
+</C>
+<C c="17" r="23" s="0">
+<Expand/>
+</C>
+<C c="0" r="24" s="0">
+<Expand/>
+</C>
+<C c="1" r="24" s="3">
+<O>
+<![CDATA[火力发电煤耗]]></O>
+<Expand/>
+</C>
+<C c="2" r="24" s="3">
+<O>
+<![CDATA[克/千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="24" s="3">
+<Expand/>
+</C>
+<C c="4" r="24" s="3">
+<Expand/>
+</C>
+<C c="5" r="24" s="3">
+<Expand/>
+</C>
+<C c="6" r="24" s="3">
+<Expand/>
+</C>
+<C c="7" r="24" s="3">
+<Expand/>
+</C>
+<C c="8" r="24" s="3">
+<Expand/>
+</C>
+<C c="9" r="24" s="3">
+<Expand/>
+</C>
+<C c="10" r="24" s="3">
+<Expand/>
+</C>
+<C c="11" r="24" s="3">
+<Expand/>
+</C>
+<C c="12" r="24" s="3">
+<Expand/>
+</C>
+<C c="13" r="24" s="3">
+<Expand/>
+</C>
+<C c="14" r="24" s="3">
+<Expand/>
+</C>
+<C c="15" r="24" s="3">
+<Expand/>
+</C>
+<C c="16" r="24" s="0">
+<Expand/>
+</C>
+<C c="17" r="24" s="0">
+<Expand/>
+</C>
+<C c="0" r="25" s="0">
+<Expand/>
+</C>
+<C c="1" r="25" s="3">
+<O>
+<![CDATA[燃煤发电煤耗]]></O>
+<Expand/>
+</C>
+<C c="2" r="25" s="3">
+<O>
+<![CDATA[克/千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="25" s="3">
+<Expand/>
+</C>
+<C c="4" r="25" s="3">
+<Expand/>
+</C>
+<C c="5" r="25" s="3">
+<Expand/>
+</C>
+<C c="6" r="25" s="3">
+<Expand/>
+</C>
+<C c="7" r="25" s="3">
+<Expand/>
+</C>
+<C c="8" r="25" s="3">
+<Expand/>
+</C>
+<C c="9" r="25" s="3">
+<Expand/>
+</C>
+<C c="10" r="25" s="3">
+<Expand/>
+</C>
+<C c="11" r="25" s="3">
+<Expand/>
+</C>
+<C c="12" r="25" s="3">
+<Expand/>
+</C>
+<C c="13" r="25" s="3">
+<Expand/>
+</C>
+<C c="14" r="25" s="3">
+<Expand/>
+</C>
+<C c="15" r="25" s="3">
+<Expand/>
+</C>
+<C c="16" r="25" s="0">
+<Expand/>
+</C>
+<C c="17" r="25" s="0">
+<Expand/>
+</C>
+<C c="0" r="26" s="0">
+<Expand/>
+</C>
+<C c="1" r="26" s="3">
+<O>
+<![CDATA[燃气发电煤耗]]></O>
+<Expand/>
+</C>
+<C c="2" r="26" s="3">
+<O>
+<![CDATA[立方米/千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="26" s="3">
+<Expand/>
+</C>
+<C c="4" r="26" s="3">
+<Expand/>
+</C>
+<C c="5" r="26" s="3">
+<Expand/>
+</C>
+<C c="6" r="26" s="3">
+<Expand/>
+</C>
+<C c="7" r="26" s="3">
+<Expand/>
+</C>
+<C c="8" r="26" s="3">
+<Expand/>
+</C>
+<C c="9" r="26" s="3">
+<Expand/>
+</C>
+<C c="10" r="26" s="3">
+<Expand/>
+</C>
+<C c="11" r="26" s="3">
+<Expand/>
+</C>
+<C c="12" r="26" s="3">
+<Expand/>
+</C>
+<C c="13" r="26" s="3">
+<Expand/>
+</C>
+<C c="14" r="26" s="3">
+<Expand/>
+</C>
+<C c="15" r="26" s="3">
+<Expand/>
+</C>
+<C c="16" r="26" s="0">
+<Expand/>
+</C>
+<C c="17" r="26" s="0">
+<Expand/>
+</C>
+<C c="0" r="27" s="0">
+<Expand/>
+</C>
+<C c="1" r="27" s="3">
+<O>
+<![CDATA[综合厂用电率（集团）]]></O>
+<Expand/>
+</C>
+<C c="2" r="27" s="3">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="3" r="27" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E28:P28)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="27" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="27" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH2"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="27" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH3"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="27" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH4"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="27" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH5"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="27" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH6"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="27" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH7"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="27" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH8"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="27" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH9"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="27" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH10"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="27" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH11"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="27" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH12"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="27" s="0">
+<Expand/>
+</C>
+<C c="17" r="27" s="0">
+<Expand/>
+</C>
+<C c="0" r="28" s="0">
+<Expand/>
+</C>
+<C c="1" r="28" s="3">
+<O>
+<![CDATA[火力综合厂用电率]]></O>
+<Expand/>
+</C>
+<C c="2" r="28" s="3">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="3" r="28" s="3">
+<Expand/>
+</C>
+<C c="4" r="28" s="3">
+<Expand/>
+</C>
+<C c="5" r="28" s="3">
+<Expand/>
+</C>
+<C c="6" r="28" s="3">
+<Expand/>
+</C>
+<C c="7" r="28" s="3">
+<Expand/>
+</C>
+<C c="8" r="28" s="3">
+<Expand/>
+</C>
+<C c="9" r="28" s="3">
+<Expand/>
+</C>
+<C c="10" r="28" s="3">
+<Expand/>
+</C>
+<C c="11" r="28" s="3">
+<Expand/>
+</C>
+<C c="12" r="28" s="3">
+<Expand/>
+</C>
+<C c="13" r="28" s="3">
+<Expand/>
+</C>
+<C c="14" r="28" s="3">
+<Expand/>
+</C>
+<C c="15" r="28" s="3">
+<Expand/>
+</C>
+<C c="16" r="28" s="0">
+<Expand/>
+</C>
+<C c="17" r="28" s="0">
+<Expand/>
+</C>
+<C c="0" r="29" s="0">
+<Expand/>
+</C>
+<C c="1" r="29" s="3">
+<O>
+<![CDATA[燃煤综合厂用电率]]></O>
+<Expand/>
+</C>
+<C c="2" r="29" s="3">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="3" r="29" s="3">
+<Expand/>
+</C>
+<C c="4" r="29" s="3">
+<Expand/>
+</C>
+<C c="5" r="29" s="3">
+<Expand/>
+</C>
+<C c="6" r="29" s="3">
+<Expand/>
+</C>
+<C c="7" r="29" s="3">
+<Expand/>
+</C>
+<C c="8" r="29" s="3">
+<Expand/>
+</C>
+<C c="9" r="29" s="3">
+<Expand/>
+</C>
+<C c="10" r="29" s="3">
+<Expand/>
+</C>
+<C c="11" r="29" s="3">
+<Expand/>
+</C>
+<C c="12" r="29" s="3">
+<Expand/>
+</C>
+<C c="13" r="29" s="3">
+<Expand/>
+</C>
+<C c="14" r="29" s="3">
+<Expand/>
+</C>
+<C c="15" r="29" s="3">
+<Expand/>
+</C>
+<C c="16" r="29" s="0">
+<Expand/>
+</C>
+<C c="17" r="29" s="0">
+<Expand/>
+</C>
+<C c="0" r="30" s="0">
+<Expand/>
+</C>
+<C c="1" r="30" s="3">
+<O>
+<![CDATA[燃气综合厂用电率]]></O>
+<Expand/>
+</C>
+<C c="2" r="30" s="3">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="3" r="30" s="3">
+<Expand/>
+</C>
+<C c="4" r="30" s="3">
+<Expand/>
+</C>
+<C c="5" r="30" s="3">
+<Expand/>
+</C>
+<C c="6" r="30" s="3">
+<Expand/>
+</C>
+<C c="7" r="30" s="3">
+<Expand/>
+</C>
+<C c="8" r="30" s="3">
+<Expand/>
+</C>
+<C c="9" r="30" s="3">
+<Expand/>
+</C>
+<C c="10" r="30" s="3">
+<Expand/>
+</C>
+<C c="11" r="30" s="3">
+<Expand/>
+</C>
+<C c="12" r="30" s="3">
+<Expand/>
+</C>
+<C c="13" r="30" s="3">
+<Expand/>
+</C>
+<C c="14" r="30" s="3">
+<Expand/>
+</C>
+<C c="15" r="30" s="3">
+<Expand/>
+</C>
+<C c="16" r="30" s="0">
+<Expand/>
+</C>
+<C c="17" r="30" s="0">
+<Expand/>
+</C>
+<C c="0" r="31" s="0">
+<Expand/>
+</C>
+<C c="1" r="31" s="3">
+<O>
+<![CDATA[风电、水电、光伏综合厂用电率]]></O>
+<Expand/>
+</C>
+<C c="2" r="31" s="3">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="3" r="31" s="3">
+<Expand/>
+</C>
+<C c="4" r="31" s="3">
+<Expand/>
+</C>
+<C c="5" r="31" s="3">
+<Expand/>
+</C>
+<C c="6" r="31" s="3">
+<Expand/>
+</C>
+<C c="7" r="31" s="3">
+<Expand/>
+</C>
+<C c="8" r="31" s="3">
+<Expand/>
+</C>
+<C c="9" r="31" s="3">
+<Expand/>
+</C>
+<C c="10" r="31" s="3">
+<Expand/>
+</C>
+<C c="11" r="31" s="3">
+<Expand/>
+</C>
+<C c="12" r="31" s="3">
+<Expand/>
+</C>
+<C c="13" r="31" s="3">
+<Expand/>
+</C>
+<C c="14" r="31" s="3">
+<Expand/>
+</C>
+<C c="15" r="31" s="3">
+<Expand/>
+</C>
+<C c="16" r="31" s="0">
+<Expand/>
+</C>
+<C c="17" r="31" s="0">
+<Expand/>
+</C>
+<C c="0" r="32" s="0">
+<Expand/>
+</C>
+<C c="1" r="32" s="3">
+<O>
+<![CDATA[风电综合厂用电率]]></O>
+<Expand/>
+</C>
+<C c="2" r="32" s="3">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="3" r="32" s="3">
+<Expand/>
+</C>
+<C c="4" r="32" s="3">
+<Expand/>
+</C>
+<C c="5" r="32" s="3">
+<Expand/>
+</C>
+<C c="6" r="32" s="3">
+<Expand/>
+</C>
+<C c="7" r="32" s="3">
+<Expand/>
+</C>
+<C c="8" r="32" s="3">
+<Expand/>
+</C>
+<C c="9" r="32" s="3">
+<Expand/>
+</C>
+<C c="10" r="32" s="3">
+<Expand/>
+</C>
+<C c="11" r="32" s="3">
+<Expand/>
+</C>
+<C c="12" r="32" s="3">
+<Expand/>
+</C>
+<C c="13" r="32" s="3">
+<Expand/>
+</C>
+<C c="14" r="32" s="3">
+<Expand/>
+</C>
+<C c="15" r="32" s="3">
+<Expand/>
+</C>
+<C c="16" r="32" s="0">
+<Expand/>
+</C>
+<C c="17" r="32" s="0">
+<Expand/>
+</C>
+<C c="0" r="33" s="0">
+<Expand/>
+</C>
+<C c="1" r="33" s="3">
+<O>
+<![CDATA[水电综合厂用电率]]></O>
+<Expand/>
+</C>
+<C c="2" r="33" s="3">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="3" r="33" s="3">
+<Expand/>
+</C>
+<C c="4" r="33" s="3">
+<Expand/>
+</C>
+<C c="5" r="33" s="3">
+<Expand/>
+</C>
+<C c="6" r="33" s="3">
+<Expand/>
+</C>
+<C c="7" r="33" s="3">
+<Expand/>
+</C>
+<C c="8" r="33" s="3">
+<Expand/>
+</C>
+<C c="9" r="33" s="3">
+<Expand/>
+</C>
+<C c="10" r="33" s="3">
+<Expand/>
+</C>
+<C c="11" r="33" s="3">
+<Expand/>
+</C>
+<C c="12" r="33" s="3">
+<Expand/>
+</C>
+<C c="13" r="33" s="3">
+<Expand/>
+</C>
+<C c="14" r="33" s="3">
+<Expand/>
+</C>
+<C c="15" r="33" s="3">
+<Expand/>
+</C>
+<C c="16" r="33" s="0">
+<Expand/>
+</C>
+<C c="17" r="33" s="0">
+<Expand/>
+</C>
+<C c="0" r="34" s="0">
+<Expand/>
+</C>
+<C c="1" r="34" s="3">
+<O>
+<![CDATA[光伏综合厂用电率]]></O>
+<Expand/>
+</C>
+<C c="2" r="34" s="3">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="3" r="34" s="3">
+<Expand/>
+</C>
+<C c="4" r="34" s="3">
+<Expand/>
+</C>
+<C c="5" r="34" s="3">
+<Expand/>
+</C>
+<C c="6" r="34" s="3">
+<Expand/>
+</C>
+<C c="7" r="34" s="3">
+<Expand/>
+</C>
+<C c="8" r="34" s="3">
+<Expand/>
+</C>
+<C c="9" r="34" s="3">
+<Expand/>
+</C>
+<C c="10" r="34" s="3">
+<Expand/>
+</C>
+<C c="11" r="34" s="3">
+<Expand/>
+</C>
+<C c="12" r="34" s="3">
+<Expand/>
+</C>
+<C c="13" r="34" s="3">
+<Expand/>
+</C>
+<C c="14" r="34" s="3">
+<Expand/>
+</C>
+<C c="15" r="34" s="3">
+<Expand/>
+</C>
+<C c="16" r="34" s="0">
+<Expand/>
+</C>
+<C c="17" r="34" s="0">
+<Expand/>
+</C>
+<C c="0" r="35" s="0">
+<Expand/>
+</C>
+<C c="1" r="35" s="3">
+<O>
+<![CDATA[利润总额（集团）]]></O>
+<Expand/>
+</C>
+<C c="2" r="35" s="3">
+<O>
+<![CDATA[万元]]></O>
+<Expand/>
+</C>
+<C c="3" r="35" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E36:P36)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="35" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[利润总额]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="35" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH2"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[利润总额]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="35" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH3"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[利润总额]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="35" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH4"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[利润总额]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="35" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH5"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[利润总额]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="35" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH6"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[利润总额]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="35" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH7"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[利润总额]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="35" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH8"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[利润总额]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="35" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH9"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[利润总额]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="35" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH10"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[利润总额]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="35" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH11"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[利润总额]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="35" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH12"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[利润总额]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="35" s="0">
+<Expand/>
+</C>
+<C c="17" r="35" s="0">
+<Expand/>
+</C>
+<C c="0" r="36" s="0">
+<Expand/>
+</C>
+<C c="1" r="36" s="3">
+<O>
+<![CDATA[材料费]]></O>
+<Expand/>
+</C>
+<C c="2" r="36" s="3">
+<O>
+<![CDATA[万元]]></O>
+<Expand/>
+</C>
+<C c="3" r="36" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E37:P37)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="36" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[材料费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="36" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH2"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[材料费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="36" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH3"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[材料费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="36" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH4"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[材料费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="36" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH5"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[材料费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="36" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH6"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[材料费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="36" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH7"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[材料费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="36" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH8"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[材料费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="36" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH9"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[材料费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="36" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH10"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[材料费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="36" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH11"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[材料费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="36" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH12"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[材料费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="36" s="0">
+<Expand/>
+</C>
+<C c="17" r="36" s="0">
+<Expand/>
+</C>
+<C c="0" r="37" s="0">
+<Expand/>
+</C>
+<C c="1" r="37" s="3">
+<O>
+<![CDATA[技术改造费]]></O>
+<Expand/>
+</C>
+<C c="2" r="37" s="3">
+<O>
+<![CDATA[万元]]></O>
+<Expand/>
+</C>
+<C c="3" r="37" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E38:P38)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="37" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术改造费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="37" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH2"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术改造费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="37" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH3"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术改造费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="37" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH4"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术改造费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="37" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH5"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术改造费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="37" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH6"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术改造费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="37" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH7"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术改造费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="37" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH8"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术改造费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="37" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH9"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术改造费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="37" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH10"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术改造费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="37" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH11"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术改造费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="37" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH12"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术改造费]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="37" s="0">
+<Expand/>
+</C>
+<C c="17" r="37" s="0">
+<Expand/>
+</C>
+<C c="0" r="38" s="0">
+<Expand/>
+</C>
+<C c="1" r="38" s="3">
+<O>
+<![CDATA[检修费用]]></O>
+<Expand/>
+</C>
+<C c="2" r="38" s="3">
+<O>
+<![CDATA[万元]]></O>
+<Expand/>
+</C>
+<C c="3" r="38" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E39:P39)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="38" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[检修费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="38" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH2"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[检修费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="38" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH3"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[检修费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="38" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH4"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[检修费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="38" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH5"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[检修费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="38" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH6"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[检修费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="38" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH7"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[检修费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="38" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH8"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[检修费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="38" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH9"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[检修费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="38" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH10"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[检修费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="38" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH11"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[检修费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="38" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH12"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[检修费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="38" s="0">
+<Expand/>
+</C>
+<C c="17" r="38" s="0">
+<Expand/>
+</C>
+<C c="0" r="39" s="0">
+<Expand/>
+</C>
+<C c="1" r="39" s="3">
+<O>
+<![CDATA[生产其他费用]]></O>
+<Expand/>
+</C>
+<C c="2" r="39" s="3">
+<O>
+<![CDATA[万元]]></O>
+<Expand/>
+</C>
+<C c="3" r="39" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E40:P40)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="39" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[生产其他费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="39" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH2"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[生产其他费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="39" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH3"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[生产其他费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="39" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH4"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[生产其他费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="39" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH5"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[生产其他费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="39" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH6"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[生产其他费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="39" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH7"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[生产其他费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="39" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH8"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[生产其他费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="39" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH9"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[生产其他费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="39" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH10"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[生产其他费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="39" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH11"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[生产其他费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="39" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH12"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[生产其他费用]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="39" s="0">
+<Expand/>
+</C>
+<C c="17" r="39" s="0">
+<Expand/>
+</C>
+<C c="0" r="40" s="0">
+<Expand/>
+</C>
+<C c="1" r="40" s="3">
+<O>
+<![CDATA[入厂标煤单价]]></O>
+<Expand/>
+</C>
+<C c="2" r="40" s="3">
+<O>
+<![CDATA[元/吨]]></O>
+<Expand/>
+</C>
+<C c="3" r="40" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E41:P41)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="40" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH1"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[入场标煤单价]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="40" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH2"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[入场标煤单价]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="40" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH3"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[入场标煤单价]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="40" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH4"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[入场标煤单价]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="40" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH5"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[入场标煤单价]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="40" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH6"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[入场标煤单价]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="40" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH7"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[入场标煤单价]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="40" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH8"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[入场标煤单价]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="40" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH9"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[入场标煤单价]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="40" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH10"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[入场标煤单价]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="40" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH11"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[入场标煤单价]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="40" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH12"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[INDEX_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[入场标煤单价]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="40" s="0">
+<Expand/>
+</C>
+<C c="17" r="40" s="0">
+<Expand/>
+</C>
+<C c="0" r="41" s="0">
+<Expand/>
+</C>
+<C c="1" r="41" s="2">
+<O>
+<![CDATA[项目]]></O>
+<Expand/>
+</C>
+<C c="2" r="41" s="2">
+<O>
+<![CDATA[单位]]></O>
+<Expand/>
+</C>
+<C c="3" r="41" s="2">
+<O>
+<![CDATA[全年]]></O>
+<Expand/>
+</C>
+<C c="4" r="41" s="2">
+<O>
+<![CDATA[1月]]></O>
+<Expand/>
+</C>
+<C c="5" r="41" s="2">
+<O>
+<![CDATA[1-2月]]></O>
+<Expand/>
+</C>
+<C c="6" r="41" s="2">
+<O>
+<![CDATA[1-3月]]></O>
+<Expand/>
+</C>
+<C c="7" r="41" s="2">
+<O>
+<![CDATA[1-4月]]></O>
+<Expand/>
+</C>
+<C c="8" r="41" s="2">
+<O>
+<![CDATA[1-5月]]></O>
+<Expand/>
+</C>
+<C c="9" r="41" s="2">
+<O>
+<![CDATA[1-6月]]></O>
+<Expand/>
+</C>
+<C c="10" r="41" s="2">
+<O>
+<![CDATA[1-7月]]></O>
+<Expand/>
+</C>
+<C c="11" r="41" s="2">
+<O>
+<![CDATA[1-8月]]></O>
+<Expand/>
+</C>
+<C c="12" r="41" s="2">
+<O>
+<![CDATA[1-9月]]></O>
+<Expand/>
+</C>
+<C c="13" r="41" s="2">
+<O>
+<![CDATA[1-10月]]></O>
+<Expand/>
+</C>
+<C c="14" r="41" s="2">
+<O>
+<![CDATA[1-11月]]></O>
+<Expand/>
+</C>
+<C c="15" r="41" s="2">
+<O>
+<![CDATA[1-12月]]></O>
+<Expand/>
+</C>
+<C c="16" r="41" s="0">
+<Expand/>
+</C>
+<C c="17" r="41" s="0">
+<Expand/>
+</C>
+<C c="0" r="42" s="0">
+<Expand/>
+</C>
+<C c="1" r="42" s="3">
+<O>
+<![CDATA[累计发电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="42" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="42" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="42" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="5" r="42" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E4 + F4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="42" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E4 + F4 + G4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="42" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E4 + F4 + G4 + H4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="42" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E4 + F4 + G4 + H4 + I4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="9" r="42" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E4 + F4 + G4 + H4 + I4 + J4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="10" r="42" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E4 + F4 + G4 + H4 + I4 + J4 + K4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="42" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E4 + F4 + G4 + H4 + I4 + J4 + K4 + L4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="12" r="42" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E4 + F4 + G4 + H4 + I4 + J4 + K4 + L4 + M4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="13" r="42" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E4 + F4 + G4 + H4 + I4 + J4 + K4 + L4 + M4 + N4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="14" r="42" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E4 + F4 + G4 + H4 + I4 + J4 + K4 + L4 + M4 + N4 + O4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="15" r="42" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E4 + F4 + G4 + H4 + I4 + J4 + K4 + L4 + M4 + N4 + O4 + P4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="16" r="42" s="0">
+<Expand/>
+</C>
+<C c="17" r="42" s="0">
+<Expand/>
+</C>
+<C c="0" r="43" s="0">
+<Expand/>
+</C>
+<C c="1" r="43" s="3">
+<O>
+<![CDATA[累计火力发电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="43" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="43" s="3">
+<Expand/>
+</C>
+<C c="4" r="43" s="3">
+<Expand/>
+</C>
+<C c="5" r="43" s="3">
+<Expand/>
+</C>
+<C c="6" r="43" s="3">
+<Expand/>
+</C>
+<C c="7" r="43" s="3">
+<Expand/>
+</C>
+<C c="8" r="43" s="3">
+<Expand/>
+</C>
+<C c="9" r="43" s="3">
+<Expand/>
+</C>
+<C c="10" r="43" s="3">
+<Expand/>
+</C>
+<C c="11" r="43" s="3">
+<Expand/>
+</C>
+<C c="12" r="43" s="3">
+<Expand/>
+</C>
+<C c="13" r="43" s="3">
+<Expand/>
+</C>
+<C c="14" r="43" s="3">
+<Expand/>
+</C>
+<C c="15" r="43" s="3">
+<Expand/>
+</C>
+<C c="16" r="43" s="0">
+<Expand/>
+</C>
+<C c="17" r="43" s="0">
+<Expand/>
+</C>
+<C c="0" r="44" s="0">
+<Expand/>
+</C>
+<C c="1" r="44" s="3">
+<O>
+<![CDATA[累计燃煤发电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="44" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="44" s="3">
+<Expand/>
+</C>
+<C c="4" r="44" s="3">
+<Expand/>
+</C>
+<C c="5" r="44" s="3">
+<Expand/>
+</C>
+<C c="6" r="44" s="3">
+<Expand/>
+</C>
+<C c="7" r="44" s="3">
+<Expand/>
+</C>
+<C c="8" r="44" s="3">
+<Expand/>
+</C>
+<C c="9" r="44" s="3">
+<Expand/>
+</C>
+<C c="10" r="44" s="3">
+<Expand/>
+</C>
+<C c="11" r="44" s="3">
+<Expand/>
+</C>
+<C c="12" r="44" s="3">
+<Expand/>
+</C>
+<C c="13" r="44" s="3">
+<Expand/>
+</C>
+<C c="14" r="44" s="3">
+<Expand/>
+</C>
+<C c="15" r="44" s="3">
+<Expand/>
+</C>
+<C c="16" r="44" s="0">
+<Expand/>
+</C>
+<C c="17" r="44" s="0">
+<Expand/>
+</C>
+<C c="0" r="45" s="0">
+<Expand/>
+</C>
+<C c="1" r="45" s="3">
+<O>
+<![CDATA[累计燃气发电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="45" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="45" s="3">
+<Expand/>
+</C>
+<C c="4" r="45" s="3">
+<Expand/>
+</C>
+<C c="5" r="45" s="3">
+<Expand/>
+</C>
+<C c="6" r="45" s="3">
+<Expand/>
+</C>
+<C c="7" r="45" s="3">
+<Expand/>
+</C>
+<C c="8" r="45" s="3">
+<Expand/>
+</C>
+<C c="9" r="45" s="3">
+<Expand/>
+</C>
+<C c="10" r="45" s="3">
+<Expand/>
+</C>
+<C c="11" r="45" s="3">
+<Expand/>
+</C>
+<C c="12" r="45" s="3">
+<Expand/>
+</C>
+<C c="13" r="45" s="3">
+<Expand/>
+</C>
+<C c="14" r="45" s="3">
+<Expand/>
+</C>
+<C c="15" r="45" s="3">
+<Expand/>
+</C>
+<C c="16" r="45" s="0">
+<Expand/>
+</C>
+<C c="17" r="45" s="0">
+<Expand/>
+</C>
+<C c="0" r="46" s="0">
+<Expand/>
+</C>
+<C c="1" r="46" s="3">
+<O>
+<![CDATA[累计风电、水电、光伏发电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="46" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="46" s="3">
+<Expand/>
+</C>
+<C c="4" r="46" s="3">
+<Expand/>
+</C>
+<C c="5" r="46" s="3">
+<Expand/>
+</C>
+<C c="6" r="46" s="3">
+<Expand/>
+</C>
+<C c="7" r="46" s="3">
+<Expand/>
+</C>
+<C c="8" r="46" s="3">
+<Expand/>
+</C>
+<C c="9" r="46" s="3">
+<Expand/>
+</C>
+<C c="10" r="46" s="3">
+<Expand/>
+</C>
+<C c="11" r="46" s="3">
+<Expand/>
+</C>
+<C c="12" r="46" s="3">
+<Expand/>
+</C>
+<C c="13" r="46" s="3">
+<Expand/>
+</C>
+<C c="14" r="46" s="3">
+<Expand/>
+</C>
+<C c="15" r="46" s="3">
+<Expand/>
+</C>
+<C c="16" r="46" s="0">
+<Expand/>
+</C>
+<C c="17" r="46" s="0">
+<Expand/>
+</C>
+<C c="0" r="47" s="0">
+<Expand/>
+</C>
+<C c="1" r="47" s="3">
+<O>
+<![CDATA[累计综合厂用电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="47" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="47" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D6]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="47" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E6]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="5" r="47" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E6+F6]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="47" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E6+F6+G6]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="47" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E6+F6+G6+H6]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="47" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E6+F6+G6+H6+I6]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="9" r="47" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E6+F6+G6+H6+I6+J6]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="10" r="47" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E6+F6+G6+H6+I6+J6+K6]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="47" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E6+F6+G6+H6+I6+J6+K6+L6]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="12" r="47" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E6+F6+G6+H6+I6+J6+K6+L6+M6]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="13" r="47" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E6+F6+G6+H6+I6+J6+K6+L6+M6+N6]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="14" r="47" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E6+F6+G6+H6+I6+J6+K6+L6+M6+N6+O6]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="15" r="47" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E6+F6+G6+H6+I6+J6+K6+L6+M6+N6+O6+P6]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="16" r="47" s="0">
+<Expand/>
+</C>
+<C c="17" r="47" s="0">
+<Expand/>
+</C>
+<C c="0" r="48" s="0">
+<Expand/>
+</C>
+<C c="1" r="48" s="3">
+<O>
+<![CDATA[累计火力综合厂用电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="48" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="48" s="3">
+<Expand/>
+</C>
+<C c="4" r="48" s="3">
+<Expand/>
+</C>
+<C c="5" r="48" s="3">
+<Expand/>
+</C>
+<C c="6" r="48" s="3">
+<Expand/>
+</C>
+<C c="7" r="48" s="3">
+<Expand/>
+</C>
+<C c="8" r="48" s="3">
+<Expand/>
+</C>
+<C c="9" r="48" s="3">
+<Expand/>
+</C>
+<C c="10" r="48" s="3">
+<Expand/>
+</C>
+<C c="11" r="48" s="3">
+<Expand/>
+</C>
+<C c="12" r="48" s="3">
+<Expand/>
+</C>
+<C c="13" r="48" s="3">
+<Expand/>
+</C>
+<C c="14" r="48" s="3">
+<Expand/>
+</C>
+<C c="15" r="48" s="3">
+<Expand/>
+</C>
+<C c="16" r="48" s="0">
+<Expand/>
+</C>
+<C c="17" r="48" s="0">
+<Expand/>
+</C>
+<C c="0" r="49" s="0">
+<Expand/>
+</C>
+<C c="1" r="49" s="3">
+<O>
+<![CDATA[累计燃煤综合厂用电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="49" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="49" s="3">
+<Expand/>
+</C>
+<C c="4" r="49" s="3">
+<Expand/>
+</C>
+<C c="5" r="49" s="3">
+<Expand/>
+</C>
+<C c="6" r="49" s="3">
+<Expand/>
+</C>
+<C c="7" r="49" s="3">
+<Expand/>
+</C>
+<C c="8" r="49" s="3">
+<Expand/>
+</C>
+<C c="9" r="49" s="3">
+<Expand/>
+</C>
+<C c="10" r="49" s="3">
+<Expand/>
+</C>
+<C c="11" r="49" s="3">
+<Expand/>
+</C>
+<C c="12" r="49" s="3">
+<Expand/>
+</C>
+<C c="13" r="49" s="3">
+<Expand/>
+</C>
+<C c="14" r="49" s="3">
+<Expand/>
+</C>
+<C c="15" r="49" s="3">
+<Expand/>
+</C>
+<C c="16" r="49" s="0">
+<Expand/>
+</C>
+<C c="17" r="49" s="0">
+<Expand/>
+</C>
+<C c="0" r="50" s="0">
+<Expand/>
+</C>
+<C c="1" r="50" s="3">
+<O>
+<![CDATA[累计燃气综合厂用电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="50" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="50" s="3">
+<Expand/>
+</C>
+<C c="4" r="50" s="3">
+<Expand/>
+</C>
+<C c="5" r="50" s="3">
+<Expand/>
+</C>
+<C c="6" r="50" s="3">
+<Expand/>
+</C>
+<C c="7" r="50" s="3">
+<Expand/>
+</C>
+<C c="8" r="50" s="3">
+<Expand/>
+</C>
+<C c="9" r="50" s="3">
+<Expand/>
+</C>
+<C c="10" r="50" s="3">
+<Expand/>
+</C>
+<C c="11" r="50" s="3">
+<Expand/>
+</C>
+<C c="12" r="50" s="3">
+<Expand/>
+</C>
+<C c="13" r="50" s="3">
+<Expand/>
+</C>
+<C c="14" r="50" s="3">
+<Expand/>
+</C>
+<C c="15" r="50" s="3">
+<Expand/>
+</C>
+<C c="16" r="50" s="0">
+<Expand/>
+</C>
+<C c="17" r="50" s="0">
+<Expand/>
+</C>
+<C c="0" r="51" s="0">
+<Expand/>
+</C>
+<C c="1" r="51" s="3">
+<O>
+<![CDATA[累计供热量]]></O>
+<Expand/>
+</C>
+<C c="2" r="51" s="3">
+<O>
+<![CDATA[万吉焦]]></O>
+<Expand/>
+</C>
+<C c="3" r="51" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D17]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="51" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E17]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="5" r="51" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E17 + F17]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="51" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E17 + F17 + G17]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="51" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E17 + F17 + G17 + H17]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="51" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E17 + F17 + G17 + H17 + I17]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="9" r="51" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E17 + F17 + G17 + H17 + I17 + J17]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="10" r="51" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E17 + F17 + G17 + H17 + I17 + J17 + K17]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="51" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E17 + F17 + G17 + H17 + I17 + J17 + K17 + L17]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="12" r="51" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E17 + F17 + G17 + H17 + I17 + J17 + K17 + L17 + M17]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="13" r="51" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E17 + F17 + G17 + H17 + I17 + J17 + K17 + L17 + M17 + N17]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="14" r="51" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E17 + F17 + G17 + H17 + I17 + J17 + K17 + L17 + M17 + N17 + O17]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="15" r="51" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E17 + F17 + G17 + H17 + I17 + J17 + K17 + L17 + M17 + N17 + O17 + P17]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="16" r="51" s="0">
+<Expand/>
+</C>
+<C c="17" r="51" s="0">
+<Expand/>
+</C>
+<C c="0" r="52" s="0">
+<Expand/>
+</C>
+<C c="1" r="52" s="3">
+<O>
+<![CDATA[累计燃煤供热量]]></O>
+<Expand/>
+</C>
+<C c="2" r="52" s="3">
+<O>
+<![CDATA[万吉焦]]></O>
+<Expand/>
+</C>
+<C c="3" r="52" s="3">
+<Expand/>
+</C>
+<C c="4" r="52" s="3">
+<Expand/>
+</C>
+<C c="5" r="52" s="3">
+<Expand/>
+</C>
+<C c="6" r="52" s="3">
+<Expand/>
+</C>
+<C c="7" r="52" s="3">
+<Expand/>
+</C>
+<C c="8" r="52" s="3">
+<Expand/>
+</C>
+<C c="9" r="52" s="3">
+<Expand/>
+</C>
+<C c="10" r="52" s="3">
+<Expand/>
+</C>
+<C c="11" r="52" s="3">
+<Expand/>
+</C>
+<C c="12" r="52" s="3">
+<Expand/>
+</C>
+<C c="13" r="52" s="3">
+<Expand/>
+</C>
+<C c="14" r="52" s="3">
+<Expand/>
+</C>
+<C c="15" r="52" s="3">
+<Expand/>
+</C>
+<C c="16" r="52" s="0">
+<Expand/>
+</C>
+<C c="17" r="52" s="0">
+<Expand/>
+</C>
+<C c="0" r="53" s="0">
+<Expand/>
+</C>
+<C c="1" r="53" s="3">
+<O>
+<![CDATA[累计燃气供热量]]></O>
+<Expand/>
+</C>
+<C c="2" r="53" s="3">
+<O>
+<![CDATA[万吉焦]]></O>
+<Expand/>
+</C>
+<C c="3" r="53" s="3">
+<Expand/>
+</C>
+<C c="4" r="53" s="3">
+<Expand/>
+</C>
+<C c="5" r="53" s="3">
+<Expand/>
+</C>
+<C c="6" r="53" s="3">
+<Expand/>
+</C>
+<C c="7" r="53" s="3">
+<Expand/>
+</C>
+<C c="8" r="53" s="3">
+<Expand/>
+</C>
+<C c="9" r="53" s="3">
+<Expand/>
+</C>
+<C c="10" r="53" s="3">
+<Expand/>
+</C>
+<C c="11" r="53" s="3">
+<Expand/>
+</C>
+<C c="12" r="53" s="3">
+<Expand/>
+</C>
+<C c="13" r="53" s="3">
+<Expand/>
+</C>
+<C c="14" r="53" s="3">
+<Expand/>
+</C>
+<C c="15" r="53" s="3">
+<Expand/>
+</C>
+<C c="16" r="53" s="0">
+<Expand/>
+</C>
+<C c="17" r="53" s="0">
+<Expand/>
+</C>
+<C c="0" r="54" s="0">
+<Expand/>
+</C>
+<C c="1" r="54" s="3">
+<O>
+<![CDATA[累计综合供电煤耗]]></O>
+<Expand/>
+</C>
+<C c="2" r="54" s="3">
+<O>
+<![CDATA[克/千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="54" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D22]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="54" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E22]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="5" r="54" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E22 + F22]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="54" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E22 + F22 + G22]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="54" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E22 + F22 + G22 + H22]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="54" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E22 + F22 + G22 + H22 + I22]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="9" r="54" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E22 + F22 + G22 + H22 + I22 + J22]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="10" r="54" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E22: K22)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="54" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E22 + F22 + G22 + H22 + I22 + J22 + K22 + L22]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="12" r="54" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E22 + F22 + G22 + H22 + I22 + J22 + K22 + L22 + M22]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="13" r="54" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E22 + F22 + G22 + H22 + I22 + J22 + K22 + L22 + M22 + N22]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="14" r="54" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E22 + F22 + G22 + H22 + I22 + J22 + K22 + L22 + M22 + N22 + O22]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="15" r="54" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E22 + F22 + G22 + H22 + I22 + J22 + K22 + L22 + M22 + N22 + O22 + P22]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="16" r="54" s="0">
+<Expand/>
+</C>
+<C c="17" r="54" s="0">
+<Expand/>
+</C>
+<C c="0" r="55" s="0">
+<Expand/>
+</C>
+<C c="1" r="55" s="3">
+<O>
+<![CDATA[累计燃煤综合供电煤耗]]></O>
+<Expand/>
+</C>
+<C c="2" r="55" s="3">
+<O>
+<![CDATA[克/千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="55" s="3">
+<Expand/>
+</C>
+<C c="4" r="55" s="3">
+<Expand/>
+</C>
+<C c="5" r="55" s="3">
+<Expand/>
+</C>
+<C c="6" r="55" s="3">
+<Expand/>
+</C>
+<C c="7" r="55" s="3">
+<Expand/>
+</C>
+<C c="8" r="55" s="3">
+<Expand/>
+</C>
+<C c="9" r="55" s="3">
+<Expand/>
+</C>
+<C c="10" r="55" s="3">
+<Expand/>
+</C>
+<C c="11" r="55" s="3">
+<Expand/>
+</C>
+<C c="12" r="55" s="3">
+<Expand/>
+</C>
+<C c="13" r="55" s="3">
+<Expand/>
+</C>
+<C c="14" r="55" s="3">
+<Expand/>
+</C>
+<C c="15" r="55" s="3">
+<Expand/>
+</C>
+<C c="16" r="55" s="0">
+<Expand/>
+</C>
+<C c="17" r="55" s="0">
+<Expand/>
+</C>
+<C c="0" r="56" s="0">
+<Expand/>
+</C>
+<C c="1" r="56" s="3">
+<O>
+<![CDATA[累计燃气综合供电煤耗]]></O>
+<Expand/>
+</C>
+<C c="2" r="56" s="3">
+<O>
+<![CDATA[立方米/千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="56" s="3">
+<Expand/>
+</C>
+<C c="4" r="56" s="3">
+<Expand/>
+</C>
+<C c="5" r="56" s="3">
+<Expand/>
+</C>
+<C c="6" r="56" s="3">
+<Expand/>
+</C>
+<C c="7" r="56" s="3">
+<Expand/>
+</C>
+<C c="8" r="56" s="3">
+<Expand/>
+</C>
+<C c="9" r="56" s="3">
+<Expand/>
+</C>
+<C c="10" r="56" s="3">
+<Expand/>
+</C>
+<C c="11" r="56" s="3">
+<Expand/>
+</C>
+<C c="12" r="56" s="3">
+<Expand/>
+</C>
+<C c="13" r="56" s="3">
+<Expand/>
+</C>
+<C c="14" r="56" s="3">
+<Expand/>
+</C>
+<C c="15" r="56" s="3">
+<Expand/>
+</C>
+<C c="16" r="56" s="0">
+<Expand/>
+</C>
+<C c="17" r="56" s="0">
+<Expand/>
+</C>
+<C c="0" r="57" s="0">
+<Expand/>
+</C>
+<C c="1" r="57" s="3">
+<O>
+<![CDATA[累计火力发电煤耗]]></O>
+<Expand/>
+</C>
+<C c="2" r="57" s="3">
+<O>
+<![CDATA[克/千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="57" s="3">
+<Expand/>
+</C>
+<C c="4" r="57" s="3">
+<Expand/>
+</C>
+<C c="5" r="57" s="3">
+<Expand/>
+</C>
+<C c="6" r="57" s="3">
+<Expand/>
+</C>
+<C c="7" r="57" s="3">
+<Expand/>
+</C>
+<C c="8" r="57" s="3">
+<Expand/>
+</C>
+<C c="9" r="57" s="3">
+<Expand/>
+</C>
+<C c="10" r="57" s="3">
+<Expand/>
+</C>
+<C c="11" r="57" s="3">
+<Expand/>
+</C>
+<C c="12" r="57" s="3">
+<Expand/>
+</C>
+<C c="13" r="57" s="3">
+<Expand/>
+</C>
+<C c="14" r="57" s="3">
+<Expand/>
+</C>
+<C c="15" r="57" s="3">
+<Expand/>
+</C>
+<C c="16" r="57" s="0">
+<Expand/>
+</C>
+<C c="17" r="57" s="0">
+<Expand/>
+</C>
+<C c="0" r="58" s="0">
+<Expand/>
+</C>
+<C c="1" r="58" s="3">
+<O>
+<![CDATA[累计燃煤发电煤耗]]></O>
+<Expand/>
+</C>
+<C c="2" r="58" s="3">
+<O>
+<![CDATA[克/千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="58" s="3">
+<Expand/>
+</C>
+<C c="4" r="58" s="3">
+<Expand/>
+</C>
+<C c="5" r="58" s="3">
+<Expand/>
+</C>
+<C c="6" r="58" s="3">
+<Expand/>
+</C>
+<C c="7" r="58" s="3">
+<Expand/>
+</C>
+<C c="8" r="58" s="3">
+<Expand/>
+</C>
+<C c="9" r="58" s="3">
+<Expand/>
+</C>
+<C c="10" r="58" s="3">
+<Expand/>
+</C>
+<C c="11" r="58" s="3">
+<Expand/>
+</C>
+<C c="12" r="58" s="3">
+<Expand/>
+</C>
+<C c="13" r="58" s="3">
+<Expand/>
+</C>
+<C c="14" r="58" s="3">
+<Expand/>
+</C>
+<C c="15" r="58" s="3">
+<Expand/>
+</C>
+<C c="16" r="58" s="0">
+<Expand/>
+</C>
+<C c="17" r="58" s="0">
+<Expand/>
+</C>
+<C c="0" r="59" s="0">
+<Expand/>
+</C>
+<C c="1" r="59" s="3">
+<O>
+<![CDATA[累计燃气发电煤耗]]></O>
+<Expand/>
+</C>
+<C c="2" r="59" s="3">
+<O>
+<![CDATA[立方米/千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="59" s="3">
+<Expand/>
+</C>
+<C c="4" r="59" s="3">
+<Expand/>
+</C>
+<C c="5" r="59" s="3">
+<Expand/>
+</C>
+<C c="6" r="59" s="3">
+<Expand/>
+</C>
+<C c="7" r="59" s="3">
+<Expand/>
+</C>
+<C c="8" r="59" s="3">
+<Expand/>
+</C>
+<C c="9" r="59" s="3">
+<Expand/>
+</C>
+<C c="10" r="59" s="3">
+<Expand/>
+</C>
+<C c="11" r="59" s="3">
+<Expand/>
+</C>
+<C c="12" r="59" s="3">
+<Expand/>
+</C>
+<C c="13" r="59" s="3">
+<Expand/>
+</C>
+<C c="14" r="59" s="3">
+<Expand/>
+</C>
+<C c="15" r="59" s="3">
+<Expand/>
+</C>
+<C c="16" r="59" s="0">
+<Expand/>
+</C>
+<C c="17" r="59" s="0">
+<Expand/>
+</C>
+<C c="0" r="60" s="0">
+<Expand/>
+</C>
+<C c="1" r="60" s="3">
+<O>
+<![CDATA[累计综合厂用电率]]></O>
+<Expand/>
+</C>
+<C c="2" r="60" s="3">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="3" r="60" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D28]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="60" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E28]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="5" r="60" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E28 + F28]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="60" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E28 + F28 + G28]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="60" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E28 + F28 + G28 + H28]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="60" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E28 + F28 + G28 + H28 + I28]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="9" r="60" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E28 + F28 + G28 + H28 + I28 + J28]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="10" r="60" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E28 + F28 + G28 + H28 + I28 + J8 + K28]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="60" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E28 + F28 + G28 + H28 + I28 + J28 + K28 + L28]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="12" r="60" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E28 + F28 + G28 + H28 + I28 + J28 + K28 + L28 + M28]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="13" r="60" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E28 + F28 + G28 + H28 + I28 + J28 + K28 + L28 + M28 + N28]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="14" r="60" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E28 + F28 + G28 + H28 + I28 + J28 + K28 + L28 + M28 + N28 + O28]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="15" r="60" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E28 + F28 + G28 + H28 + I28 + J28 + K28 + L28 + M28 + N28 + O28 + P28]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="16" r="60" s="0">
+<Expand/>
+</C>
+<C c="17" r="60" s="0">
+<Expand/>
+</C>
+<C c="0" r="61" s="0">
+<Expand/>
+</C>
+<C c="1" r="61" s="3">
+<O>
+<![CDATA[累计火力综合厂电率]]></O>
+<Expand/>
+</C>
+<C c="2" r="61" s="3">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="3" r="61" s="3">
+<Expand/>
+</C>
+<C c="4" r="61" s="3">
+<Expand/>
+</C>
+<C c="5" r="61" s="3">
+<Expand/>
+</C>
+<C c="6" r="61" s="3">
+<Expand/>
+</C>
+<C c="7" r="61" s="3">
+<Expand/>
+</C>
+<C c="8" r="61" s="3">
+<Expand/>
+</C>
+<C c="9" r="61" s="3">
+<Expand/>
+</C>
+<C c="10" r="61" s="3">
+<Expand/>
+</C>
+<C c="11" r="61" s="3">
+<Expand/>
+</C>
+<C c="12" r="61" s="3">
+<Expand/>
+</C>
+<C c="13" r="61" s="3">
+<Expand/>
+</C>
+<C c="14" r="61" s="3">
+<Expand/>
+</C>
+<C c="15" r="61" s="3">
+<Expand/>
+</C>
+<C c="16" r="61" s="0">
+<Expand/>
+</C>
+<C c="17" r="61" s="0">
+<Expand/>
+</C>
+<C c="0" r="62" s="0">
+<Expand/>
+</C>
+<C c="1" r="62" s="3">
+<O>
+<![CDATA[累计燃煤综合厂用电率]]></O>
+<Expand/>
+</C>
+<C c="2" r="62" s="3">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="3" r="62" s="3">
+<Expand/>
+</C>
+<C c="4" r="62" s="3">
+<Expand/>
+</C>
+<C c="5" r="62" s="3">
+<Expand/>
+</C>
+<C c="6" r="62" s="3">
+<Expand/>
+</C>
+<C c="7" r="62" s="3">
+<Expand/>
+</C>
+<C c="8" r="62" s="3">
+<Expand/>
+</C>
+<C c="9" r="62" s="3">
+<Expand/>
+</C>
+<C c="10" r="62" s="3">
+<Expand/>
+</C>
+<C c="11" r="62" s="3">
+<Expand/>
+</C>
+<C c="12" r="62" s="3">
+<Expand/>
+</C>
+<C c="13" r="62" s="3">
+<Expand/>
+</C>
+<C c="14" r="62" s="3">
+<Expand/>
+</C>
+<C c="15" r="62" s="3">
+<Expand/>
+</C>
+<C c="16" r="62" s="0">
+<Expand/>
+</C>
+<C c="17" r="62" s="0">
+<Expand/>
+</C>
+<C c="0" r="63" s="0">
+<Expand/>
+</C>
+<C c="1" r="63" s="3">
+<O>
+<![CDATA[累计燃气综合厂用电率]]></O>
+<Expand/>
+</C>
+<C c="2" r="63" s="3">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="3" r="63" s="3">
+<Expand/>
+</C>
+<C c="4" r="63" s="3">
+<Expand/>
+</C>
+<C c="5" r="63" s="3">
+<Expand/>
+</C>
+<C c="6" r="63" s="3">
+<Expand/>
+</C>
+<C c="7" r="63" s="3">
+<Expand/>
+</C>
+<C c="8" r="63" s="3">
+<Expand/>
+</C>
+<C c="9" r="63" s="3">
+<Expand/>
+</C>
+<C c="10" r="63" s="3">
+<Expand/>
+</C>
+<C c="11" r="63" s="3">
+<Expand/>
+</C>
+<C c="12" r="63" s="3">
+<Expand/>
+</C>
+<C c="13" r="63" s="3">
+<Expand/>
+</C>
+<C c="14" r="63" s="3">
+<Expand/>
+</C>
+<C c="15" r="63" s="3">
+<Expand/>
+</C>
+<C c="16" r="63" s="0">
+<Expand/>
+</C>
+<C c="17" r="63" s="0">
+<Expand/>
+</C>
+<C c="0" r="64" s="0">
+<Expand/>
+</C>
+<C c="1" r="64" s="3">
+<O>
+<![CDATA[风电、水电、光伏综合厂用电率]]></O>
+<Expand/>
+</C>
+<C c="2" r="64" s="3">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="3" r="64" s="3">
+<Expand/>
+</C>
+<C c="4" r="64" s="3">
+<Expand/>
+</C>
+<C c="5" r="64" s="3">
+<Expand/>
+</C>
+<C c="6" r="64" s="3">
+<Expand/>
+</C>
+<C c="7" r="64" s="3">
+<Expand/>
+</C>
+<C c="8" r="64" s="3">
+<Expand/>
+</C>
+<C c="9" r="64" s="3">
+<Expand/>
+</C>
+<C c="10" r="64" s="3">
+<Expand/>
+</C>
+<C c="11" r="64" s="3">
+<Expand/>
+</C>
+<C c="12" r="64" s="3">
+<Expand/>
+</C>
+<C c="13" r="64" s="3">
+<Expand/>
+</C>
+<C c="14" r="64" s="3">
+<Expand/>
+</C>
+<C c="15" r="64" s="3">
+<Expand/>
+</C>
+<C c="16" r="64" s="0">
+<Expand/>
+</C>
+<C c="17" r="64" s="0">
+<Expand/>
+</C>
+<C c="0" r="65" s="0">
+<Expand/>
+</C>
+<C c="1" r="65" s="3">
+<O>
+<![CDATA[累计利润总额]]></O>
+<Expand/>
+</C>
+<C c="2" r="65" s="3">
+<O>
+<![CDATA[万元]]></O>
+<Expand/>
+</C>
+<C c="3" r="65" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D36]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="65" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E36]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="5" r="65" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E36 + F36]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="65" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E36 + F36 + G36]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="65" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E36 + F36 + G36 + H36]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="65" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E36 + F36 + G36 + H36 + I36]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="9" r="65" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E36 + F36 + G36 + H36 + I36 + J36]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="10" r="65" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E36 + F36 + G36 + H36 + I36 + J16 + K36]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="65" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E36 + F36 + G36 + H36 + I36 + J36 + K36 + L36]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="12" r="65" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E36 + F36 + G36 + H36 + I36 + J36 + K36 + L36 + M36]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="13" r="65" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E36 + F36 + G36 + H36 + I36 + J36 + K36 + L36 + M36 + N36]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="14" r="65" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E36 + F36 + G36 + H36 + I36 + J36 + K36 + L36 + M36 + N36 + O36]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="15" r="65" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E36 + F36 + G36 + H36 + I36 + J36 + K36 + L36 + M36 + N36 + O36 + P36]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="16" r="65" s="0">
+<Expand/>
+</C>
+<C c="17" r="65" s="0">
+<Expand/>
+</C>
+<C c="0" r="66" s="0">
+<Expand/>
+</C>
+<C c="1" r="66" s="2">
+<O>
+<![CDATA[项目]]></O>
+<Expand/>
+</C>
+<C c="2" r="66" s="2">
+<O>
+<![CDATA[单位]]></O>
+<Expand/>
+</C>
+<C c="3" r="66" s="2">
+<O>
+<![CDATA[全年]]></O>
+<Expand/>
+</C>
+<C c="4" r="66" s="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="5" r="66" s="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="6" r="66" s="2">
+<O>
+<![CDATA[一季度]]></O>
+<Expand/>
+</C>
+<C c="7" r="66" s="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="8" r="66" s="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="9" r="66" s="2">
+<O>
+<![CDATA[二季度]]></O>
+<Expand/>
+</C>
+<C c="10" r="66" s="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="11" r="66" s="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="12" r="66" s="2">
+<O>
+<![CDATA[三季度]]></O>
+<Expand/>
+</C>
+<C c="13" r="66" s="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="14" r="66" s="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="15" r="66" s="2">
+<O>
+<![CDATA[四季度]]></O>
+<Expand/>
+</C>
+<C c="16" r="66" s="0">
+<Expand/>
+</C>
+<C c="17" r="66" s="0">
+<Expand/>
+</C>
+<C c="0" r="67" s="0">
+<Expand/>
+</C>
+<C c="1" r="67" s="3">
+<O>
+<![CDATA[季度累计发电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="67" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="67" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="67" s="3">
+<Expand/>
+</C>
+<C c="5" r="67" s="3">
+<Expand/>
+</C>
+<C c="6" r="67" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E4 + F4 + G4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="67" s="3">
+<Expand/>
+</C>
+<C c="8" r="67" s="3">
+<Expand/>
+</C>
+<C c="9" r="67" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=H4+I4+J4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="10" r="67" s="3">
+<Expand/>
+</C>
+<C c="11" r="67" s="3">
+<Expand/>
+</C>
+<C c="12" r="67" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=K4+L4+M4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="13" r="67" s="3">
+<Expand/>
+</C>
+<C c="14" r="67" s="3">
+<Expand/>
+</C>
+<C c="15" r="67" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=N4+O4+P4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="16" r="67" s="0">
+<Expand/>
+</C>
+<C c="17" r="67" s="0">
+<Expand/>
+</C>
+<C c="0" r="68" s="0">
+<Expand/>
+</C>
+<C c="1" r="68" s="3">
+<O>
+<![CDATA[季度累计燃煤发电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="68" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="68" s="3">
+<Expand/>
+</C>
+<C c="4" r="68" s="3">
+<Expand/>
+</C>
+<C c="5" r="68" s="3">
+<Expand/>
+</C>
+<C c="6" r="68" s="3">
+<Expand/>
+</C>
+<C c="7" r="68" s="3">
+<Expand/>
+</C>
+<C c="8" r="68" s="3">
+<Expand/>
+</C>
+<C c="9" r="68" s="3">
+<Expand/>
+</C>
+<C c="10" r="68" s="3">
+<Expand/>
+</C>
+<C c="11" r="68" s="3">
+<Expand/>
+</C>
+<C c="12" r="68" s="3">
+<Expand/>
+</C>
+<C c="13" r="68" s="3">
+<Expand/>
+</C>
+<C c="14" r="68" s="3">
+<Expand/>
+</C>
+<C c="15" r="68" s="3">
+<Expand/>
+</C>
+<C c="16" r="68" s="0">
+<Expand/>
+</C>
+<C c="17" r="68" s="0">
+<Expand/>
+</C>
+<C c="0" r="69" s="0">
+<Expand/>
+</C>
+<C c="1" r="69" s="3">
+<O>
+<![CDATA[季度累计燃气发电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="69" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="69" s="3">
+<Expand/>
+</C>
+<C c="4" r="69" s="3">
+<Expand/>
+</C>
+<C c="5" r="69" s="3">
+<Expand/>
+</C>
+<C c="6" r="69" s="3">
+<Expand/>
+</C>
+<C c="7" r="69" s="3">
+<Expand/>
+</C>
+<C c="8" r="69" s="3">
+<Expand/>
+</C>
+<C c="9" r="69" s="3">
+<Expand/>
+</C>
+<C c="10" r="69" s="3">
+<Expand/>
+</C>
+<C c="11" r="69" s="3">
+<Expand/>
+</C>
+<C c="12" r="69" s="3">
+<Expand/>
+</C>
+<C c="13" r="69" s="3">
+<Expand/>
+</C>
+<C c="14" r="69" s="3">
+<Expand/>
+</C>
+<C c="15" r="69" s="3">
+<Expand/>
+</C>
+<C c="16" r="69" s="0">
+<Expand/>
+</C>
+<C c="17" r="69" s="0">
+<Expand/>
+</C>
+<C c="0" r="70" s="0">
+<Expand/>
+</C>
+<C c="1" r="70" s="3">
+<O>
+<![CDATA[季度累计风电、水电、光伏发电量]]></O>
+<Expand/>
+</C>
+<C c="2" r="70" s="3">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="3" r="70" s="3">
+<Expand/>
+</C>
+<C c="4" r="70" s="3">
+<Expand/>
+</C>
+<C c="5" r="70" s="3">
+<Expand/>
+</C>
+<C c="6" r="70" s="3">
+<Expand/>
+</C>
+<C c="7" r="70" s="3">
+<Expand/>
+</C>
+<C c="8" r="70" s="3">
+<Expand/>
+</C>
+<C c="9" r="70" s="3">
+<Expand/>
+</C>
+<C c="10" r="70" s="3">
+<Expand/>
+</C>
+<C c="11" r="70" s="3">
+<Expand/>
+</C>
+<C c="12" r="70" s="3">
+<Expand/>
+</C>
+<C c="13" r="70" s="3">
+<Expand/>
+</C>
+<C c="14" r="70" s="3">
+<Expand/>
+</C>
+<C c="15" r="70" s="3">
+<Expand/>
+</C>
+<C c="16" r="70" s="0">
+<Expand/>
+</C>
+<C c="17" r="70" s="0">
+<Expand/>
+</C>
+<C c="0" r="71" s="0">
+<Expand/>
+</C>
+<C c="1" r="71" s="3">
+<O>
+<![CDATA[季度累计利润总额]]></O>
+<Expand/>
+</C>
+<C c="2" r="71" s="3">
+<O>
+<![CDATA[万元]]></O>
+<Expand/>
+</C>
+<C c="3" r="71" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D36]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="71" s="3">
+<Expand/>
+</C>
+<C c="5" r="71" s="3">
+<Expand/>
+</C>
+<C c="6" r="71" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E36+F36+G36]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="71" s="3">
+<Expand/>
+</C>
+<C c="8" r="71" s="3">
+<Expand/>
+</C>
+<C c="9" r="71" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=H36+I36+J36]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="10" r="71" s="3">
+<Expand/>
+</C>
+<C c="11" r="71" s="3">
+<Expand/>
+</C>
+<C c="12" r="71" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=K36+L36+M36]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="13" r="71" s="3">
+<Expand/>
+</C>
+<C c="14" r="71" s="3">
+<Expand/>
+</C>
+<C c="15" r="71" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=N36+O36+P36]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="16" r="71" s="0">
+<Expand/>
+</C>
+<C c="17" r="71" s="0">
+<Expand/>
+</C>
+<C c="0" r="72" s="0">
+<Expand/>
+</C>
+<C c="1" r="72" s="0">
+<Expand/>
+</C>
+<C c="2" r="72" s="0">
+<Expand/>
+</C>
+<C c="3" r="72" s="0">
+<Expand/>
+</C>
+<C c="4" r="72" s="0">
+<Expand/>
+</C>
+<C c="5" r="72" s="0">
+<Expand/>
+</C>
+<C c="6" r="72" s="0">
+<Expand/>
+</C>
+<C c="7" r="72" s="0">
+<Expand/>
+</C>
+<C c="8" r="72" s="0">
+<Expand/>
+</C>
+<C c="9" r="72" s="0">
+<Expand/>
+</C>
+<C c="10" r="72" s="0">
+<Expand/>
+</C>
+<C c="11" r="72" s="0">
+<Expand/>
+</C>
+<C c="12" r="72" s="0">
+<Expand/>
+</C>
+<C c="13" r="72" s="0">
+<Expand/>
+</C>
+<C c="14" r="72" s="0">
+<Expand/>
+</C>
+<C c="15" r="72" s="0">
+<Expand/>
+</C>
+<C c="16" r="72" s="0">
+<Expand/>
+</C>
+<C c="17" r="72" s="0">
+<Expand/>
+</C>
+<C c="0" r="73" s="0">
+<Expand/>
+</C>
+<C c="1" r="73" s="0">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="2" r="73" s="0">
+<Expand/>
+</C>
+<C c="3" r="73" s="0">
+<Expand/>
+</C>
+<C c="4" r="73" s="0">
+<Expand/>
+</C>
+<C c="5" r="73" s="0">
+<Expand/>
+</C>
+<C c="6" r="73" s="0">
+<Expand/>
+</C>
+<C c="7" r="73" s="0">
+<Expand/>
+</C>
+<C c="8" r="73" s="0">
+<Expand/>
+</C>
+<C c="9" r="73" s="0">
+<Expand/>
+</C>
+<C c="10" r="73" s="0">
+<Expand/>
+</C>
+<C c="11" r="73" s="0">
+<Expand/>
+</C>
+<C c="12" r="73" s="0">
+<Expand/>
+</C>
+<C c="13" r="73" s="0">
+<Expand/>
+</C>
+<C c="14" r="73" s="0">
+<Expand/>
+</C>
+<C c="15" r="73" s="0">
+<Expand/>
+</C>
+<C c="16" r="73" s="0">
+<Expand/>
+</C>
+<C c="17" r="73" s="0">
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="108" foreground="-16737895"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ImageBackground" specifiedImageWidth="-1.0" specifiedImageHeight="-1.0" layout="2">
+<IM>
+<![CDATA[lO<9(kN.ld@UNU%p%320@UNU)#I6cXfRW$ncQ/@&<0O5<@n=S@[oX!K%L!+t*8LGkV28*<fV
+1DR2+&2#M*'iG9!?fn`jEHhj.>Qf/%>^"4u8^;2W-f-"/[-Ps"#=CT4LGm?)6rkX]Ap9;)cg,
+:Xp=M>^R`IX>57);OBFYLBS"_e1Gss7S9)tL+\09b!LY7c2&TIA?%9m4n<NhHK^]A5-XNuS&?
+,PUblK>Iu.A7%J~
+]]></IM>
+</Background>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

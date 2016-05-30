@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT t.*,s.*
+  FROM TES_PS_CHEM_FURNACE_REPRT t ,TES_PS_GENERAL_MAIN s
+${if(len(instanceCode) == 0, " where 1=2", " where  s.INST_CODE='"+instanceCode+"'")}]]></Query>
+</TableData>
+<TableData name="ds10" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct t.*,t.CREATE_DATE    CREATE_DATE
+  from TES_PS_GENERAL_MAIN t
+${if(len(instanceCode) == 0, " where 1=2", " where  t.INST_CODE='"+instanceCode+"'")}
+]]></Query>
+</TableData>
+<TableData name="ds12" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select a.*,t.* from xip_pub_orgs a,TES_PS_GENERAL_MAIN t
+${if(len(instanceCode) == 0, " where 1=2", " where t.org_id=a.org_id and  t.INST_CODE='"+instanceCode+"'")}]]></Query>
+</TableData>
+<TableData name="ds13" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT EMP_NAME FROM xip_pub_users_emps_v a,TES_PS_GENERAL_MAIN c
+${if(len(instanceCode) == 0, " where 1=2", " where c.EXAMINE_BY= a.user_id  and  c.INST_CODE='"+instanceCode+"'")}]]></Query>
+</TableData>
+<TableData name="ds14" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT EMP_NAME FROM xip_pub_users_emps_v a,TES_PS_GENERAL_MAIN c
+${if(len(instanceCode) == 0, " where 1=2", " where c.CREATE_BY= a.user_id  and  c.INST_CODE='"+instanceCode+"'")}]]></Query>
+</TableData>
+<TableData name="ds15" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT EMP_NAME FROM xip_pub_users_emps_v a,TES_PS_GENERAL_MAIN c
+${if(len(instanceCode) == 0, " where 1=2", " where c.APPROVAL_BY= a.user_id  and  c.INST_CODE='"+instanceCode+"'")}]]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="54720000" height="42768000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,1257300,723900,1008000,1008000,1008000,1008000,1008000,1008000,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[3467100,0,0,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="3" r="3" cs="11" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds10" columnName="GENERAL_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="5" s="1">
+<O>
+<![CDATA[填报单位：]]></O>
+<Expand/>
+</C>
+<C c="4" r="5" cs="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds12" columnName="ORG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="5" s="1">
+<Expand/>
+</C>
+<C c="7" r="5" s="1">
+<Expand/>
+</C>
+<C c="8" r="5" s="1">
+<Expand/>
+</C>
+<C c="9" r="5" s="1">
+<Expand/>
+</C>
+<C c="10" r="5" s="1">
+<O>
+<![CDATA[填报日期：]]></O>
+<Expand/>
+</C>
+<C c="11" r="5" cs="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds10" columnName="CREATE_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="5" s="1">
+<Expand/>
+</C>
+<C c="3" r="6" rs="3" s="2">
+<O>
+<![CDATA[项目]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" cs="9" s="2">
+<O>
+<![CDATA[入炉煤加权平均值]]></O>
+<Expand/>
+</C>
+<C c="13" r="6" rs="2" s="2">
+<O>
+<![CDATA[飞灰可燃物]]></O>
+<Expand/>
+</C>
+<C c="14" r="6">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="4" r="7" s="2">
+<O>
+<![CDATA[数量]]></O>
+<Expand/>
+</C>
+<C c="5" r="7" s="2">
+<O>
+<![CDATA[Qgr,ad]]></O>
+<Expand/>
+</C>
+<C c="6" r="7" s="2">
+<O>
+<![CDATA[Qnet,ar]]></O>
+<Expand/>
+</C>
+<C c="7" r="7" s="2">
+<O>
+<![CDATA[Mt]]></O>
+<Expand/>
+</C>
+<C c="8" r="7" s="2">
+<O>
+<![CDATA[Mad]]></O>
+<Expand/>
+</C>
+<C c="9" r="7" s="2">
+<O>
+<![CDATA[Aad]]></O>
+<Expand/>
+</C>
+<C c="10" r="7" s="2">
+<O>
+<![CDATA[Vad]]></O>
+<Expand/>
+</C>
+<C c="11" r="7" s="2">
+<O>
+<![CDATA[FCad]]></O>
+<Expand/>
+</C>
+<C c="12" r="7" s="2">
+<O>
+<![CDATA[St,ad]]></O>
+<Expand/>
+</C>
+<C c="4" r="8" s="2">
+<O>
+<![CDATA[t]]></O>
+<Expand/>
+</C>
+<C c="5" r="8" s="2">
+<O>
+<![CDATA[MJ/kg]]></O>
+<Expand/>
+</C>
+<C c="6" r="8" s="2">
+<O>
+<![CDATA[MJ/kg]]></O>
+<Expand/>
+</C>
+<C c="7" r="8" s="2">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="8" r="8" s="2">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="9" r="8" s="2">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="10" r="8" s="2">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="11" r="8" s="2">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="12" r="8" s="2">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="13" r="8" s="2">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="3" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="CREW_ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COUNTS"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="Qgr,ad"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="Qnet,ar"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="Mt"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="Mad"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="Aad"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="vad"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="FCad"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="St,ad"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="FLYASHH"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="10" s="3">
+<O>
+<![CDATA[批准：]]></O>
+<Expand/>
+</C>
+<C c="4" r="10">
+<O t="DSColumn">
+<Attributes dsName="ds15" columnName="EMP_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="10" s="3">
+<O>
+<![CDATA[审核：]]></O>
+<Expand/>
+</C>
+<C c="8" r="10">
+<O t="DSColumn">
+<Attributes dsName="ds13" columnName="EMP_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="10" s="3">
+<O>
+<![CDATA[填报人：]]></O>
+<Expand/>
+</C>
+<C c="12" r="10">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="EMP_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="14">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="108" foreground="-16737895"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+</WorkBook>

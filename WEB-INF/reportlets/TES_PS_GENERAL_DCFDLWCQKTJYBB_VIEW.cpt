@@ -1,0 +1,978 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="year"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct t.year_plan,
+       t.month_plan,
+       t.month_finish,
+       to_number(to_char(m.create_date,'mm')) mon,
+       o.org_name,
+       o.org_id,
+       GENERAL_NAME
+  from tes_ps_production_monthly t,
+       tes_ps_general_main       m,
+       xip_pub_orgs              o
+ where t.general_id = m.general_id
+   and m.org_id = o.org_id
+   and t.quota1 = '发电量' 
+   anD M.GENERAL_DETAIL_TYPE = '生产月报'
+   and to_number(to_char(m.create_date,'yyyy')) = '${year}'
+   and m.org_id   = '${org_id}']]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars/>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars/>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="93600000" height="42768000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,1600200,952500,952500,914400,1181100,952500,952500,838200,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[647700,0,0,0,0,6743700,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="5" r="1" cs="25" s="0">
+<O>
+<![CDATA[电厂发电量完成情况统计月报表]]></O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="3">
+<Widget class="com.fr.report.web.ui.Button">
+<Listener event="click">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=d6]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="year"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=e6]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<Content>
+<![CDATA[FR.showIframeDialog({
+url:"ReportServer?reportlet=TES_PS_GENERAL_DCFDLWCQKTJYBB_ZXT_VIEW.cpt&op=view&org_id=${org_id}&YEAR=${YEAR}",
+title:"月发电量折线图",
+width:900,
+height:500
+})]]></Content>
+</JavaScript>
+</Listener>
+<WidgetName name="a"/>
+<WidgetAttr/>
+<Text>
+<![CDATA[生成折线图]]></Text>
+</Widget>
+<Expand/>
+</C>
+<C c="5" r="4" s="1">
+<O>
+<![CDATA[年计划发电量：]]></O>
+<Expand/>
+</C>
+<C c="6" r="4" cs="12" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=G8 + I8 + K8 + M8 + O8 + Q8 + S8 + U8 + W8 + Y8 + AA8 + AC8]]></Attributes>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="18" r="4" cs="2" s="1">
+<O>
+<![CDATA[年发电量 ：]]></O>
+<Expand/>
+</C>
+<C c="20" r="4" cs="10" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=H8 + J8 + L8 + N8 + P8 + R8 + T8 + G8 + X8 + Z8 + AB8 + AD8]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$year]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="5" r="5" rs="2" s="3">
+<O t="BiasTextPainter">
+<IsBackSlash value="false"/>
+<![CDATA[          电厂名称|          月份]]></O>
+<Expand/>
+</C>
+<C c="6" r="5" cs="2" s="4">
+<O>
+<![CDATA[1月]]></O>
+<Expand/>
+</C>
+<C c="8" r="5" cs="2" s="4">
+<O>
+<![CDATA[2月]]></O>
+<Expand/>
+</C>
+<C c="10" r="5" cs="2" s="4">
+<O>
+<![CDATA[3月]]></O>
+<Expand/>
+</C>
+<C c="12" r="5" cs="2" s="4">
+<O>
+<![CDATA[4月]]></O>
+<Expand/>
+</C>
+<C c="14" r="5" cs="2" s="4">
+<O>
+<![CDATA[5月]]></O>
+<Expand/>
+</C>
+<C c="16" r="5" cs="2" s="4">
+<O>
+<![CDATA[6月]]></O>
+<Expand/>
+</C>
+<C c="18" r="5" cs="2" s="4">
+<O>
+<![CDATA[7月]]></O>
+<Expand/>
+</C>
+<C c="20" r="5" cs="2" s="4">
+<O>
+<![CDATA[8月]]></O>
+<Expand/>
+</C>
+<C c="22" r="5" cs="2" s="4">
+<O>
+<![CDATA[9月]]></O>
+<Expand/>
+</C>
+<C c="24" r="5" cs="2" s="4">
+<O>
+<![CDATA[10月]]></O>
+<Expand/>
+</C>
+<C c="26" r="5" cs="2" s="4">
+<O>
+<![CDATA[11月]]></O>
+<Expand/>
+</C>
+<C c="28" r="5" cs="2" s="4">
+<O>
+<![CDATA[12月]]></O>
+<Expand/>
+</C>
+<C c="0" r="6" s="5">
+<Expand/>
+</C>
+<C c="4" r="6" s="5">
+<Expand/>
+</C>
+<C c="6" r="6" s="4">
+<O>
+<![CDATA[计划电量]]></O>
+<Expand/>
+</C>
+<C c="7" r="6" s="4">
+<O>
+<![CDATA[完成电量]]></O>
+<Expand/>
+</C>
+<C c="8" r="6" s="4">
+<O>
+<![CDATA[计划电量]]></O>
+<Expand/>
+</C>
+<C c="9" r="6" s="4">
+<O>
+<![CDATA[完成电量]]></O>
+<Expand/>
+</C>
+<C c="10" r="6" s="4">
+<O>
+<![CDATA[计划电量]]></O>
+<Expand/>
+</C>
+<C c="11" r="6" s="4">
+<O>
+<![CDATA[完成电量]]></O>
+<Expand/>
+</C>
+<C c="12" r="6" s="4">
+<O>
+<![CDATA[计划电量]]></O>
+<Expand/>
+</C>
+<C c="13" r="6" s="4">
+<O>
+<![CDATA[完成电量]]></O>
+<Expand/>
+</C>
+<C c="14" r="6" s="4">
+<O>
+<![CDATA[计划电量]]></O>
+<Expand/>
+</C>
+<C c="15" r="6" s="4">
+<O>
+<![CDATA[完成电量]]></O>
+<Expand/>
+</C>
+<C c="16" r="6" s="4">
+<O>
+<![CDATA[计划电量]]></O>
+<Expand/>
+</C>
+<C c="17" r="6" s="4">
+<O>
+<![CDATA[完成电量]]></O>
+<Expand/>
+</C>
+<C c="18" r="6" s="4">
+<O>
+<![CDATA[计划电量]]></O>
+<Expand/>
+</C>
+<C c="19" r="6" s="4">
+<O>
+<![CDATA[完成电量]]></O>
+<Expand/>
+</C>
+<C c="20" r="6" s="4">
+<O>
+<![CDATA[计划电量]]></O>
+<Expand/>
+</C>
+<C c="21" r="6" s="4">
+<O>
+<![CDATA[完成电量]]></O>
+<Expand/>
+</C>
+<C c="22" r="6" s="4">
+<O>
+<![CDATA[计划电量]]></O>
+<Expand/>
+</C>
+<C c="23" r="6" s="4">
+<O>
+<![CDATA[完成电量]]></O>
+<Expand/>
+</C>
+<C c="24" r="6" s="4">
+<O>
+<![CDATA[计划电量]]></O>
+<Expand/>
+</C>
+<C c="25" r="6" s="4">
+<O>
+<![CDATA[完成电量]]></O>
+<Expand/>
+</C>
+<C c="26" r="6" s="4">
+<O>
+<![CDATA[计划电量]]></O>
+<Expand/>
+</C>
+<C c="27" r="6" s="4">
+<O>
+<![CDATA[完成电量]]></O>
+<Expand/>
+</C>
+<C c="28" r="6" s="4">
+<O>
+<![CDATA[计划电量]]></O>
+<Expand/>
+</C>
+<C c="29" r="6" s="4">
+<O>
+<![CDATA[完成电量]]></O>
+<Expand/>
+</C>
+<C c="0" r="7" s="5">
+<Expand/>
+</C>
+<C c="4" r="7" s="5">
+<Expand/>
+</C>
+<C c="5" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_PLAN"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="7" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="8" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_PLAN"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="9" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="10" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_PLAN"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="11" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="12" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_PLAN"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="13" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="14" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_PLAN"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[05]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="15" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[05]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="16" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_PLAN"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[06]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="17" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[06]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="18" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_PLAN"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[07]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="19" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[07]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="20" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_PLAN"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[08]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="21" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[08]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="22" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_PLAN"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[09]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="23" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[09]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="24" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_PLAN"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[10]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="25" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[10]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="26" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_PLAN"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[11]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="27" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[11]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="28" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_PLAN"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[12]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="29" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[MON]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[12]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false"/>
+</C>
+<C c="5" r="8">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[381000,876300,381000,876300,381000,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[3048000,4267200,533400,2438400,3390900,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="1" s="6">
+<O>
+<![CDATA[电厂 ：]]></O>
+<Expand/>
+</C>
+<C c="1" r="1">
+<O>
+<![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetName name="org_id"/>
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="0" vi="1"/>
+<Formula>
+<![CDATA[select distinct org_id,org_short_name from xip_pub_orgs]]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Widget>
+<Expand/>
+</C>
+<C c="3" r="1" s="6">
+<O>
+<![CDATA[年份 ：]]></O>
+<Expand/>
+</C>
+<C c="4" r="1">
+<O>
+<![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetName name="year"/>
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.DynamicSQLDict">
+<FormulaDictAttr ki="0" vi="1"/>
+<Formula>
+<![CDATA[SELECT DISTINCT TO_CHAR(FILL_DATE,'yyyy'),
+                TO_CHAR(FILL_DATE,'yyyy')||'年' year1
+  FROM TES_PS_GENERAL_MAIN
+ where FILL_DATE is not null
+ order by year1]]></Formula>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+</Dictionary>
+</Widget>
+<Expand/>
+</C>
+<C c="4" r="3" s="6">
+<Widget class="com.fr.report.web.ui.impl.form.FormSubmitButton">
+<WidgetAttr/>
+<Text>
+<![CDATA[查询]]></Text>
+<Hotkeys>
+<![CDATA[enter]]></Hotkeys>
+</Widget>
+<Expand/>
+</C>
+<C c="0" r="4">
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</ParameterUI>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="104"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="1" size="96"/>
+<Background name="ColorBackground" color="-6710785"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-6710785"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+</WorkBook>

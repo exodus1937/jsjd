@@ -1,0 +1,88 @@
+/**样式初始化**/
+html, body, div,dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td, span, font, b{ margin:0; padding:0; font-family:"Microsoft YaHei","微软雅黑",Arial; font-size:14px; }
+html, body { width:100%; height:100%; overflow-y:hidden; min-width:1000px;}
+a { display:-moz-inline-stack; display:inline-block; zoom:1; *display:inline; text-decoration:none; cursor:pointer;}
+b { display:-moz-inline-stack; display:inline-block; font-weight:normal; vertical-align:middle;}
+i { display:-moz-inline-stack; display:inline-block; font-style:normal;}
+ul, li { list-style:none;}
+img { border:none;}
+
+/*ie圆角通用*/
+.ie-css3{behavior: url(ie-css3.htc);position:relative; z-index:2;}
+
+
+/*******后台顶部**** ***/
+.JN_top  { position:relative; top:0; left:0; width:100%;overflow:hidden; background:url(../imgs/headBg.png) repeat-x;z-index:1;}
+.JN_top .logo { position:absolute; top:0px; left:0px; width:8%; height:80px; text-align: center; }
+.JN_top .JN_right { height:80px; margin-left: 10%; line-height: 80px;}
+.JN_top .JN_right dd { float:left}
+.JN_top .top_txt { width:100%; height:100%; overflow:hidden; font-size: 26px; font-weight: 700; font-family:"SimHei","黑体"; color:#333333; }
+.JN_top .top_date { font-size: 13px; color:#7e858c; font-weight: normal; font-family: "Microsoft YaHei","微软雅黑"; }
+.JN_top .top_nav { width: 100%; position:absolute; top: 17px; right:2%; line-height:18px; color:#333; z-index:92; text-align:right;}
+
+.JN_top .top_nav a { text-align: center; padding-left: 1.9%;}
+.JN_top .employee img { float: left; }
+.JN_top .employee span { float: left; text-align: left;}
+.JN_top .employee span i { color:#333; font-size: 13px; padding: 4px 0 0 12px; }
+.JN_top .employee span .job,.JN_top .top_nav a { color:#7e858c; font-size: 12px; }
+.JN_top .top_nav a.Message {position: relative; background: url(../imgs/head_line.jpg) no-repeat left center; margin-left: 42px;}
+.JN_top .top_nav .Message_num { width: 18px; height: 18px; background: #ff8400;  position: absolute; border-radius: 50%; color: #FFFFFF; font-size: 13px; font-family:"SimHei","黑体"; right: 13px; top: -9px;}
+.JN_top .top_nav a.logout { padding-left:2%; }
+
+/*信息框*/
+.messagein{display:none;position: absolute;width:452px;right:8px;top:65px;background-image:url(../imgs/messagek.png);background-repeat:no-repeat;padding-top:10px;z-index: 999;padding-bottom:1px;}
+.messagein ul{margin-top:10px;}
+.messagein li{font-size:14px;line-height:39px;color:#7e858c;width:390px;margin:0 auto;border-bottom:1px solid #dedede;}
+.messagein li span{margin-right:30px;}
+.messagein li em{font-style:normal;}
+.messagein a{display:block;font-size:14px;width:390px;color:#7e858c;height:30px;line-height:30px;text-align:center;background-color:#ebebec;margin:20px auto;}
+
+/*******中间内容*******/
+.JNmainLay { position:absolute; width:100%; height:auto; top:80px; bottom:0px;z-index:0;}
+.JN_main { position:absolute; width:100%; height:100%; overflow:hidden;}
+.JN_main .JN_leftNav { width:8%; height:100%; position:absolute; left:0; background:#165997; overflow:hidden;}
+
+/***左侧内容***/
+.JN_main .JN_rightBox { padding-left:8%; height:100%;}
+.JN_main .JN_rightBox iframe { width:100%; height:100%;}
+
+/***左导航 ***/
+.JN_leftNav { width:8%; height:auto; overflow:hidden; vertical-align:middle; text-align: center;}
+.JN_leftNav .leftNav { width:8%px; height:100%; overflow:auto; background:#165997;}
+.JN_leftNav .navFirst { height:auto; width:100%; overflow:hidden;}
+.JN_leftNav .navFirst dd { width:100%; height:86px; padding-top: 20px; background: url(../imgs/navLine.jpg) repeat-x left bottom; position: relative;}
+.JN_leftNav .navFirst dd a { color:#33c9ff; font-size: 16px; display: block; line-height: 100%; line-height: 22px;}
+.JN_leftNav .navFirst .current { background-color: #2f70ad; border-left: 5px solid #33c9ff; }
+.JN_leftNav .navFirst .current a {color:#FFFFFF;}
+
+/*二级导航*/
+#secMenuDiv { position: absolute; overflow-y: auto;overflow-x:auto;}
+.navSecond { width: 177px; /*padding-top: 9px; background:url(../imgs/navSecond_Bg.png) no-repeat left top;*/ display: none; }
+.navSecond li { width: 177px; background:#3374af; height: 52px;}
+.navSecond .current { background: #5695d1; }
+.navSecond li a {overflow:hidden; margin: 0 auto; border-top: 1px solid #245a95; border-bottom: 1px solid #3c85c9; display: block; width: 118px; height: 52px; line-height: 52px; color:#FFFFFF; font-size: 13px; text-align: center; }
+.navSecond li .liFirt { border-top: none; }
+.navSecond li .liLast { border-bottom: none; }
+
+/* 滚动条 */
+.hide { display:none}
+.nullBox { height:20px; overflow:hidden}
+.mCSB_container.mCS_no_scrollbar{margin-right:0;}
+.mCS_disabled>.mCustomScrollBox>.mCSB_container.mCS_no_scrollbar,.mCS_destroyed>.mCustomScrollBox>.mCSB_container.mCS_no_scrollbar{margin-right:30px;}
+.mCustomScrollBox>.mCSB_scrollTools{width:16px;height:100%;top:0;right:0;}
+.mCSB_scrollTools .mCSB_draggerContainer{position:absolute;top:0;left:0;bottom:0;right:0;height:auto;}
+.mCSB_scrollTools a+.mCSB_draggerContainer{margin:20px 0;}
+.mCSB_scrollTools .mCSB_draggerRail{width:2px;height:100%;margin:0 auto;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;}
+.mCSB_scrollTools .mCSB_dragger{cursor:pointer;width:100%;height:30px;}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{width:4px;height:100%;margin:0 auto;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;text-align:center;}
+.mCSB_scrollTools .mCSB_buttonUp,.mCSB_scrollTools .mCSB_buttonDown{display:block;position:relative;height:20px;overflow:hidden;margin:0 auto;cursor:pointer;}
+.mCSB_scrollTools .mCSB_buttonDown{top:100%;margin-top:-40px;}
+.mCS-leftnav .mCSB_container { margin-right:0px}
+.mCS-leftnav>.mCSB_scrollTools .mCSB_draggerRail{width:4px; background:#aaa; border-radius:0px}
+.mCS-leftnav>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{width:4px; background:#51aaf6; border-radius:0px;}
+.mCS-leftnav.mCustomScrollBox>.mCSB_scrollTools{width:4px; left:0; border-radius:0px;}
+.mCS-scroll-newlist .mCSB_container { margin-right:0px}
+.mCS-scroll-newlist>.mCSB_scrollTools .mCSB_draggerRail{width:1px; height:100%; background:#eee; border-radius:0px}
+.mCS-scroll-newlist>.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{width:11px; height:39px; background:url(../images/scroll.jpg); border-radius:0px;}
+.mCS-scroll-newlist>.mCustomScrollBox>.mCSB_scrollTools{width:40px; left:0; border-radius:0px;}
+

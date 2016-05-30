@@ -1,0 +1,115 @@
+@CHARSET "UTF-8";
+.dNone{
+	display:none;
+}
+.dBlock{
+	display:block;
+}
+.jt-left{
+	background:url(../img/gege.jpg) right 11px no-repeat;
+	width:50%; 
+	height:100%;
+	position:relative;
+}
+.jt-right{
+	width:50%; 
+	height:100%;
+}
+.jt-cs{
+	position:absolute;
+	z-index:4;
+	left:14%;
+	top:247px;	
+  		
+	background:#f1f1f1;
+	height:25px;
+	line-height:25px;
+}
+.jt-cs1{
+	left:52%;
+	
+}
+.jt-cs a{
+	  padding: 0 24px;
+	width:100px;height:100%;
+}
+.jt-cs1 a{
+	padding:0 10px;
+	
+}
+.jt-left-h{
+	width:100%;
+	height:32px;
+	line-height:32px;
+	
+	margin-top:16px;
+	
+}
+.biaozhi{
+	margin-top: 7px;
+ 	 margin-right: 5px;
+    height: 17px;
+    width: 17px;
+    border-radius: 5px;
+    background: red;
+}
+.jt-left-1{
+	height:207px;
+	width:22%;
+	
+}
+.jt-left-1-1{
+	height: 66px;
+    width: 100%;
+    padding: 46px 0 0 0;
+	
+}
+.jt-left-canvas{
+	margin:0 auto;
+	width: 77%;
+    height: 197px;
+  
+}
+.jt-right-h{
+	position: relative;
+    top: 7px;
+    z-index: 10;
+}
+.jt-right-h .fl{
+    padding-top: 27px;
+    width: 33%;
+    height: 43px;
+    
+}
+.jt-right-canvas{
+	height:173px;
+	width:100%;
+	
+	
+}
+    
+.jt-right-bottom{
+	height: 32px;
+	padding-top: 10px;
+	position: relative;
+    top: -12px;
+   
+}
+.tc tbody{
+	color:#66A2E0;
+}
+.h213{
+	height:213px!important;
+}
+.khleft div{
+    height: 33px;
+    line-height: 33px;
+    background: #f1f1f1;
+    margin-top: 1px;
+}
+.tc tbody{
+	color:#66A2E0;
+}
+.h213{
+	height:213px!important;
+}

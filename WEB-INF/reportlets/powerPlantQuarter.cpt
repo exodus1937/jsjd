@@ -1,0 +1,1881 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="S_P_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select 
+P.P_DEP||'公司',
+Extract(year from P.CREATE_DATE)||'年第'|| to_char(P.CREATE_DATE,'Q')||'季度技术监督工作计划' as CREATE_DATE_YEAR,
+ S.S_P_ID                 ,
+  S.P_SEC_ID              ,
+  S.P_SEC_NAME             ,
+  S.P_SEC_TYPE            ,
+  S.P_SEC_DEPICT           ,
+  S.P_SEC_TIME           ,
+  S.P_SEC_DEPT            ,
+  S.P_SEC_DUTY_PERSON    ,
+  S.P_SEC_FINISH_UNIT      ,
+  S.P_SEC_FINISH_DATE     ,
+  S.P_SEC_FINISH_SITUATION ,
+  S.P_SEC_REMARK          ,
+  S.P_SEC_ASK              ,
+  P_SEC_IS_TYPE         ,
+  S.P_SEC_PLAN 
+FROM TES_PS_SUP_PLAN_SEC S
+LEFT JOIN TES_PS_SUP_PLAN P ON S.S_P_ID=P.S_P_ID
+WHERE  P.S_P_ID='${S_P_ID}'
+]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="S_P_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select 
+P.P_DEP||'公司',
+Extract(year from P.CREATE_DATE)||'年第'|| to_char(P.CREATE_DATE,'Q')||'季度技术监督工作计划' as CREATE_DATE_QUARTER
+FROM  TES_PS_SUP_PLAN P
+WHERE  P.S_P_ID='${S_P_ID}']]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[1141920,723900,1676160,1141920,723900,1676160,1141920,723900,1676160,1141920,723900,1676160,1141920,723900,1676160,1141920,723900,1676160,1141920,723900,1676160,1141920,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[6477000,5143500,2743200,3695700,2743200,2743200,3848100,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="10" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="P.P_DEP||&apos;公司&apos;"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="1" cs="10" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="CREATE_DATE_QUARTER"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="2" cs="10" s="1">
+<O>
+<![CDATA[监督指标]]></O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="3" s="2">
+<O>
+<![CDATA[监督项目、指标及标准要求]]></O>
+<Expand/>
+</C>
+<C c="1" r="3" s="2">
+<O>
+<![CDATA[是否为重点监督项目]]></O>
+<Expand/>
+</C>
+<C c="2" r="3" s="2">
+<O>
+<![CDATA[保证方案]]></O>
+<Expand/>
+</C>
+<C c="3" r="3" s="2">
+<O>
+<![CDATA[计划实施时间]]></O>
+<Expand/>
+</C>
+<C c="4" r="3" s="2">
+<O>
+<![CDATA[负责部门]]></O>
+<Expand/>
+</C>
+<C c="5" r="3" s="2">
+<O>
+<![CDATA[负责人]]></O>
+<Expand/>
+</C>
+<C c="6" r="3" s="2">
+<O>
+<![CDATA[完成单位(班组)]]></O>
+<Expand/>
+</C>
+<C c="7" r="3" s="2">
+<O>
+<![CDATA[完成时间]]></O>
+<Expand/>
+</C>
+<C c="8" r="3" s="3">
+<O>
+<![CDATA[完成情况]]></O>
+<Expand/>
+</C>
+<C c="9" r="3" s="2">
+<O>
+<![CDATA[备注]]></O>
+<Expand/>
+</C>
+<C c="0" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_ASK"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[监督指标]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="4" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_IS_TYPE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[监督指标]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="4" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_PLAN"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[监督指标]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="4" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_TIME"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[监督指标]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="4" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_DEPT"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[监督指标]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="4" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_DUTY_PERSON"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[监督指标]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="4" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_FINISH_UNIT"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[监督指标]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="4" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_FINISH_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[监督指标]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="4" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_FINISH_SITUATION"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[监督指标]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="4" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_REMARK"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[监督指标]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="5" cs="10" s="1">
+<O>
+<![CDATA[主要监督工作]]></O>
+<Expand/>
+</C>
+<C c="0" r="6" s="2">
+<O>
+<![CDATA[项目名称]]></O>
+<Expand/>
+</C>
+<C c="1" r="6" s="2">
+<O>
+<![CDATA[是否为重点监督项目]]></O>
+<Expand/>
+</C>
+<C c="2" r="6" s="2">
+<O>
+<![CDATA[工作内容及要求]]></O>
+<Expand/>
+</C>
+<C c="3" r="6" s="2">
+<O>
+<![CDATA[计划实施时间]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" s="2">
+<O>
+<![CDATA[负责部门]]></O>
+<Expand/>
+</C>
+<C c="5" r="6" s="2">
+<O>
+<![CDATA[负责人]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" s="2">
+<O>
+<![CDATA[完成单位(班组)]]></O>
+<Expand/>
+</C>
+<C c="7" r="6" s="2">
+<O>
+<![CDATA[完成时间]]></O>
+<Expand/>
+</C>
+<C c="8" r="6" s="3">
+<O>
+<![CDATA[完成情况]]></O>
+<Expand/>
+</C>
+<C c="9" r="6" s="2">
+<O>
+<![CDATA[备注]]></O>
+<Expand/>
+</C>
+<C c="0" r="7" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_NAME"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[主要监督工作]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_IS_TYPE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[主要监督工作]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_PLAN"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[主要监督工作]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_TIME"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[主要监督工作]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_DEPT"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[主要监督工作]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_DUTY_PERSON"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[主要监督工作]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_FINISH_UNIT"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[主要监督工作]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_FINISH_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[主要监督工作]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_FINISH_SITUATION"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[主要监督工作]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="7" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_REMARK"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[主要监督工作]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="8" cs="10" s="1">
+<O>
+<![CDATA[技术监督报表]]></O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="9" s="2">
+<O>
+<![CDATA[监督项目名称]]></O>
+<Expand/>
+</C>
+<C c="1" r="9" s="2">
+<O>
+<![CDATA[是否为重点监督项目]]></O>
+<Expand/>
+</C>
+<C c="2" r="9" s="2">
+<O>
+<![CDATA[保证方案]]></O>
+<Expand/>
+</C>
+<C c="3" r="9" s="2">
+<O>
+<![CDATA[计划实施时间]]></O>
+<Expand/>
+</C>
+<C c="4" r="9" s="2">
+<O>
+<![CDATA[负责部门]]></O>
+<Expand/>
+</C>
+<C c="5" r="9" s="2">
+<O>
+<![CDATA[负责人]]></O>
+<Expand/>
+</C>
+<C c="6" r="9" s="2">
+<O>
+<![CDATA[完成单位(班组)]]></O>
+<Expand/>
+</C>
+<C c="7" r="9" s="2">
+<O>
+<![CDATA[完成时间]]></O>
+<Expand/>
+</C>
+<C c="8" r="9" s="3">
+<O>
+<![CDATA[完成情况]]></O>
+<Expand/>
+</C>
+<C c="9" r="9" s="2">
+<O>
+<![CDATA[备注]]></O>
+<Expand/>
+</C>
+<C c="0" r="10" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_NAME"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督报表]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_IS_TYPE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督报表]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_PLAN"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督报表]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_TIME"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督报表]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_DEPT"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督报表]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_DUTY_PERSON"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督报表]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_FINISH_UNIT"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督报表]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_FINISH_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督报表]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_FINISH_SITUATION"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督报表]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_REMARK"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督报表]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="11" cs="10" s="1">
+<O>
+<![CDATA[标准、台账完善]]></O>
+<Expand/>
+</C>
+<C c="0" r="12" s="2">
+<O>
+<![CDATA[监督项目名称]]></O>
+<Expand/>
+</C>
+<C c="1" r="12" s="2">
+<O>
+<![CDATA[是否为重点监督项目]]></O>
+<Expand/>
+</C>
+<C c="2" r="12" s="2">
+<O>
+<![CDATA[保证方案]]></O>
+<Expand/>
+</C>
+<C c="3" r="12" s="2">
+<O>
+<![CDATA[计划实施时间]]></O>
+<Expand/>
+</C>
+<C c="4" r="12" s="2">
+<O>
+<![CDATA[负责部门]]></O>
+<Expand/>
+</C>
+<C c="5" r="12" s="2">
+<O>
+<![CDATA[负责人]]></O>
+<Expand/>
+</C>
+<C c="6" r="12" s="2">
+<O>
+<![CDATA[完成单位(班组)]]></O>
+<Expand/>
+</C>
+<C c="7" r="12" s="2">
+<O>
+<![CDATA[完成时间]]></O>
+<Expand/>
+</C>
+<C c="8" r="12" s="3">
+<O>
+<![CDATA[完成情况]]></O>
+<Expand/>
+</C>
+<C c="9" r="12" s="2">
+<O>
+<![CDATA[备注]]></O>
+<Expand/>
+</C>
+<C c="0" r="13" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_NAME"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[标准、台账完善]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_IS_TYPE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[标准、台账完善]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_PLAN"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[标准、台账完善]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_TIME"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[标准、台账完善]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_DEPT"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[标准、台账完善]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_DUTY_PERSON"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[标准、台账完善]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_FINISH_UNIT"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[标准、台账完善]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_FINISH_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[标准、台账完善]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_FINISH_SITUATION"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[标准、台账完善]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_REMARK"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[标准、台账完善]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="14" cs="10" s="1">
+<O>
+<![CDATA[技术监督培训与会议管理]]></O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="15" s="2">
+<O>
+<![CDATA[监督项目名称]]></O>
+<Expand/>
+</C>
+<C c="1" r="15" s="2">
+<O>
+<![CDATA[是否为重点监督项目]]></O>
+<Expand/>
+</C>
+<C c="2" r="15" s="2">
+<O>
+<![CDATA[保证方案]]></O>
+<Expand/>
+</C>
+<C c="3" r="15" s="2">
+<O>
+<![CDATA[计划实施时间]]></O>
+<Expand/>
+</C>
+<C c="4" r="15" s="2">
+<O>
+<![CDATA[负责部门]]></O>
+<Expand/>
+</C>
+<C c="5" r="15" s="2">
+<O>
+<![CDATA[负责人]]></O>
+<Expand/>
+</C>
+<C c="6" r="15" s="2">
+<O>
+<![CDATA[完成单位(班组)]]></O>
+<Expand/>
+</C>
+<C c="7" r="15" s="2">
+<O>
+<![CDATA[完成时间]]></O>
+<Expand/>
+</C>
+<C c="8" r="15" s="3">
+<O>
+<![CDATA[完成情况]]></O>
+<Expand/>
+</C>
+<C c="9" r="15" s="2">
+<O>
+<![CDATA[备注]]></O>
+<Expand/>
+</C>
+<C c="0" r="16" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_NAME"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督培训与会议管理]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="16" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_IS_TYPE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督培训与会议管理]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="16" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_PLAN"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督培训与会议管理]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="16" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_TIME"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督培训与会议管理]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="16" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_DEPT"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督培训与会议管理]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="16" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_DUTY_PERSON"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督培训与会议管理]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="16" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_FINISH_UNIT"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督培训与会议管理]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="16" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_FINISH_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督培训与会议管理]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="16" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_FINISH_SITUATION"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督培训与会议管理]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="16" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_REMARK"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督培训与会议管理]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="17" cs="10" s="1">
+<O>
+<![CDATA[技术监督计划与总结]]></O>
+<Expand/>
+</C>
+<C c="0" r="18" s="2">
+<O>
+<![CDATA[监督项目名称]]></O>
+<Expand/>
+</C>
+<C c="1" r="18" s="2">
+<O>
+<![CDATA[是否为重点监督项目]]></O>
+<Expand/>
+</C>
+<C c="2" r="18" s="2">
+<O>
+<![CDATA[保证方案]]></O>
+<Expand/>
+</C>
+<C c="3" r="18" s="2">
+<O>
+<![CDATA[计划实施时间]]></O>
+<Expand/>
+</C>
+<C c="4" r="18" s="2">
+<O>
+<![CDATA[负责部门]]></O>
+<Expand/>
+</C>
+<C c="5" r="18" s="2">
+<O>
+<![CDATA[负责人]]></O>
+<Expand/>
+</C>
+<C c="6" r="18" s="2">
+<O>
+<![CDATA[完成单位(班组)]]></O>
+<Expand/>
+</C>
+<C c="7" r="18" s="2">
+<O>
+<![CDATA[完成时间]]></O>
+<Expand/>
+</C>
+<C c="8" r="18" s="3">
+<O>
+<![CDATA[完成情况]]></O>
+<Expand/>
+</C>
+<C c="9" r="18" s="2">
+<O>
+<![CDATA[备注]]></O>
+<Expand/>
+</C>
+<C c="0" r="19" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_NAME"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督计划与总结]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="19" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_IS_TYPE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督计划与总结]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="19" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_PLAN"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督计划与总结]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="19" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_TIME"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督计划与总结]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="19" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_DEPT"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督计划与总结]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="19" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_DUTY_PERSON"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督计划与总结]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="19" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_FINISH_UNIT"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督计划与总结]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="19" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_FINISH_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督计划与总结]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="19" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_FINISH_SITUATION"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督计划与总结]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="19" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_REMARK"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[技术监督计划与总结]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="20" cs="10" s="1">
+<O>
+<![CDATA[其它]]></O>
+<Expand/>
+</C>
+<C c="0" r="21" s="2">
+<O>
+<![CDATA[监督项目名称]]></O>
+<Expand/>
+</C>
+<C c="1" r="21" s="2">
+<O>
+<![CDATA[是否为重点监督项目]]></O>
+<Expand/>
+</C>
+<C c="2" r="21" s="2">
+<O>
+<![CDATA[保证方案]]></O>
+<Expand/>
+</C>
+<C c="3" r="21" s="2">
+<O>
+<![CDATA[计划实施时间]]></O>
+<Expand/>
+</C>
+<C c="4" r="21" s="2">
+<O>
+<![CDATA[负责部门]]></O>
+<Expand/>
+</C>
+<C c="5" r="21" s="2">
+<O>
+<![CDATA[负责人]]></O>
+<Expand/>
+</C>
+<C c="6" r="21" s="2">
+<O>
+<![CDATA[完成单位(班组)]]></O>
+<Expand/>
+</C>
+<C c="7" r="21" s="2">
+<O>
+<![CDATA[完成时间]]></O>
+<Expand/>
+</C>
+<C c="8" r="21" s="3">
+<O>
+<![CDATA[完成情况]]></O>
+<Expand/>
+</C>
+<C c="9" r="21" s="2">
+<O>
+<![CDATA[备注]]></O>
+<Expand/>
+</C>
+<C c="0" r="22" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_NAME"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[其它]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="1" r="22" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_IS_TYPE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[其它]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="22" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_PLAN"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[其它]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="22" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_TIME"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[其它]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="22" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_DEPT"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[其它]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="22" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_DUTY_PERSON"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[其它]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="22" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_FINISH_UNIT"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[其它]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="22" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_FINISH_DATE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[其它]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="22" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_FINISH_SITUATION"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[其它]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="22" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="P_SEC_REMARK"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[6]]></CNUMBER>
+<CNAME>
+<![CDATA[P_SEC_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[其它]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="44640000" height="42768000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ReportAttrSet>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="128"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="112"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="72"/>
+<Background name="ColorBackground" color="-6710785"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="1" size="72"/>
+<Background name="ColorBackground" color="-6710785"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

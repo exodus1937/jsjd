@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>京能集团实时技术监督生产管理系统</title>
+<link rel="stylesheet" href="css/style12-21.css"/>
+</head>
+
+<body>
+<div id="main">
+<div class="du_top">
+  <div class="du_top_left fl">
+    <select name="language" class="pull_down" id="marjor_pulldown">
+      <option value="">绝缘</option>
+      <option value="">金属</option>
+      <option value="">化学</option>
+      <option value="">环保</option>
+      <option value="">热工</option>
+      <option value="">继电保护及安全自动装置</option>
+      <option value="">电测</option>
+      <option value="">节能</option>
+      <option value="">电能质量</option>
+      <option value="">压力容器及承压部件</option>
+      <option value="">计量</option>
+      <option value="">励磁</option>
+      <option value="">振动</option>
+      <option value="">特种设备</option>
+    </select>
+  </div>
+  <div class="du_top_right fl">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <select onchange="getWarningAnd(18)" style="float:right;" class="pull_down">
+      <option value="c21834b4-1cb0-490f-a2a8-deeaf7f7e065">岱海发电</option>
+      <option value="472212af-1977-462b-a74a-a1f36ed6562d">宁东发电</option>
+    </select>
+  </div>
+  <div class="clearfix"></div>
+  <div class="clearfix"></div>
+</div>
+<div id="du_main">
+<!--table1-->
+<div class="class_main1">
+  <h3>实时监控</h3>
+  <div class="du_more"></div>
+  <div class="class_main1_main">
+    <div class="circle" >
+      <div class="fl circle1" style="line-height: 60px;">1#机组</div>
+      <div class="fl circle1 circle2" style="text-align: right;line-height: 60px;">2#机组</div>
+      <div class="fl circle1 circle3" style="line-height: 150px;">3#机组</div>
+      <div class="fl circle1 circle4" style="text-align: right;line-height: 150px;">4#机组</div>
+      <div class="circle_data1">98%</div>
+      <div class="circle_data2">97%</div>
+      <div class="circle_data3">97%</div>
+      <div class="circle_data4">97%</div>
+    </div>
+    <div class="class_main1_right">
+      <div>
+        <div style="height: 20px;width:20px;background: red;border-radius: 7px;"></div>
+        &nbsp;&nbsp;&nbsp;运&nbsp;&nbsp;行 </div>
+      <div>
+        <div style="height: 20px;width:20px;background: green;border-radius: 7px;"></div>
+        &nbsp;&nbsp;&nbsp;停&nbsp;&nbsp;机 </div>
+      <div>
+        <div style="height: 20px;width:20px;background: yellow;border-radius: 7px;"></div>
+        &nbsp;通讯中断 </div>
+    </div>
+  </div>
+  <table style="margin-top: 0">
+    <tr class="du_href">
+      <td><a href="#">机组状态参数</a></td>
+      <td><a href="#">全厂系统总览</a></td>
+    </tr>
+  </table>
+</div>
+<!--table2-->
+<div class="class_main1 class_main2">
+  <h3>报警信息</h3>
+  <div class="du_more">更多></div>
+  <div style="height:32px;font-size: 14px; ">
+    <div class="fl title_active pointer" style="height: 28px;line-height: 32px; margin: 0 10px;">运行机组报警</div>
+    <div class="fl pointer" style="height: 28px;line-height: 32px" >停机机组报警</div>
+    <div class="clearfix"></div>
+  </div>
+  <table style="margin-top:0;">
+    <thead>
+      <tr style="height:40px;line-height: 40px">
+        <td>测点名称</td>
+        <td>报警级别</td>
+        <td>报警值</td>
+        <td>报警时间</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="tr1">
+        <td class="ellipsis" style="color:	#FFD306;" align="center">北京京能集团发电厂</td>
+        <td class="ellipsis" style="color:	#FFD306;" align="center">集团</td>
+        <td class="ellipsis" style="color:	#FFD306;" align="center">100.23</td>
+        <td class="ellipsis" style="color:	#FFD306;" align="center">2015/5/14 15:08:44</td>
+      </tr>
+      <tr>
+        <td class="ellipsis" style="color:#FF8C00;" align="center">北京京能集团发电厂</td>
+        <td class="ellipsis" style="color:#FF8C00;" align="center">集团</td>
+        <td align="center" class="ellipsis" style="color:#FF8C00;">100.23</td>
+        <td align="center" class="ellipsis" style="color:#FF8C00;">2015/5/14 15:08:44</td>
+      </tr>
+      <tr height="35px" id="tr1">
+        <td align="center" class="ellipsis" style="color:#FF0000;">北京京能集团发电</td>
+        <td align="center" class="ellipsis" style="color:#FF0000;">集团</td>
+        <td class="ellipsis" style="color:#FF0000;" align="center">100.23</td>
+        <td class="ellipsis" style="color:#FF0000;" align="center">2015/5/14 15:08:44</td>
+      </tr>
+      <tr height="35px">
+        <td align="center" class="ellipsis" style="color:#00BFFF;">北京京能集团发电</td>
+        <td align="center" class="ellipsis" style="color:#00BFFF;">集团</td>
+        <td align="center" class="ellipsis" style="color:#00BFFF;">100.23</td>
+        <td align="center" class="ellipsis" style="color:#00BFFF;">2015/5/14 15:08:44</td>
+      </tr>
+      <tr height="35px" id="tr1">
+        <td align="center" class="ellipsis" style="color:#FF0000;">北京京能集团发电</td>
+        <td align="center" class="ellipsis" style="color:#FF0000;">集团</td>
+        <td class="ellipsis" style="color:#FF0000;" align="center">100.23</td>
+        <td class="ellipsis" style="color:#FF0000;" align="center">2015/5/14 15:08:44</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!--table3-->
+<div class="class_main1 class_main3">
+  <h3>监督报表</h3>
+  <div class="du_more">更多></div>
+  <table>
+    <thead>
+      <tr>
+        <td>序号</td>
+        <td>报表名称</td>
+        <td>上报人</td>
+        <td>上报时间</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-20</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-19</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-18</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-17</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-16</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-15</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!--table4-->
+<div class="class_main1 class_main6">
+  <h3>监督执行</h3>
+  <div class="du_more">更多></div>
+  <table>
+    <thead>
+      <tr>
+        <td>序号</td>
+        <td>执行项目</td>
+        <td>上报人</td>
+        <td>上报时间</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-20</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-20</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-20</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-20</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-20</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-20</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!--table5-->
+
+<div class="class_main1 class_main3">
+  <h3>预警通知单</h3>
+  <div class="du_more">更多></div>
+  <table>
+    <thead>
+      <tr>
+        <td>序号</td>
+        <td>报表名称</td>
+        <td>上报人</td>
+        <td>上报时间</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-20</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-20</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-20</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-20</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-20</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-20</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!--table6-->
+<div class="class_main1 class_main3">
+  <h3>监督计划/总结</h3>
+  <div class="du_more">更多></div>
+  <div style="height:32px;font-size: 14px;">
+    <div class="fl title_active pointer" style="height: 28px;line-height: 32px; margin: 0 10px;">监督计划</div>
+    <div class="fl pointer" style="height: 28px;line-height: 32px" >监督总结</div>
+    <div class="clearfix"></div>
+  </div>
+  <table style="margin-top: 0;">
+    <thead>
+      <tr>
+        <td>序号</td>
+        <td>计划名称</td>
+        <td>上报人</td>
+        <td>上报时间</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-20</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-20</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-20</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-20</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td class="ellipsis">岱海电厂总结</td>
+        <td>杜磊</td>
+        <td>2015-12-20</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!--7table-->
+<div class="class_main1 class_main3">
+  <h3>技改项目</h3>
+  <div style="margin: 10px 0">
+    <div class="fl title_active" style="margin: 0 5%; cursor: pointer">磨媒机辊套改造</div>
+    <div class="fl" style="cursor: pointer">胶球系统改造</div>
+    <a href="###">查看详细信息</a>
+    <div class="clearfix"></div>
+  </div>
+  <div id="my_echart" style="width: 420px;height: 280px;position: absolute;left:-30px;top:50px;"></div>
+  <!--<div class="table_view" >
+                <div class="table_left">收益(万元)</div>
+
+                <div class="table_view1">
+                    昨日收益<br/>
+                    <span>111</span>
+                </div>
+                <div class=" table_view2">
+                    今日实时收益<br/>
+                    <span>12312</span>
+                </div>
+                <div class=" table_view3">
+                    累计收益<br/>
+                    <span>32334</span>
+                </div>
+                <div class=" table_view4"></div>
+                <div class="table_bottom">累计运行时间(小时)</div>
+            </div>--> 
+  
+</div>
+
+<!--8table-->
+<div class="class_main1 class_main9 class_main7">
+<h3>生产报表</h3>
+<div class="du_more">更多></div>
+<table>
+<table>
+  <tbody>
+    <tr>
+      <td><div> <a href="#"> <img src="img/report1.jpg" alt="生产报表图片" /> </a> </div></td>
+      <td><div> <a href="#"> <img src="img/report2.jpg" alt="生产报表图片" /> </a> </div></td>
+      <td><div> <a href="#"> <img src="img/report3.jpg" alt="生产报表图片" /> </a> </div></td>
+    </tr>
+    <tr>
+      <td><div> <a href="#"> <img src="img/report4.jpg" alt="生产报表图片" /> </a> </div></td>
+      <td><div> <a href="#"> <img src="img/report5.jpg" alt="生产报表图片" /> </a> </div></td>
+      <td><div> <a href="#"> <img src="img/report6.jpg" alt="生产报表图片" /> </a> </div></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<!--9table-->
+<div class="class_main1 class_main7 class_main9">
+  <h3>快速导航</h3>
+  <div class="du_more"></div>
+  <table>
+    <tbody>
+      <tr>
+        <td><div> <a href="http://10.10.10.32:7001/jsjd/main?xwl=23VKVPUL841Y"> <img src="img/wddb.png" alt="资料库图片"/> </a> </div></td>
+        <td><div> <a href="http://10.10.10.32:7001/jsjd/main?xwl=23WS4LY0CY47"> <img src="img/jtbz.png" alt="资料库图片"/> </a> </div></td>
+      </tr>
+      <tr>
+        <td><div> <a href="http://10.10.10.32:7001/jsjd/graph.do?method=initPage"> <img src="img/jdwl.png" alt="资料库图片"/> </a> </div></td>
+        <td><div> <a href="http://10.10.10.32:7001/jsjd/main?xwl=23X1WI0JO26Q"> <img src="img/zlxz.png" alt="资料库图片"/> </a> </div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="clearfix"> </div>
+</div>
+</div>
+<!--<script src="../jquery-1.11.1.min.js"></script>--> 
+<!--<script src="select2css.js"></script>--> 
+<script src="js/echarts-all.js"></script> 
+
+<!--<script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>--> 
+
+<script type="text/javascript">
+    var shuju;
+		//[]
+    /*$.ajax({
+     type:"get",
+     url:"",
+     async:true,
+     success:function(data){
+     for(var i=0;i<data.length;i++){
+     var arr1=[dat[0],data[1].....[data10]];
+     var arr2=[data[11].....[data20]];
+     var arr3=[data20]....[data30];
+     }
+     chart(one,two,three,data)//传参
+     }
+     });*/
+    function chart(data){
+    	//alert(data.length)
+    		var one=[];
+    		var two=[];
+    		var three=[];
+    		var s=data.length;
+    		for(var i=0;i<s;i++){
+    			if(i<s/3){
+    				one.push(data[i]);
+    			}else if(i>s/3-1 && i<s*2/3){
+    				two.push(data[i]);
+    			}else if(i>s*2/3-1&&i<s*3/3){
+    				three.push(data[i])
+    			}
+    		}
+    	/*console.log(three)*/
+    	
+    	
+    	
+        // 基于准备好的dom，初始化echarts图表
+        var myChart = echarts.init(document.getElementById('my_echart'));
+        option = {
+            tooltip : {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['昨日收益','今日收益','累计收益'],
+
+                y:30
+            },
+
+            calculable : true,
+            axis:{
+                axisLine:{
+                    lineStyle:{
+                        color: '#000',
+                        width: 2,
+                        type: 'solid'
+                    }
+                }
+            },
+            xAxis : [
+                {
+                    name:"运行时间",
+                    nameLocation:"end",
+                    axisLine:{
+                        lineStyle:{
+                            color: '#000',
+                            width: 2,
+                            type: 'solid'
+                        }
+                    },
+                    type : 'category',
+                    boundaryGap : false,
+                    data : ["",'20150101',' ',' ','20160101']
+                }
+            ],
+            yAxis : [
+                {
+                		
+                		name:"投运时间",
+                    nameLocation:"start",
+                    type : 'value',
+                    axisLine:{
+                        lineStyle:{
+                            color: '#000',
+                            width: 2,
+                            type: 'solid'
+                        }
+                    },
+                }
+            ],
+            series : [
+                {
+                    name:'昨日收益',
+                    type:'line',
+                    stack: '总量',
+                    data:one
+                },
+                {
+                    name:'今日收益',
+                    type:'line',
+                    stack: '总量',
+                    data:two
+                },
+                {
+                    name:'累计收益',
+                    type:'line',
+                    stack: '总量',
+                    data:three
+                }
+            ]
+        };
+
+        // 为echarts对象加载数据
+        myChart.setOption(option);
+
+    }
+    //交互就是传递一个数组过来就行在ajax里调用chart方法
+    var data=[120, 132, 101, 134, 90, 230, 210,220, 182, 191, 234, 290, 330, 310,150];
+    
+    
+    chart(data);
+
+
+
+
+
+
+</script>
+<script src="js/jquery.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

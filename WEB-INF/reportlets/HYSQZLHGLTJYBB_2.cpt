@@ -1,0 +1,2389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select 
+t.UNIT,t.COLUMN_1,t.COLUMN_2,t.COLUMN_3,t.COLUMN_4,t.COLUMN_5,t.COLUMN_6,t.COLUMN_7,t.COLUMN_8,t.COLUMN_9,t.COLUMN_10,t.COLUMN_11,t.COLUMN_12,t.COLUMN_13,t.COLUMN_14,t.COLUMN_15,t.COLUMN_16,t.COLUMN_17,t.COLUMN_18,t.COLUMN_19,t.COLUMN_20,t.COLUMN_21,t.COLUMN_22,t.COLUMN_23,t.COLUMN_24,a.GENERAL_ID
+from tes_ps_test_steam_quality_d t,tes_ps_general_main a 
+where t.UNIT = '1' and a.GENERAL_ID = t.GENERAL_ID and a.GENERAL_ID = '${GENERAL_ID}' ]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select 
+t.UNIT,t.COLUMN_1,t.COLUMN_2,t.COLUMN_3,t.COLUMN_4,t.COLUMN_5,t.COLUMN_6,t.COLUMN_7,t.COLUMN_8,t.COLUMN_9,t.COLUMN_10,t.COLUMN_11,t.COLUMN_12,t.COLUMN_13,t.COLUMN_14,t.COLUMN_15,t.COLUMN_16,t.COLUMN_17,t.COLUMN_18,t.COLUMN_19,t.COLUMN_20,t.COLUMN_21,t.COLUMN_22,t.COLUMN_23,t.COLUMN_24,a.GENERAL_ID
+from tes_ps_test_steam_quality_d t,tes_ps_general_main a 
+where t.UNIT = '2' and a.GENERAL_ID = t.GENERAL_ID and a.GENERAL_ID = '${GENERAL_ID}' ]]></Query>
+</TableData>
+<TableData name="ds3" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select 
+t.UNIT,t.COLUMN_1,t.COLUMN_2,t.COLUMN_3,t.COLUMN_4,t.COLUMN_5,t.COLUMN_6,t.COLUMN_7,t.COLUMN_8,t.COLUMN_9,t.COLUMN_10,t.COLUMN_11,t.COLUMN_12,t.COLUMN_13,t.COLUMN_14,t.COLUMN_15,t.COLUMN_16,t.COLUMN_17,t.COLUMN_18,t.COLUMN_19,t.COLUMN_20,t.COLUMN_21,t.COLUMN_22,t.COLUMN_23,t.COLUMN_24,a.GENERAL_ID
+from tes_ps_test_steam_quality_d t,tes_ps_general_main a 
+where t.UNIT = '3' and a.GENERAL_ID = t.GENERAL_ID and a.GENERAL_ID = '${GENERAL_ID}' ]]></Query>
+</TableData>
+<TableData name="ds4" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select 
+t.UNIT,t.COLUMN_1,t.COLUMN_2,t.COLUMN_3,t.COLUMN_4,t.COLUMN_5,t.COLUMN_6,t.COLUMN_7,t.COLUMN_8,t.COLUMN_9,t.COLUMN_10,t.COLUMN_11,t.COLUMN_12,t.COLUMN_13,t.COLUMN_14,t.COLUMN_15,t.COLUMN_16,t.COLUMN_17,t.COLUMN_18,t.COLUMN_19,t.COLUMN_20,t.COLUMN_21,t.COLUMN_22,t.COLUMN_23,t.COLUMN_24,a.GENERAL_ID
+from tes_ps_test_steam_quality_d t,tes_ps_general_main a 
+where t.UNIT = '4' and a.GENERAL_ID = t.GENERAL_ID and a.GENERAL_ID = '${GENERAL_ID}' ]]></Query>
+</TableData>
+<TableData name="ds5" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[{CALL TES_PS_GENERAL_MAIN_VIEW.ORG_COMBOX_VIEW('${GENERAL_ID}',?)}]]></Query>
+</TableData>
+<TableData name="ds6" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[{CALL TES_PS_GENERAL_MAIN_VIEW.LIST_NAME_VIEW('${GENERAL_ID}',?)}]]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="72000000" height="101808000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,1295400,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,1257300,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,1524000,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="0">
+<Expand/>
+</C>
+<C c="1" r="0" s="0">
+<Expand/>
+</C>
+<C c="2" r="0" s="0">
+<Expand/>
+</C>
+<C c="3" r="0" s="0">
+<Expand/>
+</C>
+<C c="4" r="0" s="0">
+<Expand/>
+</C>
+<C c="5" r="0" s="0">
+<Expand/>
+</C>
+<C c="6" r="0" s="0">
+<Expand/>
+</C>
+<C c="7" r="0" s="0">
+<Expand/>
+</C>
+<C c="8" r="0" s="0">
+<Expand/>
+</C>
+<C c="9" r="0" s="0">
+<Expand/>
+</C>
+<C c="10" r="0" s="0">
+<Expand/>
+</C>
+<C c="11" r="0" s="0">
+<Expand/>
+</C>
+<C c="12" r="0" s="0">
+<Expand/>
+</C>
+<C c="13" r="0" s="0">
+<Expand/>
+</C>
+<C c="14" r="0" s="0">
+<Expand/>
+</C>
+<C c="15" r="0" s="0">
+<Expand/>
+</C>
+<C c="0" r="1" s="0">
+<Expand/>
+</C>
+<C c="1" r="1" s="0">
+<Expand/>
+</C>
+<C c="2" r="1" s="0">
+<Expand/>
+</C>
+<C c="3" r="1" s="0">
+<Expand/>
+</C>
+<C c="4" r="1" s="0">
+<Expand/>
+</C>
+<C c="5" r="1" s="0">
+<Expand/>
+</C>
+<C c="6" r="1" s="0">
+<Expand/>
+</C>
+<C c="7" r="1" s="0">
+<Expand/>
+</C>
+<C c="8" r="1" s="0">
+<Expand/>
+</C>
+<C c="9" r="1" s="0">
+<Expand/>
+</C>
+<C c="10" r="1" s="0">
+<Expand/>
+</C>
+<C c="11" r="1" s="0">
+<Expand/>
+</C>
+<C c="12" r="1" s="0">
+<Expand/>
+</C>
+<C c="13" r="1" s="0">
+<Expand/>
+</C>
+<C c="14" r="1" s="0">
+<Expand/>
+</C>
+<C c="15" r="1" s="0">
+<Expand/>
+</C>
+<C c="0" r="2" s="0">
+<Expand/>
+</C>
+<C c="1" r="2" s="0">
+<Expand/>
+</C>
+<C c="2" r="2" s="0">
+<Expand/>
+</C>
+<C c="3" r="2" s="0">
+<Expand/>
+</C>
+<C c="4" r="2" s="0">
+<Expand/>
+</C>
+<C c="5" r="2" s="0">
+<Expand/>
+</C>
+<C c="6" r="2" s="0">
+<Expand/>
+</C>
+<C c="7" r="2" s="0">
+<Expand/>
+</C>
+<C c="8" r="2" s="0">
+<Expand/>
+</C>
+<C c="9" r="2" s="0">
+<Expand/>
+</C>
+<C c="10" r="2" s="0">
+<Expand/>
+</C>
+<C c="11" r="2" s="0">
+<Expand/>
+</C>
+<C c="12" r="2" s="0">
+<Expand/>
+</C>
+<C c="13" r="2" s="0">
+<Expand/>
+</C>
+<C c="14" r="2" s="0">
+<Expand/>
+</C>
+<C c="15" r="2" s="0">
+<Expand/>
+</C>
+<C c="0" r="3" s="0">
+<Expand/>
+</C>
+<C c="1" r="3" s="0">
+<Expand/>
+</C>
+<C c="2" r="3" s="0">
+<Expand/>
+</C>
+<C c="3" r="3" cs="13" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="GENERAL_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="4" s="0">
+<Expand/>
+</C>
+<C c="1" r="4" s="0">
+<Expand/>
+</C>
+<C c="2" r="4" s="0">
+<Expand/>
+</C>
+<C c="3" r="4" s="0">
+<O>
+<![CDATA[填报单位：]]></O>
+<Expand/>
+</C>
+<C c="4" r="4" cs="3" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="ORG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="4" s="0">
+<Expand/>
+</C>
+<C c="8" r="4" s="0">
+<Expand/>
+</C>
+<C c="9" r="4" s="0">
+<Expand/>
+</C>
+<C c="10" r="4" s="0">
+<Expand/>
+</C>
+<C c="11" r="4" s="0">
+<Expand/>
+</C>
+<C c="12" r="4" s="0">
+<O>
+<![CDATA[填报日期：]]></O>
+<Expand/>
+</C>
+<C c="13" r="4" cs="3" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="CREATE_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="5" s="0">
+<Expand/>
+</C>
+<C c="1" r="5" s="0">
+<Expand/>
+</C>
+<C c="2" r="5" s="0">
+<Expand/>
+</C>
+<C c="3" r="5" rs="2" s="2">
+<O>
+<![CDATA[水质类别]]></O>
+<Expand/>
+</C>
+<C c="4" r="5" cs="6" s="3">
+<O t="I">
+<![CDATA[1]]></O>
+<Expand/>
+</C>
+<C c="10" r="5" cs="6" s="4">
+<O t="I">
+<![CDATA[2]]></O>
+<Expand/>
+</C>
+<C c="0" r="6" s="0">
+<Expand/>
+</C>
+<C c="1" r="6" s="0">
+<Expand/>
+</C>
+<C c="2" r="6" s="0">
+<Expand/>
+</C>
+<C c="4" r="6" cs="6" s="5">
+<O>
+<![CDATA[凝结水]]></O>
+<Expand/>
+</C>
+<C c="10" r="6" cs="6" s="6">
+<O>
+<![CDATA[给水]]></O>
+<Expand/>
+</C>
+<C c="0" r="7" s="0">
+<Expand/>
+</C>
+<C c="1" r="7" s="0">
+<Expand/>
+</C>
+<C c="2" r="7" s="0">
+<Expand/>
+</C>
+<C c="3" r="7" rs="3" s="7">
+<O>
+<![CDATA[项目]]></O>
+<Expand/>
+</C>
+<C c="4" r="7" cs="2" s="5">
+<O>
+<![CDATA[硬度]]></O>
+<Expand/>
+</C>
+<C c="6" r="7" cs="2" s="5">
+<O>
+<![CDATA[铜]]></O>
+<Expand/>
+</C>
+<C c="8" r="7" cs="2" s="5">
+<O>
+<![CDATA[铁]]></O>
+<Expand/>
+</C>
+<C c="10" r="7" cs="2" s="5">
+<O>
+<![CDATA[硬度]]></O>
+<Expand/>
+</C>
+<C c="12" r="7" cs="2" s="5">
+<O>
+<![CDATA[铜]]></O>
+<Expand/>
+</C>
+<C c="14" r="7" cs="2" s="6">
+<O>
+<![CDATA[铁]]></O>
+<Expand/>
+</C>
+<C c="0" r="8" s="0">
+<Expand/>
+</C>
+<C c="1" r="8" s="0">
+<Expand/>
+</C>
+<C c="2" r="8" s="0">
+<Expand/>
+</C>
+<C c="4" r="8" s="5">
+<O>
+<![CDATA[范围]]></O>
+<Expand/>
+</C>
+<C c="5" r="8" s="5">
+<O>
+<![CDATA[合格率]]></O>
+<Expand/>
+</C>
+<C c="6" r="8" s="5">
+<O>
+<![CDATA[范围]]></O>
+<Expand/>
+</C>
+<C c="7" r="8" s="5">
+<O>
+<![CDATA[合格率]]></O>
+<Expand/>
+</C>
+<C c="8" r="8" s="5">
+<O>
+<![CDATA[范围]]></O>
+<Expand/>
+</C>
+<C c="9" r="8" s="5">
+<O>
+<![CDATA[合格率]]></O>
+<Expand/>
+</C>
+<C c="10" r="8" s="5">
+<O>
+<![CDATA[范围]]></O>
+<Expand/>
+</C>
+<C c="11" r="8" s="5">
+<O>
+<![CDATA[合格率]]></O>
+<Expand/>
+</C>
+<C c="12" r="8" s="5">
+<O>
+<![CDATA[范围]]></O>
+<Expand/>
+</C>
+<C c="13" r="8" s="5">
+<O>
+<![CDATA[合格率]]></O>
+<Expand/>
+</C>
+<C c="14" r="8" s="5">
+<O>
+<![CDATA[范围]]></O>
+<Expand/>
+</C>
+<C c="15" r="8" s="6">
+<O>
+<![CDATA[合格率]]></O>
+<Expand/>
+</C>
+<C c="0" r="9" s="0">
+<Expand/>
+</C>
+<C c="1" r="9" s="0">
+<Expand/>
+</C>
+<C c="2" r="9" s="0">
+<Expand/>
+</C>
+<C c="4" r="9" s="5">
+<O>
+<![CDATA[μmol/L]]></O>
+<Expand/>
+</C>
+<C c="5" r="9" s="5">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="6" r="9" s="5">
+<O>
+<![CDATA[μg/L]]></O>
+<Expand/>
+</C>
+<C c="7" r="9" s="5">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="8" r="9" s="5">
+<O>
+<![CDATA[μg/L]]></O>
+<Expand/>
+</C>
+<C c="9" r="9" s="5">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="10" r="9" s="5">
+<O>
+<![CDATA[μmol/L]]></O>
+<Expand/>
+</C>
+<C c="11" r="9" s="5">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="12" r="9" s="5">
+<O>
+<![CDATA[μg/kg]]></O>
+<Expand/>
+</C>
+<C c="13" r="9" s="5">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="14" r="9" s="5">
+<O>
+<![CDATA[μg/kg]]></O>
+<Expand/>
+</C>
+<C c="15" r="9" s="6">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="0" r="10" s="0">
+<Expand/>
+</C>
+<C c="1" r="10" s="0">
+<Expand/>
+</C>
+<C c="2" r="10" s="0">
+<Expand/>
+</C>
+<C c="3" r="10" s="7">
+<O>
+<![CDATA[标准值]]></O>
+<Expand/>
+</C>
+<C c="4" r="10" s="5">
+<O>
+<![CDATA[≈0]]></O>
+<Expand/>
+</C>
+<C c="5" r="10" s="5">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="6" r="10" s="5">
+<O>
+<![CDATA[—]]></O>
+<Expand/>
+</C>
+<C c="7" r="10" s="5">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="8" r="10" s="5">
+<O>
+<![CDATA[—]]></O>
+<Expand/>
+</C>
+<C c="9" r="10" s="5">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="10" r="10" s="5">
+<O>
+<![CDATA[≈0]]></O>
+<Expand/>
+</C>
+<C c="11" r="10" s="5">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="12" r="10" s="5">
+<O>
+<![CDATA[≤3]]></O>
+<Expand/>
+</C>
+<C c="13" r="10" s="5">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="14" r="10" s="5">
+<O>
+<![CDATA[≤15]]></O>
+<Expand/>
+</C>
+<C c="15" r="10" s="6">
+<Expand/>
+</C>
+<C c="0" r="11" s="0">
+<Expand/>
+</C>
+<C c="1" r="11" s="0">
+<Expand/>
+</C>
+<C c="2" r="11" s="0">
+<Expand/>
+</C>
+<C c="3" r="11" s="7">
+<O>
+<![CDATA[1号机]]></O>
+<Expand/>
+</C>
+<C c="4" r="11" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="11" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_2"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="11" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_3"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="11" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_4"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="11" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_5"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="11" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_6"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="11" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_7"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="11" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_8"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="11" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_9"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="11" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_10"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="11" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_12"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="15" r="11" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_12"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="12" s="0">
+<Expand/>
+</C>
+<C c="1" r="12" s="0">
+<Expand/>
+</C>
+<C c="2" r="12" s="0">
+<Expand/>
+</C>
+<C c="3" r="12" s="7">
+<O>
+<![CDATA[2号机]]></O>
+<Expand/>
+</C>
+<C c="4" r="12" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="12" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_2"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="12" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_3"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="12" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_4"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="12" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_5"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="12" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_6"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="12" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_7"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="12" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_8"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="12" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_9"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="12" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_10"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="12" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_11"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="15" r="12" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_12"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="13" s="0">
+<Expand/>
+</C>
+<C c="1" r="13" s="0">
+<Expand/>
+</C>
+<C c="2" r="13" s="0">
+<Expand/>
+</C>
+<C c="3" r="13" s="7">
+<O>
+<![CDATA[3号机]]></O>
+<Expand/>
+</C>
+<C c="4" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_2"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_3"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_4"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_5"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_6"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_7"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_8"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_9"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_10"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="13" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_11"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="15" r="13" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_12"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="14" s="0">
+<Expand/>
+</C>
+<C c="1" r="14" s="0">
+<Expand/>
+</C>
+<C c="2" r="14" s="0">
+<Expand/>
+</C>
+<C c="3" r="14" s="7">
+<O>
+<![CDATA[4号机]]></O>
+<Expand/>
+</C>
+<C c="4" r="14" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="14" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_2"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="14" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_3"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="14" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_4"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="14" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_5"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="14" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_6"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="14" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_7"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="14" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_8"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="14" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_9"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="14" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_10"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="14" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_11"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="15" r="14" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_12"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="15" s="0">
+<Expand/>
+</C>
+<C c="1" r="15" s="0">
+<Expand/>
+</C>
+<C c="2" r="15" s="0">
+<Expand/>
+</C>
+<C c="3" r="15" s="7">
+<O>
+<![CDATA[单项平均合格率％]]></O>
+<Expand/>
+</C>
+<C c="4" r="15" cs="2" s="8">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(f12+f13+f14+f15)/4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="15" cs="2" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(h12+h13+h14+h15)/4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="15" cs="2" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(j12+j13+j14+j15)/4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="10" r="15" cs="2" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(l12+l13+l14+l15)/4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="12" r="15" cs="2" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(n12+n13+n14+n15)/4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="14" r="15" cs="2" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(p12+p13+p14+p15)/4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="16" s="0">
+<Expand/>
+</C>
+<C c="1" r="16" s="0">
+<Expand/>
+</C>
+<C c="2" r="16" s="0">
+<Expand/>
+</C>
+<C c="3" r="16" rs="2" s="7">
+<O>
+<![CDATA[水质类别]]></O>
+<Expand/>
+</C>
+<C c="4" r="16" cs="2" s="5">
+<O t="I">
+<![CDATA[3]]></O>
+<Expand/>
+</C>
+<C c="6" r="16" cs="4" s="5">
+<O t="I">
+<![CDATA[4]]></O>
+<Expand/>
+</C>
+<C c="10" r="16" cs="4" s="5">
+<O t="I">
+<![CDATA[5]]></O>
+<Expand/>
+</C>
+<C c="14" r="16" cs="2" s="6">
+<O t="I">
+<![CDATA[6]]></O>
+<Expand/>
+</C>
+<C c="0" r="17" s="0">
+<Expand/>
+</C>
+<C c="1" r="17" s="0">
+<Expand/>
+</C>
+<C c="2" r="17" s="0">
+<Expand/>
+</C>
+<C c="4" r="17" cs="2" s="5">
+<O>
+<![CDATA[炉水]]></O>
+<Expand/>
+</C>
+<C c="6" r="17" cs="4" s="5">
+<O>
+<![CDATA[饱和蒸汽]]></O>
+<Expand/>
+</C>
+<C c="10" r="17" cs="4" s="5">
+<O>
+<![CDATA[过热蒸汽]]></O>
+<Expand/>
+</C>
+<C c="14" r="17" cs="2" s="6">
+<O>
+<![CDATA[发电机内冷水]]></O>
+<Expand/>
+</C>
+<C c="0" r="18" s="0">
+<Expand/>
+</C>
+<C c="1" r="18" s="0">
+<Expand/>
+</C>
+<C c="2" r="18" s="0">
+<Expand/>
+</C>
+<C c="3" r="18" rs="3" s="7">
+<O>
+<![CDATA[项目]]></O>
+<Expand/>
+</C>
+<C c="4" r="18" cs="2" s="5">
+<O>
+<![CDATA[磷酸根]]></O>
+<Expand/>
+</C>
+<C c="6" r="18" cs="2" s="5">
+<O>
+<![CDATA[铜]]></O>
+<Expand/>
+</C>
+<C c="8" r="18" cs="2" s="5">
+<O>
+<![CDATA[铁]]></O>
+<Expand/>
+</C>
+<C c="10" r="18" cs="2" s="5">
+<O>
+<![CDATA[铜]]></O>
+<Expand/>
+</C>
+<C c="12" r="18" cs="2" s="5">
+<O>
+<![CDATA[铁]]></O>
+<Expand/>
+</C>
+<C c="14" r="18" cs="2" s="6">
+<O>
+<![CDATA[铜]]></O>
+<Expand/>
+</C>
+<C c="0" r="19" s="0">
+<Expand/>
+</C>
+<C c="1" r="19" s="0">
+<Expand/>
+</C>
+<C c="2" r="19" s="0">
+<Expand/>
+</C>
+<C c="4" r="19" s="5">
+<O>
+<![CDATA[范围]]></O>
+<Expand/>
+</C>
+<C c="5" r="19" s="5">
+<O>
+<![CDATA[合格率]]></O>
+<Expand/>
+</C>
+<C c="6" r="19" s="5">
+<O>
+<![CDATA[范围]]></O>
+<Expand/>
+</C>
+<C c="7" r="19" s="5">
+<O>
+<![CDATA[合格率]]></O>
+<Expand/>
+</C>
+<C c="8" r="19" s="5">
+<O>
+<![CDATA[范围]]></O>
+<Expand/>
+</C>
+<C c="9" r="19" s="5">
+<O>
+<![CDATA[合格率]]></O>
+<Expand/>
+</C>
+<C c="10" r="19" s="5">
+<O>
+<![CDATA[范围]]></O>
+<Expand/>
+</C>
+<C c="11" r="19" s="5">
+<O>
+<![CDATA[合格率]]></O>
+<Expand/>
+</C>
+<C c="12" r="19" s="5">
+<O>
+<![CDATA[范围]]></O>
+<Expand/>
+</C>
+<C c="13" r="19" s="5">
+<O>
+<![CDATA[合格率]]></O>
+<Expand/>
+</C>
+<C c="14" r="19" s="5">
+<O>
+<![CDATA[范围]]></O>
+<Expand/>
+</C>
+<C c="15" r="19" s="6">
+<O>
+<![CDATA[合格率]]></O>
+<Expand/>
+</C>
+<C c="0" r="20" s="0">
+<Expand/>
+</C>
+<C c="1" r="20" s="0">
+<Expand/>
+</C>
+<C c="2" r="20" s="0">
+<Expand/>
+</C>
+<C c="4" r="20" s="5">
+<O>
+<![CDATA[mg/L]]></O>
+<Expand/>
+</C>
+<C c="5" r="20" s="5">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="6" r="20" s="5">
+<O>
+<![CDATA[μg/kg]]></O>
+<Expand/>
+</C>
+<C c="7" r="20" s="5">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="8" r="20" s="5">
+<O>
+<![CDATA[μg/kg]]></O>
+<Expand/>
+</C>
+<C c="9" r="20" s="5">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="10" r="20" s="5">
+<O>
+<![CDATA[μg/kg]]></O>
+<Expand/>
+</C>
+<C c="11" r="20" s="5">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="12" r="20" s="5">
+<O>
+<![CDATA[μg/kg]]></O>
+<Expand/>
+</C>
+<C c="13" r="20" s="5">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="14" r="20" s="5">
+<O>
+<![CDATA[μg/L]]></O>
+<Expand/>
+</C>
+<C c="15" r="20" s="6">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="0" r="21" s="0">
+<Expand/>
+</C>
+<C c="1" r="21" s="0">
+<Expand/>
+</C>
+<C c="2" r="21" s="0">
+<Expand/>
+</C>
+<C c="3" r="21" s="7">
+<O>
+<![CDATA[标准值]]></O>
+<Expand/>
+</C>
+<C c="4" r="21" s="5">
+<O>
+<![CDATA[<1]]></O>
+<Expand/>
+</C>
+<C c="5" r="21" s="5">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="6" r="21" s="5">
+<O>
+<![CDATA[≤3]]></O>
+<Expand/>
+</C>
+<C c="7" r="21" s="5">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="8" r="21" s="5">
+<O>
+<![CDATA[≤10]]></O>
+<Expand/>
+</C>
+<C c="9" r="21" s="5">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="10" r="21" s="5">
+<O>
+<![CDATA[≤3]]></O>
+<Expand/>
+</C>
+<C c="11" r="21" s="5">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="12" r="21" s="5">
+<O>
+<![CDATA[≤10]]></O>
+<Expand/>
+</C>
+<C c="13" r="21" s="5">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="14" r="21" s="5">
+<O>
+<![CDATA[≤10]]></O>
+<Expand/>
+</C>
+<C c="15" r="21" s="6">
+<Expand/>
+</C>
+<C c="0" r="22" s="0">
+<Expand/>
+</C>
+<C c="1" r="22" s="0">
+<Expand/>
+</C>
+<C c="2" r="22" s="0">
+<Expand/>
+</C>
+<C c="3" r="22" s="7">
+<O>
+<![CDATA[1号机]]></O>
+<Expand/>
+</C>
+<C c="4" r="22" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_13"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="22" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_14"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="22" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_15"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="22" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_16"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="22" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_17"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="22" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_18"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="22" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_19"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="22" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_20"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="22" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_21"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="22" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_22"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="22" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_23"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="15" r="22" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="COLUMN_24"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="23" s="0">
+<Expand/>
+</C>
+<C c="1" r="23" s="0">
+<Expand/>
+</C>
+<C c="2" r="23" s="0">
+<Expand/>
+</C>
+<C c="3" r="23" s="7">
+<O>
+<![CDATA[2号机]]></O>
+<Expand/>
+</C>
+<C c="4" r="23" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_13"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="23" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_14"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="23" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_15"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="23" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_16"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="23" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_17"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="23" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_18"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="23" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_19"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="23" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_20"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="23" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_21"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="23" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_22"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="23" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_23"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="15" r="23" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="COLUMN_24"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="24" s="0">
+<Expand/>
+</C>
+<C c="1" r="24" s="0">
+<Expand/>
+</C>
+<C c="2" r="24" s="0">
+<Expand/>
+</C>
+<C c="3" r="24" s="7">
+<O>
+<![CDATA[3号机]]></O>
+<Expand/>
+</C>
+<C c="4" r="24" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_13"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="24" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_14"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="24" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_15"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="24" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_16"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="24" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_17"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="24" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_18"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="24" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_19"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="24" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_20"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="24" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_21"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="24" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_22"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="24" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_23"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="15" r="24" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COLUMN_24"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="25" s="0">
+<Expand/>
+</C>
+<C c="1" r="25" s="0">
+<Expand/>
+</C>
+<C c="2" r="25" s="0">
+<Expand/>
+</C>
+<C c="3" r="25" s="7">
+<O>
+<![CDATA[4号机]]></O>
+<Expand/>
+</C>
+<C c="4" r="25" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_13"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="25" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_14"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="25" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_16"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="25" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_16"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="25" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_17"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="25" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_18"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="25" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_19"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="25" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_20"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="25" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_21"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="25" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_22"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="25" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_23"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="15" r="25" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="COLUMN_24"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="26" s="0">
+<Expand/>
+</C>
+<C c="1" r="26" s="0">
+<Expand/>
+</C>
+<C c="2" r="26" s="0">
+<Expand/>
+</C>
+<C c="3" r="26" s="9">
+<O>
+<![CDATA[单项平均合格率％]]></O>
+<Expand/>
+</C>
+<C c="4" r="26" cs="2" s="10">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(f23+f24+f25+f26)/4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="26" cs="2" s="10">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(h23+h24+h25+h26)/4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="26" cs="2" s="10">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(j23+j24+j25+j26)/4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="10" r="26" cs="2" s="10">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(l23+l24+l25+l26)/4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="12" r="26" cs="2" s="10">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(n23+n24+n25+n26)/4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="14" r="26" cs="2" s="11">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(p23+p24+p25+p26)/4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="20" r="26">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="27" s="0">
+<Expand/>
+</C>
+<C c="1" r="27" s="0">
+<Expand/>
+</C>
+<C c="2" r="27" s="0">
+<Expand/>
+</C>
+<C c="3" r="27" s="12">
+<O>
+<![CDATA[批准：]]></O>
+<Expand/>
+</C>
+<C c="4" r="27" cs="2" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="EXAMINE_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="27" s="12">
+<O>
+<![CDATA[审核：]]></O>
+<Expand/>
+</C>
+<C c="7" r="27" cs="2" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="APPROVAL_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="27" s="12">
+<O>
+<![CDATA[填表人：]]></O>
+<Expand/>
+</C>
+<C c="10" r="27" cs="2" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="CREATE_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="27" s="0">
+<Expand/>
+</C>
+<C c="13" r="27" s="0">
+<Expand/>
+</C>
+<C c="14" r="27" s="0">
+<Expand/>
+</C>
+<C c="15" r="27" s="0">
+<Expand/>
+</C>
+<C c="3" r="32">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="108" foreground="-16737895"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2"/>
+<Bottom style="1"/>
+<Left style="2"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="2"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="2"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="2"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00%]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="2"/>
+<Left style="2"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="2"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="2"/>
+<Left style="1"/>
+<Right style="2"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+</WorkBook>

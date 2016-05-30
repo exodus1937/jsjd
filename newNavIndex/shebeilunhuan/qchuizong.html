@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>京能集团实时技术监督生产管理系统</title>
+<link type="text/css" rel="stylesheet" href="css/news.css" />
+<link type="text/css" rel="stylesheet" href="css/zTreeStyle.css" />
+<link type="text/css" rel="stylesheet" href="css/pagination.css" />
+</head>
+
+<body>
+
+ <!--  <input id="url" type="hidden" value=""> -->
+  <div class="wu_top">
+  <div class="wu_top0"></div>
+  <div class="wu_top1" style="display:none">
+    <ol>
+      <li>
+        <h2>准时性判断:</h2>
+        <h3></h3>
+      </li>
+      <li>
+        <h2>轮换方法及要求:</h2>
+        <h3></h3>
+      </li>
+      <li>
+        <h2>系统实施逻辑判据:</h2>
+        <h3></h3>
+      </li>
+      <li>
+        <h2>数据记录初始时间判据（前1小时）:</h2>
+        <h3></h3>
+      </li>
+       <li>
+        <h2>数据记录结束时间判据（后1小时）:</h2>
+        <h3></h3>
+      </li>
+    </ol>
+    
+    <ol>
+      
+      
+  
+      <input name="" type="button" class="wu_top1b" value="查 询" />
+      <select name="choose" class="choose">
+         <option value="2016">2016年</option>
+        <option value="2016" selected="selected">2016年</option>
+        <option value="2015">2015年</option>
+        <option value="2014">2014年</option>
+        <option value="2013">2013年</option>
+      </select>
+      <select name="choose" class="choose">
+        <option value="1" selected="selected">一月</option>
+        <option value="2">二月</option>
+        <option value="3">三月</option>
+        <option value="4">四月</option>
+        <option value="5">五月</option>
+        <option value="6">六月</option>
+        <option value="7">七月</option>
+        <option value="8">八月</option>
+        <option value="9">九月</option>
+        <option value="10">十月</option>
+        <option value="11">十一月</option>
+        <option value="12">十二月</option>
+      </select>
+    
+    </ol>
+  </div>
+  <div class="fengge"></div>
+</div>
+<!-- <div class="wu_top">
+
+  <div class="wu_top0"></div>
+  <div class="wu_top1"> 全 厂 设 备 轮 换 汇 总 </div>
+  <div class="fengge"></div>
+</div> -->
+
+
+<div class="wu_left">
+ 
+    <ul id="tree" class="ztree"></ul>
+  
+  <div class="fengge"></div>
+</div>
+
+
+
+<div class="wu_main" style="border: 1px solid #ccc;">
+  <div class="wu_main1">
+     <p id="lh_name"></p>
+
+     <table class="wu_tab1" id="table1_huizong" style="display:none">
+      <thead>
+        <tr>
+          <td>本年应进行（次）</td>
+          <td>本年已完成（次）</td>
+          <td>本月应进行（次）</td>
+          <td>本月已完成（次）</td>
+          <td>非试验（次）</td>
+
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>3</td>
+          <td>1</td>
+          <td>2</td>
+          <td>1</td>
+        </tr>
+      </thead>
+    </table>
+
+    <table class="wu_tab1 level4" style="display:none">
+      <thead>
+        <tr>
+          <td>序号</td>
+          <td>轮换时间</td>
+          <td>轮换曲线</td>
+          <td>轮换说明</td>
+          <td>是否准时</td>
+          <td>导出报告</td>
+        </tr>
+      </thead>
+      <tbody id="sblhcounter">
+        
+      </tbody>
+    </table>
+    <table class="wu_tab1 level1" style='display:none' >
+      <thead>
+        <tr>
+          <td>序号</td>
+          <td>轮换名称</td>
+          <td>机组</td>
+          <td>本年应做（次）</td>
+          <td>本年已做（次）</td>
+          <td>本月应做（次）</td>
+          <td>本月已做（次）</td>
+          <td>是否准时</td>
+        </tr>
+      </thead>
+      <tbody id='level1'>
+       
+      
+      </tbody>
+    </table>
+    <div class="fengge"></div>
+    <div id="Pagination" class="pagination" style="float:right"><!-- 这里显示分页 --></div>
+  </div>
+
+  <div class="fengge"></div>
+</div>
+<!-- <script src="//cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script type="text/javascript"  src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>-->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/echarts2.js?v1"></script> 
+<script type = "text/javascript" src="js/jquery.ztree.core.js"></script>
+<script type = "text/javascript" src="js/jquery.pagination.js"></script>
+
+<script type="text/javascript" src="js/wj.js?v3"></script>
+<script>
+  
+</script>
+</body>
+</html>

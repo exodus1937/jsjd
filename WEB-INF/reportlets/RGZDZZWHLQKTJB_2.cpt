@@ -1,0 +1,6169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '机炉协调控制'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'   
+]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '给水控制'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  
+]]></Query>
+</TableData>
+<TableData name="ds3" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '主汽压力'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  
+]]></Query>
+</TableData>
+<TableData name="ds4" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '炉膛压力'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  ]]></Query>
+</TableData>
+<TableData name="ds5" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '送风控制'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  ]]></Query>
+</TableData>
+<TableData name="ds6" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '主汽温度'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  
+]]></Query>
+</TableData>
+<TableData name="ds7" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '再热汽温'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  ]]></Query>
+</TableData>
+<TableData name="ds8" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '燃烧器调节挡板控制(二次风、辅助风)'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  ]]></Query>
+</TableData>
+<TableData name="ds9" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '一次风母管压力'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  
+]]></Query>
+</TableData>
+<TableData name="ds10" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '磨煤机一次风量(直吹式)'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  
+]]></Query>
+</TableData>
+<TableData name="ds11" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '磨煤机出口风粉温度'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  
+]]></Query>
+</TableData>
+<TableData name="ds12" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '中间点温度控制(直流炉)'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  
+]]></Query>
+</TableData>
+<TableData name="ds13" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '内置阀前压力控制(直流炉)'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  
+]]></Query>
+</TableData>
+<TableData name="ds14" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '锅炉燃油压力'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  
+]]></Query>
+</TableData>
+<TableData name="ds15" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '锅炉总燃料控制'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  ]]></Query>
+</TableData>
+<TableData name="ds16" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '磨负荷控制(中储式)'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  
+]]></Query>
+</TableData>
+<TableData name="ds17" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '磨负压控制(中储式)'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  
+]]></Query>
+</TableData>
+<TableData name="ds18" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '吸风'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  ]]></Query>
+</TableData>
+<TableData name="ds19" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '磨煤机'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  
+]]></Query>
+</TableData>
+<TableData name="ds20" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '其它'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  
+]]></Query>
+</TableData>
+<TableData name="ds21" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '一次风暖风器进汽调节门控制'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  
+]]></Query>
+</TableData>
+<TableData name="ds22" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '二次风暖风器进气调节门控制'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  ]]></Query>
+</TableData>
+<TableData name="ds23" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '密封风机入口调整门控制'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  
+]]></Query>
+</TableData>
+<TableData name="ds24" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '暖风器疏水调节门控制'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  
+]]></Query>
+</TableData>
+<TableData name="ds25" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '汽包连续排污调节门控制'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '锅炉'  
+]]></Query>
+</TableData>
+<TableData name="ds26" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = 'DEH转速控制'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds27" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = 'DEH负荷控制'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds28" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '除氧器水位'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds29" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '凝汽器水位'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds30" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '凝结水再循环控制'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds31" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '高加水位'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds32" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '低加水位'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds33" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '汽机旁路控制(高、低压旁路)'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds34" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '氢温调节'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds35" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '发电机内冷水温度'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds36" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '发电机内冷水压力'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds37" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '汽轮机调速油温'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds38" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '给水泵汽轮机润滑油温'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds39" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '汽轮机润滑油温'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds40" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '汽轮机轴封压力'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds41" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '汽轮机轴封温度'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds42" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '除氧器压位'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds43" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '热网水位'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds44" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '汽轮机转速'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds45" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '其它'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds46" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '给水泵最小流量调节阀控制'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds47" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '热网加热器补水水箱水位'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds48" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '热网加热器水位'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds49" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select NO_ONE_CREW_ONE_AND_TWO,NO_ONE_CREW_THREE,NO_TWO_CREW_ONE_AND_TWO,NO_TWO_CREW_THREE,NO_THREE_CREW_ONE_AND_TWO,NO_THREE_CREW_THREE,NO_FOUR_CREW_ONE_AND_TWO,NO_FOUR_CREW_THREE from JSJD.TES_PS_GENERAL_THERMAL_SEC 
+ where GENERAL_ID = '${GENERAL_ID}'
+   and THERMAL_DETAIL_TYPE = '再热冷段至辅汽压力'
+   and THERMAL_DEVICE_TYPE = 'A'
+   and THERMAL_TYPE = '汽机'   ]]></Query>
+</TableData>
+<TableData name="ds50" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT EMP_NAME FROM xip_pub_users_emps_v a,TES_PS_GENERAL_MAIN c
+${if(len(GENERAL_ID) == 0, " where 1=2", " where c.CREATE_BY= a.user_id 
+and c.GENERAL_ID ='"+GENERAL_ID+"'")}]]></Query>
+</TableData>
+<TableData name="ds51" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select a.*,t.* from xip_pub_orgs a,JSJD.TES_PS_GENERAL_MAIN t ${if(len(GENERAL_ID) == 0, " where 1=2", " where t.org_id=a.org_id and t.GENERAL_ID ='"+GENERAL_ID+"'")}]]></Query>
+</TableData>
+<TableData name="ds52" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select GENERAL_NAME,CREATE_DATE from JSJD.TES_PS_GENERAL_MAIN where GENERAL_ID='${GENERAL_ID}']]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="72000000" height="101808000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,1409700,723900,1257300,1752600,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,1152000,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,2209800,8077200,2160000,2160000,3581400,2160000,2705100,2160000,2160000,2160000,1728000,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="2" r="0">
+<Expand/>
+</C>
+<C c="3" r="0">
+<Expand/>
+</C>
+<C c="4" r="0">
+<Expand/>
+</C>
+<C c="5" r="0">
+<Expand/>
+</C>
+<C c="6" r="0">
+<Expand/>
+</C>
+<C c="7" r="0">
+<Expand/>
+</C>
+<C c="8" r="0">
+<Expand/>
+</C>
+<C c="9" r="0">
+<Expand/>
+</C>
+<C c="10" r="0">
+<Expand/>
+</C>
+<C c="11" r="0">
+<Expand/>
+</C>
+<C c="12" r="0">
+<Expand/>
+</C>
+<C c="2" r="1">
+<Expand/>
+</C>
+<C c="3" r="1">
+<Expand/>
+</C>
+<C c="4" r="1">
+<Expand/>
+</C>
+<C c="5" r="1">
+<Expand/>
+</C>
+<C c="6" r="1">
+<Expand/>
+</C>
+<C c="7" r="1">
+<Expand/>
+</C>
+<C c="8" r="1">
+<Expand/>
+</C>
+<C c="9" r="1">
+<Expand/>
+</C>
+<C c="10" r="1">
+<Expand/>
+</C>
+<C c="11" r="1">
+<Expand/>
+</C>
+<C c="12" r="1">
+<Expand/>
+</C>
+<C c="2" r="2">
+<Expand/>
+</C>
+<C c="3" r="2">
+<Expand/>
+</C>
+<C c="4" r="2">
+<Expand/>
+</C>
+<C c="5" r="2">
+<Expand/>
+</C>
+<C c="6" r="2">
+<Expand/>
+</C>
+<C c="7" r="2">
+<Expand/>
+</C>
+<C c="8" r="2">
+<Expand/>
+</C>
+<C c="9" r="2">
+<Expand/>
+</C>
+<C c="10" r="2">
+<Expand/>
+</C>
+<C c="11" r="2">
+<Expand/>
+</C>
+<C c="12" r="2">
+<Expand/>
+</C>
+<C c="0" r="3">
+<Expand/>
+</C>
+<C c="1" r="3">
+<Expand/>
+</C>
+<C c="2" r="3" cs="11" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds52" columnName="GENERAL_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="4">
+<Expand/>
+</C>
+<C c="1" r="4">
+<Expand/>
+</C>
+<C c="2" r="4">
+<O>
+<![CDATA[电厂：]]></O>
+<Expand/>
+</C>
+<C c="3" r="4">
+<O t="DSColumn">
+<Attributes dsName="ds51" columnName="ORG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="4">
+<O>
+<![CDATA[填表人：]]></O>
+<Expand/>
+</C>
+<C c="5" r="4">
+<O t="DSColumn">
+<Attributes dsName="ds50" columnName="EMP_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="4">
+<O>
+<![CDATA[自动完好利率：]]></O>
+<Expand/>
+</C>
+<C c="7" r="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=round(sum(E62, G62, I62, K62) / sum(E62, G62, I62, K62, F61, H61, J61, L61) * 100, 2) + "%"]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="4">
+<O>
+<![CDATA[上报日期：]]></O>
+<Expand/>
+</C>
+<C c="9" r="4" cs="2">
+<O t="DSColumn">
+<Attributes dsName="ds52" columnName="CREATE_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="5">
+<Expand/>
+</C>
+<C c="1" r="5">
+<Expand/>
+</C>
+<C c="2" r="5" cs="2" s="1">
+<O>
+<![CDATA[设备编号]]></O>
+<Expand/>
+</C>
+<C c="4" r="5" cs="2" s="2">
+<O>
+<![CDATA[#1机组]]></O>
+<Expand/>
+</C>
+<C c="6" r="5" cs="2" s="2">
+<O>
+<![CDATA[#2机组]]></O>
+<Expand/>
+</C>
+<C c="8" r="5" cs="2" s="2">
+<O>
+<![CDATA[#3机组]]></O>
+<Expand/>
+</C>
+<C c="10" r="5" cs="2" s="2">
+<O>
+<![CDATA[#4机组]]></O>
+<Expand/>
+</C>
+<C c="12" r="5" rs="2" s="3">
+<O>
+<![CDATA[机组自动套数合计 ]]></O>
+<Expand/>
+</C>
+<C c="13" r="5">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="6">
+<Expand/>
+</C>
+<C c="1" r="6">
+<Expand/>
+</C>
+<C c="2" r="6" cs="2" s="4">
+<O t="BiasTextPainter">
+<IsBackSlash value="false"/>
+<![CDATA[   状况   |         项目]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" s="5">
+<O>
+<![CDATA[一、二类]]></O>
+<Expand/>
+</C>
+<C c="5" r="6" s="5">
+<O>
+<![CDATA[三类]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" s="5">
+<O>
+<![CDATA[一、二类]]></O>
+<Expand/>
+</C>
+<C c="7" r="6" s="5">
+<O>
+<![CDATA[三类]]></O>
+<Expand/>
+</C>
+<C c="8" r="6" s="5">
+<O>
+<![CDATA[一、二类]]></O>
+<Expand/>
+</C>
+<C c="9" r="6" s="5">
+<O>
+<![CDATA[三类]]></O>
+<Expand/>
+</C>
+<C c="10" r="6" s="5">
+<O>
+<![CDATA[一、二类]]></O>
+<Expand/>
+</C>
+<C c="11" r="6" s="5">
+<O>
+<![CDATA[三类]]></O>
+<Expand/>
+</C>
+<C c="0" r="7">
+<Expand/>
+</C>
+<C c="1" r="7">
+<Expand/>
+</C>
+<C c="2" r="7" rs="27" s="6">
+<O>
+<![CDATA[锅炉]]></O>
+<Expand/>
+</C>
+<C c="3" r="7" s="7">
+<O>
+<![CDATA[机炉协调控制]]></O>
+<Expand/>
+</C>
+<C c="4" r="7" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="7" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="7" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="7" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="7" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="7" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="7" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="7" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="7" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E8:L8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="14" r="7">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="8">
+<Expand/>
+</C>
+<C c="1" r="8">
+<Expand/>
+</C>
+<C c="3" r="8" s="7">
+<O>
+<![CDATA[给水控制]]></O>
+<Expand/>
+</C>
+<C c="4" r="8" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="8" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="8" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="8" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="8" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="8" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="8" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="8" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="8" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E9:L9)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="9">
+<Expand/>
+</C>
+<C c="1" r="9">
+<Expand/>
+</C>
+<C c="3" r="9" s="7">
+<O>
+<![CDATA[主汽压力]]></O>
+<Expand/>
+</C>
+<C c="4" r="9" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="9" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="9" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="9" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="9" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="9" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="9" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="9" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="9" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E10:L10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="10">
+<Expand/>
+</C>
+<C c="1" r="10">
+<Expand/>
+</C>
+<C c="3" r="10" s="7">
+<O>
+<![CDATA[炉膛压力]]></O>
+<Expand/>
+</C>
+<C c="4" r="10" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="10" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="10" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="10" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="10" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="10" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="10" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="10" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="10" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E11:L11)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="11">
+<Expand/>
+</C>
+<C c="1" r="11">
+<Expand/>
+</C>
+<C c="3" r="11" s="7">
+<O>
+<![CDATA[送风控制]]></O>
+<Expand/>
+</C>
+<C c="4" r="11" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="11" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="11" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="11" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="11" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="11" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="11" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="11" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="11" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E12:L12)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="12">
+<Expand/>
+</C>
+<C c="1" r="12">
+<Expand/>
+</C>
+<C c="3" r="12" s="7">
+<O>
+<![CDATA[主汽温度]]></O>
+<Expand/>
+</C>
+<C c="4" r="12" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="12" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="12" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="12" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="12" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="12" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="12" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="12" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="12" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E13:L13)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="13">
+<Expand/>
+</C>
+<C c="1" r="13">
+<Expand/>
+</C>
+<C c="3" r="13" s="7">
+<O>
+<![CDATA[再热汽温]]></O>
+<Expand/>
+</C>
+<C c="4" r="13" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="13" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="13" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="13" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="13" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="13" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="13" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="13" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="13" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E14:L14)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="14">
+<Expand/>
+</C>
+<C c="1" r="14">
+<Expand/>
+</C>
+<C c="3" r="14" s="7">
+<O>
+<![CDATA[燃烧器调节挡板控制(二次风、辅助风)]]></O>
+<Expand/>
+</C>
+<C c="4" r="14" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds8" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="14" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds8" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="14" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds8" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="14" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds8" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="14" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds8" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="14" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds8" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="14" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds8" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="14" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds8" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="14" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E15:L15)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="15">
+<Expand/>
+</C>
+<C c="1" r="15">
+<Expand/>
+</C>
+<C c="3" r="15" s="7">
+<O>
+<![CDATA[一次风母管压力]]></O>
+<Expand/>
+</C>
+<C c="4" r="15" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds9" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="15" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds9" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="15" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds9" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="15" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds9" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="15" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds9" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="15" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds9" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="15" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds9" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="15" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds9" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="15" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E16:L16)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="16">
+<Expand/>
+</C>
+<C c="1" r="16">
+<Expand/>
+</C>
+<C c="3" r="16" s="7">
+<O>
+<![CDATA[磨煤机一次风量(直吹式)]]></O>
+<Expand/>
+</C>
+<C c="4" r="16" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds10" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="16" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds10" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="16" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds10" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="16" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds10" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="16" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds10" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="16" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds10" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="16" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds10" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="16" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds10" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="16" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E17:L17)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="17">
+<Expand/>
+</C>
+<C c="1" r="17">
+<Expand/>
+</C>
+<C c="3" r="17" s="7">
+<O>
+<![CDATA[磨煤机出口风粉温度]]></O>
+<Expand/>
+</C>
+<C c="4" r="17" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="17" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="17" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="17" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="17" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="17" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="17" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="17" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="17" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E18:L18)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="18">
+<Expand/>
+</C>
+<C c="1" r="18">
+<Expand/>
+</C>
+<C c="3" r="18" s="7">
+<O>
+<![CDATA[中间点温度控制(直流炉)]]></O>
+<Expand/>
+</C>
+<C c="4" r="18" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds12" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="18" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds12" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="18" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds12" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="18" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds12" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="18" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds12" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="18" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds12" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="18" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds12" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="18" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds12" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="18" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E19:L19)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="19">
+<Expand/>
+</C>
+<C c="1" r="19">
+<Expand/>
+</C>
+<C c="3" r="19" s="7">
+<O>
+<![CDATA[内置阀前压力控制(直流炉)]]></O>
+<Expand/>
+</C>
+<C c="4" r="19" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds13" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="19" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds13" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="19" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds13" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="19" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds13" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="19" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds13" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="19" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds13" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="19" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds13" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="19" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds13" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="19" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E20:L20)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="20">
+<Expand/>
+</C>
+<C c="1" r="20">
+<Expand/>
+</C>
+<C c="3" r="20" s="7">
+<O>
+<![CDATA[锅炉燃油压力]]></O>
+<Expand/>
+</C>
+<C c="4" r="20" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="20" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="20" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="20" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="20" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="20" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="20" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="20" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="20" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E21:L21)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="21">
+<Expand/>
+</C>
+<C c="1" r="21">
+<Expand/>
+</C>
+<C c="3" r="21" s="7">
+<O>
+<![CDATA[锅炉总燃料控制]]></O>
+<Expand/>
+</C>
+<C c="4" r="21" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds15" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="21" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds15" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="21" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds15" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="21" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds15" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="21" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds15" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="21" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds15" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="21" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds15" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="21" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds15" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="21" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E22:L22)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="22">
+<Expand/>
+</C>
+<C c="1" r="22">
+<Expand/>
+</C>
+<C c="3" r="22" s="7">
+<O>
+<![CDATA[磨负荷控制(中储式)]]></O>
+<Expand/>
+</C>
+<C c="4" r="22" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="22" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="22" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="22" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="22" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="22" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="22" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="22" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="22" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E23:L23)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="23">
+<Expand/>
+</C>
+<C c="1" r="23">
+<Expand/>
+</C>
+<C c="3" r="23" s="7">
+<O>
+<![CDATA[磨负压控制(中储式)]]></O>
+<Expand/>
+</C>
+<C c="4" r="23" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds17" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="23" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds17" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="23" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds17" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="23" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds17" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="23" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds17" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="23" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds17" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="23" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds17" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="23" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds17" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="23" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E24:L24)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="0" r="24">
+<Expand/>
+</C>
+<C c="1" r="24">
+<Expand/>
+</C>
+<C c="3" r="24" s="7">
+<O>
+<![CDATA[吸风]]></O>
+<Expand/>
+</C>
+<C c="4" r="24" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds18" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="24" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds18" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="24" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds18" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="24" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds18" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="24" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds18" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="24" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds18" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="24" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds18" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="24" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds18" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="24" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E25:L25)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="25" s="7">
+<O>
+<![CDATA[磨煤机]]></O>
+<Expand/>
+</C>
+<C c="4" r="25" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds19" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="25" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds19" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="25" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds19" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="25" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds19" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="25" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds19" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="25" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds19" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="25" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds19" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="25" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds19" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="25" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E26:L26)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="26" s="7">
+<O>
+<![CDATA[其它]]></O>
+<Expand/>
+</C>
+<C c="4" r="26" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds20" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="26" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds20" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="26" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds20" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="26" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds20" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="26" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds20" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="26" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds20" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="26" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds20" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="26" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds20" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="26" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E27:L27)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="27" s="7">
+<O>
+<![CDATA[一次风暖风器进汽调节门控制]]></O>
+<Expand/>
+</C>
+<C c="4" r="27" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds21" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="27" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds21" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="27" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds21" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="27" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds21" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="27" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds21" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="27" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds21" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="27" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds21" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="27" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds21" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="27" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E28:L28)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="28" s="7">
+<O>
+<![CDATA[二次风暖风器进汽调节门控制]]></O>
+<Expand/>
+</C>
+<C c="4" r="28" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds22" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="28" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds22" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="28" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds22" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="28" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds22" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="28" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds22" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="28" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds22" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="28" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds22" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="28" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds22" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="28" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E29:L29)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="29" s="7">
+<O>
+<![CDATA[密封风机入口调整门控制]]></O>
+<Expand/>
+</C>
+<C c="4" r="29" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds23" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="29" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds23" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="29" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds23" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="29" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds23" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="29" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds23" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="29" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds23" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="29" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds23" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="29" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds23" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="29" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E30:L30)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="30" s="7">
+<O>
+<![CDATA[暖风器疏水调节门控制]]></O>
+<Expand/>
+</C>
+<C c="4" r="30" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds24" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="30" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds24" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="30" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds24" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="30" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds24" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="30" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds24" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="30" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds24" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="30" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds24" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="30" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds24" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="30" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E31:L31)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="31" s="7">
+<O>
+<![CDATA[汽包连续排污调节门控制]]></O>
+<Expand/>
+</C>
+<C c="4" r="31" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds25" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="31" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds25" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="31" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds25" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="31" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds25" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="31" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds25" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="31" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds25" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="31" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds25" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="31" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds25" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="31" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E32:L32)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="32" s="7">
+<Expand/>
+</C>
+<C c="4" r="32" s="8">
+<Expand/>
+</C>
+<C c="5" r="32" s="9">
+<Expand/>
+</C>
+<C c="6" r="32" s="8">
+<Expand/>
+</C>
+<C c="7" r="32" s="9">
+<Expand/>
+</C>
+<C c="8" r="32" s="8">
+<Expand/>
+</C>
+<C c="9" r="32" s="9">
+<Expand/>
+</C>
+<C c="10" r="32" s="8">
+<Expand/>
+</C>
+<C c="11" r="32" s="9">
+<Expand/>
+</C>
+<C c="12" r="32" s="9">
+<Expand/>
+</C>
+<C c="0" r="33">
+<Expand/>
+</C>
+<C c="1" r="33">
+<Expand/>
+</C>
+<C c="3" r="33" s="10">
+<Expand/>
+</C>
+<C c="4" r="33" s="5">
+<Expand/>
+</C>
+<C c="5" r="33" s="11">
+<Expand/>
+</C>
+<C c="6" r="33" s="5">
+<Expand/>
+</C>
+<C c="7" r="33" s="11">
+<Expand/>
+</C>
+<C c="8" r="33" s="5">
+<Expand/>
+</C>
+<C c="9" r="33" s="11">
+<Expand/>
+</C>
+<C c="10" r="33" s="5">
+<Expand/>
+</C>
+<C c="11" r="33" s="11">
+<Expand/>
+</C>
+<C c="12" r="33" s="11">
+<Expand/>
+</C>
+<C c="2" r="34" rs="26" s="12">
+<O>
+<![CDATA[汽机]]></O>
+<Expand/>
+</C>
+<C c="3" r="34" s="7">
+<O>
+<![CDATA[DEH转速控制]]></O>
+<Expand/>
+</C>
+<C c="4" r="34" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds26" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="34" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds26" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="34" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds26" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="34" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds26" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="34" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds26" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="34" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds26" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="34" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds26" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="34" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds26" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="34" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E35:L35)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="35" s="7">
+<O>
+<![CDATA[DEH负荷控制]]></O>
+<Expand/>
+</C>
+<C c="4" r="35" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds27" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="35" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds27" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="35" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds27" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="35" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds27" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="35" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds27" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="35" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds27" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="35" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds27" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="35" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds27" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="35" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E36:L36)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="36" s="7">
+<O>
+<![CDATA[除氧器水位]]></O>
+<Expand/>
+</C>
+<C c="4" r="36" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds28" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="36" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds28" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="36" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds28" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="36" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds28" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="36" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds28" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="36" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds28" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="36" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds28" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="36" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds28" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="36" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E37:L37)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="37" s="7">
+<O>
+<![CDATA[凝汽器水位]]></O>
+<Expand/>
+</C>
+<C c="4" r="37" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds29" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="37" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds29" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="37" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds29" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="37" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds29" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="37" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds29" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="37" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds29" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="37" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds29" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="37" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds29" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="37" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E38:L38)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="38" s="7">
+<O>
+<![CDATA[凝结水再循环控制]]></O>
+<Expand/>
+</C>
+<C c="4" r="38" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds30" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="38" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds30" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="38" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds30" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="38" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds30" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="38" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds30" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="38" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds30" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="38" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds30" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="38" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds30" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="38" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E39:L39)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="39" s="7">
+<O>
+<![CDATA[高加水位]]></O>
+<Expand/>
+</C>
+<C c="4" r="39" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds31" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="39" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds31" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="39" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds31" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="39" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds31" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="39" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds31" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="39" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds31" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="39" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds31" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="39" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds31" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="39" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E40:L40)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="40" s="7">
+<O>
+<![CDATA[低加水位]]></O>
+<Expand/>
+</C>
+<C c="4" r="40" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds32" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="40" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds32" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="40" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds32" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="40" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds32" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="40" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds32" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="40" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds32" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="40" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds32" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="40" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds32" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="40" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E41:L41)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="41" s="7">
+<O>
+<![CDATA[汽机旁路控制(高、低压旁路)]]></O>
+<Expand/>
+</C>
+<C c="4" r="41" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds33" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="41" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds33" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="41" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds33" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="41" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds33" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="41" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds33" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="41" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds33" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="41" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds33" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="41" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds33" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="41" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E42:L42)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="42" s="7">
+<O>
+<![CDATA[氢温调节]]></O>
+<Expand/>
+</C>
+<C c="4" r="42" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds34" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="42" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds34" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="42" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds34" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="42" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds34" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="42" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds34" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="42" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds34" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="42" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds34" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="42" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds34" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="42" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E43:L43)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="43" s="7">
+<O>
+<![CDATA[发电机内冷水温度]]></O>
+<Expand/>
+</C>
+<C c="4" r="43" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds35" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="43" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds35" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="43" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds35" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="43" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds35" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="43" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds35" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="43" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds35" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="43" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds35" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="43" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds35" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="43" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E44:L44)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="44" s="7">
+<O>
+<![CDATA[发电机内冷水压力]]></O>
+<Expand/>
+</C>
+<C c="4" r="44" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds36" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="44" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds36" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="44" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds36" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="44" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds36" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="44" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds36" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="44" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds36" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="44" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds36" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="44" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds36" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="44" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E45:L45)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="45" s="7">
+<O>
+<![CDATA[汽轮机调速油温]]></O>
+<Expand/>
+</C>
+<C c="4" r="45" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds37" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="45" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds37" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="45" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds37" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="45" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds37" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="45" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds37" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="45" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds37" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="45" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds37" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="45" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds37" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="45" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E46:L46)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="46" s="7">
+<O>
+<![CDATA[给水泵汽轮机润滑油温]]></O>
+<Expand/>
+</C>
+<C c="4" r="46" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds38" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="46" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds38" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="46" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds38" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="46" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds38" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="46" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds38" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="46" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds38" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="46" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds38" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="46" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds38" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="46" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E47:L47)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="47" s="7">
+<O>
+<![CDATA[汽轮机润滑油温]]></O>
+<Expand/>
+</C>
+<C c="4" r="47" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds39" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="47" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds39" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="47" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds39" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="47" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds39" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="47" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds39" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="47" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds39" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="47" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds39" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="47" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds39" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="47" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E48:L48)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="48" s="7">
+<O>
+<![CDATA[汽轮机轴封压力]]></O>
+<Expand/>
+</C>
+<C c="4" r="48" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds40" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="48" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds40" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="48" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds40" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="48" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds40" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="48" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds40" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="48" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds40" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="48" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds40" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="48" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds40" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="48" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E49:L49)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="49" s="7">
+<O>
+<![CDATA[汽轮机轴封温度]]></O>
+<Expand/>
+</C>
+<C c="4" r="49" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds41" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="49" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds41" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="49" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds41" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="49" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds41" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="49" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds41" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="49" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds41" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="49" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds41" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="49" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds41" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="49" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E50:L50)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="50" s="7">
+<O>
+<![CDATA[除氧器压位]]></O>
+<Expand/>
+</C>
+<C c="4" r="50" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds42" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="50" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds42" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="50" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds42" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="50" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds42" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="50" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds42" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="50" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds42" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="50" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds42" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="50" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds42" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="50" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E51:L51)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="51" s="7">
+<O>
+<![CDATA[热网水位]]></O>
+<Expand/>
+</C>
+<C c="4" r="51" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds43" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="51" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds43" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="51" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds43" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="51" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds43" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="51" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds43" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="51" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds43" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="51" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds43" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="51" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds43" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="51" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E52:L52)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="52" s="7">
+<O>
+<![CDATA[汽轮机转速]]></O>
+<Expand/>
+</C>
+<C c="4" r="52" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds44" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="52" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds44" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="52" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds44" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="52" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds44" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="52" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds44" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="52" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds44" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="52" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds44" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="52" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds44" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="52" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E53:L53)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="53" s="7">
+<O>
+<![CDATA[其它]]></O>
+<Expand/>
+</C>
+<C c="4" r="53" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds45" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="53" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds45" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="53" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds45" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="53" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds45" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="53" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds45" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="53" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds45" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="53" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds45" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="53" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds45" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="53" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E54:L54)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="54" s="7">
+<O>
+<![CDATA[给水泵最小流量调节阀控制]]></O>
+<Expand/>
+</C>
+<C c="4" r="54" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds46" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="54" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds46" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="54" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds46" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="54" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds46" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="54" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds46" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="54" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds46" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="54" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds46" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="54" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds46" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="54" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E55:L55)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="55" s="7">
+<O>
+<![CDATA[热网加热器补水水箱水位]]></O>
+<Expand/>
+</C>
+<C c="4" r="55" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds47" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="55" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds47" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="55" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds47" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="55" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds47" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="55" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds47" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="55" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds47" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="55" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds47" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="55" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds47" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="55" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E56:L56)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="56" s="7">
+<O>
+<![CDATA[热网加热器水位]]></O>
+<Expand/>
+</C>
+<C c="4" r="56" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds48" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="56" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds48" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="56" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds48" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="56" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds48" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="56" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds48" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="56" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds48" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="56" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds48" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="56" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds48" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="56" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E57:L57)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="57" s="7">
+<O>
+<![CDATA[再热冷段至辅汽压力]]></O>
+<Expand/>
+</C>
+<C c="4" r="57" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds49" columnName="NO_ONE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="57" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds49" columnName="NO_ONE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="57" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds49" columnName="NO_TWO_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="57" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds49" columnName="NO_TWO_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="57" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds49" columnName="NO_THREE_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="57" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds49" columnName="NO_THREE_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="57" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds49" columnName="NO_FOUR_CREW_ONE_AND_TWO"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="57" s="9">
+<O t="DSColumn">
+<Attributes dsName="ds49" columnName="NO_FOUR_CREW_THREE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="57" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E58:L58)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="58" s="7">
+<Expand/>
+</C>
+<C c="4" r="58" s="8">
+<Expand/>
+</C>
+<C c="5" r="58" s="9">
+<Expand/>
+</C>
+<C c="6" r="58" s="8">
+<Expand/>
+</C>
+<C c="7" r="58" s="9">
+<Expand/>
+</C>
+<C c="8" r="58" s="8">
+<Expand/>
+</C>
+<C c="9" r="58" s="9">
+<Expand/>
+</C>
+<C c="10" r="58" s="8">
+<Expand/>
+</C>
+<C c="11" r="58" s="9">
+<Expand/>
+</C>
+<C c="12" r="58" s="9">
+<Expand/>
+</C>
+<C c="0" r="59">
+<Expand/>
+</C>
+<C c="1" r="59">
+<Expand/>
+</C>
+<C c="3" r="59" s="7">
+<Expand/>
+</C>
+<C c="4" r="59" s="8">
+<Expand/>
+</C>
+<C c="5" r="59" s="9">
+<Expand/>
+</C>
+<C c="6" r="59" s="8">
+<Expand/>
+</C>
+<C c="7" r="59" s="9">
+<Expand/>
+</C>
+<C c="8" r="59" s="8">
+<Expand/>
+</C>
+<C c="9" r="59" s="9">
+<Expand/>
+</C>
+<C c="10" r="59" s="8">
+<Expand/>
+</C>
+<C c="11" r="59" s="9">
+<Expand/>
+</C>
+<C c="12" r="59" s="9">
+<Expand/>
+</C>
+<C c="0" r="60">
+<Expand/>
+</C>
+<C c="1" r="60">
+<Expand/>
+</C>
+<C c="2" r="60" cs="2" s="13">
+<O>
+<![CDATA[三类总数]]></O>
+<Expand/>
+</C>
+<C c="4" r="60" s="14">
+<Expand/>
+</C>
+<C c="5" r="60" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(F8:F58)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="60" s="14">
+<Expand/>
+</C>
+<C c="7" r="60" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(H8:H58)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="60" s="14">
+<Expand/>
+</C>
+<C c="9" r="60" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(J8:J58)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="10" r="60" s="14">
+<Expand/>
+</C>
+<C c="11" r="60" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(L8:L58)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="12" r="60" s="15">
+<Expand/>
+</C>
+<C c="0" r="61">
+<Expand/>
+</C>
+<C c="1" r="61">
+<Expand/>
+</C>
+<C c="2" r="61" cs="2" s="16">
+<O>
+<![CDATA[一、二类总数]]></O>
+<Expand/>
+</C>
+<C c="4" r="61" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E8:E58)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="5" r="61" s="15">
+<Expand/>
+</C>
+<C c="6" r="61" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(G8:G58)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="61" s="15">
+<Expand/>
+</C>
+<C c="8" r="61" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(I8:I58)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="9" r="61" s="15">
+<Expand/>
+</C>
+<C c="10" r="61" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(K8:K58)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="61" s="15">
+<Expand/>
+</C>
+<C c="12" r="61" s="15">
+<Expand/>
+</C>
+<C c="2" r="62">
+<Expand/>
+</C>
+<C c="3" r="62">
+<Expand/>
+</C>
+<C c="2" r="63">
+<Expand/>
+</C>
+<C c="3" r="63">
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="false" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList/>
+</ElementCase>
+</ParameterUI>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="108" foreground="-16737895"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2"/>
+<Bottom style="1"/>
+<Left style="2"/>
+<Right style="2"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2"/>
+<Bottom style="1"/>
+<Left style="2"/>
+<Right style="2"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2"/>
+<Bottom style="2"/>
+<Left style="2"/>
+<Right style="2"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="1" size="120"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="2"/>
+<Left style="2"/>
+<Right style="2"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="2"/>
+<Left style="2"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2"/>
+<Bottom style="2"/>
+<Left style="2"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="2"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="2"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="2"/>
+<Left style="1"/>
+<Right style="2"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="2"/>
+<Left style="1"/>
+<Right style="2"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="2"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2"/>
+<Bottom style="2"/>
+<Left style="2"/>
+<Right style="2"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2"/>
+<Bottom style="2"/>
+<Left style="2"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="2"/>
+<Bottom style="2"/>
+<Left style="1"/>
+<Right style="2"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="2"/>
+<Left style="2"/>
+<Right style="2"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds6" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[1483f04d-210a-423d-9a72-104764a7af65]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select RELAY_PRO_LINE_AND_UNIT,RELAY_PRO_ACTUAL_NUMBER,RELAY_PRO_ALL_NUMBER,RELAY_PRO_COMMENT  from tes_ps_general_relay_pro_sec  where GENERAL_ID='${GENERAL_ID}']]></Query>
+</TableData>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[1483f04d-210a-423d-9a72-104764a7af65]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[{CALL TES_PS_GENERAL_MAIN_VIEW.LIST_NAME_VIEW('${GENERAL_ID}',?)}]]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="72000000" height="101808000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,495300,457200,723900,723900,723900,864000,864000,1066800,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[266700,38100,3467100,2743200,5616000,5616000,5616000,5616000,5616000,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="0">
+<Expand/>
+</C>
+<C c="1" r="0" s="0">
+<Expand/>
+</C>
+<C c="2" r="0" s="0">
+<Expand/>
+</C>
+<C c="3" r="0" s="0">
+<Expand/>
+</C>
+<C c="4" r="0" s="0">
+<Expand/>
+</C>
+<C c="5" r="0" s="0">
+<Expand/>
+</C>
+<C c="6" r="0" s="0">
+<Expand/>
+</C>
+<C c="7" r="0" s="0">
+<Expand/>
+</C>
+<C c="8" r="0" s="0">
+<Expand/>
+</C>
+<C c="9" r="0" s="0">
+<Expand/>
+</C>
+<C c="10" r="0" s="0">
+<Expand/>
+</C>
+<C c="0" r="1" s="0">
+<Expand/>
+</C>
+<C c="1" r="1" s="0">
+<Expand/>
+</C>
+<C c="2" r="1" s="0">
+<Expand/>
+</C>
+<C c="3" r="1" s="0">
+<Expand/>
+</C>
+<C c="4" r="1" s="0">
+<Expand/>
+</C>
+<C c="5" r="1" s="0">
+<Expand/>
+</C>
+<C c="6" r="1" s="0">
+<Expand/>
+</C>
+<C c="7" r="1" s="0">
+<Expand/>
+</C>
+<C c="8" r="1" s="0">
+<Expand/>
+</C>
+<C c="9" r="1" s="0">
+<Expand/>
+</C>
+<C c="10" r="1" s="0">
+<Expand/>
+</C>
+<C c="0" r="2" s="0">
+<Expand/>
+</C>
+<C c="1" r="2" s="0">
+<Expand/>
+</C>
+<C c="2" r="2" s="0">
+<Expand/>
+</C>
+<C c="3" r="2" s="0">
+<Expand/>
+</C>
+<C c="4" r="2" s="0">
+<Expand/>
+</C>
+<C c="5" r="2" s="0">
+<Expand/>
+</C>
+<C c="6" r="2" s="0">
+<Expand/>
+</C>
+<C c="7" r="2" s="0">
+<Expand/>
+</C>
+<C c="8" r="2" s="0">
+<Expand/>
+</C>
+<C c="9" r="2" s="0">
+<Expand/>
+</C>
+<C c="10" r="2" s="0">
+<Expand/>
+</C>
+<C c="0" r="3" s="0">
+<Expand/>
+</C>
+<C c="1" r="3" s="0">
+<Expand/>
+</C>
+<C c="2" r="3" s="0">
+<Expand/>
+</C>
+<C c="3" r="3" cs="6" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="GENERAL_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="3" s="0">
+<Expand/>
+</C>
+<C c="10" r="3" s="0">
+<Expand/>
+</C>
+<C c="0" r="4" s="0">
+<Expand/>
+</C>
+<C c="1" r="4" s="0">
+<Expand/>
+</C>
+<C c="2" r="4" s="0">
+<Expand/>
+</C>
+<C c="3" r="4" s="0">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="4" r="4" s="0">
+<Expand/>
+</C>
+<C c="5" r="4" s="0">
+<Expand/>
+</C>
+<C c="6" r="4" s="0">
+<Expand/>
+</C>
+<C c="7" r="4" s="0">
+<Expand/>
+</C>
+<C c="8" r="4" s="0">
+<Expand/>
+</C>
+<C c="9" r="4" s="0">
+<Expand/>
+</C>
+<C c="10" r="4" s="0">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="5" s="0">
+<Expand/>
+</C>
+<C c="1" r="5" s="0">
+<Expand/>
+</C>
+<C c="2" r="5" s="0">
+<Expand/>
+</C>
+<C c="3" r="5" s="2">
+<O>
+<![CDATA[序号]]></O>
+<Expand/>
+</C>
+<C c="4" r="5" s="2">
+<O>
+<![CDATA[线路或机组名称]]></O>
+<Expand/>
+</C>
+<C c="5" r="5" s="2">
+<O>
+<![CDATA[继电保护实际套数]]></O>
+<Expand/>
+</C>
+<C c="6" r="5" s="2">
+<O>
+<![CDATA[实际投入套数]]></O>
+<Expand/>
+</C>
+<C c="7" r="5" s="2">
+<O>
+<![CDATA[投入率]]></O>
+<Expand/>
+</C>
+<C c="8" r="5" s="2">
+<O>
+<![CDATA[备  注]]></O>
+<Expand/>
+</C>
+<C c="9" r="5" s="0">
+<Expand/>
+</C>
+<C c="10" r="5" s="0">
+<Expand/>
+</C>
+<C c="0" r="6" s="0">
+<Expand/>
+</C>
+<C c="1" r="6" s="0">
+<Expand/>
+</C>
+<C c="2" r="6" s="0">
+<Expand/>
+</C>
+<C c="3" r="6" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SEQ()]]></Attributes>
+</O>
+<Expand dir="0" leftParentDefault="false" left="E7"/>
+</C>
+<C c="4" r="6" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="RELAY_PRO_LINE_AND_UNIT"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="6" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="RELAY_PRO_ACTUAL_NUMBER"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="6" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="RELAY_PRO_ALL_NUMBER"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="6" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(G7 / F7)]]></Attributes>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="6" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="RELAY_PRO_COMMENT"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="6" s="0">
+<Expand/>
+</C>
+<C c="10" r="6" s="0">
+<Expand/>
+</C>
+<C c="0" r="7" s="0">
+<Expand/>
+</C>
+<C c="1" r="7" s="0">
+<Expand/>
+</C>
+<C c="2" r="7" s="0">
+<Expand/>
+</C>
+<C c="3" r="7" s="2">
+<O>
+<![CDATA[合计]]></O>
+<Expand/>
+</C>
+<C c="4" r="7" s="2">
+<Expand/>
+</C>
+<C c="5" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(F7)]]></Attributes>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(G7)]]></Attributes>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="7" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(G8 / F8)]]></Attributes>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="7" s="2">
+<Expand/>
+</C>
+<C c="9" r="7" s="0">
+<Expand/>
+</C>
+<C c="10" r="7" s="0">
+<Expand/>
+</C>
+<C c="0" r="8" s="0">
+<Expand/>
+</C>
+<C c="1" r="8" s="0">
+<Expand/>
+</C>
+<C c="2" r="8" s="0">
+<Expand/>
+</C>
+<C c="3" r="8" s="4">
+<O>
+<![CDATA[批准：]]></O>
+<Expand/>
+</C>
+<C c="4" r="8">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="EXAMINE_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="8" s="4">
+<O>
+<![CDATA[审核：]]></O>
+<Expand/>
+</C>
+<C c="6" r="8">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="APPROVAL_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="8" s="4">
+<O>
+<![CDATA[           填报人：]]></O>
+<Expand/>
+</C>
+<C c="8" r="8">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="CREATE_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="8" s="0">
+<Expand/>
+</C>
+<C c="10" r="8" s="0">
+<Expand/>
+</C>
+<C c="0" r="9" s="0">
+<Expand/>
+</C>
+<C c="1" r="9" s="0">
+<Expand/>
+</C>
+<C c="2" r="9" s="0">
+<Expand/>
+</C>
+<C c="3" r="9" s="0">
+<Expand/>
+</C>
+<C c="4" r="9" s="0">
+<Expand/>
+</C>
+<C c="5" r="9" s="0">
+<Expand/>
+</C>
+<C c="6" r="9" s="0">
+<Expand/>
+</C>
+<C c="7" r="9" s="0">
+<Expand/>
+</C>
+<C c="8" r="9" s="0">
+<Expand/>
+</C>
+<C c="9" r="9" s="0">
+<Expand/>
+</C>
+<C c="10" r="9" s="0">
+<Expand/>
+</C>
+<C c="0" r="10" s="0">
+<Expand/>
+</C>
+<C c="1" r="10" s="0">
+<Expand/>
+</C>
+<C c="2" r="10" s="0">
+<Expand/>
+</C>
+<C c="3" r="10" s="0">
+<Expand/>
+</C>
+<C c="4" r="10" s="0">
+<Expand/>
+</C>
+<C c="5" r="10" s="0">
+<Expand/>
+</C>
+<C c="6" r="10" s="0">
+<Expand/>
+</C>
+<C c="7" r="10" s="0">
+<Expand/>
+</C>
+<C c="8" r="10" s="0">
+<Expand/>
+</C>
+<C c="9" r="10" s="0">
+<Expand/>
+</C>
+<C c="10" r="10" s="0">
+<Expand/>
+</C>
+<C c="0" r="11" s="0">
+<Expand/>
+</C>
+<C c="1" r="11" s="0">
+<Expand/>
+</C>
+<C c="2" r="11" s="0">
+<Expand/>
+</C>
+<C c="3" r="11" s="0">
+<Expand/>
+</C>
+<C c="4" r="11" s="0">
+<Expand/>
+</C>
+<C c="5" r="11" s="0">
+<Expand/>
+</C>
+<C c="6" r="11" s="0">
+<Expand/>
+</C>
+<C c="7" r="11" s="0">
+<Expand/>
+</C>
+<C c="8" r="11" s="0">
+<Expand/>
+</C>
+<C c="9" r="11" s="0">
+<Expand/>
+</C>
+<C c="10" r="11" s="0">
+<Expand/>
+</C>
+<C c="0" r="12" s="0">
+<Expand/>
+</C>
+<C c="1" r="12" s="0">
+<Expand/>
+</C>
+<C c="2" r="12" s="0">
+<Expand/>
+</C>
+<C c="3" r="12" s="0">
+<Expand/>
+</C>
+<C c="4" r="12" s="0">
+<Expand/>
+</C>
+<C c="5" r="12" s="0">
+<Expand/>
+</C>
+<C c="6" r="12" s="0">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="7" r="12" s="0">
+<Expand/>
+</C>
+<C c="8" r="12" s="0">
+<Expand/>
+</C>
+<C c="9" r="12" s="0">
+<Expand/>
+</C>
+<C c="10" r="12" s="0">
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="108" foreground="-16737895"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00%]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+</WorkBook>

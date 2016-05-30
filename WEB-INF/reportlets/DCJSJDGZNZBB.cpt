@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select t.QUANTITY_MEGGER,t.QUANTITY_CHECK_PLAN,t.QUANTITY_CHECK_REAL,t.QUANTITY_RESISTANCE_MEASURING,t.QUANTITY_CHECK_PLAN_RESISTANCE,t.QUANTITY_CHECK_REAL_RESISTANCE,t.QUANTITY_ALL_METERING,t.QUANTITY_ELIGIBILITY_METERING,t.QUANTITY_ALL_TRANSMITTER,t.QUANTITY_ELIGIBILITY_TRANSMITT,t.QUANTITY_ALL_SAMPLING,t.QUANTITY_ELIGIBILITY_SAMPLING,t.QUANTITY_STANDARD_METER,t.QUANTITY_DISTRIBUTION_METER,t.QUANTITY_ERROR
+from TES_PS_ELE_MEASURE_SVN_YEAR t,TES_PS_GENERAL_MAIN a
+${if(len(instanceCode) == 0, " where 1=2",
+" where t.general_id = a.general_id 
+    and a.INST_CODE ='"+instanceCode+"'")}]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[{CALL TES_PS_GENERAL_MAIN_SUB.ORG_COMBOX_SUB('${instanceCode}',?)}]]></Query>
+</TableData>
+<TableData name="ds3" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[{CALL TES_PS_GENERAL_MAIN_SUB.LIST_NAME_SUB('${instanceCode}',?)}]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="72000000" height="101808000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,1409700,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,1008000,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,2743200,4495800,2736000,2736000,2736000,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="3" r="3" cs="9" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="GENERAL_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="4" s="1">
+<O>
+<![CDATA[报表单位：]]></O>
+<Expand/>
+</C>
+<C c="4" r="4" cs="3">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="ORG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="4" cs="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="CREATE_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="5" s="2">
+<O>
+<![CDATA[兆欧表总数]]></O>
+<Expand/>
+</C>
+<C c="4" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="QUANTITY_MEGGER"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="5" s="2">
+<O>
+<![CDATA[（个）]]></O>
+<Expand/>
+</C>
+<C c="6" r="5" s="4">
+<O>
+<![CDATA[计划校验 ]]></O>
+<Expand/>
+</C>
+<C c="7" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="QUANTITY_CHECK_PLAN"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="5" s="2">
+<O>
+<![CDATA[(个数)]]></O>
+<Expand/>
+</C>
+<C c="9" r="5" s="4">
+<O>
+<![CDATA[实际校验]]></O>
+<Expand/>
+</C>
+<C c="10" r="5" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="QUANTITY_CHECK_REAL"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="5" s="2">
+<O>
+<![CDATA[(个数)]]></O>
+<Expand/>
+</C>
+<C c="3" r="6" s="2">
+<O>
+<![CDATA[接地电阻测定仪总数]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="QUANTITY_RESISTANCE_MEASURING"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="6" s="2">
+<O>
+<![CDATA[（个）]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" s="4">
+<O>
+<![CDATA[计划校验 ]]></O>
+<Expand/>
+</C>
+<C c="7" r="6" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="QUANTITY_CHECK_PLAN_RESISTANCE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="6" s="2">
+<O>
+<![CDATA[(个数)]]></O>
+<Expand/>
+</C>
+<C c="9" r="6" s="4">
+<O>
+<![CDATA[实际校验]]></O>
+<Expand/>
+</C>
+<C c="10" r="6" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="QUANTITY_CHECK_REAL_RESISTANCE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="6" s="2">
+<O>
+<![CDATA[(个数)]]></O>
+<Expand/>
+</C>
+<C c="3" r="7" cs="2" s="2">
+<O>
+<![CDATA[计量标准装置总数]]></O>
+<Expand/>
+</C>
+<C c="5" r="7" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="QUANTITY_ALL_METERING"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="7" s="2">
+<O>
+<![CDATA[（台）]]></O>
+<Expand/>
+</C>
+<C c="7" r="7" cs="3" s="4">
+<O>
+<![CDATA[合格数 ]]></O>
+<Expand/>
+</C>
+<C c="10" r="7" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="QUANTITY_ELIGIBILITY_METERING"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="7" s="2">
+<O>
+<![CDATA[（台）]]></O>
+<Expand/>
+</C>
+<C c="3" r="8" cs="2" s="2">
+<O>
+<![CDATA[电量变送器总数]]></O>
+<Expand/>
+</C>
+<C c="5" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="QUANTITY_ALL_TRANSMITTER"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="8" s="2">
+<O>
+<![CDATA[（个）]]></O>
+<Expand/>
+</C>
+<C c="7" r="8" cs="3" s="4">
+<O>
+<![CDATA[合格数 ]]></O>
+<Expand/>
+</C>
+<C c="10" r="8" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="QUANTITY_ELIGIBILITY_TRANSMITT"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="8" s="2">
+<O>
+<![CDATA[（个）]]></O>
+<Expand/>
+</C>
+<C c="3" r="9" cs="2" s="2">
+<O>
+<![CDATA[交流采样测量装置 ]]></O>
+<Expand/>
+</C>
+<C c="5" r="9" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="QUANTITY_ALL_SAMPLING"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="9" s="2">
+<O>
+<![CDATA[（路）]]></O>
+<Expand/>
+</C>
+<C c="7" r="9" cs="3" s="4">
+<O>
+<![CDATA[合格数 ]]></O>
+<Expand/>
+</C>
+<C c="10" r="9" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="QUANTITY_ELIGIBILITY_SAMPLING"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="9" s="2">
+<O>
+<![CDATA[（路）]]></O>
+<Expand/>
+</C>
+<C c="3" r="10" cs="7" s="2">
+<O>
+<![CDATA[0.2-0.5级标准表总数]]></O>
+<Expand/>
+</C>
+<C c="10" r="10" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="QUANTITY_STANDARD_METER"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="10" s="2">
+<O>
+<![CDATA[（个）]]></O>
+<Expand/>
+</C>
+<C c="3" r="11" cs="7" s="2">
+<O>
+<![CDATA[配电盘表总数 ]]></O>
+<Expand/>
+</C>
+<C c="10" r="11" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="QUANTITY_DISTRIBUTION_METER"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="11" s="2">
+<O>
+<![CDATA[（个）]]></O>
+<Expand/>
+</C>
+<C c="3" r="12" cs="7" s="2">
+<O>
+<![CDATA[计量人员责任差错]]></O>
+<Expand/>
+</C>
+<C c="10" r="12" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="QUANTITY_ERROR"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="12" s="2">
+<O>
+<![CDATA[（个）]]></O>
+<Expand/>
+</C>
+<C c="3" r="14" s="1">
+<O>
+<![CDATA[批准：]]></O>
+<Expand/>
+</C>
+<C c="4" r="14" cs="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="EXAMINE_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="14" s="1">
+<O>
+<![CDATA[审核：]]></O>
+<Expand/>
+</C>
+<C c="7" r="14" cs="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="APPROVAL_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="14" s="1">
+<O>
+<![CDATA[填报人：]]></O>
+<Expand/>
+</C>
+<C c="10" r="14" cs="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="CREATE_BY_NAME"/>
+<Complex/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="14">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="10" r="19">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="108" foreground="-16737895"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

@@ -1,0 +1,240 @@
+@CHARSET "UTF-8";
+.khtitle{
+
+    margin:0 auto;
+    height:33px;
+}
+.wrap{
+    width:433px;
+    height:302px;
+    border: 1px solid  #000;
+}
+.tc{text-align: center}
+.tl{
+	text-align:left!important;
+}
+.khtitle {width: 100%;}
+.khleft1{
+    width:20%;
+}
+.khtitle td{
+    background: #f1f1f1;
+    width: 20%;
+}
+.h293{
+	height:293px!important;
+}
+.khleft1 div{
+    
+    height: 39px;
+    background: #f1f1f1;
+    margin-top: 1px;
+    padding-left: 15%;
+
+}
+.khright{
+    width: 80%;
+}
+.khright td{
+    height:39px!important;
+    width: 25%;
+    text-align: center;
+}
+.khright tr:nth-of-type(even){
+    background: #f1f1f1;
+}
+.baifenbi{
+  position: absolute;
+  left: 15%;
+  top:47%;
+  z-index: 9;
+  color: #333;
+}
+#totalFHL{
+ 
+}
+#nd{
+  left:48%;
+}
+#yd{
+  left:80%;
+}
+#yd1{
+  left:80%;
+  top:71%;
+}
+#nd1{
+  left:48%;
+  top:71%;
+}
+
+#huanxing2{
+     width:144px;
+    width:32%; 
+    
+}
+#huanxing3{
+     width:144px;
+     width:33%; 
+
+}
+#huanxing1 div,#huanxing2 div,#huanxing3 div{
+    margin: 0 auto;
+}
+
+.table_v2{
+    width: 62%;;height:100%;  
+  }
+   .class_main1_main{
+      width: 36%;
+    }
+
+@media only screen and (min-width: 1800px) and (max-width: 1920px) {
+ 
+  
+  #yd1,#yd{
+    left:82%;    
+  }
+
+
+ 
+}
+
+
+
+
+@media only screen and (min-width: 1680px) and (max-width: 1920px) {
+  #myChart_{width: 600px;}
+ 
+  #jt_myChart_{width:600px;}
+  #yd1,#yd{
+    left:81%;    
+  }
+
+
+   #my_echart{left:71px;}
+	#huanxing1{width: 206px;}
+	#huanxing2{width: 197px;}
+	#huanxing3{width: 33.2%;}
+     #xDizhi1{left:46%}
+      #xDizhi2{left:60%}
+    #xDizhi{left:72%}
+     .circle{left:18%;}
+     .ml20{margin-left: 36px;}
+    html{font-size: 86%}
+    #hightchart{width:470px;}
+    .jt-right-bottom .fl:nth-child(2){
+        text-indent: 1%;
+    }
+    .jt-right-bottom .fl:nth-child(3){
+        text-indent: 1%;
+    }
+    .table_v2{
+      width: 69%;
+    }
+    .class_main1_main{
+      width: 29%;
+    }
+}
+@media only screen and (min-width: 1400px) and (max-width: 1680px) {
+   #myChart_{width:480px;}
+   #jt_myChart_{width:480px;}
+	#huanxing1{width: 180px;}
+	#huanxing2{width: 160px;}
+	#huanxing3{width: 33.3%;}
+    #xDizhi1{left:48%}
+    #xDizhi2{left:65%}
+    #xDizhi{left:78%}
+    .ml20{margin-left: 20px;}
+    .circle{
+      left:18%;
+    }
+     html{font-size: 75%}
+     #hightchart{width:410px;}
+     .jt-right-bottom .fl:nth-child(2){
+        text-indent: -3px;
+      }
+      .jt-right-bottom .fl:nth-child(3){
+        text-indent: -14px;
+      }
+}
+
+@media only screen and (min-width:900px) and (max-width: 1370px) {
+    #myChart_{width:420px;}
+    #jt_myChart_{width:420px;}
+	.circle{left:17%;}
+    #xDizhi1{left:53%}
+    #xDizhi2{left:73%}
+    #xDizhi{left:90%;}
+    #huanxing2{margin-left: 5px;}
+	  #huanxing1,#huanxing2,#huanxing3{width:144px;}
+    #huanxing3{
+      width:32.5%;
+    }
+    #yd1,#yd{
+      left:81%;    
+    }
+    #yd1,#nd1{
+      top:67%;
+    }
+    #nd1{
+      left:48%;
+    }
+    .table_v2{
+      width: 62%; 
+    }
+   .khleft1 div{
+    padding-left: 2%;
+    
+  }
+  #zhexian{}
+  html{font-size: 62.5%}
+  #hightchart{width:340px;}
+  .jt-right-bottom .fl:nth-child(2){
+        text-indent: 6px;
+  }
+  .jt-right-bottom .fl:nth-child(3){
+        text-indent: 14px;
+  }
+    
+}
+
+
+
+@media only screen and (min-width: 1800px) and (max-width: 1920px) {
+ 
+  
+  #yd1,#yd{
+    left:81%;    
+  }
+
+
+ 
+}
+
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+    html{font-size:62.5%;}
+
+    
+}
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
+    html{font-size:87.5%;}
+    
+}
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+    html{font-size:100%;}
+    
+}
+.left{float: left;}
+.profit div{
+    padding-left:14px; 
+}
+.profit div sup{
+  color:red;
+  padding: 0 0 0 5px;
+}
+.profit{
+    position: relative;
+    z-index: 1000;
+    cursor: pointer;
+}

@@ -1,0 +1,1142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from TES_PS_ELECTRIC_QUARTER_RPORT 
+where ELEC_ID='${get_pk_id?}']]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="userId"/>
+<O>
+<![CDATA[111]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT EA.ORG_ID, O.ORG_NAME
+FROM XIP_PUB_USERS U, XIP_PUB_EMP_ASG EA, XIP_PUB_ORGS O
+WHERE U.EMP_ID = EA.EMP_ID
+AND EA.ORG_ID = O.ORG_ID
+AND ROWNUM = 1
+AND U.USER_ID = '${userId}']]></Query>
+</TableData>
+<TableData name="ds3" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="userId"/>
+<O>
+<![CDATA[111]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT USER_ID,USER_NAME,EMP_NAME FROM XIP_PUB_USERS_EMPS_V WHERE USER_ID='${userId}']]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars/>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars/>
+</WebViewContent>
+<WebWriteContent>
+<Listener event="writesuccess">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters>
+<Parameter>
+<Attributes name="e_business_id"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=G3]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="ORG_NAME"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D3]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="ELEC_ID"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=G3]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="inq_sta"/>
+<O>
+<![CDATA[A]]></O>
+</Parameter>
+</Parameters>
+<Content>
+<![CDATA[window.e_business_id=e_business_id;
+window.ORG_NAME=ORG_NAME;
+window.ELEC_ID=ELEC_ID;
+window.inq_sta=inq_sta;]]></Content>
+</JavaScript>
+</Listener>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.write.Submit">
+<WidgetAttr/>
+<Text>
+<![CDATA[保存]]></Text>
+<IconName>
+<![CDATA[submit]]></IconName>
+<Verify failVerifySubmit="false"/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.write.ImportExcelData">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Import_Excel_Data")}]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.CustomToolBarButton">
+<WidgetAttr/>
+<Text>
+<![CDATA[启动流程]]></Text>
+<IconName>
+<![CDATA[]]></IconName>
+<CustomButton>
+<![CDATA[_g('${sessionID}').writeReport();
+var e_business_id=window.e_business_id;
+var ORG_NAME=window.ORG_NAME;
+var ELEC_ID = window.ELEC_ID;
+function subWF(){
+var json = {
+e_business_id:e_business_id,
+ORG_NAME : ORG_NAME
+};
+startAndSubmitByEntityCode('1',json,function(e){
+$.post("./UpdateCode",
+{
+Action: "post",
+table_name: "tes_ps_electric_quarter_rport",
+ELEC_ID: ELEC_ID,
+INST_CODE: e.instanceCode,
+ADUIT_STATUS :inq_sta
+},
+function (data) {
+if (data.result == 1) {
+//FR.Msg.toast(data.msg);
+} else {
+//FR.Msg.toast(data.error);
+}
+},
+"json");
+});
+}
+if(inq_sta=='A'){
+subWF();
+}else{
+FR.Msg.toast("流程已提交,请勿重复提交!");  
+}
+
+]]></CustomButton>
+</Widget>
+<Widget class="com.fr.report.web.ui.CustomToolBarButton">
+<WidgetAttr/>
+<IconName>
+<![CDATA[]]></IconName>
+<CustomButton>
+<![CDATA[_g('${sessionID}').writeReport();
+var e_business_id=window.e_business_id;
+var ORG_NAME=window.ORG_NAME;
+]]></CustomButton>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<JSImport>
+<![CDATA[webbuilder/controls/ext/ext-all.js]]></JSImport>
+<JSImport>
+<![CDATA[workflow/util/workflowUtil4.0.js]]></JSImport>
+<JSImport>
+<![CDATA[common/include/fr_util.js]]></JSImport>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting orientation="1">
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,1562100,723900,1257300,1219200,1219200,1562100,1562100,1524000,1371600,1676400,2247900,1752600,1828800,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,2209800,4191000,2743200,2743200,4038600,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="5" r="0" cs="5" rs="2" s="0">
+<O>
+<![CDATA[电测仪器仪表检验季报表 ]]></O>
+<Expand/>
+</C>
+<C c="1" r="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ELEC_ID"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="2">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="ORG_ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="2">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="ORG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sql("XIP","select ADUIT_STATUS from TES_PS_ELECTRIC_QUARTER_RPORT where ")]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="5" r="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$userId]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$pk_id]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="1" r="4" s="1">
+<O>
+<![CDATA[报表单位：]]></O>
+<Expand/>
+</C>
+<C c="2" r="4" cs="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$orgName]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="4" s="1">
+<O>
+<![CDATA[日期：]]></O>
+<Expand/>
+</C>
+<C c="7" r="4" cs="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=left(TODAY(), 10)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="1" r="5">
+<Expand/>
+</C>
+<C c="3" r="5" s="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="4" r="5" s="2">
+<O>
+<![CDATA[计划校验]]></O>
+<Expand/>
+</C>
+<C c="5" r="5" s="2">
+<O>
+<![CDATA[实际校验]]></O>
+<Expand/>
+</C>
+<C c="6" r="5" s="2">
+<O>
+<![CDATA[校验率]]></O>
+<Expand/>
+</C>
+<C c="7" r="5" s="2">
+<O>
+<![CDATA[调前不合格]]></O>
+<Expand/>
+</C>
+<C c="8" r="5" s="2">
+<O>
+<![CDATA[调前合格率]]></O>
+<Expand/>
+</C>
+<C c="3" r="6" s="2">
+<O>
+<![CDATA[0.1级及以上标准表]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" s="2">
+<O>
+<![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[0.1级及以上标准表计划校验不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="5" r="6" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[0.1级及以上标准表实际校验不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="6" r="6" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(E7 != 0, ROUND(F7 / E7, 2), 0)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="6" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[0.1级及以上标准表调前不合格不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="8" r="6" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(H7 <= F7, ROUND(H7 / F7, 2), 0)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="7" s="2">
+<O>
+<![CDATA[0.2-0.5级标准表]]></O>
+<Expand/>
+</C>
+<C c="4" r="7" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[0.2-0.5级标准表计划校验不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="5" r="7" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[0.2-0.5级标准表实际校验不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="6" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(E8 != 0, ROUND(F8 / E8, 2), 0)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="7" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[0.2-0.5级标准表调前不合格不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="8" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(H8 <= F8, ROUND(H8 / F8, 2), 0)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="8" s="2">
+<O>
+<![CDATA[电测量变送器]]></O>
+<Expand/>
+</C>
+<C c="4" r="8" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[电测量变送器计划校验不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="5" r="8" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[电测量变送器实际校验不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="6" r="8" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(E9 != 0, ROUND(F9 / E9, 2), 0)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="8" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[电测量变送器调前不合格不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="8" r="8" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(H9 <= F9, ROUND(H9 / F9, 2), 0)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="9" s="2">
+<O>
+<![CDATA[交流采样测量装置]]></O>
+<Expand/>
+</C>
+<C c="4" r="9" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[交流采样测量装置计划校验不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="5" r="9" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[交流采样测量装置实际校验不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="6" r="9" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(E10 != 0, ROUND(F10 / E10, 2), 0)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="9" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[交流采样测量装置调前不合格不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="8" r="9" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(H10 <= F10, ROUND(H10 / F10, 2), 0)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="10" s="2">
+<O>
+<![CDATA[配电盘表]]></O>
+<Expand/>
+</C>
+<C c="4" r="10" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[配电盘表计划校验不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="5" r="10" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[配电盘表实际校验不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="6" r="10" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(E11 != 0, ROUND(F11 / E11, 2), 0)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="10" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[配电盘表调前不合格不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="8" r="10" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(H11 <= F11, ROUND(H11 / F11, 2), 0)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="11" s="2">
+<O>
+<![CDATA[兆欧表]]></O>
+<Expand/>
+</C>
+<C c="4" r="11" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[兆欧表计划校验不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="5" r="11" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[兆欧表实际校验不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="6" r="11" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(E12 != 0, ROUND(F12 / E12, 2), 0)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="11" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[兆欧表调前不合格不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="8" r="11" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(H12 <= F12, ROUND(H12 / F12, 2), 0)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="12" s="2">
+<O>
+<![CDATA[标准电能表]]></O>
+<Expand/>
+</C>
+<C c="4" r="12" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[标准电能表计划校验不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="5" r="12" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[标准电能表实际校验不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="6" r="12" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(E13 != 0, ROUND(F13 / E13, 2), 0)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="12" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[标准电能表调前不合格不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="8" r="12" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(H13 <= F13, ROUND(H13 / F13, 2), 0)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="13" s="2">
+<O>
+<![CDATA[重要有功电能表]]></O>
+<Expand/>
+</C>
+<C c="4" r="13" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[重要有功电能表计划校验不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="5" r="13" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[重要有功电能表实际校验不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="6" r="13" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(E14 != 0, ROUND(F14 / E14, 2), 0)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="13" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[重要有功电能表调前不合格不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="8" r="13" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(H14 <= F14, ROUND(H14 / F14, 2), 0)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="14" s="2">
+<O>
+<![CDATA[重要无功电能表]]></O>
+<Expand/>
+</C>
+<C c="4" r="14" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[重要无功电能表计划校验不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="5" r="14" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[重要无功电能表实际校验不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="6" r="14" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(E15 != 0, ROUND(F15 / E15, 2), 0)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="14" s="2">
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[重要无功电能表调前不合格不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand/>
+</C>
+<C c="8" r="14" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=if(H15 <= F15, ROUND(H15 / F15, 2), 0)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="1" r="16" s="1">
+<O>
+<![CDATA[批准人：]]></O>
+<Expand/>
+</C>
+<C c="2" r="16" cs="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="APPROVAL_BY"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="16" s="1">
+<O>
+<![CDATA[审核人：]]></O>
+<Expand/>
+</C>
+<C c="5" r="16" cs="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="EXAMINE_BY"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="16" s="1">
+<O>
+<![CDATA[填报人：]]></O>
+<Expand/>
+</C>
+<C c="9" r="16">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$userName]]></Attributes>
+</O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+<ReportWriteAttr>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="SQL">
+<Attributes dsName="XIP"/>
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="TES_PS_ELECTRIC_QUARTER_RPORT"/>
+<ColumnConfig name="ELEC_ID" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="ELEC_CODE" isKey="false" skipUnmodified="false">
+<O>
+<![CDATA[]]></O>
+</ColumnConfig>
+<ColumnConfig name="ELEC_NAME" isKey="false" skipUnmodified="false">
+<O>
+<![CDATA[]]></O>
+</ColumnConfig>
+<ColumnConfig name="ORG_ID" isKey="false" skipUnmodified="false">
+<ColumnRow column="2" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="CREATE_BY" isKey="false" skipUnmodified="false">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$userId]]></Attributes>
+</O>
+</ColumnConfig>
+<ColumnConfig name="CREATE_DATE" isKey="false" skipUnmodified="false">
+<O>
+<![CDATA[]]></O>
+</ColumnConfig>
+<ColumnConfig name="EXAMINE_BY" isKey="false" skipUnmodified="false">
+<O>
+<![CDATA[]]></O>
+</ColumnConfig>
+<ColumnConfig name="APPROVAL_BY" isKey="false" skipUnmodified="false">
+<O>
+<![CDATA[]]></O>
+</ColumnConfig>
+<ColumnConfig name="SPEC_ID" isKey="false" skipUnmodified="false">
+<O>
+<![CDATA[]]></O>
+</ColumnConfig>
+<ColumnConfig name="LAST_UPDATED_BY" isKey="false" skipUnmodified="false">
+<O>
+<![CDATA[]]></O>
+</ColumnConfig>
+<ColumnConfig name="LAST_UPDATE_DATE" isKey="false" skipUnmodified="false">
+<O>
+<![CDATA[]]></O>
+</ColumnConfig>
+<ColumnConfig name="LAST_UPDATE_LOGIN" isKey="false" skipUnmodified="false">
+<O>
+<![CDATA[]]></O>
+</ColumnConfig>
+<ColumnConfig name="INST_CODE" isKey="false" skipUnmodified="false">
+<O>
+<![CDATA[]]></O>
+</ColumnConfig>
+<ColumnConfig name="ADUIT_STATUS" isKey="false" skipUnmodified="false">
+<O>
+<![CDATA[A]]></O>
+</ColumnConfig>
+<ColumnConfig name="ONE_LEVEL_PROGRAME" isKey="false" skipUnmodified="false">
+<ColumnRow column="4" row="6"/>
+</ColumnConfig>
+<ColumnConfig name="TWO_TO_FIVE_LEVEL_CHECK_PER" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="7"/>
+</ColumnConfig>
+<ColumnConfig name="TWOTOFIVE_LEVEL_NOT_QUALIFIED" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="7"/>
+</ColumnConfig>
+<ColumnConfig name="ATTRIBUTE16" isKey="false" skipUnmodified="false">
+<O>
+<![CDATA[]]></O>
+</ColumnConfig>
+<ColumnConfig name="ATTRIBUTE17" isKey="false" skipUnmodified="false">
+<O>
+<![CDATA[]]></O>
+</ColumnConfig>
+<ColumnConfig name="ATTRIBUTE18" isKey="false" skipUnmodified="false">
+<O>
+<![CDATA[]]></O>
+</ColumnConfig>
+<ColumnConfig name="ATTRIBUTE19" isKey="false" skipUnmodified="false">
+<O>
+<![CDATA[]]></O>
+</ColumnConfig>
+<ColumnConfig name="ONE_LEVEL_PRE_QUALIFIED" isKey="false" skipUnmodified="false">
+<ColumnRow column="8" row="6"/>
+</ColumnConfig>
+<ColumnConfig name="ONE_LEVEL_PRE_NOT_QUALIFIED" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="6"/>
+</ColumnConfig>
+<ColumnConfig name="ONE_LEVEL_CHECK_PER" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="6"/>
+</ColumnConfig>
+<ColumnConfig name="TWOTOFIVE_LEVEL_PRE_QUALIFIED" isKey="false" skipUnmodified="false">
+<ColumnRow column="8" row="7"/>
+</ColumnConfig>
+<ColumnConfig name="ELECTRIC_MEASURING_PROGRAME" isKey="false" skipUnmodified="false">
+<ColumnRow column="4" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="ELECTRIC_MEASURING_PRACTICAL" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="ELECTRIC_MEASURING_CHECK_PER" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="ELECTRIC_MEASURING_NOTQUAL" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="ELECTRIC_MEASURING_PREQUAL" isKey="false" skipUnmodified="false">
+<ColumnRow column="8" row="8"/>
+</ColumnConfig>
+<ColumnConfig name="SAMPLING_MEASURING_PROGRAME" isKey="false" skipUnmodified="false">
+<ColumnRow column="4" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="SAMPLING_MEASURING_PRACTICAL" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="SAMPLING_MEASURING_CHECK_PER" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="SAMPLING_MEASURING_QUALIFIED" isKey="false" skipUnmodified="false">
+<ColumnRow column="8" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="SAMPLING_MEASURING_NOTQUAL" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="DISTRIBUTION_PANEL_PROGRAME" isKey="false" skipUnmodified="false">
+<ColumnRow column="4" row="10"/>
+</ColumnConfig>
+<ColumnConfig name="DISTRIBUTION_PANEL_PRACTICAL" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="10"/>
+</ColumnConfig>
+<ColumnConfig name="DISTRIBUTION_PANEL_CHECK_PER" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="10"/>
+</ColumnConfig>
+<ColumnConfig name="DISTRIBUTION_PANEL_QUALIFIED" isKey="false" skipUnmodified="false">
+<ColumnRow column="8" row="10"/>
+</ColumnConfig>
+<ColumnConfig name="DISTRIBUTION_PANEL_NOTQUAL" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="10"/>
+</ColumnConfig>
+<ColumnConfig name="MEGGER_PROGRAME" isKey="false" skipUnmodified="false">
+<ColumnRow column="4" row="11"/>
+</ColumnConfig>
+<ColumnConfig name="MEGGER_PRACTICAL" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="11"/>
+</ColumnConfig>
+<ColumnConfig name="MEGGER_CHECK_PER" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="11"/>
+</ColumnConfig>
+<ColumnConfig name="MEGGER_QUALIFIED" isKey="false" skipUnmodified="false">
+<ColumnRow column="8" row="11"/>
+</ColumnConfig>
+<ColumnConfig name="MEGGER_NOTQUAL" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="11"/>
+</ColumnConfig>
+<ColumnConfig name="ELECTRIC_ENERGY_PROGRAME" isKey="false" skipUnmodified="false">
+<ColumnRow column="4" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="ELECTRIC_ENERGY_PRACTICAL" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="ELECTRIC_ENERGY_CHECK_PER" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="ELECTRIC_ENERGY_QUALIFIED" isKey="false" skipUnmodified="false">
+<ColumnRow column="8" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="ELECTRIC_ENERGY_NOTQUAL" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="12"/>
+</ColumnConfig>
+<ColumnConfig name="MERITORIOUS_ELECTRIC_PROGRAME" isKey="false" skipUnmodified="false">
+<ColumnRow column="4" row="13"/>
+</ColumnConfig>
+<ColumnConfig name="MERITORIOUS_ENERGY_PRACTICAL" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="13"/>
+</ColumnConfig>
+<ColumnConfig name="MERITORIOUS_ENERGY_CHECK_PER" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="13"/>
+</ColumnConfig>
+<ColumnConfig name="MERITORIOUS_ENERGY_QUALIFIED" isKey="false" skipUnmodified="false">
+<ColumnRow column="8" row="13"/>
+</ColumnConfig>
+<ColumnConfig name="MERITORIOUS_ENERGY_NOTQUAL" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="13"/>
+</ColumnConfig>
+<ColumnConfig name="REACTIVE_POWER_PROGRAME" isKey="false" skipUnmodified="false">
+<ColumnRow column="4" row="14"/>
+</ColumnConfig>
+<ColumnConfig name="REACTIVE_POWER_PRACTICAL" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="14"/>
+</ColumnConfig>
+<ColumnConfig name="REACTIVE_POWER_CHECK_PER" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="14"/>
+</ColumnConfig>
+<ColumnConfig name="REACTIVE_POWER_QUALIFIED" isKey="false" skipUnmodified="false">
+<ColumnRow column="8" row="14"/>
+</ColumnConfig>
+<ColumnConfig name="REACTIVE_POWER_NOTQUAL" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="14"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+</ReportWriteAttr>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="false" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[381000,1943100,1600200,876300,381000,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,3048000,5334000,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$pk_id]]></Attributes>
+</O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetName name="get_pk_id"/>
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+<Expand/>
+</C>
+<C c="1" r="1">
+<Expand/>
+</C>
+<C c="2" r="1" s="3">
+<O>
+<![CDATA[userId:]]></O>
+<Expand/>
+</C>
+<C c="3" r="1">
+<O>
+<![CDATA[111]]></O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetName name="userId"/>
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+<Expand/>
+</C>
+<C c="3" r="3" s="3">
+<O>
+<![CDATA[]]></O>
+<Widget class="com.fr.report.web.ui.impl.form.FormSubmitButton">
+<WidgetAttr disabled="true" invisible="true"/>
+<Text>
+<![CDATA[查询]]></Text>
+<Hotkeys>
+<![CDATA[enter]]></Hotkeys>
+</Widget>
+<Expand/>
+</C>
+<C c="2" r="4">
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</ParameterUI>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="108" foreground="-16737895"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-1"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+</WorkBook>

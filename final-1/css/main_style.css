@@ -1,0 +1,511 @@
+body
+{
+	font-family: "楷体";
+    margin: 0px auto;
+    list-style: none;
+    text-decoration: none;
+    background-color:#FFFFFF;
+}
+#header
+{
+   margin-top: auto;
+    text-align:center;  	
+  }
+#header .tuichu
+{
+    font-size: 20px;
+	margin-left:80%;
+    color: #000000;
+    margin-bottom: -1px;
+}
+/* 页脚文本 */
+
+#footer p 
+{
+
+    margin:center;
+    color:#8cadd6;
+
+    text-align:center;
+  
+   
+    
+}
+#menu{
+        width: 100%;
+        height: 35px;
+        line-height: 30px;
+        padding-left: 0%;
+        font-size: 16px;
+        z-index: 100;
+ 	 	margin-top: auto;
+        background-color: #5ca1ef;  
+      	text-decoration: none;
+        
+       
+       
+}
+tr td p{ float:left; margin:0px; padding:0px; border-right:solid 1px #000000}
+
+.ellipsis{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.csspan{
+	display:-moz-inline-box;
+	display:inline-block;
+	width:400px;
+	overflow:hidden;
+	text-overflow: ellipsis;
+}
+#menu ul li{
+	float: left;
+	width: 9.5%;
+	text-align: center;
+	line-height: 35px;
+}
+#footer{
+	float: right;
+    text-align: center;
+	width: 100%;
+	height: 50px;
+	background-color: #F2F2F2;
+}
+#footer a{
+	color: #8fabda;
+	
+}
+a:link{ 
+ text-decoration:none;  /*超链接无下划线*/ 
+} 
+
+#fuhe{
+	background-image: url(../img/kuailan.png);
+	
+}
+#data_one{
+	margin-left: 5%;
+	width: 42%;
+	float: left;
+	padding-right: 50px;
+}
+#data_two{
+float: right;
+padding-right: 1px;
+background-image: url(../img/xiantiaoa.png);
+background-repeat: no-repeat;
+background-position-y: 50px;
+width: 48%;
+height:60px;
+	
+}
+#data_two td{
+	font-family: "楷体";
+}
+
+#data_three{
+
+	margin-left: 5%;
+	width: 42%;
+	float: left;
+	
+	
+}
+.data_four{
+
+margin-right: 3%;
+float:right; 
+width: 45%;
+background-image: url(../img/xiantiaoa.png);
+background-repeat: no-repeat;
+background-position-y: 65px;
+}
+
+#data_five{
+	padding-top: 20px;
+	margin-left: 5%;
+	width: 42%;
+	float: left;
+
+	}
+	
+#data_five p{
+	background-image: url(../img/huan.png);
+	background-repeat: no-repeat;
+	background-position-x: 5%;
+	background-position-y:center;
+}
+#data_five span{
+	background-image: url(../img/huan.png);
+	background-repeat: no-repeat;
+	background-position-x: 5%;
+	background-position-y:center;
+}
+#data_six{
+	width:45%;
+	
+padding-top: 17px;
+background-image: url(../img/xiantiaoa.png);
+background-repeat: no-repeat;
+background-position-y: 65px;
+margin-right: 3%;
+}
+
+
+#shijian{
+	padding-top: 5%;
+	width: 100%;
+	height:50px;
+	text-align:center;
+	
+}
+#tupian1{
+	width: 250px;
+	height:83px;
+	background-image: url(../img/kuailan.png);
+	background-repeat:no-repeat;
+		margin:5px;border:0;padding:0;
+
+	
+}
+#tupian2{
+	background-image: url(../img/kuaicheng.png);
+	background-repeat:no-repeat;
+	width: 250px;
+	height:83px;
+		margin:5px;border:0;padding:0;
+	
+}
+.aril{
+	font-size: 20px;
+	font-family: "arial";
+	float: right;
+	margin-right:20px;
+	margin-top:30px;
+	color:white;
+
+}
+.songti{
+	font-size: 35px;
+	font-family: "宋体";
+	float: left;
+	margin-left:20px;
+	margin-top:22px;
+	color:white;
+	font-weight: bold;
+	
+}
+#zhibiao{
+	width: 100%;
+    padding-top: 3%;
+	background-image: url(../img/xiantiaoa.png);
+	background-repeat: no-repeat;
+	background-position-y:65px;
+}
+#tupian3{
+	background-image: url(../img/kuaifen.png);
+	background-repeat:no-repeat;
+		width: 250px;
+	height:83px;
+		margin:5px;border:0;padding:0;
+	}
+#tupian4{
+	background-image: url(../img/kuailv.png);
+	background-repeat:no-repeat;
+		width: 250px;
+	height:83px;
+	
+	margin:5px;border:0;padding:0;
+}
+#kaohe{
+	width: 25%;
+	
+	background-repeat: no-repeat;
+	background-position-x: 35%;
+	background-position-y: 2%;
+}
+#ziliao{
+	width: 25%;
+	
+	background-repeat: no-repeat;
+	background-position-x: 35%;
+	background-position-y: 5%;
+}
+#shengchan{
+	width: 25%;
+	
+	background-repeat: no-repeat;
+	background-position-x: 35%;
+	background-position-y: 5%;
+}
+#jiandu{
+	width: 25%;
+
+	background-repeat: no-repeat;
+	background-position-x: 55%;
+	background-position-y: 5%;
+}
+
+
+#shishi{
+margin-top: -35%;
+margin-left: 8%;
+}
+
+#shishi1{
+margin-top: -35%;
+margin-left: 4%;
+}
+#wm{
+	padding-left: 100px;
+	padding-top: 10px ;
+color: white;
+	
+}
+#icon01{
+	background-image: url(../img/icon01_dianchang.png);
+	background-repeat:no-repeat;
+	width: 60px;
+	height: 60px;
+	
+	margin:5px;border:0;padding:0;
+}
+#tr1{
+	background-color:#f2f2f2;
+
+	
+}
+#hhe{
+	height: 50px;
+	background-image: url(../img/xiantiaoa.png);
+	background-repeat: no-repeat;
+	background-position-y:30px;
+}
+#hhe4{
+	height: 50px;
+	background-image: url(../img/xiantiaoa.png);
+	background-repeat: no-repeat;
+	background-position-y:50px;
+}
+#hhe5{
+	height: 50px;
+	background-image: url(../img/xiantiaoa.png);
+	background-repeat: no-repeat;
+	background-position-y:45px;
+}
+
+.td1{
+	border:1px solid lightgray;
+	float: left;
+	width: 47%;
+	margin-left: 2%;
+	background-image: url(../img/se01.png);
+	background-repeat: no-repeat;
+	
+}
+#td2{
+	border:1px solid lightgray;
+	float: left;
+	width: 40%;
+		margin-left: 5%;
+	background-image: url(../img/se02.png);
+	background-repeat: no-repeat;
+	
+}
+
+#td3{
+	border:1px solid lightgray;
+	float: left;
+	width: 40%;
+		margin-left: 5%;
+	background-image: url(../img/se03.png);
+	background-repeat: no-repeat;
+	
+}
+
+#td4{
+	border:1px solid lightgray;
+	float: left;
+	width: 40%;
+		margin-left: 5%;
+	background-image: url(../img/se04.png);
+	background-repeat: no-repeat;
+	
+}
+
+#td5{
+	border:1px solid lightgray;
+	float: left;
+	width: 40%;
+		margin-left: 5%;
+	background-image: url(../img/se05.png);
+	background-repeat: no-repeat;
+	
+}
+
+#td6{
+	border:1px solid lightgray;
+	float: left;
+	width: 40%;
+		margin-left: 5%;
+	background-image: url(../img/se06.png);
+	background-repeat: no-repeat;
+	
+}
+
+#td7{
+	border:1px solid lightgray;
+	float: left;
+	width: 40%;
+		margin-left: 5%;
+	background-image: url(../img/se07.png);
+	background-repeat: no-repeat;
+	
+}
+
+.td8{
+		border:1px solid lightgray;
+	float: right;
+	width: 40%;
+
+	background-image: url(../img/se08.png);
+	background-repeat: no-repeat;
+	
+}
+
+#td9{
+		border:1px solid lightgray;
+	float: right;
+	width: 40%;
+	background-image: url(../img/se09.png);
+	background-repeat: no-repeat;
+	
+}
+
+#td10{
+	
+		border:1px solid lightgray;
+	float: right;
+	width: 40%;
+	background-image: url(../img/se10.png);
+	background-repeat: no-repeat;
+	
+}
+
+#td11{
+		border:1px solid lightgray;
+	float: right;
+	width: 40%;
+	background-image: url(../img/se11.png);
+	background-repeat: no-repeat;
+	
+}
+
+#td12{
+		border:1px solid lightgray;
+	float: right;
+	width: 40%;
+	background-image: url(../img/se12.png);
+	background-repeat: no-repeat;
+	
+}
+
+#td13{
+		border:1px solid lightgray;
+	float: right;
+	width: 40%;
+	background-image: url(../img/se13.png);
+	background-repeat: no-repeat;
+	
+}
+
+#td14{
+		border:1px solid lightgray;
+	float: right;
+	width: 40%;
+	background-image: url(../img/se14.png);
+	background-repeat: no-repeat;
+	
+}
+#gongzuo {
+background-image: url(../img/xiantiaoa.png);
+
+
+}
+#gongzuo a{
+
+width: 33px;
+height: 17px;
+background-image: url(../img/more.png);
+background-position-x:0px;
+}
+#a_5 {
+text-align: center;
+  height: 17px;
+  background-image: url(../img/more.png);
+  width: 33px;
+  height: 17px;
+
+}
+#td01{
+		background-image: url(../img/yuan1.png);
+	background-repeat: no-repeat;
+	background-position-x: 4%;
+	
+}
+#td02{
+		background-image: url(../img/yuan2.png);
+	background-repeat: no-repeat;
+	background-position-x: 4%;
+	
+}
+#td03{
+		background-image: url(../img/yuan3.png);
+	background-repeat: no-repeat;
+	background-position-x: 4%;
+	
+}
+#td04{
+		background-image: url(../img/yuan4.png);
+	background-repeat: no-repeat;
+	background-position-x: 4%;
+	
+}
+#td05{
+		background-image: url(../img/yuan5.png);
+	background-repeat: no-repeat;
+	background-position-x: 4%;
+	
+}
+#td06{
+		background-image: url(../img/yuan6.png);
+	background-repeat: no-repeat;
+	background-position-x: 4%;
+}
+#daohang{
+	background-color: #f9f9f9;
+}
+#tuichu{
+	width: 50px;
+	height:20px;
+	background-image: url(../img/tuichu.png);
+	background-repeat: no-repeat;
+	background-size: 35% 92%;
+	padding-left: 12%;
+	margin-left: -7%;
+}
+#data2{
+	float: left;
+	width: 100%;
+	height: auto;
+	
+}
+.tdn{
+	width: 200px;
+	position: relative;
+	left: 4px;
+	
+}
+.tdn2{
+	margin-right: 10%;
+	float: right;
+	
+	
+}

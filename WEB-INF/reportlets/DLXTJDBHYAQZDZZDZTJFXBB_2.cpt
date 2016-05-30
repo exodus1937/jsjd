@@ -1,0 +1,2141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="general_id"/>
+<O>
+<![CDATA[9bb8192f-437c-4fb3-a6fe-4493dc8ec672]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct to_char(t.create_date,'mm') ||'月'  create_date
+  from tes_ps_general_main t,TES_PS_RELAY_PROTECTION a
+where  a.general_id= t.general_id
+and  t.general_id = '${general_id}'
+]]></Query>
+</TableData>
+<TableData name="ds7" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="general_id"/>
+<O>
+<![CDATA[9bb8192f-437c-4fb3-a6fe-4493dc8ec672]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select t.ALL_DEVICES,t.SYSTEM_DEVICES,t.WAVE_RECORDER,t.AUTO_DEVICES,t.SYSTEM_DEVICES1,t.SYSTEM_DEVICES2 , t.ALL_DEVICES,t.sort
+from TES_PS_RELAY_PROTECTION t,TES_PS_GENERAL_MAIN a
+where t.general_id = a.general_id
+and t.sort ='1'
+and a.general_id = '${general_id}'
+order by t.sort]]></Query>
+</TableData>
+<TableData name="ds8" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="general_id"/>
+<O>
+<![CDATA[9bb8192f-437c-4fb3-a6fe-4493dc8ec672]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select  distinct t.SYSTEM_DEVICE1,t.SYSTEM_DEVICE2
+from tes_ps_general_main t ,TES_PS_RELAY_PROTECTION a
+where t.general_id = a.general_id
+and t.general_id = '${general_id}']]></Query>
+</TableData>
+<TableData name="ds9" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="general_id"/>
+<O>
+<![CDATA[caf8fcdb-2df9-4f30-ac1e-0d52cd316444]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select t.HAPPEN_TIME,t.SITUATION,t.LIABILITY_ANALYSIS
+from TES_PS_RELAY_STATISTICS_DETAIL t,TES_PS_GENERAL_MAIN a
+where t.general_id = a.general_id
+and a.general_id ='${general_id}']]></Query>
+</TableData>
+<TableData name="ds10" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[9bb8192f-437c-4fb3-a6fe-4493dc8ec672]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[{CALL TES_PS_GENERAL_MAIN_VIEW.ORG_COMBOX_VIEW('${GENERAL_ID}',?)}]]></Query>
+</TableData>
+<TableData name="ds11" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[caf8fcdb-2df9-4f30-ac1e-0d52cd316444]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[{CALL TES_PS_GENERAL_MAIN_VIEW.LIST_NAME_VIEW('${GENERAL_ID}',?)}]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="general_id"/>
+<O>
+<![CDATA[9bb8192f-437c-4fb3-a6fe-4493dc8ec672]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select t.ALL_DEVICES,t.SYSTEM_DEVICES,t.WAVE_RECORDER,t.AUTO_DEVICES,t.SYSTEM_DEVICES1,t.SYSTEM_DEVICES2 , t.ALL_DEVICES,t.sort
+from TES_PS_RELAY_PROTECTION t,TES_PS_GENERAL_MAIN a
+where t.general_id = a.general_id
+and t.sort ='2'
+and a.general_id = '${general_id}'
+order by t.sort]]></Query>
+</TableData>
+<TableData name="ds3" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="general_id"/>
+<O>
+<![CDATA[9bb8192f-437c-4fb3-a6fe-4493dc8ec672]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select t.ALL_DEVICES,t.SYSTEM_DEVICES,t.WAVE_RECORDER,t.AUTO_DEVICES,t.SYSTEM_DEVICES1,t.SYSTEM_DEVICES2 , t.ALL_DEVICES,t.sort
+from TES_PS_RELAY_PROTECTION t,TES_PS_GENERAL_MAIN a
+where t.general_id = a.general_id
+and t.sort ='3'
+and a.general_id = '${general_id}'
+order by t.sort]]></Query>
+</TableData>
+<TableData name="ds4" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[9bb8192f-437c-4fb3-a6fe-4493dc8ec672]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select distinct sum( a.ALL_DEVICES), a.sort,t.create_date,a.ALL_DEVICES ,t.general_id
+  from tes_ps_general_main t,TES_PS_RELAY_PROTECTION a
+ where a.general_id= t.general_id
+   and to_char(t.create_date, 'yyyy/mm/dd') >=
+       to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+   and to_char(t.create_date, 'yyyy/mm') <=
+       to_char(sysdate, 'yyyy/mm')
+   AND t.general_id = '${GENERAL_ID}'
+     group by a.sort,t.create_date ,a.ALL_DEVICES,t.general_id
+      order by  a.sort]]></Query>
+</TableData>
+<TableData name="ds5" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[9bb8192f-437c-4fb3-a6fe-4493dc8ec672]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select distinct sum( a.SYSTEM_DEVICES), a.sort,t.create_date,a.ALL_DEVICES ,t.general_id
+  from tes_ps_general_main t,TES_PS_RELAY_PROTECTION a
+ where a.general_id= t.general_id
+   and to_char(t.create_date, 'yyyy/mm/dd') >=
+       to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+   and to_char(t.create_date, 'yyyy/mm') <=
+       to_char(sysdate, 'yyyy/mm')
+   AND t.general_id = '${GENERAL_ID}'
+     group by a.sort,t.create_date ,a.ALL_DEVICES,t.general_id
+      order by  a.sort]]></Query>
+</TableData>
+<TableData name="ds6" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[9bb8192f-437c-4fb3-a6fe-4493dc8ec672]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select distinct sum( a.SYSTEM_DEVICES1), a.sort,t.create_date,a.ALL_DEVICES ,t.general_id
+  from tes_ps_general_main t,TES_PS_RELAY_PROTECTION a
+ where a.general_id= t.general_id
+   and to_char(t.create_date, 'yyyy/mm/dd') >=
+       to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+   and to_char(t.create_date, 'yyyy/mm') <=
+       to_char(sysdate, 'yyyy/mm')
+   AND t.general_id = '${GENERAL_ID}'
+     group by a.sort,t.create_date ,a.ALL_DEVICES,t.general_id
+      order by  a.sort]]></Query>
+</TableData>
+<TableData name="ds12" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[9bb8192f-437c-4fb3-a6fe-4493dc8ec672]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select distinct sum( a.SYSTEM_DEVICES2), a.sort,t.create_date,a.ALL_DEVICES ,t.general_id
+  from tes_ps_general_main t,TES_PS_RELAY_PROTECTION a
+ where a.general_id= t.general_id
+   and to_char(t.create_date, 'yyyy/mm/dd') >=
+       to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+   and to_char(t.create_date, 'yyyy/mm') <=
+       to_char(sysdate, 'yyyy/mm')
+   AND t.general_id = '${GENERAL_ID}'
+     group by a.sort,t.create_date ,a.ALL_DEVICES,t.general_id
+      order by  a.sort]]></Query>
+</TableData>
+<TableData name="ds13" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[9bb8192f-437c-4fb3-a6fe-4493dc8ec672]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select distinct sum( a.WAVE_RECORDER), a.sort,t.create_date,a.ALL_DEVICES ,t.general_id
+  from tes_ps_general_main t,TES_PS_RELAY_PROTECTION a
+ where a.general_id= t.general_id
+   and to_char(t.create_date, 'yyyy/mm/dd') >=
+       to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+   and to_char(t.create_date, 'yyyy/mm') <=
+       to_char(sysdate, 'yyyy/mm')
+   AND t.general_id = '${GENERAL_ID}'
+     group by a.sort,t.create_date ,a.ALL_DEVICES,t.general_id
+      order by  a.sort]]></Query>
+</TableData>
+<TableData name="ds14" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="GENERAL_ID"/>
+<O>
+<![CDATA[9bb8192f-437c-4fb3-a6fe-4493dc8ec672]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[  select distinct sum( a.AUTO_DEVICES), a.sort,t.create_date,a.ALL_DEVICES ,t.general_id
+  from tes_ps_general_main t,TES_PS_RELAY_PROTECTION a
+ where a.general_id= t.general_id
+   and to_char(t.create_date, 'yyyy/mm/dd') >=
+       to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+   and to_char(t.create_date, 'yyyy/mm') <=
+       to_char(sysdate, 'yyyy/mm')
+   AND t.general_id = '${GENERAL_ID}'
+     group by a.sort,t.create_date ,a.ALL_DEVICES,t.general_id
+      order by  a.sort]]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="72000000" height="101808000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,0,0,38100,1104900,723900,723900,723900,1008000,1008000,1008000,1008000,1008000,723900,723900,876300,7848600,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2514600,1257300,1600200,1790700,1752600,1866900,2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,2304000,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="0">
+<Expand/>
+</C>
+<C c="1" r="0" s="0">
+<Expand/>
+</C>
+<C c="2" r="0" s="0">
+<Expand/>
+</C>
+<C c="3" r="0" s="0">
+<Expand/>
+</C>
+<C c="4" r="0" s="0">
+<Expand/>
+</C>
+<C c="5" r="0" s="0">
+<Expand/>
+</C>
+<C c="6" r="0" s="0">
+<Expand/>
+</C>
+<C c="7" r="0" s="0">
+<Expand/>
+</C>
+<C c="8" r="0" s="0">
+<Expand/>
+</C>
+<C c="9" r="0" s="0">
+<Expand/>
+</C>
+<C c="10" r="0" s="0">
+<Expand/>
+</C>
+<C c="11" r="0" s="0">
+<Expand/>
+</C>
+<C c="12" r="0" s="0">
+<Expand/>
+</C>
+<C c="13" r="0" s="0">
+<Expand/>
+</C>
+<C c="14" r="0" s="0">
+<Expand/>
+</C>
+<C c="15" r="0" s="0">
+<Expand/>
+</C>
+<C c="16" r="0" s="0">
+<Expand/>
+</C>
+<C c="17" r="0" s="0">
+<Expand/>
+</C>
+<C c="18" r="0" s="0">
+<Expand/>
+</C>
+<C c="19" r="0" s="0">
+<Expand/>
+</C>
+<C c="0" r="1" s="0">
+<Expand/>
+</C>
+<C c="1" r="1" s="0">
+<Expand/>
+</C>
+<C c="2" r="1" s="0">
+<Expand/>
+</C>
+<C c="3" r="1" s="0">
+<Expand/>
+</C>
+<C c="4" r="1" s="0">
+<Expand/>
+</C>
+<C c="5" r="1" s="0">
+<Expand/>
+</C>
+<C c="6" r="1" s="0">
+<Expand/>
+</C>
+<C c="7" r="1" s="0">
+<Expand/>
+</C>
+<C c="8" r="1" s="0">
+<Expand/>
+</C>
+<C c="9" r="1" s="0">
+<Expand/>
+</C>
+<C c="10" r="1" s="0">
+<Expand/>
+</C>
+<C c="11" r="1" s="0">
+<Expand/>
+</C>
+<C c="12" r="1" s="0">
+<Expand/>
+</C>
+<C c="13" r="1" s="0">
+<Expand/>
+</C>
+<C c="14" r="1" s="0">
+<Expand/>
+</C>
+<C c="15" r="1" s="0">
+<Expand/>
+</C>
+<C c="16" r="1" s="0">
+<Expand/>
+</C>
+<C c="17" r="1" s="0">
+<Expand/>
+</C>
+<C c="18" r="1" s="0">
+<Expand/>
+</C>
+<C c="19" r="1" s="0">
+<Expand/>
+</C>
+<C c="0" r="2" s="0">
+<Expand/>
+</C>
+<C c="1" r="2" s="0">
+<Expand/>
+</C>
+<C c="2" r="2" s="0">
+<Expand/>
+</C>
+<C c="3" r="2" s="0">
+<Expand/>
+</C>
+<C c="4" r="2" s="0">
+<Expand/>
+</C>
+<C c="5" r="2" s="0">
+<Expand/>
+</C>
+<C c="6" r="2" s="0">
+<Expand/>
+</C>
+<C c="7" r="2" s="0">
+<Expand/>
+</C>
+<C c="8" r="2" s="0">
+<Expand/>
+</C>
+<C c="9" r="2" s="0">
+<Expand/>
+</C>
+<C c="10" r="2" s="0">
+<Expand/>
+</C>
+<C c="11" r="2" s="0">
+<Expand/>
+</C>
+<C c="12" r="2" s="0">
+<Expand/>
+</C>
+<C c="13" r="2" s="0">
+<Expand/>
+</C>
+<C c="14" r="2" s="0">
+<Expand/>
+</C>
+<C c="15" r="2" s="0">
+<Expand/>
+</C>
+<C c="16" r="2" s="0">
+<Expand/>
+</C>
+<C c="17" r="2" s="0">
+<Expand/>
+</C>
+<C c="18" r="2" s="0">
+<Expand/>
+</C>
+<C c="19" r="2" s="0">
+<Expand/>
+</C>
+<C c="0" r="3" s="0">
+<Expand/>
+</C>
+<C c="1" r="3" s="0">
+<Expand/>
+</C>
+<C c="2" r="3" s="0">
+<Expand/>
+</C>
+<C c="3" r="3" s="0">
+<Expand/>
+</C>
+<C c="4" r="3" s="0">
+<Expand/>
+</C>
+<C c="5" r="3" s="0">
+<Expand/>
+</C>
+<C c="6" r="3" s="0">
+<Expand/>
+</C>
+<C c="7" r="3" s="0">
+<Expand/>
+</C>
+<C c="8" r="3" s="0">
+<Expand/>
+</C>
+<C c="9" r="3" s="0">
+<Expand/>
+</C>
+<C c="10" r="3" s="0">
+<Expand/>
+</C>
+<C c="11" r="3" s="0">
+<Expand/>
+</C>
+<C c="12" r="3" s="0">
+<Expand/>
+</C>
+<C c="13" r="3" s="0">
+<Expand/>
+</C>
+<C c="14" r="3" s="0">
+<Expand/>
+</C>
+<C c="15" r="3" s="0">
+<Expand/>
+</C>
+<C c="16" r="3" s="0">
+<Expand/>
+</C>
+<C c="17" r="3" s="0">
+<Expand/>
+</C>
+<C c="18" r="3" s="0">
+<Expand/>
+</C>
+<C c="19" r="3" s="0">
+<Expand/>
+</C>
+<C c="0" r="4" s="0">
+<Expand/>
+</C>
+<C c="1" r="4" s="0">
+<Expand/>
+</C>
+<C c="2" r="4" cs="16" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="GENERAL_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="18" r="4" s="0">
+<Expand/>
+</C>
+<C c="19" r="4" s="0">
+<Expand/>
+</C>
+<C c="0" r="5" s="0">
+<Expand/>
+</C>
+<C c="1" r="5" s="0">
+<Expand/>
+</C>
+<C c="2" r="5" s="0">
+<O>
+<![CDATA[单位：]]></O>
+<Expand/>
+</C>
+<C c="3" r="5" cs="5" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds10" columnName="ORG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="5" s="0">
+<Expand/>
+</C>
+<C c="9" r="5" s="0">
+<Expand/>
+</C>
+<C c="10" r="5" s="0">
+<Expand/>
+</C>
+<C c="11" r="5" s="0">
+<Expand/>
+</C>
+<C c="12" r="5" s="0">
+<Expand/>
+</C>
+<C c="13" r="5" s="0">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="14" r="5" cs="4" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="CREATE_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="18" r="5" s="0">
+<Expand/>
+</C>
+<C c="19" r="5" s="0">
+<Expand/>
+</C>
+<C c="0" r="6" s="0">
+<Expand/>
+</C>
+<C c="1" r="6" s="0">
+<Expand/>
+</C>
+<C c="2" r="6" cs="4" rs="3" s="2">
+<O>
+<![CDATA[继电保护与安全自动装置]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" cs="2" rs="2" s="2">
+<O>
+<![CDATA[全部装置]]></O>
+<Expand/>
+</C>
+<C c="8" r="6" cs="2" rs="2" s="2">
+<O>
+<![CDATA[主系统装置]]></O>
+<Expand/>
+</C>
+<C c="10" r="6" rs="2" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds8" columnName="SYSTEM_DEVICE1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="6" rs="2" s="2">
+<O>
+<![CDATA[kv系统装置]]></O>
+<Expand/>
+</C>
+<C c="12" r="6" rs="2" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds8" columnName="SYSTEM_DEVICE2"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="6" rs="2" s="2">
+<O>
+<![CDATA[kv系统装置]]></O>
+<Expand/>
+</C>
+<C c="14" r="6" cs="2" rs="2" s="2">
+<O>
+<![CDATA[录波器]]></O>
+<Expand/>
+</C>
+<C c="16" r="6" cs="2" rs="2" s="2">
+<O>
+<![CDATA[安全自动装置]]></O>
+<Expand/>
+</C>
+<C c="18" r="6" s="0">
+<Expand/>
+</C>
+<C c="19" r="6" s="0">
+<Expand/>
+</C>
+<C c="0" r="7" s="0">
+<Expand/>
+</C>
+<C c="1" r="7" s="0">
+<Expand/>
+</C>
+<C c="18" r="7" s="0">
+<Expand/>
+</C>
+<C c="19" r="7" s="0">
+<Expand/>
+</C>
+<C c="0" r="8" s="0">
+<Expand/>
+</C>
+<C c="1" r="8" s="0">
+<Expand/>
+</C>
+<C c="6" r="8" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="CREATE_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="8" s="2">
+<O>
+<![CDATA[累计]]></O>
+<Expand/>
+</C>
+<C c="8" r="8" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="CREATE_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="8" s="2">
+<O>
+<![CDATA[累计]]></O>
+<Expand/>
+</C>
+<C c="10" r="8" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="CREATE_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="8" s="2">
+<O>
+<![CDATA[累计]]></O>
+<Expand/>
+</C>
+<C c="12" r="8" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="CREATE_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="8" s="2">
+<O>
+<![CDATA[累计]]></O>
+<Expand/>
+</C>
+<C c="14" r="8" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="CREATE_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="15" r="8" s="2">
+<O>
+<![CDATA[累计]]></O>
+<Expand/>
+</C>
+<C c="16" r="8" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="CREATE_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="17" r="8" s="2">
+<O>
+<![CDATA[累计]]></O>
+<Expand/>
+</C>
+<C c="18" r="8" s="0">
+<Expand/>
+</C>
+<C c="19" r="8" s="0">
+<Expand/>
+</C>
+<C c="0" r="9" s="0">
+<Expand/>
+</C>
+<C c="1" r="9" s="0">
+<Expand/>
+</C>
+<C c="2" r="9" cs="4" s="2">
+<O>
+<![CDATA[总动作次数]]></O>
+<Expand/>
+</C>
+<C c="6" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="ALL_DEVICES"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false"/>
+</C>
+<C c="7" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="SUM(A.ALL_DEVICES)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SORT]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="SYSTEM_DEVICES"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false"/>
+</C>
+<C c="9" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="SUM(A.SYSTEM_DEVICES)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SORT]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="SYSTEM_DEVICES1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false"/>
+</C>
+<C c="11" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="SUM(A.SYSTEM_DEVICES1)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SORT]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="SYSTEM_DEVICES2"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false"/>
+</C>
+<C c="13" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds12" columnName="SUM(A.SYSTEM_DEVICES2)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SORT]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="WAVE_RECORDER"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false"/>
+</C>
+<C c="15" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds13" columnName="SUM(A.WAVE_RECORDER)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SORT]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="16" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="AUTO_DEVICES"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0" leftParentDefault="false"/>
+</C>
+<C c="17" r="9" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="SUM(A.AUTO_DEVICES)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SORT]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="18" r="9" s="0">
+<Expand/>
+</C>
+<C c="19" r="9" s="0">
+<Expand/>
+</C>
+<C c="0" r="10" s="0">
+<Expand/>
+</C>
+<C c="1" r="10" s="0">
+<Expand/>
+</C>
+<C c="2" r="10" cs="4" s="2">
+<O>
+<![CDATA[正确动作次数]]></O>
+<Expand/>
+</C>
+<C c="6" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="ALL_DEVICES"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="SUM(A.ALL_DEVICES)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SORT]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="SYSTEM_DEVICES"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="SUM(A.SYSTEM_DEVICES)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SORT]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="SYSTEM_DEVICES1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="SUM(A.SYSTEM_DEVICES1)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SORT]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="SYSTEM_DEVICES2"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds12" columnName="SUM(A.SYSTEM_DEVICES2)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SORT]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="WAVE_RECORDER"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="15" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds13" columnName="SUM(A.WAVE_RECORDER)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SORT]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="16" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTO_DEVICES"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="17" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="SUM(A.AUTO_DEVICES)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SORT]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="18" r="10" s="0">
+<Expand/>
+</C>
+<C c="19" r="10" s="0">
+<Expand/>
+</C>
+<C c="0" r="11" s="0">
+<Expand/>
+</C>
+<C c="1" r="11" s="0">
+<Expand/>
+</C>
+<C c="2" r="11" cs="4" s="2">
+<O>
+<![CDATA[不正确动作次数]]></O>
+<Expand/>
+</C>
+<C c="6" r="11" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="ALL_DEVICES"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="11" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="SUM(A.ALL_DEVICES)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SORT]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="11" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="SYSTEM_DEVICES"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="11" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="SUM(A.SYSTEM_DEVICES)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SORT]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="11" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="SYSTEM_DEVICES1"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="11" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="SUM(A.SYSTEM_DEVICES1)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SUM(A.SYSTEM_DEVICES1)]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="11" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="SYSTEM_DEVICES2"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="11" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds12" columnName="SUM(A.SYSTEM_DEVICES2)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SORT]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="11" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="WAVE_RECORDER"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="15" r="11" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds13" columnName="SUM(A.WAVE_RECORDER)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SORT]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="16" r="11" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTO_DEVICES"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="17" r="11" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="SUM(A.AUTO_DEVICES)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SORT]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="18" r="11" s="0">
+<Expand/>
+</C>
+<C c="19" r="11" s="0">
+<Expand/>
+</C>
+<C c="0" r="12" s="0">
+<Expand/>
+</C>
+<C c="1" r="12" s="0">
+<Expand/>
+</C>
+<C c="2" r="12" cs="4" s="2">
+<O>
+<![CDATA[正确动作率(完好)]]></O>
+<Expand/>
+</C>
+<C c="6" r="12" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=g11/g10]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="12" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=H11/H10]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="12" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=I11/I10]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="9" r="12" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=J11/J10]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="10" r="12" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=K11/K10]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="12" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=L11/L10]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="12" r="12" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=M11/M10]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="13" r="12" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=N11/N10]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="14" r="12" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=O11/O10]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="15" r="12" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=P11/P10]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="16" r="12" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=Q11/Q10]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="17" r="12" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=R11/R10]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="18" r="12" s="0">
+<Expand/>
+</C>
+<C c="19" r="12" s="0">
+<Expand/>
+</C>
+<C c="0" r="13" s="0">
+<Expand/>
+</C>
+<C c="1" r="13" s="0">
+<Expand/>
+</C>
+<C c="2" r="13" cs="4" s="2">
+<Expand/>
+</C>
+<C c="6" r="13" cs="12" s="2">
+<O>
+<![CDATA[6kv及以下继电保护与安全自动装置不正确动作情况详细说明]]></O>
+<Expand/>
+</C>
+<C c="18" r="13" s="0">
+<Expand/>
+</C>
+<C c="19" r="13" s="0">
+<Expand/>
+</C>
+<C c="0" r="14" s="0">
+<Expand/>
+</C>
+<C c="1" r="14" s="0">
+<Expand/>
+</C>
+<C c="2" r="14" rs="2" s="2">
+<O>
+<![CDATA[月]]></O>
+<Expand/>
+</C>
+<C c="3" r="14" rs="2" s="2">
+<O>
+<![CDATA[日]]></O>
+<Expand/>
+</C>
+<C c="4" r="14" rs="2" s="2">
+<O>
+<![CDATA[时]]></O>
+<Expand/>
+</C>
+<C c="5" r="14" rs="2" s="2">
+<O>
+<![CDATA[分]]></O>
+<Expand/>
+</C>
+<C c="6" r="14" cs="7" rs="2" s="2">
+<O>
+<![CDATA[情况说明(安装地点、电压等级、设备名称、不正确动作原因)\t\t\t\t\t\t ]]></O>
+<Expand/>
+</C>
+<C c="13" r="14" cs="5" rs="2" s="2">
+<O>
+<![CDATA[责任分析]]></O>
+<Expand/>
+</C>
+<C c="18" r="14" s="0">
+<Expand/>
+</C>
+<C c="19" r="14" s="0">
+<Expand/>
+</C>
+<C c="0" r="15" s="0">
+<Expand/>
+</C>
+<C c="1" r="15" s="0">
+<Expand/>
+</C>
+<C c="18" r="15" s="0">
+<Expand/>
+</C>
+<C c="19" r="15" s="0">
+<Expand/>
+</C>
+<C c="0" r="16" s="0">
+<Expand/>
+</C>
+<C c="1" r="16" s="0">
+<Expand/>
+</C>
+<C c="2" r="16" cs="4" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds9" columnName="HAPPEN_TIME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="16" cs="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds9" columnName="SITUATION"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="16" cs="5" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds9" columnName="LIABILITY_ANALYSIS"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="18" r="16" s="0">
+<Expand/>
+</C>
+<C c="19" r="16" s="0">
+<Expand/>
+</C>
+<C c="0" r="17" s="0">
+<Expand/>
+</C>
+<C c="1" r="17" s="0">
+<Expand/>
+</C>
+<C c="2" r="17" s="0">
+<O>
+<![CDATA[批准：]]></O>
+<Expand/>
+</C>
+<C c="3" r="17" cs="3" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="EXAMINE_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="17" s="0">
+<O>
+<![CDATA[ 审核：]]></O>
+<Expand/>
+</C>
+<C c="7" r="17" cs="3" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="APPROVAL_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="17" s="0">
+<O>
+<![CDATA[ 填报人：]]></O>
+<Expand/>
+</C>
+<C c="11" r="17" cs="3" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="CREATE_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="17" s="0">
+<Expand/>
+</C>
+<C c="15" r="17" s="0">
+<Expand/>
+</C>
+<C c="16" r="17" s="0">
+<Expand/>
+</C>
+<C c="17" r="17" s="0">
+<Expand/>
+</C>
+<C c="18" r="17" s="0">
+<Expand/>
+</C>
+<C c="19" r="17" s="0">
+<Expand/>
+</C>
+<C c="0" r="18" s="0">
+<Expand/>
+</C>
+<C c="1" r="18" s="0">
+<Expand/>
+</C>
+<C c="2" r="18" s="0">
+<Expand/>
+</C>
+<C c="3" r="18" s="0">
+<Expand/>
+</C>
+<C c="4" r="18" s="0">
+<Expand/>
+</C>
+<C c="5" r="18" s="0">
+<Expand/>
+</C>
+<C c="6" r="18" s="0">
+<Expand/>
+</C>
+<C c="7" r="18" s="0">
+<Expand/>
+</C>
+<C c="8" r="18" s="0">
+<Expand/>
+</C>
+<C c="9" r="18" s="0">
+<Expand/>
+</C>
+<C c="10" r="18" s="0">
+<Expand/>
+</C>
+<C c="11" r="18" s="0">
+<Expand/>
+</C>
+<C c="12" r="18" s="0">
+<Expand/>
+</C>
+<C c="13" r="18" s="0">
+<Expand/>
+</C>
+<C c="14" r="18" s="0">
+<Expand/>
+</C>
+<C c="15" r="18" s="0">
+<Expand/>
+</C>
+<C c="16" r="18" s="0">
+<Expand/>
+</C>
+<C c="17" r="18" s="0">
+<Expand/>
+</C>
+<C c="18" r="18" s="0">
+<Expand/>
+</C>
+<C c="19" r="18" s="0">
+<Expand/>
+</C>
+<C c="0" r="19" s="0">
+<Expand/>
+</C>
+<C c="1" r="19" s="0">
+<Expand/>
+</C>
+<C c="2" r="19" s="0">
+<Expand/>
+</C>
+<C c="3" r="19" s="0">
+<Expand/>
+</C>
+<C c="4" r="19" s="0">
+<Expand/>
+</C>
+<C c="5" r="19" s="0">
+<Expand/>
+</C>
+<C c="6" r="19" s="0">
+<Expand/>
+</C>
+<C c="7" r="19" s="0">
+<Expand/>
+</C>
+<C c="8" r="19" s="0">
+<Expand/>
+</C>
+<C c="9" r="19" s="0">
+<Expand/>
+</C>
+<C c="10" r="19" s="0">
+<Expand/>
+</C>
+<C c="11" r="19" s="0">
+<Expand/>
+</C>
+<C c="12" r="19" s="0">
+<Expand/>
+</C>
+<C c="13" r="19" s="0">
+<Expand/>
+</C>
+<C c="14" r="19" s="0">
+<Expand/>
+</C>
+<C c="15" r="19" s="0">
+<Expand/>
+</C>
+<C c="16" r="19" s="0">
+<Expand/>
+</C>
+<C c="17" r="19" s="0">
+<Expand/>
+</C>
+<C c="18" r="19" s="0">
+<Expand/>
+</C>
+<C c="19" r="19" s="0">
+<Expand/>
+</C>
+<C c="0" r="20" s="0">
+<Expand/>
+</C>
+<C c="1" r="20" s="0">
+<Expand/>
+</C>
+<C c="2" r="20" s="0">
+<Expand/>
+</C>
+<C c="3" r="20" s="0">
+<Expand/>
+</C>
+<C c="4" r="20" s="0">
+<Expand/>
+</C>
+<C c="5" r="20" s="0">
+<Expand/>
+</C>
+<C c="6" r="20" s="0">
+<Expand/>
+</C>
+<C c="7" r="20" s="0">
+<Expand/>
+</C>
+<C c="8" r="20" s="0">
+<Expand/>
+</C>
+<C c="9" r="20" s="0">
+<Expand/>
+</C>
+<C c="10" r="20" s="0">
+<Expand/>
+</C>
+<C c="11" r="20" s="0">
+<Expand/>
+</C>
+<C c="12" r="20" s="0">
+<Expand/>
+</C>
+<C c="13" r="20" s="0">
+<Expand/>
+</C>
+<C c="14" r="20" s="0">
+<Expand/>
+</C>
+<C c="15" r="20" s="0">
+<Expand/>
+</C>
+<C c="16" r="20" s="0">
+<Expand/>
+</C>
+<C c="17" r="20" s="0">
+<Expand/>
+</C>
+<C c="18" r="20" s="0">
+<Expand/>
+</C>
+<C c="19" r="20" s="0">
+<Expand/>
+</C>
+<C c="0" r="21" s="0">
+<Expand/>
+</C>
+<C c="1" r="21" s="0">
+<Expand/>
+</C>
+<C c="2" r="21" s="0">
+<Expand/>
+</C>
+<C c="3" r="21" s="0">
+<Expand/>
+</C>
+<C c="4" r="21" s="0">
+<Expand/>
+</C>
+<C c="5" r="21" s="0">
+<Expand/>
+</C>
+<C c="6" r="21" s="0">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="7" r="21" s="0">
+<Expand/>
+</C>
+<C c="8" r="21" s="0">
+<Expand/>
+</C>
+<C c="9" r="21" s="0">
+<Expand/>
+</C>
+<C c="10" r="21" s="0">
+<Expand/>
+</C>
+<C c="11" r="21" s="0">
+<Expand/>
+</C>
+<C c="12" r="21" s="0">
+<Expand/>
+</C>
+<C c="13" r="21" s="0">
+<Expand/>
+</C>
+<C c="14" r="21" s="0">
+<Expand/>
+</C>
+<C c="15" r="21" s="0">
+<Expand/>
+</C>
+<C c="16" r="21" s="0">
+<Expand/>
+</C>
+<C c="17" r="21" s="0">
+<Expand/>
+</C>
+<C c="18" r="21" s="0">
+<Expand/>
+</C>
+<C c="19" r="21" s="0">
+<Expand/>
+</C>
+<C c="0" r="22" s="0">
+<Expand/>
+</C>
+<C c="1" r="22" s="0">
+<Expand/>
+</C>
+<C c="2" r="22" s="0">
+<Expand/>
+</C>
+<C c="3" r="22" s="0">
+<Expand/>
+</C>
+<C c="4" r="22" s="0">
+<Expand/>
+</C>
+<C c="5" r="22" s="0">
+<Expand/>
+</C>
+<C c="6" r="22" s="0">
+<Expand/>
+</C>
+<C c="7" r="22" s="0">
+<Expand/>
+</C>
+<C c="8" r="22" s="0">
+<Expand/>
+</C>
+<C c="9" r="22" s="0">
+<Expand/>
+</C>
+<C c="10" r="22" s="0">
+<Expand/>
+</C>
+<C c="11" r="22" s="0">
+<Expand/>
+</C>
+<C c="12" r="22" s="0">
+<Expand/>
+</C>
+<C c="13" r="22" s="0">
+<Expand/>
+</C>
+<C c="14" r="22" s="0">
+<Expand/>
+</C>
+<C c="15" r="22" s="0">
+<Expand/>
+</C>
+<C c="16" r="22" s="0">
+<Expand/>
+</C>
+<C c="17" r="22" s="0">
+<Expand/>
+</C>
+<C c="18" r="22" s="0">
+<Expand/>
+</C>
+<C c="19" r="22" s="0">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="108" foreground="-16737895"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00%]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

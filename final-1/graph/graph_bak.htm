@@ -1,0 +1,860 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head lang="en">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title></title>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-size: 14px;
+}
+li {
+	list-style: none;
+}
+#struct {
+	width: 1500px;
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+}
+#struct_1 {
+	/*width: 85.7%;*/
+	text-align: center;
+	float: left;
+	position: relative;
+}
+#struct_2 {
+	/*width: 14.3%;*/
+	text-align: center;
+	float: left;
+	position: relative;
+}
+.struct_row {
+	position: relative;
+}
+.struct_line_1, .struct_line_2 {
+	border-bottom: 2px solid #000;
+}
+.struct_line_2 {
+	border-top: 2px solid #000;
+}
+.struct_cell {
+	/*width: 7.14%;*/
+	float: left;
+	padding: 0 2px;
+}
+.struct_cell_text {
+	padding: 5px;
+	border: 2px solid #000;
+	background: #f5ecce;
+	text-align: center;
+}
+.struct_cell_text_1, .struct_cell_text_1_1 {
+	width: 200px;
+	margin: 0 auto;
+	;
+}
+.clear {
+	clear: both;
+}
+.struct_line_0_1 {
+	border-bottom: 2px solid #000;
+	width: 50%;/*margin-left: 642px;*/
+}
+.struct_row_1_1_center {
+	position: absolute;
+	width: 50%;
+	/*left: 642px;*/
+            /*top: 180px;*/
+	text-align: left;
+}
+.struct_line_0_2 {
+	width: 100%;
+	position: absolute;
+	margin-top: 1em;
+	z-index: -1;
+}
+.struct_cell_text_1_2 {
+	margin-top: -2em;
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+</style>
+<style id="poshytip-css-tip-yellow" type="text/css">
+div.tip-yellow {
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+div.tip-yellow table, div.tip-yellow td {
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	font-style: inherit;
+	font-variant: inherit;
+}
+div.tip-yellow td.tip-bg-image span {
+	display: block;
+	font: 1px/1px sans-serif;
+	height: 10px;
+	width: 10px;
+	overflow: hidden;
+}
+div.tip-yellow td.tip-right {
+	background-position: 100% 0;
+}
+div.tip-yellow td.tip-bottom {
+	background-position: 100% 100%;
+}
+div.tip-yellow td.tip-left {
+	background-position: 0 100%;
+}
+div.tip-yellow div.tip-inner {
+	background-position: -10px -10px;
+}
+div.tip-yellow div.tip-arrow {
+	visibility: hidden;
+	position: absolute;
+	overflow: hidden;
+	font: 1px/1px sans-serif;
+}
+.data {
+	position: relative;
+	cursor: pointer;
+}
+.showw {
+	position: absolute;
+	top: 10px;
+	left: 50px;
+	min-width: 150px;
+	height: auto;
+	min-height: 150px;
+	padding:10px;
+	border-radius: 5px;
+	background: #000000;
+	opacity: 0.7;
+	color: #ffffff;
+	overflow: hidden;
+	z-index: 9999;
+	display: none;
+}
+
+/*新加的对btn样式*/
+        .m-btn-primary {
+            color: #fff;
+            background-color: #337ab7;
+            border-color: #2e6da4;
+            position: relative;
+            top:20px;
+            left:20px;
+        }
+        .m-btn {
+            font-family: 'Helvetica Neue', Helvetica, 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+            display: inline-block;
+            padding: 6px 12px;
+            font-size: 14px;
+            font-stretch: normal;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        .m-btn-primary:hover {
+            color: #fff;
+            background-color: #286090;
+            border-color: #204d74;
+        }
+</style>
+</head>
+<body>
+<script type="text/javascript">
+	function getJTGraph(){
+		$.post("/jsjd/graph.do?method=getJTGraph",{}, function(data) {
+			window.location.href="/jsjd"+data+".jsp";
+		});
+	}
+</script>
+<input value="查看集团" class="m-btn m-btn-primary" onclick="getJTGraph();" type="submit">
+<div id="struct">
+  <div class="struct_row struct_row_1">
+    <div class="struct_cell_text struct_cell_text_1"><strong><font size="4">岱海发电厂</font></strong></div>
+    <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+    <div style="margin-left: 643px;" class="struct_line_0_1"> </div>
+  </div>
+  <div style="left: 643px; top: 162px;" class="struct_row struct_row_1_1_center">
+    <div style="position: relative">
+      <div class="struct_line_0_2"> <img src="graph.do_files/line.jpg" style="width: 100%; height: 2px;"> </div>
+      <div class="struct_cell_text struct_cell_text_1_2">监督办公室<br>
+        XXX</div>
+    </div>
+  </div>
+  <div style="width: 85.7143%;" id="struct_1" class="struct_row">
+    <div class="struct_row struct_row_1">
+      <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+      <div class="struct_cell_text struct_cell_text_1_1">
+        <li title="我是不是很漂rwrrw3r3wr3wr&lt;br&gt;3wr3wr3r3wr3wr3wr3wr3wrw3rw3r3w3r亮啊！~" href="#">白德龙</li>
+      </div>
+      <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+      <div class="struct_row struct_row_1_1"> </div>
+    </div>
+    <div style="margin-left: 51.5px; margin-right: 51.5px;" class="struct_line struct_line_1"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+    <div class="struct_row struct_row_2">
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 51px;" class="struct_cell_text">
+          <div class="data">
+            <d href="#"><strong><font size="2.7">绝缘</font></strong><br>
+              <font color="red">张海川</font></d>
+            <div class="showw"> ----------------------------
+              姓名:&nbsp;&nbsp;卢建荣
+              电话:  13577864439
+              ----------------------------
+              姓名:&nbsp;&nbsp;杨学强
+              电话:  13577864439
+              ----------------------------
+              姓名:&nbsp;&nbsp;李文广
+              电话:  13577864439
+              ----------------------------
+              姓名:&nbsp;&nbsp;徐鹏
+              电话:  13577864439
+              ----------------------------
+              姓名:&nbsp;&nbsp;刘学伟
+              电话:  13577864439
+              ----------------------------
+              姓名:&nbsp;&nbsp;赵玉刚
+              电话:  13577864439
+              ---------------------------- </div>
+          </div>
+        </div>
+      </div>
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 51px;" class="struct_cell_text">
+          <div class="data">
+            <d href="#"><strong><font size="2.7">电测</font></strong><br>
+              <font color="red">廖松涛</font></d>
+              
+              <div class="showw"> ----------------------------
+              姓名:&nbsp;&nbsp;杜磊
+              电话:  13577864439
+              ----------------------------
+              姓名:&nbsp;&nbsp;杨学强
+              电话:  13577864439
+              ----------------------------
+              姓名:&nbsp;&nbsp;李文广
+              电话:  13577864439
+              ----------------------------
+              姓名:&nbsp;&nbsp;徐鹏
+              电话:  13577864439
+              ----------------------------
+              姓名:&nbsp;&nbsp;刘学伟
+              电话:  13577864439
+              ----------------------------
+              姓名:&nbsp;&nbsp;赵玉刚
+              电话:  13577864439
+              ---------------------------- </div>
+              
+              
+          </div>
+        </div>
+      </div>
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 51px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;廖松涛
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">电能</font></strong><br>
+              <font color="red">廖松涛</font></d>
+          </div>
+        </div>
+      </div>
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 51px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;何鹏
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">热工</font></strong><br>
+              <font color="red">何鹏</font></d>
+          </div>
+        </div>
+      </div>
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 51px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;廖松涛
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">励磁系统</font></strong><br>
+              <font color="red">廖松涛</font></d>
+          </div>
+        </div>
+      </div>
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 51px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;廖松涛
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">继保</font></strong><br>
+              <font color="red">廖松涛</font></d>
+          </div>
+        </div>
+      </div>
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 51px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;邢景伟
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">压力容器</font></strong><br>
+              <font color="red">邢景伟</font></d>
+          </div>
+        </div>
+      </div>
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 51px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;刘俊
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">振动</font></strong><br>
+              <font color="red">刘俊</font></d>
+          </div>
+        </div>
+      </div>
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 51px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;阎爽
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">金属1</font></strong><br>
+              <font color="red">阎爽</font></d>
+          </div>
+        </div>
+      </div>
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 51px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;何鹏
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">计量</font></strong><br>
+              <font color="red">何鹏</font></d>
+          </div>
+        </div>
+      </div>
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 51px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;谢亚军
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">特种设备</font></strong><br>
+              <font color="red">谢亚军</font></d>
+          </div>
+        </div>
+      </div>
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 51px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;阎爽
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">化学</font></strong><br>
+              <font color="red">阎爽</font></d>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="struct_row struct_row_3">
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 298px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;张亮
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;卢建荣
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;杨学强
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;李文广
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;徐鹏
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;刘学伟
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;赵玉刚
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;朱小东
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">绝缘</font></strong><br>
+              <font color="red">张亮</font><br>
+              <font color="red">卢建荣</font><br>
+              <font color="red">杨学强</font><br>
+              <font color="red">李文广</font><br>
+              <font color="red">徐鹏</font><br>
+              <font color="red">刘学伟</font><br>
+              <font color="red">赵玉刚</font><br>
+              <font color="red">朱小东</font></d>
+          </div>
+        </div>
+      </div>
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 298px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;康振华
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;曹洋
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">电测</font></strong><br>
+              <font color="red">康振华</font><br>
+              <font color="red">曹洋</font></d>
+          </div>
+        </div>
+      </div>
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 298px;" class="struct_cell_text">
+          <div class="data">
+            <d href="#"><strong><font size="2.7">电能</font></strong><br>
+              <font color="red">梁志军</font><br>
+              <font color="red">高瑞锋</font><br>
+              <font color="red">付艳军</font><br>
+              <font color="red">夏巡</font><br>
+              <font color="red">王金灿</font><br>
+              <font color="red">杨红兵</font><br>
+              <font color="red">王桂富</font><br>
+              <font color="red">汤文军</font></d>
+          </div>
+        </div>
+      </div>
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 298px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;白永刚
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;侯占忠
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">热工</font></strong><br>
+              <font color="red">白永刚</font><br>
+              <font color="red">侯占忠</font></d>
+          </div>
+        </div>
+      </div>
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 298px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;高瑞锋
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;李文广
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">励磁系统</font></strong><br>
+              <font color="red">高瑞锋</font><br>
+              <font color="red">李文广</font></d>
+          </div>
+        </div>
+      </div>
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 298px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;李振国
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;田建明
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;孙哲辉
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;王晓非
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;肖宇
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">继保</font></strong><br>
+              <font color="red">李振国</font><br>
+              <font color="red">田建明</font><br>
+              <font color="red">孙哲辉</font><br>
+              <font color="red">王晓非</font><br>
+              <font color="red">肖宇</font></d>
+          </div>
+        </div>
+      </div>
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 298px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;黄晋南
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;薛常海
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;张开崇
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">压力容器</font></strong><br>
+              <font color="red">黄晋南</font><br>
+              <font color="red">薛常海</font><br>
+              <font color="red">张开崇</font></d>
+          </div>
+        </div>
+      </div>
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 298px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;任建军
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;康正文
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;孙志坚
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;荀军强
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;张连叶
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">振动</font></strong><br>
+              <font color="red">任建军</font><br>
+              <font color="red">康正文</font><br>
+              <font color="red">孙志坚</font><br>
+              <font color="red">荀军强</font><br>
+              <font color="red">张连叶</font></d>
+          </div>
+        </div>
+      </div>
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 298px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;黄晋南
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;张开崇
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">金属1</font></strong><br>
+              <font color="red">黄晋南</font><br>
+              <font color="red">张开崇</font></d>
+          </div>
+        </div>
+      </div>
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 298px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;刘笑晗
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;白永刚
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;曹洋
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">计量</font></strong><br>
+              <font color="red">刘笑晗</font><br>
+              <font color="red">白永刚</font><br>
+              <font color="red">曹洋</font></d>
+          </div>
+        </div>
+      </div>
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 298px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;王鹤家
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;温龙华
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;张晓东
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;胡国伟
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;孙树春
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;谢步兴
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;侯占忠
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;张连叶
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">特种设备</font></strong><br>
+              <font color="red">王鹤家</font><br>
+              <font color="red">温龙华</font><br>
+              <font color="red">张晓东</font><br>
+              <font color="red">胡国伟</font><br>
+              <font color="red">孙树春</font><br>
+              <font color="red">谢步兴</font><br>
+              <font color="red">侯占忠</font><br>
+              <font color="red">张连叶</font></d>
+          </div>
+        </div>
+      </div>
+      <div style="width: 8.33333%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 298px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;胡国伟
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;陈栋
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">化学</font></strong><br>
+              <font color="red">胡国伟</font><br>
+              <font color="red">陈栋</font></d>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div style="width: 14.2857%;" id="struct_2" class="struct_row">
+    <div class="struct_row struct_row_1">
+      <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+      <div class="struct_cell_text struct_cell_text_1_1">
+        <li title="我是不是不很漂rwrrw3r3wr3wr&lt;br&gt;3wr3wr3r3wr3wr3wr3wr3wrw3rw3r3w3r亮啊！~" href="#">白路</li>
+      </div>
+      <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+    </div>
+    <div style="margin-left: 51.5px; margin-right: 51.5px;" class="struct_line struct_line_1"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+    <div class="struct_row struct_row_2">
+      <div style="width: 50%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 51px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;刘俊
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">节能</font></strong><br>
+              <font color="red">刘俊</font></d>
+          </div>
+        </div>
+      </div>
+      <div style="width: 50%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 51px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;孙捷
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">环保</font></strong><br>
+              <font color="red">孙捷</font></d>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="struct_row struct_row_3">
+      <div style="width: 50%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 298px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;康振华
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;陈应贤
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;任建军
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;严开宇
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;黄李胜
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;雍建刚
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;涂以康
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;罗成林
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;王启明
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;白永刚
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;王灏
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;岑超
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;王亚飞
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;白钰
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">节能</font></strong><br>
+              <font color="red">康振华</font><br>
+              <font color="red">陈应贤</font><br>
+              <font color="red">任建军</font><br>
+              <font color="red">严开宇</font><br>
+              <font color="red">黄李胜</font><br>
+              <font color="red">雍建刚</font><br>
+              <font color="red">涂以康</font><br>
+              <font color="red">罗成林</font><br>
+              <font color="red">王启明</font><br>
+              <font color="red">白永刚</font><br>
+              <font color="red">王灏</font><br>
+              <font color="red">岑超</font><br>
+              <font color="red">王亚飞</font><br>
+              <font color="red">白钰</font></d>
+          </div>
+        </div>
+      </div>
+      <div style="width: 50%;" class="struct_cell">
+        <div class="struct_line"><img src="graph.do_files/line.jpg" style="width: 2px; height: 30px;"></div>
+        <div style="height: 298px;" class="struct_cell_text">
+          <div class="data">
+            <d title="----------------------------
+姓名:&nbsp;&nbsp;宋建
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;严开宇
+电话:  13577864439
+----------------------------
+姓名:&nbsp;&nbsp;黄静波
+电话:  13577864439
+----------------------------
+" href="#"><strong><font size="2.7">环保</font></strong><br>
+              <font color="red">宋建</font><br>
+              <font color="red">严开宇</font><br>
+              <font color="red">黄静波</font></d>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<link rel="stylesheet" href="/jsjd/graph/css/button.css"  />
+<link rel="stylesheet" href="/jsjd/graph/css/jquery.tooltip.css"  />
+<link rel="stylesheet" href="/jsjd/graph/css/tip-yellow/tip-yellow.css" type="text/css" />
+<link rel="stylesheet" href="/jsjd/graph/css/tip-yellowsimple/tip-yellowsimple.css" type="text/css" />
+<script type="text/javascript" src="/jsjd/graph/js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="/jsjd/graph/js/common.js"></script>
+<script type="text/javascript" src="/jsjd/graph/js/respond.js"></script>
+<script type="text/javascript" src="/jsjd/graph/js/html5shiv.min.js"></script>
+<script type="text/javascript" src="/jsjd/graph/js/respond.min.js"></script>
+<script type="text/javascript" src="/jsjd/graph/js/jquery.min.js"></script>
+<script type="text/javascript" src="/jsjd/graph/js/jquery.poshytip.js"></script>
+<script type="text/javascript" src="/jsjd/graph/show/dh.js"></script>
+<script type="text/javascript"> $(window).load(function() { common.prototype.page.dh.load(); }); </script>
+<script>
+//$("div").ajaxStop(function(){
+//	$j = jQuery.noConflict();
+	//$j("div.struct_cell_text_1_1").tooltip();
+	//alert($("div.tooltip_description").attr("title"));
+	//alert('123');
+//	$j("div.data").tooltip();
+//});
+</script> 
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".data").hover(function(){
+    $(this).find(".showw").fadeIn();
+  },function(){$(this).find(".showw").fadeOut();});
+});
+
+</script>
+</body>
+</html>

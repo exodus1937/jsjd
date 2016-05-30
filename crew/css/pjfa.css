@@ -1,0 +1,15 @@
+#tupian{
+	float: left;
+	margin-top:50px;
+}
+body{
+	width: 1300px;
+}
+#dayin{
+	float: left;
+	margin-left: 30px;
+}
+#daochu{
+	float: left;
+	margin-left: 50px;
+}

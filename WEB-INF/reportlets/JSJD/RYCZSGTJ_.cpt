@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT b.EMP_ID,
+       e.EMP_CODE,
+       e.EMP_NAME,
+       d.spec_id,
+       r.cred_date,
+       e.attribute2,s.spec_name
+  FROM tes_ba_spec_asg b,xip_pub_emps e,TES_BA_SPECIALTY d,
+       TES_BA_EMP_CRED r,tes_ba_spec s
+ WHERE b.SPEC_ID = D.SPEC_ID 
+   and b.org_id = d.org_id 
+   and b.emp_id = e.emp_id
+   and b.spec_id = r.spec_id
+   and e.emp_id = r.emp_id
+   and b.spec_id = s.spec_id
+   AND b.ORG_ID = '${org_id}']]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="43200000" height="42768000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,4381500,723900,1485900,1028700,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,3429000,8039100,0,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="4" r="3" s="0">
+<O>
+<![CDATA[序号]]></O>
+<Expand/>
+</C>
+<C c="5" r="3" s="0">
+<O>
+<![CDATA[姓名 ]]></O>
+<Expand/>
+</C>
+<C c="6" r="3" s="0">
+<O>
+<![CDATA[专业]]></O>
+<Expand/>
+</C>
+<C c="7" r="3" s="0">
+<O>
+<![CDATA[获证时间]]></O>
+<Expand/>
+</C>
+<C c="8" r="3" s="0">
+<O>
+<![CDATA[是否有效]]></O>
+<Expand/>
+</C>
+<C c="3" r="4" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="EMP_ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="4" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=seq()]]></Attributes>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="4" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="EMP_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="4" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="SPEC_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="4" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="CRED_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="4" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ATTRIBUTE2"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<HighlightAction class="com.fr.report.highlight.ValueHighlightAction">
+<O>
+<![CDATA[有效]]></O>
+</HighlightAction>
+</Highlight>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性2]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="0">
+<O>
+<![CDATA[N]]></O>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ValueHighlightAction">
+<O>
+<![CDATA[无效]]></O>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand dir="0"/>
+</C>
+<C c="9" r="4">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="4" r="7">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-6710785"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

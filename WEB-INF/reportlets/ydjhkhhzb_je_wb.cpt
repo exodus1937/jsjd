@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="yea"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="month"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select spec_name
+  from tes_ba_spec 
+ where spec_id not in(
+       SELECT t.s_p_spe
+        FROM TES_PS_SUP_PLAN T
+       WHERE to_number(to_char(T.create_date,'yyyy'))='${yea}'
+         and to_number(to_char(T.create_date,'mm'))='${month}'
+         AND T.ORG_ID = '${org_id}'
+         AND T.IS_SUMMARIZE = '0'
+         AND T.AUDIT_STATUS = 'B' )
+   ]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="yea"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="month"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT DISTINCT T.ORG_ID,
+       B.SPEC_NAME,
+       sum(L.W_COST)
+  FROM TES_PS_SUP_PLAN T,TES_BA_SPEC B,TES_BA_T_P_W_LIST L
+ WHERE T.SPEC_ID = B.SPEC_ID
+   AND T.ORG_ID  = L.ORG_ID
+   AND TO_NUMBER(TO_CHAR(L.CREATE_DATE,'yyyy')) ='${yea}'
+  AND TO_NUMBER(TO_CHAR(L.CREATE_DATE,'MM')) ='${month}'
+   AND T.ORG_ID  = '${org_id}'
+   AND T.AUDIT_STATUS not in 'B'--未提报
+group by B.SPEC_NAME,
+         T.ORG_ID,
+         T.AUDIT_STATUS]]></Query>
+</TableData>
+<TableData name="ds3" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT T.ORG_ID,
+       COUNT(T.AUDIT_STATUS)
+  FROM TES_PS_SUP_PLAN T
+ WHERE T.ORG_ID = '${org_id}'
+   AND T.AUDIT_STATUS not in 'B'
+   GROUP BY T.ORG_ID  ]]></Query>
+</TableData>
+<TableData name="ds4" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="yea"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="month"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT to_number(to_char(T.create_date,'yyyy')) yea,
+	to_number(to_char(T.create_date,'MM')) month
+  FROM TES_PS_SUP_PLAN T
+ WHERE T.ORG_ID = '${org_id}'
+and to_number(to_char(T.create_date,'yyyy'))='${yea}'
+and to_number(to_char(T.create_date,'mm'))='${month}'
+   AND T.AUDIT_STATUS='B']]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="25920000" height="15840000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,1257300,914400,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[38100,38100,5257800,5334000,3657600,0,2628900,495300,2933700,1905000,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="4" r="1" s="0">
+<O>
+<![CDATA[返回]]></O>
+<NameJavaScriptGroup>
+<NameJavaScript name="网络报表1">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<JavaScript class="com.fr.report.js.ReportletHyperlink">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E4]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="yea"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E6]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="month"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E7]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<TargetFrame>
+<![CDATA[_self]]></TargetFrame>
+<Features status="true" toolbar="true" location="true" menubar="true" resizable="true" directories="true" scrollbars="true"/>
+<ReportletName extendParameters="true">
+<![CDATA[/ydjhkhhzb_je.cpt&op=view]]></ReportletName>
+</JavaScript>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand/>
+</C>
+<C c="3" r="2" s="1">
+<O>
+<![CDATA[未提报专业]]></O>
+<Expand/>
+</C>
+<C c="4" r="2" s="1">
+<O>
+<![CDATA[考核]]></O>
+<Expand/>
+</C>
+<C c="3" r="3" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="SPEC_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="3" s="2">
+<O t="I">
+<![CDATA[10]]></O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="3">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="ORG_ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="4">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="ORG_ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="5">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="YEA"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="5">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="5" r="6">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="MONTH"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<StyleList>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="1" size="80" foreground="-16776961" underline="1"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="72"/>
+<Background name="ColorBackground" color="-16711681"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

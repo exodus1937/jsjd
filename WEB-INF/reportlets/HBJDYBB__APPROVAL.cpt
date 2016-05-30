@@ -1,0 +1,8538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT 
+       A.T_P_CODE,
+       A.T_P_NAME,
+       A.AUTOVALUE_MODIFYVALUE
+  FROM TES_BA_POINTS_CONFIG T,TES_PS_ERPORT_AUTOVALUE  A  ,TES_PS_GENERAL_MAIN S
+  ${if(len(instanceCode) == 0, " where 1=2",
+ " where a.GENERAL_ID =s.GENERAL_ID
+      AND T.T_P_CODE = A.T_P_CODE
+      AND T.CONFIG_CLASS ='综合指标'
+      AND S.INST_CODE ='"+instanceCode+"'")}]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT 
+       A.T_P_CODE,
+       A.T_P_NAME,
+       A.AUTOVALUE_MODIFYVALUE
+ FROM TES_BA_POINTS_CONFIG T,TES_PS_ERPORT_AUTOVALUE  A  ,TES_PS_GENERAL_MAIN S
+  ${if(len(instanceCode) == 0, " where 1=2",
+ " where a.GENERAL_ID =s.GENERAL_ID
+      AND T.T_P_CODE = A.T_P_CODE
+      AND T.CONFIG_CLASS ='污染物指标'
+      AND S.INST_CODE ='"+instanceCode+"'")}]]></Query>
+</TableData>
+<TableData name="ds3" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT 
+       A.T_P_CODE,
+       A.T_P_NAME,
+       A.AUTOVALUE_MODIFYVALUE
+  FROM TES_BA_POINTS_CONFIG T,TES_PS_ERPORT_AUTOVALUE  A   ,TES_PS_GENERAL_MAIN s
+ ${if(len(instanceCode) == 0, " where 1=2",
+ " where  t.t_p_code = a.t_p_code
+   AND a.GENERAL_ID =s.GENERAL_ID
+   AND T.CONFIG_CLASS ='环保设施运行指标'
+   AND s.INST_CODE ='"+instanceCode+"'")}      ]]></Query>
+</TableData>
+<TableData name="ds9" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT DISTINCT   G.INSTALLED_CAPACITY
+   FROM XIP_PUB_ORGS        A,
+        TES_PS_GENERAL_MAIN T,
+        TES_BA_GENERATOR    G
+${if(len(instanceCode) == 0, " where 1=2",
+ " where    T.ORG_ID=A.ORG_ID
+       AND A.ORG_ID = G.ORG_ID 
+      AND t.INST_CODE ='"+instanceCode+"'")}
+ORder  by G.INSTALLED_CAPACITY desc ]]></Query>
+</TableData>
+<TableData name="ds10" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select to_char(trunc(add_months(last_day(sysdate), -1) + 1), 'yyyy-mm-dd') from TES_PS_GENERAL_MAIN s 
+ ${if(len(instanceCode) == 0, " where 1=2",
+ " where   s.INST_CODE ='"+instanceCode+"'")}]]></Query>
+</TableData>
+<TableData name="ds11" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select sum(a.AUTOVALUE_MODIFYVALUE), a.t_p_code
+  from TES_BA_POINTS_CONFIG t, TES_PS_ERPORT_AUTOVALUE a ,TES_PS_GENERAL_MAIN s
+ ${if(len(instanceCode) == 0, " where 1=2",
+ " where  a.GENERAL_ID =s.GENERAL_ID
+   and t.t_p_code = a.t_p_code
+   and t.t_p_code in ('LJFDL', 'LJGRL', 'LJRYYMZL')
+   and to_char(s.create_date, 'yyyy/mm/dd') >=
+       to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+   and to_char(s.create_date, 'yyyy/mm') <=
+       to_char(sysdate, 'yyyy/mm')
+      AND s.INST_CODE ='"+instanceCode+"'")}     
+      group by a.t_p_code]]></Query>
+</TableData>
+<TableData name="ds13" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct (select sum(a.AUTOVALUE_MODIFYVALUE)
+    from TES_BA_POINTS_CONFIG t, TES_PS_ERPORT_AUTOVALUE a ,TES_PS_GENERAL_MAIN s
+         ${if(len(instanceCode) == 0, " where 1=2",
+ " where  a.GENERAL_ID =s.GENERAL_ID
+           and t.t_p_code = a.t_p_code
+           and t.t_p_code in
+               ('LJPJHF')
+           and to_char(s.create_date, 'yyyy/mm/dd') >=
+               to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+           and to_char(s.create_date, 'yyyy/mm') <=
+               to_char(sysdate, 'yyyy/mm')
+      AND s.INST_CODE ='"+instanceCode+"'")}    
+         group by a.t_p_code)  /
+         ( select distinct  to_number(to_char(sysdate,'mm')) from   TES_PS_ERPORT_AUTOVALUE) a, A.T_P_CODE
+from  TES_PS_ERPORT_AUTOVALUE A  ]]></Query>
+</TableData>
+<TableData name="ds14" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select sum(a.AUTOVALUE_MODIFYVALUE), a.t_p_code
+  from TES_BA_POINTS_CONFIG t, TES_PS_ERPORT_AUTOVALUE a,TES_PS_GENERAL_MAIN s
+     ${if(len(instanceCode) == 0, " where 1=2",
+ " where a.GENERAL_ID =s.GENERAL_ID
+   and t.t_p_code = a.t_p_code
+   and t.t_p_code in('LJGYXXSYL', 'LJZSYL','LJXHLQJZHSL','LJXHSXTPWL','LJTLJSYL','LJTXJSYL','LJHZHLYZL',
+'LJZZHLYZL','LJTLFCPCSL','LJTLFCPLYL')
+   and to_char(s.create_date, 'yyyy/mm/dd') >=
+       to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+   and to_char(s.create_date, 'yyyy/mm') <=
+       to_char(sysdate, 'yyyy/mm')
+      AND s.INST_CODE ='"+instanceCode+"'")}    
+      group by a.t_p_code]]></Query>
+</TableData>
+<TableData name="ds15" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct (select sum(a.AUTOVALUE_MODIFYVALUE)
+  from TES_BA_POINTS_CONFIG t, TES_PS_ERPORT_AUTOVALUE a ,TES_PS_GENERAL_MAIN s
+             ${if(len(instanceCode) == 0, " where 1=2",
+ " where  a.GENERAL_ID =s.GENERAL_ID
+           and t.t_p_code = a.t_p_code
+           and t.t_p_code in
+               ('LJYCPFND')
+           and to_char(s.create_date, 'yyyy/mm/dd') >=
+               to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+           and to_char(s.create_date, 'yyyy/mm') <=
+               to_char(sysdate, 'yyyy/mm')
+      AND s.INST_CODE ='"+instanceCode+"'")}   
+         group by a.t_p_code)  /
+         ( select distinct  to_number(to_char(sysdate,'mm')) from   TES_PS_ERPORT_AUTOVALUE) a, A.T_P_CODE
+from  TES_PS_ERPORT_AUTOVALUE A]]></Query>
+</TableData>
+<TableData name="ds16" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select sum(a.AUTOVALUE_MODIFYVALUE), a.t_p_code
+  from TES_BA_POINTS_CONFIG t, TES_PS_ERPORT_AUTOVALUE a,TES_PS_GENERAL_MAIN s
+            ${if(len(instanceCode) == 0, " where 1=2",
+ " where   a.GENERAL_ID =s.GENERAL_ID
+   and t.t_p_code = a.t_p_code
+   and t.t_p_code in ('LJYQL', 'LJYCPFL','LJEYHLPFL','LJDYHWPFL','LJFSPFZL','LJFSHSL','LJHPFZL','LJZPFZL','LJSZPFZL','LJPZHCJL','LJTLFCPPFL')
+   and to_char(s.create_date, 'yyyy/mm/dd') >=
+       to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+   and to_char(s.create_date, 'yyyy/mm') <=
+       to_char(sysdate, 'yyyy/mm')
+      AND s.INST_CODE ='"+instanceCode+"'")}   
+      group by a.t_p_code]]></Query>
+</TableData>
+<TableData name="ds17" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct (select sum(a.AUTOVALUE_MODIFYVALUE)
+  from TES_BA_POINTS_CONFIG t, TES_PS_ERPORT_AUTOVALUE a,TES_PS_GENERAL_MAIN s
+    ${if(len(instanceCode) == 0, " where 1=2",
+ " where   a.GENERAL_ID =s.GENERAL_ID
+           and t.t_p_code = a.t_p_code
+           and t.t_p_code in
+               ('LJDCCYXTYL')
+           and to_char(s.create_date, 'yyyy/mm/dd') >=
+               to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+           and to_char(s.create_date, 'yyyy/mm') <=
+               to_char(sysdate, 'yyyy/mm')
+      AND s.INST_CODE ='"+instanceCode+"'")}   
+         group by a.t_p_code)  /
+         ( select distinct  to_number(to_char(sysdate,'mm')) from   TES_PS_ERPORT_AUTOVALUE) a, A.T_P_CODE
+from  TES_PS_ERPORT_AUTOVALUE A]]></Query>
+</TableData>
+<TableData name="ds18" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select sum(a.AUTOVALUE_MODIFYVALUE), a.t_p_code
+  from TES_BA_POINTS_CONFIG t, TES_PS_ERPORT_AUTOVALUE a,TES_PS_GENERAL_MAIN s
+      ${if(len(instanceCode) == 0, " where 1=2",
+ " where   a.GENERAL_ID =s.GENERAL_ID
+   and t.t_p_code = a.t_p_code
+   and t.t_p_code in   ('LJDCCYTYXS','LJDCCGZTYXS','LJYQJCXTYTYSJ','LJYQJCXTGZTYSJ','LJFSZLSBYTYSJ','LJFSZLSBGZTYSJ','LJTLSBYTYXS','LJTLSBGZTYSJ','LJTXSBYTYSJ','LJTXSBGZSJ')
+   and to_char(s.create_date, 'yyyy/mm/dd') >=
+       to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+   and to_char(s.create_date, 'yyyy/mm') <=
+       to_char(sysdate, 'yyyy/mm')
+      AND s.INST_CODE ='"+instanceCode+"'")}   
+      group by a.t_p_code]]></Query>
+</TableData>
+<TableData name="ds4" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="P_INST_CODE"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[{CALL TES_PS_GENERAL_MAIN_SUB.LIST_NAME_SUB('${P_INST_CODE}',?)}]]></Query>
+</TableData>
+<TableData name="ds5" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="INST_CODE"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[{CALL TES_PS_GENERAL_MAIN_SUB.ORG_COMBOX_SUB('${INST_CODE}',?)}]]></Query>
+</TableData>
+<TableData name="ds6" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct (select sum(a.AUTOVALUE_MODIFYVALUE)
+   from TES_BA_POINTS_CONFIG t, TES_PS_ERPORT_AUTOVALUE a ,TES_PS_GENERAL_MAIN s
+ ${if(len(instanceCode) == 0, " where 1=2",
+ " where  a.GENERAL_ID =s.GENERAL_ID
+           and t.t_p_code = a.t_p_code
+           and t.t_p_code in
+               ('LJPJLF')
+           and to_char(s.create_date, 'yyyy/mm/dd') >=
+               to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+           and to_char(s.create_date, 'yyyy/mm') <=
+               to_char(sysdate, 'yyyy/mm')
+      AND s.INST_CODE ='"+instanceCode+"'")}      
+  group by a.t_p_code)  /
+         ( select distinct  to_number(to_char(sysdate,'mm')) from   TES_PS_ERPORT_AUTOVALUE) a, A.T_P_CODE
+from  TES_PS_ERPORT_AUTOVALUE A    ]]></Query>
+</TableData>
+<TableData name="ds7" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct (select sum(a.AUTOVALUE_MODIFYVALUE)
+  from TES_BA_POINTS_CONFIG t, TES_PS_ERPORT_AUTOVALUE a  ,TES_PS_GENERAL_MAIN s
+${if(len(instanceCode) == 0, " where 1=2",
+ " where  a.GENERAL_ID =s.GENERAL_ID
+           and t.t_p_code = a.t_p_code
+           and t.t_p_code in
+               ('LJPJHFF')
+           and to_char(s.create_date, 'yyyy/mm/dd') >=
+               to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+           and to_char(s.create_date, 'yyyy/mm') <=
+               to_char(sysdate, 'yyyy/mm')
+      AND s.INST_CODE ='"+instanceCode+"'")}
+           group by a.t_p_code) /
+         ( select distinct  to_number(to_char(sysdate,'mm')) from   TES_PS_ERPORT_AUTOVALUE) a, A.T_P_CODE
+from  TES_PS_ERPORT_AUTOVALUE A]]></Query>
+</TableData>
+<TableData name="ds8" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct (select sum(a.AUTOVALUE_MODIFYVALUE)
+  from TES_BA_POINTS_CONFIG t, TES_PS_ERPORT_AUTOVALUE a ,TES_PS_GENERAL_MAIN s
+${if(len(instanceCode) == 0, " where 1=2",
+   " where  a.GENERAL_ID =s.GENERAL_ID
+           and t.t_p_code = a.t_p_code
+           and t.t_p_code in
+               ('LJPJDWRZ')
+           and to_char(s.create_date, 'yyyy/mm/dd') >=
+               to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+           and to_char(s.create_date, 'yyyy/mm') <=
+               to_char(sysdate, 'yyyy/mm')
+      AND s.INST_CODE ='"+instanceCode+"'")}
+         group by a.t_p_code)  /
+         ( select distinct  to_number(to_char(sysdate,'mm')) from   TES_PS_ERPORT_AUTOVALUE) a, A.T_P_CODE
+from  TES_PS_ERPORT_AUTOVALUE A]]></Query>
+</TableData>
+<TableData name="ds19" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct (select sum(a.AUTOVALUE_MODIFYVALUE)
+    from TES_BA_POINTS_CONFIG t, TES_PS_ERPORT_AUTOVALUE a,TES_PS_GENERAL_MAIN s
+  ${if(len(instanceCode) == 0, " where 1=2",
+ " where  a.GENERAL_ID =s.GENERAL_ID
+           and t.t_p_code = a.t_p_code
+           and t.t_p_code in
+               ('LJFDZHHSL')
+           and to_char(s.create_date, 'yyyy/mm/dd') >=
+               to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+           and to_char(s.create_date, 'yyyy/mm') <=
+               to_char(sysdate, 'yyyy/mm')
+      AND s.INST_CODE ='"+instanceCode+"'")}   
+         group by a.t_p_code)  /
+         ( select distinct  to_number(to_char(sysdate,'mm')) from   TES_PS_ERPORT_AUTOVALUE) a, A.T_P_CODE
+from  TES_PS_ERPORT_AUTOVALUE A]]></Query>
+</TableData>
+<TableData name="ds20" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct (select sum(a.AUTOVALUE_MODIFYVALUE)
+   from TES_BA_POINTS_CONFIG t, TES_PS_ERPORT_AUTOVALUE a,TES_PS_GENERAL_MAIN s
+     ${if(len(instanceCode) == 0, " where 1=2",
+ " where    a.GENERAL_ID =s.GENERAL_ID
+           and t.t_p_code = a.t_p_code
+           and t.t_p_code in
+               ('LJEYHLPFL')
+           and to_char(s.create_date, 'yyyy/mm/dd') >=
+               to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+           and to_char(s.create_date, 'yyyy/mm') <=
+               to_char(sysdate, 'yyyy/mm')
+      AND s.INST_CODE ='"+instanceCode+"'")}   
+         group by a.t_p_code)  /
+         ( select distinct  to_number(to_char(sysdate,'mm')) from   TES_PS_ERPORT_AUTOVALUE) a, A.T_P_CODE
+from  TES_PS_ERPORT_AUTOVALUE A     ]]></Query>
+</TableData>
+<TableData name="ds21" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct (select sum(a.AUTOVALUE_MODIFYVALUE)
+    from TES_BA_POINTS_CONFIG t, TES_PS_ERPORT_AUTOVALUE a,TES_PS_GENERAL_MAIN s
+ ${if(len(instanceCode) == 0, " where 1=2",
+ " where   a.GENERAL_ID =s.GENERAL_ID
+           and t.t_p_code = a.t_p_code
+           and t.t_p_code in
+               ('LJDYHWPFND')
+           and to_char(s.create_date, 'yyyy/mm/dd') >=
+               to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+           and to_char(s.create_date, 'yyyy/mm') <=
+               to_char(sysdate, 'yyyy/mm')
+      AND s.INST_CODE ='"+instanceCode+"'")}   
+         group by a.t_p_code)  /
+         ( select distinct  to_number(to_char(sysdate,'mm')) from   TES_PS_ERPORT_AUTOVALUE) a, A.T_P_CODE
+from  TES_PS_ERPORT_AUTOVALUE A]]></Query>
+</TableData>
+<TableData name="ds22" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct (select sum(a.AUTOVALUE_MODIFYVALUE)
+   from TES_BA_POINTS_CONFIG t, TES_PS_ERPORT_AUTOVALUE a,TES_PS_GENERAL_MAIN s
+     ${if(len(instanceCode) == 0, " where 1=2",
+ " where     a.GENERAL_ID =s.GENERAL_ID
+           and t.t_p_code = a.t_p_code
+           and t.t_p_code in
+               ('LJTLXL')
+           and to_char(s.create_date, 'yyyy/mm/dd') >=
+               to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+           and to_char(s.create_date, 'yyyy/mm') <=
+               to_char(sysdate, 'yyyy/mm')
+      AND s.INST_CODE ='"+instanceCode+"'")}   
+         group by a.t_p_code)  /
+         ( select distinct  to_number(to_char(sysdate,'mm')) from   TES_PS_ERPORT_AUTOVALUE) a, A.T_P_CODE
+from  TES_PS_ERPORT_AUTOVALUE A ]]></Query>
+</TableData>
+<TableData name="ds23" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct (select sum(a.AUTOVALUE_MODIFYVALUE)
+   from TES_BA_POINTS_CONFIG t, TES_PS_ERPORT_AUTOVALUE a,TES_PS_GENERAL_MAIN s
+ ${if(len(instanceCode) == 0, " where 1=2",
+ " where   a.GENERAL_ID =s.GENERAL_ID
+           and t.t_p_code = a.t_p_code
+           and t.t_p_code in
+               ('LJCCXL')
+           and to_char(s.create_date, 'yyyy/mm/dd') >=
+               to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+           and to_char(s.create_date, 'yyyy/mm') <=
+               to_char(sysdate, 'yyyy/mm')
+      AND s.INST_CODE ='"+instanceCode+"'")}   
+         group by a.t_p_code)  /
+         ( select distinct  to_number(to_char(sysdate,'mm')) from   TES_PS_ERPORT_AUTOVALUE) a, A.T_P_CODE
+from  TES_PS_ERPORT_AUTOVALUE A]]></Query>
+</TableData>
+<TableData name="ds24" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct (select sum(a.AUTOVALUE_MODIFYVALUE)
+  from TES_BA_POINTS_CONFIG t, TES_PS_ERPORT_AUTOVALUE a,TES_PS_GENERAL_MAIN s
+     ${if(len(instanceCode) == 0, " where 1=2",
+ " where    a.GENERAL_ID =s.GENERAL_ID
+           and t.t_p_code = a.t_p_code
+           and t.t_p_code in
+               ('LJTXXL')
+           and to_char(s.create_date, 'yyyy/mm/dd') >=
+               to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+           and to_char(s.create_date, 'yyyy/mm') <=
+               to_char(sysdate, 'yyyy/mm')
+      AND s.INST_CODE ='"+instanceCode+"'")}   
+         group by a.t_p_code)  /
+         ( select distinct  to_number(to_char(sysdate,'mm')) from   TES_PS_ERPORT_AUTOVALUE) a, A.T_P_CODE
+from  TES_PS_ERPORT_AUTOVALUE A]]></Query>
+</TableData>
+<TableData name="ds25" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct (select sum(a.AUTOVALUE_MODIFYVALUE)
+     from TES_BA_POINTS_CONFIG t, TES_PS_ERPORT_AUTOVALUE a,TES_PS_GENERAL_MAIN s   
+     ${if(len(instanceCode) == 0, " where 1=2",
+ " where   a.GENERAL_ID =s.GENERAL_ID
+           and t.t_p_code = a.t_p_code
+           and t.t_p_code in
+               ('LJGTFQWZQWZL')
+           and to_char(s.create_date, 'yyyy/mm/dd') >=
+               to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+           and to_char(s.create_date, 'yyyy/mm') <=
+               to_char(sysdate, 'yyyy/mm')
+      AND s.INST_CODE ='"+instanceCode+"'")}   
+         group by a.t_p_code)  /
+         ( select distinct  to_number(to_char(sysdate,'mm')) from   TES_PS_ERPORT_AUTOVALUE) a, A.T_P_CODE
+from  TES_PS_ERPORT_AUTOVALUE A]]></Query>
+</TableData>
+<TableData name="ds26" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct (select sum(a.AUTOVALUE_MODIFYVALUE)
+ from TES_BA_POINTS_CONFIG t, TES_PS_ERPORT_AUTOVALUE a,TES_PS_GENERAL_MAIN s
+                              ${if(len(instanceCode) == 0, " where 1=2",
+ " where  t.org_id = a.org_id
+           and t.t_p_code = a.t_p_code
+           and t.t_p_code in
+               ('LJCJZSDBL')
+           and to_char(a.create_date, 'yyyy/mm/dd') >=
+               to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+           and to_char(a.create_date, 'yyyy/mm') <=
+               to_char(sysdate, 'yyyy/mm')
+      AND s.INST_CODE ='"+instanceCode+"'")}   
+         group by a.t_p_code)  /
+         ( select distinct  to_number(to_char(sysdate,'mm')) from   TES_PS_ERPORT_AUTOVALUE) a, A.T_P_CODE
+from  TES_PS_ERPORT_AUTOVALUE A]]></Query>
+</TableData>
+<TableData name="ds27" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct (select sum(a.AUTOVALUE_MODIFYVALUE)
+   from TES_BA_POINTS_CONFIG t, TES_PS_ERPORT_AUTOVALUE a,TES_PS_GENERAL_MAIN s
+    ${if(len(instanceCode) == 0, " where 1=2",
+ " where  a.GENERAL_ID =s.GENERAL_ID
+           and t.t_p_code = a.t_p_code
+           and t.t_p_code in
+               ('LJYQJCXTYXTYL')
+           and to_char(s.create_date, 'yyyy/mm/dd') >=
+               to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+           and to_char(s.create_date, 'yyyy/mm') <=
+               to_char(sysdate, 'yyyy/mm')
+      AND s.INST_CODE ='"+instanceCode+"'")}   
+         group by a.t_p_code)  /
+         ( select distinct  to_number(to_char(sysdate,'mm')) from   TES_PS_ERPORT_AUTOVALUE) a, A.T_P_CODE
+from  TES_PS_ERPORT_AUTOVALUE A]]></Query>
+</TableData>
+<TableData name="ds28" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct (select sum(a.AUTOVALUE_MODIFYVALUE)
+     from TES_BA_POINTS_CONFIG t, TES_PS_ERPORT_AUTOVALUE a,TES_PS_GENERAL_MAIN s
+     ${if(len(instanceCode) == 0, " where 1=2",
+ " where    a.GENERAL_ID =s.GENERAL_ID
+           and t.t_p_code = a.t_p_code
+           and t.t_p_code in
+               ('LJFSZLSBYXTYL')
+           and to_char(s.create_date, 'yyyy/mm/dd') >=
+               to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+           and to_char(s.create_date, 'yyyy/mm') <=
+               to_char(sysdate, 'yyyy/mm')
+      AND s.INST_CODE ='"+instanceCode+"'")}     
+         group by a.t_p_code)  /
+         ( select distinct  to_number(to_char(sysdate,'mm')) from   TES_PS_ERPORT_AUTOVALUE) a, A.T_P_CODE
+from  TES_PS_ERPORT_AUTOVALUE A]]></Query>
+</TableData>
+<TableData name="ds29" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct (select sum(a.AUTOVALUE_MODIFYVALUE)
+   from TES_BA_POINTS_CONFIG t, TES_PS_ERPORT_AUTOVALUE a,TES_PS_GENERAL_MAIN s
+     ${if(len(instanceCode) == 0, " where 1=2",
+ " where    a.GENERAL_ID =s.GENERAL_ID
+           and t.t_p_code = a.t_p_code
+           and t.t_p_code in
+               ('LJTLSBYXTYL')
+           and to_char(s.create_date, 'yyyy/mm/dd') >=
+               to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+           and to_char(s.create_date, 'yyyy/mm') <=
+               to_char(sysdate, 'yyyy/mm')
+      AND s.INST_CODE ='"+instanceCode+"'")}   
+         group by a.t_p_code)  /
+         ( select distinct  to_number(to_char(sysdate,'mm')) from   TES_PS_ERPORT_AUTOVALUE) a, A.T_P_CODE
+from  TES_PS_ERPORT_AUTOVALUE A]]></Query>
+</TableData>
+<TableData name="ds30" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct (select sum(a.AUTOVALUE_MODIFYVALUE)
+   from TES_BA_POINTS_CONFIG t, TES_PS_ERPORT_AUTOVALUE a,TES_PS_GENERAL_MAIN s
+               ${if(len(instanceCode) == 0, " where 1=2",
+ " where  a.GENERAL_ID =s.GENERAL_ID
+           and t.t_p_code = a.t_p_code
+           and t.t_p_code in
+               ('LJTXSBYXTYL')
+           and to_char(s.create_date, 'yyyy/mm/dd') >=
+               to_char(trunc(sysdate, 'yyyy'), 'yyyy/mm/dd')
+           and to_char(s.create_date, 'yyyy/mm') <=
+               to_char(sysdate, 'yyyy/mm')
+      AND s.INST_CODE ='"+instanceCode+"'")}     
+         group by a.t_p_code)  /
+         ( select distinct  to_number(to_char(sysdate,'mm')) from   TES_PS_ERPORT_AUTOVALUE) a, A.T_P_CODE
+from  TES_PS_ERPORT_AUTOVALUE A]]></Query>
+</TableData>
+<TableData name="ds31" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[20150911_d0794365-af52-4a68-8886-f405b8568026]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT A.T_P_CODE, A.AUTOVALUE_MODIFYVALUE
+  FROM TES_PS_ERPORT_AUTOVALUE A ,TES_PS_GENERAL_MAIN s
+   ${if(len(instanceCode) == 0, " where 1=2",
+ " where  a.GENERAL_ID =s.GENERAL_ID
+   and A.t_p_code in ('04DYHWPFL',
+                      '04FSPFZL',
+                      '04FSHSL',
+                      '04DWFDLYCPFL',
+                      '04DWFDLEYHLPFL',
+                      '04DWFDLDYHWPFL',
+                      '04HPFZL',
+                      '04ZPFZL',
+                      '04SZPFZL')
+      AND s.INST_CODE ='"+instanceCode+"'")}   ]]></Query>
+</TableData>
+<TableData name="ds12" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT   distinct
+       A.T_P_CODE,
+       A.T_P_NAME,
+       A.AUTOVALUE_MODIFYVALUE
+  FROM TES_BA_POINTS_CONFIG T,TES_PS_ERPORT_AUTOVALUE  A ,TES_PS_GENERAL_MAIN s 
+ ${if(len(instanceCode) == 0, " where 1=2",
+ " where a.GENERAL_ID =s.GENERAL_ID
+      AND T.T_P_CODE = A.T_P_CODE
+      AND S.INST_CODE ='"+instanceCode+"'")}]]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="101808000" height="144000000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,1008000,723900,1714500,723900,864000,864000,864000,2514600,723900,864000,864000,864000,864000,864000,864000,864000,2971800,864000,864000,864000,864000,864000,864000,864000,864000,1485900,1943100,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[952500,952500,2592000,2592000,2592000,2592000,2592000,2592000,2592000,2592000,2592000,2592000,2592000,2592000,2592000,2592000,2592000,2592000,2592000,2592000,2592000,2592000,2592000,2592000,2592000,2592000,1143000,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="1" s="0">
+<Expand/>
+</C>
+<C c="1" r="1" cs="25" rs="2" s="1">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="GENERAL_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="26" r="1" s="0">
+<Expand/>
+</C>
+<C c="0" r="2" s="0">
+<Expand/>
+</C>
+<C c="26" r="2" s="0">
+<Expand/>
+</C>
+<C c="0" r="3" s="2">
+<Expand/>
+</C>
+<C c="1" r="3" cs="3" s="3">
+<O>
+<![CDATA[填报单位：]]></O>
+<Expand/>
+</C>
+<C c="4" r="3" cs="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds5" columnName="ORG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="3" cs="3" s="4">
+<O>
+<![CDATA[装机容量：]]></O>
+<Expand/>
+</C>
+<C c="14" r="3" cs="4" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds9" columnName="INSTALLED_CAPACITY"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.MaxFunction]]></FN>
+</RG>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="18" r="3" cs="4" s="4">
+<O>
+<![CDATA[统计日期：]]></O>
+<Expand/>
+</C>
+<C c="22" r="3" cs="4" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds10" columnName="TO_CHAR(TRUNC(ADD_MONTHS(LAST_DAY(SYSDATE),-1)+1),&apos;YYYY-MM-DD&apos;)"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="26" r="3" s="2">
+<Expand/>
+</C>
+<C c="0" r="4" s="0">
+<Expand/>
+</C>
+<C c="1" r="4" cs="2" rs="3" s="5">
+<O>
+<![CDATA[类别]]></O>
+<Expand/>
+</C>
+<C c="3" r="4" rs="2" s="5">
+<O>
+<![CDATA[发电量]]></O>
+<Expand/>
+</C>
+<C c="4" r="4" rs="2" s="5">
+<O>
+<![CDATA[供热量]]></O>
+<Expand/>
+</C>
+<C c="5" r="4" rs="2" s="5">
+<O>
+<![CDATA[燃用原煤总量]]></O>
+<Expand/>
+</C>
+<C c="6" r="4" rs="2" s="5">
+<O>
+<![CDATA[平均灰分]]></O>
+<Expand/>
+</C>
+<C c="7" r="4" rs="2" s="5">
+<O>
+<![CDATA[平均硫分]]></O>
+<Expand/>
+</C>
+<C c="8" r="4" rs="2" s="5">
+<O>
+<![CDATA[平均挥发分]]></O>
+<Expand/>
+</C>
+<C c="9" r="4" rs="2" s="5">
+<O>
+<![CDATA[平均低位热值]]></O>
+<Expand/>
+</C>
+<C c="10" r="4" rs="2" s="5">
+<O>
+<![CDATA[工业新鲜水用量]]></O>
+<Expand/>
+</C>
+<C c="11" r="4" rs="2" s="5">
+<O>
+<![CDATA[中水用量]]></O>
+<Expand/>
+</C>
+<C c="12" r="4" rs="2" s="5">
+<O>
+<![CDATA[循环冷却机组耗水量]]></O>
+<Expand/>
+</C>
+<C c="13" r="4" rs="2" s="5">
+<O>
+<![CDATA[循环水系统排污量]]></O>
+<Expand/>
+</C>
+<C c="14" r="4" rs="2" s="5">
+<O>
+<![CDATA[发电综合耗水率]]></O>
+<Expand/>
+</C>
+<C c="15" r="4" rs="2" s="5">
+<O>
+<![CDATA[脱硫剂使用量]]></O>
+<Expand/>
+</C>
+<C c="16" r="4" rs="2" s="5">
+<O>
+<![CDATA[脱硝剂使用量]]></O>
+<Expand/>
+</C>
+<C c="17" r="4" rs="2" s="5">
+<O>
+<![CDATA[灰综合利用总量]]></O>
+<Expand/>
+</C>
+<C c="18" r="4" rs="2" s="5">
+<O>
+<![CDATA[渣综合利用总量]]></O>
+<Expand/>
+</C>
+<C c="19" r="4" rs="2" s="5">
+<O>
+<![CDATA[脱硫副产品产生量]]></O>
+<Expand/>
+</C>
+<C c="20" r="4" rs="2" s="5">
+<O>
+<![CDATA[脱硫副产品利用量]]></O>
+<Expand/>
+</C>
+<C c="21" r="4" rs="2" s="5">
+<O>
+<![CDATA[电除尘台数]]></O>
+<Expand/>
+</C>
+<C c="22" r="4" rs="2" s="5">
+<O>
+<![CDATA[电袋除尘台数]]></O>
+<Expand/>
+</C>
+<C c="23" r="4" rs="2" s="5">
+<O>
+<![CDATA[烟气脱硫台数]]></O>
+<Expand/>
+</C>
+<C c="24" r="4" rs="2" s="5">
+<O>
+<![CDATA[烟气脱硝台数]]></O>
+<Expand/>
+</C>
+<C c="25" r="4" rs="2" s="5">
+<O>
+<![CDATA[废水治理设备套数]]></O>
+<Expand/>
+</C>
+<C c="26" r="4" s="0">
+<Expand/>
+</C>
+<C c="0" r="5" s="0">
+<Expand/>
+</C>
+<C c="26" r="5" s="0">
+<Expand/>
+</C>
+<C c="0" r="6" s="0">
+<Expand/>
+</C>
+<C c="3" r="6" s="5">
+<O>
+<![CDATA[MWh]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" s="5">
+<O>
+<![CDATA[GJ]]></O>
+<Expand/>
+</C>
+<C c="5" r="6" s="5">
+<O>
+<![CDATA[t/m]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" cs="3" s="5">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="9" r="6" s="5">
+<O>
+<![CDATA[kj/kg]]></O>
+<Expand/>
+</C>
+<C c="10" r="6" cs="4" s="5">
+<O>
+<![CDATA[t]]></O>
+<Expand/>
+</C>
+<C c="14" r="6" s="5">
+<O>
+<![CDATA[kg/kWh]]></O>
+<Expand/>
+</C>
+<C c="15" r="6" cs="6" s="5">
+<O>
+<![CDATA[t]]></O>
+<Expand/>
+</C>
+<C c="21" r="6" cs="5" s="5">
+<O>
+<![CDATA[台(套)]]></O>
+<Expand/>
+</C>
+<C c="26" r="6" s="0">
+<Expand/>
+</C>
+<C c="0" r="7" s="6">
+<Expand/>
+</C>
+<C c="1" r="7" rs="3" s="5">
+<O>
+<![CDATA[综合指标]]></O>
+<Expand/>
+</C>
+<C c="2" r="7" s="5">
+<O>
+<![CDATA[设定]]></O>
+<Expand/>
+</C>
+<C c="3" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[FDLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="4" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[GRLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[RYYMZLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[PJHFSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[PJLFSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[PJHFFSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[PJDWRZSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[GYXXSYLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[ZSYLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[XHLQJZHSLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[XHSXTPWLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[FDZHHSLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[TLJSYLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[TXJSYLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="17" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[HZHLYZLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="18" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[ZZHLYZLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="19" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[TLFCPCSLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="20" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[TLFCPLYLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="21" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[DCCTSSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="22" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[DDCCTSSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="23" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[YQTLTSSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="24" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[YQTXTSSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="25" r="7" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[FSZLSBTSSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="26" r="7" s="0">
+<Expand/>
+</C>
+<C c="0" r="8" s="0">
+<Expand/>
+</C>
+<C c="2" r="8" s="5">
+<O>
+<![CDATA[全厂]]></O>
+<Expand/>
+</C>
+<C c="3" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00FDL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="4" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00GRL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00RYYMZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00PJHF]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00PJLF]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00PJHFF]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00PJDWRZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00GYXXSYL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00ZSYL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00XHLQJZHSL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00XHSXTPWL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00FDZHHSL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00TLJSYL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00TXJSYL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="17" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00HZHLYZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="18" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00ZZHLYZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="19" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00TLFCPCSL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="20" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00TLFCPLYL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="21" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00DCCTS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="22" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00DDCCTS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="23" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00YQTLTS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="24" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00YQTXTS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="25" r="8" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00FSZLSBTS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="26" r="8" s="0">
+<Expand/>
+</C>
+<C c="0" r="9" s="0">
+<Expand/>
+</C>
+<C c="2" r="9" s="5">
+<O>
+<![CDATA[累计]]></O>
+<Expand/>
+</C>
+<C c="3" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJFDL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="4" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJGRL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds11" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJRYYMZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds13" columnName="A"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJPJHF]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds6" columnName="A"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJPJLF]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds7" columnName="A"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJPJHFF]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds8" columnName="A"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJPJDWRZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJGYXXSYL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJZSYL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJXHLQJZHSL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJXHSXTPWL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds19" columnName="A"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJFDZHHSL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJTLJSYL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJHZHLYZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="17" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJHZHLYZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="18" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJZZHLYZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="19" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJTLFCPCSL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="20" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds14" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJTLFCPLYL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="21" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJDCCTS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="22" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJDDCCTS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="23" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJYQTLTS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="24" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJYQTXTS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="25" r="9" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJFSZLSBTS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="26" r="9" s="0">
+<Expand/>
+</C>
+<C c="0" r="10" s="6">
+<Expand/>
+</C>
+<C c="1" r="10" s="5">
+<O>
+<![CDATA[类别]]></O>
+<Expand/>
+</C>
+<C c="2" r="10" s="5">
+<Expand/>
+</C>
+<C c="3" r="10" s="5">
+<O>
+<![CDATA[烟气量]]></O>
+<Expand/>
+</C>
+<C c="4" r="10" s="5">
+<O>
+<![CDATA[烟尘排放浓度]]></O>
+<Expand/>
+</C>
+<C c="5" r="10" s="5">
+<O>
+<![CDATA[烟尘排放量]]></O>
+<Expand/>
+</C>
+<C c="6" r="10" s="5">
+<O>
+<![CDATA[二氧化硫排放浓度]]></O>
+<Expand/>
+</C>
+<C c="7" r="10" s="5">
+<O>
+<![CDATA[二氧化硫排放量]]></O>
+<Expand/>
+</C>
+<C c="8" r="10" s="5">
+<O>
+<![CDATA[氮氧化物排放浓度]]></O>
+<Expand/>
+</C>
+<C c="9" r="10" s="5">
+<O>
+<![CDATA[氮氧化物排放量]]></O>
+<Expand/>
+</C>
+<C c="10" r="10" s="5">
+<O>
+<![CDATA[废水排放总量]]></O>
+<Expand/>
+</C>
+<C c="11" r="10" s="5">
+<O>
+<![CDATA[废水回收量]]></O>
+<Expand/>
+</C>
+<C c="12" r="10" s="5">
+<O>
+<![CDATA[单位发电量烟尘排放量]]></O>
+<Expand/>
+</C>
+<C c="13" r="10" s="5">
+<O>
+<![CDATA[单位发电量二氧化硫排放量]]></O>
+<Expand/>
+</C>
+<C c="14" r="10" s="5">
+<O>
+<![CDATA[单位发电量氮氧化物排放量]]></O>
+<Expand/>
+</C>
+<C c="15" r="10" s="5">
+<O>
+<![CDATA[灰排放总量]]></O>
+<Expand/>
+</C>
+<C c="16" r="10" s="5">
+<O>
+<![CDATA[渣排放总量]]></O>
+<Expand/>
+</C>
+<C c="17" r="10" s="5">
+<O>
+<![CDATA[湿渣排放总量]]></O>
+<Expand/>
+</C>
+<C c="18" r="10" s="5">
+<O>
+<![CDATA[排至灰场净量]]></O>
+<Expand/>
+</C>
+<C c="19" r="10" s="5">
+<O>
+<![CDATA[脱硫副产品排放量]]></O>
+<Expand/>
+</C>
+<C c="20" r="10" s="5">
+<O>
+<![CDATA[脱硫效率]]></O>
+<Expand/>
+</C>
+<C c="21" r="10" s="5">
+<O>
+<![CDATA[废水达标排放率]]></O>
+<Expand/>
+</C>
+<C c="22" r="10" s="5">
+<O>
+<![CDATA[除尘效率]]></O>
+<Expand/>
+</C>
+<C c="23" r="10" s="5">
+<O>
+<![CDATA[脱硝效率]]></O>
+<Expand/>
+</C>
+<C c="24" r="10" s="5">
+<O>
+<![CDATA[固体废弃物正确外置率]]></O>
+<Expand/>
+</C>
+<C c="25" r="10" s="5">
+<O>
+<![CDATA[厂界噪声达标率]]></O>
+<Expand/>
+</C>
+<C c="26" r="10" s="0">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="11" s="0">
+<Expand/>
+</C>
+<C c="1" r="11" s="5">
+<Expand/>
+</C>
+<C c="2" r="11" s="5">
+<Expand/>
+</C>
+<C c="3" r="11" s="5">
+<O>
+<![CDATA[m3/h]]></O>
+<Expand/>
+</C>
+<C c="4" r="11" s="5">
+<O>
+<![CDATA[mg/m3]]></O>
+<Expand/>
+</C>
+<C c="5" r="11" s="5">
+<O>
+<![CDATA[t]]></O>
+<Expand/>
+</C>
+<C c="6" r="11" s="5">
+<O>
+<![CDATA[mg/m3]]></O>
+<Expand/>
+</C>
+<C c="7" r="11" s="5">
+<O>
+<![CDATA[t]]></O>
+<Expand/>
+</C>
+<C c="8" r="11" s="5">
+<O>
+<![CDATA[mg/m3]]></O>
+<Expand/>
+</C>
+<C c="9" r="11" cs="3" s="5">
+<O>
+<![CDATA[t]]></O>
+<Expand/>
+</C>
+<C c="12" r="11" cs="3" s="5">
+<O>
+<![CDATA[g/kWh]]></O>
+<Expand/>
+</C>
+<C c="15" r="11" cs="5" s="5">
+<O>
+<![CDATA[t]]></O>
+<Expand/>
+</C>
+<C c="20" r="11" cs="6" s="5">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="26" r="11" s="0">
+<Expand/>
+</C>
+<C c="0" r="12" s="6">
+<Expand/>
+</C>
+<C c="1" r="12" rs="7" s="5">
+<O>
+<![CDATA[污染物指标]]></O>
+<Expand/>
+</C>
+<C c="2" r="12" s="5">
+<O>
+<![CDATA[设定]]></O>
+<Expand/>
+</C>
+<C c="3" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[YQLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="4" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[YCPFNDSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[YCPFLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[EYHLPFNDSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[EYHLPFLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[DYHWPFNDSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[DYHWPFLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[FSPFZLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[FSHSLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[SDZFDLYCPFLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[SDZFDLEYHLPFLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[SDZFDLDYHWPFLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[HPFZLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[ZPFZLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="17" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[SZPFZLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="18" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[PZHCJLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="19" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[TLFCPPFLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="20" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[TLXLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="21" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[FSDBPFLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="22" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[CCXLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="23" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[TXXLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="24" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[GTFQWZQWZLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="25" r="12" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[CJZSDBLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="26" r="12" s="0">
+<Expand/>
+</C>
+<C c="0" r="13" s="0">
+<Expand/>
+</C>
+<C c="2" r="13" s="5">
+<O>
+<![CDATA[#1]]></O>
+<Expand/>
+</C>
+<C c="3" r="13" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01YQL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="4" r="13" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01YCPFND]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="13" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01YCPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="13" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01EYHLPFND]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="13" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01EYHLPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="13" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01DYHWPFND]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="13" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01DYHWPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="13" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01FSPFZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="13" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01FSHSL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="13" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01DWFDLYCPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="13" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01DWFDLEYHLPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="13" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01DWFDLDYHWPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="13" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01HPFZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="13" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01ZPFZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="17" r="13" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01SZPFZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="18" r="13" rs="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00PZHCJL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="19" r="13" rs="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00TLFCPPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="20" r="13" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01TLXL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="21" r="13" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01FSDBPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="22" r="13" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01CCXL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="23" r="13" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01TXXL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="24" r="13" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01GTFQWZQWZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="25" r="13" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01CJZSDBL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="26" r="13" s="0">
+<Expand/>
+</C>
+<C c="0" r="14" s="0">
+<Expand/>
+</C>
+<C c="2" r="14" s="5">
+<O>
+<![CDATA[#2]]></O>
+<Expand/>
+</C>
+<C c="3" r="14" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02YQL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="4" r="14" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02YCPFND]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="14" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02YCPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="14" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02EYHLPFND]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="14" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02EYHLPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="14" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02DYHWPFND]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="14" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02DYHWPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="14" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02FSPFZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="14" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02FSHSL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="14" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02DWFDLYCPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="14" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02DWFDLEYHLPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="14" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02DWFDLDYHWPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="14" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02HPFZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="14" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02ZPFZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="17" r="14" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02SZPFZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="20" r="14" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02TLXL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="21" r="14" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02FSDBPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="22" r="14" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02CCXL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="23" r="14" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02TXXL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="24" r="14" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02GTFQWZQWZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="25" r="14" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02CJZSDBL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="26" r="14" s="0">
+<Expand/>
+</C>
+<C c="0" r="15" s="0">
+<Expand/>
+</C>
+<C c="2" r="15" s="5">
+<O>
+<![CDATA[#3]]></O>
+<Expand/>
+</C>
+<C c="3" r="15" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03YQL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="4" r="15" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03YCPFND]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="15" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03YCPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="15" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03EYHLPFND]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="15" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03EYHLPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="15" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03DYHWPFND]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="15" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03DYHWPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="15" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03FSPFZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="15" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03FSHSL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="15" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03DWFDLYCPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="15" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03DWFDLEYHLPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="15" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03DWFDLDYHWPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="15" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03HPFZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="15" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03ZPFZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="17" r="15" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03SZPFZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="20" r="15" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03TLXL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="21" r="15" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03FSDBPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="22" r="15" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03CCXL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="23" r="15" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03TXXL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="24" r="15" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03GTFQWZQWZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="25" r="15" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03CJZSDBL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="26" r="15" s="0">
+<Expand/>
+</C>
+<C c="0" r="16" s="0">
+<Expand/>
+</C>
+<C c="2" r="16" s="5">
+<O>
+<![CDATA[#4]]></O>
+<Expand/>
+</C>
+<C c="3" r="16" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04YQL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="4" r="16" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04YCPFND]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="16" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04YCPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="16" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04EYHLPFND]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="16" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04EYHLPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="16" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04DYHWPFND]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="16" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds31" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04DYHWPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="16" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds31" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04FSPFZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="16" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds31" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04FSHSL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="16" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds31" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04DWFDLYCPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="16" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds31" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04DWFDLEYHLPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="16" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds31" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04DWFDLDYHWPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="16" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds31" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04HPFZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="16" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds31" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04ZPFZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="17" r="16" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds31" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04SZPFZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="20" r="16" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04TLXL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="21" r="16" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04FSDBPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="22" r="16" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04CCXL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="23" r="16" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04TXXL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="24" r="16" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04GTFQWZQWZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="25" r="16" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04CJZSDBL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="26" r="16" s="0">
+<Expand/>
+</C>
+<C c="0" r="17" s="0">
+<Expand/>
+</C>
+<C c="2" r="17" s="5">
+<O>
+<![CDATA[全厂]]></O>
+<Expand/>
+</C>
+<C c="3" r="17" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(D14:D17)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="17" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E14:E17) / 4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="5" r="17" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(F14:F17)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="17" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(G14:G17) / 4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="17" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(H14:H17)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="17" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(I14:I17) / 4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="9" r="17" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(J14:J17)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="10" r="17" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(K14:K17)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="17" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(L14:L17)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="12" r="17" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(F18 * 1000) / D9]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="13" r="17" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(H18 * 1000) / D9]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="14" r="17" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(J18 * 1000) / D9]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="15" r="17" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(P14:P17)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="16" r="17" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(Q14:Q17)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="17" r="17" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(R14:R17)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="18" r="17" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(S14)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="19" r="17" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(T14)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="20" r="17" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(U14:U17) / 4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="21" r="17" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00FSDBPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="22" r="17" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(W14:W17) / 4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="23" r="17" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(X14:X17) / 4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="24" r="17" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(Y14:Y17) / 4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="25" r="17" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(Z14:Z17) / 4]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="26" r="17" s="0">
+<Expand/>
+</C>
+<C c="0" r="18" s="0">
+<Expand/>
+</C>
+<C c="2" r="18" s="5">
+<O>
+<![CDATA[累计]]></O>
+<Expand/>
+</C>
+<C c="3" r="18" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJYQL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="4" r="18" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds15" columnName="A"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJYCPFND]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="18" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJYCPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="18" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds20" columnName="A"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJEYHLPFND]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="18" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJEYHLPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="18" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds21" columnName="A"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJDYHWPFND]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="18" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJDYHWPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="18" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJFSPFZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="18" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJFSHSL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="18" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(F19 * 1000) / D9]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="13" r="18" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(H19 * 1000) / D9]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="14" r="18" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(J19 * 1000) / D9]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="15" r="18" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJHPFZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="18" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJZPFZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="17" r="18" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJSZPFZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="18" r="18" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJPZHCJL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="19" r="18" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds16" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJTLFCPPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="20" r="18" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds22" columnName="A"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJTLXL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="21" r="18" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJFSDBPFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="22" r="18" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds23" columnName="A"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJCCXL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="23" r="18" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds24" columnName="A"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJTXXL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="24" r="18" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds25" columnName="A"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJGTFQWZQWZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="25" r="18" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds26" columnName="A"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJCJZSDBL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="26" r="18" s="0">
+<Expand/>
+</C>
+<C c="0" r="19" s="0">
+<Expand/>
+</C>
+<C c="1" r="19" s="5">
+<O>
+<![CDATA[类别]]></O>
+<Expand/>
+</C>
+<C c="2" r="19" s="5">
+<Expand/>
+</C>
+<C c="3" r="19" s="5">
+<O>
+<![CDATA[电除尘应投运小时]]></O>
+<Expand/>
+</C>
+<C c="4" r="19" s="5">
+<O>
+<![CDATA[电除尘故障停运小时]]></O>
+<Expand/>
+</C>
+<C c="5" r="19" s="5">
+<O>
+<![CDATA[电除尘有效投运率]]></O>
+<Expand/>
+</C>
+<C c="6" r="19" s="5">
+<O>
+<![CDATA[除尘器阻力]]></O>
+<Expand/>
+</C>
+<C c="7" r="19" s="5">
+<O>
+<![CDATA[除尘器漏风率]]></O>
+<Expand/>
+</C>
+<C c="8" r="19" s="5">
+<O>
+<![CDATA[烟气监测系统应投运时间]]></O>
+<Expand/>
+</C>
+<C c="9" r="19" s="5">
+<O>
+<![CDATA[烟气监测系统故障停运时间]]></O>
+<Expand/>
+</C>
+<C c="10" r="19" s="5">
+<O>
+<![CDATA[烟气监测系统有效投运率]]></O>
+<Expand/>
+</C>
+<C c="11" r="19" s="5">
+<O>
+<![CDATA[废水治理设备应投运时间]]></O>
+<Expand/>
+</C>
+<C c="12" r="19" s="5">
+<O>
+<![CDATA[废水治理设备故障停运时间]]></O>
+<Expand/>
+</C>
+<C c="13" r="19" s="5">
+<O>
+<![CDATA[废水治理设备有效投运率]]></O>
+<Expand/>
+</C>
+<C c="14" r="19" s="5">
+<O>
+<![CDATA[脱硫设备应投运小时]]></O>
+<Expand/>
+</C>
+<C c="15" r="19" s="5">
+<O>
+<![CDATA[脱硫设备故障停运时间]]></O>
+<Expand/>
+</C>
+<C c="16" r="19" s="5">
+<O>
+<![CDATA[脱硫设备有效投运率]]></O>
+<Expand/>
+</C>
+<C c="17" r="19" s="5">
+<O>
+<![CDATA[脱硝设备应投运时间]]></O>
+<Expand/>
+</C>
+<C c="18" r="19" s="5">
+<O>
+<![CDATA[脱硝设备故障时间]]></O>
+<Expand/>
+</C>
+<C c="19" r="19" s="5">
+<O>
+<![CDATA[脱硝设备有效投运率]]></O>
+<Expand/>
+</C>
+<C c="20" r="19" s="5">
+<O>
+<![CDATA[废水排放pH值]]></O>
+<Expand/>
+</C>
+<C c="21" r="19" s="5">
+<O>
+<![CDATA[废水排放COD]]></O>
+<Expand/>
+</C>
+<C c="22" r="19" s="5">
+<O>
+<![CDATA[废水排放氨氮]]></O>
+<Expand/>
+</C>
+<C c="23" r="19" s="5">
+<O>
+<![CDATA[废水排放SS]]></O>
+<Expand/>
+</C>
+<C c="24" r="19" s="5">
+<O>
+<![CDATA[废水排放含油量]]></O>
+<Expand/>
+</C>
+<C c="25" r="19" s="5">
+<O>
+<![CDATA[废水重金属总量]]></O>
+<Expand/>
+</C>
+<C c="26" r="19" s="0">
+<Expand/>
+</C>
+<C c="0" r="20" s="0">
+<Expand/>
+</C>
+<C c="1" r="20" rs="8" s="5">
+<O>
+<![CDATA[环保设施运行指标]]></O>
+<Expand/>
+</C>
+<C c="2" r="20" s="5">
+<Expand/>
+</C>
+<C c="3" r="20" cs="2" s="5">
+<O>
+<![CDATA[h]]></O>
+<Expand/>
+</C>
+<C c="5" r="20" s="5">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="6" r="20" s="5">
+<O>
+<![CDATA[Pa]]></O>
+<Expand/>
+</C>
+<C c="7" r="20" s="5">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="8" r="20" cs="2" s="5">
+<O>
+<![CDATA[h]]></O>
+<Expand/>
+</C>
+<C c="10" r="20" s="5">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="11" r="20" cs="2" s="5">
+<O>
+<![CDATA[h]]></O>
+<Expand/>
+</C>
+<C c="13" r="20" s="5">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="14" r="20" cs="2" s="5">
+<O>
+<![CDATA[h]]></O>
+<Expand/>
+</C>
+<C c="16" r="20" s="5">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="17" r="20" cs="2" s="5">
+<O>
+<![CDATA[h]]></O>
+<Expand/>
+</C>
+<C c="19" r="20" s="5">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="20" r="20" cs="6" s="5">
+<O>
+<![CDATA[mg/l]]></O>
+<Expand/>
+</C>
+<C c="26" r="20" s="0">
+<Expand/>
+</C>
+<C c="0" r="21" s="6">
+<Expand/>
+</C>
+<C c="2" r="21" s="5">
+<O>
+<![CDATA[设定]]></O>
+<Expand/>
+</C>
+<C c="3" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[DCCYTYXSSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="4" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[DCCGZTYXSSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[DCCYXTYLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[CCQZLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[CCQLFLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[YQJCXTYTYSJSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[YQJCXTGZTYSJSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[YQJCXTYXTYLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[FSZLSBYTYSJSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[FSZLSBGZTYSJSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[FSZLSBYXTYLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[TLSBYTYXSSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[TLSBGZTYSJSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[TLSBYXTYLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="17" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[TXSBYTYSJSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="18" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[TXSBGZSJSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="19" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[TXSBYXTYLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="20" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[FSPFpHZSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="21" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[FSPFCODSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="22" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[FSPFADSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="23" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[FSPFSSSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="24" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[FSPFHYLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="25" r="21" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[FSZJSZLSDZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="26" r="21" s="0">
+<Expand/>
+</C>
+<C c="0" r="22" s="0">
+<Expand/>
+</C>
+<C c="2" r="22" s="5">
+<O>
+<![CDATA[#1]]></O>
+<Expand/>
+</C>
+<C c="3" r="22" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01DCCYTYXS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="4" r="22" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01DCCGZTYXS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="22" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=((D23 - E23) / D23) * 100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="22" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01CCQZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="22" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01CCQLFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="22" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01YQJCXTYTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="22" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01YQJCXTGZTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="22" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=((I23 - J23) / I23) * 100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="22" rs="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[FSZLSBYTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="22" rs="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[FSZLSBGZTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="22" rs="4" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=((L23 - M23) / L23) * 100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="14" r="22" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01TLSBYTYXS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="22" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01TLSBGZTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="22" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=((O23 - P23) / O23) * 100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="17" r="22" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01TXSBYTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="18" r="22" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01TXSBGZSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="19" r="22" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=((R23 - S23) / R23) * 100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="20" r="22" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01FSPFpHZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="21" r="22" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01FSPFCOD]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="22" r="22" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01FSPFAD]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="23" r="22" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01FSPFSS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="24" r="22" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01FSPFHYL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="25" r="22" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[01FSZJSZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="26" r="22" s="0">
+<Expand/>
+</C>
+<C c="27" r="22">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="23" s="0">
+<Expand/>
+</C>
+<C c="2" r="23" s="5">
+<O>
+<![CDATA[#2]]></O>
+<Expand/>
+</C>
+<C c="3" r="23" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02DCCYTYXS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="4" r="23" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02DCCGZTYXS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="23" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=((D24 - E24) / D24) * 100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="23" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02CCQZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="23" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02CCQLFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="23" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02YQJCXTYTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="23" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02YQJCXTGZTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="23" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=((I24 - J24) / I24) * 100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="14" r="23" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02TLSBYTYXS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="23" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02TLSBGZTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="23" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=((O24 - P24) / O24) * 100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="17" r="23" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02TXSBYTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="18" r="23" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02TXSBGZSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="19" r="23" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=((R24 - S24) / R24) * 100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="20" r="23" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02FSPFpHZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="21" r="23" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02FSPFCOD]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="22" r="23" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02FSPFAD]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="23" r="23" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02FSPFSS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="24" r="23" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02FSPFHYL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="25" r="23" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[02FSZJSZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="26" r="23" s="0">
+<Expand/>
+</C>
+<C c="27" r="23">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="24" s="0">
+<Expand/>
+</C>
+<C c="2" r="24" s="5">
+<O>
+<![CDATA[#3]]></O>
+<Expand/>
+</C>
+<C c="3" r="24" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03DCCYTYXS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="4" r="24" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03DCCGZTYXS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="24" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=((D25 - E25) / D25) * 100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="24" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03CCQZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="24" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03CCQLFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="24" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03YQJCXTYTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="24" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03YQJCXTGZTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="24" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=((I25 - J25) / I25) * 100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="14" r="24" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03TLSBYTYXS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="24" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03TLSBGZTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="24" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=((O25 - P25) / O25) * 100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="17" r="24" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03TXSBYTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="18" r="24" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03TXSBGZSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="19" r="24" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=((R25 - S25) / R25) * 100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="20" r="24" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03FSPFpHZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="21" r="24" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03FSPFCOD]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="22" r="24" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03FSPFAD]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="23" r="24" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03FSPFSS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="24" r="24" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03FSPFHYL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="25" r="24" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[03FSZJSZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="26" r="24" s="0">
+<Expand/>
+</C>
+<C c="27" r="24">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="25" s="0">
+<Expand/>
+</C>
+<C c="2" r="25" s="5">
+<O>
+<![CDATA[#4]]></O>
+<Expand/>
+</C>
+<C c="3" r="25" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04DCCYTYXS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="4" r="25" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04DCCGZTYXS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="25" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=((D26 - E26) / D26) * 100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="25" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04CCQZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="25" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04CCQLFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="25" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04YQJCXTYTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="25" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04YQJCXTGZTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="25" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=((I26 - J26) / I26) * 100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="14" r="25" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04TLSBYTYXS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="25" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04TLSBGZTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="25" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=((O26 - P26) / O26) * 100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="17" r="25" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04TXSBYTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="18" r="25" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04TXSBGZSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="19" r="25" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=((R26 - S26) / R26) * 100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="20" r="25" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04FSPFpHZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="21" r="25" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04FSPFCOD]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="22" r="25" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04FSPFAD]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="23" r="25" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04FSPFSS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="24" r="25" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04FSPFHYL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="25" r="25" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[04FSZJSZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="26" r="25" s="0">
+<Expand/>
+</C>
+<C c="27" r="25">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="26" s="0">
+<Expand/>
+</C>
+<C c="2" r="26" s="5">
+<O>
+<![CDATA[全厂]]></O>
+<Expand/>
+</C>
+<C c="3" r="26" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(D23:D26)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="26" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E23:E26)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="5" r="26" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(((sum(D23:D26)) - (sum(E23:E26))) / (sum(D23:D26))) * 100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="6" r="26" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(G23:G26)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="26" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(H23:H26)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="26" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(I23:I26)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="9" r="26" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(J23:J26)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="10" r="26" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(((sum(I23:I26)) - (sum(J23:J26))) / (sum(I23:I26))) * 100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="26" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(L23)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="12" r="26" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(M23)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="13" r="26" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(((sum(L23)) - (sum(M23))) / (sum(L23))) * 100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="14" r="26" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(O23:O26)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="15" r="26" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(P23:P26)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="16" r="26" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(((sum(O23:O26)) - (sum(P23:P26))) / (sum(O23:O26))) * 100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="17" r="26" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(R23:R26)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="18" r="26" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(S23:S26)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="19" r="26" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(((sum(R23:R26)) - (sum(S23:S26))) / (sum(R23:R26))) * 100]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="20" r="26" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00FSPFpHZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="21" r="26" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00FSPFCOD]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="22" r="26" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00FSPFAD]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="23" r="26" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00FSPFSS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="24" r="26" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00FSPFHYL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="25" r="26" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[00FSZJSZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="26" r="26" s="0">
+<Expand/>
+</C>
+<C c="27" r="26">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="27" s="0">
+<Expand/>
+</C>
+<C c="2" r="27" s="5">
+<O>
+<![CDATA[累计]]></O>
+<Expand/>
+</C>
+<C c="3" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds18" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJDCCYTYXS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="4" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds18" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJDCCGZTYXS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds17" columnName="A"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJDCCYXTYL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJCCQZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJCCQLFL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds18" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJYQJCXTYTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds18" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJYQJCXTGZTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds27" columnName="A"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJYQJCXTYXTYL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds18" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJFSZLSBYTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds18" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJFSZLSBGZTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds28" columnName="A"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJFSZLSBYXTYL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds18" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJTLSBYTYXS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds18" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJTLSBGZTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="16" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds29" columnName="A"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJTLSBYXTYL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="17" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds18" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJTXSBYTYSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="18" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds18" columnName="SUM(A.AUTOVALUE_MODIFYVALUE)"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJTXSBGZSJ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="19" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds30" columnName="A"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJTXSBYXTYL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="20" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJFSPFpHZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="21" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJFSPFCOD]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="22" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJFSPFAD]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="23" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJFSPFSS]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="24" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJFSPFHYL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="25" r="27" s="7">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[T_P_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[LJFSZJSZL]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="26" r="27" s="0">
+<Expand/>
+</C>
+<C c="0" r="28" s="0">
+<Expand/>
+</C>
+<C c="1" r="28" s="5">
+<O>
+<![CDATA[备注]]></O>
+<Expand/>
+</C>
+<C c="2" r="28" cs="24" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds12" columnName="AUTOVALUE_MODIFYVALUE"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[AUTOVALUE_MODIFYVALUE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[HBBZ]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="26" r="28" s="0">
+<Expand/>
+</C>
+<C c="0" r="29" s="0">
+<Expand/>
+</C>
+<C c="1" r="29" cs="3" s="6">
+<O>
+<![CDATA[主管领导]]></O>
+<Expand/>
+</C>
+<C c="4" r="29" cs="4" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="APPROVAL_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="29" cs="2" s="3">
+<O>
+<![CDATA[审核：]]></O>
+<Expand/>
+</C>
+<C c="10" r="29" cs="3" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="EXAMINE_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="29" cs="2" s="3">
+<O>
+<![CDATA[填报：]]></O>
+<Expand/>
+</C>
+<C c="15" r="29" cs="4" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="CREATE_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="19" r="29" cs="3" s="3">
+<O>
+<![CDATA[填报日期：]]></O>
+<Expand/>
+</C>
+<C c="22" r="29" cs="4" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds4" columnName="CREATE_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="26" r="29" s="0">
+<Expand/>
+</C>
+<C c="0" r="30">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="1" r="31">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="false" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[720000,720000,720000,720000,720000,720000,720000,720000,720000,720000,720000,720000,720000,720000,720000,720000,720000,720000,720000,720000,720000,720000,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[3048000,5334000,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="0" r="1">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</ParameterUI>
+</ReportParameterAttr>
+<StyleList>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-1"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="104"/>
+<Background name="ColorBackground" color="-1"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="80"/>
+<Background name="ColorBackground" color="-1"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-1"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="80"/>
+<Background name="ColorBackground" color="-1"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-1"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

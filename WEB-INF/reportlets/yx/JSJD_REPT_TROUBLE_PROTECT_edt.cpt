@@ -1,0 +1,967 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="main_data" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="p_reg_id"/>
+<O>
+<![CDATA[11]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT REG_ID,
+       REG_CODE,
+       REG_NAME,
+       ORG_ID,
+       SPEC_ID,
+       (SELECT ORG_NAME FROM XIP_PUB_ORGS O WHERE O.ORG_ID = T.ORG_ID) ORG_NAME,
+       AUDIT_STATUS,
+       INST_CODE,
+       APPROVAL_BY,
+       AUDIT_BY,
+       CREATE_BY,
+       (SELECT EMP_NAME
+          FROM XIP_PUB_USERS_EMPS_V
+         WHERE USER_ID = T.APPROVAL_BY) APPROVAL_BY_NAME,
+       (SELECT EMP_NAME FROM XIP_PUB_USERS_EMPS_V WHERE USER_ID = T.AUDIT_BY) AUDIT_BY_NAME,
+       (SELECT EMP_NAME
+          FROM XIP_PUB_USERS_EMPS_V
+         WHERE USER_ID = T.CREATE_BY) CREATE_BY_NAME,
+       CREATE_DATE,
+       LAST_UPDATED_BY,
+       LAST_UPDATE_DATE,
+       LAST_UPDATE_LOGIN
+  FROM TES_PS_TROUBLE_PROTECT T
+ WHERE t.REG_ID = '${p_reg_id}']]></Query>
+</TableData>
+<TableData name="dtl_data" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="p_reg_id"/>
+<O>
+<![CDATA[111]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT DTL_ID,
+       REG_ID,
+       TROUBLE_DATE,
+       EQUIP_ID,
+       TROUBLE_REASON_PROCESS,
+       TROUBLE_TYPE,
+       TROUBLE_LOCATION,
+       PROTECT_NAME_STYLE,
+       PROTECT_CORRECT_TIME,
+       PROTECT_WRONG_TIME,
+       PROTECT_REFUSE_TIME,
+       PROTECT_INCOR_REASON,
+       DUTY_CLASS
+  FROM TES_PS_TROUBLE_PROTECT_DTL D
+ WHERE REG_ID = '${p_reg_id}']]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars/>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PrintPreview">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("PrintP-Print_Preview")}]]></Text>
+<IconName>
+<![CDATA[preview]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Print">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Print")}]]></Text>
+<IconName>
+<![CDATA[print]]></IconName>
+<PrintButtons/>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+</WebViewContent>
+<WebWriteContent>
+<Listener event="writesuccess">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[location.reload();]]></Content>
+</JavaScript>
+</Listener>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.write.Submit">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Submit")}]]></Text>
+<IconName>
+<![CDATA[submit]]></IconName>
+<Verify failVerifySubmit="false"/>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.write.ImportExcelData">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Import_Excel_Data")}]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Print">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Print")}]]></Text>
+<IconName>
+<![CDATA[print]]></IconName>
+<PrintButtons/>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[0,0,0,1181100,571500,0,838200,990600,800100,876300,876300,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[0,0,0,0,0,1828800,5715000,2743200,4572000,2743200,2743200,4114800,3162300,2438400,2438400,4762500,3200400,952500,952500,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="6" r="3" cs="11" s="0">
+<O t="DSColumn">
+<Attributes dsName="main_data" columnName="REG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[标题名称不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<TextAttr allowBlank="false"/>
+</Widget>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[len(G4)==0]]></Formula>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ValueHighlightAction">
+<O>
+<![CDATA[110kv及以上系统故障及保护动作情况月报表]]></O>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="6" r="5" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$p_user_id]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="5" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$p_org_id]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="5" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$p_reg_id]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="9" r="5" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$p_reg_code]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="10" r="5">
+<O t="DSColumn">
+<Attributes dsName="main_data" columnName="CREATE_BY"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[len(K6)==0]]></Formula>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ValueHighlightAction">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$p_user_id]]></Attributes>
+</O>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand dir="0"/>
+</C>
+<C c="11" r="5">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="5" r="6" s="2">
+<O>
+<![CDATA[单位：]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" cs="3">
+<O t="DSColumn">
+<Attributes dsName="main_data" columnName="ORG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[len(G7)==0]]></Formula>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ValueHighlightAction">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SQL("XIP","select org_name from XIP_PUB_ORGS WHERE org_id ='"+$p_org_id+"'",1,1)]]></Attributes>
+</O>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="15" r="6" cs="2" s="3">
+<O t="DSColumn">
+<Attributes dsName="main_data" columnName="CREATE_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[if(len(P7)==0,true,false)]]></Formula>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ValueHighlightAction">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=TODAY()]]></Attributes>
+</O>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+<C c="5" r="7" rs="2" s="4">
+<O>
+<![CDATA[序号]]></O>
+<Expand/>
+</C>
+<C c="6" r="7" s="4">
+<O>
+<![CDATA[时间]]></O>
+<Expand/>
+</C>
+<C c="7" r="7" cs="3" s="4">
+<O>
+<![CDATA[故障简况]]></O>
+<Expand/>
+</C>
+<C c="10" r="7" cs="5" s="4">
+<O>
+<![CDATA[保护及安全自动装置动作情况]]></O>
+<Expand/>
+</C>
+<C c="15" r="7" cs="2" s="4">
+<O>
+<![CDATA[不正确动作的分析]]></O>
+<Expand/>
+</C>
+<C c="4" r="8">
+<O>
+<![CDATA[id]]></O>
+<Expand/>
+</C>
+<C c="6" r="8" s="4">
+<O>
+<![CDATA[月日时分]]></O>
+<Expand/>
+</C>
+<C c="7" r="8" s="4">
+<O>
+<![CDATA[设备名称]]></O>
+<Expand/>
+</C>
+<C c="8" r="8" s="4">
+<O>
+<![CDATA[故障原因及经过]]></O>
+<Expand/>
+</C>
+<C c="9" r="8" s="4">
+<O>
+<![CDATA[故障类型]]></O>
+<Expand/>
+</C>
+<C c="10" r="8" s="4">
+<O>
+<![CDATA[地点]]></O>
+<Expand/>
+</C>
+<C c="11" r="8" s="4">
+<O>
+<![CDATA[装置名称、型式]]></O>
+<Expand/>
+</C>
+<C c="12" r="8" s="4">
+<O>
+<![CDATA[正确动作次数]]></O>
+<Expand/>
+</C>
+<C c="13" r="8" s="4">
+<O>
+<![CDATA[误动次数]]></O>
+<Expand/>
+</C>
+<C c="14" r="8" s="4">
+<O>
+<![CDATA[拒动次数]]></O>
+<Expand/>
+</C>
+<C c="15" r="8" s="4">
+<O>
+<![CDATA[不正确动作的原因]]></O>
+<Expand/>
+</C>
+<C c="16" r="8" s="4">
+<O>
+<![CDATA[责任分类]]></O>
+<Expand/>
+</C>
+<C c="4" r="9">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="DTL_ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellPageAttr/>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[len(E10)==0]]></Formula>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ValueHighlightAction">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SQL("XIP","select seq_jsjd_trble_pro_dtl_id.nextval from dual",1,1)]]></Attributes>
+</O>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<CellInsertPolicy>
+<InsertPolicy>
+<![CDATA[default]]></InsertPolicy>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SQL("XIP","select seq_jsjd_trble_pro_dtl_id.nextval from dual",1,1)]]></Attributes>
+</O>
+</CellInsertPolicy>
+<Expand dir="0"/>
+</C>
+<C c="5" r="9" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=seq()]]></Attributes>
+</O>
+<CellPageAttr/>
+<CellInsertPolicy>
+<InsertPolicy>
+<![CDATA[copy]]></InsertPolicy>
+</CellInsertPolicy>
+<Expand/>
+</C>
+<C c="6" r="9" s="5">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="TROUBLE_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Widget class="com.fr.report.web.ui.DateTimeEditor">
+<WidgetAttr/>
+<DateAttr format="yyyy-MM-dd HH:mm:ss" start="" end=""/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="7" r="9" s="6">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="EQUIP_ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<EMSG>
+<![CDATA[设备名称不能为空]]></EMSG>
+<allowBlank>
+<![CDATA[false]]></allowBlank>
+<TextAttr allowBlank="false"/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="8" r="9" s="1">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="TROUBLE_REASON_PROCESS"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="9" r="9" s="1">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="TROUBLE_TYPE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="1" value="类型1"/>
+<Dict key="2" value="类型2"/>
+</CustomDictAttr>
+</Dictionary>
+</Widget>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="1" value="类型1"/>
+<Dict key="2" value="类型2"/>
+</CustomDictAttr>
+</Dictionary>
+</Present>
+<Expand dir="0"/>
+</C>
+<C c="10" r="9" s="1">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="TROUBLE_LOCATION"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="11" r="9" s="1">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="PROTECT_NAME_STYLE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="12" r="9" s="1">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="PROTECT_CORRECT_TIME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="13" r="9" s="1">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="PROTECT_WRONG_TIME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="14" r="9" s="1">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="PROTECT_REFUSE_TIME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Widget class="com.fr.report.web.ui.NumberEditor">
+<WidgetAttr/>
+<NumberAttr allowDecimals="false" allowNegative="false"/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="15" r="9" s="1">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="PROTECT_INCOR_REASON"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetAttr/>
+<TextAttr/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="16" r="9" s="1">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="DUTY_CLASS"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Widget class="com.fr.report.web.ui.ComboBox">
+<WidgetAttr/>
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="1" value="分类1"/>
+<Dict key="2" value="分类2"/>
+</CustomDictAttr>
+</Dictionary>
+</Widget>
+<Present class="com.fr.report.cellElement.DictPresent">
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="1" value="分类1"/>
+<Dict key="2" value="分类2"/>
+</CustomDictAttr>
+</Dictionary>
+</Present>
+<Expand dir="0"/>
+</C>
+<C c="17" r="9">
+<Widget class="com.fr.report.web.ui.impl.write.AppendRowButton">
+<WidgetAttr/>
+<IconName>
+<![CDATA[add]]></IconName>
+<FixCell row="9" col="4"/>
+</Widget>
+<Expand/>
+</C>
+<C c="18" r="9">
+<Widget class="com.fr.report.web.ui.impl.write.DeleteRowButton">
+<Listener event="click">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[if(confirm("是否确定删除？"))   
+{
+ return true; 
+}   
+else
+{
+ return false;
+}]]></Content>
+</JavaScript>
+</Listener>
+<WidgetAttr/>
+<IconName>
+<![CDATA[delete]]></IconName>
+<FixCell row="9" col="4"/>
+</Widget>
+<Expand/>
+</C>
+<C c="5" r="10" s="2">
+<O>
+<![CDATA[批准人:]]></O>
+<Expand/>
+</C>
+<C c="6" r="10" s="7">
+<O t="DSColumn">
+<Attributes dsName="main_data" columnName="APPROVAL_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="10" s="2">
+<O>
+<![CDATA[审核人:]]></O>
+<Expand/>
+</C>
+<C c="11" r="10" s="7">
+<O t="DSColumn">
+<Attributes dsName="main_data" columnName="AUDIT_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="10" s="2">
+<O>
+<![CDATA[ 填报人:]]></O>
+<Expand/>
+</C>
+<C c="15" r="10" s="7">
+<O t="DSColumn">
+<Attributes dsName="main_data" columnName="CREATE_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<HighlightList>
+<Highlight class="com.fr.report.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[len(P11)==0]]></Formula>
+</Condition>
+<HighlightAction class="com.fr.report.highlight.ValueHighlightAction">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SQL("XIP","SELECT V.EMP_NAME FROM XIP_PUB_USERS_EMPS_V V WHERE V.USER_ID='"+$p_user_id+"'",1,1)]]></Attributes>
+</O>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+<ReportWriteAttr>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="主表">
+<Attributes dsName="XIP"/>
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="TES_PS_TROUBLE_PROTECT"/>
+<ColumnConfig name="REG_ID" isKey="true" skipUnmodified="false">
+<ColumnRow column="8" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="REG_CODE" isKey="false" skipUnmodified="false">
+<ColumnRow column="9" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="ORG_ID" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="CREATE_BY" isKey="false" skipUnmodified="false">
+<ColumnRow column="10" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="CREATE_DATE" isKey="false" skipUnmodified="false">
+<ColumnRow column="15" row="6"/>
+</ColumnConfig>
+<ColumnConfig name="LAST_UPDATED_BY" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="LAST_UPDATE_DATE" isKey="false" skipUnmodified="false">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=TODAY()]]></Attributes>
+</O>
+</ColumnConfig>
+<ColumnConfig name="LAST_UPDATE_LOGIN" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="REG_NAME" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="3"/>
+</ColumnConfig>
+<ColumnConfig name="SPEC_ID" isKey="false" skipUnmodified="false">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SQL("XIP","select spec_id from tes_ba_spec where spec_name='继保及安全节能'",1,1)]]></Attributes>
+</O>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="明细表">
+<Attributes dsName="XIP"/>
+<DMLConfig class="com.fr.report.write.config.IntelliDMLConfig">
+<Table schema="" name="TES_PS_TROUBLE_PROTECT_DTL"/>
+<ColumnConfig name="DTL_ID" isKey="true" skipUnmodified="false">
+<ColumnRow column="4" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="REG_ID" isKey="false" skipUnmodified="false">
+<ColumnRow column="8" row="5"/>
+</ColumnConfig>
+<ColumnConfig name="TROUBLE_DATE" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="EQUIP_ID" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="TROUBLE_REASON_PROCESS" isKey="false" skipUnmodified="false">
+<ColumnRow column="8" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="TROUBLE_TYPE" isKey="false" skipUnmodified="false">
+<ColumnRow column="9" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="TROUBLE_LOCATION" isKey="false" skipUnmodified="false">
+<ColumnRow column="10" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="PROTECT_NAME_STYLE" isKey="false" skipUnmodified="false">
+<ColumnRow column="11" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="PROTECT_CORRECT_TIME" isKey="false" skipUnmodified="false">
+<ColumnRow column="12" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="PROTECT_WRONG_TIME" isKey="false" skipUnmodified="false">
+<ColumnRow column="13" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="PROTECT_REFUSE_TIME" isKey="false" skipUnmodified="false">
+<ColumnRow column="14" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="PROTECT_INCOR_REASON" isKey="false" skipUnmodified="false">
+<ColumnRow column="15" row="9"/>
+</ColumnConfig>
+<ColumnConfig name="DUTY_CLASS" isKey="false" skipUnmodified="false">
+<ColumnRow column="16" row="9"/>
+</ColumnConfig>
+</DMLConfig>
+</Submiter>
+</ReportWriteAttr>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="false" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[11582400,11582400,11582400,11582400,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$userId]]></Attributes>
+</O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetName name="p_user_id"/>
+<WidgetAttr invisible="true"/>
+<TextAttr/>
+</Widget>
+<Expand/>
+</C>
+<C c="1" r="0">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$orgId]]></Attributes>
+</O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetName name="p_org_id"/>
+<WidgetAttr invisible="true"/>
+<TextAttr/>
+</Widget>
+<Expand/>
+</C>
+<C c="2" r="0">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$regId]]></Attributes>
+</O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetName name="p_reg_id"/>
+<WidgetAttr invisible="true"/>
+<TextAttr/>
+</Widget>
+<Expand/>
+</C>
+<C c="3" r="0">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$regCode]]></Attributes>
+</O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetName name="p_reg_code"/>
+<WidgetAttr invisible="true"/>
+<TextAttr/>
+</Widget>
+<Expand/>
+</C>
+<C c="4" r="0">
+<O>
+<![CDATA[查询]]></O>
+<Widget class="com.fr.report.web.ui.impl.form.FormSubmitButton">
+<WidgetAttr invisible="true"/>
+<Hotkeys>
+<![CDATA[enter]]></Hotkeys>
+</Widget>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</ParameterUI>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="108" foreground="-16737895"/>
+<Background name="ColorBackground" color="-48"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<Format class="java.text.SimpleDateFormat">
+<![CDATA[yyyy年MM月dd]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="72"/>
+<Background name="ImageBackground" specifiedImageWidth="-1.0" specifiedImageHeight="-1.0" layout="2">
+<IM>
+<![CDATA[lO<9(kN.ld@UNU%p%320@UNU)#I6cXfRW$ncQ/@&<0O5<@n=S@[oX!K%L!+t*8LGkV28*<fV
+1DR2+&2#M*'iG9!?fn`jEHhj.>Qf/%>^"4u8^;2W-f-"/[-Ps"#=CT4LGm?)6rkX]Ap9;)cg,
+:Xp=M>^R`IX>57);OBFYLBS"_e1Gss7S9)tL+\09b!LY7c2&TIA?%9m4n<NhHK^]A5-XNuS&?
+,PUblK>Iu.A7%J~
+]]></IM>
+</Background>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.SimpleDateFormat">
+<![CDATA[yyyy-MM-dd HH:mm:ss]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-48"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+</WorkBook>

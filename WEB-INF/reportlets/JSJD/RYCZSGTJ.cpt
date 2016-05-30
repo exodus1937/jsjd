@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT D.SPEC_ID,
+       s.SPEC_CODE,
+       s.SPEC_NAME,
+       D.ORG_ID,
+       x.org_short_name,
+       (select a.org_name from xip_pub_orgs a where a.org_id = D.org_id) org_name,
+       (select count(*) from tes_ba_spec_asg b,xip_pub_emps e WHERE b.SPEC_ID = D.SPEC_ID and b.org_id = d.org_id and b.emp_id = e.emp_id) EMP_NUM
+  FROM TES_BA_SPECIALTY D, tes_ba_spec s,xip_pub_orgs x
+ where d.spec_id = s.spec_id 
+   and d.org_id = x.org_id
+   and D.ORG_ID='c21834b4-1cb0-490f-a2a8-deeaf7f7e065']]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[ SELECT b.org_id,
+        r.cred_code,
+        count(e.EMP_NAME) n
+  FROM tes_ba_spec_asg b,xip_pub_emps e,TES_BA_SPECIALTY d,TES_BA_EMP_CRED r
+ WHERE b.SPEC_ID = D.SPEC_ID 
+   and b.org_id = d.org_id 
+   and b.emp_id = e.emp_id
+   and b.spec_id = r.spec_id
+   and e.emp_id = r.emp_id
+   AND b.ORG_ID = 'c21834b4-1cb0-490f-a2a8-deeaf7f7e065'
+ group by b.org_id,r.cred_code]]></Query>
+</TableData>
+<TableData name="ds3" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[ SELECT b.org_id,
+        r.cred_code,
+        count(e.EMP_NAME)
+  FROM tes_ba_spec_asg b,xip_pub_emps e,TES_BA_SPECIALTY d,TES_BA_EMP_CRED r
+ WHERE b.SPEC_ID = D.SPEC_ID 
+   and b.org_id = d.org_id 
+   and b.emp_id = e.emp_id
+   and b.spec_id = r.spec_id
+   and e.emp_id = r.emp_id
+   and to_char(r.validity,'yyyy-mm-dd') <= (select to_char(sysdate,'yyyy-mm-dd') from dual)
+   AND b.ORG_ID = 'c21834b4-1cb0-490f-a2a8-deeaf7f7e065'
+group by   b.org_id,
+        r.cred_code]]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Export-Excel-Simple")}]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Export-Excel-PageToSheet")}]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Export-Excel-Simple")}]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Export-Excel-PageToSheet")}]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars/>
+<SelectedColor/>
+</WebWriteContent>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,1524000,723900,723900,1104900,1143000,952500,1447800,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,0,2743200,2743200,3238500,3467100,3276600,4152900,0,2743200,3733800,3619500,2743200,0,2743200,3467100,3429000,2743200,0,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="2" r="1" cs="16" s="0">
+<O>
+<![CDATA[技术监督人员持证上岗情况检查表]]></O>
+<Expand/>
+</C>
+<C c="2" r="4" rs="2" s="1">
+<O>
+<![CDATA[序号]]></O>
+<Expand/>
+</C>
+<C c="3" r="4" cs="2" rs="2" s="2">
+<O t="BiasTextPainter">
+<IsBackSlash value="false"/>
+<![CDATA[        电厂名称|             证书名称]]></O>
+<Expand/>
+</C>
+<C c="5" r="4" cs="5" s="1">
+<O>
+<![CDATA[安全培训合格证书]]></O>
+<Expand/>
+</C>
+<C c="10" r="4" cs="5" s="1">
+<O>
+<![CDATA[特种设备操作资格证书]]></O>
+<Expand/>
+</C>
+<C c="15" r="4" cs="5" s="1">
+<O>
+<![CDATA[职业技能资格证书]]></O>
+<Expand/>
+</C>
+<C c="5" r="5" s="3">
+<O>
+<![CDATA[应获证书人数]]></O>
+<Expand/>
+</C>
+<C c="6" r="5" s="3">
+<O>
+<![CDATA[实获证书人数]]></O>
+<Expand/>
+</C>
+<C c="7" r="5" s="3">
+<O>
+<![CDATA[获证率]]></O>
+<Expand/>
+</C>
+<C c="9" r="5" s="3">
+<O>
+<![CDATA[证书有效率]]></O>
+<Expand/>
+</C>
+<C c="10" r="5" s="3">
+<O>
+<![CDATA[应获证书人数]]></O>
+<Expand/>
+</C>
+<C c="11" r="5" s="3">
+<O>
+<![CDATA[实获证书人数]]></O>
+<Expand/>
+</C>
+<C c="12" r="5" s="3">
+<O>
+<![CDATA[获证率]]></O>
+<Expand/>
+</C>
+<C c="14" r="5" s="3">
+<O>
+<![CDATA[证书有效率]]></O>
+<Expand/>
+</C>
+<C c="15" r="5" s="3">
+<O>
+<![CDATA[应获证书人数]]></O>
+<Expand/>
+</C>
+<C c="16" r="5" s="3">
+<O>
+<![CDATA[实获证书人数]]></O>
+<Expand/>
+</C>
+<C c="17" r="5" s="3">
+<O>
+<![CDATA[获证率]]></O>
+<Expand/>
+</C>
+<C c="19" r="5" s="3">
+<O>
+<![CDATA[证书有效率]]></O>
+<Expand/>
+</C>
+<C c="1" r="6">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="2" r="6" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SEQ()]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="3" r="6" cs="2" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_SHORT_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="6" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="EMP_NUM"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="6" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="N"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[ORG_ID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="1" row="6"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[CRED_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[安全培训合格证书]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="网络报表1">
+<JavaScript class="com.fr.web.ReportletHyperlink">
+<JavaScript class="com.fr.web.ReportletHyperlink">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b7]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<TargetFrame>
+<![CDATA[_blank]]></TargetFrame>
+<Features status="true" toolbar="true" location="true" menubar="true" resizable="true" directories="true" scrollbars="true"/>
+<ReportletName>
+<![CDATA[/JSJD/RYCZSGTJ_.cpt&op=view]]></ReportletName>
+</JavaScript>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand dir="0" leftParentDefault="false"/>
+</C>
+<C c="7" r="6" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=ROUND(G7 / F7, 2) + "%"]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="6">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COUNT(E.EMP_NAME)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[ORG_ID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="1" row="6"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[CRED_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[安全培训合格证书]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="6" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=ROUND(I7 / G7, 2)+ "%"]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="10" r="6" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="EMP_NUM"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="11" r="6" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="N"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[ORG_ID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="1" row="6"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[CRED_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[特种设备操作资格证书]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="网络报表1">
+<JavaScript class="com.fr.web.ReportletHyperlink">
+<JavaScript class="com.fr.web.ReportletHyperlink">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b7]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<TargetFrame>
+<![CDATA[_blank]]></TargetFrame>
+<Features status="true" toolbar="true" location="true" menubar="true" resizable="true" directories="true" scrollbars="true"/>
+<ReportletName>
+<![CDATA[/JSJD/RYCZSGTJ_.cpt&op=view]]></ReportletName>
+</JavaScript>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand dir="0" leftParentDefault="false"/>
+</C>
+<C c="12" r="6" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=ROUND(L7 / K7, 2)+ "%"]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="13" r="6">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COUNT(E.EMP_NAME)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[ORG_ID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="1" row="6"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[CRED_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[特种设备操作资格证书]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="6" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=ROUND(n7 / l7, 2)+ "%"]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="15" r="6" s="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="EMP_NUM"/>
+<Condition class="com.fr.data.condition.ListCondition"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand leftParentDefault="false" left="D7"/>
+</C>
+<C c="16" r="6" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="N"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[ORG_ID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="1" row="6"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[CRED_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[职业技能资格证书]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<NameJavaScriptGroup>
+<NameJavaScript name="网络报表1">
+<JavaScript class="com.fr.web.ReportletHyperlink">
+<JavaScript class="com.fr.web.ReportletHyperlink">
+<Parameters>
+<Parameter>
+<Attributes name="org_id"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=b7]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
+<TargetFrame>
+<![CDATA[_blank]]></TargetFrame>
+<Features status="true" toolbar="true" location="true" menubar="true" resizable="true" directories="true" scrollbars="true"/>
+<ReportletName>
+<![CDATA[/JSJD/RYCZSGTJ_.cpt&op=view]]></ReportletName>
+</JavaScript>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand dir="0" leftParentDefault="false"/>
+</C>
+<C c="17" r="6" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=ROUND(q7 / p7, 2)+ "%"]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="18" r="6">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="COUNT(E.EMP_NAME)"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[ORG_ID]]></CNAME>
+<Compare op="0">
+<ColumnRow column="1" row="6"/>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[CRED_CODE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[职业技能资格证书]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="19" r="6" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=ROUND(s7 / q7, 2) + "%"]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="2" r="7" s="4">
+<O>
+<![CDATA[注：]]></O>
+<Expand/>
+</C>
+<C c="3" r="7" cs="17" s="6">
+<Expand/>
+</C>
+<C c="4" r="10">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="9" r="12">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="72000000" height="42768000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+</ReportAttrSet>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="104"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="72"/>
+<Background name="ColorBackground" color="-6710785"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="1" size="96"/>
+<Background name="ColorBackground" color="-6710785"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-6710785"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72" foreground="-16776961" underline="1"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

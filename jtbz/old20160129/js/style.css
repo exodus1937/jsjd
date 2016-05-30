@@ -1,0 +1,200 @@
+body {
+            background: #f1f6fc;
+        }
+
+        ::-webkit-input-placeholder {
+            /* WebKit browsers */
+            color: #999;
+        }
+
+        :-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: #999;
+        }
+
+        ::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: #999;
+        }
+
+        :-ms-input-placeholder {
+            /* Internet Explorer 10+ */
+            color: #999;
+        }
+
+        .fengge {
+            clear: both;
+            display: block;
+            font-size: 1px;
+            line-height: 1px;
+            height: 1px;
+            margin: 0;
+            padding: 0;
+        }
+        .wj0 {
+            position: fixed;
+            right: 1%;
+            top: 180px;
+            z-index: 999;
+            width: 100px;
+            height: auto;
+        }
+
+        .wj0 span {
+            float: left;
+            width: 100px;
+            height: 35px;
+            margin: 2px 0 0 0;
+            padding: 0;
+            line-height: 35px;
+            font-size: 13pt;
+            font-weight: normal;
+            font-family: Î¢ÈíÑÅºÚ;
+            color: #ffffff;
+            text-align: center;
+            background: #145A96;
+        }
+
+        .wj0 span a {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .wj0 span a:hover {
+            background: #323436;
+        }
+
+        .wj {
+            width: 96%;
+            min-width: 900px;
+            height: auto;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .wj1 {
+            position: fixed;
+            width: 100%;
+            left: 0;
+            top: 20px;
+            z-index: 10;
+            height: auto;
+            margin: 0;
+            padding: 0;
+            border-bottom: 2px solid #145a96;
+        }
+
+        .wj1a {
+            width: 96%;
+            min-width: 900px;
+            height: 35px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .wj1a span {
+            float: left;
+            display: inline;
+            width: 120px;
+            height: 34px;
+            margin: 0 0 1px 10px;
+            padding: 0;
+            line-height: 34px;
+            font-size: 13pt;
+            font-weight: normal;
+            font-family: "Î¢ÈíÑÅºÚ";
+            color: #ffffff;
+            text-align: center;
+            background: #145a96;
+            border-radius: 5px;
+            filter:alpha(opacity = 70);
+            -moz-opacity: 0.7;
+            opacity: 0.7;
+        }
+
+        .wj1a dl {
+            float: right;
+            width: 300px;
+            height: 30px;
+            margin: 0 0 5px 0;
+            padding: 0;
+        }
+
+        .wj1a2 {
+            float: right;
+            width: 60px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 12pt;
+            color: #ffffff;
+            background: #145A96;
+            border: 0;
+            border-radius: 5px;
+        }
+
+        .wj1a1 {
+            float: right;
+            display: inline;
+            width: 230px;
+            height: 28px;
+            margin: 0 5px 0 0;
+            line-height: 30px;
+            font-size: 12pt;
+            text-indent: 5px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+
+        .wj1 span a {
+            display: block;
+            border-radius: 5px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .wj2 {
+            float: left;
+            width: 100%;
+            height: auto;
+            margin: 55px 0 0 0;
+            padding: 0;
+        }
+
+        .wj2 li {
+            position: relative;
+            float: left;
+            display: inline;
+            list-style: none;
+            width: 15.66%;
+            height: auto;
+            margin: 20px 0.5% 0;
+            padding: 0;
+        }
+
+        .wj2 li a img {
+            width: 100%;
+            border: 0;
+            vertical-align: middle;
+        }
+
+        .wj2 li h1 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: #000000;
+            filter: alpha(opacity=40);
+            -moz-opacity: 0.4;
+            opacity: 0.4;
+            display: none;
+            cursor: pointer;
+        }
+        
+        .Gray{ 
+          	filter:alpha(style=0,opacity=30,finishopacity=30);
+        }

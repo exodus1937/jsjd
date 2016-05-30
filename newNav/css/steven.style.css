@@ -1,0 +1,329 @@
+/**@Steven2015.01.19Created专用样式【供大家调用，但请勿向其中增加其他样式。】
+ */
+body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, code, del, dfn, em, img, strong, dd, dl, dt, li, ol, ul, fieldset, form, label, button, input, table, caption, tbody, tfoot, thead, tr, th, td, menu {
+	margin:0; 
+	padding:0;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+	display:block;
+}
+audio, canvas, video {
+	display:inline-block; 
+	*display:inline; *zoom:1;
+}
+audio:not([controls]) {
+	display:none;
+}
+table {
+	border-collapse:collapse; 
+	border-spacing:0; 
+	empty-cells:show;
+}
+ol, ul, menu {
+	list-style:none;
+}
+img {
+	border:0;
+}
+a:focus {
+	outline:none;
+}
+em, i {
+	font-style: normal;
+}
+button, input, select, textarea {
+	font-size:100%; 
+	margin:0; 
+	vertical-align:-3px; 
+	outline:none;
+}
+button, input {
+	border:1px solid; 
+	outline:none; 
+	line-height:normal; 
+	*overflow:visible;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+	border:0; 
+	padding:0
+}
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+	cursor:pointer; 
+	-webkit-appearance:button; 
+}
+input[type="search"] { 
+	-webkit-appearance:textfield; 
+	-webkit-box-sizing:content-box; 
+	-moz-box-sizing:content-box; 
+	box-sizing:content-box; 
+}
+input[type="search"]::-webkit-search-decoration { 
+	-webkit-appearance:none;
+}
+textarea { 
+	overflow:auto; 
+	vertical-align:top;
+}
+::selection { 
+	background:#72d0eb; 
+	color:#fff; 
+	text-shadow:none;
+}
+::-moz-selection { 
+	background:#72d0eb; 
+	color:#fff; 
+	text-shadow:none;
+}
+*[hidden] { 
+	display:none
+}
+
+a { 
+	color:#0088DB; 
+	text-decoration:none; 
+	cursor:pointer;
+}
+a:hover { 
+	color:#2A5E8E
+}
+
+.clearfix:after, .central:after, .widget ul:after, .paging:after, .pagenav:after, .base-tit:after { 
+	content:"."; 
+	display:block; 
+	height:0; 
+	clear:both; 
+	visibility:hidden;
+}
+.clearfix, .central, .widget ul, .paging, .pagenav, .base-tit { 
+	*+height:1%;
+}
+body, button, input, select, textarea, code { 
+	font-size:12px; 
+	font-family:microsoft yahei; 
+	color: #444;
+}
+
+
+
+/* window */
+
+
+/* input */
+.ipt { 
+	border: solid 1px #d2d2d2; 
+	border-left-color: #ccc; 
+	border-top-color: #ccc; 
+	border-radius: 2px; 
+	box-shadow: inset 0 1px 0 #f8f8f8; 
+	background-color: #fff; 
+	padding: 4px 6px; 
+	height: 21px; 
+	line-height: 21px; 
+	color: #555; 
+	width: 250px; 
+	vertical-align: baseline;
+}
+.ipt-mini { 
+	width: 140px; 
+	padding: 1px 3px;
+}
+.ipt:focus { 
+	border-color: #95C8F1; 
+	box-shadow: 0 0 4px #95C8F1;
+}
+
+/* select */
+.sele { 
+	border: solid 1px #d2d2d2; 
+	border-left-color: #ccc; 
+	border-top-color: #ccc; 
+	border-radius: 2px; 
+	box-shadow: inset 0 1px 0 #f8f8f8; 
+	background-color: #fff; 
+	padding: 4px 6px; 
+	height: 32px; 
+	line-height: 21px; 
+	color: #555; 
+	width: 195px; 
+	vertical-align: baseline;
+}
+.sele-mini { 
+	width: 140px; 
+	padding: 1px 3px;
+}
+.sele:focus { 
+	border-color: #95C8F1; 
+	box-shadow: 0 0 4px #95C8F1;
+}
+
+
+/* btn */
+.btn { 
+	position: relative; 
+	cursor: pointer; 
+	display: inline-block; 
+	vertical-align: middle; 
+	font-size: 12px; 
+	font-weight: bold; 
+	height: 27px; 
+	line-height: 27px; 
+	min-width: 52px; 
+	padding: 0 12px; 
+	text-align: center; 
+	text-decoration: none; 
+	border-radius: 2px; 
+	border: 1px solid #ddd; 
+	color: #666; 
+	background-color: #f5f5f5; 
+	background: -webkit-linear-gradient(top, #F5F5F5, #F1F1F1); 
+	background: -moz-linear-gradient(top, #F5F5F5, #F1F1F1); 
+	background: linear-gradient(top, #F5F5F5, #F1F1F1); 
+}
+
+input.btn { 
+	height: 29px;
+}
+.btn:hover { 
+	border-color:#c6c6c6; 
+	color:#333; 
+	background-color:#f8f8f8; 
+	background:-webkit-linear-gradient(top, #f8f8f8, #f1f1f1); 
+	background:-moz-linear-gradient(top, #f8f8f8, #f1f1f1); 
+	background:linear-gradient(top, #f8f8f8, #f1f1f1); 
+	box-shadow:#ddd 0 1px 1px 0;
+}
+.btn:active, .btn.btn-active { 
+	box-shadow:#ddd 0 1px 2px 0 inset; 
+	border-color:#c6c6c6;
+}
+.btn:focus { 
+	border-color:#4d90fe; 
+	outline:none
+}
+
+.btn-primary { 
+	border-color: #3079ED; 
+	color: #F3F7FC; 
+	background-color: #4D90FE; 
+	background: -webkit-linear-gradient(top, #4D90FE, #4787ED); 
+	background: -moz-linear-gradient(top, #4D90FE, #4787ED); 
+	background: linear-gradient(top, #4D90FE, #4787ED);
+}
+.btn-primary:hover { 
+	border-color:#2F5BB7;
+	color:#fff;
+	background-color: #4D90FE;
+	background: -webkit-linear-gradient(top, #4D90FE, #357AE8);
+	background: -moz-linear-gradient(top, #4D90FE, #357AE8);
+	background: linear-gradient(top, #4D90FE, #357AE8);
+}
+.btn-primary:active, .btn-primary.btn-active { 
+	box-shadow:#2176D3 0 1px 2px 0 inset; 
+	border-color: #3079ED;
+}
+.btn-primary:focus { 
+	border-color:#4d90fe; 
+	outline:none;
+}
+
+.theme-buy { margin-top:10%; text-align: center; }
+.theme-gobuy, .theme-signin { font-size: 15px; }
+.theme-price { position: relative; bottom: -6px; font-family: microsoft yahei, Arial, Helvetica, sans-serif; margin-right: 20px; font-weight: bold; color: #f60; line-height: 32px; font-size: 24px; display: inline-block; }
+.theme-price dfn { font-style: normal; font-size: 18px; margin-right: 2px; }
+.theme-desc { padding: 30px; }
+.theme-version { padding: 30px; }
+
+
+/*@Steven遮罩面板核心样式BEGIN*/
+.theme-popover-mask { 
+	z-index: 9998; position:fixed; top:0; left:0; width:100%; height:100%; background:#000; opacity:0.4; filter:alpha(opacity=40); display:none;
+}
+.theme-popover { 
+	z-index:9999; 
+	position:fixed; 
+	top:30%; 
+	left:50%; 
+	width:660px; 
+	/*height:360px;*/ 
+	margin:-135px 0 0 -330px; 
+	border-radius:5px; 
+	border:solid 2px #666; 
+	background-color:#fff; 
+	display:none; 
+	box-shadow: 0 0 10px #666;
+}
+.theme-poptit { 
+	border-bottom:1px solid #ddd; padding:12px; position: relative;
+}
+.theme-popbod { 
+	padding:60px 15px; color:#444; height: 148px;
+}
+.theme-popbom { 
+	padding:15px; background-color:#f6f6f6; border-top:1px solid #ddd; border-radius:0 0 5px 5px; color:#666
+}
+
+
+.theme-popbom a { 
+	margin-left:8px
+}
+.theme-poptit .close { 
+	float:right; 
+	color:#999; 
+	padding:5px; 
+	margin:-2px -5px -5px; 
+	font:bold 14px/14px simsun; 
+	text-shadow:0 1px 0 #ddd;
+}
+.theme-poptit .close:hover { 
+	color:#444;
+}
+/*@Steven遮罩面板核心样式END*/
+
+.btn.theme-reg { position: absolute; top: 8px; left: 43%; display: none }
+.inp-gray, .feed-mail-inp { border:1px solid #ccc; background-color:#fdfdfd; width:220px; height:16px; padding:4px; color:#444; margin-right:6px }
+
+.dform { padding:80px 60px 40px; text-align: center; }
+.dform .ipt_error { background-color:#FFFFCC; border-color:#FFCC66 }
+.dform-tip { display:none; background-color:#080; color:#fff; line-height:42px; margin-top:10px; display:; font-size: 14px; }
+.dform-tip-errer { background-color: #CF301A; }
+.dform-tip a { display: inline-block; padding: 0 20px; margin-left:10px; background-color: #FFE924; color: #CF301A; }
+
+.dform-login { padding:0; height: 270px; overflow: hidden; }
+.dform-login iframe { height: 470px; margin-top: -180px; }
+.theme-signin { margin: -50px -20px -50px 90px; text-align:left; font-size: 14px; }
+.theme-signin h4 { color:#999; font-weight:100; margin-bottom: 20px; font-size: 12px; }
+.theme-signin li { padding-left: 80px; margin-bottom: 15px; }
+.theme-signin li strong { float: left; margin-left: -80px; width: 80px; text-align: right; line-height: 32px; }
+.theme-signin .btn { margin-bottom: 10px; }
+.theme-signin p { font-size: 12px; color: #999; }
+.theme-desc, .theme-version { padding-top: 0 }
+
+@media screen and(min-width:768px){ }
+
+
+
+
+
+
+/*页面浮动面板 - 返回顶部底部@steven2015.01.06create-------------------------------------------------------------------------------------------begin*/
+#floatPanel{}
+#floatPanel .ctrolPanel{width:36px;height:166px;background:#fff url(../images/float-panel-bg.gif) no-repeat left top;border:solid 1px #ddd;position:fixed;right:25px;top:300px;overflow:hidden;z-index:10000; _position:absolute; /* for IE6 */_top:expression(documentElement.scrollTop + 300);}
+#floatPanel .ctrolPanel a{width:34px;font-size:12px;color:#ff6600;letter-spacing:1px;text-align:center;overflow:hidden;}
+#floatPanel .ctrolPanel .arrow{height:29px;line-height:28px;display:block;margin:1px auto;}
+#floatPanel .ctrolPanel .arrow span{display:none;}
+#floatPanel .ctrolPanel .arrow:hover{background:#f4f4f4;}
+#floatPanel .ctrolPanel .arrow:hover span{display:block;}
+#floatPanel .ctrolPanel .contact{height:60px;display:block;margin:2px auto;}
+#floatPanel .ctrolPanel .contact span{line-height:90px;}
+#floatPanel .ctrolPanel .qrcode{height:40px;display:block;margin:2px auto;}
+#floatPanel .ctrolPanel .qrcode span{display:none;}
+
+#floatPanel .popPanel{width:285px;height:339px;position:fixed;right:70px;top:300px;z-index:10000;overflow:hidden;display:none;_position:absolute; /* for IE6 */_top:expression(documentElement.scrollTop + 300); }
+#floatPanel .popPanel .popPanel-inner{width:285px;height:339px;position:relative;overflow:hidden;}
+#floatPanel .popPanel .popPanel-inner .arrowPanel{width:10px;height:240px;position:absolute;right:1px;top:102px;}
+#floatPanel .popPanel .popPanel-inner .arrowPanel .arrow01{width:0;height:0;font-size:0;line-height:0;border-top:10px solid transparent;_border-top:10px solid black;_filter:chroma(color=black);border-right:10px solid transparent;_border-right:10px solid black;_filter:chroma(color=black);border-bottom:10px solid transparent;_border-bottom:10px solid black;_filter:chroma(color=black);border-left:10px solid #ddd;position:absolute;bottom:0;position:absolute;left:2px;top:0;}
+#floatPanel .popPanel .popPanel-inner .arrowPanel .arrow02{width:0;height:0;font-size:0;line-height:0;border-top:10px solid transparent;_border-top:10px solid black;_filter:chroma(color=black);border-right:10px solid transparent;_border-right:10px solid black;_filter:chroma(color=black);border-bottom:10px solid transparent;_border-bottom:10px solid black;_filter:chroma(color=black);border-left:10px solid #fff;position:absolute;bottom:0;position:absolute;left:0;top:0;}
+#floatPanel .popPanel .popPanel-inner .qrcodePanel{width:275px;height:339px;text-align:center;background:#fff;border:solid 1px #ddd;position:absolute;left:0;top:0;overflow:hidden;}
+#floatPanel .popPanel .popPanel-inner .qrcodePanel img{width:278px;height:329px;border:none;padding:10px 10px 5px 10px;}
+#floatPanel .popPanel .popPanel-inner .qrcodePanel span{font-size:12px;color:#666;line-height:24px;letter-spacing:1px;}
+/*页面浮动面板 - 返回顶部底部steven2015.01.06created-------------------------------------------------------------------------------------------end*/

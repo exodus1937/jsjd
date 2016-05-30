@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DatasourceManager xmlVersion="20110221">
+	<ConnectionMap>
+<!--	<Connection name="FRDemo" class="com.fr.data.impl.JDBCDatabaseConnection">
+			<DatabaseAttr />
+			<JDBCDatabaseAttr
+				url="jdbc:odbc:Driver={Microsoft Access Driver (*.mdb)};DBQ=${ENV_HOME}\..\FRDemo.mdb"
+				driver="sun.jdbc.odbc.JdbcOdbcDriver" user="" password="___"
+				encryptPassword="true">
+				<DBCPAttr />
+			</JDBCDatabaseAttr>
+		</Connection>  -->
+		<Connection name="XIP" class="com.fr.data.impl.JDBCDatabaseConnection">
+			<JDBCDatabaseAttr url="jdbc:oracle:thin:@10.10.10.32:1521:jsjd"
+				driver="oracle.jdbc.driver.OracleDriver" user="jsjd" password="jsjd"
+				encryptPassword="false">
+				<DBCPAttr />
+			</JDBCDatabaseAttr>
+			<!--
+			<JDBCDatabaseAttr url="jdbc:oracle:thin:@127.0.0.1:1521:ORCL"
+				driver="oracle.jdbc.driver.OracleDriver" user="lijinhuan" password="lijinhuan"
+				encryptPassword="false">
+				<DBCPAttr />
+			</JDBCDatabaseAttr>
+			-->
+		</Connection>
+	</ConnectionMap>
+	<TableDataMap>
+		<TableData name="server" class="com.fr.data.impl.DBTableData">
+			<Parameters />
+			<Attributes maxMemRowCount="-1" />
+			<Connection class="com.fr.data.impl.NameDatabaseConnection">
+				<DatabaseName>
+					<![CDATA[FRDemo]]>
+				</DatabaseName>
+			</Connection>
+			<Query>
+				<![CDATA[SELECT * FROM STSCORE]]>
+			</Query>
+		</TableData>
+	</TableDataMap>
+</DatasourceManager>

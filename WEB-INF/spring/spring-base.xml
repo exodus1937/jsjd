@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+         http://www.springframework.org/schema/tx
+         http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-3.0.xsd
+         http://www.springframework.org/schema/aop 
+         http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<context:component-scan base-package="com.xzsoft.*" />
+	<context:annotation-config />
+
+	<!-- 导入属性配置文件 -->
+	<context:property-placeholder location="/WEB-INF/config.properties" />
+	
+	<bean id="conf" class="com.xzsoft.model.Conf">
+		<property name="zttPath" value="${zttPath}"/>
+	</bean>
+	
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+		<property name="maxIdle" value="${redis.maxIdle}" />
+		<property name="maxTotal" value="${redis.maxActive}" />
+		<property name="maxWaitMillis" value="${redis.maxWait}" />
+		<property name="testOnBorrow" value="${redis.testOnBorrow}" />
+	</bean>
+	
+	<bean id="redisConnectionFactory"
+		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+		p:host-name="${redis.host}" p:port="${redis.port}" p:password="${redis.pass}"
+		p:pool-config-ref="poolConfig" />
+	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+		<property name="connectionFactory" ref="redisConnectionFactory" />
+		<property name="KeySerializer">
+			<bean
+				class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
+		</property>
+		<property name="ValueSerializer">
+			<bean
+				class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
+		</property>
+		<property name="HashKeySerializer">
+			<bean
+				class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
+		</property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="xipDefaultDS" />
+	</bean>
+	
+	<!-- <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> 
+		<property name="dataSource" ref="dataSource" /> </bean> -->
+	<!-- 事务控制 -->
+	<tx:annotation-driven transaction-manager="transactionManager"
+		order="0" />
+	<!-- <tx:advice id="txAdvice" transaction-manager="transactionManager"> 
+		<tx:attributes> <tx:method name="add*" propagation="REQUIRED" rollback-for="Exception"/> 
+		<tx:method name="append*" propagation="REQUIRED" rollback-for="Exception"/> 
+		<tx:method name="insert*" propagation="REQUIRED" rollback-for="Exception"/> 
+		<tx:method name="save*" propagation="REQUIRED" rollback-for="Exception"/> 
+		<tx:method name="update*" propagation="REQUIRED" rollback-for="Exception"/> 
+		<tx:method name="modify*" propagation="REQUIRED" rollback-for="Exception"/> 
+		<tx:method name="edit*" propagation="REQUIRED" rollback-for="Exception"/> 
+		<tx:method name="delete*" propagation="REQUIRED" rollback-for="Exception"/> 
+		<tx:method name="remove*" propagation="REQUIRED" rollback-for="Exception"/> 
+		<tx:method name="repair" propagation="REQUIRED" rollback-for="Exception"/> 
+		<tx:method name="delAndRepair" propagation="REQUIRED" rollback-for="Exception"/> 
+		<tx:method name="get*" propagation="SUPPORTS" read-only="true"/> <tx:method 
+		name="find*" propagation="SUPPORTS" read-only="true"/> <tx:method name="load*" 
+		propagation="SUPPORTS" read-only="true"/> <tx:method name="search*" propagation="SUPPORTS" 
+		read-only="true"/> <tx:method name="datagrid*" propagation="SUPPORTS" read-only="true"/> 
+		<tx:method name="*" propagation="SUPPORTS" read-only="true"/> </tx:attributes> 
+		</tx:advice> <aop:config> //第一个*代表方法返回值 ..代表xip下所有子文件夹 第二个*为impl下的所有类 第三个*为类的所有方法 
+		最后一个..代表参数为任意 <aop:advisor pointcut="execution(* com.xzsoft.xip..service.impl.*.*(..))" 
+		advice-ref="txAdvice" order="1"/> </aop:config> -->
+	<bean id="contextApplicationContextProvider"
+		class="com.xzsoft.xip.framework.util.ApplicationContextProvider"></bean>
+	<!-- jdbcTemplate -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource">
+			<ref bean="xipDefaultDS" />
+		</property>
+	</bean>
+	<bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg><ref bean="xipDefaultDS"/></constructor-arg>
+	</bean>
+</beans>

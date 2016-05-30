@@ -1,0 +1,384 @@
+@charset "utf-8";
+/*样式重置*/
+body, ul, ol, dl, dd, p, h1, h2, h3, h4, h5, h6, input, textarea, select {
+    margin: 0;
+    padding: 0;
+}
+b{font-weight:100;}
+
+ul, ol {
+    list-style: none;
+}
+
+input, select, textarea {
+    outline: none;
+    background-color: transparent;
+    border: none;
+}
+thead td{  text-align:center;  }
+tbody td a{  text-align:center;  width:100%;}
+img {  border: none;  vertical-align: middle;  }
+a {  text-decoration: none;  }
+.ellipsis {  overflow: hidden;  white-space: nowrap;  text-overflow: ellipsis;  }
+em, i {  font-style: normal;}
+.fl {float: left;}
+.fr { float: right;}
+select {
+    -webkit-appearance: menulist;
+    box-sizing: border-box;
+    align-items: center;
+    border: 1px solid;
+    border-image-source: initial;
+    border-image-slice: initial;
+
+    border-image-repeat: initial;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    color: black;
+    background-color: white;
+    cursor: default;
+}
+#circle_data21{
+    position:absolute;
+    top:87px;
+    left:85px;
+}
+
+
+.spec { outline: none; display: none; }
+.select_box { float: left; margin: 5px 0 5px 10px; font-size: 10pt; color: #999999; width: 200px; line-height: 30px; }
+/*
+.select_showbox { border: 1px solid #2fa9cc; height: 26px; line-height: 26px; text-indent: 5px; background: url(../img/wj_icon.png) no-repeat right center; border-radius: 5px; font-size: 11pt; }
+*/
+.select_option { border: 1px solid #2fa9cc; border-top: none; display: none; background-color: #ffffff; }
+.select_option li { text-indent: 5px; font-size: 11pt; }
+.select_option li.selected { background-color: #F3F3F3; color: #999; }
+.select_option li.hover { background: #2fa9cc; color: #fff; }
+
+.clearfix:after, .clearfix:before {
+    content: "";
+    display: table;
+    overflow: hidden;
+    height: 0;
+    width: 0;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+a:focus {
+    outline-offset: -2px;
+}
+
+a:hover,
+a:active {
+    outline: 0;
+    color: red;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    font-size:12px;
+    width:100%;
+    text-align:center
+}
+table td{
+    font-size:12px;
+    text-align:center;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+html, body {
+    font-size: 12px;
+    background: #F1F4F9;
+}
+table{
+    width:100%;
+}
+.pointer{
+    cursor: pointer;
+}
+
+#main {
+    font-family: "微软雅黑";
+    width: 100%;
+    min-width: 1218px;
+    height: auto !important;
+    height: 400px;
+    min-height: 400px;
+    margin: 0 auto;
+
+    overflow: auto;
+}
+.du_top {
+    
+    width:100%;
+    height: 40px;
+    line-height:40px;
+    padding-left:12px;
+    background: #175898;
+    
+}
+
+
+/* 登录 修改密码 */
+
+.changePW{
+	height:50px;
+	width:70px;
+	background:url(../img/s.png) no-repeat 27px 17px;
+	display:block;
+	border-right:1px solid #d1d1d1;
+	border-left:1px solid #d1d1d1;
+        	
+}
+
+.logOut{
+	height:50px;
+	width:70px;
+	background:url(../img/s3.png) no-repeat 26px 18px;
+	display:block;
+	border-right:1px solid #d1d1d1;
+	
+}
+
+
+
+/* 导航 */
+.navFirst{
+	height:40px;
+}
+.navFirst dd{
+	height:40px;
+	float:left;
+}
+
+
+
+
+
+.nav-btn{
+	float:left;
+	height:40px;
+	line-height:40px;
+	width:120px;
+	font-size:16px;
+	
+	color:#fff;
+	
+	
+}
+.nav-btn:hover{
+	color:#175898;
+	text-decoration:none;
+	
+	background:#f1f1f1;
+}
+.nav-btn-active{
+	background:#fff;
+	color:#175898;
+	
+}
+.nav-btn-active:hover{
+	color:##AFB2B7
+}
+
+.secMenuDiv{
+	position:absolute;
+	z-index:10;
+    width: 194px;
+    background: #fff;
+    top: 90px;
+    text-align: center;
+    background:#d2e5f6;
+}
+.secMenuDiv li{
+	height:40px;
+}
+.secMenuDiv li a{
+	width:194px;
+    display: block;
+    height: 40px;
+    padding-left:27px;
+    line-height: 40px;
+    text-align:left;
+    font-size:16px;
+    color:#175898;
+    overflow: hidden;
+
+}
+.secMenuDiv li a:hover{
+	background:#175898;
+	color:#fff;
+	text-decoration:none;
+	
+}
+
+.thrMenuDiv{
+	background:#d2e5f6;
+	position:absolute;
+}
+.thrMenuDiv a{
+    overflow:hidden;
+}
+
+.fouMenuDiv{
+	background:#d2e5f6;
+	position:absolute;
+}
+.fouMenuDiv a{
+	overflow:hidden;
+}
+
+#du_main {
+    width: 100%;
+    height: auto !important;
+    height: 400px;
+    min-height:400px;
+    background: #F1F4F9;
+    padding-bottom:10px;
+}
+
+.class_main1 {
+    width: 32%;
+    min-width: 384px;
+    height: 300px;
+    text-align: center;
+    margin-top:1%;
+    margin-left:1%;
+    float: left;
+    position: relative;
+    border:1px solid #d1d1d1;
+    /*border: solid #EAEAEA;
+    border-width: 0 1px;*/
+    background-color: #FFF;
+    /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);*/
+}
+.class_main1 h3 {
+    height:30px;
+    line-height: 30px;
+    font-size: 14px;
+    background: #f1f1f1;
+    color:#177EDA;
+    font-weight: bold;
+    text-align: left;
+    text-indent: 10px;
+    border-bottom: 1px solid #d1d1d1;
+
+}
+.du_more{
+    position: absolute;
+    right:10px;
+    top:0;
+    font-size: 12px;
+    height:30px;
+    line-height: 30px;
+    color: #177EDA;
+}
+.title_active{
+    color: #0f9ae0;
+    box-shadow: 0 0 3px rgba(0,0,0.0.14);
+    border-bottom: 2px solid #0f9ae0;
+}
+.title_active a{
+    color: #0f9ae0;
+}
+.class_main1 thead td {
+    font-size: 14px;
+
+    background: #D2E5F6;
+    color:#177EDA;
+}
+
+.class_main1 h3 b {
+    display: inline-block;
+    color: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right:2px solid  #E3DEE7;
+    font-weight: bold;
+    background: #2fa9cc;
+}
+
+.class_main1 .title_active1{
+    background: #fff;
+    color:#177EDA;
+}
+.class_main5 h3 {
+    text-indent: 0;
+}
+/*临时*/
+
+#spec , #org{	appearance:none;
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari 和 Chrome */
+}
+.du_top_left div {
+    padding: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin: 10px 20px;
+}
+
+
+
+
+
+
+/*临时结束*/
+.du_top_left {
+    float: right;
+    margin-right: 50px;
+}
+.logo{
+    height: 50px;
+    background:#F1F1F1;
+}
+#logo {
+    float: left;
+    background: url("../img/Logo.png") no-repeat 55px 9px;
+    height: 50px;
+    width: 103px;
+}
+.logo2{
+    width: 320px;
+    height: 50px;
+    font-size: 22px;
+    line-height: 50px;
+    color:#000;
+}
+.btn:hover {
+    background: #145A96;
+}
+.btn {
+    float: left;
+    display: inline;
+    width: 120px;
+    height: 28px;
+    margin: 0 0 0 10px;
+    text-align: center;
+    font-size: 11pt;
+    color: #ffffff;
+    background: #2fa9cc;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+
+
+
+
+

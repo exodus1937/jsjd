@@ -1,0 +1,14 @@
+经理：
+    您好！这是我本周的工作计划，有时间您查收一下！
+frm.elements["page/currentPage"].value = goPage;
+
+JS特效：www.solarwinds.com
+8080端口占用，任务管理器进程中结束javaw.exe
+ctrl+shift+R  查找Java类资源
+Ctrl+H 综合查找
+ svn://111.207.223.156/fybx
+var reimburmemo='<%=URLDecoder.decode(request.getParameter("reimburmemo"), "UTF-8") %>';
+服务器访问超时：修改-----------
+ D:\path\plantform\apache-tomcat-7.0.54\conf\server.xml
+<Connector URIEncoding="UTF-8" connectionTimeout="20000" port="8080" maxThreads="500" minSpareThreads="20" acceptCount="1000" enableLookups="false" protocol="HTTP/1.1" redirectPort="8443"/>
+ 1.处理EOS环境优化问题，需要配置超时时间以及缓存问题；    2.对于一个功能的实现流程不是很清楚，类、逻辑流、页面配置之间的调用关系运用不熟练，逻辑流要和Bean相关联，在Bean里面要实现相应的方法，同时Dao要和相应的命名Sql关联。    3.关于表格导出信息的配置问题， 要为导出excel/exportTemplate/com.safety.pub.sfhonor.sfhonor.Sfhonorinfo.xml    4.业务字典如何配置才能在页面中正常呈现出对应的文字信息；

@@ -1,0 +1,8 @@
+/***系统头部***/
+.JN_top .top_txt { letter-spacing: -1px; }
+.JN_top .JN_right {margin-left: 9%;}
+.JN_top .top_nav a { padding-left: 1.4%;}
+.JN_top .top_nav a.Message { margin-left: 1.5%;}
+
+/*ie 7-8圆角通用*/
+.ie-css3{behavior: url(ie-css3.htc);position:relative; z-index:2; border-radius: 4px;}

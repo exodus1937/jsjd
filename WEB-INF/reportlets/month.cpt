@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="S_P_ID"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT
+'             '||P.P_DEP||'公司',
+Extract(year from P.CREATE_DATE)||'年' as CREATE_DATE_YEAR,
+Extract(month from P.CREATE_DATE)||'月份技术监督工作总结' as MONTH,
+ S.ID,
+ S.PLAN_IN_WORK,
+ S.PLAN_OUT_WORK,
+ S.INDEX_FINISH,
+ S.INDEX_ANALYSIS,
+ '    '||S.ASSET_EXCEPTION_ANALYSIS,
+ '    '||S.PROBLEMS,
+ '    '||S.EXISTING_PROBLEMS,
+ '    '||S.WORK_PLAN
+FROM TES_PS_SUP_PLAN_SPEC S
+LEFT JOIN TES_PS_SUP_PLAN P ON S.S_P_ID=P.S_P_ID
+WHERE P.S_P_ID = '${S_P_ID}']]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[952500,1143000,1143000,723900,723900,723900,723900,723900,723900,723900,1143000,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,2743200,1143000,1181100,5486400,1181100,1257300,8229600,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="3" r="0" cs="6" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="&apos;&apos;||P.P_DEP||&apos;公司&apos;"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="0" s="1">
+<Expand/>
+</C>
+<C c="1" r="1">
+<Expand dir="0"/>
+</C>
+<C c="3" r="1" cs="4" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="CREATE_DATE_YEAR"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="1" cs="2" s="3">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="1" s="1">
+<Expand/>
+</C>
+<C c="3" r="2" cs="6" s="4">
+<O>
+<![CDATA[一、主要完成工作]]></O>
+<Expand/>
+</C>
+<C c="9" r="2" s="1">
+<Expand/>
+</C>
+<C c="3" r="3" s="1">
+<Expand dir="0"/>
+</C>
+<C c="4" r="3" s="5">
+<O>
+<![CDATA[1、]]></O>
+<Expand/>
+</C>
+<C c="5" r="3" s="6">
+<O>
+<![CDATA[计划内项目]]></O>
+<Expand/>
+</C>
+<C c="6" r="3" s="1">
+<Expand/>
+</C>
+<C c="7" r="3" s="1">
+<Expand/>
+</C>
+<C c="8" r="3" s="1">
+<Expand/>
+</C>
+<C c="9" r="3" s="1">
+<Expand/>
+</C>
+<C c="3" r="4" s="1">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="4" r="4" s="1">
+<Expand/>
+</C>
+<C c="5" r="4" cs="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="PLAN_IN_WORK"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="4" s="1">
+<Expand/>
+</C>
+<C c="3" r="5" s="1">
+<Expand/>
+</C>
+<C c="4" r="5" s="5">
+<O>
+<![CDATA[2、]]></O>
+<Expand/>
+</C>
+<C c="5" r="5" s="6">
+<O>
+<![CDATA[计划外项目]]></O>
+<Expand/>
+</C>
+<C c="6" r="5" s="1">
+<Expand/>
+</C>
+<C c="7" r="5" s="1">
+<Expand/>
+</C>
+<C c="8" r="5" s="1">
+<Expand/>
+</C>
+<C c="9" r="5" s="1">
+<Expand/>
+</C>
+<C c="3" r="6" s="1">
+<Expand/>
+</C>
+<C c="4" r="6" s="1">
+<Expand/>
+</C>
+<C c="5" r="6" cs="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="PLAN_OUT_WORK"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="6" s="1">
+<Expand/>
+</C>
+<C c="3" r="8" s="1">
+<Expand/>
+</C>
+<C c="4" r="8" s="1">
+<Expand/>
+</C>
+<C c="5" r="8" s="1">
+<Expand/>
+</C>
+<C c="6" r="8" s="1">
+<Expand/>
+</C>
+<C c="7" r="8" s="1">
+<Expand/>
+</C>
+<C c="8" r="8" s="1">
+<Expand/>
+</C>
+<C c="9" r="8" s="1">
+<Expand/>
+</C>
+<C c="3" r="9" cs="6" s="4">
+<O>
+<![CDATA[二、监督指标完成情况及分析]]></O>
+<Expand/>
+</C>
+<C c="9" r="9" s="1">
+<Expand/>
+</C>
+<C c="3" r="10" s="1">
+<Expand/>
+</C>
+<C c="4" r="10" s="5">
+<O>
+<![CDATA[1、]]></O>
+<Expand/>
+</C>
+<C c="5" r="10" s="6">
+<O>
+<![CDATA[监督指标完成情况]]></O>
+<Expand/>
+</C>
+<C c="6" r="10" s="1">
+<Expand/>
+</C>
+<C c="7" r="10" s="1">
+<Expand/>
+</C>
+<C c="8" r="10" s="1">
+<Expand/>
+</C>
+<C c="9" r="10" s="1">
+<Expand/>
+</C>
+<C c="3" r="11" s="1">
+<Expand/>
+</C>
+<C c="4" r="11" s="1">
+<Expand/>
+</C>
+<C c="5" r="11" cs="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="INDEX_FINISH"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="11" s="1">
+<Expand/>
+</C>
+<C c="3" r="12" s="1">
+<Expand/>
+</C>
+<C c="4" r="12" s="5">
+<O>
+<![CDATA[2、]]></O>
+<Expand/>
+</C>
+<C c="5" r="12" s="6">
+<O>
+<![CDATA[指标分析]]></O>
+<Expand/>
+</C>
+<C c="6" r="12" s="1">
+<Expand/>
+</C>
+<C c="7" r="12" s="1">
+<Expand/>
+</C>
+<C c="8" r="12" s="1">
+<Expand/>
+</C>
+<C c="9" r="12" s="1">
+<Expand/>
+</C>
+<C c="3" r="13" s="1">
+<Expand/>
+</C>
+<C c="4" r="13" s="1">
+<Expand/>
+</C>
+<C c="5" r="13" cs="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="INDEX_ANALYSIS"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="13" s="1">
+<Expand/>
+</C>
+<C c="3" r="15" s="1">
+<Expand/>
+</C>
+<C c="4" r="15" s="1">
+<Expand/>
+</C>
+<C c="5" r="15" s="1">
+<Expand/>
+</C>
+<C c="6" r="15" s="1">
+<Expand/>
+</C>
+<C c="7" r="15" s="1">
+<Expand/>
+</C>
+<C c="8" r="15" s="1">
+<Expand/>
+</C>
+<C c="9" r="15" s="1">
+<Expand/>
+</C>
+<C c="3" r="16" cs="6" s="4">
+<O>
+<![CDATA[三、设备异常及分析]]></O>
+<Expand/>
+</C>
+<C c="9" r="16" s="1">
+<Expand/>
+</C>
+<C c="3" r="17" s="1">
+<Expand/>
+</C>
+<C c="4" r="17" cs="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="&apos;&apos;||S.ASSET_EXCEPTION_ANALYSIS"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="17" s="1">
+<Expand/>
+</C>
+<C c="3" r="19" s="1">
+<Expand/>
+</C>
+<C c="4" r="19" s="1">
+<Expand/>
+</C>
+<C c="5" r="19" s="1">
+<Expand/>
+</C>
+<C c="6" r="19" s="1">
+<Expand/>
+</C>
+<C c="7" r="19" s="1">
+<Expand/>
+</C>
+<C c="8" r="19" s="1">
+<Expand/>
+</C>
+<C c="9" r="19" s="1">
+<Expand/>
+</C>
+<C c="3" r="20" cs="6" s="4">
+<O>
+<![CDATA[四、专项检查发现问题整改情况]]></O>
+<Expand/>
+</C>
+<C c="9" r="20" s="1">
+<Expand/>
+</C>
+<C c="3" r="21" s="1">
+<Expand/>
+</C>
+<C c="4" r="21" cs="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="&apos;&apos;||S.PROBLEMS"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="21" s="1">
+<Expand/>
+</C>
+<C c="3" r="23" s="1">
+<Expand/>
+</C>
+<C c="4" r="23" s="1">
+<Expand/>
+</C>
+<C c="5" r="23" s="1">
+<Expand/>
+</C>
+<C c="6" r="23" s="1">
+<Expand/>
+</C>
+<C c="7" r="23" s="1">
+<Expand/>
+</C>
+<C c="8" r="23" s="1">
+<Expand/>
+</C>
+<C c="9" r="23" s="1">
+<Expand/>
+</C>
+<C c="3" r="24" cs="6" s="4">
+<O>
+<![CDATA[五、存在的问题]]></O>
+<Expand/>
+</C>
+<C c="9" r="24" s="1">
+<Expand/>
+</C>
+<C c="3" r="25" s="1">
+<Expand/>
+</C>
+<C c="4" r="25" cs="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="&apos;&apos;||S.EXISTING_PROBLEMS"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="25" s="1">
+<Expand/>
+</C>
+<C c="3" r="27" s="1">
+<Expand/>
+</C>
+<C c="4" r="27" s="1">
+<Expand/>
+</C>
+<C c="5" r="27" s="1">
+<Expand/>
+</C>
+<C c="6" r="27" s="1">
+<Expand/>
+</C>
+<C c="7" r="27" s="1">
+<Expand/>
+</C>
+<C c="8" r="27" s="1">
+<Expand/>
+</C>
+<C c="9" r="27" s="1">
+<Expand/>
+</C>
+<C c="3" r="28" cs="6" s="4">
+<O>
+<![CDATA[六、主要监督工作计划]]></O>
+<Expand/>
+</C>
+<C c="9" r="28" s="1">
+<Expand/>
+</C>
+<C c="3" r="29" s="1">
+<Expand/>
+</C>
+<C c="4" r="29" cs="5">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="&apos;&apos;||S.WORK_PLAN"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="29" s="1">
+<Expand/>
+</C>
+<C c="2" r="37">
+<O>
+<![CDATA[ ]]></O>
+<Expand/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="43200000" height="50400000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ReportAttrSet>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="false" delayPlaying="false" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="128"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="1" size="128"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="1" size="128"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="1" size="112"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="104"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="104"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+</WorkBook>

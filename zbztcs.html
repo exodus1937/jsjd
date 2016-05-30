@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>指标预览参数</title>
+	</head>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding: 0;
+		}
+		ul,ol{
+			list-style: none;
+		}
+		html,body{
+			width:100%;
+			height: 100%;
+			font-size: 62.5%;
+			margin: 0 auto;
+		}
+		body{
+			font-size: 1.2rem;
+		}
+		/*#header{
+			width:100%;
+			height:100px;
+			overflow: hidden;
+			margin-bottom: 3%;
+		}
+		#header img{
+			width: 100%;
+		}*/
+		#box{
+			width:94%;
+			height:500px;
+			margin: 0 auto;
+			border:1px solid #CCCCCA;
+		}
+		#box .box-nav{
+			height:40px;
+			background: #F1F1F1;
+			margin-bottom: 10px;
+		}
+		#box .box-nav li{
+			float:left;
+			list-style: none;
+			width:80px;
+			border-right:1px solid #fff;
+			text-align: center;
+			height:38px;
+			line-height: 40px;
+			color:#197ED8;
+			
+		}
+		#form{
+			height:40px;
+			line-height: 40px;
+			width:90%;
+			margin: 0 auto;
+			position: relative;
+			
+		}
+		#seachList{
+			position: absolute;
+			top:33px;
+			left:60px;
+			width:220px;
+			border:1px solid #C1C1C1;
+			background-color: #FFf;
+			padding:0 10px;
+			z-index: 10px;
+			display: none;
+			
+		}
+		#seachList ul li{
+			height:36px;
+			line-height:36px;
+		}
+		#seach{
+			width:240px;
+			height:24px;
+			border:1px solid #c1c1c1;
+		}
+		#div{
+			width: 97%;
+			border:1px solid #197ED8;
+			margin: 0 auto;
+		}
+		.box0{
+			width:100%;
+			height:34px;
+			border-bottom:1px solid #197ED8 ;
+			line-height:34px;
+			
+		}
+		.box10{
+			border-bottom: none;
+		}
+		.box0 span{
+			display: inline-block;
+			width:148px;
+			border-right:1px solid #F1F1F1;
+			text-align: center;
+			height:32px;
+			line-height: 32px;
+		}
+		/*.box1 span,.box3 span,.box5 span{
+			color:#197ED8;
+			background: #CCCCCA;
+		}*/
+	</style>
+	<body>
+		
+		<div id="box">
+			<ul class="box-nav">
+				<li style="background: #fff;border-bottom:2px solid #fff;">岱海发电</li>
+				<li>宁东发电</li>
+			</ul>
+			<form id="form">
+				<span>指标代码:</span>
+				<input type="text" name="seach" id="seach" placeholder="代码" />
+				<input type="button" name="searchbtn" id="seachbtn" value="查看筛选结果" />
+				<div id="seachList">
+					<ul>
+						<li>00002</li>
+					</ul>
+				</div>
+			</form>
+			<div id="div">
+				<div class="box0 box1">
+					<span>序号</span><span>代码</span><span>指标名称+</span><span>当前值</span><span>高报警</span><span>低报警</span><span>历史最大值</span><span>历史最小值</span>
+				</div>
+				<div class="box0 box2">
+					<span>1</span><span>000001</span><span>实时负荷(MW)</span><span>333</span><span>444</span><span>555</span><span>666</span><span>777</span>
+				</div>
+				<div class="box0 box3">
+					<span>2</span><span>000002</span><span>负荷率(%)</span><span>333</span><span>444</span><span>555</span><span>666</span><span>777</span>	
+				</div>
+				<div class="box0 box4">
+					<span>3</span><span>000003</span><span>厂用电率(%)</span><span>333</span><span>444</span><span>555</span><span>666</span><span>777</span>
+				</div>
+				<div class="box0 box5">
+					<span>4</span><span>000004</span><span>供电煤耗(反(%)</span><span>333</span><span>444</span><span>555</span><span>666</span><span>777</span>
+				</div>
+				<div class="box0 box6">
+					<span>5</span><span>000005</span><span>机组效率(%)</span><span>333</span><span>444</span><span>555</span><span>666</span><span>777</span>	
+				</div>
+				<div class="box0 box7">
+					<span>6</span><span>000006</span><span>脱硫效率(%)</span><span>333</span><span>444</span><span>555</span><span>666</span><span>777</span>
+				</div>
+				<div class="box0 box8">
+					<span>7</span><span>000007</span><span>出口烟气SO2浓度(mg/Nm3)</span><span>333</span><span>444</span><span>555</span><span>666</span><span>777</span>
+				</div>
+				<div class="box0 box9">
+					<span>8</span><span>000008</span><span>出口烟气NO浓度(mg/Nm3)</span><span>333</span><span>444</span><span>555</span><span>666</span><span>777</span>
+				</div>
+				<div class="box0 box10">
+					<span>9</span><span>000009</span><span>出口烟气粉尘浓度(mg/Nm3)</span><span>333</span><span>444</span><span>555</span><span>666</span><span>777</span>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		
+			
+		
+		<script type="text/javascript">
+			 $(document).ready(function(){ 
+	            var color="#f1f1f1"
+	            $("#div div:even").css("background-color",color);  //改变偶数行背景色
+	            /* 把背景色保存到属性中 */
+	            $("#div div:even").attr("bg",color);
+	            $("#div div:odd").attr("bg","#fff"); 
+	           
+     		 })
+			   //数据源，json的格式.
+    var user=[{"id": "0","dm" :"0000001","zb":"实时负荷","ssz": "000","gbj":"999","dbj": "333","ypjz":"444","yzdz":"222"},
+              {"id": "1","dm" :"0000002","zb":"实时负荷","ssz": "111","gbj":"999","dbj": "222","ypjz":"422","yzdz":"987"},
+              {"id": "2","dm" :"0000003","zb":"实时负荷","ssz": "111","gbj":"999","dbj": "222","ypjz":"422","yzdz":"987"},
+              {"id": "3","dm" :"0000004","zb":"实时负荷","ssz": "111","gbj":"999","dbj": "222","ypjz":"422","yzdz":"987"},
+              {"id": "4","dm" :"0000005","zb":"实时负荷","ssz": "111","gbj":"999","dbj": "222","ypjz":"422","yzdz":"987"},
+              {"id": "5","dm" :"0000006","zb":"实时负荷","ssz": "111","gbj":"999","dbj": "222","ypjz":"422","yzdz":"987"},
+              {"id": "6","dm" :"0000007","zb":"实时负荷","ssz": "111","gbj":"999","dbj": "222","ypjz":"422","yzdz":"987"},
+              {"id": "7","dm" :"0000008","zb":"实时负荷","ssz": "111","gbj":"999","dbj": "222","ypjz":"422","yzdz":"987"},
+              {"id": "8","dm" :"0000009","zb":"实时负荷","ssz": "111","gbj":"999","dbj": "222","ypjz":"422","yzdz":"987"},
+              {"id": "9","dm" :"0000010","zb":"实时负荷","ssz": "111","gbj":"999","dbj": "222","ypjz":"422","yzdz":"987"},
+    				];
+			  var $seach=$("#seach");
+			  var $seachbtn=$("#seachbtn")
+        $seachbtn.click(function(event){
+           // var keyEvent=event || window.event;   
+           // var keyCode=keyEvent.keyCode;  
+            // 数字键：48-57
+            // 字母键：65-90
+            // 删除键：8
+            // 后删除键：46
+            // 退格键：32
+            // enter键：13  
+           // if((keyCode>=48&&keyCode<=57)||(keyCode>=65&&keyCode<=90)||keyCode==8||keyCode==13||keyCode==32||keyCode==46){
+               //获取当前文本框的值
+               var seachText=$("#seach").val();
+               if(seachText!=""){
+                  //构造显示页面
+               var tab="<div><div class='box0'><span>序号</span><span>代码</span><span>指标名称</span><span>当前值</span><span>高报警</span><span>低报警</span><span>历史最大值</span><span>历史最小值</span></div>";
+                  //遍历解析json
+                  
+                  $.each(user,function(id, item){
+                  
+                     //如果包含则为table赋值
+                     if(item.dm.indexOf(seachText)!=-1){
+                        tab+="<div class='box0'><span>"+item.id+"</span><span>"+item.dm+"</span><span>"+item.zb+"</span><span>"+item.ssz+"</span><span>"+item.gbj+"</span><span>"+item.dbj+"</span><span>"+item.ypjz+"</span><span>"+item.yzdz+"</span></div>";
+                     }
+                  })
+                  tab+="</div>";
+                  $("#div").html(tab)
+                  //重新覆盖掉，不然会追加
+                                 var tab="<div class='box0'><span>序号</span><span>代码</span><span>指标名称</span><span>当前值</span><span>高报警</span><span>低报警</span><span>历史最大值</span><span>历史最小值</span></div>";
+               }/*else{
+                  $("#div").html("");
+               }*/
+           // }
+        })
+        
+		</script>
+			
+		
+	</body>
+	
+</html>

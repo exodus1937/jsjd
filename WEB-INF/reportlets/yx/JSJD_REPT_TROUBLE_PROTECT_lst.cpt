@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="main_data" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="p_inst_code"/>
+<O>
+<![CDATA[11]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT REG_ID,
+       REG_CODE,
+       REG_NAME,
+       ORG_ID,
+       (SELECT ORG_NAME FROM XIP_PUB_ORGS O WHERE O.ORG_ID = T.ORG_ID) ORG_NAME,
+       AUDIT_STATUS,
+       INST_CODE,
+       APPROVAL_BY,
+       AUDIT_BY,
+       CREATE_BY,
+       (SELECT EMP_NAME
+          FROM XIP_PUB_USERS_EMPS_V
+         WHERE USER_ID = T.APPROVAL_BY) APPROVAL_BY_NAME,
+       (SELECT EMP_NAME FROM XIP_PUB_USERS_EMPS_V WHERE USER_ID = T.AUDIT_BY) AUDIT_BY_NAME,
+       (SELECT EMP_NAME
+          FROM XIP_PUB_USERS_EMPS_V
+         WHERE USER_ID = T.CREATE_BY) CREATE_BY_NAME,
+       CREATE_DATE,
+       LAST_UPDATED_BY,
+       LAST_UPDATE_DATE,
+       LAST_UPDATE_LOGIN
+  FROM TES_PS_TROUBLE_PROTECT T
+ WHERE t.INST_CODE = '${p_inst_code}']]></Query>
+</TableData>
+<TableData name="dtl_data" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="p_inst_code"/>
+<O>
+<![CDATA[11]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT D.DTL_ID,
+       D.REG_ID,
+       D.TROUBLE_DATE,
+       D.EQUIP_ID,
+       D.TROUBLE_REASON_PROCESS,
+       D.TROUBLE_TYPE,
+       D.TROUBLE_LOCATION,
+       D.PROTECT_NAME_STYLE,
+       D.PROTECT_CORRECT_TIME,
+       D.PROTECT_WRONG_TIME,
+       D.PROTECT_REFUSE_TIME,
+       D.PROTECT_INCOR_REASON,
+       D.DUTY_CLASS
+  FROM TES_PS_TROUBLE_PROTECT_DTL D, TES_PS_TROUBLE_PROTECT T
+ WHERE D.REG_ID = T.REG_ID
+   AND T.INST_CODE = '${p_inst_code}']]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars/>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars/>
+</WebViewContent>
+<WebWriteContent>
+<Listener event="writesuccess">
+<JavaScript class="com.fr.report.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[location.reload();]]></Content>
+</JavaScript>
+</Listener>
+<ToolBars/>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[0,0,0,1485900,723900,0,990600,990600,800100,876300,381000,876300,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[0,0,0,0,0,1828800,5715000,2743200,4572000,2743200,2743200,4114800,3162300,2438400,2438400,4762500,3200400,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="6" r="3" cs="11" s="0">
+<O t="DSColumn">
+<Attributes dsName="main_data" columnName="REG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="6" r="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$p_user_id]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$p_org_id]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="8" r="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$p_inst_code]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="9" r="5">
+<O t="DSColumn">
+<Attributes dsName="main_data" columnName="REG_CODE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="11" r="5">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="5" r="6" s="1">
+<O>
+<![CDATA[单位：]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" cs="3">
+<O t="DSColumn">
+<Attributes dsName="main_data" columnName="ORG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="6" cs="2" s="2">
+<O t="DSColumn">
+<Attributes dsName="main_data" columnName="CREATE_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="5" r="7" rs="2" s="3">
+<O>
+<![CDATA[序号]]></O>
+<Expand/>
+</C>
+<C c="6" r="7" s="3">
+<O>
+<![CDATA[时间]]></O>
+<Expand/>
+</C>
+<C c="7" r="7" cs="3" s="3">
+<O>
+<![CDATA[故障简况]]></O>
+<Expand/>
+</C>
+<C c="10" r="7" cs="5" s="3">
+<O>
+<![CDATA[保护及安全自动装置动作情况]]></O>
+<Expand/>
+</C>
+<C c="15" r="7" cs="2" s="3">
+<O>
+<![CDATA[不正确动作的分析]]></O>
+<Expand/>
+</C>
+<C c="4" r="8">
+<O>
+<![CDATA[id]]></O>
+<Expand/>
+</C>
+<C c="6" r="8" s="3">
+<O>
+<![CDATA[月日时分]]></O>
+<Expand/>
+</C>
+<C c="7" r="8" s="3">
+<O>
+<![CDATA[设备名称]]></O>
+<Expand/>
+</C>
+<C c="8" r="8" s="3">
+<O>
+<![CDATA[故障原因及经过]]></O>
+<Expand/>
+</C>
+<C c="9" r="8" s="3">
+<O>
+<![CDATA[故障类型]]></O>
+<Expand/>
+</C>
+<C c="10" r="8" s="3">
+<O>
+<![CDATA[地点]]></O>
+<Expand/>
+</C>
+<C c="11" r="8" s="3">
+<O>
+<![CDATA[装置名称、型式]]></O>
+<Expand/>
+</C>
+<C c="12" r="8" s="3">
+<O>
+<![CDATA[正确动作次数]]></O>
+<Expand/>
+</C>
+<C c="13" r="8" s="3">
+<O>
+<![CDATA[误动次数]]></O>
+<Expand/>
+</C>
+<C c="14" r="8" s="3">
+<O>
+<![CDATA[拒动次数]]></O>
+<Expand/>
+</C>
+<C c="15" r="8" s="3">
+<O>
+<![CDATA[不正确动作的原因]]></O>
+<Expand/>
+</C>
+<C c="16" r="8" s="3">
+<O>
+<![CDATA[责任分类]]></O>
+<Expand/>
+</C>
+<C c="4" r="9">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="DTL_ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<CellPageAttr/>
+<CellInsertPolicy>
+<InsertPolicy>
+<![CDATA[default]]></InsertPolicy>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SQL("XIP","select seq_jsjd_trble_pro_dtl_id.nextval from dual",1,1)]]></Attributes>
+</O>
+</CellInsertPolicy>
+<Expand dir="0"/>
+</C>
+<C c="5" r="9" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=seq()]]></Attributes>
+</O>
+<CellPageAttr/>
+<CellInsertPolicy>
+<InsertPolicy>
+<![CDATA[copy]]></InsertPolicy>
+</CellInsertPolicy>
+<Expand/>
+</C>
+<C c="6" r="9" s="4">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="TROUBLE_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="9" s="4">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="EQUIP_ID"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="9" s="4">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="TROUBLE_REASON_PROCESS"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="9" s="4">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="TROUBLE_TYPE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="9" s="4">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="TROUBLE_LOCATION"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="9" s="4">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="PROTECT_NAME_STYLE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="9" s="4">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="PROTECT_CORRECT_TIME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="9" s="4">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="PROTECT_WRONG_TIME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="14" r="9" s="4">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="PROTECT_REFUSE_TIME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="15" r="9" s="4">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="PROTECT_INCOR_REASON"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="16" r="9" s="4">
+<O t="DSColumn">
+<Attributes dsName="dtl_data" columnName="DUTY_CLASS"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="11" s="1">
+<O>
+<![CDATA[批准人:]]></O>
+<Expand/>
+</C>
+<C c="6" r="11" s="5">
+<O t="DSColumn">
+<Attributes dsName="main_data" columnName="APPROVAL_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="11" s="1">
+<O>
+<![CDATA[审核人:]]></O>
+<Expand/>
+</C>
+<C c="11" r="11" s="5">
+<O t="DSColumn">
+<Attributes dsName="main_data" columnName="AUDIT_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="11" s="1">
+<O>
+<![CDATA[ 填报人:]]></O>
+<Expand/>
+</C>
+<C c="15" r="11" s="5">
+<O t="DSColumn">
+<Attributes dsName="main_data" columnName="CREATE_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+<ReportWriteAttr/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="false" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[4229100,4229100,14325600,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$userId]]></Attributes>
+</O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetName name="p_user_id"/>
+<WidgetAttr invisible="true"/>
+<TextAttr/>
+</Widget>
+<Expand/>
+</C>
+<C c="1" r="0">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$orgId]]></Attributes>
+</O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetName name="p_org_id"/>
+<WidgetAttr invisible="true"/>
+<TextAttr/>
+</Widget>
+<Expand/>
+</C>
+<C c="2" r="0">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$instanceCode]]></Attributes>
+</O>
+<Widget class="com.fr.report.web.ui.TextEditor">
+<WidgetName name="p_inst_code"/>
+<WidgetAttr invisible="true"/>
+<TextAttr/>
+</Widget>
+<Expand/>
+</C>
+<C c="4" r="0">
+<O>
+<![CDATA[查询]]></O>
+<Widget class="com.fr.report.web.ui.impl.form.FormSubmitButton">
+<WidgetAttr invisible="true"/>
+<Hotkeys>
+<![CDATA[enter]]></Hotkeys>
+</Widget>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</ParameterUI>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="108" foreground="-16737895"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="4">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<Format class="java.text.SimpleDateFormat">
+<![CDATA[yyyy年MM月dd]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="72"/>
+<Background name="ImageBackground" specifiedImageWidth="-1.0" specifiedImageHeight="-1.0" layout="2">
+<IM>
+<![CDATA[lO<9(kN.ld@UNU%p%320@UNU)#I6cXfRW$ncQ/@&<0O5<@n=S@[oX!K%L!+t*8LGkV28*<fV
+1DR2+&2#M*'iG9!?fn`jEHhj.>Qf/%>^"4u8^;2W-f-"/[-Ps"#=CT4LGm?)6rkX]Ap9;)cg,
+:Xp=M>^R`IX>57);OBFYLBS"_e1Gss7S9)tL+\09b!LY7c2&TIA?%9m4n<NhHK^]A5-XNuS&?
+,PUblK>Iu.A7%J~
+]]></IM>
+</Background>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-6697729"/>
+<Bottom style="1" color="-6697729"/>
+<Left style="1" color="-6697729"/>
+<Right style="1" color="-6697729"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+</WorkBook>

@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[{CALL TES_PS_GENERAL_MAIN_SUB.ORG_COMBOX_SUB('${instanceCode}',?)}]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[{CALL TES_PS_GENERAL_MAIN_SUB.LIST_NAME_SUB('${instanceCode}',?)}
+]]></Query>
+</TableData>
+<TableData name="ds3" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select t.project,
+       t.turbine_unit_quantit,
+       t.turbine_fill_quantity,
+       t.fire_resistance_unit_quantit,
+       t.fire_resistance_fill_quantity,
+       t.transformer,
+       t.transformer_unit_quantit2,
+       t.transformer_fill_quantity2,
+       s.INST_CODE,
+       G.G_NAME
+ from TES_PS_OIL_CONSUMPTION_SUPERVI t, TES_PS_GENERAL_MAIN s,TES_BA_GENERATOR G
+${if(len(instanceCode) == 0, " where 1=2",
+ " where  t.general_id = s.general_id
+   and  G.G_ID=t.PROJECT
+   AND S.INST_CODE ='"+instanceCode+"'")}]]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false"/>
+</WebPageContent>
+<WebViewContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.ExcelS">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-PageToSheet")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+</WebViewContent>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.ui.impl.ExcelO">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Simple")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.Excel">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Excel")}(${i18n("Export-Excel-Page")})]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.FlashPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.PDFPrint">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Print[Client]A")}]]></Text>
+<IconName>
+<![CDATA[pdfprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.ui.impl.write.ImportExcelData">
+<WidgetAttr/>
+<Text>
+<![CDATA[${i18n("Utils-Import_Excel_Data")}]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor color="-10033153"/>
+</WebWriteContent>
+<Background name="NullBackground"/>
+<CacheValidateTime>
+<![CDATA[0]]></CacheValidateTime>
+</ReportWebAttr>
+<Report class="com.fr.report.WorkSheet" name="sheet1">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="50400000" height="28800000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[0,0,0,723900,723900,723900,1008000,1008000,1008000,1008000,1008000,1008000,722880,1008000,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[0,0,2971800,3009900,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="3" r="4" cs="10" rs="2" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="GENERAL_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="6" s="1">
+<O>
+<![CDATA[填报单位：]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" cs="4">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="6" s="1">
+<O>
+<![CDATA[填报日期：]]></O>
+<Expand/>
+</C>
+<C c="9" r="6" cs="4">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="CREATE_DATE"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="7" rs="3" s="2">
+<O>
+<![CDATA[项目]]></O>
+<Expand/>
+</C>
+<C c="4" r="7" cs="3" s="2">
+<O>
+<![CDATA[汽轮机油耗]]></O>
+<Expand/>
+</C>
+<C c="7" r="7" cs="3" s="2">
+<O>
+<![CDATA[抗燃油耗]]></O>
+<Expand/>
+</C>
+<C c="10" r="7" cs="4" s="2">
+<O>
+<![CDATA[变压器油耗]]></O>
+<Expand/>
+</C>
+<C c="4" r="8" s="2">
+<O>
+<![CDATA[机组油量]]></O>
+<Expand/>
+</C>
+<C c="5" r="8" s="2">
+<O>
+<![CDATA[补油量]]></O>
+<Expand/>
+</C>
+<C c="6" r="8" s="2">
+<O>
+<![CDATA[油耗]]></O>
+<Expand/>
+</C>
+<C c="7" r="8" s="2">
+<O>
+<![CDATA[机组油量]]></O>
+<Expand/>
+</C>
+<C c="8" r="8" s="2">
+<O>
+<![CDATA[补油量]]></O>
+<Expand/>
+</C>
+<C c="9" r="8" s="2">
+<O>
+<![CDATA[油耗]]></O>
+<Expand/>
+</C>
+<C c="10" r="8" s="2">
+<O>
+<![CDATA[变压器名称]]></O>
+<Expand/>
+</C>
+<C c="11" r="8" s="2">
+<O>
+<![CDATA[机组油量]]></O>
+<Expand/>
+</C>
+<C c="12" r="8" s="2">
+<O>
+<![CDATA[补油量]]></O>
+<Expand/>
+</C>
+<C c="13" r="8" s="2">
+<O>
+<![CDATA[油耗]]></O>
+<Expand/>
+</C>
+<C c="4" r="9" s="2">
+<O>
+<![CDATA[t]]></O>
+<Expand/>
+</C>
+<C c="5" r="9" s="2">
+<O>
+<![CDATA[t]]></O>
+<Expand/>
+</C>
+<C c="6" r="9" s="2">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="7" r="9" s="2">
+<O>
+<![CDATA[t]]></O>
+<Expand/>
+</C>
+<C c="8" r="9" s="2">
+<O>
+<![CDATA[t]]></O>
+<Expand/>
+</C>
+<C c="9" r="9" s="2">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="10" r="9" s="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="11" r="9" s="2">
+<O>
+<![CDATA[t]]></O>
+<Expand/>
+</C>
+<C c="12" r="9" s="2">
+<O>
+<![CDATA[t]]></O>
+<Expand/>
+</C>
+<C c="13" r="9" s="2">
+<O>
+<![CDATA[%]]></O>
+<Expand/>
+</C>
+<C c="3" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="G_NAME"/>
+<Complex order="1"/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<SortFormula>
+<![CDATA[G_NAME]]></SortFormula>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="TURBINE_UNIT_QUANTIT"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="TURBINE_FILL_QUANTITY"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="10" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=F11/E11]]></Attributes>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="FIRE_RESISTANCE_UNIT_QUANTIT"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="8" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="FIRE_RESISTANCE_FILL_QUANTITY"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="9" r="10" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=I11/H11]]></Attributes>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="TRANSFORMER"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="11" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="TRANSFORMER_UNIT_QUANTIT2"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="12" r="10" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="TRANSFORMER_FILL_QUANTITY2"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="13" r="10" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=M11/L11]]></Attributes>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="3" r="11" s="3">
+<O>
+<![CDATA[全厂平均油耗]]></O>
+<Expand/>
+</C>
+<C c="4" r="11" cs="3" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(G11)/COUNT(D11)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="7" r="11" cs="3" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(J11)/COUNT(D11)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="10" r="11" cs="4" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(N11)/COUNT(D11)]]></Attributes>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="16" r="11">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="4" r="13" s="1">
+<O>
+<![CDATA[批准：]]></O>
+<Expand/>
+</C>
+<C c="5" r="13" cs="2">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="EXAMINE_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="7" r="13" s="1">
+<O>
+<![CDATA[审核：]]></O>
+<Expand/>
+</C>
+<C c="8" r="13" cs="2">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="APPROVAL_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="10" r="13" s="1">
+<O>
+<![CDATA[填报人：]]></O>
+<Expand/>
+</C>
+<C c="11" r="13" cs="2">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="CREATE_BY_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="4" r="17">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="false" windowPosition="1" align="1"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.report.parameter.CustomParameterUI">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[381000,876300,381000,876300,381000,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[3048000,5334000,3048000,5334000,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList/>
+</ElementCase>
+</ParameterUI>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="96"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<Format class="java.text.DecimalFormat">
+<![CDATA[#0%]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>

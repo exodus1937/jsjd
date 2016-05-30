@@ -1,0 +1,6783 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20110221">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[{CALL TES_PS_GENERAL_MAIN_SUB.QUARTER('${instanceCode}',?)}]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[{CALL TES_PS_GENERAL_MAIN_SUB.QUARTER_2('${instanceCode}',?)}]]></Query>
+</TableData>
+<TableData name="ds3" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="instanceCode"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[XIP]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT T.YEAR||'年'||X.ORG_SHORT_NAME||'主要生产指标' NAME_,
+       REPLACE(WM_CONCAT(G.INSTALLED_CAPACITY),',','+') U
+  FROM TES_PS_GENERAL_MAIN T,
+       XIP_PUB_ORGS  X,
+        TES_BA_GENERATOR  G
+ WHERE T.ORG_ID = X.ORG_ID
+   AND X.ORG_ID = G.ORG_ID
+   AND G.INSTALLED_CAPACITY LIKE '%MW%'
+   AND T.INST_CODE = '${instanceCode}'
+GROUP BY T.YEAR,X.ORG_SHORT_NAME]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.WorkSheet" name="发电量">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="57600000" height="42768000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,1562100,952500,952500,1028700,1028700,1028700,1028700,2476500,2476500,2476500,2476500,2476500,2476500,2476500,2476500,4305300,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,0,0,2743200,2743200,3771900,2743200,2743200,2743200,2743200,4114800,2743200,2743200,2743200,2743200,5143500,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<Expand/>
+</C>
+<C c="3" r="1" cs="13" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="NAME_"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="16" r="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="3" r="4" cs="2" rs="2" s="1">
+<Expand/>
+</C>
+<C c="5" r="4" rs="2" s="1">
+<O>
+<![CDATA[装机容量]]></O>
+<Expand/>
+</C>
+<C c="6" r="4" cs="4" s="1">
+<O>
+<![CDATA[同期季度发电量]]></O>
+<Expand/>
+</C>
+<C c="10" r="4" rs="2" s="1">
+<O>
+<![CDATA[同期全年发电量]]></O>
+<Expand/>
+</C>
+<C c="11" r="4" cs="4" s="1">
+<O>
+<![CDATA[当年季度发电量]]></O>
+<Expand/>
+</C>
+<C c="15" r="4" rs="2" s="1">
+<O>
+<![CDATA[当年年度累计发电量]]></O>
+<Expand/>
+</C>
+<C c="6" r="5" s="1">
+<O>
+<![CDATA[一季度]]></O>
+<Expand/>
+</C>
+<C c="7" r="5" s="1">
+<O>
+<![CDATA[二季度]]></O>
+<Expand/>
+</C>
+<C c="8" r="5" s="1">
+<O>
+<![CDATA[三季度]]></O>
+<Expand/>
+</C>
+<C c="9" r="5" s="1">
+<O>
+<![CDATA[四季度]]></O>
+<Expand/>
+</C>
+<C c="11" r="5" s="1">
+<O>
+<![CDATA[一季度]]></O>
+<Expand/>
+</C>
+<C c="12" r="5" s="1">
+<O>
+<![CDATA[二季度]]></O>
+<Expand/>
+</C>
+<C c="13" r="5" s="1">
+<O>
+<![CDATA[三季度]]></O>
+<Expand/>
+</C>
+<C c="14" r="5" s="1">
+<O>
+<![CDATA[四季度]]></O>
+<Expand/>
+</C>
+<C c="3" r="6" s="2">
+<O>
+<![CDATA[序号]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" s="2">
+<O>
+<![CDATA[单位]]></O>
+<Expand/>
+</C>
+<C c="5" r="6" s="2">
+<O>
+<![CDATA[万千瓦]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" cs="10" s="2">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="0" r="7" s="3">
+<Expand/>
+</C>
+<C c="1" r="7" s="3">
+<Expand/>
+</C>
+<C c="2" r="7" s="3">
+<Expand/>
+</C>
+<C c="3" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=seq()]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_SHORT_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="U"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(G8:J8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(L8:O8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="1" r="8">
+<Expand/>
+</C>
+<C c="2" r="8">
+<Expand/>
+</C>
+<C c="3" r="8" cs="3" rs="2" s="4">
+<O>
+<![CDATA[一季度原因分析]]></O>
+<Expand/>
+</C>
+<C c="6" r="8" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="9" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="10">
+<Expand/>
+</C>
+<C c="1" r="10">
+<Expand/>
+</C>
+<C c="2" r="10">
+<Expand/>
+</C>
+<C c="3" r="10" cs="3" rs="2" s="4">
+<O>
+<![CDATA[二季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="10" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="11" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="12">
+<Expand/>
+</C>
+<C c="1" r="12">
+<Expand/>
+</C>
+<C c="2" r="12">
+<Expand/>
+</C>
+<C c="3" r="12" cs="3" rs="2" s="4">
+<O>
+<![CDATA[三季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="12" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="13" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="14">
+<Expand/>
+</C>
+<C c="1" r="14">
+<Expand/>
+</C>
+<C c="2" r="14">
+<Expand/>
+</C>
+<C c="3" r="14" cs="3" rs="2" s="4">
+<O>
+<![CDATA[四季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="14" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="15" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="16">
+<Expand/>
+</C>
+<C c="1" r="16">
+<Expand/>
+</C>
+<C c="2" r="16">
+<Expand/>
+</C>
+<C c="3" r="16" cs="3" s="7">
+<O>
+<![CDATA[全年原因分析]]></O>
+<Expand/>
+</C>
+<C c="6" r="16" cs="10" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="ANNUAL_CAUSE_ANALYSIS"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="17">
+<Expand/>
+</C>
+<C c="1" r="17">
+<Expand/>
+</C>
+<C c="2" r="17">
+<Expand/>
+</C>
+<C c="1" r="18">
+<Expand/>
+</C>
+<C c="2" r="18">
+<Expand/>
+</C>
+<C c="1" r="19">
+<Expand/>
+</C>
+<C c="2" r="19">
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<Report class="com.fr.report.WorkSheet" name="供电量">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="57600000" height="42768000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,1600200,914400,914400,914400,914400,914400,914400,2462400,2462400,2462400,2462400,2462400,2462400,2462400,2462400,2462400,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,0,0,2743200,4533900,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<Expand/>
+</C>
+<C c="3" r="1" cs="13" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="NAME_"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="16" r="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="3" r="4" cs="2" rs="2" s="1">
+<Expand/>
+</C>
+<C c="5" r="4" rs="2" s="1">
+<O>
+<![CDATA[装机容量]]></O>
+<Expand/>
+</C>
+<C c="6" r="4" cs="4" s="1">
+<O>
+<![CDATA[同期季度发电量]]></O>
+<Expand/>
+</C>
+<C c="10" r="4" rs="2" s="1">
+<O>
+<![CDATA[同期全年发电量]]></O>
+<Expand/>
+</C>
+<C c="11" r="4" cs="4" s="1">
+<O>
+<![CDATA[当年季度发电量]]></O>
+<Expand/>
+</C>
+<C c="15" r="4" rs="2" s="1">
+<O>
+<![CDATA[当年年度累计发电量]]></O>
+<Expand/>
+</C>
+<C c="6" r="5" s="1">
+<O>
+<![CDATA[一季度]]></O>
+<Expand/>
+</C>
+<C c="7" r="5" s="1">
+<O>
+<![CDATA[二季度]]></O>
+<Expand/>
+</C>
+<C c="8" r="5" s="1">
+<O>
+<![CDATA[三季度]]></O>
+<Expand/>
+</C>
+<C c="9" r="5" s="1">
+<O>
+<![CDATA[四季度]]></O>
+<Expand/>
+</C>
+<C c="11" r="5" s="1">
+<O>
+<![CDATA[一季度]]></O>
+<Expand/>
+</C>
+<C c="12" r="5" s="1">
+<O>
+<![CDATA[二季度]]></O>
+<Expand/>
+</C>
+<C c="13" r="5" s="1">
+<O>
+<![CDATA[三季度]]></O>
+<Expand/>
+</C>
+<C c="14" r="5" s="1">
+<O>
+<![CDATA[四季度]]></O>
+<Expand/>
+</C>
+<C c="3" r="6" s="2">
+<O>
+<![CDATA[序号]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" s="2">
+<O>
+<![CDATA[单位]]></O>
+<Expand/>
+</C>
+<C c="5" r="6" s="2">
+<O>
+<![CDATA[万千瓦]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" cs="10" s="2">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="0" r="7" s="3">
+<Expand/>
+</C>
+<C c="1" r="7" s="3">
+<Expand/>
+</C>
+<C c="2" r="7" s="3">
+<Expand/>
+</C>
+<C c="3" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=seq()]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_SHORT_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="U"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(G8:J8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(L8:O8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="1" r="8">
+<Expand/>
+</C>
+<C c="2" r="8">
+<Expand/>
+</C>
+<C c="3" r="8" cs="3" rs="2" s="4">
+<O>
+<![CDATA[一季度原因分析]]></O>
+<Expand/>
+</C>
+<C c="6" r="8" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="9" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="10">
+<Expand/>
+</C>
+<C c="1" r="10">
+<Expand/>
+</C>
+<C c="2" r="10">
+<Expand/>
+</C>
+<C c="3" r="10" cs="3" rs="2" s="4">
+<O>
+<![CDATA[二季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="10" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="11" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="12">
+<Expand/>
+</C>
+<C c="1" r="12">
+<Expand/>
+</C>
+<C c="2" r="12">
+<Expand/>
+</C>
+<C c="3" r="12" cs="3" rs="2" s="4">
+<O>
+<![CDATA[三季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="12" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="13" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="14">
+<Expand/>
+</C>
+<C c="1" r="14">
+<Expand/>
+</C>
+<C c="2" r="14">
+<Expand/>
+</C>
+<C c="3" r="14" cs="3" rs="2" s="4">
+<O>
+<![CDATA[四季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="14" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="15" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供电量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="16">
+<Expand/>
+</C>
+<C c="1" r="16">
+<Expand/>
+</C>
+<C c="2" r="16">
+<Expand/>
+</C>
+<C c="3" r="16" cs="3" s="7">
+<O>
+<![CDATA[全年原因分析]]></O>
+<Expand/>
+</C>
+<C c="6" r="16" cs="10" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="ANNUAL_CAUSE_ANALYSIS"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供电量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="17">
+<Expand/>
+</C>
+<C c="1" r="17">
+<Expand/>
+</C>
+<C c="2" r="17">
+<Expand/>
+</C>
+<C c="1" r="18">
+<Expand/>
+</C>
+<C c="2" r="18">
+<Expand/>
+</C>
+<C c="1" r="19">
+<Expand/>
+</C>
+<C c="2" r="19">
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<Report class="com.fr.report.WorkSheet" name="综合供电煤耗（气）耗">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="57600000" height="42768000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,914400,914400,914400,914400,914400,914400,2462400,2462400,2462400,2462400,2462400,2462400,2462400,2462400,2462400,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<Expand/>
+</C>
+<C c="3" r="1" cs="13" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="NAME_"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="16" r="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="3" r="4" cs="2" rs="2" s="1">
+<Expand/>
+</C>
+<C c="5" r="4" rs="2" s="1">
+<O>
+<![CDATA[装机容量]]></O>
+<Expand/>
+</C>
+<C c="6" r="4" cs="4" s="1">
+<O>
+<![CDATA[同期季度发电量]]></O>
+<Expand/>
+</C>
+<C c="10" r="4" rs="2" s="1">
+<O>
+<![CDATA[同期全年发电量]]></O>
+<Expand/>
+</C>
+<C c="11" r="4" cs="4" s="1">
+<O>
+<![CDATA[当年季度发电量]]></O>
+<Expand/>
+</C>
+<C c="15" r="4" rs="2" s="1">
+<O>
+<![CDATA[当年年度累计发电量]]></O>
+<Expand/>
+</C>
+<C c="6" r="5" s="1">
+<O>
+<![CDATA[一季度]]></O>
+<Expand/>
+</C>
+<C c="7" r="5" s="1">
+<O>
+<![CDATA[二季度]]></O>
+<Expand/>
+</C>
+<C c="8" r="5" s="1">
+<O>
+<![CDATA[三季度]]></O>
+<Expand/>
+</C>
+<C c="9" r="5" s="1">
+<O>
+<![CDATA[四季度]]></O>
+<Expand/>
+</C>
+<C c="11" r="5" s="1">
+<O>
+<![CDATA[一季度]]></O>
+<Expand/>
+</C>
+<C c="12" r="5" s="1">
+<O>
+<![CDATA[二季度]]></O>
+<Expand/>
+</C>
+<C c="13" r="5" s="1">
+<O>
+<![CDATA[三季度]]></O>
+<Expand/>
+</C>
+<C c="14" r="5" s="1">
+<O>
+<![CDATA[四季度]]></O>
+<Expand/>
+</C>
+<C c="3" r="6" s="2">
+<O>
+<![CDATA[序号]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" s="2">
+<O>
+<![CDATA[单位]]></O>
+<Expand/>
+</C>
+<C c="5" r="6" s="2">
+<O>
+<![CDATA[万千瓦]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" cs="10" s="2">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="0" r="7" s="3">
+<Expand/>
+</C>
+<C c="1" r="7" s="3">
+<Expand/>
+</C>
+<C c="2" r="7" s="3">
+<Expand/>
+</C>
+<C c="3" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=seq()]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_SHORT_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="U"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(G8:J8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(L8:O8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="1" r="8">
+<Expand/>
+</C>
+<C c="2" r="8">
+<Expand/>
+</C>
+<C c="3" r="8" cs="3" rs="2" s="4">
+<O>
+<![CDATA[一季度原因分析]]></O>
+<Expand/>
+</C>
+<C c="6" r="8" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤(气)耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="9" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤(气)耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="10">
+<Expand/>
+</C>
+<C c="1" r="10">
+<Expand/>
+</C>
+<C c="2" r="10">
+<Expand/>
+</C>
+<C c="3" r="10" cs="3" rs="2" s="4">
+<O>
+<![CDATA[二季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="10" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤(气)耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="11" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤(气)耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="12">
+<Expand/>
+</C>
+<C c="1" r="12">
+<Expand/>
+</C>
+<C c="2" r="12">
+<Expand/>
+</C>
+<C c="3" r="12" cs="3" rs="2" s="4">
+<O>
+<![CDATA[三季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="12" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤(气)耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="13" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤(气)耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="14">
+<Expand/>
+</C>
+<C c="1" r="14">
+<Expand/>
+</C>
+<C c="2" r="14">
+<Expand/>
+</C>
+<C c="3" r="14" cs="3" rs="2" s="4">
+<O>
+<![CDATA[四季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="14" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤(气)耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="15" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤(气)耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="16">
+<Expand/>
+</C>
+<C c="1" r="16">
+<Expand/>
+</C>
+<C c="2" r="16">
+<Expand/>
+</C>
+<C c="3" r="16" cs="3" s="7">
+<O>
+<![CDATA[全年原因分析]]></O>
+<Expand/>
+</C>
+<C c="6" r="16" cs="10" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="ANNUAL_CAUSE_ANALYSIS"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合供电煤(气)耗]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="17">
+<Expand/>
+</C>
+<C c="1" r="17">
+<Expand/>
+</C>
+<C c="2" r="17">
+<Expand/>
+</C>
+<C c="1" r="18">
+<Expand/>
+</C>
+<C c="2" r="18">
+<Expand/>
+</C>
+<C c="1" r="19">
+<Expand/>
+</C>
+<C c="2" r="19">
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<Report class="com.fr.report.WorkSheet" name="发电煤耗">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="57600000" height="42768000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,1562100,914400,914400,914400,914400,914400,914400,2462400,2462400,2462400,2462400,2462400,2462400,2462400,2462400,2462400,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<Expand/>
+</C>
+<C c="3" r="1" cs="13" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="NAME_"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="16" r="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="3" r="4" cs="2" rs="2" s="1">
+<Expand/>
+</C>
+<C c="5" r="4" rs="2" s="1">
+<O>
+<![CDATA[装机容量]]></O>
+<Expand/>
+</C>
+<C c="6" r="4" cs="4" s="1">
+<O>
+<![CDATA[同期季度发电量]]></O>
+<Expand/>
+</C>
+<C c="10" r="4" rs="2" s="1">
+<O>
+<![CDATA[同期全年发电量]]></O>
+<Expand/>
+</C>
+<C c="11" r="4" cs="4" s="1">
+<O>
+<![CDATA[当年季度发电量]]></O>
+<Expand/>
+</C>
+<C c="15" r="4" rs="2" s="1">
+<O>
+<![CDATA[当年年度累计发电量]]></O>
+<Expand/>
+</C>
+<C c="6" r="5" s="1">
+<O>
+<![CDATA[一季度]]></O>
+<Expand/>
+</C>
+<C c="7" r="5" s="1">
+<O>
+<![CDATA[二季度]]></O>
+<Expand/>
+</C>
+<C c="8" r="5" s="1">
+<O>
+<![CDATA[三季度]]></O>
+<Expand/>
+</C>
+<C c="9" r="5" s="1">
+<O>
+<![CDATA[四季度]]></O>
+<Expand/>
+</C>
+<C c="11" r="5" s="1">
+<O>
+<![CDATA[一季度]]></O>
+<Expand/>
+</C>
+<C c="12" r="5" s="1">
+<O>
+<![CDATA[二季度]]></O>
+<Expand/>
+</C>
+<C c="13" r="5" s="1">
+<O>
+<![CDATA[三季度]]></O>
+<Expand/>
+</C>
+<C c="14" r="5" s="1">
+<O>
+<![CDATA[四季度]]></O>
+<Expand/>
+</C>
+<C c="3" r="6" s="2">
+<O>
+<![CDATA[序号]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" s="2">
+<O>
+<![CDATA[单位]]></O>
+<Expand/>
+</C>
+<C c="5" r="6" s="2">
+<O>
+<![CDATA[万千瓦]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" cs="10" s="2">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="0" r="7" s="3">
+<Expand/>
+</C>
+<C c="1" r="7" s="3">
+<Expand/>
+</C>
+<C c="2" r="7" s="3">
+<Expand/>
+</C>
+<C c="3" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=seq()]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_SHORT_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="U"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(G8:J8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[供热煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(L8:O8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="1" r="8">
+<Expand/>
+</C>
+<C c="2" r="8">
+<Expand/>
+</C>
+<C c="3" r="8" cs="3" rs="2" s="4">
+<O>
+<![CDATA[一季度原因分析]]></O>
+<Expand/>
+</C>
+<C c="6" r="8" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="9" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="10">
+<Expand/>
+</C>
+<C c="1" r="10">
+<Expand/>
+</C>
+<C c="2" r="10">
+<Expand/>
+</C>
+<C c="3" r="10" cs="3" rs="2" s="4">
+<O>
+<![CDATA[二季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="10" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="11" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="12">
+<Expand/>
+</C>
+<C c="1" r="12">
+<Expand/>
+</C>
+<C c="2" r="12">
+<Expand/>
+</C>
+<C c="3" r="12" cs="3" rs="2" s="4">
+<O>
+<![CDATA[三季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="12" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="13" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="14">
+<Expand/>
+</C>
+<C c="1" r="14">
+<Expand/>
+</C>
+<C c="2" r="14">
+<Expand/>
+</C>
+<C c="3" r="14" cs="3" rs="2" s="4">
+<O>
+<![CDATA[四季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="14" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="15" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电煤耗]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="16">
+<Expand/>
+</C>
+<C c="1" r="16">
+<Expand/>
+</C>
+<C c="2" r="16">
+<Expand/>
+</C>
+<C c="3" r="16" cs="3" s="7">
+<O>
+<![CDATA[全年原因分析]]></O>
+<Expand/>
+</C>
+<C c="6" r="16" cs="10" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="ANNUAL_CAUSE_ANALYSIS"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电煤耗]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="17">
+<Expand/>
+</C>
+<C c="1" r="17">
+<Expand/>
+</C>
+<C c="2" r="17">
+<Expand/>
+</C>
+<C c="1" r="18">
+<Expand/>
+</C>
+<C c="2" r="18">
+<Expand/>
+</C>
+<C c="1" r="19">
+<Expand/>
+</C>
+<C c="2" r="19">
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<Report class="com.fr.report.WorkSheet" name="发电厂用电率">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="57600000" height="42768000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,914400,914400,914400,914400,914400,914400,2462400,2462400,2462400,2462400,2462400,2462400,2462400,2462400,2462400,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<Expand/>
+</C>
+<C c="3" r="1" cs="13" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="NAME_"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="16" r="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="3" r="4" cs="2" rs="2" s="1">
+<Expand/>
+</C>
+<C c="5" r="4" rs="2" s="1">
+<O>
+<![CDATA[装机容量]]></O>
+<Expand/>
+</C>
+<C c="6" r="4" cs="4" s="1">
+<O>
+<![CDATA[同期季度发电量]]></O>
+<Expand/>
+</C>
+<C c="10" r="4" rs="2" s="1">
+<O>
+<![CDATA[同期全年发电量]]></O>
+<Expand/>
+</C>
+<C c="11" r="4" cs="4" s="1">
+<O>
+<![CDATA[当年季度发电量]]></O>
+<Expand/>
+</C>
+<C c="15" r="4" rs="2" s="1">
+<O>
+<![CDATA[当年年度累计发电量]]></O>
+<Expand/>
+</C>
+<C c="6" r="5" s="1">
+<O>
+<![CDATA[一季度]]></O>
+<Expand/>
+</C>
+<C c="7" r="5" s="1">
+<O>
+<![CDATA[二季度]]></O>
+<Expand/>
+</C>
+<C c="8" r="5" s="1">
+<O>
+<![CDATA[三季度]]></O>
+<Expand/>
+</C>
+<C c="9" r="5" s="1">
+<O>
+<![CDATA[四季度]]></O>
+<Expand/>
+</C>
+<C c="11" r="5" s="1">
+<O>
+<![CDATA[一季度]]></O>
+<Expand/>
+</C>
+<C c="12" r="5" s="1">
+<O>
+<![CDATA[二季度]]></O>
+<Expand/>
+</C>
+<C c="13" r="5" s="1">
+<O>
+<![CDATA[三季度]]></O>
+<Expand/>
+</C>
+<C c="14" r="5" s="1">
+<O>
+<![CDATA[四季度]]></O>
+<Expand/>
+</C>
+<C c="3" r="6" s="2">
+<O>
+<![CDATA[序号]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" s="2">
+<O>
+<![CDATA[单位]]></O>
+<Expand/>
+</C>
+<C c="5" r="6" s="2">
+<O>
+<![CDATA[万千瓦]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" cs="10" s="2">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="0" r="7" s="3">
+<Expand/>
+</C>
+<C c="1" r="7" s="3">
+<Expand/>
+</C>
+<C c="2" r="7" s="3">
+<Expand/>
+</C>
+<C c="3" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=seq()]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_SHORT_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="U"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(G8:J8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(L8:O8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="1" r="8">
+<Expand/>
+</C>
+<C c="2" r="8">
+<Expand/>
+</C>
+<C c="3" r="8" cs="3" rs="2" s="4">
+<O>
+<![CDATA[一季度原因分析]]></O>
+<Expand/>
+</C>
+<C c="6" r="8" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="9" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="10">
+<Expand/>
+</C>
+<C c="1" r="10">
+<Expand/>
+</C>
+<C c="2" r="10">
+<Expand/>
+</C>
+<C c="3" r="10" cs="3" rs="2" s="4">
+<O>
+<![CDATA[二季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="10" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="11" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="12">
+<Expand/>
+</C>
+<C c="1" r="12">
+<Expand/>
+</C>
+<C c="2" r="12">
+<Expand/>
+</C>
+<C c="3" r="12" cs="3" rs="2" s="4">
+<O>
+<![CDATA[三季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="12" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="13" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="14">
+<Expand/>
+</C>
+<C c="1" r="14">
+<Expand/>
+</C>
+<C c="2" r="14">
+<Expand/>
+</C>
+<C c="3" r="14" cs="3" rs="2" s="4">
+<O>
+<![CDATA[四季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="14" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="15" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="16">
+<Expand/>
+</C>
+<C c="1" r="16">
+<Expand/>
+</C>
+<C c="2" r="16">
+<Expand/>
+</C>
+<C c="3" r="16" cs="3" s="7">
+<O>
+<![CDATA[全年原因分析]]></O>
+<Expand/>
+</C>
+<C c="6" r="16" cs="10" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="ANNUAL_CAUSE_ANALYSIS"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电厂用电率]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="17">
+<Expand/>
+</C>
+<C c="1" r="17">
+<Expand/>
+</C>
+<C c="2" r="17">
+<Expand/>
+</C>
+<C c="1" r="18">
+<Expand/>
+</C>
+<C c="2" r="18">
+<Expand/>
+</C>
+<C c="1" r="19">
+<Expand/>
+</C>
+<C c="2" r="19">
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<Report class="com.fr.report.WorkSheet" name="炉煤热值差">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="57600000" height="42768000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,1828800,914400,914400,914400,914400,914400,914400,2462400,2462400,2462400,2462400,2462400,2462400,2462400,2462400,2462400,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<Expand/>
+</C>
+<C c="3" r="1" cs="13" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="NAME_"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="16" r="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="3" r="4" cs="2" rs="2" s="1">
+<Expand/>
+</C>
+<C c="5" r="4" rs="2" s="1">
+<O>
+<![CDATA[装机容量]]></O>
+<Expand/>
+</C>
+<C c="6" r="4" cs="4" s="1">
+<O>
+<![CDATA[同期季度发电量]]></O>
+<Expand/>
+</C>
+<C c="10" r="4" rs="2" s="1">
+<O>
+<![CDATA[同期全年发电量]]></O>
+<Expand/>
+</C>
+<C c="11" r="4" cs="4" s="1">
+<O>
+<![CDATA[当年季度发电量]]></O>
+<Expand/>
+</C>
+<C c="15" r="4" rs="2" s="1">
+<O>
+<![CDATA[当年年度累计发电量]]></O>
+<Expand/>
+</C>
+<C c="6" r="5" s="1">
+<O>
+<![CDATA[一季度]]></O>
+<Expand/>
+</C>
+<C c="7" r="5" s="1">
+<O>
+<![CDATA[二季度]]></O>
+<Expand/>
+</C>
+<C c="8" r="5" s="1">
+<O>
+<![CDATA[三季度]]></O>
+<Expand/>
+</C>
+<C c="9" r="5" s="1">
+<O>
+<![CDATA[四季度]]></O>
+<Expand/>
+</C>
+<C c="11" r="5" s="1">
+<O>
+<![CDATA[一季度]]></O>
+<Expand/>
+</C>
+<C c="12" r="5" s="1">
+<O>
+<![CDATA[二季度]]></O>
+<Expand/>
+</C>
+<C c="13" r="5" s="1">
+<O>
+<![CDATA[三季度]]></O>
+<Expand/>
+</C>
+<C c="14" r="5" s="1">
+<O>
+<![CDATA[四季度]]></O>
+<Expand/>
+</C>
+<C c="3" r="6" s="2">
+<O>
+<![CDATA[序号]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" s="2">
+<O>
+<![CDATA[单位]]></O>
+<Expand/>
+</C>
+<C c="5" r="6" s="2">
+<O>
+<![CDATA[万千瓦]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" cs="10" s="2">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="0" r="7" s="3">
+<Expand/>
+</C>
+<C c="1" r="7" s="3">
+<Expand/>
+</C>
+<C c="2" r="7" s="3">
+<Expand/>
+</C>
+<C c="3" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=seq()]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_SHORT_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="U"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[炉煤热值差]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[炉煤热值差]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[炉煤热值差]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[炉煤热值差]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(G8:J8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[炉煤热值差]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[炉煤热值差]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[炉煤热值差]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[炉煤热值差]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(L8:O8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="1" r="8">
+<Expand/>
+</C>
+<C c="2" r="8">
+<Expand/>
+</C>
+<C c="3" r="8" cs="3" rs="2" s="4">
+<O>
+<![CDATA[一季度原因分析]]></O>
+<Expand/>
+</C>
+<C c="6" r="8" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[炉煤热值差]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="9" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[炉煤热值差]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="10">
+<Expand/>
+</C>
+<C c="1" r="10">
+<Expand/>
+</C>
+<C c="2" r="10">
+<Expand/>
+</C>
+<C c="3" r="10" cs="3" rs="2" s="4">
+<O>
+<![CDATA[二季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="10" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[炉煤热值差]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="11" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[炉煤热值差]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="12">
+<Expand/>
+</C>
+<C c="1" r="12">
+<Expand/>
+</C>
+<C c="2" r="12">
+<Expand/>
+</C>
+<C c="3" r="12" cs="3" rs="2" s="4">
+<O>
+<![CDATA[三季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="12" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[炉煤热值差]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="13" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[炉煤热值差]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="14">
+<Expand/>
+</C>
+<C c="1" r="14">
+<Expand/>
+</C>
+<C c="2" r="14">
+<Expand/>
+</C>
+<C c="3" r="14" cs="3" rs="2" s="4">
+<O>
+<![CDATA[四季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="14" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[炉煤热值差]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="15" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[炉煤热值差]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="16">
+<Expand/>
+</C>
+<C c="1" r="16">
+<Expand/>
+</C>
+<C c="2" r="16">
+<Expand/>
+</C>
+<C c="3" r="16" cs="3" s="7">
+<O>
+<![CDATA[全年原因分析]]></O>
+<Expand/>
+</C>
+<C c="6" r="16" cs="10" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="ANNUAL_CAUSE_ANALYSIS"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[炉煤热值差]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="17">
+<Expand/>
+</C>
+<C c="1" r="17">
+<Expand/>
+</C>
+<C c="2" r="17">
+<Expand/>
+</C>
+<C c="1" r="18">
+<Expand/>
+</C>
+<C c="2" r="18">
+<Expand/>
+</C>
+<C c="1" r="19">
+<Expand/>
+</C>
+<C c="2" r="19">
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<Report class="com.fr.report.WorkSheet" name="发电燃油量">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="57600000" height="42768000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,1828800,914400,914400,914400,914400,914400,914400,2462400,2462400,2462400,2462400,2462400,2462400,2462400,2462400,2462400,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<Expand/>
+</C>
+<C c="3" r="1" cs="13" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="NAME_"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="16" r="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="3" r="4" cs="2" rs="2" s="1">
+<Expand/>
+</C>
+<C c="5" r="4" rs="2" s="1">
+<O>
+<![CDATA[装机容量]]></O>
+<Expand/>
+</C>
+<C c="6" r="4" cs="4" s="1">
+<O>
+<![CDATA[同期季度发电量]]></O>
+<Expand/>
+</C>
+<C c="10" r="4" rs="2" s="1">
+<O>
+<![CDATA[同期全年发电量]]></O>
+<Expand/>
+</C>
+<C c="11" r="4" cs="4" s="1">
+<O>
+<![CDATA[当年季度发电量]]></O>
+<Expand/>
+</C>
+<C c="15" r="4" rs="2" s="1">
+<O>
+<![CDATA[当年年度累计发电量]]></O>
+<Expand/>
+</C>
+<C c="6" r="5" s="1">
+<O>
+<![CDATA[一季度]]></O>
+<Expand/>
+</C>
+<C c="7" r="5" s="1">
+<O>
+<![CDATA[二季度]]></O>
+<Expand/>
+</C>
+<C c="8" r="5" s="1">
+<O>
+<![CDATA[三季度]]></O>
+<Expand/>
+</C>
+<C c="9" r="5" s="1">
+<O>
+<![CDATA[四季度]]></O>
+<Expand/>
+</C>
+<C c="11" r="5" s="1">
+<O>
+<![CDATA[一季度]]></O>
+<Expand/>
+</C>
+<C c="12" r="5" s="1">
+<O>
+<![CDATA[二季度]]></O>
+<Expand/>
+</C>
+<C c="13" r="5" s="1">
+<O>
+<![CDATA[三季度]]></O>
+<Expand/>
+</C>
+<C c="14" r="5" s="1">
+<O>
+<![CDATA[四季度]]></O>
+<Expand/>
+</C>
+<C c="3" r="6" s="2">
+<O>
+<![CDATA[序号]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" s="2">
+<O>
+<![CDATA[单位]]></O>
+<Expand/>
+</C>
+<C c="5" r="6" s="2">
+<O>
+<![CDATA[万千瓦]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" cs="10" s="2">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="0" r="7" s="3">
+<Expand/>
+</C>
+<C c="1" r="7" s="3">
+<Expand/>
+</C>
+<C c="2" r="7" s="3">
+<Expand/>
+</C>
+<C c="3" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=seq()]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_SHORT_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="U"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电燃油量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电燃油量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电燃油量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电燃油量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(G8:J8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电燃油量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电燃油量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电燃油量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电燃油量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(L8:O8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="1" r="8">
+<Expand/>
+</C>
+<C c="2" r="8">
+<Expand/>
+</C>
+<C c="3" r="8" cs="3" rs="2" s="4">
+<O>
+<![CDATA[一季度原因分析]]></O>
+<Expand/>
+</C>
+<C c="6" r="8" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电燃油量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="9" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电燃油量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="10">
+<Expand/>
+</C>
+<C c="1" r="10">
+<Expand/>
+</C>
+<C c="2" r="10">
+<Expand/>
+</C>
+<C c="3" r="10" cs="3" rs="2" s="4">
+<O>
+<![CDATA[二季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="10" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电燃油量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="11" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电燃油量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="12">
+<Expand/>
+</C>
+<C c="1" r="12">
+<Expand/>
+</C>
+<C c="2" r="12">
+<Expand/>
+</C>
+<C c="3" r="12" cs="3" rs="2" s="4">
+<O>
+<![CDATA[三季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="12" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电燃油量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="13" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电燃油量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="14">
+<Expand/>
+</C>
+<C c="1" r="14">
+<Expand/>
+</C>
+<C c="2" r="14">
+<Expand/>
+</C>
+<C c="3" r="14" cs="3" rs="2" s="4">
+<O>
+<![CDATA[四季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="14" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电燃油量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="15" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电燃油量]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="16">
+<Expand/>
+</C>
+<C c="1" r="16">
+<Expand/>
+</C>
+<C c="2" r="16">
+<Expand/>
+</C>
+<C c="3" r="16" cs="3" s="7">
+<O>
+<![CDATA[全年原因分析]]></O>
+<Expand/>
+</C>
+<C c="6" r="16" cs="10" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="ANNUAL_CAUSE_ANALYSIS"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[发电燃油量]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="17">
+<Expand/>
+</C>
+<C c="1" r="17">
+<Expand/>
+</C>
+<C c="2" r="17">
+<Expand/>
+</C>
+<C c="1" r="18">
+<Expand/>
+</C>
+<C c="2" r="18">
+<Expand/>
+</C>
+<C c="1" r="19">
+<Expand/>
+</C>
+<C c="2" r="19">
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<Report class="com.fr.report.WorkSheet" name="综合厂用电率">
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting>
+<PaperSize width="57600000" height="42768000"/>
+<Margin top="986400" left="2743200" bottom="986400" right="2743200"/>
+</PaperSetting>
+</ReportSettings>
+<ElementCase class="com.fr.report.SingleBlock">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,1562100,914400,914400,914400,914400,914400,914400,2462400,2462400,2462400,2462400,2462400,2462400,2462400,2462400,2462400,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[2743200,2743200,2743200,2743200,4152900,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<Expand/>
+</C>
+<C c="3" r="1" cs="13" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="NAME_"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="16" r="2">
+<O>
+<![CDATA[]]></O>
+<Expand/>
+</C>
+<C c="3" r="4" cs="2" rs="2" s="1">
+<Expand/>
+</C>
+<C c="5" r="4" rs="2" s="1">
+<O>
+<![CDATA[装机容量]]></O>
+<Expand/>
+</C>
+<C c="6" r="4" cs="4" s="1">
+<O>
+<![CDATA[同期季度发电量]]></O>
+<Expand/>
+</C>
+<C c="10" r="4" rs="2" s="1">
+<O>
+<![CDATA[同期全年发电量]]></O>
+<Expand/>
+</C>
+<C c="11" r="4" cs="4" s="1">
+<O>
+<![CDATA[当年季度发电量]]></O>
+<Expand/>
+</C>
+<C c="15" r="4" rs="2" s="1">
+<O>
+<![CDATA[当年年度累计发电量]]></O>
+<Expand/>
+</C>
+<C c="6" r="5" s="1">
+<O>
+<![CDATA[一季度]]></O>
+<Expand/>
+</C>
+<C c="7" r="5" s="1">
+<O>
+<![CDATA[二季度]]></O>
+<Expand/>
+</C>
+<C c="8" r="5" s="1">
+<O>
+<![CDATA[三季度]]></O>
+<Expand/>
+</C>
+<C c="9" r="5" s="1">
+<O>
+<![CDATA[四季度]]></O>
+<Expand/>
+</C>
+<C c="11" r="5" s="1">
+<O>
+<![CDATA[一季度]]></O>
+<Expand/>
+</C>
+<C c="12" r="5" s="1">
+<O>
+<![CDATA[二季度]]></O>
+<Expand/>
+</C>
+<C c="13" r="5" s="1">
+<O>
+<![CDATA[三季度]]></O>
+<Expand/>
+</C>
+<C c="14" r="5" s="1">
+<O>
+<![CDATA[四季度]]></O>
+<Expand/>
+</C>
+<C c="3" r="6" s="2">
+<O>
+<![CDATA[序号]]></O>
+<Expand/>
+</C>
+<C c="4" r="6" s="2">
+<O>
+<![CDATA[单位]]></O>
+<Expand/>
+</C>
+<C c="5" r="6" s="2">
+<O>
+<![CDATA[万千瓦]]></O>
+<Expand/>
+</C>
+<C c="6" r="6" cs="10" s="2">
+<O>
+<![CDATA[亿千瓦时]]></O>
+<Expand/>
+</C>
+<C c="0" r="7" s="3">
+<Expand/>
+</C>
+<C c="1" r="7" s="3">
+<Expand/>
+</C>
+<C c="2" r="7" s="3">
+<Expand/>
+</C>
+<C c="3" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=seq()]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="4" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="ORG_SHORT_NAME"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="5" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="U"/>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="7" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="8" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="9" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="LAST_YEAR"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="10" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(G8:J8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="11" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="12" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="13" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="14" r="7" s="2">
+<O t="DSColumn">
+<Attributes dsName="ds1" columnName="MONTH_FINISH"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUOTA1]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[TO_CHAR(M.CREATE_DATE,'Q')]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.SummaryGrouper">
+<FN>
+<![CDATA[com.fr.data.util.function.SumFunction]]></FN>
+</RG>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand/>
+</C>
+<C c="15" r="7" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(L8:O8)]]></Attributes>
+</O>
+<Expand/>
+</C>
+<C c="1" r="8">
+<Expand/>
+</C>
+<C c="2" r="8">
+<Expand/>
+</C>
+<C c="3" r="8" cs="3" rs="2" s="4">
+<O>
+<![CDATA[一季度原因分析]]></O>
+<Expand/>
+</C>
+<C c="6" r="8" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="9" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[1]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="10">
+<Expand/>
+</C>
+<C c="1" r="10">
+<Expand/>
+</C>
+<C c="2" r="10">
+<Expand/>
+</C>
+<C c="3" r="10" cs="3" rs="2" s="4">
+<O>
+<![CDATA[二季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="10" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="11" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[2]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="12">
+<Expand/>
+</C>
+<C c="1" r="12">
+<Expand/>
+</C>
+<C c="2" r="12">
+<Expand/>
+</C>
+<C c="3" r="12" cs="3" rs="2" s="4">
+<O>
+<![CDATA[三季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="12" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="13" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[3]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="14">
+<Expand/>
+</C>
+<C c="1" r="14">
+<Expand/>
+</C>
+<C c="2" r="14">
+<Expand/>
+</C>
+<C c="3" r="14" cs="3" rs="2" s="4">
+<O>
+<![CDATA[四季度原因分析(季度和年度分析分开进行)]]></O>
+<Expand/>
+</C>
+<C c="6" r="14" cs="10" s="5">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="JIDU"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="6" r="15" cs="10" s="6">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="NIAN"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[SEASON_DATE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[4]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="16">
+<Expand/>
+</C>
+<C c="1" r="16">
+<Expand/>
+</C>
+<C c="2" r="16">
+<Expand/>
+</C>
+<C c="3" r="16" cs="3" s="7">
+<O>
+<![CDATA[全年原因分析]]></O>
+<Expand/>
+</C>
+<C c="6" r="16" cs="10" s="8">
+<O t="DSColumn">
+<Attributes dsName="ds2" columnName="ANNUAL_CAUSE_ANALYSIS"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[QUARTER_DETAIL_TYPE]]></CNAME>
+<Compare op="0">
+<O>
+<![CDATA[综合厂用电率]]></O>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cellElement.core.FunctionGrouper"/>
+<Parameters/>
+</O>
+<Expand dir="0"/>
+</C>
+<C c="0" r="17">
+<Expand/>
+</C>
+<C c="1" r="17">
+<Expand/>
+</C>
+<C c="2" r="17">
+<Expand/>
+</C>
+<C c="1" r="18">
+<Expand/>
+</C>
+<C c="2" r="18">
+<Expand/>
+</C>
+<C c="1" r="19">
+<Expand/>
+</C>
+<C c="2" r="19">
+<Expand/>
+</C>
+</CellElementList>
+</ElementCase>
+</Report>
+<StyleList>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="104"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="1" size="72"/>
+<Background name="ColorBackground" color="-6710785"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style vertical_alignment="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style vertical_alignment="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style>
+<FRFont name="SimSun" style="1" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style vertical_alignment="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+</WorkBook>
