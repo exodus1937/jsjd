@@ -318,9 +318,9 @@
 					<table class="jiandubaobiao_view wj_cen">
 						<thead>
 							<tr>
-								<td style="width: 30%; overflow: hidden;">考核项目</td>
-								<td style="width: 40%; overflow: hidden;">考核时间</td>
-								<td style="width: 30%; overflow: hidden;">考核金额</td>
+								<td style="width: 60%; overflow: hidden;">考核项目</td>
+								<td style="width: 20%; overflow: hidden;">考核时间</td>
+								<td style="width: 20%; overflow: hidden;">考核金额</td>
 							</tr>
 						</thead>
 						<tbody id ="dc_kaohe">
@@ -497,7 +497,7 @@
 
 
 
-			<div id="d_jtyh" style="display:block">
+			<div id="d_jtyh" style="display:none">
 					<!-- 集团用户table1+table2 -->
 				<div  class="class_main1 fl  h293 " style="width:65.1%" >
 					<div style="" class="jt-left fl">

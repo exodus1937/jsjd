@@ -3,26 +3,6 @@ var userID;
 var org_name=null;
 Default_option();
 //根据用户的电厂和专业来对应显示；
-/*function jz(){
-	$.ajax({
-		url:ctx+"/portal/getQTJDetail.do",
-		success:function(data){
-			console.log(data);
-		}
-	})
-}
-jz();*/
-
-/*function dc_kaohe(){
-
-	$.ajax({
-		url : ctx + "/portal/getOrgIdByUserId.do",
-		dataType : "json",
-		success : function(data) {		
-		}	
-	});	
-}*/
-
 function Default_option(){
 	var wj_spec = $("#wj_spec").val();
 	var wj_option = $("#spec option").not("#wj_spec");
@@ -39,11 +19,8 @@ function Default_option(){
 			var wj_orgid =data[0].ORG_ID;			
 			$('#org option').each(function(){
 				if(this.value == wj_orgid){
-					org_name=data[0].ORG_NAME;
-					
-					this.selected = "selected";
-					
-					/*tabs();*/
+					org_name=data[0].ORG_NAME;					
+					this.selected = "selected";								
 					 flag=true;
 					 flag2(flag);
 					 jituanjinlai();
@@ -56,7 +33,7 @@ function Default_option(){
 function change_gztj(){
 	var org_name = $("#org option:selected").text();
 	if(org_name == '岱海发电'){
-		//$('#gztj').html("0次");
+		
 		//处理宁东技改
 		$("#myChart_").show();
 		$('.profit').show();
@@ -68,27 +45,17 @@ function change_gztj(){
 		$("#myChart_").hide();
 		$('.profit').hide();
 		$('#jg_yuan').hide();
-
-	}
-	
-	
-
+	}		
 }
 //集团用户进来
 
 
 function jituanjinlai(){
 	
-	if($("#org option:selected").text()=='京能集团'){
-		
-	
-		
+	if($("#org option:selected").text()=='京能集团'){				
 		/*技改隐藏*/
-
 		$("#d_dcyh").hide();//电厂用户;
-		$("#d_jtyh").show();//集团用户;	
-	
-		
+		$("#d_jtyh").show();//集团用户;			
 	}else{
 		$("#d_dcyh").show();//电厂用户;
 		$("#d_jtyh").hide();//集团用户;	
@@ -113,11 +80,11 @@ function zhibiaopaiming(){
 			  		success:function(data){
 			  		  	var ev2=eval("("+data+")");
 			  			for(var i=0;i<ev1.length;i++){
-						  var tdhtml=trfix(ev1[1].ZHGDMH_val.toFixed(2),ev1[1].ZHGDMH_p,ev2[1].ZHGDMH_val.toFixed(2),ev2[1].ZHGDMH_p)+
-						  			 trfix(ev1[2].CHYDL_val.toFixed(2),ev1[2].CHYDL_p,ev2[2].CHYDL_val.toFixed(2),ev2[2].CHYDL_p)+					  			 
-						  			 trfix(ev1[3].ZHCHYDL_val.toFixed(2),ev1[3].ZHCHYDL_p,ev2[3].ZHCHYDL_val.toFixed(2),ev2[3].ZHCHYDL_p)+
-						  			 trfix(ev1[4].JZFHL_val.toFixed(2),ev1[4].JZFHL_p,ev2[4].JZFHL_val.toFixed(2),ev2[4].JZFHL_p)+
-						  			 trfix(ev1[5].BSHL_val.toFixed(2),ev1[5].BSHL_p,ev2[5].BSHL_val.toFixed(2),ev2[5].BSHL_p);
+						  var tdhtml=trfix(ev1[1].ZHGDMH_val,ev1[1].ZHGDMH_p,ev2[1].ZHGDMH_val,ev2[1].ZHGDMH_p)+
+						  			 trfix(ev1[2].CHYDL_val,ev1[2].CHYDL_p,ev2[2].CHYDL_val,ev2[2].CHYDL_p)+					  			 
+						  			 trfix(ev1[3].ZHCHYDL_val,ev1[3].ZHCHYDL_p,ev2[3].ZHCHYDL_val,ev2[3].ZHCHYDL_p)+
+						  			 trfix(ev1[4].JZFHL_val,ev1[4].JZFHL_p,ev2[4].JZFHL_val,ev2[4].JZFHL_p)+
+						  			 trfix(ev1[5].BSHL_val,ev1[5].BSHL_p,ev2[5].BSHL_val,ev2[5].BSHL_p);
 					 
 						}		  		
 					$("#zhibiaopaimingtable").html(tdhtml);		  		  		  		 
@@ -134,28 +101,14 @@ function zhibiaopaiming(){
 
 function trfix(val1 ,pm1,val2,pm2){
   	var tr ="<tr>" +
-	"<td class='tl' style='text-indent:8%'> "+val1+"</td>" +
+	"<td class='tl' style='text-indent:8%'> "+val1.toFixed(2)+"</td>" +
 	"<td> "+pm1+"</td>" +
-	"<td class='tl' style='text-indent:8%'>"+val2+"</td>"+
+	"<td class='tl' style='text-indent:8%'>"+val2.toFixed(2)+"</td>"+
 	"<td>"+pm2+"</td>"
 	"</tr>"
 	return tr;
 							
 }
-
-
-//机组状态参数跳转处理
-/*var tiaozhuan=document.getElementsByClassName('tiaozhuan')[0];
-function tabs(){
-	
-	if(org_name=="岱海发电"){
-		tiaozhuan.href=ctx +"/main?xwl=23YA0QJSVS7L";
-	}else if(org_name=="宁东发电"){
-		//tiaozhuan.href=ctx +"/main?xwl=23YA0QJSVS7L"
-		tiaozhuan.href=ctx +"/main?xwl=23YA0QJSVS7L"
-	}
-}*/
-
 
 function flag2(flag){
 		
@@ -174,11 +127,7 @@ function flag2(flag){
 			});
 			
 			$("#org").on('change', function() {
-
-				
-
-				changeOrg();
-				
+				changeOrg();				
 				if($("#org option:selected").text()=='京能集团'){
 					$('.dianchang_view').hide();
 
@@ -197,15 +146,7 @@ function flag2(flag){
 					$('.class_main1_main').show();
 					$("#d_dcyh").show();//电厂用户;
 					$("#d_jtyh").hide();//集团用户;	
-				}
-				
-				if($("#org option:selected").text()=='岱海发电'){
-					//tiaozhuan.href=ctx +"/main?xwl=23YA0QJSVS7L"
-				}else if($("#org option:selected").text()=='宁东发电'){
-					document.getElementById('my_echart').style.display='none'
-
-					//tiaozhuan.href=ctx +"/main?xwl=23YA0QJSVS7L"
-				}
+				}		
 				localStorage.setItem("orgid",$("#org").val());		 
 			});
 	 init();
@@ -216,42 +157,35 @@ function flag2(flag){
 
 
 
-//该变技改项目的时候，同时改变title更多的超链接；
-function jigaihref(){
-    if($("#org").val() == 'c21834b4-1cb0-490f-a2a8-deeaf7f7e065'){//岱海发电
-        $('#jigaiInf').attr({href:ctx+"/XipTecProject.do?method=showPage&id=4c425127-fadb-43bd-ba46-4aa601a6b2d7"})
-    }else if($("#org").val() == '472212af-1977-462b-a74a-a1f36ed6562d'){//宁东发电
-        $('#jigaiInf').attr({href:ctx+"/XipTecProject.do?method=showPage&id=ad2aeb79-31a3-4c26-98f3-9b341496cbe5"})
-    }
-}
+
 function styleTable(table){
     var $table = $(table);
     /*ok*/
     if(table == "#zongjieTable"){
-    	$table.find('td').eq(0).css({maxWidth:"78px",overflow:"hidden"});
-    	$table.find('td').eq(1).css({maxWidth:"145px",overflow:"hidden"});
-    	$table.find('td').eq(2).css({maxWidth:"60px",overflow:"hidden"});
-    	$table.find('td').eq(3).css({maxWidth:"80px",overflow:"hidden"});
+    	$table.find('td').eq(0).css({maxWidth:"78px",});
+    	$table.find('td').eq(1).css({maxWidth:"145px",});
+    	$table.find('td').eq(2).css({maxWidth:"60px",});
+    	$table.find('td').eq(3).css({maxWidth:"80px",});
     	
-        $table.find('td:nth-child(4n+1) a').css({maxWidth:"78px",overflow:"hidden"});
-        $table.find('td:nth-child(4n+2) a').css({maxWidth:"145px",overflow:"hidden"});
-        $table.find('td:nth-child(4n+3) a').css({maxWidth:"60px",overflow:"hidden"});
-        $table.find('td:nth-child(4n) a').css({maxWidth:"80px",overflow:"hidden"});
+        $table.find('td:nth-child(4n+1) a').css({maxWidth:"78px",});
+        $table.find('td:nth-child(4n+2) a').css({maxWidth:"145px",});
+        $table.find('td:nth-child(4n+3) a').css({maxWidth:"60px",});
+        $table.find('td:nth-child(4n) a').css({maxWidth:"80px",});
     }
-    /*ok*/
+   
     if(table == "#yujingTable"){
     	
-    	$table.find('td').eq(0).css({maxWidth:"65px",overflow:"hidden"});
-    	$table.find('td').eq(1).css({maxWidth:"150px",overflow:"hidden"});
-    	$table.find('td').eq(2).css({maxWidth:"75px",overflow:"hidden"});
-    	$table.find('td').eq(3).css({maxWidth:"45px",overflow:"hidden"});
+    	$table.find('td').eq(0).css({maxWidth:"65px",});
+    	$table.find('td').eq(1).css({maxWidth:"150px",});
+    	$table.find('td').eq(2).css({maxWidth:"75px",});
+    	$table.find('td').eq(3).css({maxWidth:"45px",});
     	
-        $table.find('td:nth-child(4n+1) a').css({maxWidth:"65px",overflow:"hidden"});
-        $table.find('td:nth-child(4n+2) a').css({maxWidth:"150px",overflow:"hidden"});
-        $table.find('td:nth-child(4n+3) a').css({maxWidth:"75px",overflow:"hidden"});
-        $table.find('td:nth-child(4n) a').css({maxWidth:"45px",overflow:"hidden"});
+        $table.find('td:nth-child(4n+1) a').css({maxWidth:"65px",});
+        $table.find('td:nth-child(4n+2) a').css({maxWidth:"150px",});
+        $table.find('td:nth-child(4n+3) a').css({maxWidth:"75px",});
+        $table.find('td:nth-child(4n) a').css({maxWidth:"45px",});
     }
-    /*ok*/
+   
     if(table == "#jianduTable"||table == "#jianduzhixingTable"){
     	
     	$table.find('td').eq(0).css({maxWidth:"44px",});
@@ -267,18 +201,8 @@ function styleTable(table){
     }
     /**/
 
-    if(table == "#baojingTable"){
-    	
-    	$table.find('td:nth-child(4n+1)').css({maxWidth:"125px",overflow:"hidden",textAlign:'left'});
-    	$table.find('td:nth-child(3n + 2)').css({textAlign:'left'});
-    	$table.find('td').eq(1).css({maxWidth:"65px",overflow:"hidden"});
-    	$table.find('td').eq(2).css({maxWidth:"50px",overflow:"hidden"});
-    	$table.find('td').eq(3).css({maxWidth:"110px",overflow:"hidden"});
-    	
-        $table.find('td:nth-child(4n+1) a').css({maxWidth:"125px",overflow:"hidden",textAlign:'center'});
-        $table.find('td:nth-child(4n+2) a').css({maxWidth:"65px"});
-        $table.find('td:nth-child(4n+3) a').css({maxWidth:"50px"});
-        $table.find('td:nth-child(4n) a').css({maxWidth:"110px"});
+    if(table == "#baojingTable"){  	
+    	$table.find('td:nth-child(4n+1)').css({maxWidth:"125px",textAlign:'left'});    	
     }
     if(table == '#scTable'){
     	$table.find('td:nth-child(3n + 1)').css({textAlign:'left'});
@@ -297,7 +221,10 @@ function styleTable(table){
 
     	$table.find('td:nth-child(4n + 2)').css({textAlign:'left'});
     }
-    
+    if (table == "#dc_kaohe"){
+		
+		$table.find('td:nth-child(4n + 1)').css({textAlign:'left'});
+	}
 
 
 }
@@ -1010,7 +937,7 @@ function prearData(data, columns, table,diff) {
 				htmlArray.push("<td align='left' class='ellipsis' ><a  title=\"" + columnValue + "\">" + columnValue + "</a></td>");
 			}	
 			if(table=="dc_kaohe"){
-				htmlArray.push("<td align='left' class='ellipsis' ><a  title=\"" + columnValue + "\">" + columnValue + "</a></td>");
+				htmlArray.push("<td align='left' class='ellipsis' ><a  title=\"" + columnValue + "\" href='/jsjd/newNavIndex/kaohe/kaohe.html'>" + columnValue + "</a></td>");
 			}
 			
 		//
@@ -1278,7 +1205,7 @@ $(document).ready(
 		})
 
 
-
+		
 		
 
 
@@ -1356,7 +1283,14 @@ function hbzb_show(){
 	$("#hbzb").show();	
 
 }
-
+//该变技改项目的时候，同时改变title更多的超链接；
+function jigaihref(){
+    if($("#org").val() == 'c21834b4-1cb0-490f-a2a8-deeaf7f7e065'){//岱海发电
+        $('#jigaiInf').attr({href:ctx+"/XipTecProject.do?method=showPage&id=4c425127-fadb-43bd-ba46-4aa601a6b2d7"})
+    }else if($("#org").val() == '472212af-1977-462b-a74a-a1f36ed6562d'){//宁东发电
+        $('#jigaiInf').attr({href:ctx+"/XipTecProject.do?method=showPage&id=ad2aeb79-31a3-4c26-98f3-9b341496cbe5"})
+    }
+}
 
 //工作提醒/监督工作切换
 function gztx_view(){
