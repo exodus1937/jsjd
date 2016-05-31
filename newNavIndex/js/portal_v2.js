@@ -72,8 +72,9 @@ function zhibiaopaiming(){
 	url:ctx+"/zbpm.do?method=getZbpm&org_id="+$("#org").val()+"&flag=0",
 	type:"GET",
 	success:function(data){
+		var flag = true;
 		  var ev1=eval("("+data+")");
-		  if(ev1[0].mark=="success"){
+		  if(ev1[0].mark=="success" && flag){
 			  	$.ajax({
 			  		url:ctx+"/zbpm.do?method=getZbpm&org_id="+$("#org").val()+"&flag=1",
 			  		type:"GET",
@@ -85,6 +86,7 @@ function zhibiaopaiming(){
 						  			 trfix(ev1[3].ZHCHYDL_val,ev1[3].ZHCHYDL_p,ev2[3].ZHCHYDL_val,ev2[3].ZHCHYDL_p)+
 						  			 trfix(ev1[4].JZFHL_val,ev1[4].JZFHL_p,ev2[4].JZFHL_val,ev2[4].JZFHL_p)+
 						  			 trfix(ev1[5].BSHL_val,ev1[5].BSHL_p,ev2[5].BSHL_val,ev2[5].BSHL_p);
+									   flag = false;
 					 
 						}		  		
 					$("#zhibiaopaimingtable").html(tdhtml);		  		  		  		 
