@@ -442,7 +442,7 @@ function kuandu(){
 	var jsonData =new Object();
 	var jgmyChart ;
 	var jgoption ;
-	jigai1("4c425127-fadb-43bd-ba46-4aa601a6b2d7");
+	jigai1("48be668a-d973-4957-819d-da80287e57ed");
 	function jigai1(_id){
 		jigai_profit(_id);
 		//jigai_profit(_id)
