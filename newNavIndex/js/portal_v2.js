@@ -60,8 +60,8 @@ function jituanjinlai(){
 		$("#d_dcyh").show();//电厂用户;
 		$("#d_jtyh").hide();//集团用户;	
 		
-		shengchanbaobiao()
-		zhibiaopaiming();//指标排名
+		//shengchanbaobiao()
+		//zhibiaopaiming();//指标排名
 		
 	}
 }
@@ -98,7 +98,7 @@ function zhibiaopaiming(){
 		  
 		}
 	
-	})
+	});
 }
 
 function trfix(val1 ,pm1,val2,pm2){
