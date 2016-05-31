@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							})
 
 							//默认执行第一个tab + query！
-							$('.wj1').find('a').eq(0).click();
+							$('.wj1').find('a').eq(2).click();
 
 							//回车执行查询 
 							$('#Find').bind('keyup', function(ev) {
