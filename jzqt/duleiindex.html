@@ -16,7 +16,7 @@
   </style>
 </head>
 
-<body  id="body">
+<body>
 
  <!--  <input id="url" type="hidden" value=""> -->
   <div class="wu_top">
@@ -172,17 +172,15 @@
     </div> -->
     <div id="modal" style="width:  240px;height: auto;background: #ffffff;padding:25px 30px 38px 36px;display:none;">
       <label for="tj">停机类别</label>
-        <input type="text" id="result"  name="result" value="" style="display: none"   >
-      <input type="text" id="style"  name="style" value="" style="display: none"   >
-   <select name="tj" id="tj">
-          <option value="A级检修">A级检修</option>
-          <option value="B级检修">B级检修</option>
-          <option value="C级检修">C级检修</option>
-          <option value="D级检修">D级检修</option>
-          <option value="电网调停">电网调停</option>
-          <option value="故障停机">故障停机</option>
+      <select name="" id="tj">
+          <option value="">A级检修</option>
+          <option value="">B级检修</option>
+          <option value="">C级检修</option>
+          <option value="">D级检修</option>
+          <option value="">电网调停</option>
+          <option value="">故障停机</option>
       </select>
-      <button  id="tijiao">提交审批</button>
+      <button>提交审批</button>
       <div style="height:10px;"></div>
       <div style="clear:both"></div>
       <div class="fl">备注:</div>
@@ -198,14 +196,10 @@
 </div>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/echarts2.js"></script>
-<script src=  "../webbuilder/controls/ext/ext-all.js" type="text/javascript" ></script>
-<script src=  "../webbuilder/controls/ext/locale/ext-lang-zh_CN.js" type="text/javascript" ></script>
-<link href=   "../webbuilder/controls/ext/resources/css/ext-all.css" rel="stylesheet" type="text/css" />
 
 <script type="text/javascript" src="js/SimpleTree.js"></script>
 <script type="text/javascript" src="js/Sweefty.js"></script>
 <script type="text/javascript" src="js/moaModal.minified.js"></script>
-<script type="text/javascript" src="js/workflowUtil4.0.js"></script>
 <script type="text/javascript" src="js/jzqt.js"></script>
  <script type="text/javascript">
    window.onload = function () {

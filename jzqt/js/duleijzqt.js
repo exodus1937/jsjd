@@ -376,7 +376,7 @@ function detail(orgid,g_id,type){
             var getTD = preparedataDetail(data.exper,type);
 
            $("#detail").html(getTD);
-           if(type && type=='TJ'){
+
             $('.button').modal({
 	            target: '#modal',
 	            speed: 500,
@@ -425,10 +425,10 @@ function detail(orgid,g_id,type){
 					var index = $(this).index();
 					//zhexian($(this).find('.linecontent div').attr('id'))  
 				}
-			)}
+			)
+           
         }
     })
-
 }
 
 
@@ -437,43 +437,12 @@ function preparedataDetail(data,type){
 	var htmlArray = [];
 	
 	for(var i = 0; i < data.length; i++){
-		var d = data[i];
+		var d = data[i]
 		htmlArray.push("<tr>");
-		
-	
-		if(type && type=='TJ'){
-			var msg='填写';
-			if(d.ADUIT_STATUS=='A'){
-				msg='填写';
-			}
-			if(d.ADUIT_STATUS=='C'){
-				msg='已提交';
-			}
-			if(d.ADUIT_STATUS=='D'){
-				msg='已驳回';
-			}
-			if(d.QT_DESC && d.QT_DESC.length>0 && d.ADUIT_STATUS=='E'){
-				msg=d.QT_DESC;
-			}
-			htmlArray.push("<td>#"+d.G_ID+"</td><td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.PARATIME+"</td><td class='button link' id="+d.ID+" onclick=getvalue('"+d.ID+"',this)>"+msg+"</td>")
-			//htmlArray.push("<td>#"+d.G_ID+"</td><td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.PARATIME+"</td><td class='button link'>填写</td>");
-			htmlArray.push("<td class='zhexian' ><p><img src='img/qx.png' /></p>");
-			htmlArray.push("<div class='lineDiv' style='left:25%;top:150px;width:700px; height:365px;'><div class='drsMoveHandle' id='"+data[i].KKS_CODE+";"+data[i].KKS_NAME+";"+data[i].STARTTIME+";"+data[i].ENDTIME+"' ><span></span></div><div class='linecontent' id='zx"+i+"'><button>1</button></div></div></td>")
-			htmlArray.push('<td onclick=daocu("'+d.ID+'","'+type+'") class="link">导出</td>')
-			
-		}else{
-			 msg='';
-			if(d.QT_DESC && d.QT_DESC.length>0){
-				msg=d.QT_DESC;
-			}
-		    htmlArray.push("<td>#"+d.G_ID+"</td><td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.PARATIME+"</td><td  class='button link'>"+msg+"</td>")
-			//htmlArray.push("<td>#"+d.G_ID+"</td><td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.PARATIME+"</td><td class='button link'>填写</td>");
-			htmlArray.push("<td class='zhexian' ><p><img src='img/qx.png' /></p>");
-			htmlArray.push("<div class='lineDiv' style='left:25%;top:150px;width:700px; height:365px;'><div class='drsMoveHandle' id='"+data[i].KKS_CODE+";"+data[i].KKS_NAME+";"+data[i].STARTTIME+";"+data[i].ENDTIME+"' ><span></span></div><div class='linecontent' id='zx"+i+"'><button>1</button></div></div></td>")
-			htmlArray.push('<td onclick=daocu("'+d.ID+'","'+type+'") class="link">导出</td>')
-			
-		}
-		
+		htmlArray.push("<td>#"+d.G_ID+"</td><td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.PARATIME+"</td><td class='button link'>填写</td>");
+		htmlArray.push("<td class='zhexian' ><p><img src='img/qx.png' /></p>");
+		htmlArray.push("<div class='lineDiv' style='left:25%;top:150px;width:700px; height:365px;'><div class='drsMoveHandle' id='"+data[i].KKS_CODE+";"+data[i].KKS_NAME+";"+data[i].STARTTIME+";"+data[i].ENDTIME+"' ><span></span></div><div class='linecontent' id='zx"+i+"'><button>1</button></div></div></td>")
+		htmlArray.push('<td onclick=daocu("'+d.ID+'","'+type+'") class="link">导出</td>')
 		htmlArray.push("</tr>")
 
 	}
@@ -548,73 +517,13 @@ $(document).ready(function() {
 		function tiaozhuan() {
 			var s = document.getElementById('fadeIn');
 		}
-		
-		
-		 $("#tijiao").click(function(){
-			 var ids = $("#result").val();
-				var qt_desc = $("#tj").val();
-				//保存数据
-				$("#"+ids).html('已提交');
-							
-				$("#modal").hide();
-				$("#style").val($("#SW_hidden_element").next().attr("style"));
-				$("#SW_hidden_element").next().removeAttr("style");
-				
-                //移除onclick事件
-				$("#"+ids).removeAttr("onclick"); 
-				$("#"+ids).removeAttr("class"); 
-				//$("#"+ids).modal('hide');
-				$("#"+ids).unbind("click");
-				
-				if(!ids || ids.length<1){
-					alert('id号不能为空');
-					return;
-				}if(!qt_desc || qt_desc.length<1){
-					alert('选择检修类型');
-					return ;
-				}
-				//var contextPath = 'http://127.0.0.1:8080/jsjd';
-				// var workflowUtil = new workflowUtil(contextPath);
-
-				 var json={e_business_id:ids,qt_desc:qt_desc};
-				 startAndSubmitByEntityCode('JIZUTINGJI',json,function(e){  
-				   if(e.flag==1)
-				   {
-				     alert(e.msg);
-				   }
-				   else{ var inst_code = e.instanceCode;
-				        Ext.Ajax.request({
-				          url: rootPath + '/main?xwl=2406L4N5MW6V',
-				          params: {id:ids,inst_code:inst_code,qt_desc:qt_desc},
-				          success: function(response){
-				            Ext.Msg.alert('提示','流程提交成功!');
-                            //提交后就变成审批中的状态
-				           /**$.ajax({
-				        		url : "../portal/upateAduitStatus.do",
-				        		async: false,
-				        		type : "POST", 
-				        		data: {id:ids},
-				        		success : function(data) {
-				        			
-				        		}
-				        	})**/
-				            
-				          },
-				          failure:function(response){
-				        	  alert(response);
-				          }
-				        });
-				       }
-				 });
-				
-		});  
-		 
-					
 	}
 );
 
 
 function sbjiaohu(id,pi_codes,names,startime,endtime) {
+	
+	
 	var code = pi_codes.split(",");
 	var name = names.split(",");	
 	var sbchulidata =[];
@@ -691,30 +600,3 @@ function daocu(id,type){
 
 	})
 }
-
-function getvalue(id,is){
-	//alert($("#SW_hidden_element").next().attr("style"));
-	if(($("#"+id).html()=='填写' ||  $("#"+id).html()=='已驳回' )&& $("#style").val().length>0 ){
-		$("#SW_hidden_element").next().attr("style",$("#style").val()  );
-	}
-	
-	if($("#"+id).html()!='填写' &&  $("#"+id).html()!='已驳回'){
-		$("#modal").hide();
-		if(!$("#style").val()){
-			$("#style").val($("#SW_hidden_element").next().attr("style"));
-		}
-		
-		$("#SW_hidden_element").next().removeAttr("style");
-		
-        //移除onclick事件
-		$("#"+id).removeAttr("onclick"); 
-		$("#"+id).removeAttr("class"); 
-		//$("#"+ids).modal('hide');
-		$("#"+id).unbind("click");
-		return ;
-	}
-	$("#result").val(id);
-	
-	
-}
-
