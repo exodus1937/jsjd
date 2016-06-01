@@ -1,0 +1,53 @@
+/*f完整版*/
+.clearfix:after, .clearfix:before { content: ""; display: table; overflow: hidden;height:0;width:0;}
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+body,html{
+    font-family: Microsoft YaHei;
+}
+
+#wrap{
+    width:1280px;
+    margin:0 auto;
+}
+.left{float:left;}
+.header{
+    height:350px;
+    width: 100%;
+    font-size: 16px;
+}
+.page-header{
+    margin-top: 20px;
+}
+.header_title{
+    height:30px;
+    line-height: 30px;
+    background:#ADB9CB ;
+}
+.canvas1,.canvas2{
+    height:100%;
+    width:49%;
+    margin:0 0.5% ;
+
+}
+.select{
+    padding-top:2px;
+    height:42px;
+    line-height: 38px;
+    text-align: center;
+    background-color: #f5f5f5;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.control-label{
+    margin: 0 10px;
+}
+.w60{width:35px;}
+.table_bordered{
+    border: 1px solid #ccc;
+}
+table td,th{text-align: center}

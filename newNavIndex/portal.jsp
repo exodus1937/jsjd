@@ -111,20 +111,20 @@
 					
 						<div class="class_main1_main fl">
 						
-						<div class='fl' style='height: 26px;line-height:30px;width:100%;margin-left:12px;' id="aqts" >
+						<a class='fl' style='height: 26px;line-height:30px;width:100%;margin-left:12px;' id="aqts" href="${ctx}/newNavIndex/jz-opration/html/jz_operation.html" >
 							<span class="fl">机组连续运行</span>
 							<!-- <div  style='text-indent:-5px; height: 30px;line-height: 30px;color: red;' id = "aqts">0天</div> -->
 							<div style="text-align:left;padding-left:5px;"></div>
 							<div style="text-align:left;padding-left:5px"></div>
 							<div style="text-align:left;padding-left:5px" ></div>
 							<div style="text-align:left;padding-left:5px"></div>
-						</div>
+						</a>
 						<div class="clearfix"></div>
 
-						<div class="fl" style="height: 20px;line-height: 20px;margin-left: 12px;position:absolute;left:50%;top:256px;" onclick="">
+						<a class="fl" style="height: 20px;line-height: 20px;margin-left: 12px;position:absolute;left:50%;top:256px;" href="${ctx}/newNavIndex/yichangqingkuang/qchuizong.html" >
 							<span class="fl">当年故障停机</span>
 	                       <div class="fl" style=' height: 20px;line-height: 20px;color: red;margin-left:12px;position: relative;z-index: 2;' id ='gztj'>0次</div>
-	            		</div>
+	            		</a>
 
 	            		<div class="fl" style="position:absolute;top:258px;height:20px;text-align:left;margin-left:12px;" id="hole">
 	            			

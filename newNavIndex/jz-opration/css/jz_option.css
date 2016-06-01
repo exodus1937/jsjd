@@ -1,0 +1,131 @@
+/*f完整版*/
+.clearfix:after, .clearfix:before { content: ""; display: table; overflow: hidden;height:0;width:0;}
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+.fl{
+    float:left;
+}
+
+body,html{
+    font-family: Microsoft YaHei;
+}
+
+#wrap{
+    width:100%;
+    margin:0 auto;
+}
+.right{float:right;}
+.left{float:left;}
+.header{
+    height:350px;
+    width: 100%;
+    font-size: 16px;
+}
+.page-header{
+    margin-top: 20px;
+}
+.header_title{
+    height:30px;
+    line-height: 30px;
+    background:#ADB9CB ;
+}
+.canvas1,.canvas2{
+    height:100%;
+    width:49%;
+    margin:0 0.5% ;
+
+}
+.select{
+    padding-top:2px;
+    height:42px;
+    line-height: 38px;
+    text-align: center;
+    background-color: #f5f5f5;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #ddd;
+}
+
+.select .form-group{
+    float:left;
+}
+.control-label{
+    margin: 0 10px;
+}
+.w60{width:35px;}
+#dh {
+    margin-top: 20px;
+}
+.col-md-1,.col-md-10,.col-md-2,.col-md-9{
+    height:70px;
+    line-height: 32px;
+}
+.row{
+    position:relative;
+}
+.bar_right{
+    width:79%;
+    height:280px;
+    position:absolute;
+    left:21%;
+
+}
+#dh .col-md-2,#nd .col-md-2{
+
+    width:12%;
+}
+.gz{
+    position: relative;
+    top: 15px;
+}
+.dh{
+    position: relative;
+    top: 49px;
+}
+.my_row{
+    height:20px;
+    background: #0e90d2;
+}
+.my_row div{float: left; height:20px;}
+
+.lh10{
+    height:10px;
+}
+.lh20{
+    height:20px;
+}
+.dc_head{
+    height: 30px;
+}
+.identification {
+    width: 79%;
+    height: 30px;
+    margin-left: 21%;
+    padding: 0 15px;
+}
+.identification div:first-child{
+    border-left:1px solid #ccc;
+}
+.identification_item{
+    width:8.32%;
+    text-align: center;
+    height:30px;
+    border-right:1px solid #cccccc;
+}
+.legend{
+    margin:20px 0;
+    height:30px;
+    padding-left:436px;
+}
+.legend_item{
+    height:20px;
+    width:20px;
+    margin: 5px;
+    background: #0e90d2;
+}
+.legend_combi{
+  float:left;
+}
+.legend_combi div{
+    float:left;
+    line-height: 30px;
+}
