@@ -1,0 +1,9 @@
+更新服务器：
+服务器上的地址：
+D→jsjd→jsjd→WEB-INF→lib→jsjd-0.0.1-SNAPSHOT.jar
+需要先备份一下jar包到 历史版本
+找到本地路径下的jar包：
+workbase→
+PI库地址：http://172.168.100.103:9999
+数据库地址：jdbc:oracle:thin:@172.168.100.111:ORCL
+账号：xzzhuwenbo 密码：h5hWmuRErEaxa4S

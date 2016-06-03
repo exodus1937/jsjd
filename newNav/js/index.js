@@ -515,6 +515,7 @@ function loadMenuTreeNext_fiv (event,menuId,nodeType,url,menuName,self){
 					cDiv+=childDiv;
 				}
 				_this.append(cDiv);	
+				$(".fivMenuDiv").css({position:"absolute",background:"#d2e5f6"})
 				var $self = $(self);
 				$self.parent().siblings().find(".fivMenuDiv").hide();
 				$self.find(".fivMenuDiv").show();

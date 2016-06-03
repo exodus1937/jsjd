@@ -291,6 +291,7 @@ function changeOrg() {
 		zongjie(0);
 		ycqk();//电厂异常情况;
 		change_gztj();
+		dc_kaohe();
 	}else{
 		clearInterval(timer);//清除定时器;
 		/*技改显示*/
@@ -302,7 +303,7 @@ function changeOrg() {
 		jtjzqt();//集团机组其他
 		JTtzgg();//集团通知公告
 		huanxingshuju();
-		dc_kaohe();
+		
 
 	}	
 	jigaihref();

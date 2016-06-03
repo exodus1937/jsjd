@@ -121,7 +121,7 @@
 						</a>
 						<div class="clearfix"></div>
 
-						<a class="fl" style="height: 20px;line-height: 20px;margin-left: 12px;position:absolute;left:50%;top:256px;" href="${ctx}/newNavIndex/yichangqingkuang/qchuizong.html" >
+						<a class="fl" style="height: 20px;line-height: 20px;margin-left: 12px;position:absolute;left:50%;top:256px;width:50%;" href="${ctx}/newNavIndex/yichangqingkuang/qchuizong.html" >
 							<span class="fl">当年故障停机</span>
 	                       <div class="fl" style=' height: 20px;line-height: 20px;color: red;margin-left:12px;position: relative;z-index: 2;' id ='gztj'>0次</div>
 	            		</a>

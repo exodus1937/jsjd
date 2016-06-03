@@ -267,6 +267,13 @@ table{
 	overflow:hidden;
 }
 
+.fivMenuDiv{
+	background:#d2e5f6;
+	position:absolute;
+}
+.fivMenuDiv a{
+	overflow:hidden;
+}
 #du_main {
     width: 100%;
     height: auto !important;

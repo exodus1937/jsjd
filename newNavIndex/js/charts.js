@@ -68,7 +68,12 @@ function huanxing(id,color,value,shiji){
 			  	},
 			    series : [
 			        {
-			        	
+			        	itemStyle:{
+			        		
+			        		normal:{
+			        			
+			        		}
+			        	},
 			            type : 'pie',
 			            center : ['50%', '52%'],
 			            radius : radius,
@@ -116,7 +121,7 @@ function huanxingshuju(){
         var currentMonth = da.getMonth() + 1;
         var currentYear = da.getFullYear();
         var dayNum = DayNumOfMonth(currentYear, currentMonth);
-        var dayPercent = (currentDay / dayNum).toFixed(2) * 100;       
+        var dayPercent = (currentDay / dayNum).toFixed(2) * 100;
         var monthPercent = (currentMonth/12).toFixed(2) * 100;
 
         var nowTime = new Date().getTime();
@@ -134,9 +139,9 @@ function huanxingshuju(){
 		$("#yd").html(parseInt(dayPercent)+"%");
 		$("#yd1").html(parseInt(c)+"%");
 
-		jt_huanxing0(0,Number(a))        		
-        jt_huanxing(Number(res.toFixed(2)*100),Number(b));
-        //jt_huanxing(Number(monthPercent),Number(b));
+		jt_huanxing0(0,Number(a))
+		 jt_huanxing(Number(res.toFixed(2)*100),Number(b));
+		//jt_huanxing(Number(monthPercent),Number(b));
 		jt_huanxing1(Number(dayPercent.toFixed()),Number(c));
 		//huanxing('huanxing2','#6CADE3',b,e);
 		//huanxing('huanxing3','#58CBC8',c,f);					

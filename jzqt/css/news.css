@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 * { margin: 0; padding: 0; }
-body { min-width: 960px; background: #fff; font-size: 11pt; font-family: "微软雅黑", "黑体", "宋体"; color: #000000;}
+body { min-width: 960px; background: #fff; font-size: 11pt;font-family: "Microsoft YaHei"!important; color: #000000;}
 div, p, span { line-height: 25px; }
 dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6 { text-align: left; font-size: 11pt; font-weight: normal; line-height: 25px; overflow: hidden; }
 li { list-style: none; }

@@ -11,7 +11,7 @@ body,html{
 }
 
 #wrap{
-    width:100%;
+    width:1280px;
     margin:0 auto;
 }
 .right{float:right;}
@@ -83,7 +83,7 @@ body,html{
 }
 .my_row{
     height:20px;
-    background: #0e90d2;
+    background: #999;
 }
 .my_row div{float: left; height:20px;}
 

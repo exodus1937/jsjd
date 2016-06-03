@@ -265,5 +265,5 @@ function yonghumingzi(){
 			dai.html(yz.length);
   		}
   	})	
-  },3000)
+  },15000)
   })
