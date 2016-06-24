@@ -5,7 +5,7 @@
          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
 	<bean id="piServer" class="com.lmax.piwebclient.PIServer">
-		<constructor-arg><value>http://172.168.100.110:9999</value></constructor-arg> 
+		<constructor-arg><value>http://172.168.100.103:9999</value></constructor-arg> 
 		<property name="username" value="test" /> 
     	<property name="password" value="test" /> 
 	</bean>

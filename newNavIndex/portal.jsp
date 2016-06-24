@@ -435,7 +435,7 @@
 					<!-- 技改项目  -->
 					<h3>技改项目</h3>
 					<div class="du_more" style="position:absolute;z-index:9999">
-						<a href="${ctx}/main?xwl=23Z3QFWUNBT8">更多></a>
+						<a href="${ctx}/main?xwl=23Z3QFWUNBT8" id="jigaiInf" >更多></a>
 					</div>
 					<div class="clearfix"></div>
 					<div style="margin: 10px 0 0 0; z-index: 999; display: block;position:relative">
