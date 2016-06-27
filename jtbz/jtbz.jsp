@@ -21,6 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		var ctx = "${ctx}";
 	</script>
 	<script type="text/javascript" src="js/jquery.js"></script>
+	 <script src="../newNav/js/monitor.js"></script>
 	<link href="js/style.css" type="text/css" rel="stylesheet" />
 </head>
 

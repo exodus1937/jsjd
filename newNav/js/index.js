@@ -282,7 +282,29 @@ function treeLoad(rootPath){
             	$(this).hide();
             	//$(this).empty();
             })
-            
+           /* var t,t2;
+           $(".secMenuDiv").on("mouseover",function(){
+        	   //clearTimeout(t2);
+        	   //clearTimeout(t);
+        	   var myDelay=setTimeout(function (){
+    				clearTimeout(myDelay);
+   					$('.secMenuDiv').show()
+				},2000);
+            	//var t = setTimeout("$('.secMenuDiv').show()",2000)
+            	
+            	
+            });
+            $(".secMenuDiv").on("mouseout",function(){
+            	//$(this).hide();
+            	//clearTimeout(t);
+            	//clearTimeout(t2);
+            	var myDelay1=setTimeout(function (){
+    				clearTimeout(myDelay1);
+   					$('.secMenuDiv').hide()
+				},2000);
+            	//var t2 = setTimeout("$('.secMenuDiv').hide()",2000)
+            	//$(this).empty();
+            })*/
         }
     }); 
     

@@ -78,8 +78,12 @@ body,html{
     top: 15px;
 }
 .dh{
-    position: relative;
-    top: 49px;
+    position: absolute;
+    top: 118px;
+}
+.nd{
+	position:absolute;
+	top:47px;
 }
 .my_row{
     height:20px;
@@ -100,7 +104,7 @@ body,html{
     width: 79%;
     height: 30px;
     margin-left: 21%;
-    padding: 0 15px;
+    padding: 0 14px;
 }
 .identification div:first-child{
     border-left:1px solid #ccc;
@@ -128,4 +132,14 @@ body,html{
 .legend_combi div{
     float:left;
     line-height: 30px;
+}
+
+
+.line_tag{
+    position: absolute;
+    width: 1px;
+    height: 136px;
+    background: #0E0D0D;
+    left: 0%;
+    margin: 1px 0 0 0px;
 }

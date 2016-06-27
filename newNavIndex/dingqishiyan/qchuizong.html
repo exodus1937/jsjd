@@ -3,9 +3,14 @@
 <head>
 <meta charset="utf-8">
 <title>京能集团实时技术监督生产管理系统</title>
-<link type="text/css" rel="stylesheet" href="css/news.css" />
+
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+ <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
 <link type="text/css" rel="stylesheet" href="css/zTreeStyle.css" />
 <link type="text/css" rel="stylesheet" href="css/pagination.css" />
+
+<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+<link type="text/css" rel="stylesheet" href="css/news.css" />
 </head>
 
 <body>
@@ -84,7 +89,7 @@
           <td>本年已完成（次）</td>
           <td>本月应进行（次）</td>
           <td>本月已完成（次）</td>
-          <td>非实验次数</td>
+          <td>非试验次数</td>
 
         </tr>
         <tr>
@@ -112,35 +117,128 @@
        
       </tbody>
     </table>
+    
     <table class="wu_tab1 level1" style='display:none' >
       <thead>
         <tr>
           <td>序号</td>
-          <td>试验名称</td>
           <td>机组</td>
           <td>本年应做（次）</td>
           <td>本年已做（次）</td>
           <td>本月应做（次）</td>
           <td>本月已做（次）</td>
-          <td>非实验次数</td>
+          <td>非试验期次数</td>
         </tr>
       </thead>
       <tbody id='level1'>
       </tbody>
     </table>
+     <div class="wu_top0 select" style="">
+        <form class="form-inline">
+            <!-- <div class="left form-group" style="margin-left:30px;"><a href="kaohe.html">返回</a></div> -->
+           
+			<div style="float:left;margin-right:5%">
+				<div class="form-group ">
+                	<label class=" control-label left" style="float:left;    width: 40px;position: relative;top: 5px;" for="g_id">机组</label>
+                	<select name="choose" class="form-control col-sm-1" id="g_id">
+	                  <!--   <option value="" ></option>
+	                    <option value="1" >1</option>
+	                    <option value="2" >2</option>
+	                    <option value="3" >3</option>
+	                    <option value="4" >4</option> -->
+               	 	</select>
+            	</div>
+            	
+            	<div class="form-group ">
+                	<label class=" control-label left" style="float:left;    width: 40px;position: relative;top: 5px;" for="spec_id">专业</label>
+                	<select name="choose" class="form-control col-sm-1" id="spec_id" style="width:134px;">
+	                    
+	                    
+               	 	</select>
+            	</div>
+            	
+            	<div class="form-group ">
+                	<label class=" control-label left" style="float:left;    width: 40px;position: relative;top: 5px;" for="name">名称</label>
+                	
+	                <input class="form-control col-sm-1" type="text" id="name" style="width:245px;" >
+            	</div>
+	            <div class="form-group">
+	                <label for="startTime" class=" control-label left">试验时间</label>
+	                <div class="input-group date form_datetime col-sm-2" data-link-field="dtp_input1" style="">
+	                    <input class="form-control col-sm-12" size="16" type="text" value="" readonly="" style="width:105px" id="startTime">
+	                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+	                    <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+	                </div>
+	
+	                <input type="hidden" id="dtp_input1" value=""><br>
+	            </div>
+	            <div class="form-group">
+	                <label for="endTime" class=" control-label left" style="margin-left:0;">至</label>
+	                <!-- <input class="form-control col-sm-1" type="text" id="endTime" >-->
+	                <div class="input-group date form_datetime col-sm-2" data-link-field="dtp_input1" style="">
+	                    <input class="form-control col-sm-12" size="16" type="text" value="" id="endTime" readonly="" style="width:105px">
+	                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+	                    <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+	                </div>
+	
+	            </div>
+	            
+	           
+	            <div class="form-group" id="query" style="margin-left:22px;">
+	                <button class ="form-control col-sm-1 btn btn-primary" type="button" id="submit" style="">查询</button>
+	            </div>
+            </div>
+        </form>
+	 <div class="fengge"></div>
+
+    </div>
+    <table class="wu_tab1 level1">
+      <thead>
+        <tr>
+          <td>序号</td>
+          <td>机组</td>
+          <td>试验名称</td>
+          <td>试验时间</td>
+          <td>本年应做（次）</td>
+          <td>本年已做（次）</td>
+          <td>本月应做（次）</td>
+          <td>本月已做（次）</td>
+          <td>非试验期次数</td>
+        </tr>
+      </thead>
+      <tbody id="level1_query">
+       
+      
+      </tbody>
+      
+     
+    </table>
+    <div id="Pagination_query" class="pagination" style="float:right"><!-- 这里显示分页 --></div>
     <div class="fengge"></div>
     <div id="Pagination" class="pagination" style="float:right"><!-- 这里显示分页 --></div>
   </div>
 
   <div class="fengge"></div>
 </div>
-<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap-datetimepicker.min.js"></script>
 <script type="text/javascript" src="js/echarts2.js"></script>
 <script type = "text/javascript" src="js/jquery.ztree.core.js"></script>
 <script type = "text/javascript" src="js/jquery.pagination.js"></script>
 
 <script type="text/javascript" src="js/wj.js?v4"></script>
-<script>
+<script type="text/javascript">
+$('.form_datetime').datetimepicker({
+    weekStart: 1,
+    todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 4,
+    minView: 2,
+    forceParse: 0,
+    //format: "yyyy-mm"
+    format: "yyyy-mm-dd"
+});
   
 </script>
 </body>

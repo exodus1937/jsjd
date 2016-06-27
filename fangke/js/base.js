@@ -33,14 +33,14 @@ function wload(page){
         },
         success:function(data){
             var json =eval("("+data+")");
-            console.log(json);
+           // console.log(json);
             var page = Math.ceil(json.total/5)
                        
             if(flag1){
                 initPagination(page);//分页加载
             }
             flag1=false;
-            $("#detail").html(prepare(json));
+            $("#detail").html(prepare(json.data));
         }
     })
     
@@ -87,7 +87,7 @@ function userinfo(emp_name,userName,org_name){
 
 function prepare1(data){
     var htmlArray = [];
-     var datax = datax.data;
+
     htmlArray.push("<tr>")
     //$("#lastTime").html(" 最近登陆时间"+data.lasttime+"");
     //noinspection JSUnresolvedVariable

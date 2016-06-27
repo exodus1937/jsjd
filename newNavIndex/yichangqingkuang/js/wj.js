@@ -262,7 +262,8 @@ function zTreeOnClick(ev, treeId, treeNode) {
 							var name = arr[1];
 							var starttime = arr[2];
 							var endtime = arr[3];
-							console.log(i);
+							var id = arr[4];
+							console.log(id);
 							
 							if(d_flag){
 								sbjiaohu("zx"+i,code,name,starttime,endtime);
@@ -365,7 +366,7 @@ function prepearData(data){
 	htmlArray.push("<tr>");
 	for(var i = 0;i<data.length;i++){
 		var j=i+1;
-		htmlArray.push("<tr><td>"+j+"</td><td>" + data[i].starttime + "</td><td class='zhexian' ><p><img src='img/qx.png' /></p><div class='lineDiv' style='left:25%; top: 150px; width:700px; height:365px;'><div class='drsMoveHandle' id='"+data[i].KKS_CODE+";"+data[i].KKS_NAME+";"+data[i].starttime+";"+data[i].endtime+"' ><span></span></div><div class='linecontent' id='zx"+i+"'></div></div></td><td>" + data[i].name + "</td><td>是</td><td ><a href='"+rootPath+"/getMainAction.do?method=getGzModel&gz_id="+data[i].id+"'>导出</a></td></tr>")
+		htmlArray.push("<tr><td>"+j+"</td><td>" + data[i].starttime + "</td><td class='zhexian' ><p><img src='img/qx.png' /></p><div class='lineDiv' style='left:25%; top: 150px; width:700px; height:365px;'><div class='drsMoveHandle' id='"+data[i].KKS_CODE+";"+data[i].KKS_NAME+";"+data[i].starttime+";"+data[i].endtime+","+data[i].id+"' ><span></span></div><div class='linecontent' id='zx"+i+"'></div></div></td><td>" + data[i].name + "</td><td>是</td><td ><a href='"+rootPath+"/getMainAction.do?method=getGzModel&gz_id="+data[i].id+"'>导出</a></td></tr>")
 		
 	}
 	if(data.length!==5){
@@ -377,7 +378,6 @@ function prepearData(data){
 		
 
 	htmlArray.push("</tr>");
-
 
 	return htmlArray.join('');
 

@@ -9,33 +9,54 @@
 	     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
 	     http://www.springframework.org/schema/aop 
 	     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
-	    <!-- ¶ÌÐÅÌáÐÑ  -->
+ <!--æŠ¥è­¦ä¿¡æ¯çŸ­ä¿¡æé†’-->  
 	<bean id="Mobile" class="com.xzsoft.xz.mobile.Mobile"/>
-	<bean id="jobDetail13" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+	<bean id="jobDetailbaojing" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
 		<property name="targetObject">
 		    <ref bean="Mobile"/>
 		</property>  
     	<property name="targetMethod">
-    	    <value>SendSms</value>
+    	    <value>SendBjxxSms</value>
     	</property>
-    	<!--½«²¢·¢ÉèÖÃÎªfalse --> 
+    	
+    	<property name="concurrent">
+    	   <value>false</value>
+    	 </property>
+	</bean>
+
+ <!--æœºç»„å¯åœçŸ­ä¿¡æé†’--> 
+	<bean id="JzqtMobile" class="com.xzsoft.xz.mobile.JzqtMobile"/>
+	<bean id="jobDetailsend" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+		    <ref bean="JzqtMobile"/>
+		</property>  
+    	<property name="targetMethod">
+    	    <value>SendJzqtSms</value>
+    	</property>
     	<property name="concurrent">
     	   <value>false</value>
     	 </property>
 	</bean>
 	
-	<!--¶ÌÐÅÌáÐÑ -->
-	<bean id="testTrigger13" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
-       <property name="jobDetail" ref="jobDetail13"/>  
-       <property name="cronExpression" value="0 0/1 * * * ?"/><!--Ã¿Îå·ÖÖÓ´¥·¢Ò»´Î   -->
+	<!--æŠ¥è­¦ä¿¡æ¯çŸ­ä¿¡æé†’-->  
+	<bean id="testTriggerbaojing" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailbaojing"/>  
+       <property name="cronExpression" value="0 0/1 * * * ?"/> <!-- æ¯1åˆ†é’Ÿæ‰§è¡Œä¸€æ¬¡   -->
+	</bean>
+
+	<!--æœºç»„å¯åœçŸ­ä¿¡æé†’--> 
+	<bean id="testTriggersend" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailsend"/>  
+       <property name="cronExpression" value="0 0/1 * * * ?"/> <!-- æ¯1åˆ†é’Ÿæ‰§è¡Œä¸€æ¬¡   -->
 	</bean>
 	
-	<!-- ×Ü¹ÜÀíÀàÈç¹û½«lazy-init='false'ÄÇÃ´ÈÝÆ÷Æô¶¯¾Í»áÖ´ÐÐµ÷¶È³ÌÐò    -->
-	<bean id="startQuertz" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="false" >  
+
+	<bean id="sendnotice" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="false" >  
         <property name="triggers">
             <list>  
-                <ref bean="testTrigger13"/>		
-            </list>  
+               <ref bean="testTriggerbaojing"/>  <!--æŠ¥è­¦ä¿¡æ¯çŸ­ä¿¡æé†’--> 		
+				<ref bean="testTriggersend"/>  <!--æœºç»„å¯åœçŸ­ä¿¡æé†’--> 
+            </list>   
     </property>  
 </bean>     
 </beans>

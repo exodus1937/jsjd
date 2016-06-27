@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:tx="http://www.springframework.org/schema/tx"
@@ -48,7 +48,7 @@
 
 	
 	<!--  总管理类如果将lazy-init='false'那么容器启动就会执行调度程序     -->
-	<bean id="startQuertz" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="false" >  
+	<bean id="baojing" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="false" >  
         <property name="triggers">
             <list>  
               <!--   作业调度器,list下可加入其他的调度器   -->

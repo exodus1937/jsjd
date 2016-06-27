@@ -286,7 +286,7 @@ $("#table1_huizong").hide();
 $("#Pagination").hide();
 $(".wu_main").css({"marginTop":23});
 $('#lh_name').html("岱海电厂");
-
+getTree();
 function getTree() {
 	var org_id = localStorage.getItem("orgid");
 	if(org_id !== "a61365e2-969d-4352-b3f8-805027ab9f1d"){
@@ -343,7 +343,105 @@ function getTree() {
 	}
 	
 }
-getTree();
+//查询事件
+
+$("#submit").on("click",function(){
+	var g_id=sessionStorage.getItem("g_id");
+	//console.log(g_id);
+	query_lh(event,1,g_id);
+	$("#Pagination_query").show();
+});
+$("#submit").click();
+//level1        查询=====================================================
+function query_lh(event,pageNum,gid){
+	var orgId = sessionStorage.getItem("orgid");
+	var g_id    = $("#g_id").val();
+	var spec_id = $("#spec_id").val();
+	var name    = $("#name").val();
+	var startTime = $("#startTime").val();
+    var endTime   = $("#endTime").val();
+   
+    if(!name){
+    	name = ""; 
+    }
+    if(!$("#g_id").val()){
+		g_id=gid
+	};
+   // console.log(g_id);
+    if(!g_id){
+    	g_id="";
+    } 
+    data1 = {
+  		  "pageSize":7,  //页大小
+  		  "pageNum":pageNum,   //当前页
+  		  "orgId":orgId, //组织
+  		  "gId":g_id,//机组
+  		  "specialId":spec_id,//专业
+  		  "name":name,//轮换名称
+  		  "beginStart":startTime, 
+  		  "endStart"  :endTime
+  		};
+    var url = rootPath+"/portal/getlhdetailinfo.do"
+    $.ajax({
+        url:url,
+		type:"POST",
+		contentType:"application/json",
+		data:JSON.stringify(data1),
+        success: function(data) {
+        	var page = Math.ceil(data.total/7)
+        	if(!page){
+        		$("#Pagination_query").hide();
+        	}else{
+        		$("#Pagination_query").show();
+			}
+			if(query_flag){
+				initPagination1(page);//分页加载
+			}
+        	query_flag=false;
+        	$("#level1_query").html("");
+        	$("#level1_query").html(querypre(data.pagedata));
+          
+        } 
+      })
+    
+}
+var initPagination1 = function(page) {
+   	var num_entries = page;
+  	// 创建分页
+  	$("#Pagination_query").pagination(num_entries, {
+	    num_edge_entries: 1, //边缘页数
+	    num_display_entries: 4, //主体页数
+	    callback: pageselectCallback_query,
+	    items_per_page: 1, //每页显示1项
+	    prev_text: "前一页",
+	    next_text: "后一页"
+  	});
+};
+function pageselectCallback_query(page_index, jq){
+	/*if(page_index==0){
+		return;
+	}*/
+	var g_id=sessionStorage.getItem("g_id");
+	query_lh(event,page_index + 1,g_id);
+  	return false;
+}
+var query_flag=true;
+//时间处理
+function timefixed(time){
+	var date= new Date(time);
+	return date.toLocaleDateString();
+}
+
+function querypre(data){
+	var htmlArray =[];		
+	for(var i = 0;i<data.length;i++){
+		d = data[i];
+		var j=i+1;
+		htmlArray.push("<tr><td >"+j+"</td><td>#" + d.gId+ "</td><td style='text-align:left;'>" + d.name+ "</td><td>" + timefixed(d.startTime)+ "</td><td>" + d.ysCount+ "</td><td>" + d.yCount+ "</td><td>" + d.msCount+ "</td><td>" + d.mCount+ "</td><td>" + d.fCount+ "</td></tr>");
+	}	
+	return htmlArray.join(''); 
+}
+
 function zTreeOnClick(ev, treeId, treeNode) {	
 	var event = ev || window.event;
 	var g_id = $(event.target).parent().parent().parent().siblings().parent().parent().siblings().text();
@@ -366,20 +464,22 @@ function zTreeOnClick(ev, treeId, treeNode) {
 			//机组级别
 		case 1:
 			g_id = name.substring(1, 2);
+			sessionStorage.setItem("g_id", g_id);
 			special_id = "";
 			name = "";
-			level1();
+			level2();
 			break;
 			//专业级别
 		case 2:
 			g_id = special_id.substring(1, 2);
+			sessionStorage.setItem("g_id", g_id);
 			special_id = name;
 			name = "";
 			break;
 			//试验名称级别
 		case 3:
 			g_id = g_id.substring(1, 2);
-			//console.log('4')
+			
 			level4();
 			break;
 		default:
@@ -389,10 +489,20 @@ function zTreeOnClick(ev, treeId, treeNode) {
 			break;
 	}
 	
-//level1 && level2 are some interface;
-
-	function level1(){
-
+//level1 && level2 are same interface;
+	
+	
+	
+	
+	
+	
+	
+	//leve2 new=====================================================
+	function level2(){
+		
+		$("#Pagination_query").show();
+		$(".select").show();
+		
 		$("table.level1").show();
 		$("table.level4").hide();
 		$(".wu_top").hide();
@@ -402,39 +512,122 @@ function zTreeOnClick(ev, treeId, treeNode) {
 		$(".wu_main").css({"marginTop":23});
 		$('#lh_name').html(treeNode.name);
 		$("#wu_top1").hide();
-		var url = rootPath + "/portal.do";
+		
+		var orgId = sessionStorage.getItem("orgid")
+		var url = rootPath + "/portal/getLHSummaryInfo.do?orgId="+orgId+"&gId="+g_id;
+		ajax(url,"level1",["x","gId","ysCount","yCount","msCount","mCount","fCount"]);
+		$("#g_id").html("").fadeOut().siblings().fadeOut();
+		//console.log(g_id);
+		addzy(g_id);
+		query_flag=true;
+		query_lh(event,1,g_id);
+		
+	}
+	//level 1 new======================================================
+	function level1(){
+		//
+		sessionStorage.setItem("g_id", "");
+		$("#Pagination_query").show();
+		$(".select").show();
+		
+		$("table.level1").show();
+		$("table.level4").hide();
+		$(".wu_top").hide();
+		$(".wu_top1").hide();
+		$("#table1_huizong").hide();
+		$("#Pagination").hide();
+		$(".wu_main").css({"marginTop":23});
+		$('#lh_name').html(treeNode.name);
+		$("#wu_top1").hide();
+		
+		var orgId = sessionStorage.getItem("orgid")
+		var url = rootPath + "/portal/getLHSummaryInfo.do?orgId="+orgId;
+		ajax(url,"level1",["x","gId","ysCount","yCount","msCount","mCount","fCount"]);
+		addjz();//加载机组
+		addzy();//默认加载#1机组的专业
+		$("#g_id").show().siblings().show();
+		query_flag=true;
+		$("#submit").click();
+	}
+	//根据电厂 添加机组========================================================
+	function addjz(){
+		$("#g_id").html("<option value=''></option>");
+		var orgId = sessionStorage.getItem("orgid")
+		var url = rootPath +"/portal/getLhJzInfo.do?orgId="+orgId;
 		$.ajax({
-			url: url,
-			type: "POST",
-			contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-			dataType: "json",
-			data: {
-				method:"getLHCountByOrgid",
-				org_id: sessionStorage.getItem("orgid"),
-				g_id: g_id,
-				
-			},
-			success: function(data) {
-
-				$("#level1").html(prepearDatalevel1(data));
-
+			url:url,
+			type:"POST",
+			success:function(data){
+				var arr = [];
+				for(var i in data){
+					arr.push(data[i]);
+				}
+				arr.sort()//机组排序
+				//console.log(arr);
+				//机组信息插入到页面当中
+				for(var i = 0;i<arr.length;i++){ 
+					var j = i+1;
+					$("#g_id").append("<option value='"+j+"'>#"+arr[i]+"</option>");
+				}
 			}
-
 		})
 	}
+	//机组改变的时候加载对应的专业！==================================================
+	$("#g_id").on("change",function(){
+		$("#spec_id").html("")
+		addzy(g_id);
+		query_flag = true;
+	})
+	$("#spec_id").on("change",function(){
+		//addzy(g_id);
+		query_flag = true;//重新加载分页
+	})
+	//时间对象处理函数 
+   /*@para time 毫秒
+    * return 2016-6-13
+    */	
+	
+	//根据=电厂=机组=添加专业============================================================
+	function addzy(gid){
+		$("#spec_id").html("<option value=''></option>");
+		var orgId = sessionStorage.getItem("orgid");
+		var g_id = $("#g_id").val();
+		if(!$("#g_id").val()){
+			g_id=gid
+		}
+		
+		if(!g_id){
+			g_id="1";
+		}
+		var url = rootPath +"/portal/getLhZyInfo.do?orgId="+orgId+"&gId="+g_id;
+		$.ajax({
+			url:url,
+			type:"POST",
+			success:function(data){
+				for(var key in data){
+					$("#spec_id").append("<option value='"+key+"'>"+ifFix(data[key])+"</option>");
+				}		
+			}
+		})
+	}
+	function ifFix(x){
+		return x.replace(/专业/,"")
+	}
+	
 	function level4(){
 		var flag=true;
-
+		
+		$("#Pagination_query").hide();
+		$(".select").hide();
 		$("table.level1").hide();
 		$(".wu_top").show();
-		
 		$("table.level4").show();
 		$(".wu_top1").show();
 		$("#table1_huizong").show();
 		$("#Pagination").show();
-		//$(".select_box").show();
+		
 
-		$(".wu_main").css({"marginTop":92});
+		$(".wu_main").css({"marginTop":112});
 		var initPagination = function(page) {
 		   	var num_entries = page;
 		  	// 创建分页
@@ -453,8 +646,6 @@ function zTreeOnClick(ev, treeId, treeNode) {
 		function pageselectCallback(page_index, jq){
 			
 			expr(page_index + 1);
-			
-			
 		  	return false;
 		}
 
@@ -643,33 +834,69 @@ function prepearData(data){
 	return htmlArray.join('');
 
 }
-function prepearDatalevel1(data){
+/*function prepearDatalevel1(data){
 	var htmlArray =[];
 
 	htmlArray.push("<tr>");
 	for(var i = 0;i<data.length;i++){
 		d = data[i];
 		var j=i+1;
-		htmlArray.push("<tr><td owspan='4'>"+j+"</td><td owspan='4' style='text-align:left;'>" + d.name+ "</td>");
-		//console.log(d.result[0].G_ID)
-		for(var k = 0;k < d.result.length ; k++){
-			if(k === 0){
-				htmlArray.push("<td>#"+d.result[k].G_ID+"</td><td>"+d.result[k].YSCOUNT+"</td><td>"+d.result[k].YCOUNT+"</td><td>"+d.result[k].MSCOUNT+"</td><td>"+d.result[k].MCOUNT+"</td><td>"+d.result[k].FLAG+"</td></tr>")
-			}
-			else{
-
-			}
-		}
-		
+		htmlArray.push("<tr><td >"+j+"</td><td>" + d.gId+ "</td>");
 	}
-		
-
 	htmlArray.push("</tr>");
-
-
 	return htmlArray.join('');
+}*/
 
+function prearData(data, columns) {
+    var htmlArray = [];
+    for (var i = 0; i < data.length; i++) {
+        var d = data[i];
+        htmlArray.push("<tr>");
+        for (var j = 0;j < columns.length; j++) {
+        	if(j==0){
+        		k=i+1;
+        		htmlArray.push("<td >"+k+"</td>");
+        	}else{
+        		 var columnValue = getColumnValue(columns[j], d[columns[j]]);
+                 htmlArray.push("<td title=" + columnValue + ">" + columnValue + "</td>");
+        	}
+           
+        }
+    }
+    htmlArray.push("</tr>");
+    return htmlArray.join('');
 }
+
+function getColumnValue(column, columnValue) {
+   
+    if(column =='W_DATE'){
+        columnValue = columnValue.replace(/\s/g,"&#13;")
+    }
+    if(column == "gId"){
+    	columnValue = "#"+columnValue;
+    }
+    	
+    
+    return columnValue;
+}
+function ajax(url, tableId, columns) {
+    $.ajax({
+        url : url,
+        type:"post",
+        dataType : "json",
+        success : function(data) {
+            var tableHtml = '';
+            if(data&&data.length>0){
+                
+                tableHtml = prearData(data, columns);
+                
+            }
+            $("#" + tableId).html(tableHtml);
+           // styleTable("#" + tableId); 对生成的table的样式重写；
+        }
+    });
+}
+
 function trim(str) {
 	return str.replace(/(^\s*)|(\s*$)/g, "");
 }
@@ -750,6 +977,7 @@ $(document).ready(
 			}
 		)
 		//弹出层关闭按钮
+		
 		$(".drsMoveHandle span").bind("click",
 			function(event) {
 				$(this).parent().parent(".lineDiv").fadeOut();
@@ -1148,6 +1376,10 @@ $('.wu_top1b').click(function(){
 
 
 })
+
+
+
+ 
 function getNum(text){
 	var value = text.replace(/[^0-9]/ig,""); 
  	return value;

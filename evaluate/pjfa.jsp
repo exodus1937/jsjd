@@ -179,7 +179,7 @@
 				</div>
 				<div class="ct_1">
 					<div class="ta_2">
-						<div id="myChart" class="sy_1" style="hieight:400px">收益曲线折线</div>
+						<div id="myChart" class="sy_1" style="height:400px">收益曲线折线</div>
 					</div>
 				</div>
 				<div id="guanbi">
@@ -373,7 +373,12 @@ $(function(){
 		if(id=='48be668a-d973-4957-819d-da80287e57ed'){
 			img.attr('src','<%=request.getContextPath() %>/evaluate/img/yanwen.png')
 		}
-		
+		if(id =="482F49D6AC8843BA8CF885F263518B72"){
+			img.attr("src",'<%=request.getContextPath() %>/evaluate/img/njs.png')
+		}
+		if(id =="5779d131-fded-44fc-93d4-980bfea19ebf"){
+			img.attr("src",'<%=request.getContextPath() %>/evaluate/img/ndzf.png');
+		}
 	}
 	morder('${requestScope.tecProjectVo.id}')
 	

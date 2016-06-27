@@ -29,7 +29,9 @@ function Default_option(){
 		}
 	});		
 }
-
+/*$(document).click(function(){
+	window.parent.$(".secMenuDiv").hide();
+})*/
 function change_gztj(){
 	var org_name = $("#org option:selected").text();
 	if(org_name == '岱海发电'){
@@ -42,9 +44,9 @@ function change_gztj(){
 	}
 	if(org_name == '宁东发电'){
 		//$('#gztj').html("1次");
-		$("#myChart_").hide();
-		$('.profit').hide();
-		$('#jg_yuan').hide();
+		// $("#myChart_").hide();
+		// $('.profit').hide();
+		// $('#jg_yuan').hide();
 	}		
 }
 //集团用户进来
@@ -142,7 +144,7 @@ function flag2(flag){
 					$("#d_jtyh").show();//集团用户;	
 
 				}else{
-					changeOrg();//1-31,把集团与电厂隔离开
+				
 					$('.dianchang_view').show();
 					$('.jituan_view').hide();
 					$('.class_main1_main').show();
@@ -252,7 +254,7 @@ function init() {
 		zhibiaopaiming();//指标排名
 		ycqk();
 		major_pulldown();
-		shengchanbaobiao();
+		//shengchanbaobiao();
 		timer = setInterval(function(){
 			major_pulldown();
 			changeView();		
@@ -268,8 +270,8 @@ function init() {
 
 	}
 	dc_kaohe();
-	getMission(userID);  //工作提醒
-	getWorksDate(userID);//监督工作	
+	//getMission(userID);  //工作提醒
+	//getWorksDate(userID);//监督工作	
 		
 	
 	shengchanbaobiao_jt();
@@ -284,7 +286,7 @@ function changeOrg() {
 	//zhibiaopaiming();//指标排名
 	if($("#org").val() !=="a61365e2-969d-4352-b3f8-805027ab9f1d"){
 		zhibiaopaiming();//指标排名
-		shengchanbaobiao();//生产报表
+		//shengchanbaobiao();//生产报表
 		major_pulldown();
 			
 		baojing(1);
@@ -303,8 +305,8 @@ function changeOrg() {
 		jtjzqt();//集团机组其他
 		JTtzgg();//集团通知公告
 		huanxingshuju();
-		
-
+		shengchanbaobiao_jt();//集团生产报表
+		JTjiandubaobiao(); //集团监督报表;
 	}	
 	jigaihref();
 	project();
@@ -312,11 +314,11 @@ function changeOrg() {
 	jiandubaobiao();
 
 	changeView() //指标一览
-	getMission(userID);  //工作提醒
-	getWorksDate(userID);//监督工作
-	JTjiandubaobiao(); //集团监督报表;
+	//getMission(userID);  //工作提醒
+	//getWorksDate(userID);//监督工作
 	
-	shengchanbaobiao_jt();//集团生产报表
+	
+	
 	/*changeBaojing(1);//DIAN*/	
 	
 	$("#wj_sb").click();//默认显示设备轮换，代替//sblh();电厂设备轮换
@@ -354,8 +356,8 @@ function changeSpec() {
 	//baojing(1);     //报警信息
 	zongjie(0);//监督/计划
 	yujing();//预警通知单
-	getMission(userID);  //工作提醒
-	getWorksDate(userID);//监督工作
+	//getMission(userID);  //工作提醒
+	//getWorksDate(userID);//监督工作
 	JTyujing();//集团预警通知单
 } 
 function zhibiaoyilan(orgid) {
@@ -519,6 +521,7 @@ function major_pulldown() {
 								$('.circle7').html(data[0].jzm).show();
 								$('.circle7').css({backgroundImage : getYxzt(data[0].yxzt)});														
 						}else if (data.length == 2) {
+							console.log(data);
 							$(".circle_data5").html("<a  onclick=OpenWindow('"+data[0].fhl_pi+"','"+data[0].fhl_name+"','','','"+data[0].METHOD+"','"+data[0].POINTS+"') href='javascript:void(0)' ><div title='1号机组负荷率'>"+Number(data[0].fhl).toFixed(2)+'%'+"</div></a><a onclick=OpenWindow('"+data[0].ssfh_pi+"','"+data[0].ssfh_name+"','','','"+data[0].METHOD+"','"+data[0].POINTS+"') href='javascript:void(0)'><div title='1号机组负荷'>"+Number(data[0].ssfh).toFixed(2)+'MW'+"</div></a>").show();
 							$(".circle_data6").html("<a  onclick=OpenWindow('"+data[1].fhl_pi+"','"+data[1].fhl_name+"','','','"+data[1].METHOD+"','"+data[1].POINTS+"') href='javascript:void(0)' ><div title='2号机组负荷'>"+Number(data[1].fhl).toFixed(2)+'%'+"</div></a><a onclick=OpenWindow('"+data[1].ssfh_pi+"','"+data[1].ssfh_name+"','','','"+data[1].METHOD+"','"+data[1].POINTS+"') href='javascript:void(0)'><div title='2号机组负荷'>"+Number(data[1].ssfh).toFixed(2)+'MW'+"</div></a>").show();
 							
@@ -639,7 +642,12 @@ function project(){
 	        	//console.log(data);
 	            if(data && data.pagedata.length>0){
 	            	$(".projectId1").html('<a href="javascript:void(0);" onclick="jigai1(\''+data.pagedata[0].ID+'\');">'+data.pagedata[0].TP_NAME+'<a>');
-	            	$(".projectId2").html('<a href="javascript:void(0);" onclick="jigai1(\''+data.pagedata[1].ID+'\');">'+data.pagedata[1].TP_NAME+'<a>');
+	            	if(data.pagedata.length == 2 ){
+	            		$(".projectId2").html('<a href="javascript:void(0);" onclick="jigai1(\''+data.pagedata[1].ID+'\');">'+data.pagedata[1].TP_NAME+'<a>');	
+	            	}else{
+	            		$(".projectId2").html("");
+	            	}
+	            	$(".projectId1 a").click();
 	            	//jigai(data.pagedata[0].ID);
 	            }else{
 	            	$(".projectId1").html('');
@@ -820,6 +828,7 @@ function ajax(url, tableId, columns,diff) {
 
 
 function getAudit_Status(value) {
+
 	if (value == 'A') {
 		return '草稿';
 	} else if (value == 'G') {
@@ -868,6 +877,7 @@ function prearData(data, columns, table,diff) {
 	
 	for (var i = 0; i < min; i++) {
 		var ctx1 = "http://172.168.100.110:7001";
+		//var ctx1 = "http://127.0.0.1:8080";
 		var d = data[i];
 		htmlArray.push("<tr>");
 			//console.log(baojingFlag)
@@ -1289,9 +1299,9 @@ function hbzb_show(){
 //该变技改项目的时候，同时改变title更多的超链接；
 function jigaihref(){
     if($("#org").val() == 'c21834b4-1cb0-490f-a2a8-deeaf7f7e065'){//岱海发电
-        $('#jigaiInf').attr({href:ctx+"/XipTecProject.do?method=showPage&id=4c425127-fadb-43bd-ba46-4aa601a6b2d7"})
+        $('#jigaiInf').attr({href:ctx+"/main?xwl=23Z3QFWUNBT8"})
     }else if($("#org").val() == '472212af-1977-462b-a74a-a1f36ed6562d'){//宁东发电
-        $('#jigaiInf').attr({href:ctx+"/XipTecProject.do?method=showPage&id=ad2aeb79-31a3-4c26-98f3-9b341496cbe5"})
+        $('#jigaiInf').attr({href:ctx+"/main?xwl=23YYSVDX10YP"})
     }
 }
 

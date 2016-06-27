@@ -30,7 +30,8 @@
             <div class="form-group ">
                 <label class="w60 control-label left" for="org_id">单位</label>
                 <select  name="choose" class="form-control col-sm-1" id="org_id">
-                    <option value="c21834b4-1cb0-490f-a2a8-deeaf7f7e065" selected="selected">岱海电厂</option>
+                	<option value="" selected="selected"></option>
+                    <option value="c21834b4-1cb0-490f-a2a8-deeaf7f7e065">岱海电厂</option>
                     <option value="472212af-1977-462b-a74a-a1f36ed6562d" >宁东电厂</option>
                     <option value="a61365e2-969d-4352-b3f8-805027ab9f1d" >京能集团</option>
                 </select>
@@ -42,7 +43,7 @@
 
             <div class="form-group">
                 <label for="endTime" class=" control-label left">年份</label>
-                <!-- <input class="form-control col-sm-1" type="text" id="endTime" >-->
+               
                 <div class="input-group date form_datetime col-sm-2"  data-link-field="dtp_input1"  style="position: relative;top: -3px;">
                     <input class="form-control col-sm-12" size="16"  type="text" value="" id="endTime" readonly style="width:105px">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
@@ -53,10 +54,11 @@
             <div class="form-group">
                 <label for="status" class=" control-label left">机组</label>
                 <select  name="choose" class="form-control col-sm-1" id="status">
-                    <option value="0">#1</option>
-                    <option value="1">#2</option>
-                    <option value="2">#3</option>
-                    <option value="3">#4</option>
+                	 <option value=""></option>
+                    <option value="1">#1</option>
+                    <option value="2">#2</option>
+                    <option value="3">#3</option>
+                    <option value="4">#4</option>
                 </select>
             </div>
 
@@ -74,37 +76,55 @@
 
         </div>
         <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-2">
-                <span class="gz">#1</span>
-                <span class="right">年度检修计划</span>
-                <br/><span class="right">机组实际状况</span>
-            </div>
-            <div class="col-md-9"></div>
+        
+        	 
+        	<div class="g1">
+	        	<div class="col-md-1"></div>
+	            <div class="col-md-2">
+	                <span class="gz">#1</span>
+	                <span class="right">年度检修计划</span>
+	                <br/><span class="right">机组实际状况</span>
+	            </div>
+	            <div class="col-md-9"></div>
+	        </div>
+            
+           <div class="col-md-1 dh">岱海电厂</div>
 
-            <div class="col-md-1 dh">岱海电厂</div>
-            <div class="col-md-2">
-                <span class="gz">#2</span>
-                <span class="right">年度检修计划</span>
-                <br/><span class="right">机组实际状况</span>
-            </div>
-            <div class="col-md-9" ></div>
+           
+            <div class="g2">
+            	<div class="col-md-1"></div>
+	            <div class="col-md-2">
+	                <span class="gz">#2</span>
+	                <span class="right">年度检修计划</span>
+	                <br/><span class="right">机组实际状况</span>
+	            </div>
+	            <div class="col-md-9" ></div>
+	        </div>    
+            
 
-            <div class="col-md-1"></div>
-            <div class="col-md-2">
-                <span class="gz">#3</span>
-                <span class="right">年度检修计划</span>
-                <br/><span class="right">机组实际状况</span>
-            </div>
-            <div class="col-md-9"></div>
+            
+            <div class="g3">
+            	<div class="col-md-1"></div>
+	            <div class="col-md-2">
+	                <span class="gz">#3</span>
+	                <span class="right">年度检修计划</span>
+	                <br/><span class="right">机组实际状况</span>
+	            </div>
+	            <div class="col-md-9"></div>
+	        </div> 
+            
 
-            <div class="col-md-1"></div>
-            <div class="col-md-2">
-                <span class="gz">#4</span>
-                <span class="right">年度检修计划</span>
-                <br/><span class="right">机组实际状况</span>
-            </div>
+              <div class="g4">
+            	<div class="col-md-1"></div>
+	            <div class="col-md-2">
+	                <span class="gz">#4</span>
+	                <span class="right">年度检修计划</span>
+	                <br/><span class="right">机组实际状况</span>
+	            </div>
+	            <div class="col-md-9"></div>
+	        </div> 
             <div class="col-md-9 bar_right"  >
+            	<div class="line_tag" style="height:274px;"></div>
                 <div class="lh10" style="height:7px"></div>
                 <div class="my_row">
                     
@@ -209,25 +229,28 @@
         <!--<div class="row">
             <div class="col-md-1 dc_head">电厂</div>
             <div class="col-md-1 dc_head">机组</div>
-
         </div>-->
         <div class="row">
-            <div class="col-md-1 dh">宁东电厂</div>
-
-            <div class="col-md-2">
-                <span class="gz">#1</span>
-                <span class="right">年度检修计划</span>
-                <br/><span class="right">机组实际状况</span>
-            </div>
-            <div class="col-md-9"></div>
-
-            <div class="col-md-1"></div>
-            <div class="col-md-2">
-                <span class="gz">#2</span>
-                <span class="right">年度检修计划</span>
-                <br/><span class="right">机组实际状况</span>
-            </div>
-            <div class="col-md-9" ></div>
+        	
+            <div class="col-md-1 nd" >宁东电厂</div>
+            <div class="g1">
+				<div class="col-md-1"></div>
+	            <div class="col-md-2">
+	                <span class="gz">#1</span>
+	                <span class="right">年度检修计划</span>
+	                <br/><span class="right">机组实际状况</span>
+	            </div>
+	            <div class="col-md-9"></div>
+			</div>
+            <div class="g2">
+				<div class="col-md-1"></div>
+	            <div class="col-md-2">
+	                <span class="gz">#2</span>
+	                <span class="right">年度检修计划</span>
+	                <br/><span class="right">机组实际状况</span>
+	            </div>
+	            <div class="col-md-9"></div>
+			</div>
 
             <!--<div class="col-md-1"></div>
             <div class="col-md-2">
@@ -244,6 +267,7 @@
                 <br/><span class="right">机组实际状况</span>
             </div>-->
             <div class="col-md-9 bar_right" >
+            	<div class="line_tag" style=""></div>
                 <div class="lh10" style="height:7px"></div>
                 <div class="my_row" style="background:#fff">
                 </div>
@@ -275,7 +299,6 @@
                    
                    
                 </div>
-
                 <div class="lh10"></div>
                 <div class="my_row">
                     <div class="row_meb left" style=""></div>
@@ -391,67 +414,134 @@
 
 
 </body>
-<script type="text/javascript" src="../js/highcharts.js"></script>
+<!-- <script type="text/javascript" src="../js/highcharts.js"></script> -->
 <script type="text/javascript" src="../js/bootstrap-datetimepicker.min.js"></script>
 <script type="text/javascript">
 	var orgId = localStorage.getItem("orgid_baobiao"); 
-
     if (!window.location.origin) {
         window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
     }
+    var flag= true;
     var ctx = window.location.origin;
-    var url = ctx+"/jsjd/portal/getQTJDetail.do"
-    $.ajax({
-    	url:url,	
-    	success:function(data){
-    		var data =eval("("+data+")");   		
+   
+    query(orgId);
+    $("#org_id").on("change",function(){
+    	console.log($(this).val())
+    	if($("#org_id").val() =='472212af-1977-462b-a74a-a1f36ed6562d'){
+    		$("#status option").eq(3).remove();
+    		$("#status option").eq(3).remove();
+    	}else{
+    		console.log($("#status option").size())
+    		 if($("#status option").size() == 3){
+    			$("#status").append("<option value='3'>#3</option><option value='4'>#4</option>")
+    		} 
     		
-    		var dh = "";
-    		var nd = "";
-    		for(var k = 0;k<data.data.length;k++){
-    			if(data.data[k].o == "c21834b4-1cb0-490f-a2a8-deeaf7f7e065"){
-    				 dh = prepareData(data.data[k]);
-                     
-    			}
-    			if(data.data[k].o == "472212af-1977-462b-a74a-a1f36ed6562d"){
-    				nd = prepareData(data.data[k]);
-    			}
-    				
-    		}
-    		
-            if(orgId == "c21834b4-1cb0-490f-a2a8-deeaf7f7e065"){
-               $("#dh").show();
-               $("#nd").hide();
-               $("#dh .my_row").each(function (i) {
-                    var first  = i%2;
-                    var last = parseInt(i/2);
-                    //  console.log("nub:"+first +":"+ last);
-                    //console.log("last"+ last)
-                    $(this).html(dh[first][last]);
-  		        		       
-   		        })  
-               
-            }else if(orgId == "472212af-1977-462b-a74a-a1f36ed6562d"){
-                 $("#dh").hide();
-                 $("#nd").show();
-                 $("#nd .my_row").each(function(m){   			  
-   			         var first  = m%2;             
-   		             var last = parseInt(m/2);                  
-   		             //console.log("nub:"+first +":"+ last);
-   		             $(this).html(nd[first][last]);
-   		       
-   		         })
-            }
-       		     		 
-   		  
-   		   
-    		   
     	}
     })
-
+    
+    
+    
+     var dayPercent =((dayPassOfYear()/dayOfYear())*100).toFixed(6)+"%";
+    console.log(dayPercent);
+    
+    $(".line_tag").css({left:dayPercent});
+    
+    $("#submit").on("click",function(){
+    	query();
+    });
+    function query(orgId){
+    	flag = true;
+    	localStorage.setItem("orgId",orgId)
+    	if(!orgId){
+    		orgId    = $("#org_id").val();
+    		localStorage.setItem("orgId",orgId)
+    	}   	
+    	var year = $("#endTime").val();
+    	var g_id = $("#status").val();
+    	if(g_id == 3 || g_id == 4 ){
+    		
+    		$(".nd").hide();
+    		console.log(g_id);
+    	}else{
+    		$("#nd").fadeIn();
+    		$(".nd").show();
+    	}
+    	var url = ctx+"/jsjd/portal/getQTJDetail.do?org_id="+orgId+"&year="+year+"&g_id="+g_id;
+    	$.ajax({
+        	url:url,	
+        	success:function(data){
+        		var data =eval("("+data+")");   		
+        		
+	       		var dh = "";
+        		var nd = "";
+        		for(var k = 0;k<data.data.length;k++){
+        			if(data.data[k].o == "c21834b4-1cb0-490f-a2a8-deeaf7f7e065"){
+        				 dh = prepareData(data.data[k]);
+                         
+        			}
+        			if(data.data[k].o == "472212af-1977-462b-a74a-a1f36ed6562d"){
+        				nd = prepareData(data.data[k]);
+        			}
+        				
+        		}
+        		
+        		
+                if(orgId == "c21834b4-1cb0-490f-a2a8-deeaf7f7e065"){
+                	
+                   $("#dh").show();
+                   $("#nd").hide();
+                   $("#dh .my_row").each(function (i) {
+                        var first  = i%2;
+                        var last = parseInt(i/2);
+                        //  console.log("nub:"+first +":"+ last);
+                        //console.log("last"+ last)
+                        $(this).html(dh[first][last]);
+      		        		       
+       		        })  
+                   
+                }else if(orgId == "472212af-1977-462b-a74a-a1f36ed6562d"){
+                     $("#dh").hide();
+                     $("#nd").show();
+                     $("#nd .my_row").each(function(m){   			  
+       			         var first  = m%2;             
+       		             var last = parseInt(m/2);                  
+       		             //console.log("nub:"+first +":"+ last);
+       		             $(this).html(nd[first][last]);
+       		       
+       		         })
+                } else if(orgId == "a61365e2-969d-4352-b3f8-805027ab9f1d"){
+                	$("#dh").show();
+                    $("#nd").show();
+                    
+                    if(g_id == 3 || g_id == 4 ){
+                    	  $("#nd").hide();
+                		
+                	}
+                    
+                  
+                    
+                    
+                    $("#nd .my_row").each(function(m){   			  
+      			         var first  = m%2;             
+      		             var last = parseInt(m/2);                  
+      		             //console.log("nub:"+first +":"+ last);
+      		             $(this).html(nd[first][last]);
+      		       
+      		         });
+                    $("#dh .my_row").each(function (i) {
+                        var first  = i%2;
+                        var last = parseInt(i/2);
+                        
+                        $(this).html(dh[first][last]);
+      		        		       
+       		        })  
+                }        		     		        		        		          		   
+        	}
+        })
+    }
+    
     function prepareData(data){
         var p_htmlArray = [];
-
         var r_htmlArray = [];
         var dayOfYears = dayOfYear();
        	//console.log(data.og.length);
@@ -461,6 +551,80 @@
             var plan = data.og[i].detail.plan;
             
             var real = data.og[i].detail.real;
+           
+             if(data.og.length ==1){
+            	var orgId = localStorage.getItem("orgId")
+            	$(".line_tag").css({height:"66"})
+            	$("div[class^='g']").hide();
+
+            	if(orgId == "c21834b4-1cb0-490f-a2a8-deeaf7f7e065"){
+            		$(".dh").animate({top:"16px"})
+            		$("#dh .my_row").each(function(i){
+                		if(i==0||i==1){
+                			return;
+                		}
+                		
+                		$(this).hide()
+                	})
+            	}else if(orgId == "472212af-1977-462b-a74a-a1f36ed6562d"){
+            		$(".nd").animate({top:"14px"})
+            		$("#nd .my_row").each(function(i){
+                		if(i==0||i==1){
+                			return;
+                		}
+                		
+                		$(this).hide()
+                	})
+                	
+            	}else if(orgId == "a61365e2-969d-4352-b3f8-805027ab9f1d"){   
+            		$(".nd").animate({top:"14px"})
+            		$(".dh").animate({top:"14px"})
+            		$("#dh .my_row").each(function(i){
+                		if(i==0||i==1){
+                			return;
+                		}               		
+                		$(this).hide()
+                	});
+            		$("#nd .my_row").each(function(i){
+                		if(i==0||i==1){
+                			return;
+                		}                		
+                		$(this).hide()
+                	})
+               
+            	}
+            	
+            	 
+            	switch (data.og[0].g) {
+            		case 1:
+            			
+            			$(".g1").show();          			
+            			
+            			break;
+            		case 2:
+            			
+            			$(".g2").show();
+            			
+            			break;
+            		case 3:
+            			$(".g3").show();
+            			
+            			break;
+            		case 4:
+            			$(".g4").show();
+            			
+            			break;	
+            					            			            		
+            	}
+            	
+            } else{
+         		$("div[class^='g']").show();
+         		$(".dh").animate({top:"119px"})
+         		$(".nd").animate({top:"47px"})
+         		$(".my_row").each(function(i){	
+             		$(this).show()
+             	});
+         	}
            // console.log(plan);
             //console.log(real);
             //弹出层消失 公用
@@ -470,20 +634,24 @@
                 for(var j = 0;j<plan.length;j++){
                     //计划 相关参数
                     var p_color = colorFix(plan[j].m);
-                   
+                   	
                     if(plan[j].m ===""){
                     	plan[j].m = "待处理"
                     }
                     if(j == 0){
-                        var p_width = ((plan[j].d)/dayOfYears*100).toFixed(2)+"%";
+                        var p_width = ((plan[j].d)/dayOfYears*100).toFixed(6)+"%";
                     }else{
-                        p_width = ((plan[j].d-1)/dayOfYears*100).toFixed(2)+"%";
+                    	
+                        p_width = ((plan[j].d-1)/dayOfYears*100).toFixed(6)+"%";
                     }
+                    console.log("plan 第"+i+"个"+ plan[j].d);
+                    console.log(p_width)
                    
                     var p_move  = "layer_show(event,'"+plan[j].m+"','"+plan[j].s.replace(/\s+|\s+$/g,'&nbsp;')+"','"+plan[j].e.replace(/\s+|\s+$/g,'&nbsp;')+"')";
                     var p_div   = '<div style="background: '+p_color+';width:'+p_width+'" onmousemove='+p_move+' onmouseout="'+out+'"></div>';
                     a.push(p_div);
                 }
+               
                 p_htmlArray.push(a.join(""));
             }
             if(real){
@@ -498,53 +666,66 @@
                     	real[k].m = "待处理"
                     	
                     }
-                    var r_width = ((real[k].d-1)/dayOfYears*100).toFixed(2)+"%";
+                    if(j == 0){
+                        var r_width = ((real[k].d)/dayOfYears*100).toFixed(6)+"%";
+                    }else{
+                        r_width = ((real[k].d-1)/dayOfYears*100).toFixed(6)+"%";
+                    }
+                    console.log(real[0].d);
+                    //console.log((real[0].d/dayOfYears)*100).toFixed(6);
+                    //var r_width = ((real[k].d-1)/dayOfYears*100).toFixed(2)+"%";
                     var r_move = "layer_show(event,'"+real[k].m+"','"+real[k].s.replace(/\s+|\s+$/g,'&nbsp;')+"','"+real[k].e.replace(/\s+|\s+$/g,'&nbsp;')+"')";
                     var r_div = '<div style="background: '+r_color+';width:'+r_width+'" onmousemove="'+r_move+'" onmouseout="'+out+'"></div>';
                     b.push(r_div);
-
                 }
                 r_htmlArray.push(b.join(""));
             }
            
-
-
         }
         //把俩个放到一个大数组里,外部访问
-
         return [p_htmlArray,r_htmlArray];
     }
     
-
-    var flag= true;
+   
     function layer_show(e,status,st,et){
-		//console.log(1);
-         //console.log(data);
+		
         var ev = e ||window.event;
         var $move_layer = $("#move_layer");
         var top="";
         var left="";
+        var orgId = localStorage.getItem("orgId");
+    	//console.log(orgId);
         if(flag){
+        	
+        
         	 if(orgId == "c21834b4-1cb0-490f-a2a8-deeaf7f7e065"){
         		 $("#dh .bar_right").append($move_layer);                
                  
               }else if(orgId == "472212af-1977-462b-a74a-a1f36ed6562d"){
             	  $("#nd .bar_right").append($move_layer);                  
+              }else if(orgId == "a61365e2-969d-4352-b3f8-805027ab9f1d"){
+            	  $("#dh .bar_right").append($move_layer); 
               }
            
            
         }
         if(orgId == "c21834b4-1cb0-490f-a2a8-deeaf7f7e065"){
-            left = ev.clientX-470; 
+        	//console.log(1);
+            left = ev.clientX-560; 
             top = ev.clientY-90; 
         }else if(orgId == "472212af-1977-462b-a74a-a1f36ed6562d"){
-                left = ev.clientX-470; 
+        	
+                left = ev.clientX-560; 
                 top = ev.clientY-40;
+        }else if(orgId == "a61365e2-969d-4352-b3f8-805027ab9f1d"){
+        	 left = ev.clientX-560; 
+             top = ev.clientY-90;
         }
         var td = $("#detail").find("td");
         td.eq(0).html(status);
         td.eq(1).html(st);
         td.eq(2).html(et);
+        //console.log(left);
        
         $move_layer.css({left:left,top:top,display:"block"});
         flag = false;
@@ -568,7 +749,7 @@
         switch (status){
             case "机组运行":color="#FF0000";
                 break;
-            case "电网调整":color="#009DD9";
+            case "电网调停":color="#009DD9";
                 break;
             case "故障停机":color="#FFFF00";
                 break;
@@ -598,19 +779,21 @@
                 dayOfYear = 366;
             }else{
                 dayOfYear =365;
-
             }
         }
         return dayOfYear;
     }
+    
     function dayPassOfYear(){
         var d = new Date();
         var nowYear = d.getFullYear();
         var nowTime = new Date().getTime();
         var oldTime = new Date(nowYear +"-01-01").getTime();
-        return parseInt((nowTime - oldTime)/(60*60*24*1000));
+        return parseInt((nowTime - oldTime)/(60*60*24*1000))+1;
     }
+    console.log(dayPassOfYear()); 
+   
  
-
 </script>
+
 </html>

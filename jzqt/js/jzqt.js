@@ -316,7 +316,7 @@ function jzqt_zonglan(orgID){
            		$(this).find('a').css({color:"#000"})
            })
            //转换电厂默认加载 #1启机；
-
+   
            detail(orgID,'1','QD');
         }
     })
@@ -373,10 +373,17 @@ function detail(orgid,g_id,type){
         success: function(data){
         	//console.log(type);
            //console.log(data);
-            var getTD = preparedataDetail(data.exper,type);
-
+        	
+        	//本人所属电厂orgId   data.orgId
+            var getTD = preparedataDetail(data.exper,type,data.orgId);  
+            var tempOrgId="";
+            if(data.exper){
+            		var d = data.exper[0];
+            		tempOrgId = d.ORG_ID;
+            }
+            
            $("#detail").html(getTD);
-           if(type && type=='TJ'){
+           if(type && type=='TJ' && data.orgId==tempOrgId){
             $('.button').modal({
 	            target: '#modal',
 	            speed: 500,
@@ -433,7 +440,7 @@ function detail(orgid,g_id,type){
 
 
 
-function preparedataDetail(data,type){
+function preparedataDetail(data,type,orgId){
 	var htmlArray = [];
 	
 	for(var i = 0; i < data.length; i++){
@@ -442,8 +449,8 @@ function preparedataDetail(data,type){
 		
 	
 		if(type && type=='TJ'){
-			var msg='填写';
-			if(d.ADUIT_STATUS=='A'){
+			var msg='';
+			if(d.ADUIT_STATUS=='A'  && orgId==d.ORG_ID){
 				msg='填写';
 			}
 			if(d.ADUIT_STATUS=='C'){
@@ -455,7 +462,7 @@ function preparedataDetail(data,type){
 			if(d.QT_DESC && d.QT_DESC.length>0 && d.ADUIT_STATUS=='E'){
 				msg=d.QT_DESC;
 			}
-			htmlArray.push("<td>#"+d.G_ID+"</td><td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.PARATIME+"</td><td class='button link' id="+d.ID+" onclick=getvalue('"+d.ID+"',this)>"+msg+"</td>")
+			htmlArray.push("<td>#"+d.G_ID+"</td><td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.PARATIME+"</td><td class='button link' id="+d.ID+" onclick=getvalue('"+d.ID+"','"+d.NAME+"',this)>"+msg+"</td>")
 			//htmlArray.push("<td>#"+d.G_ID+"</td><td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.PARATIME+"</td><td class='button link'>填写</td>");
 			htmlArray.push("<td class='zhexian' ><p><img src='img/qx.png' /></p>");
 			htmlArray.push("<div class='lineDiv' style='left:25%;top:150px;width:700px; height:365px;'><div class='drsMoveHandle' id='"+data[i].KKS_CODE+";"+data[i].KKS_NAME+";"+data[i].STARTTIME+";"+data[i].ENDTIME+"' ><span></span></div><div class='linecontent' id='zx"+i+"'><button>1</button></div></div></td>")
@@ -464,7 +471,7 @@ function preparedataDetail(data,type){
 		}else{
 			 msg='';
 			if(d.QT_DESC && d.QT_DESC.length>0){
-				msg=d.QT_DESC;
+				msg=d.QT_DESC+'后起机';
 			}
 		    htmlArray.push("<td>#"+d.G_ID+"</td><td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.PARATIME+"</td><td  class='button link'>"+msg+"</td>")
 			//htmlArray.push("<td>#"+d.G_ID+"</td><td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.PARATIME+"</td><td class='button link'>填写</td>");
@@ -552,6 +559,7 @@ $(document).ready(function() {
 		
 		 $("#tijiao").click(function(){
 			 var ids = $("#result").val();
+			 var name = $("#flowname").val();
 				var qt_desc = $("#tj").val();
 				//保存数据
 				$("#"+ids).html('已提交');
@@ -576,16 +584,16 @@ $(document).ready(function() {
 				//var contextPath = 'http://127.0.0.1:8080/jsjd';
 				// var workflowUtil = new workflowUtil(contextPath);
 
-				 var json={e_business_id:ids,qt_desc:qt_desc};
+				 var json={e_business_id:ids,qt_desc:qt_desc,name:name};
 				 startAndSubmitByEntityCode('JIZUTINGJI',json,function(e){  
 				   if(e.flag==1)
 				   {
 				     alert(e.msg);
-				   }
-				   else{ var inst_code = e.instanceCode;
+				   }else{ var inst_code = e.instanceCode;
 				        Ext.Ajax.request({
 				          url: rootPath + '/main?xwl=2406L4N5MW6V',
-				          params: {id:ids,inst_code:inst_code,qt_desc:qt_desc},
+				         params: {id:ids,inst_code:inst_code,qt_desc:qt_desc,name:name},
+				         // params: {id:ids,INST_CODE_JZQT:inst_code,qt_desc:qt_desc},
 				          success: function(response){
 				            Ext.Msg.alert('提示','流程提交成功!');
                             //提交后就变成审批中的状态
@@ -692,7 +700,7 @@ function daocu(id,type){
 	})
 }
 
-function getvalue(id,is){
+function getvalue(id,flowname,is){
 	//alert($("#SW_hidden_element").next().attr("style"));
 	if(($("#"+id).html()=='填写' ||  $("#"+id).html()=='已驳回' )&& $("#style").val().length>0 ){
 		$("#SW_hidden_element").next().attr("style",$("#style").val()  );
@@ -714,6 +722,7 @@ function getvalue(id,is){
 		return ;
 	}
 	$("#result").val(id);
+	$("#flowname").val(flowname);
 	
 	
 }

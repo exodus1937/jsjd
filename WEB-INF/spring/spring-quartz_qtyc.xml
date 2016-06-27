@@ -70,7 +70,7 @@
       <!-- 设备轮换 -->
 	<bean id="testTriggeraddLH" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
        <property name="jobDetail" ref="jobDetailaddLH"/>  
-       <property name="cronExpression" value="0 0/10 * * * ?"/><!-- 每十分钟执行一次   -->
+       <property name="cronExpression" value="0 0/2 * * * ?"/><!-- 每十分钟执行一次   -->
 	</bean> 
      <!--异常情况-->
 	<bean id="testTriggeraddYC" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
@@ -80,12 +80,12 @@
 	<!--机组启停-->
 	<bean id="testTriggeraddQT" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
        <property name="jobDetail" ref="jobDetailaddQT"/>  
-       <property name="cronExpression" value="0 0/4 * * * ?"/><!-- 每4分钟执行一次   -->
+       <property name="cronExpression" value="0 0/1 * * * ?"/><!-- 每4分钟执行一次   -->
 	</bean> 
     <!--定期试验-->
 	<bean id="testTriggeraddSY" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
        <property name="jobDetail" ref="jobDetailaddSY"/>  
-       <property name="cronExpression" value="0 0/15 * * * ?"/><!-- 每15分钟执行一次   -->
+       <property name="cronExpression" value="0 0/2 * * * ?"/><!-- 每15分钟执行一次   -->
 	</bean> 
     
 
