@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>厂级监控</title>
+<link type="text/css" rel="stylesheet" href="css/news.css" />
+</head>
+<body>
+  <div class="wu_top">
+
+    <div class="wu_top1"> </div>
+    <div class="wu_left">
+      <div class="st_tree" id="st_tree">
+        <ul show="true">
+          <li><a href="#">京能集团</a></li>
+          <ul show="true">
+            <li><a href="#">岱海发电</a></li>
+            <ul show="true">
+                  <li>1号机</li>
+                  <ul show="false">
+                    <li><a href="javascript:void(0)"  showPage("")>锅炉</a></li>
+                    <li><a href="javascript:void(0)" showPage("")>汽机</a></li>
+                    <li><a href="javascript:void(0)" showPage("")>环保</a></li>
+                  </ul>
+                  <li>2号机</li>
+                  <ul show="false">
+                    <li><a href="javascript:void(0)" showPage("")>锅炉</a></li>
+                    <li><a href="javascript:void(0)" showPage("")>汽机</a></li>
+                    <li><a href="javascript:void(0)" showPage("")>环保</a></li>
+                  </ul>
+                  <li>3号机</li>
+                  <ul show="false">
+                    <li><a href="javascript:void(0)" showPage("")>锅炉</a></li>
+                    <li><a href="javascript:void(0)" showPage("")>汽机</a></li>
+                    <li><a href="javascript:void(0)" showPage("")>环保</a></li>
+                  </ul>
+                  <li>4号机</li>
+                  <ul show="false">
+                    <li><a href="javascript:void(0)" showPage("")>锅炉</a></li>
+                    <li><a href="javascript:void(0)" showPage("")>汽机</a></li>
+                    <li><a href="javascript:void(0)" showPage("")>环保</a></li>
+                  </ul>
+                  <li>全厂公用</li>
+                  <ul show="false">
+                    <li><a href="javascript:void(0)" showPage("")>化学</a></li>
+                    <li><a href="javascript:void(0)" showPage("")>电气</a></li>
+                  </ul>
+            </ul>
+            <li><a href="#">宁东发电</a></li>
+            <ul show="true">
+              <li>1号机</li>
+              <ul show="false">
+                <li><a href="javascript:void(0)" showPage("")>锅炉</a></li>
+
+                <li><a href="javascript:void(0)" showPage("")>汽机</a></li>
+                <li><a href="javascript:void(0)" showPage("")>环保</a></li>
+                <li>化学</li>
+                <ul>
+                  <li><a href="javascript:void(0)" onclick = showPage("http://172.168.100.101:8080/View.aspx?path=h16151401.svg&&normalView=false")>汽水取样</a></li>
+                </ul>
+                <li><a href="javascript:void(0)" showPage("")>电气</a></li>
+              </ul>
+              <li>2号机</li>
+              <ul show="false">
+                <li><a href="javascript:void(0)" showPage("")>锅炉</a></li>
+                <li><a href="javascript:void(0)" showPage("")>汽机</a></li>
+                <li><a href="javascript:void(0)" showPage("")>环保</a></li>
+                <li><a href="javascript:void(0)" showPage("")>化学</a></li>
+                <li><a href="javascript:void(0)" showPage("")>电气</a></li>
+              </ul>
+              <li>全厂公用</li>
+              <ul show='false'>
+                <li><a href="javascript:void(0)" showPage("")>化学</a></li>
+                <li><a href="javascript:void(0)" showPage("")>电气</a></li>
+              </ul>
+            </ul>
+          </ul>
+        </ul>
+      </div>
+      <div class="fengge"></div>
+    </div>
+    <div class="fengge"></div>
+  </div>
+
+
+
+  <div class="wu_main">
+       <iframe id="index_page" class="iframeCon"  name="page" frameborder="0" style="width:100%;overflow:auto;min-height:800px;"></iframe>
+  </div>
+
+</body>
+<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/SimpleTree.js"></script>
+<script type="text/javascript">
+  $(function(){
+  	$(".st_tree").SimpleTree({
+  	});
+  });
+  $("#index_page").attr("src","http://172.168.100.101:8080/View.aspx?path=h16151401.svg&&normalView=false");
+  function showPage (url){
+     console.log(url);
+     $("#index_page").attr("src",url);
+   }
+</script>
+
+
+
+</html>
