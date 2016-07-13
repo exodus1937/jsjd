@@ -258,7 +258,7 @@ function init() {
 		timer = setInterval(function(){
 			major_pulldown();
 			changeView();		
-		},20000);
+		},60*1000);
 	}else{
 		jtdqsy();//集团定期试验
 		jtsblh();//集团设备轮换
@@ -521,7 +521,7 @@ function major_pulldown() {
 								$('.circle7').html(data[0].jzm).show();
 								$('.circle7').css({backgroundImage : getYxzt(data[0].yxzt)});														
 						}else if (data.length == 2) {
-							console.log(data);
+							//console.log(data);
 							$(".circle_data5").html("<a  onclick=OpenWindow('"+data[0].fhl_pi+"','"+data[0].fhl_name+"','','','"+data[0].METHOD+"','"+data[0].POINTS+"') href='javascript:void(0)' ><div title='1号机组负荷率'>"+Number(data[0].fhl).toFixed(2)+'%'+"</div></a><a onclick=OpenWindow('"+data[0].ssfh_pi+"','"+data[0].ssfh_name+"','','','"+data[0].METHOD+"','"+data[0].POINTS+"') href='javascript:void(0)'><div title='1号机组负荷'>"+Number(data[0].ssfh).toFixed(2)+'MW'+"</div></a>").show();
 							$(".circle_data6").html("<a  onclick=OpenWindow('"+data[1].fhl_pi+"','"+data[1].fhl_name+"','','','"+data[1].METHOD+"','"+data[1].POINTS+"') href='javascript:void(0)' ><div title='2号机组负荷'>"+Number(data[1].fhl).toFixed(2)+'%'+"</div></a><a onclick=OpenWindow('"+data[1].ssfh_pi+"','"+data[1].ssfh_name+"','','','"+data[1].METHOD+"','"+data[1].POINTS+"') href='javascript:void(0)'><div title='2号机组负荷'>"+Number(data[1].ssfh).toFixed(2)+'MW'+"</div></a>").show();
 							
@@ -1027,7 +1027,11 @@ function getColumnValue(table, column, columnValue) {
 		}
 	}else if(table == "table_5" || table == 'ycqktable' || table == "JTycqk"|| table =="JTjzqt"){
 		if(column == "g_id"||column =="G_ID" || column == "UNIT_ID"){
-			columnValue = "#"+columnValue;
+			if(Number(columnValue)){
+				columnValue = "#"+columnValue;
+			}
+			
+			//columnValue = "#"+columnValue;
 		}
 
 	}

@@ -317,7 +317,7 @@ function jzqt_zonglan(orgID){
            })
            //转换电厂默认加载 #1启机；
    
-           detail(orgID,'1','QD');
+           detail(orgID,'1','QD',1,true);
         }
     })
 }
@@ -347,38 +347,74 @@ function getColumnValue(table,column,columnValue,d){
 		return "#" + columnValue;
 	} 
 	if(column == "QDNUM"){
-		return "onclick=detail('"+d.ORGID+"','"+d.G_ID+"','QD')";
+		return "onclick=detail('"+d.ORGID+"','"+d.G_ID+"','QD',1,'true')";
 	}   
 	if(column == "TJNUM"){
-		return "onclick=detail('"+d.ORGID+"','"+d.G_ID+"','TJ')";
+		return "onclick=detail('"+d.ORGID+"','"+d.G_ID+"','TJ','1','true')";
 	}
 	return columnValue;
 }
 //detail("c21834b4-1cb0-490f-a2a8-deeaf7f7e065",'1','QD');
-
-function detail(orgid,g_id,type){
+var initPagination = function(page) {
+   	var num_entries = page;
+  	// 创建分页
+  	$("#Pagination").pagination(num_entries, {
+	    num_edge_entries: 1, //边缘页数
+	    num_display_entries: 4, //主体页数
+	    callback: pageselectCallback,
+	    items_per_page: 1, //每页显示1项
+	    prev_text: "前一页",
+	    next_text: "后一页"
+  	});
+};
+function pageselectCallback(page_index, jq){
+	//从第一次执行函数中获取参数 重新传入
+	var org_id = sessionStorage.getItem("org_id");
+	var g_id   = sessionStorage.getItem("g_id")
+	var type   = sessionStorage.getItem("type")
+	 detail(org_id,g_id,type,page_index + 1);
+	//detail(orgId,gID,page_index + 1,g_id);
+  	return false;
+}
+var query_flag=true;
+function detail(orgid,g_id,type,nub,flag){
+	sessionStorage.setItem("org_id",orgid)
+	sessionStorage.setItem("g_id",g_id);
+	sessionStorage.setItem("type",type);
+	if(!nub){
+		nub="1";
+	}
 	var url = rootPath + "/portal.do";
     $.ajax({
         url: url,
         type: "POST",
         data:{
-            method:"getJzqtExpinfo",
+            method:"getJzqtExp",
             orgid:orgid,
             g_id:g_id,
             type:type,
-            pagenum:1,
+            pagenum:nub,
 			pagesize:5 
         },
         dataType:"json",
         success: function(data){
         	//console.log(type);
            //console.log(data);
+        	var page = Math.ceil(data.total/5)
+        	if(query_flag||flag){
+        		$("#Pagination").show()
+				initPagination(page);//分页加载
+			}
+        	if(page==0){
+        		$("#Pagination").hide()
+        	}
         	
+        	query_flag=false;
         	//本人所属电厂orgId   data.orgId
-            var getTD = preparedataDetail(data.exper,type,data.orgId);  
+            var getTD = preparedataDetail(data.expr,type,data.orgId);  
             var tempOrgId="";
-            if(data.exper){
-            		var d = data.exper[0];
+            if(data.expr.length){
+            		var d = data.expr[0];
             		tempOrgId = d.ORG_ID;
             }
             
@@ -453,10 +489,10 @@ function preparedataDetail(data,type,orgId){
 			if(d.ADUIT_STATUS=='A'  && orgId==d.ORG_ID){
 				msg='填写';
 			}
-			if(d.ADUIT_STATUS=='C'){
+			if(d.ADUIT_STATUS=='C' && orgId==d.ORG_ID){
 				msg='已提交';
 			}
-			if(d.ADUIT_STATUS=='D'){
+			if(d.ADUIT_STATUS=='D' && orgId==d.ORG_ID){
 				msg='已驳回';
 			}
 			if(d.QT_DESC && d.QT_DESC.length>0 && d.ADUIT_STATUS=='E'){
@@ -471,7 +507,7 @@ function preparedataDetail(data,type,orgId){
 		}else{
 			 msg='';
 			if(d.QT_DESC && d.QT_DESC.length>0){
-				msg=d.QT_DESC+'后起机';
+				msg=d.QT_DESC+'后启机';
 			}
 		    htmlArray.push("<td>#"+d.G_ID+"</td><td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.PARATIME+"</td><td  class='button link'>"+msg+"</td>")
 			//htmlArray.push("<td>#"+d.G_ID+"</td><td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.PARATIME+"</td><td class='button link'>填写</td>");

@@ -312,7 +312,7 @@
 							
 					</h3>
 					<div class="du_more">
-						<!-- <a href="${ctx}/smartBI.html">更多></a> -->
+						 <a href="${ctx}/newNavIndex/kaohe/kaohe.html">更多></a>
 					</div>
 					<div class="clearfix"></div>
 					<table class="jiandubaobiao_view wj_cen">
@@ -515,7 +515,7 @@
 						<!-- 集团   canvas1 -->
 						
 						<div class="jt-left-canvas fl" style="positon:relative;padding-top:20px;position:relative;">
-							<div id="hightchart" style="width:470px;height:240px;position:absolute"></div>							
+							<div id="hightchart" style="width:470px;height:240px;position:absolute;z-index:999"></div>							
 						</div>
 						<!-- <div class="jt-cs"><a href="/jsjd/main?xwl=23Z6S7B7RZLA">查询各厂测点指标</a></div>
 						<div class="jt-cs jt-cs1"><a href="/jsjd/main?xwl=23YA0QJSVS7L">各厂机组主要参数</a></div> -->

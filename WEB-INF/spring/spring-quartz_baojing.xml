@@ -39,11 +39,11 @@
 	</bean>
 	<bean id="testTrigger2" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
        <property name="jobDetail" ref="jobDetail2"/>  
-       <property name="cronExpression" value="0 0/2 * * * ?"/><!-- 每5分钟执行一次   -->
+       <property name="cronExpression" value="0 0/5 * * * ?"/><!-- 每5分钟执行一次   -->
 	</bean>
 	<bean id="testTrigger5" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
        <property name="jobDetail" ref="jobDetail5"/>  
-       <property name="cronExpression" value="0 0/5 * * * ?"/><!-- 每5分钟执行一次   -->
+       <property name="cronExpression" value="0 0/8 * * * ?"/><!-- 每5分钟执行一次   -->
 	</bean>
 
 	

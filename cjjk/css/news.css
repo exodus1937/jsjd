@@ -22,7 +22,7 @@ body { min-width: 960px; }
 .wu_left { position: fixed; left: 1%; top: 20px; width: 14%; min-width: 135px; height: 94%; border: 1px solid #ECECEC; }
 /* 超链接 */
 .st_tree { width: 94%; margin: 10px auto; overflow: auto; }
-.st_tree a { text-decoration: none; }
+.st_tree a { text-decoration: none;white-space: nowrap;}
 /* 鼠标经过的超链接 */
 .st_tree a:hover { color: #f33; text-decoration: underline; }
 /* 菜单 */

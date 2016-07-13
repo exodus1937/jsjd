@@ -1986,3 +1986,50 @@ function getProcessIdByCode(processCode){
 	
 	return procId ;
 }
+/**
+ * 弹出报表导入管理页面
+ * @params: config附件配置 json示例{userId:'',src_id:'',org_id:'',att_cat:'',bus_no:'',canUp:'',canDown:'',canDel:'',closeCallback:function(){}} 
+ */
+function showImportManager(userId, src_id, org_id, att_cat, bus_no, canUp, canDown, canDel, closeCallback){
+	if(userId==null || userId==""){
+		Ext.Msg.alert('提示','用户id不能为空!');
+		return;
+	}
+	if(src_id==null || src_id==""){
+		Ext.Msg.alert('提示','来源id不能为空!');
+		return;
+	}
+	if(att_cat==null || att_cat==""){
+		Ext.Msg.alert('提示','附件类型不能为空!');
+		return;
+	}
+	
+	if(canUp==null || canUp==""){
+		canUp = 'Y';
+	}
+	
+	if(canDown==null || canDown==""){
+		canDown = 'N';
+	}
+	
+	if(canDel==null || canDel==""){
+		canDel = 'N';
+	}
+	
+	var url = '';
+	
+	var url = contextPath + '/main?xwl=240I99RICSHI'
+				+ '&userId=' + userId
+		        + '&srcId=' + src_id
+		        + '&orgId=' + org_id
+		        + '&attCat=' + att_cat
+		        + '&busNo=' + encodeURI(encodeURI(bus_no))
+		        + '&canUp=' + canUp
+		        + '&canDown=' + canDown
+		        + '&canDel=' + canDel;
+	
+	
+	
+	var windowConfig = {title:'附件管理','url':url,'isMax':true,'closeCallback':closeCallback};
+	showExtWindow(windowConfig);
+}

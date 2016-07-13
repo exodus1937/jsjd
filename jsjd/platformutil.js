@@ -97,6 +97,7 @@ function showAttachmentManager(userId, src_id, org_id, att_cat, bus_no, canUp, c
 	showExtWindow(windowConfig);
 }
 
+
 /**
  * 弹出功能帮助页面
  * @params:funId 功能树id

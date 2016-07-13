@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>京能集团实时技术监督生产管理系统</title>
+<link type="text/css" rel="stylesheet" href="css/news.css" />
+<link type="text/css" rel="stylesheet" href="css/zTreeStyle.css" />
+  <link rel="stylesheet" type="text/css" href="js/tree_themes/SimpleTree.css"/>
+  <style type="text/css">
+      .fl{
+        float:left;
+      }
+      .fr{
+         float:right;
+      }
+  </style>
+</head>
+
+<body>
+
+ <!--  <input id="url" type="hidden" value=""> -->
+  <div class="wu_top">
+  <div class="wu_top0"></div>
+  
+  <div class="fengge"></div>
+</div>
+
+
+<div class="wu_left">
+  <div class="st_tree">
+    <ul>
+      <li><a href="#">京能集团</a></li>
+
+      <ul show="true">
+        <li title="c21834b4-1cb0-490f-a2a8-deeaf7f7e065"><a href="#" title="岱海发电" >岱海发电</a></li>
+        <li title="472212af-1977-462b-a74a-a1f36ed6562d"><a href="#" title="宁东发电">宁东发电</a></li>
+      </ul>
+
+  </div>
+
+
+</div>
+
+
+
+<div class="wu_main" style="border: 1px solid #ccc;">
+  <div class="wu_main1">
+    <p id="lh_name">岱海发电</p>
+    <table class="wu_tab1"  style="">
+      <thead>
+        <tr>
+          <td>机组</td>
+          <td>启机次数（次）</td>
+          <td>停机次数（次）</td>
+          <td>最近启动时间</td>
+          <td>最近停机时间</td>
+          <td>连续运行天数</td>
+        </tr>
+      </thead>
+      <tbody id="table1_huizong"> 
+      </tbody>
+    </table>
+
+    <table class="wu_tab1 level4" >
+      <thead>
+        <tr>
+          <td>机组</td>
+          <td>启停项目</td>
+          <td>开始时间</td>
+          <td>结束时间</td>
+          <td>并网/解列时间</td>
+          <td>启停机类别</td>
+          <td>查看趋势</td>
+          <td>查看报告</td>
+        </tr>
+      </thead>
+      <tbody id="detail">
+        <!-- <tr>
+          <td>#1</td>
+          <td>岱海电厂#1机组冷态启动</td>
+          <td>2016-03-02 12:02:03</td>
+          <td>2016-03-02 12:02:03</td>
+          <td>2016-03-01 12：12：30</td>
+          <td>是</td>
+          <td class="zhexian">
+            <p><img src="img/qx.png" /></p>
+            <div class="lineDiv" style="left:25%; top: 150px; width:700px; height:365px;">
+              <div class="drsMoveHandle"><span></span></div>
+              <div class="linecontent"><img src="img/zxt.png" height="100%"/></div>
+            </div>
+          </td>
+           <td>导出</td>
+        </tr><tr>
+        <tr>
+          <td>#1</td>
+          <td>岱海电厂#1机组冷态启动</td>
+          <td>2016-03-02 12:02:03</td>
+          <td>2016-03-02 12:02:03</td>
+          <td>2016-03-01 12：12：30</td>
+          <td>是</td>
+          <td class="zhexian">
+            <p><img src="img/qx.png" /></p>
+            <div class="lineDiv" style="left:25%; top: 150px; width:700px; height:365px;">
+              <div class="drsMoveHandle"><span></span></div>
+              <div class="linecontent"><img src="img/zxt.png" height="100%"/></div>
+            </div>
+          </td>
+          <td>导出</td>
+        </tr><tr>
+        <tr>
+          <td>#1</td>
+          <td>岱海电厂#1机组冷态启动</td>
+          <td>2016-03-02 12:02:03</td>
+          <td>2016-03-02 12:02:03</td>
+          <td>2016-03-01 12：12：30</td>
+          <td>是</td>
+          <td class="zhexian">
+            <p><img src="img/qx.png" /></p>
+            <div class="lineDiv" style="left:25%; top: 150px; width:700px; height:365px;">
+              <div class="drsMoveHandle"><span></span></div>
+              <div class="linecontent"><img src="img/zxt.png" height="100%"/></div>
+            </div>
+          </td>
+          <td>导出</td>
+        </tr><tr>
+        <tr>
+          <td>#1</td>
+          <td>岱海电厂#1机组冷态启动</td>
+          <td>2016-03-02 12:02:03</td>
+          <td>2016-03-02 12:02:03</td>
+          <td>2016-03-01 12：12：30</td>
+          <td>是</td>
+          <td class="zhexian">
+            <p><img src="img/qx.png" /></p>
+            <div class="lineDiv" style="left:25%; top: 150px; width:700px; height:365px;">
+              <div class="drsMoveHandle"><span></span></div>
+              <div class="linecontent"><img src="img/zxt.png" height="100%"/></div>
+            </div>
+          </td>
+          <td>导出</td>
+        </tr><tr>
+        <tr>
+          <td>#1</td>
+          <td>岱海电厂#1机组冷态启动</td>
+          <td>2016-03-02 12:02:03</td>
+          <td>2016-03-02 12:02:03</td>
+          <td>2016-03-01 12：12：30</td>
+          <td>是</td>
+          <td class="zhexian">
+            <p><img src="img/qx.png" /></p>
+            <div class="lineDiv" style="left:25%; top: 150px; width:700px; height:365px;">
+              <div class="drsMoveHandle"><span></span></div>
+              <div class="linecontent"><img src="img/zxt.png" height="100%"/></div>
+            </div>
+          </td>
+          <td>导出</td>
+        </tr><tr> -->
+
+      </tbody>
+    </table>
+
+    <!-- <div id="modal" style="width: 800px;height: auto; display:none">
+      <label for="tj">停机类别</label>
+      <select name="" id="tj"></select>
+        <option value=""></option>
+        <form method="POST" action="xxx.cgi">
+            <div>
+            <textarea id="msg" name="MSG" cols=40 rows=4 style="max-width: 800px;width:800px;font-family: 'Microsoft YaHei', SimSun, Arial, Sans-Serif">请写入说明：。。。
+            </textarea>
+            </div>
+        </form>
+    </div> -->
+    <div id="modal" style="width:  240px;height: auto;background: #ffffff;padding:25px 30px 38px 36px;display:none;">
+      <label for="tj">停机类别</label>
+      <select name="" id="tj">
+          <option value="">A级检修</option>
+          <option value="">B级检修</option>
+          <option value="">C级检修</option>
+          <option value="">D级检修</option>
+          <option value="">电网调停</option>
+          <option value="">故障停机</option>
+      </select>
+      <button>提交审批</button>
+      <div style="height:10px;"></div>
+      <div style="clear:both"></div>
+      <div class="fl">备注:</div>
+      <small class="fl" style="line-height:12px; padding: 5px 0 0 5px;">要求在机组停机后24小时内完成类<br/>别填报并提交审批，24小时后未提<br/>交系统自动生成考核。</small>
+    </div>
+
+  
+    <div class="fengge"></div>
+    <div id="Pagination" class="pagination" style="float:right"><!-- 这里显示分页 --></div>
+  </div>
+
+  <div class="fengge"></div>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/echarts2.js"></script>
+
+<script type="text/javascript" src="js/SimpleTree.js"></script>
+<script type="text/javascript" src="js/Sweefty.js"></script>
+<script type="text/javascript" src="js/moaModal.minified.js"></script>
+<script type="text/javascript" src="js/jzqt.js"></script>
+ <script type="text/javascript">
+   window.onload = function () {
+
+    //modal 
+    
+
+    $("#msg").focus(function(){
+        $(this).html("");
+    })
+
+     var stree = $(".st_tree");
+     stree.SimpleTree({
+       click: function (a) {
+          var orgID = $(a).parent().attr("title");
+          jzqt_zonglan(orgID)
+       }
+     })
+   }
+ </script>
+</body>
+</html>

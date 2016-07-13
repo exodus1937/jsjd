@@ -426,7 +426,7 @@
    
     query(orgId);
     $("#org_id").on("change",function(){
-    	console.log($(this).val())
+    	//console.log($(this).val())
     	if($("#org_id").val() =='472212af-1977-462b-a74a-a1f36ed6562d'){
     		$("#status option").eq(3).remove();
     		$("#status option").eq(3).remove();
@@ -461,7 +461,7 @@
     	if(g_id == 3 || g_id == 4 ){
     		
     		$(".nd").hide();
-    		console.log(g_id);
+    		//console.log(g_id);
     	}else{
     		$("#nd").fadeIn();
     		$(".nd").show();
@@ -660,7 +660,7 @@
                 var b = [];//数据2级放到一个二维数组
                 for(var k = 0;k<real.length;k++){
                     var r_color = colorFix(real[k].m);
-                   
+                  // console.log(real[k].d);
                     if(real[k].m ===""){
                     	//console.log("空");
                     	real[k].m = "待处理"

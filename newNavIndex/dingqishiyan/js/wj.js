@@ -249,12 +249,185 @@ function querypre(data){
 	for(var i = 0;i<data.length;i++){
 		d = data[i];
 		var j=i+1;
-		htmlArray.push("<tr><td >"+j+"</td><td>#" + d.gId+ "</td><td style='text-align:left;'>" + d.name+ "</td><td>" + timefixed(d.startTime)+ "</td><td>" + d.ysCount+ "</td><td>" + d.yCount+ "</td><td>" + d.msCount+ "</td><td>" + d.mCount+ "</td><td>" + d.fCount+ "</td></tr>");
+		var fun ="onclick='chuantou("+JSON.stringify(d)+")'";
+		htmlArray.push("<tr "+fun+"><td >"+j+"</td><td>#" + d.gId+ "</td><td style='text-align:left;'>" + d.name+ "</td><td>" + timefixed(d.startTime)+ "</td><td>" + d.ysCount+ "</td><td>" + d.yCount+ "</td><td>" + d.msCount+ "</td><td>" + d.mCount+ "</td><td>" + d.fCount+ "</td></tr>");
 	}
 	
 	return htmlArray.join(''); 
 }	
 
+function chuantou(d){
+	
+	//alert(d);
+    var flag=true;
+
+    $("#Pagination_query").hide();
+    $(".select").hide();
+    $("table.level1").hide();
+    $(".wu_top").show();
+    $("table.level4").show();
+    $(".wu_top1").show();
+    $("#table1_huizong").show();
+    $("#Pagination").show();
+
+
+    $(".wu_main").css({"marginTop":112});
+    var initPagination = function(page) {
+        var num_entries = page;
+        // 创建分页
+        $("#Pagination").pagination(num_entries, {
+            num_edge_entries: 1, //边缘页数
+            num_display_entries: 4, //主体页数
+            callback: pageselectCallback,
+            items_per_page: 1, //每页显示1项
+            prev_text: "前一页",
+            next_text: "后一页"
+        });
+    };
+
+
+
+    function pageselectCallback(page_index, jq){
+        expr(page_index + 1);
+        return false;
+    }
+    var name=name = encodeURIComponent(trim(d.name));
+    var url = rootPath + "/portal.do?name="+name;
+    //expr(1);
+    function expr(pagenum){
+        $.ajax({
+            url: url,
+            type: "POST",
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+            dataType: "json",
+            data: {
+                method: "getLHTime",
+                org_id: sessionStorage.getItem("orgid"),
+                year:'',
+                month:'',
+                g_id:  d.gId,
+                special_id: d.professionName,
+               // name:d.name,
+                ispage:true,
+                pagenum:pagenum,
+                pagesize:5
+            },
+            success: function(data) {
+                $("#sblhcounter").html("");
+                var page = Math.ceil(data.total/5)
+                if(flag){
+                    initPagination(page);//分页加载
+                }
+                flag=false;
+                $('#sblhcounter').html(prepearData(data.exper));
+                var line_width = ($(window).width() - 700) / 2 + "px";
+                //var line_height=($(window).height()-365)/2+"px";
+                var line_height = 100;
+                $(".lineDiv").css({
+                    "left": line_width,
+                    "top": line_height
+                });
+                //改变窗口浏览器大小重置相对定位
+                $(window).resize(function() {
+                    var line_width = ($(window).width() - 700) / 2 + "px";
+                    var line_height = ($(window).height() - 365) / 2 + "px";
+                    $(".lineDiv").css({
+                        "left": line_width,
+                        "top": line_height
+                    });
+                });
+                var d_flag= true;
+                //弹窗淡入淡出
+                $(".zhexian").on("click",
+
+                    function(event) {
+                        var i = $(this).parent().index() -1 ;
+                        //console.log($(this).parent().index());
+
+                        var dataT = $(this).find('.drsMoveHandle').get(0).id;
+                        var arr = dataT.split(";");
+                        var code = arr[0];
+                        var name = arr[1];
+                        var starttime = arr[2];
+                        var endtime = arr[3];
+                        //console.log(name);
+
+                        if(d_flag){
+                            sbjiaohu("zx"+i,code,name,starttime,endtime);
+                            d_flag = false;
+                        }
+                        $(this).children(".lineDiv").fadeIn();
+                        var index = $(this).index();
+                    }
+                );
+                //弹出层关闭按钮
+                $(".drsMoveHandle span").bind("click",
+                    function(event) {
+                        $(this).parent().parent(".lineDiv").fadeOut();
+                        event.stopPropagation();
+                    }
+                )
+            }
+        });
+
+    }
+    $.ajax({
+        url: url,
+        type: "POST",
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        dataType: "json",
+        data: {
+            method: "getLHCount",
+            org_id: sessionStorage.getItem("orgid"),
+            g_id: d.gId,
+            special_id: d.professionName
+        },
+        success: function(data) {
+            var data_level4 = data.lhlist[0];
+            //console.log(data_level4 );
+            //console.log(data_level4.length);
+            var table1_huizong_td = $("#table1_huizong").find("td");
+            var header_h3 = $('.wu_top1').find("h3");
+            var lh_name = $('#lh_name');
+
+            if (data.lhlist.length == 0) {
+                table1_huizong_td.each(function(i) {
+                    if (i > 4) {
+                        $(this).html("暂时无数据");
+                    }
+
+                });
+                lh_name.html("");
+                header_h3.each(function() {
+                    $(this).html("");
+                });
+                lh_name.html("本条记录无数据");
+            }
+
+            if (data.lhlist.length !== 0) {
+                /*轮换说明*/
+                header_h3.eq(0).html(data_level4.validbasic);
+                header_h3.eq(1).html(data_level4.lhmethod);
+                header_h3.eq(2).html(data_level4.systemlogic);
+                header_h3.eq(3).html(data_level4.startbasic);
+                header_h3.eq(4).html(data_level4.endbasic);
+
+                /*轮换的名称*/
+                lh_name.html(treeNode.name);
+
+                /*轮换的具体数据*/
+                table1_huizong_td.eq(5).html(data_level4.yscount);
+                table1_huizong_td.eq(6).html(data_level4.ycount);
+                table1_huizong_td.eq(7).html(data_level4.mscount);
+                table1_huizong_td.eq(8).html(data_level4.mcount);
+                table1_huizong_td.eq(9).html(data_level4.noexper);
+
+            }
+
+        }
+
+    })
+}
 
 
 

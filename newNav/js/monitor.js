@@ -1,7 +1,7 @@
 var monitor = setInterval(function(){
 	$.ajax({
 		url : "../newPage.do?method=monitor",
-		async: false,
+		//async: false,
 		type : "POST", 
 		//data: {menuId:menuId},
 		success : function(data) {
