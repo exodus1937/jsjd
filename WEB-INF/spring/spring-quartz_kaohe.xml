@@ -13,7 +13,7 @@
 
 	<!-- 计划总结监督报表月份定期考核-->
 	<bean id="MonthKaohe" class="com.xzsoft.kaohe.server.KaoheList"/>
-	<bean id="jobDetailMonth" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+	<bean id="jobDetailMonthKao" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
 		<property name="targetObject">
 		    <ref bean="MonthKaohe"/>
 		</property>  
@@ -27,7 +27,7 @@
 	</bean>
 	<!-- 计划总结季度定期考核 -->
 	<bean id="QuKaohe" class="com.xzsoft.kaohe.server.KaoheList"/>
-	<bean id="jobDetailQu" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+	<bean id="jobDetailQuKao" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
 		<property name="targetObject">
 		    <ref bean="QuKaohe"/>
 		</property>  
@@ -41,7 +41,7 @@
 	</bean>
 		<!-- 计划总结年份定期考核 -->
 	<bean id="YearKaohe" class="com.xzsoft.kaohe.server.KaoheList"/>
-	<bean id="jobDetailYear" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+	<bean id="jobDetailYearKao" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
 		<property name="targetObject">
 		    <ref bean="YearKaohe"/>
 		</property>  
@@ -55,7 +55,7 @@
 	</bean>
 	<!--设备定检考核 -->
 	<bean id="ErmKaohe" class="com.xzsoft.kaohe.server.KaoheList"/>
-	<bean id="jobDetailErm" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+	<bean id="jobDetailErmKao" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
 		<property name="targetObject">
 		    <ref bean="ErmKaohe"/>
 		</property>  
@@ -69,23 +69,23 @@
 	</bean>
 
 	<!--月份计划总结考核-->
-	<bean id="testTriggerMonth" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
-       <property name="jobDetail" ref="jobDetailMonth"/>  
+	<bean id="testTriggerMonthKao" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailMonthKao"/>  
        <property name="cronExpression" value="0 0 0 6 * ?"/><!-- 每月6号执行  -->
 	</bean> 
 	<!--季度计划总结考核-->
-	<bean id="testTriggerQu" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
-       <property name="jobDetail" ref="jobDetailQu"/>  
+	<bean id="testTriggerQuKao" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailQuKao"/>  
        <property name="cronExpression" value="0 0 0 6 1/3 ?"/><!-- 每季第6天执行   -->
 	</bean> 
 	<!--年度计划总结考核-->
-	<bean id="testTriggerYear" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
-       <property name="jobDetail" ref="jobDetailYear"/>  
+	<bean id="testTriggerYearKao" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailYearKao"/>  
        <property name="cronExpression" value="0 0 0 6 1 ?"/><!-- 每年第6天执行   -->
 	</bean> 
 	<!--设备定检考核-->
-	<bean id="testTriggerErm" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
-       <property name="jobDetail" ref="jobDetailErm"/>  
+	<bean id="testTriggerErmKao" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailErmKao"/>  
        <property name="cronExpression" value="0 0 0 * * ?"/><!-- 每天执行   -->
 	</bean> 
 	<!--  总管理类如果将lazy-init='false'那么容器启动就会执行调度程序     -->
@@ -93,10 +93,10 @@
         <property name="triggers">
             <list>  
               <!--   作业调度器,list下可加入其他的调度器   -->
-                <ref bean="testTriggerMonth" />
-                <ref bean="testTriggerQu" />
-                <ref bean="testTriggerYear"/>
-                <ref bean="testTriggerErm"/>
+                <ref bean="testTriggerMonthKao" />
+                <ref bean="testTriggerQuKao" />
+                <ref bean="testTriggerYearKao"/>
+                <ref bean="testTriggerErmKao"/>
             </list>  
     </property>  
 </bean>    

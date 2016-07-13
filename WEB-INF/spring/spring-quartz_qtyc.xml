@@ -51,6 +51,20 @@
     	   <value>false</value>
     	 </property>
 	</bean>
+<!-- 机组启停步序记录数 -->
+	<bean id="JzqtStep" class="com.xzsoft.interfaces.Jzqt"/>
+	<bean id="jobDetailaddQTStep" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+		    <ref bean="JzqtStep"/>
+		</property>  
+    	<property name="targetMethod">
+    	    <value>JzqtStepExecute</value>
+    	</property>
+    	<!-- 将并发设置为false   -->
+    	<property name="concurrent">
+    	   <value>false</value>
+    	 </property>
+	</bean>
 <!-- 定期试验  -->
 	<bean id="SY" class="com.xzsoft.interfaces.SYExecute"/>
 	<bean id="jobDetailaddSY" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
@@ -82,6 +96,11 @@
        <property name="jobDetail" ref="jobDetailaddQT"/>  
        <property name="cronExpression" value="0 0/1 * * * ?"/><!-- 每4分钟执行一次   -->
 	</bean> 
+	<!--机组启停步序记录数-->
+	<bean id="testTriggeraddQTStep" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
+       <property name="jobDetail" ref="jobDetailaddQTStep"/>  
+       <property name="cronExpression" value="0 0/1 * * * ?"/><!-- 每4分钟执行一次   -->
+	</bean> 
     <!--定期试验-->
 	<bean id="testTriggeraddSY" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
        <property name="jobDetail" ref="jobDetailaddSY"/>  
@@ -98,6 +117,7 @@
 			                   	 <ref bean="testTriggeraddLH" />
                                  <ref bean="testTriggeraddYC" />
                                  <ref bean="testTriggeraddQT" />
+								 <ref bean="testTriggeraddQTStep" /> 
                                  <ref bean="testTriggeraddSY" />
 								
 							

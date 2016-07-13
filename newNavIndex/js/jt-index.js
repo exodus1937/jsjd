@@ -26,7 +26,7 @@ function JTtzgg(){
 						  tdhtml+="<tr>" +
 					  		/*"<td><a href='javascript:void(0)' onclick='click_a('"++"')'> "+data[i].NAME+"<a></td>" +*/
 					  		 "<td  class='ellipsis' style='text-align: left;'>" +
-							"<a href='javascript:void(0)' onclick=parent.click_a('"+rootPath+"/main?xwl=23WPD5TO7KQ1&showAddWindow=Y&ID="+data[i].NTC_ID+"')>"+data[i].NAME+"</a></td>"+
+							"<a href='javascript:void(0)' onclick=parent.click_a('"+rootPath+"/main?xwl=23WPD5TO7KQ1&showAddWindow=Y&ID="+data[i].IDS+"')>"+data[i].NAME+"</a></td>"+
 					  		"<td> "+data[i].ORGNAME+"</td>" +
 					  		"<td>"+data[i].TIME+"</td>"
 					  		"</tr>"

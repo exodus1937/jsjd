@@ -502,7 +502,7 @@ function preparedataDetail(data,type,orgId){
 			//htmlArray.push("<td>#"+d.G_ID+"</td><td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.PARATIME+"</td><td class='button link'>填写</td>");
 			htmlArray.push("<td class='zhexian' ><p><img src='img/qx.png' /></p>");
 			htmlArray.push("<div class='lineDiv' style='left:25%;top:150px;width:700px; height:365px;'><div class='drsMoveHandle' id='"+data[i].KKS_CODE+";"+data[i].KKS_NAME+";"+data[i].STARTTIME+";"+data[i].ENDTIME+"' ><span></span></div><div class='linecontent' id='zx"+i+"'><button>1</button></div></div></td>")
-			htmlArray.push('<td onclick=daocu("'+d.ID+'","'+type+'") class="link">导出</td>')
+			htmlArray.push('<td onclick=daocu("'+d.ID+'","'+type+'") class="link">查看</td>')
 			
 		}else{
 			 msg='';
@@ -513,7 +513,7 @@ function preparedataDetail(data,type,orgId){
 			//htmlArray.push("<td>#"+d.G_ID+"</td><td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.PARATIME+"</td><td class='button link'>填写</td>");
 			htmlArray.push("<td class='zhexian' ><p><img src='img/qx.png' /></p>");
 			htmlArray.push("<div class='lineDiv' style='left:25%;top:150px;width:700px; height:365px;'><div class='drsMoveHandle' id='"+data[i].KKS_CODE+";"+data[i].KKS_NAME+";"+data[i].STARTTIME+";"+data[i].ENDTIME+"' ><span></span></div><div class='linecontent' id='zx"+i+"'><button>1</button></div></div></td>")
-			htmlArray.push('<td onclick=daocu("'+d.ID+'","'+type+'") class="link">导出</td>')
+			htmlArray.push('<td onclick=daocu("'+d.ID+'","'+type+'") class="link">查看</td>')
 			
 		}
 		

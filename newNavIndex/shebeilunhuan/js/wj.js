@@ -438,7 +438,10 @@ function querypre(data){
 		d = data[i];
 		var j=i+1;
 		var fun ="onclick='chuantou("+JSON.stringify(d)+")'";
-		htmlArray.push("<tr "+fun+"><td >"+j+"</td><td>#" + d.gId+ "</td><td style='text-align:left;'>" + d.name+ "</td><td>" + timefixed(d.startTime)+ "</td><td>" + d.ysCount+ "</td><td>" + d.yCount+ "</td><td>" + d.msCount+ "</td><td>" + d.mCount+ "</td><td>" + d.fCount+ "</td></tr>");
+		if(Number(d.gId)){
+			d.gId = "#"+d.gId;
+		}
+		htmlArray.push("<tr "+fun+"><td >"+j+"</td><td>" + d.gId+ "</td><td style='text-align:left;'>" + d.name+ "</td><td>" + timefixed(d.startTime)+ "</td><td>" + d.ysCount+ "</td><td>" + d.yCount+ "</td><td>" + d.msCount+ "</td><td>" + d.mCount+ "</td><td>" + d.fCount+ "</td></tr>");
 	}	
 	return htmlArray.join(''); 
 }
@@ -447,7 +450,7 @@ function chuantou(d){
 	
 	//alert(d);
     var flag=true;
-	//console.log(d);
+    
     $("#Pagination_query").hide();
     $(".select").hide();
     $("table.level1").hide();
@@ -475,17 +478,13 @@ function chuantou(d){
 
 
     function pageselectCallback(page_index, jq){
-		if(page_index==0){
-			return false;
-		}
-        expr1(page_index + 1);
+        expr(page_index + 1);
         return false;
     }
     var name=name = encodeURIComponent(trim(d.name));
     var url = rootPath + "/portal.do?name="+name;
-    expr1(1);
-
-    function expr1(pagenum){
+    expr(1);
+    function expr(pagenum){
         $.ajax({
             url: url,
             type: "POST",
@@ -497,7 +496,8 @@ function chuantou(d){
                 year:'',
                 month:'',
                 g_id:  d.gId,
-                special_id: d.professionName,             
+                special_id: d.professionName,
+               // name:d.name,
                 ispage:true,
                 pagenum:pagenum,
                 pagesize:5
@@ -1061,7 +1061,10 @@ function getColumnValue(column, columnValue) {
         columnValue = columnValue.replace(/\s/g,"&#13;")
     }
     if(column == "gId"){
-    	columnValue = "#"+columnValue;
+    	if(Number(columnValue)){
+    		columnValue = "#"+columnValue;	
+    	}
+    	
     }
     	
     
