@@ -47,7 +47,12 @@ function(){
 	  }
 	)
 
-
+	//点击更多，弹出页关闭
+	$("#tongzi").click(function(event){
+		$(".drsMoveHandle span , .drsMoveHandle h1").click();
+		click_a(ctx_new+"/jsjd/main?xwl=23WPD5TO7KQ1")
+		event.stopPropagation();
+	})
 
 
 

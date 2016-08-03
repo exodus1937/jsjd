@@ -67,6 +67,81 @@
     	   <value>false</value>
     	 </property>
 	</bean>
+	<!--生产日报考核 -->
+	<bean id="ProdayKaohe" class="com.xzsoft.kaohe.server.KaoheList" />
+	<bean id="jobDetailProdayKaohe"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="ProdayKaohe" />
+		</property>
+		<property name="targetMethod">
+			<value>proDayKaohe</value>
+		</property>
+		<!-- 将并发设置为false -->
+		<property name="concurrent">
+			<value>false</value>
+		</property>
+	</bean>
+	<!--生产周报考核 -->
+	<bean id="ProZhouKaohe" class="com.xzsoft.kaohe.server.KaoheList" />
+	<bean id="jobDetailProZhouKaohe"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="ProZhouKaohe" />
+		</property>
+		<property name="targetMethod">
+			<value>proZhouKaohe</value>
+		</property>
+		<!-- 将并发设置为false -->
+		<property name="concurrent">
+			<value>false</value>
+		</property>
+	</bean>
+		<!--生产月报考核 -->
+	<bean id="ProMonthKaohe" class="com.xzsoft.kaohe.server.KaoheList" />
+	<bean id="jobDetailProMonthKaohe"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="ProMonthKaohe" />
+		</property>
+		<property name="targetMethod">
+			<value>proMonthKaohe</value>
+		</property>
+		<!-- 将并发设置为false -->
+		<property name="concurrent">
+			<value>false</value>
+		</property>
+	</bean>
+		<!--生产年报考核 -->
+	<bean id="ProYearKaohe" class="com.xzsoft.kaohe.server.KaoheList" />
+	<bean id="jobDetailProYearKaohe"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="ProYearKaohe" />
+		</property>
+		<property name="targetMethod">
+			<value>proYearKaohe</value>
+		</property>
+		<!-- 将并发设置为false -->
+		<property name="concurrent">
+			<value>false</value>
+		</property>
+	</bean>
+	<!--集团报警考核 -->
+	<bean id="jtbjKaohe" class="com.xzsoft.kaohe.server.KaoheList" />
+	<bean id="jobDetailjtbjKaohe"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="jtbjKaohe" />
+		</property>
+		<property name="targetMethod">
+			<value>jtbjKaohe</value>
+		</property>
+		<!-- 将并发设置为false -->
+		<property name="concurrent">
+			<value>false</value>
+		</property>
+	</bean>
 
 	<!--月份计划总结考核-->
 	<bean id="testTriggerMonthKao" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
@@ -88,6 +163,31 @@
        <property name="jobDetail" ref="jobDetailErmKao"/>  
        <property name="cronExpression" value="0 0 0 * * ?"/><!-- 每天执行   -->
 	</bean> 
+	<bean id="testTriggerProdayKaohe"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="jobDetailProdayKaohe" />
+		<property name="cronExpression" value="0 30 9 * * ?" /><!--每天9点半执行  -->
+	</bean>
+	<bean id="testTriggerProZhouKaohe"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="jobDetailProZhouKaohe" />
+		<property name="cronExpression" value="0 30 9 ? * MON" /><!--每周一9点半执行  -->
+	</bean>
+	<bean id="testTriggerProMonthKaohe"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="jobDetailProMonthKaohe" />
+		<property name="cronExpression" value="0 30 9 3 * ?" /><!--每月3号9点30执行  -->
+	</bean>
+	<bean id="testTriggerProYearKaohe"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="jobDetailProYearKaohe" />
+		<property name="cronExpression" value="0 30 9 6 1 ?" /><!--每年1月6号9点半执行  -->
+	</bean>
+	<bean id="testTriggerjtbjKaohe"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="jobDetailjtbjKaohe" />
+		<property name="cronExpression" value="0 0 0/1 * * ?" /><!--每小时执行一次  -->
+	</bean>
 	<!--  总管理类如果将lazy-init='false'那么容器启动就会执行调度程序     -->
 	<bean id="startQuertz" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="false" >  
         <property name="triggers">
@@ -97,6 +197,11 @@
                 <ref bean="testTriggerQuKao" />
                 <ref bean="testTriggerYearKao"/>
                 <ref bean="testTriggerErmKao"/>
+				<ref bean="testTriggerProdayKaohe" />
+				<ref bean="testTriggerProZhouKaohe" />
+				<ref bean="testTriggerProMonthKaohe" />
+				<ref bean="testTriggerProYearKaohe" />
+				<ref bean="testTriggerjtbjKaohe" />
             </list>  
     </property>  
 </bean>    

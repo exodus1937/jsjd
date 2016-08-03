@@ -84,27 +84,27 @@
       <!-- 设备轮换 -->
 	<bean id="testTriggeraddLH" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
        <property name="jobDetail" ref="jobDetailaddLH"/>  
-       <property name="cronExpression" value="0 0/2 * * * ?"/><!-- 每十分钟执行一次   -->
+       <property name="cronExpression" value="0 0/7 * * * ?"/><!-- 每十分钟执行一次   -->
 	</bean> 
      <!--异常情况-->
 	<bean id="testTriggeraddYC" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
        <property name="jobDetail" ref="jobDetailaddYC"/>  
-       <property name="cronExpression" value="0 0/3 * * * ?"/><!-- 每6分钟执行一次   -->
+       <property name="cronExpression" value="0 0/13 * * * ?"/><!-- 每6分钟执行一次   -->
 	</bean> 
 	<!--机组启停-->
 	<bean id="testTriggeraddQT" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
        <property name="jobDetail" ref="jobDetailaddQT"/>  
-       <property name="cronExpression" value="0 0/1 * * * ?"/><!-- 每4分钟执行一次   -->
+       <property name="cronExpression" value="0 0/5 * * * ?"/><!-- 每4分钟执行一次   -->
 	</bean> 
 	<!--机组启停步序记录数-->
 	<bean id="testTriggeraddQTStep" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
        <property name="jobDetail" ref="jobDetailaddQTStep"/>  
-       <property name="cronExpression" value="0 0/1 * * * ?"/><!-- 每4分钟执行一次   -->
+       <property name="cronExpression" value="0 0/17 * * * ?"/><!-- 每4分钟执行一次   -->
 	</bean> 
     <!--定期试验-->
 	<bean id="testTriggeraddSY" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">  
        <property name="jobDetail" ref="jobDetailaddSY"/>  
-       <property name="cronExpression" value="0 0/2 * * * ?"/><!-- 每15分钟执行一次   -->
+       <property name="cronExpression" value="0 0/6 * * * ?"/><!-- 每15分钟执行一次   -->
 	</bean> 
     
 
@@ -114,11 +114,11 @@
             <list>  
               <!--   作业调度器,list下可加入其他的调度器   -->
              
-			                   	 <ref bean="testTriggeraddLH" />
+			              	     <ref bean="testTriggeraddLH" />
                                  <ref bean="testTriggeraddYC" />
                                  <ref bean="testTriggeraddQT" />
 								 <ref bean="testTriggeraddQTStep" /> 
-                                 <ref bean="testTriggeraddSY" />
+                                 <ref bean="testTriggeraddSY" />  
 								
 							
             </list>  

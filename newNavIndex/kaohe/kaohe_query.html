@@ -90,14 +90,14 @@
             <thead>
                 <tr>
 
-                    <td style="width:4%;">序号</td>
-                    <td style="width:38%;">考核项目</td>
-                    <td>考核时间</td>
-                    <td>考核金额(元)</td>
-                    <td>被考核单位</td>
-                    <td>申诉时间</td>
-                    <td>申诉说明</td>
-                    <td>申诉状态</td>
+                    <td style="overflow:hidden;max-width:4%;">序号</td>
+                    <td style="overflow:hidden;max-width:30%;">考核项目</td>
+                    <td style='overflow:hidden;max-width:8%'>考核时间</td>
+                    <td style='overflow:hidden;max-width:8%'>考核金额(元)</td>
+                    <td style='overflow:hidden;max-width:8%'>被考核单位</td>
+                    <td style='overflow:hidden;max-width:8%'>申诉时间</td>
+                    <td style='overflow:hidden;max-width:28%'>申诉说明</td>
+                    <td style='overflow:hidden;max-width:6%'>申诉状态</td>
                    
                 </tr>
             </thead>
@@ -229,7 +229,7 @@
 
                 var d=data[i];
                 var j = i+1;
-                htmlArray.push("<tr><td>"+j+"</td><td style='text-align:left;'>"+d.info+"</td><td>"+d.assDate+"</td><td>"+d.amount+"</td><td>"+d.orgName+"<td>"+d.appDate+"</td><td>"+d.appCase+"</td><td>"+ds_fixed(d.tag)+"</td></tr>");
+                htmlArray.push("<tr><td style='max-width:8%'>"+j+"</td><td style='text-align:left;max-width:30%'>"+d.info+"</td><td style='max-width:8%'>"+d.assDate+"</td><td style='max-width:8%'>"+d.amount+"</td><td style='max-width:8%'>"+d.orgName+"<td style='max-width:8%'>"+d.appDate+"</td><td style='max-width:28%'>"+d.appCase+"</td><td style='max-width:6%'>"+ds_fixed(d.tag)+"</td></tr>");
 
             } 
             return htmlArray.join("");

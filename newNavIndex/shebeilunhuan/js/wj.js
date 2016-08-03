@@ -347,6 +347,7 @@ function getTree() {
 
 $("#submit").on("click",function(){
 	var g_id=sessionStorage.getItem("g_id");
+	query_flag=true;
 	//console.log(g_id);
 	query_lh(event,1,g_id);
 	$("#Pagination_query").show();
@@ -360,6 +361,7 @@ function query_lh(event,pageNum,gid){
 	var name    = $("#name").val();
 	var startTime = $("#startTime").val();
     var endTime   = $("#endTime").val();
+    var conditionType = $("#add_type").val();
    
     if(!name){
     	name = ""; 
@@ -379,7 +381,8 @@ function query_lh(event,pageNum,gid){
   		  "specialId":spec_id,//专业
   		  "name":name,//轮换名称
   		  "beginStart":startTime, 
-  		  "endStart"  :endTime
+  		  "endStart"  :endTime,
+  		  "conditionType":conditionType
   		};
     var url = rootPath+"/portal/getlhdetailinfo.do"
     $.ajax({
@@ -428,8 +431,14 @@ function pageselectCallback_query(page_index, jq){
 var query_flag=true;
 //时间处理
 function timefixed(time){
-	var date= new Date(time);
-	return date.toLocaleDateString();
+	if(time){
+		var date= new Date(time);
+		var x = date.toLocaleDateString()
+	}else{
+		x = ""
+	}
+	
+	return x;
 }
 
 function querypre(data){
@@ -644,7 +653,11 @@ function zTreeOnClick(ev, treeId, treeNode) {
 			break;
 			//机组级别
 		case 1:
-			g_id = name.substring(1, 2);
+			if(Number(name.substring(1, 2))){
+				g_id = name.substring(1, 2);
+			}else{
+				g_id=name;
+			}
 			sessionStorage.setItem("g_id", g_id);
 			special_id = "";
 			name = "";
@@ -748,7 +761,15 @@ function zTreeOnClick(ev, treeId, treeNode) {
 				//机组信息插入到页面当中
 				for(var i = 0;i<arr.length;i++){ 
 					var j = i+1;
-					$("#g_id").append("<option value='"+j+"'>#"+arr[i]+"</option>");
+					
+					if(Number(arr[i])){
+						arr[i] = "#"+arr[i];
+
+					}else{
+						j=arr[i];
+					}
+					
+					$("#g_id").append("<option value='"+j+"'>"+arr[i]+"</option>");
 				}
 			}
 		})
@@ -762,7 +783,8 @@ function zTreeOnClick(ev, treeId, treeNode) {
 	$("#spec_id").on("change",function(){
 		//addzy(g_id);
 		query_flag = true;//重新加载分页
-	})
+	});
+
 	//时间对象处理函数 
    /*@para time 毫秒
     * return 2016-6-13

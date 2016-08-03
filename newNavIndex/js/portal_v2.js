@@ -2,6 +2,7 @@ var flag = false;
 var userID;
 var org_name=null;
 Default_option();
+
 //根据用户的电厂和专业来对应显示；
 function Default_option(){
 	var wj_spec = $("#wj_spec").val();
@@ -29,9 +30,7 @@ function Default_option(){
 		}
 	});		
 }
-/*$(document).click(function(){
-	window.parent.$(".secMenuDiv").hide();
-})*/
+
 function change_gztj(){
 	var org_name = $("#org option:selected").text();
 	if(org_name == '岱海发电'){
@@ -44,9 +43,9 @@ function change_gztj(){
 	}
 	if(org_name == '宁东发电'){
 		//$('#gztj').html("1次");
-		// $("#myChart_").hide();
-		// $('.profit').hide();
-		// $('#jg_yuan').hide();
+//		$("#myChart_").hide();
+//		$('.profit').hide();
+//		$('#jg_yuan').hide();
 	}		
 }
 //集团用户进来
@@ -144,7 +143,7 @@ function flag2(flag){
 					$("#d_jtyh").show();//集团用户;	
 
 				}else{
-				
+					changeOrg();//1-31,把集团与电厂隔离开
 					$('.dianchang_view').show();
 					$('.jituan_view').hide();
 					$('.class_main1_main').show();
@@ -229,7 +228,10 @@ function styleTable(table){
 		
 		$table.find('td:nth-child(4n + 1)').css({textAlign:'left'});
 	}
-
+	if(table=="#JTjzqt" || table =="#JTycqk"){
+		$table.find('td:nth-child(4n + 3)').css({textAlign:'left'});
+	}
+	
 
 }
 /**
@@ -240,7 +242,8 @@ function styleTable(table){
  var timer;
  //初始化； 
 function init() {
-	sblh("sblh");
+	$("#wj_jz").click();//默认显示设备轮换，代替//sblh();电厂设备轮换
+	//sblh("sblh");
 	jigaihref();	
 	yujing();
 	jiandubaobiao();
@@ -258,15 +261,18 @@ function init() {
 		timer = setInterval(function(){
 			major_pulldown();
 			changeView();		
-		},60*1000);
+		},20000);
 	}else{
+		JTjzqt_show()
 		jtdqsy();//集团定期试验
 		jtsblh();//集团设备轮换
 		jtycqk();//集团异常情况
 		jtjzqt();//集团机组其他
 		JTtzgg();//集团通知公告
+		jt_kaohe();//集团考核
+		JTjiandubaobiao(); //集团监督报表;
 		huanxingshuju()
-
+		shengchanbaobiao_jt();
 
 	}
 	dc_kaohe();
@@ -274,7 +280,7 @@ function init() {
 	//getWorksDate(userID);//监督工作	
 		
 	
-	shengchanbaobiao_jt();
+	
 	change_gztj();//技改显示fixed	
 } 
 /**
@@ -286,7 +292,7 @@ function changeOrg() {
 	//zhibiaopaiming();//指标排名
 	if($("#org").val() !=="a61365e2-969d-4352-b3f8-805027ab9f1d"){
 		zhibiaopaiming();//指标排名
-		//shengchanbaobiao();//生产报表
+		shengchanbaobiao();//生产报表
 		major_pulldown();
 			
 		baojing(1);
@@ -299,14 +305,16 @@ function changeOrg() {
 		/*技改显示*/
 		
 		$('.profit').show();
+		JTjzqt_show()
 		jtdqsy();//集团定期试验
 		jtsblh();//集团设备轮换
 		jtycqk();//集团异常情况
 		jtjzqt();//集团机组其他
 		JTtzgg();//集团通知公告
+		jt_kaohe();//集团考核
 		huanxingshuju();
-		shengchanbaobiao_jt();//集团生产报表
-		JTjiandubaobiao(); //集团监督报表;
+		
+
 	}	
 	jigaihref();
 	project();
@@ -316,12 +324,12 @@ function changeOrg() {
 	changeView() //指标一览
 	//getMission(userID);  //工作提醒
 	//getWorksDate(userID);//监督工作
+	JTjiandubaobiao(); //集团监督报表;
 	
-	
-	
+	shengchanbaobiao_jt();//集团生产报表
 	/*changeBaojing(1);//DIAN*/	
 	
-	$("#wj_sb").click();//默认显示设备轮换，代替//sblh();电厂设备轮换
+	$("#wj_jz").click();//默认显示设备轮换，代替//sblh();电厂设备轮换
 	
 	
 	
@@ -406,11 +414,7 @@ function zhibiaoyilan(orgid) {
 
 						$(zfh).html("<a onclick=OpenWindow('" + ev[1].PI_CODE + "','" + ev[1].QUOTA_NAME + "','','','" + ev[1].METHOD + "','" + ev[1].POINTS + "') href='javascript:void(0)' >" + parseFloat(ev[1].VALUEDATE).toFixed(2) + "MW" + "</a>").show();
 						$(fhl).html("<a onclick=OpenWindow('" + ev[2].PI_CODE + "','" + ev[2].QUOTA_NAME + "','','','" + ev[2].METHOD + "','" + ev[2].POINTS + "') href='javascript:void(0)' >" + parseFloat(ev[2].VALUEDATE).toFixed(2) + "%" + "</a>").show();
-
-
 					}
-
-
 				}
 				
 				/*if( $("#hb_title").hasClass("title_active1")){
@@ -521,7 +525,6 @@ function major_pulldown() {
 								$('.circle7').html(data[0].jzm).show();
 								$('.circle7').css({backgroundImage : getYxzt(data[0].yxzt)});														
 						}else if (data.length == 2) {
-							//console.log(data);
 							$(".circle_data5").html("<a  onclick=OpenWindow('"+data[0].fhl_pi+"','"+data[0].fhl_name+"','','','"+data[0].METHOD+"','"+data[0].POINTS+"') href='javascript:void(0)' ><div title='1号机组负荷率'>"+Number(data[0].fhl).toFixed(2)+'%'+"</div></a><a onclick=OpenWindow('"+data[0].ssfh_pi+"','"+data[0].ssfh_name+"','','','"+data[0].METHOD+"','"+data[0].POINTS+"') href='javascript:void(0)'><div title='1号机组负荷'>"+Number(data[0].ssfh).toFixed(2)+'MW'+"</div></a>").show();
 							$(".circle_data6").html("<a  onclick=OpenWindow('"+data[1].fhl_pi+"','"+data[1].fhl_name+"','','','"+data[1].METHOD+"','"+data[1].POINTS+"') href='javascript:void(0)' ><div title='2号机组负荷'>"+Number(data[1].fhl).toFixed(2)+'%'+"</div></a><a onclick=OpenWindow('"+data[1].ssfh_pi+"','"+data[1].ssfh_name+"','','','"+data[1].METHOD+"','"+data[1].POINTS+"') href='javascript:void(0)'><div title='2号机组负荷'>"+Number(data[1].ssfh).toFixed(2)+'MW'+"</div></a>").show();
 							
@@ -645,11 +648,11 @@ function project(){
 	            	if(data.pagedata.length == 2 ){
 	            		$(".projectId2").html('<a href="javascript:void(0);" onclick="jigai1(\''+data.pagedata[1].ID+'\');">'+data.pagedata[1].TP_NAME+'<a>');	
 	            	}else{
-	            		$(".projectId2").html("");
+	            		$(".projectId2").html("");//如果没有第二个清空；
 	            	}
-	            	$(".projectId1 a").click();
-	            	//jigai(data.pagedata[0].ID);
+	            	$(".projectId1 a").click();//技改项目默认显示第一个。
 	            }else{
+	            	//没有的话清空！
 	            	$(".projectId1").html('');
 	            	$(".projectId2").html('');
 	            }
@@ -674,12 +677,18 @@ function zongjie(type){
 
 }
 
-//考核
+//电厂考核
 
 function dc_kaohe(){
 	var url =  ctx +"/getKaoheAction.do?method=getHomeShow&org_id="+$("#org").val();
 	ajax(url,"dc_kaohe",['pro','date','amount']);
 }
+//集团考核
+function jt_kaohe(){
+	var url = ctx +  "/getKaoheAction.do?method=getJtCheck"
+	ajax(url,"kaohehuizong",["ORGNAME","YEARNUM","YEARAMOUNT","MONTHNUM","MONTHMOUNT"]);
+}
+
 
 function yujing() {
 	var url = ctx + "/portal/warningNoticeList.do?orgid=" + $("#org").val() + "&specid=" + $("#spec").val()+ "&pagenum=1&pagesize=6&ispage=true"
@@ -877,7 +886,6 @@ function prearData(data, columns, table,diff) {
 	
 	for (var i = 0; i < min; i++) {
 		var ctx1 = "http://172.168.100.110:7001";
-		//var ctx1 = "http://127.0.0.1:8080";
 		var d = data[i];
 		htmlArray.push("<tr>");
 			//console.log(baojingFlag)
@@ -941,16 +949,30 @@ function prearData(data, columns, table,diff) {
 				}
 			}
 			if(table == 'shengchanbaobiao'){
-				htmlArray.push("<td align='left' class='ellipsis' style=\"" + color + "\"><a  title='" + columnValue + "' href=" + ctx1 + "/spreadsheet/vision/openresource.jsp?paramsInfo=\[\{\"name\":\"general_id\",\"value\"=" + d.GENERAL_ID + "\}\]&resid=" + d.SMART_BI + "&user=admin&password=manager&refresh=true'>" + columnValue + "</a></td>");
+				htmlArray.push("<td  class='ellipsis' style=\"" + color + "\"><a  title='" + columnValue + "' href=" + ctx1 + "/spreadsheet/vision/openresource.jsp?paramsInfo=\[\{\"name\":\"general_id\",\"value\"=" + d.GENERAL_ID + "\}\]&resid=" + d.SMART_BI + "&user=admin&password=manager&refresh=true'>" + columnValue + "</a></td>");
 			}
-			if (table =="ycqktable") {
-				htmlArray.push("<td align='left' class='ellipsis' ><a  title=\""+columnValue+"\">" + columnValue + "</a></td>");
+			//异常情况
+			if (table =="ycqktable"||table == "JTycqk") {
+				htmlArray.push("<td  class='ellipsis' ><a  title=\""+columnValue+"\" href='/jsjd/newNavIndex/yichangqingkuang/qchuizong.html'>" + columnValue + "</a></td>");
 			};
-			if(table =='JTdqsy'||table=="JTsblh"||table == "JTycqk"||table == "JTjzqt") {
-				htmlArray.push("<td align='left' class='ellipsis' ><a  title=\"" + columnValue + "\">" + columnValue + "</a></td>");
-			}	
+			//电厂考核
 			if(table=="dc_kaohe"){
-				htmlArray.push("<td align='left' class='ellipsis' ><a  title=\"" + columnValue + "\" href='/jsjd/newNavIndex/kaohe/kaohe.html'>" + columnValue + "</a></td>");
+				htmlArray.push("<td  class='ellipsis' ><a  title=\"" + columnValue + "\" href='/jsjd/newNavIndex/kaohe/kaohe.html'>" + columnValue + "</a></td>");
+			}
+			//集团定期实验
+			if(table =='JTdqsy'){
+				htmlArray.push("<td  class='ellipsis' ><a  title=\"" + columnValue + "\" href='/jsjd/newNavIndex/dingqishiyan/qchuizong.html' >" + columnValue + "</a></td>");
+			}
+			//集团设备轮换
+			if(table=="JTsblh"){
+				htmlArray.push("<td  class='ellipsis' ><a  title=\"" + columnValue + "\" href='/jsjd/newNavIndex/shebeilunhuan/qchuizong.html' >" + columnValue + "</a></td>");
+			}
+			//集团机组起停
+			if(table == "JTjzqt"){
+				htmlArray.push("<td  class='ellipsis' ><a  title=\"" + columnValue + "\" href='/jsjd/jzqt/index.html' >" + columnValue + "</a></td>");
+			}
+			if(table == "kaohehuizong"){
+				htmlArray.push("<td  class='ellipsis' ><a  title=\"" + columnValue + "\" href='/jsjd/newNavIndex/kaohe/kaohe.html' >" + columnValue + "</a></td>");
 			}
 			
 		//
@@ -1030,8 +1052,6 @@ function getColumnValue(table, column, columnValue) {
 			if(Number(columnValue)){
 				columnValue = "#"+columnValue;
 			}
-			
-			//columnValue = "#"+columnValue;
 		}
 
 	}

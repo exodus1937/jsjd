@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>京能集团实时技术监督生产管理系统</title>
-
+    <link href=   "../../webbuilder/controls/ext/resources/css/ext-all.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="js/tree_themes/SimpleTree.css"/>
     <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
@@ -291,7 +291,7 @@
 
 <script src=  "../../webbuilder/controls/ext/ext-all.js" type="text/javascript" ></script>
 <script src=  "../../webbuilder/controls/ext/locale/ext-lang-zh_CN.js" type="text/javascript" ></script>
-<link href=   "../../webbuilder/controls/ext/resources/css/ext-all.css" rel="stylesheet" type="text/css" />
+
 
 
 
@@ -309,7 +309,7 @@ function clickCheck(obj)
 	} */
 }
 
-var rootPath = $('#url').val();
+    var rootPath = $('#url').val();
     window.onload = function () {      
         if (!window.location.origin) {
             window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
@@ -452,9 +452,15 @@ var rootPath = $('#url').val();
        
         
         
-      
+        //默认显示用户所在电厂
+        $("#org_id option").each(function(){                    
+            if(this.value == org_id_orgin){
+                this.selected = "selected";	
+            }
+        })
+        
         kaohe_zonglan(org_id_orgin);
-       
+        kaohe_detail(org_id_orgin,1);
         function kaohe_zonglan(org_id){
             var url= ctx+"/jsjd/getKaoheAction.do?method=getTongJi&org_id="+org_id;
             $.ajax({
@@ -477,7 +483,7 @@ var rootPath = $('#url').val();
             $("#Pagination").pagination(num_entries, {
                 num_edge_entries: 1, //边缘页数
                 num_display_entries: 4, //主体页数
-                callback: pageselectCallback,
+                callback: pageselectCallback1,
                 items_per_page: 1, //每页显示1项
                 prev_text: "前一页",
                 next_text: "后一页"
@@ -485,14 +491,17 @@ var rootPath = $('#url').val();
         };
 
       
-        function pageselectCallback(page_index, jq){
-            kaohe_detail(org_id_orgin,page_index + 1);
+        function pageselectCallback1(page_index, jq){
+
+            kaohe_detail(org_id_callback,page_index + 1);
+           // console.log(org_id_callback);
             return false;
         }
       
         var flag = true;
+        var org_id_callback;
         function kaohe_detail(org_id,pageNum){
-
+            org_id_callback =  org_id;
             var url= ctx+"/jsjd/getKaoheAction.do?method=getKaoheShow&org_id="+org_id;
             $.ajax({
                 url:url,
@@ -536,9 +545,10 @@ var rootPath = $('#url').val();
         $("#query").click(function(){
         	qureyflag = true;
             query(org_id_orgin,1);
-            //kaohe_detail(org_id_orgin,1);                         
+           
+           // kaohe_detail(org_id_orgin,1);                         
         })
-        $("#query").click();
+       // $("#query").click();
         function query(orgid,pageNum){
             var org_id    = $("#org_id").val();
             var startTime = $("#startTime").val();
@@ -548,8 +558,8 @@ var rootPath = $('#url').val();
             if(!org_id){
             	org_id=orgid;
             }
-            console.log(pageNum);
-
+           // console.log(pageNum);
+            kaohe_zonglan(org_id);
            var url= ctx+"/jsjd/getKaoheAction.do?method=getKaoheShow&org_id="+org_id;
             $.ajax({
                 url:url,
@@ -574,25 +584,29 @@ var rootPath = $('#url').val();
                 }
             })
 
-        }
-        var initPagination = function(page) {
-            var num_entries = page;
-            // 创建分页
-            $("#Pagination").pagination(num_entries, {
-                num_edge_entries: 1, //边缘页数
-                num_display_entries: 4, //主体页数
-                callback: pageselectCallback1,
-                items_per_page: 1, //每页显示1项
-                prev_text: "前一页",
-                next_text: "后一页"
-            });
-        };
-        function pageselectCallback1(page_index, jq){
+            var initPagination = function(page) {
+                var num_entries = page;
+                // 创建分页
+                $("#Pagination").pagination(num_entries, {
+                    num_edge_entries: 1, //边缘页数
+                    num_display_entries: 4, //主体页数
+                    callback: pageselectCallback1,
+                    items_per_page: 1, //每页显示1项
+                    prev_text: "前一页",
+                    next_text: "后一页"
+                });
+            };
+            function pageselectCallback1(page_index, jq){
         	
-        	var org_id    = $("#org_id").val();
-            query(org_id,page_index + 1);
-            return false;
+                var org_id    = $("#org_id").val();
+                query(org_id,page_index + 1);
+                return false;
+            }
+
+
         }
+       
+        
         
         
         
@@ -654,10 +668,15 @@ var rootPath = $('#url').val();
         var stree = $(".st_tree");
         stree.SimpleTree({
             click: function (a) {
-                org_id_orgin = $(a).parent().attr("title");
-
-                kaohe_zonglan(org_id_orgin);
-                kaohe_detail(org_id_orgin,1);
+                org_id_session = $(a).parent().attr("title");
+               // localStorage.setItem("orgid_baobiao",org_id_orgin);
+                kaohe_zonglan(org_id_session);
+                $("#org_id option").each(function(){                    
+                    if(this.value == org_id_session){
+                        this.selected = "selected";	
+                    }
+                })
+                kaohe_detail(org_id_session,1);
 
             }
         })

@@ -1,281 +1,4 @@
-
-/*var reqUrl = parent.document.getElementById("index_page").contentWindow.location.href;
-//提取url字符串到json数据；
-function queryString(url){
-   var reg_url = /^[^\?]+\?([\w\W]+)$/,
-           reg_para = /([^&=]+)=([\w\W]*?)(&|$|#)/g,
-           arr_url = reg_url.exec(url),
-
-           res = {};
-           console.log(arr_url);
-   if(arr_url && arr_url[1]) {
-       var str_para = arr_url[1],result;
-       while((result = reg_para.exec(str_para)) != null){
-           res[result[1]] = result[2];
-       }
-   }
-   return res;
-}
-var reqJson = queryString(reqUrl);
-console.log(reqJson);*/
-
-
-
-
-//弹出窗口拖拽
-//获取并定义树形菜单的高度
-
-
-if (typeof addEvent != 'function') {
-	var addEvent = function(o, t, f, l) {
-		var d = 'addEventListener',
-			n = 'on' + t,
-			rO = o,
-			rT = t,
-			rF = f,
-			rL = l;
-		if (o[d] && !l)
-			return o[d](t, f, false);
-		if (!o._evts) o._evts = {};
-		if (!o._evts[t]) {
-			o._evts[t] = o[n] ? {
-				b: o[n]
-			} : {};
-			o[n] = new Function('e',
-				'var r=true,o=this,a=o._evts["' + t + '"],i;for(i in a){o._f=a[i];r=o._f(e||window.event)!=false&&r;o._f=null}return r');
-			if (t != 'unload') addEvent(window, 'unload', function() {
-				removeEvent(rO, rT, rF, rL)
-			})
-		}
-		if (!f._i) f._i = addEvent._i++;
-		o._evts[t][f._i] = f
-	};
-	addEvent._i = 1;
-	var removeEvent = function(o, t, f, l) {
-		var d = 'removeEventListener';
-		if (o[d] && !l) return o[d](t, f, false);
-		if (o._evts && o._evts[t] && f._i) delete o._evts[t][f._i]
-	}
-}
-
-function cancelEvent(e, c) {
-	e.returnValue = false;
-	if (e.preventDefault) e.preventDefault();
-	if (c) {
-		e.cancelBubble = true;
-		if (e.stopPropagation) e.stopPropagation()
-	}
-};
-
-function DragResize(myName, config) {
-	var props = {
-		myName: myName,
-		enabled: true,
-		handles: ['tl', 'tm', 'tr', 'ml', 'mr', 'bl', 'bm', 'br'],
-		isElement: null,
-		isHandle: null,
-		element: null,
-		handle: null,
-		minWidth: 10,
-		minHeight: 10,
-		minLeft: -9999,
-		maxLeft: 9999,
-		minTop: -9999,
-		maxTop: 9999,
-		zIndex: 4000,
-		mouseX: 0,
-		mouseY: 0,
-		lastMouseX: 0,
-		lastMouseY: 0,
-		mOffX: 0,
-		mOffY: 0,
-		elmX: 0,
-		elmY: 0,
-		elmW: 0,
-		elmH: 0,
-		allowBlur: true,
-		ondragfocus: null,
-		ondragstart: null,
-		ondragmove: null,
-		ondragend: null,
-		ondragblur: null
-	};
-	for (var p in props) this[p] = (typeof config[p] == 'undefined') ? props[p] : config[p]
-};
-DragResize.prototype.apply = function(node) {
-	var obj = this;
-	addEvent(node, 'mousedown', function(e) {
-		obj.mouseDown(e)
-	});
-	addEvent(node, 'mousemove', function(e) {
-		obj.mouseMove(e)
-	});
-	addEvent(node, 'mouseup', function(e) {
-		obj.mouseUp(e)
-	})
-};
-DragResize.prototype.select = function(newElement) {
-	with(this) {
-		if (!document.getElementById || !enabled) return;
-		if (newElement && (newElement != element) && enabled) {
-			element = newElement;
-			element.style.zIndex = ++zIndex;
-			if (this.resizeHandleSet) this.resizeHandleSet(element, true);
-			elmX = parseInt(element.style.left);
-			elmY = parseInt(element.style.top);
-			elmW = element.offsetWidth;
-			elmH = element.offsetHeight;
-			if (ondragfocus) this.ondragfocus()
-		}
-	}
-};
-DragResize.prototype.deselect = function(delHandles) {
-	with(this) {
-		if (!document.getElementById || !enabled) return;
-		if (delHandles) {
-			if (ondragblur) this.ondragblur();
-			if (this.resizeHandleSet) this.resizeHandleSet(element, false);
-			element = null
-		}
-		handle = null;
-		mOffX = 0;
-		mOffY = 0
-	}
-};
-DragResize.prototype.mouseDown = function(e) {
-	with(this) {
-		if (!document.getElementById || !enabled) return true;
-		var elm = e.target || e.srcElement,
-			newElement = null,
-			newHandle = null,
-			hRE = new RegExp(myName + '-([trmbl]{2})', '');
-		while (elm) {
-			if (elm.className) {
-				if (!newHandle && (hRE.test(elm.className) || isHandle(elm))) newHandle = elm;
-				if (isElement(elm)) {
-					newElement = elm;
-					break
-				}
-			}
-			elm = elm.parentNode
-		}
-		if (element && (element != newElement) && allowBlur) deselect(true);
-		if (newElement && (!element || (newElement == element))) {
-			if (newHandle) cancelEvent(e);
-			select(newElement, newHandle);
-			handle = newHandle;
-			if (handle && ondragstart) this.ondragstart(hRE.test(handle.className))
-		}
-	}
-};
-DragResize.prototype.mouseMove = function(e) {
-	with(this) {
-		if (!document.getElementById || !enabled) return true;
-		mouseX = e.pageX || e.clientX + document.documentElement.scrollLeft;
-		mouseY = e.pageY || e.clientY + document.documentElement.scrollTop;
-		var diffX = mouseX - lastMouseX + mOffX;
-		var diffY = mouseY - lastMouseY + mOffY;
-		mOffX = mOffY = 0;
-		lastMouseX = mouseX;
-		lastMouseY = mouseY;
-		if (!handle) return true;
-		var isResize = false;
-		if (this.resizeHandleDrag && this.resizeHandleDrag(diffX, diffY)) {
-			isResize = true
-		} else {
-			var dX = diffX,
-				dY = diffY;
-			if (elmX + dX < minLeft) mOffX = (dX - (diffX = minLeft - elmX));
-			else if (elmX + elmW + dX > maxLeft) mOffX = (dX - (diffX = maxLeft - elmX - elmW));
-			if (elmY + dY < minTop) mOffY = (dY - (diffY = minTop - elmY));
-			else if (elmY + elmH + dY > maxTop) mOffY = (dY - (diffY = maxTop - elmY - elmH));
-			elmX += diffX;
-			elmY += diffY
-		}
-		with(element.style) {
-			left = elmX + 'px';
-			width = elmW + 'px';
-			top = elmY + 'px';
-			height = elmH + 'px'
-		}
-		if (window.opera && document.documentElement) {
-			var oDF = document.getElementById('op-drag-fix');
-			if (!oDF) {
-				var oDF = document.createElement('input');
-				oDF.id = 'op-drag-fix';
-				oDF.style.display = 'none';
-				document.body.appendChild(oDF)
-			}
-			oDF.focus()
-		}
-		if (ondragmove) this.ondragmove(isResize);
-		cancelEvent(e)
-	}
-};
-DragResize.prototype.mouseUp = function(e) {
-	with(this) {
-		if (!document.getElementById || !enabled) return;
-		var hRE = new RegExp(myName + '-([trmbl]{2})', '');
-		if (handle && ondragend) this.ondragend(hRE.test(handle.className));
-		deselect(false)
-	}
-};
-DragResize.prototype.resizeHandleSet = function(elm, show) {
-	with(this) {
-		if (!elm._handle_tr) {
-			for (var h = 0; h < handles.length; h++) {
-				var hDiv = document.createElement('div');
-				hDiv.className = myName + ' ' + myName + '-' + handles[h];
-				elm['_handle_' + handles[h]] = elm.appendChild(hDiv)
-			}
-		}
-		for (var h = 0; h < handles.length; h++) {
-			elm['_handle_' + handles[h]].style.visibility = show ? 'inherit' : 'hidden'
-		}
-	}
-};
-DragResize.prototype.resizeHandleDrag = function(diffX, diffY) {
-	with(this) {
-		var hClass = handle && handle.className && handle.className.match(new RegExp(myName + '-([tmblr]{2})')) ? RegExp.$1 : '';
-		var dY = diffY,
-			dX = diffX,
-			processed = false;
-		if (hClass.indexOf('t') >= 0) {
-			rs = 1;
-			if (elmH - dY < minHeight) mOffY = (dY - (diffY = elmH - minHeight));
-			else if (elmY + dY < minTop) mOffY = (dY - (diffY = minTop - elmY));
-			elmY += diffY;
-			elmH -= diffY;
-			processed = true
-		}
-		if (hClass.indexOf('b') >= 0) {
-			rs = 1;
-			if (elmH + dY < minHeight) mOffY = (dY - (diffY = minHeight - elmH));
-			else if (elmY + elmH + dY > maxTop) mOffY = (dY - (diffY = maxTop - elmY - elmH));
-			elmH += diffY;
-			processed = true
-		}
-		if (hClass.indexOf('l') >= 0) {
-			rs = 1;
-			if (elmW - dX < minWidth) mOffX = (dX - (diffX = elmW - minWidth));
-			else if (elmX + dX < minLeft) mOffX = (dX - (diffX = minLeft - elmX));
-			elmX += diffX;
-			elmW -= diffX;
-			processed = true
-		}
-		if (hClass.indexOf('r') >= 0) {
-			rs = 1;
-			if (elmW + dX < minWidth) mOffX = (dX - (diffX = minWidth - elmW));
-			else if (elmX + elmW + dX > maxLeft) mOffX = (dX - (diffX = maxLeft - elmX - elmW));
-			elmW += diffX;
-			processed = true
-		}
-		return processed
-	}
-};
-
-
-
+!function(a,b){"function"==typeof define&&define.amd?define(b):"object"==typeof exports?module.exports=b():a.WebStorageCache=b()}(this,function(){"use strict";function a(a,b){for(var c in b)a[c]=b[c];return a}function b(a){var b=!1;if(a&&a.setItem){b=!0;var c="__"+Math.round(1e7*Math.random());try{a.setItem(c,c),a.removeItem(c)}catch(d){b=!1}}return b}function c(a){var b=typeof a;return"string"===b&&window[a]instanceof Storage?window[a]:a}function d(a){return"[object Date]"===Object.prototype.toString.call(a)&&!isNaN(a.getTime())}function e(a,b){if(b=b||new Date,"number"==typeof a?a=a===1/0?l:new Date(b.getTime()+1e3*a):"string"==typeof a&&(a=new Date(a)),a&&!d(a))throw new Error("`expires` parameter cannot be converted to a valid Date instance");return a}function f(a){var b=!1;if(a)if(a.code)switch(a.code){case 22:b=!0;break;case 1014:"NS_ERROR_DOM_QUOTA_REACHED"===a.name&&(b=!0)}else-2147024882===a.number&&(b=!0);return b}function g(a,b){this.c=(new Date).getTime(),b=b||l;var c=e(b);this.e=c.getTime(),this.v=a}function h(a){return"object"!=typeof a?!1:a&&"c"in a&&"e"in a&&"v"in a?!0:!1}function i(a){var b=(new Date).getTime();return b<a.e}function j(a){return"string"!=typeof a&&(console.warn(a+" used as a key, but it is not a string."),a=String(a)),a}function k(d){var e={storage:"localStorage",exp:1/0},f=a(e,d),g=c(f.storage),h=b(g);this.isSupported=function(){return h},h?(this.storage=g,this.quotaExceedHandler=function(a,b,c){if(console.warn("Quota exceeded!"),c&&c.force===!0){var d=this.deleteAllExpires();console.warn("delete all expires CacheItem : ["+d+"] and try execute `set` method again!");try{c.force=!1,this.set(a,b,c)}catch(e){console.warn(e)}}}):a(this,n)}var l=new Date("Fri, 31 Dec 9999 23:59:59 UTC"),m={serialize:function(a){return JSON.stringify(a)},deserialize:function(a){return a&&JSON.parse(a)}},n={set:function(){},get:function(){},"delete":function(){},deleteAllExpires:function(){},clear:function(){},add:function(){},replace:function(){},touch:function(){}},o={set:function(b,c,d){if(b=j(b),d=a({force:!0},d),void 0===c)return this["delete"](b);var e=m.serialize(c),h=new g(e,d.exp);try{this.storage.setItem(b,m.serialize(h))}catch(i){f(i)?this.quotaExceedHandler(b,e,d,i):console.error(i)}return c},get:function(a){a=j(a);var b=null;try{b=m.deserialize(this.storage.getItem(a))}catch(c){return null}if(h(b)){if(i(b)){var d=b.v;return m.deserialize(d)}this["delete"](a)}return null},"delete":function(a){return a=j(a),this.storage.removeItem(a),a},deleteAllExpires:function(){for(var a=this.storage.length,b=[],c=this,d=0;a>d;d++){var e=this.storage.key(d),f=null;try{f=m.deserialize(this.storage.getItem(e))}catch(g){}if(null!==f&&void 0!==f.e){var h=(new Date).getTime();h>=f.e&&b.push(e)}}return b.forEach(function(a){c["delete"](a)}),b},clear:function(){this.storage.clear()},add:function(b,c,d){b=j(b),d=a({force:!0},d);try{var e=m.deserialize(this.storage.getItem(b));if(!h(e)||!i(e))return this.set(b,c,d),!0}catch(f){return this.set(b,c,d),!0}return!1},replace:function(a,b,c){a=j(a);var d=null;try{d=m.deserialize(this.storage.getItem(a))}catch(e){return!1}if(h(d)){if(i(d))return this.set(a,b,c),!0;this["delete"](a)}return!1},touch:function(a,b){a=j(a);var c=null;try{c=m.deserialize(this.storage.getItem(a))}catch(d){return!1}if(h(c)){if(i(c))return this.set(a,this.get(a),{exp:b}),!0;this["delete"](a)}return!1}};return k.prototype=o,k});
 function rootpath() {
 	var url = $('<input id="url" type="hidden" value="">');
 	$("body").prepend(url);
@@ -287,12 +10,26 @@ function rootpath() {
 	var rootPath = localhostPath + projectName;
 	document.getElementById("url").value = rootPath;
 }
+
 rootpath();
 var rootPath = $('#url').val();
-jzqt_zonglan("c21834b4-1cb0-490f-a2a8-deeaf7f7e065");
+var rootPath = $('#url').val();
+var user={};
+$.ajax({
+	url:rootPath+"/portal/getUserOrgId.do",
+	type:"POST",
+	success:function(data){
+		if(data && data!="null" ){
+			user.org_id=data;
+			jzqt_zonglan(user.org_id);
+		}else{
+			jzqt_zonglan('c21834b4-1cb0-490f-a2a8-deeaf7f7e065');
+		}
+		
+	}
+})
+	
 function jzqt_zonglan(orgID){
-
-	//console.log(orgID);
     var url = rootPath + "/portal.do";
     $.ajax({
         url: url,
@@ -376,7 +113,22 @@ function pageselectCallback(page_index, jq){
 	//detail(orgId,gID,page_index + 1,g_id);
   	return false;
 }
+
+
+
 var query_flag=true;
+
+//todo 
+
+
+
+/*
+ * @param orgid 电厂id
+ * @param g_id  机组
+ * @param type  TJ/QJ
+ * @param nub   page——number default ->1
+ * @param flag  分页 init 开关;  需要传 true
+ */
 function detail(orgid,g_id,type,nub,flag){
 	sessionStorage.setItem("org_id",orgid)
 	sessionStorage.setItem("g_id",g_id);
@@ -398,77 +150,44 @@ function detail(orgid,g_id,type,nub,flag){
         },
         dataType:"json",
         success: function(data){
-        	//console.log(type);
-           //console.log(data);
+        	if(data.expr.length==0){
+        		return;
+        	}
         	var page = Math.ceil(data.total/5)
         	if(query_flag||flag){
         		$("#Pagination").show()
 				initPagination(page);//分页加载
 			}
+        	
         	if(page==0){
         		$("#Pagination").hide()
-        	}
-        	
+        	}      	
         	query_flag=false;
         	//本人所属电厂orgId   data.orgId
-            var getTD = preparedataDetail(data.expr,type,data.orgId);  
-            var tempOrgId="";
-            if(data.expr.length){
-            		var d = data.expr[0];
-            		tempOrgId = d.ORG_ID;
-            }
-            
-           $("#detail").html(getTD);
-           if(type && type=='TJ' && data.orgId==tempOrgId){
-            $('.button').modal({
-	            target: '#modal',
-	            speed: 500,
-	            easing: 'easeInOutBounce',
-	            animation: 'right',
-	            position: '200px auto',
-	            overlayClose: true,
-	            on: 'click'
-        	});
-        	//改变窗口浏览器大小重置相对定位
-			$(window).resize(function() {
-				var line_width = ($(window).width() - 700) / 2 + "px";
-				var line_height = ($(window).height() - 365) / 2 + "px";
-				$(".lineDiv").css({
-					"left": line_width,
-					"top": line_height
-				});
-			});
-			var d_flag= true;
-        	$(".zhexian").on("click",
-				function(event) {
-					var i = $(this).parent().index() -1 ;
-					//console.log($(this).parent().index());
+        	var tempOrgId="";
+        	
+        	
+        	tempOrgId =data.expr[0].ORG_ID;
+        	  var getTD = preparedataDetail(data,type,data.orgId);  
+        	 $("#detail").html(getTD);
+            if(type && type=='TJ' && data.orgId==tempOrgId){
+            	//console.log(1);
+                $('.button').modal({
+    	            target: '#modal',
+    	            speed: 500,
+    	            easing: 'easeInOutBounce',
+    	            animation: 'right',
+    	            position: '200px auto',
+    	            overlayClose: true,
+    	            on: 'click'
+            	});
+            } 
 
-					var dataT = $(this).find('.drsMoveHandle').get(0).id;
-					var arr = dataT.split(";");
-					var code = arr[0];
-					var name = arr[1];
-					var starttime = arr[2];
-					var endtime = arr[3];
-					console.log(dataT);
-					
-					if(d_flag){
-						//sbjiaohu("zx"+i,code,name,starttime,endtime);
-						d_flag = false;
-						
-					}
-					$(".drsMoveHandle span").bind("click",
-						function(event) {
-							$(this).parent().parent(".lineDiv").fadeOut();
-							event.stopPropagation();
-						}
-					)
-
-					$(this).children(".lineDiv").fadeIn();
-					var index = $(this).index();
-					//zhexian($(this).find('.linecontent div').attr('id'))  
-				}
-			)}
+           $(".zhexian").on("click",function(event) {        	   	
+           		sessionStorage.setItem('code', this.id);          			
+           		window.open("stock0.html",'',"height=672, width=900, top=100, left=200,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=n o, status=no");  
+           	})  
+           
         }
     })
 
@@ -478,16 +197,18 @@ function detail(orgid,g_id,type,nub,flag){
 
 function preparedataDetail(data,type,orgId){
 	var htmlArray = [];
-	
-	for(var i = 0; i < data.length; i++){
-		var d = data[i];
+	for(var i = 0; i < data.expr.length; i++){
+		var d = data.expr[i];
 		htmlArray.push("<tr>");
-		
-	
 		if(type && type=='TJ'){
+
+			$("#d_head td").eq(5).html("解列时间");
+			$("#d_head td").eq(3).html("打闸时间");
+			$("#d_head td").eq(4).html("灭火时间");
 			var msg='';
 			if(d.ADUIT_STATUS=='A'  && orgId==d.ORG_ID){
 				msg='填写';
+				
 			}
 			if(d.ADUIT_STATUS=='C' && orgId==d.ORG_ID){
 				msg='已提交';
@@ -495,61 +216,34 @@ function preparedataDetail(data,type,orgId){
 			if(d.ADUIT_STATUS=='D' && orgId==d.ORG_ID){
 				msg='已驳回';
 			}
+			
 			if(d.QT_DESC && d.QT_DESC.length>0 && d.ADUIT_STATUS=='E'){
 				msg=d.QT_DESC;
 			}
-			htmlArray.push("<td>#"+d.G_ID+"</td><td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.PARATIME+"</td><td class='button link' id="+d.ID+" onclick=getvalue('"+d.ID+"','"+d.NAME+"',this)>"+msg+"</td>")
-			//htmlArray.push("<td>#"+d.G_ID+"</td><td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.PARATIME+"</td><td class='button link'>填写</td>");
-			htmlArray.push("<td class='zhexian' ><p><img src='img/qx.png' /></p>");
-			htmlArray.push("<div class='lineDiv' style='left:25%;top:150px;width:700px; height:365px;'><div class='drsMoveHandle' id='"+data[i].KKS_CODE+";"+data[i].KKS_NAME+";"+data[i].STARTTIME+";"+data[i].ENDTIME+"' ><span></span></div><div class='linecontent' id='zx"+i+"'><button>1</button></div></div></td>")
+			//console.log(d);
+			htmlArray.push("<td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.FIRETIME+"</td><td>"+d.RUSHTIME+"</td><td>"+d.PARATIME+"</td><td class='button link' id="+d.ID+" onclick=getvalue('"+d.ID+"','"+d.NAME+"',this)>"+msg+"</td>")
+			htmlArray.push("<td class='zhexian' id='"+JSON.stringify(data.KKS_CODE)+";"+JSON.stringify(data.KKS_NAME)+";"+d.STARTTIME+";"+d.ENDTIME+";"+JSON.stringify(data.POINT_MEAS)+"'><p><img src='img/qx.png' /></p></td>");
 			htmlArray.push('<td onclick=daocu("'+d.ID+'","'+type+'") class="link">查看</td>')
 			
+			
 		}else{
+			$("#d_head td").eq(5).html("并网时间");
+			$("#d_head td").eq(4).html("冲车时间")
+			$("#d_head td").eq(3).html("点火时间")
 			 msg='';
 			if(d.QT_DESC && d.QT_DESC.length>0){
 				msg=d.QT_DESC+'后启机';
 			}
-		    htmlArray.push("<td>#"+d.G_ID+"</td><td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.PARATIME+"</td><td  class='button link'>"+msg+"</td>")
-			//htmlArray.push("<td>#"+d.G_ID+"</td><td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.PARATIME+"</td><td class='button link'>填写</td>");
-			htmlArray.push("<td class='zhexian' ><p><img src='img/qx.png' /></p>");
-			htmlArray.push("<div class='lineDiv' style='left:25%;top:150px;width:700px; height:365px;'><div class='drsMoveHandle' id='"+data[i].KKS_CODE+";"+data[i].KKS_NAME+";"+data[i].STARTTIME+";"+data[i].ENDTIME+"' ><span></span></div><div class='linecontent' id='zx"+i+"'><button>1</button></div></div></td>")
+			//console.log(d);
+		    htmlArray.push("<td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.FIRETIME+"</td><td>"+d.RUSHTIME+"</td><td>"+d.PARATIME+"</td><td  class='button link'>"+msg+"</td>")
+			htmlArray.push("<td class='zhexian' id='"+JSON.stringify(data.KKS_CODE)+";"+JSON.stringify(data.KKS_NAME)+";"+d.STARTTIME+";"+d.ENDTIME+";"+JSON.stringify(data.POINT_MEAS)+"'><p><img src='img/qx.png' /></p></td>");
 			htmlArray.push('<td onclick=daocu("'+d.ID+'","'+type+'") class="link">查看</td>')
-			
 		}
 		
 		htmlArray.push("</tr>")
-
 	}
-	
 	return htmlArray.join('');
 }
-
-
-
-
-
-
-
-
-//折线图
-
-var dragresize = new DragResize('dragresize', {
-	minWidth: 400,
-	minHeight: 250
-});
-
-dragresize.isElement = function(elm) {
-	if (elm.className && elm.className.indexOf('lineDiv') > -1) return true;
-};
-dragresize.isHandle = function(elm) {
-	if (elm.className && elm.className.indexOf('drsMoveHandle') > -1) return true;
-};
-dragresize.ondragfocus = function() {};
-dragresize.ondragstart = function(isResize) {};
-dragresize.ondragmove = function(isResize) {};
-dragresize.ondragend = function(isResize) {};
-dragresize.ondragblur = function() {};
-dragresize.apply(document);
 
 
 $(document).ready(function() {
@@ -762,4 +456,6 @@ function getvalue(id,flowname,is){
 	
 	
 }
+
+
 

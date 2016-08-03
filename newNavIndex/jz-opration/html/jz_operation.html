@@ -442,8 +442,8 @@
     
     
      var dayPercent =((dayPassOfYear()/dayOfYear())*100).toFixed(6)+"%";
-    console.log(dayPercent);
-    
+    //console.log(dayPercent);
+    $(".line_tag").hide();
     $(".line_tag").css({left:dayPercent});
     
     $("#submit").on("click",function(){

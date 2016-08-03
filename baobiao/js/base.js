@@ -1,14 +1,25 @@
 /**
  * Created by lei on 2015/11/26 0026.
  */
+
  if (!window.location.origin) {
         window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
     }
 var ctx = window.location.origin;
 var org_id;
+//
+if(!org_id){
+    $.ajax({
+		url:ctx+"/jsjd/portal/getUserOrgId.do",
+		type:"POST",
+		success:function(data){
+			org_id=data;
+		}
+	})
+}
 window.onload = function () {
-    org_id = localStorage.getItem("orgid");
-    console.log(org_id)
+   var org_id = localStorage.getItem("orgid");
+    //console.log(org_id)
     var stree = $(".st_tree");
     stree.SimpleTree({
         click:function(a) {

@@ -110,13 +110,13 @@ function zTreeOnClick(ev, treeId, treeNode) {
 			g_id = special_id.substring(1, 2);
 			special_id = name;
 			//name = "";
-			level4();
+			//level4();
 			break;
 			//试验名称级别
 		case 3:
 			g_id = g_id.substring(1, 2);
 			//console.log('4')
-			
+			level4();
 			break;
 		default:
 			g_id = "";
@@ -194,28 +194,26 @@ function zTreeOnClick(ev, treeId, treeNode) {
 		  	return false;
 		}
 
-		name = encodeURIComponent(trim(name));
-		var url = rootPath + "/portal.do?name=" + name;
+		//name = encodeURIComponent(trim(name));
+		var url = rootPath + "/portal.do";
 		expr(1);
 		//level4 轮换详情；
 		function expr(pagenum){
 			$.ajax({
 				url: url,
 				type: "POST",
-				contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+				//contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 				dataType: "json",
 				data: {
-					method: "getGZTime",
-					org_id: sessionStorage.getItem("orgid"),
-					g_id: g_id,
-					year:'',
-             		month:'',
-					pagenum:pagenum,
-					pagesize:5			
+					method:"getGZTime",
+				      year:"",
+				      month:"",
+				      org_id: sessionStorage.getItem("orgid"),
+				      g_id:g_id,
+				      name:name,
+				      pagenum:1,
+				      pagesize:5	
 				},
-
-
-
 				success: function(data) {
 					
 					//var i = 0;
@@ -227,9 +225,7 @@ function zTreeOnClick(ev, treeId, treeNode) {
 					flag=false;
 					$('#sblhcounter').html(prepearData(data.exper));//处理ajax返回的数据添加到html中
 
-					//$('#sblhcounter').html("<tr><td>1</td><td>" + dataP1.starttime + "</td><td class='zhexian' ><p><img src='img/qx.png' /></p><div class='lineDiv' style='left:25%; top: 150px; width:700px; height:365px;'><div class='drsMoveHandle'><span></span></div><div class='linecontent'id='zx"+i+"'></div></div></td><td>" + dataP1.name + "</td><td>是</td></tr>")
 					
-					//newPop(".lineDiv","zhexian",".drsMoveHandle span");
 					//初始化弹窗的相对定位
 					var line_width = ($(window).width() - 700) / 2 + "px";
 					
@@ -301,11 +297,12 @@ function zTreeOnClick(ev, treeId, treeNode) {
 			data: {
 				method: "getGZCountByName",
 				org_id: sessionStorage.getItem("orgid"),
-				g_id: g_id,
+				g_id:   g_id,
+				name:name
 				
 			},
 			success: function(data) {
-				console.log(data.gzlist.length);
+			//	console.log(data.gzlist.length);
 				var data_level4 = data.gzlist[0];
 				
 				var table1_huizong_td = $("#table1_huizong").find("td");
@@ -363,7 +360,7 @@ function zTreeOnClick(ev, treeId, treeNode) {
 function prepearData(data){
 	
 	var htmlArray =[];
-	htmlArray.push("<tr>");
+	//htmlArray.push("<tr>");
 	for(var i = 0;i<data.length;i++){
 		var j=i+1;
 		htmlArray.push("<tr><td>"+j+"</td><td>" + data[i].starttime + "</td><td class='zhexian' ><p><img src='img/qx.png' /></p><div class='lineDiv' style='left:25%; top: 150px; width:700px; height:365px;'><div class='drsMoveHandle' id='"+data[i].KKS_CODE+";"+data[i].KKS_NAME+";"+data[i].starttime+";"+data[i].endtime+","+data[i].id+"' ><span></span></div><div class='linecontent' id='zx"+i+"'></div></div></td><td>" + data[i].name + "</td><td>是</td><td ><a href='"+rootPath+"/getMainAction.do?method=getGzModel&gz_id="+data[i].id+"'>导出</a></td></tr>")
@@ -374,22 +371,197 @@ function prepearData(data){
 
 			htmlArray.push("<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>")
 		}
-	}
-		
-
-	htmlArray.push("</tr>");
-
+	}		
+	//htmlArray.push("</tr>");
 	return htmlArray.join('');
-
 }
+function chuantou(d){
+	console.log(d);
+	var flag=true;
+
+	$("table.level1").hide();
+	$("table.level4").show();
+	$("#table1_huizong").show();
+	$("#Pagination").show();
+	
+	var initPagination = function(page) {
+	   	var num_entries = page;
+	  	// 创建分页
+	  	$("#Pagination").pagination(num_entries, {
+		    num_edge_entries: 1, //边缘页数
+		    num_display_entries: 4, //主体页数
+		    callback: pageselectCallback,
+		    items_per_page: 1, //每页显示1项
+		    prev_text: "前一页",
+		    next_text: "后一页"
+	  	});
+	};
+	function pageselectCallback(page_index, jq){
+		expr(page_index + 1);
+	  	return false;
+	}
+
+	//name = encodeURIComponent(trim(name));
+	var url = rootPath + "/portal.do";
+	expr(1);
+	//level4 轮换详情；
+	function expr(pagenum){
+		$.ajax({
+			url: url,
+			type: "POST",
+			//contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+			dataType: "json",
+			data: {
+				method:"getGZTime",
+			      year:"",
+			      month:"",
+			      org_id: sessionStorage.getItem("orgid"),
+			      g_id:d.result[0].G_ID,
+			      name:d.name,
+			      pagenum:1,
+			      pagesize:5	
+			},
+			success: function(data) {
+				
+				//var i = 0;
+				var page = Math.ceil(data.total/5)
+				//console.log(page);
+				if(flag){
+					initPagination(page);//分页加载
+				}
+				flag=false;
+				$('#sblhcounter').html(prepearData(data.exper));//处理ajax返回的数据添加到html中
+
+				
+				//初始化弹窗的相对定位
+				var line_width = ($(window).width() - 700) / 2 + "px";
+				
+				//var line_height=($(window).height()-365)/2+"px";
+				var line_height = 100;
+				$(".lineDiv").css({
+					"left": line_width,
+					"top": line_height
+				});
+				//改变窗口浏览器大小重置相对定位
+				$(window).resize(function() {
+					var line_width = ($(window).width() - 700) / 2 + "px";
+					var line_height = ($(window).height() - 365) / 2 + "px";
+					$(".lineDiv").css({
+						"left": line_width,
+						"top": line_height
+					});
+				});
+				var d_flag = true;
+				//弹窗淡入淡出
+				$(".zhexian").on("click",
+
+					function(event) {
+						var i = $(this).parent().index() -1 ;
+						//console.log($(this).parent().index());
+
+						var dataT = $(this).find('.drsMoveHandle').get(0).id;
+						var arr = dataT.split(";");
+						var code = arr[0];
+						var name = arr[1];
+						var starttime = arr[2];
+						var endtime = arr[3];
+						var id = arr[4];
+						console.log(id);
+						
+						if(d_flag){
+							sbjiaohu("zx"+i,code,name,starttime,endtime);
+							d_flag = false;
+							
+						}
+
+						$(this).children(".lineDiv").fadeIn();
+						var index = $(this).index();
+						//zhexian($(this).find('.linecontent div').attr('id'))  
+					}
+				)
+				//弹出层关闭按钮
+				$(".drsMoveHandle span").bind("click",
+					function(event) {
+						$(this).parent().parent(".lineDiv").fadeOut();
+						event.stopPropagation();
+					}
+				)
+
+				function tiaozhuan() {
+					var s = document.getElementById('fadeIn');
+				}
+			} 
+		});
+		
+	}
+	
+	
+	$.ajax({
+		url: url,
+		type: "POST",
+		contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+		dataType: "json",
+		data: {
+			method: "getGZCountByName",
+			org_id: sessionStorage.getItem("orgid"),
+			g_id:   d.result[0].G_ID,
+			name: d.name
+			
+		},
+		success: function(data) {
+	
+			var data_level4 = data.gzlist[0];
+			
+			var table1_huizong_td = $("#table1_huizong").find("td");
+			var header_h3 = $('.wu_top1').find("h3");
+			var lh_name = $('#lh_name');
+
+			if (data.gzlist.length == 0) {
+
+				table1_huizong_td.each(function(i) {
+					if (i > 2) {						
+						$(this).html("暂时无数据");
+					}
+
+				});
+				lh_name.html("");
+				header_h3.each(function() {
+					$(this).html("");
+				});
+				lh_name.html("本条记录无数据");
+			}
+
+			if (data.gzlist.length !== 0) {
+		
+				/*轮换的名称*/
+				lh_name.html(d.name);
+
+				/*轮换的具体数据*/
+				table1_huizong_td.eq(3).html(data_level4.totalnum);
+				table1_huizong_td.eq(4).html(data_level4.ycount);
+				table1_huizong_td.eq(5).html(data_level4.mcount);
+
+				
+			}
+
+		}
+
+	})
+}
+
+
+
+
 function prepearDatalevel1(data){
 	var htmlArray =[];
 
 	htmlArray.push("<tr>");
 	for(var i = 0;i<data.length;i++){
 		d = data[i];
+		var fun ="onclick='chuantou("+JSON.stringify(d)+")'";
+		
 		var j=i+1;
-		htmlArray.push("<tr><td rowspan='4'>"+j+"</td><td rowspan='4'>" + d.name+ "</td>");
+		htmlArray.push("<tr "+fun+"><td >"+j+"</td><td>" + d.name+ "</td>");
 		//console.log(d.result[0].G_ID)
 		for(var k = 0;k < d.result.length ; k++){
 			if(k === 0){

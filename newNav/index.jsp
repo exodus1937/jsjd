@@ -52,8 +52,8 @@
             <div id="usermingzi"></div>
           </div>
           <div class="fl" style="width: 158px;color: #666666;line-height: 23px;cursor:pointer" id="fangke">
-            <div>当前在线：1&nbsp;人</div>
-            <div>累计访问：10&nbsp;次</div>            
+            <div id="total">当前在线：1&nbsp;人</div>
+            <div id="userCount">累计访问：10&nbsp;次</div>            
           </div>  
         
           <div class="fl" style="position:relative;">
@@ -68,8 +68,8 @@
          <div id="shumu" style="position:absolute;color:#fff;top:5px;right: 4px;width: 28px;height: 20px;text-align: center;">0</div>
         		<a class="tongzhi"  href="javascript:void(0)" title='通知公告'>
            
-              <div class="wj_tongzhi" style="left:25%; top: 150px; width:700px;min-height:390px;" title="通知公告">
-                <div class="drsMoveHandle"><span></span><h1>通知（公告）内容</h1><b onclick="parent.click_a('<%=path%>/main?xwl=23WPD5TO7KQ1')">更多</b></div>
+              	<div class="wj_tongzhi" style="left:25%; top: 150px; width:700px;min-height:390px;" title="通知公告">
+                	<div class="drsMoveHandle"><span></span><h1>通知（公告）内容</h1><b id="tongzi" <%--  onclick="parent.click_a('<%=path%>/main?xwl=23WPD5TO7KQ1')" --%>>更多</b></div>
                   <div class="linecontent">
   			  
     			        <table class="wu_tab1">

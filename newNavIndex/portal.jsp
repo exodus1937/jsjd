@@ -68,8 +68,11 @@
 		<div id="du_main">
 			<div class="wj_top">
 				<span id="time" style="color:#666;"></span>
+				<div id="FontScroll" style="float: left; height: 28px;line-height: 31px;overflow: hidden;font-size: 16px; font-weight: 100; color: red;">
+				  
+				</div>
 				<ul>
-					<select id="spec" name="language" class="pull_down">
+					<select id="spec" name="language" class="pull_down" style="display:none">
 						<!--<c:forEach items="${specList}" var="spec">
 							<option id="#wj_spec"  value="${spec.ID}">${spec.NAME}</option> 
 						
@@ -277,7 +280,7 @@
 						<!-- <b onclick="baojing(0)">停机机组报警</b> -->
 						<!-- <b onclick="yjtz_show()">预警通知单</b> -->
 					</h3>
-					<div class="du_more"><a href="http://172.168.100.110:7001/jsjd/main?xwl=23WPD5TO7GWR">更多&gt;</a></div>
+					<div class="du_more"><a href="${ctx}/main?xwl=23WPD5TO7GWR">更多&gt;</a></div>
 					<div class="clearfix"></div>
 					
 					<div id="rongqi2" style="display: block;">
@@ -312,7 +315,7 @@
 							
 					</h3>
 					<div class="du_more">
-						 <a href="${ctx}/newNavIndex/kaohe/kaohe.html">更多></a>
+						<a href="${ctx}/newNavIndex/kaohe/kaohe.html">更多></a>
 					</div>
 					<div class="clearfix"></div>
 					<table class="jiandubaobiao_view wj_cen">
@@ -375,10 +378,11 @@
 				</div>
 				<div class="class_main1 class_main5 fl h213" id="wj_table5">
 					<h3 class="pointer">
-						<b id="wj_sb"  class="title_active1">设备轮换</b>
-						<b id="wj_dq" onclick="">定期试验</b>
+						<b id="wj_jz" class="title_active1">机组启停</b>
+						<b id="wj_sb"  >设备轮换</b>
+						<b id="wj_dq" >定期试验</b>
 						
-						<b id="wj_jz" onclick="">机组启停</b>
+						
 
 					</h3>
 					<div class="du_more"><a id="dq_more" href="${ctx}/newNavIndex/shebeilunhuan/qchuizong.html"> 更多</a>
@@ -515,7 +519,7 @@
 						<!-- 集团   canvas1 -->
 						
 						<div class="jt-left-canvas fl" style="positon:relative;padding-top:20px;position:relative;">
-							<div id="hightchart" style="width:470px;height:240px;position:absolute;z-index:999"></div>							
+							<div id="hightchart" style="width:470px;height:240px;position:absolute"></div>							
 						</div>
 						<!-- <div class="jt-cs"><a href="/jsjd/main?xwl=23Z6S7B7RZLA">查询各厂测点指标</a></div>
 						<div class="jt-cs jt-cs1"><a href="/jsjd/main?xwl=23YA0QJSVS7L">各厂机组主要参数</a></div> -->
@@ -605,9 +609,12 @@
 				<table class="JTkhhz wj_cen">
 					<thead>
 						<tr>
-							<td style="width: 33%; overflow: hidden;">序号</td>
-							<td style="width: 34%; overflow: hidden;">描述</td>
-							<td style="width: 33%; overflow: hidden;">考核时间</td>
+							<td style="width:10%">电厂</td>
+							<td style="width:22%">本年考核次数</td>
+							<td style="width:22%">本年考核金额</td>
+							
+							<td style="width:23%">本月考核次数</td>
+							<td style="width:23%">本月考核金额</td>
 							
 						</tr>
 					</thead>
@@ -671,12 +678,13 @@
 				
 				<div class="class_main1 class_main5 fl h213">
 					<h3 class="pointer">
-						<b id="wj_jt_dq" class="title_active1" onclick="JTdqsy_show()">定期试验</b>
+						<b id="wj_jt_qt" class="title_active1" onclick="JTjzqt_show()">机组启停</b>
+						<b id="wj_jt_dq"  onclick="JTdqsy_show()">定期试验</b>
 						<b id="wj_jt_sb" onclick="JTsblh_show()">设备轮换</b>
-						<b id="wj_jt_qt" onclick="JTjzqt_show()">机组启停</b>
+						
 					</h3>
 					<div class="du_more">
-					<a id="wj_jt_more" href="${ctx}/newNavIndex/jtdingqishiyan/jthuizong.html">更多></a>
+					<a id="wj_jt_more" href="${ctx}/jzqt/index.html">更多></a>
 					</div>
 					<div class="clearfix"></div>
 					<table class="jdzx wj_cen comb" >
@@ -721,7 +729,7 @@
 					
 					</h3>
 					<div class="du_more">
-					<a id="wj_yc_more" href="${ctx}/newNavIndex/jtyichangqingkuang/jthuizong.html">更多></a>
+					<a id="wj_yc_more" href="${ctx}/newNavIndex/yichangqingkuang/qchuizong.html">更多></a>
 					</div>
 					<div class="clearfix"></div>
 					<table class="JTycqk wj_cen">

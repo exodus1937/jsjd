@@ -1,0 +1,130 @@
+if (!window.location.origin) {
+        window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
+    }
+    
+    var ctx = window.location.origin;
+   
+    //sessionStore();
+    function SessionStore(){
+        var code =sessionStorage.getItem("code");
+        $("#wrap").html(prepare(code));
+        this.btn = $("#wrap div");
+        this.btn.each(function(){
+            $(this).click(function () {
+            	var nowPos =  sessionStorage.getItem("nowPos")?sessionStorage.getItem("nowPos"):0;
+                var x = $(this).index();
+               if(x!=nowPos){
+                	window.open("stock"+x+".html",'',"height=652, width=900, top=110, left=200,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=n o, status=no");
+                }else{
+                    qushi1(this.id);
+                }
+            })
+        });
+    }
+    
+    var scl = new SessionStore();
+    
+    //版本2
+
+    Highcharts.setOptions({
+        global: {
+            useUTC: false
+        }
+    });
+    var seriesOptions = [],
+            seriesCounter = 0,
+            yAxis=[];
+    createChart = function () {
+        $('#stock').highcharts('StockChart', {
+            chart: {
+                zoomType: 'x'
+            },
+            credits: {
+                enabled: false
+            },
+            rangeSelector: {
+                buttons: [{
+                    type: 'minute',
+                    count: 10,
+                    text: '10min'
+                }, {
+                    type: 'minute',
+                    count: 30,
+                    text: '30min'
+                }, {
+                    type: 'minute',
+                    count: 60,
+                    text: '1h'
+                },  {
+                    type: 'all',
+                    text: 'All'
+                }],
+                selected: 4
+            },
+            yAxis:yAxis,
+
+            tooltip: {
+                pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>',
+                valueDecimals: 2
+            },
+            series: seriesOptions
+        });
+    };
+
+    function qushi1(data){
+        var array     = data.split(";");
+
+        var codes     = array[0].split(',');
+        var names 	   = array[1].split(',');
+        var startTime = array[2];
+        var endTime   = array[3];
+        var pfixeds     = array[4].split(',');
+        //转换成毫秒
+        var start = new Date(startTime).getTime()-30*60*1000;
+        var end = new Date(endTime).getTime() + 30*60*1000;
+
+        //版本2
+        $.each(codes, function (i, code) {
+            $.getJSON(ctx + "/jsjd/XipHistoryAction.do?method=getjzqt&pi_code="+codes[i]+"&startTime=" + startTime + "&endTime=" + endTime,function (data) {
+                seriesOptions[i] = {
+                    name: names[i],
+                    data: data.data,
+                    tooltip: {
+                        crosshairs:6,
+                        valueDecimals: 1,
+                        yAxis:i,
+                        valueSuffix: pfixeds[i],
+                        pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>'
+                    }
+                };
+                yAxis[i]={
+                    lineWidth : 1
+                };
+                seriesCounter += 1;
+                if (seriesCounter === codes.length) {
+                    createChart();
+                }
+            });
+        });
+    }
+
+
+    function prepare(data){
+        var htmlArray = [];
+        var array = data.split(";");
+
+        var codes = parse(array[0]);//codes
+        var names = parse(array[1]);//names
+        var startTime = array[2];//
+        var endTime = array[3];
+        var parameter = parse(array[4]);
+
+        for (var i = 0; i < codes.length; i++) {
+            var x = i+1;
+            htmlArray.push("<div id='"+codes[i].KCODE+";"+names[i].KNAME+";"+startTime+";"+endTime+";"+parameter[i].PMEAS+"'>第"+x+"组</div>");
+        }
+        return htmlArray.join('');
+    }
+    function parse(item){
+        return eval(item);
+    }

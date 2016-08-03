@@ -1,0 +1,313 @@
+.incon-wb-help {
+	background-image: url(../../webbuilder/images/help.gif) !important;
+}
+.incon-wb-key {
+	background-image: url(../../webbuilder/images/key.gif) !important;
+}
+.incon-wb-logout {
+	background-image: url(../../webbuilder/images/logout.gif) !important;
+}
+
+.icon-add {
+    background-image: url(../../pub/uip/common/image/add.gif) !important;
+}
+.icon_fun {
+   background-image: url(../../pub/uip/common/image/preview1.gif) !important;
+}
+.icon_mnu {
+  background-image: url(../../pub/uip/common/image/folder.gif) !important;
+}
+.icon-save {
+    background-image: url(../../pub/uip/common/image/save.png) !important;
+}
+.icon-delete {
+    background-image: url(../../pub/uip/common/image/delete.gif) !important;
+}
+.icon-modify {
+    background-image: url(../../pub/uip/common/image/modify.gif) !important;
+}
+.icon-query {
+    background-image: url(../../pub/uip/common/image/query.gif) !important;
+}
+.icon-reset {
+    background-image: url(../../pub/uip/common/image/reset.gif) !important;
+}
+.icon-preview {
+    background-image: url(../../pub/uip/common/image/preview.gif) !important;
+}
+.icon-setting {
+    background-image: url(../../pub/uip/common/image/icon_setting.gif) !important;
+}
+.icon-refresh {
+    background-image: url(../../pub/uip/common/image/icon_refresh.gif) !important;
+}
+.icon-clean {
+    background-image: url(../../pub/uip/common/image/icon_clean.gif) !important;
+}
+.icon-print {
+    background-image: url(../../pub/uip/common/image/icon_print.gif) !important;
+}
+.icon-pase {
+    background-image: url(../../pub/uip/common/image/owc_pase.bmp) !important;
+}
+.icon-unpick {
+    background-image: url(../../pub/uip/common/image/unpick.png) !important;
+}
+.icon-pick {
+    background-image: url(../../pub/uip/common/image/pick.png) !important;
+}
+.icon-write {
+    background-image: url(../../pub/uip/common/image/icon-write.gif) !important;
+}
+.icon-veify {
+    background-image: url(../../pub/uip/common/image/icon-veify.gif) !important;
+}
+.icon-collect {
+    background-image: url(../../pub/uip/common/image/collect.gif) !important;
+}
+.icon-go {
+    background-image: url(../../pub/uip/common/image/go.gif) !important;
+}
+.icon-export {
+    background-image: url(../../pub/uip/common/image/icon_export.gif) !important;
+}
+.icon-import {
+    background-image: url(../../pub/uip/common/image/icon_import.gif) !important;
+}
+.icon-exit {
+    background-image: url(../../pub/uip/common/image/exit.gif) !important;
+}
+.icon-help {
+    background-image: url(../../pub/uip/common/image/help.png) !important;
+}
+.icon-sub_workflow {
+    background-image: url(../../pub/uip/common/image/sub_workflow.gif) !important;
+}
+.icon-wf_monitor {
+    background-image: url(../../pub/uip/common/image/wf_monitor.png) !important;
+}
+.icon-pop {
+    background-image: url(../../pub/uip/common/image/pop.gif) !important;
+}
+.icon-function {
+    background-image: url(../../pub/uip/common/image/function.png) !important;
+}
+.icon-cancel {
+    background-image: url(../../pub/uip/common/image/cancel.gif) !important;
+}
+.icon-draw {
+    background-image: url(../../pub/uip/common/image/draw.png) !important;
+}
+.icon-owc_print {
+    background-image: url(../../pub/uip/common/image/owc_print.gif) !important;
+}
+.icon-attach {
+    background-image: url(../../pub/uip/common/image/attach.png) !important;
+}
+.icon-Import_Script {
+    background-image: url(../../pub/uip/common/image/Import_Script.png) !important;
+}
+.icon-Ctrl_Shift {
+    background-image: url(../../pub/uip/common/image/Ctrl_Shift.png) !important;
+  }
+.icon-page_copy {
+    background-image: url(../../pub/uip/common/image/page_copy.png) !important;
+}
+.icon-table-minus {
+    background-image: url(../../pub/uip/common/image/table-minus.png) !important;
+}
+.icon-table-plus {
+    background-image: url(../../pub/uip/common/image/table-plus.png) !important;
+}
+.icon-tables-relation {
+    background-image: url(../../pub/uip/common/image/tables-relation.png) !important;
+}
+.icon-table-insert-column {
+    background-image: url(../../pub/uip/common/image/table-insert-column.png) !important;
+}
+.icon-table-insert-row {
+    background-image: url(../../pub/uip/common/image/table-insert-row.png) !important;
+}
+.icon-arrow-curve-000-double {
+    background-image: url(../../pub/uip/common/image/arrow-curve-000-double.png) !important;
+}
+.icon-application-table {
+    background-image: url(../../pub/uip/common/image/application-table.png) !important;
+}
+.icon-tables-relation-delete {
+    background-image: url(../../pub/uip/common/image/tables-relation-delete.png) !important;
+}
+.icon-test {
+    background-image: url(../../pub/uip/common/image/test.png) !important;
+}
+.icon-show {
+    background-image: url(../../pub/uip/common/image/show.gif) !important;
+}
+.icon-hide {
+    background-image: url(../../pub/uip/common/image/hide.gif) !important;
+}
+.icon-node-insert {
+    background-image: url(../../pub/uip/common/image/node-insert.png) !important;
+}
+.icon-node-magnifier {
+    background-image: url(../../pub/uip/common/image/node-magnifier.png) !important;
+}
+.icon-node-delete {
+    background-image: url(../../pub/uip/common/image/node-delete.png) !important;
+}
+.icon-arrow-switch {
+    background-image: url(../../pub/uip/common/image/arrow-switch.png) !important;
+}
+.icon-magnifier-arrow {
+    background-image: url(../../pub/uip/common/image/magnifier-arrow.png) !important;
+}
+.icon-spell-check {
+    background-image: url(../../pub/uip/common/image/spell-check.png) !important;
+}
+.icon-magnifier-zoom {
+    background-image: url(../../pub/uip/common/image/magnifier-zoom.png) !important;
+}
+.icon-arrow-curve {
+    background-image: url(../../pub/uip/common/image/arrow-curve.png) !important;
+}
+.icon-Default {
+    background-image: url(../../pub/uip/common/image/Default.png) !important;
+}
+.icon-arrow-circle-double {
+    background-image: url(../../pub/uip/common/image/arrow-circle-double.png) !important;
+}
+.icon-clock-select-remain {
+    background-image: url(../../pub/uip/common/image/clock-select-remain.png) !important;
+}
+.icon-page-find {
+    background-image: url(../../pub/uip/common/image/page-find.png) !important;
+}
+
+.icon-calculator-edit {
+    background-image: url(../../pub/uip/common/image/calculator-edit.png) !important;
+}
+
+.icon-report-edit {
+    background-image: url(../../pub/uip/common/image/report-edit.png) !important;
+}
+
+.icon-page-refresh {
+    background-image: url(../../pub/uip/common/image/page-refresh.png) !important;
+}
+
+.icon-question-button {
+    background-image: url(../../pub/uip/common/image/question-button.png) !important;
+}
+.icon-card-chip-silver {
+    background-image: url(../../pub/uip/common/image/card-chip-silver.png) !important;
+}
+.icon-layout-delete {
+    background-image: url(../../pub/uip/common/image/layout-delete.png) !important;
+}
+.icon-page-delete {
+    background-image: url(../../pub/uip/common/image/page-delete.png) !important;
+}
+.icon-page-white-magnify {
+    background-image: url(../../pub/uip/common/image/page-white-magnify.png) !important;
+}
+.icon-chart-curve {
+    background-image: url(../../pub/uip/common/image/chart-curve.png) !important;
+}
+.icon-chart-curve-go {
+    background-image: url(../../pub/uip/common/image/chart-curve-go.png) !important;
+}
+.icon-script_gear {
+    background-image: url(../../pub/uip/common/image/script_gear.png) !important;
+}
+.icon-tick_white {
+    background-image: url(../../pub/uip/common/image/tick_white.png) !important;
+}
+.icon-tick_excel {
+    background-image: url(../../pub/uip/common/image/excel.png) !important;
+}
+.icon-search1 {
+    background-image: url(../../pub/uip/common/image/search1.png) !important;
+}
+.icon-commonfunction {
+    background-image: url(../../pub/uip/common/image/commonfunction.png) !important;
+}
+.icon-commonpop {
+    background-image: url(../../pub/uip/common/image/commonpop.png) !important;
+}
+.icon-search {
+    background-image: url(../../pub/uip/common/image/search.gif) !important;
+}
+.icon-select-scope{
+	background-image: url(../../pub/uip/common/image/icon_select_scope.gif) !important;
+}
+.icon-owc-view{
+	background-image: url(../../pub/uip/common/image/owc_view.bmp) !important;
+}
+.icon-auto-batch{
+	background-image: url(../../pub/uip/common/image/icon-auto-batch.png) !important;
+}
+.icon-icon_backpower{
+	background-image: url(../../pub/uip/common/image/icon_backpower.gif) !important;
+}
+.icon-icon_delete{
+	background-image: url(../../pub/uip/common/image/icon_delete.gif) !important;
+}
+.icon-backpower{
+	background-image: url(../../pub/uip/common/image/icon_backpower.gif) !important;
+}
+.icon-man-batch{
+	background-image: url(../../pub/uip/common/image/icon-man-batch.png) !important;
+}
+.icon-lock{
+	background-image: url(../../pub/uip/common/image/lock.png) !important;
+}
+.icon-unlock{
+	background-image: url(../../pub/uip/common/image/unlock.gif) !important;
+}
+.icon-auth{
+	background-image: url(../../pub/uip/common/image/icon_addpower.gif) !important;
+}
+.icon-unauth{
+	background-image: url(../../pub/uip/common/image/icon_backpower.gif) !important;
+}
+}.icon-reboot{
+	background-image: url(../../pub/uip/common/image/icon_reboot.gif) !important;
+}
+.icon-upload{
+background-image: url(../../platform/attachment/images/arrow_up.png) !important;
+}
+.icon-down{
+    background-image: url(../../platform/attachment/images/arrow_down.png) !important;
+}
+.contain{
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+}
+.center {
+	position:absolute;
+	top:5%;
+	left:15%;
+	text-align:left;
+}
+td.x-date-mp-month a,td.x-date-mp-year a {
+	color: #15428b;
+	padding-right: 0px;
+	padding-left:0px;
+}
+.fon-right{
+	text-align:right;
+}
+.datePicker_bg{   
+    background-image:url(../../pub/uip/common/ext/My97DatePicker/skin/datePicker.gif) !important;   
+    background-repeat:no-repeat;   
+    background-position:right;
+    background-color:#FFFF99;                        
+} 
+.datePicker_bg_readOnly{   
+    background-image:url(../../pub/uip/common/ext/My97DatePicker/skin/datePicker.gif) !important;   
+    background-repeat:no-repeat;   
+    background-position:right;
+    background-color:lightgray;                        
+} 

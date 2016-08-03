@@ -128,12 +128,13 @@ ul.ztree {
   
     color: #ffffff!important;
 };
- .fl{
-    float:left;
-}
+.fl{
+        float:left;
+      }
 .fr{
-    float:right;
-}
+         float:right;
+      }
+
 .link{
 	cursor:pointer;
 	color:blue;
