@@ -1,8 +1,3 @@
-
-
-
-
-
 function rootpath() {
 	var url = $('<input id="url" type="hidden" value="">');
 	$("body").prepend(url);
@@ -17,9 +12,6 @@ function rootpath() {
 rootpath();
 var rootPath = $('#url').val();
 var data1={};
-
-//alert(1);
-
 $(".level1").show();
 $(".level4").hide();
 $(".wu_top").hide();
@@ -27,67 +19,29 @@ $("#table1_huizong").hide();
 $("#Pagination").hide();
 $(".wu_main").css({"marginTop":23});
 $('#lh_name').html("岱海电厂");
-
 function getTree() {
+    var org_id = localStorage.getItem("orgid");
+    var url=(org_id == "a61365e2-969d-4352-b3f8-805027ab9f1d") ? rootPath + "/portal/getJTSYTreeMenu.do" : rootPath　 + 　"/portal/getSYTreeMenu.do?orgid=" + org_id;
+    getTreeData(url);
+}
+function getTreeData(url){
+    $.ajax({
+        type: "GET",
+        url: url,
+        dataType:"JSON",
+        success: function(data){
+            var setting = {callback: {onClick: zTreeOnClick}};
+            $.fn.zTree.init($("#tree"), setting, data);
+            $("#tree_1_switch").click();//默认展开机组
+            $("#tree_1_span").click();//默认显示电厂的相关信息
+        }
 
-	var org_id = localStorage.getItem("orgid");
-	if(org_id !== "a61365e2-969d-4352-b3f8-805027ab9f1d"){
-		var url = rootPath　 + 　"/portal/getSYTreeMenu.do?orgid=" + org_id;	
-		$.ajax({
-			type: "GET",
-			url: url,
-			
-			dataType:"JSON",
-			success: function(data){		
-
-				data1=data;
-				//console.log(data1);
-			},
-			complete:function(msg){
-				var setting = {
-					callback: {
-						onClick: zTreeOnClick
-					}
-				};
-				$.fn.zTree.init($("#tree"), setting, data1);
-
-				//默认展开机组；
-				$("#tree_1_switch").click();
-				//默认显示电厂的相关信息；
-				$("#tree_1_span").click();
-			}
-
-			
-		})
-	}else{
-		var url = rootPath + "/portal/getJTSYTreeMenu.do" ;
-		$.ajax({
-			type: "GET",
-			url: url,
-			
-			dataType:"JSON",
-			success: function(data){		
-
-				data1=data;
-			},
-			complete:function(msg){
-				var setting = {
-					callback: {
-						onClick: zTreeOnClick
-					}
-				};
-				$.fn.zTree.init($("#tree"), setting, data1);
-
-				//默认展开机组；
-				$("#tree_1_switch").click();
-				//默认显示电厂的相关信息；
-				$("#tree_1_span").click();
-			}
-		})
-	}
+    })
 }
 
 getTree();
+
+
 function ajax(url, tableId, columns) {
     $.ajax({
         url : url,
@@ -158,6 +112,7 @@ function query_sy(event,pageNum,gid){
 	var name    = $("#name").val();
 	var startTime = $("#startTime").val();
     var endTime   = $("#endTime").val();
+    var conditionType = $("#add_type").val();
     if(!name){
     	name = ""; 
     }
@@ -168,14 +123,15 @@ function query_sy(event,pageNum,gid){
     	g_id="";
     } 
     data1 = {
-  		  "pageSize":7,  //页大小
-  		  "pageNum":pageNum,   //当前页
-  		  "orgId":orgId, //组织
-  		  "gId":g_id,//机组
-  		  "specialId":spec_id,//专业
-  		  "name":name,//轮换名称
-  		  "beginStart":startTime, 
-  		  "endStart"  :endTime
+  		  "pageSize"    :7,  //页大小
+  		  "pageNum"     :pageNum,   //当前页
+  		  "orgId"       :orgId, //组织
+  		  "gId"         :g_id,//机组
+  		  "specialId"   :spec_id,//专业
+  		  "name"		:name,//轮换名称
+  		  "beginStart"  :startTime, 
+  		  "endStart"    :endTime,
+  		 "conditionType":conditionType
   		};
     var url = rootPath+"/portal/getsydetailinfo.do"
     $.ajax({
@@ -450,12 +406,7 @@ function zTreeOnClick(ev, treeId, treeNode) {
 			break;
 			//机组级别
 		case 1:
-			//g_id = name.substring(1, 2);
-			if(Number(name.substring(1, 2))){
-				g_id = name.substring(1, 2);
-			}else{
-				g_id=name;
-			}
+			g_id = name.substring(1, 2);
 			special_id = "";
 			sessionStorage.setItem("g_id", g_id);
 			name = "";
@@ -547,14 +498,7 @@ function zTreeOnClick(ev, treeId, treeNode) {
 				//机组信息插入到页面当中
 				for(var i = 0;i<arr.length;i++){ 
 					var j = i+1;
-					if(Number(arr[i])){
-						arr[i] = "#"+arr[i];
-
-					}else{
-						j=arr[i];
-					}
-					
-					$("#g_id").append("<option value='"+j+"'>"+arr[i]+"</option>");
+					$("#g_id").append("<option value='"+j+"'>#"+arr[i]+"</option>");
 				}
 			}
 		})
@@ -834,7 +778,7 @@ function daocu(id,type){
 	var url = ctx+"/jsjd/SYExportAction.do?method=getSYExport&sy_id="+id;
 	var url2  = ""
 	
-	/*if(type == "ZK"){
+	if(type == "ZK"){
 		url2 =  ctx+'/spreadsheet/vision/openresource.jsp?paramsInfo=[{"name":"shebeishiqi_id","value":"'+id+'"}]&resid=I4028e4f32977bc74015529c597fc0d68&user=admin&password=manager&refresh=true'
 	}else if(type == "ZJFM"){
 		url2 =  ctx+'/spreadsheet/vision/openresource.jsp?paramsInfo=[{"name":"shebeishiqi_id","value":"'+id+'"}]&resid=I4028e4f3285e1cc2015528bcd02a0964&user=admin&password=manager&refresh=true' 
@@ -845,7 +789,7 @@ function daocu(id,type){
 	}else if(type == "SQ"){
 		url2 =  ctx+'/spreadsheet/vision/openresource.jsp?paramsInfo=[{"name":"shebeishiqi_id","value":"'+id+'"}]&resid=I4028e4f31af9c762015523579e932ab6&user=admin&password=manager&refresh=true'
 		
-	}*/
+	}
 	
 	switch(type){
 		case "zk":
@@ -855,13 +799,13 @@ function daocu(id,type){
 			url2 =  ctx+'/spreadsheet/vision/openresource.jsp?paramsInfo=[{"name":"shebeishiqi_id","value":"'+id+'"}]&resid=I4028e4f3285e1cc2015528bcd02a0964&user=admin&password=manager&refresh=true'
 			break;
 		case "ZJJZL":
-			url2 =  ctx+'/spreadsheet/vision/openresource.jsp?paramsInfo=[{"name":"shebeishiqi_id","value":"'+id+'"}]&resid=I4028e4f377a7776001557ad86df40469&user=admin&password=manager&refresh=true'
+			url2 =  ctx+'/spreadsheet/vision/openresource.jsp?paramsInfo=[{"name":"shebeishiqi_id","value":"'+id+'"}]&resid=I4028e4f32977bc74015529c597fc0d68&user=admin&password=manager&refresh=true'
 			break;
 		case "LQ":
-			url2 =  ctx+'/spreadsheet/vision/openresource.jsp?paramsInfo=[{"name":"shebeishiqi_id","value":"'+id+'"}]&resid=I4028e4f323a64585015524621c280efa&user=admin&password=manager&refresh=true'
+			url2 =  ctx+'/spreadsheet/vision/openresource.jsp?paramsInfo=[{"name":"shebeishiqi_id","value":"'+id+'"}]&resid=I4028e4f32977bc74015529c597fc0d68&user=admin&password=manager&refresh=true'
 			break;
 		case "SQ":
-			url2 =  ctx+'/spreadsheet/vision/openresource.jsp?paramsInfo=[{"name":"shebeishiqi_id","value":"'+id+'"}]&resid=I4028e4f31af9c762015523579e932ab6&user=admin&password=manager&refresh=true'
+			url2 =  ctx+'/spreadsheet/vision/openresource.jsp?paramsInfo=[{"name":"shebeishiqi_id","value":"'+id+'"}]&resid=I4028e4f32977bc74015529c597fc0d68&user=admin&password=manager&refresh=true'
 			break;
 	}
 	//window.open(url2);
