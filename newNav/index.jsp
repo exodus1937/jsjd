@@ -144,6 +144,7 @@
 <script type="text/javascript" src="js/wj0201.js"></script>
 <script type="text/javascript" src="js/md5.js"></script>
 <script type="text/javascript" src="../platform/util/platformUtil.js"></script>
+<script type="text/javascript" src="js/monitor.js"></script>
 <!--<script src="../newNav/newmain/newmain.js" type="text/javascript" charset="utf-8"></script>-->
 <script type="text/javascript">
 //var winHeight = $(window).height()-20;

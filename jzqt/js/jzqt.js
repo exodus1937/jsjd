@@ -13,21 +13,157 @@ function rootpath() {
 
 rootpath();
 var rootPath = $('#url').val();
-var rootPath = $('#url').val();
+
 var user={};
 $.ajax({
 	url:rootPath+"/portal/getUserOrgId.do",
 	type:"POST",
 	success:function(data){
+		
 		if(data && data!="null" ){
 			user.org_id=data;
-			jzqt_zonglan(user.org_id);
-		}else{
-			jzqt_zonglan('c21834b4-1cb0-490f-a2a8-deeaf7f7e065');
+			if(user.org_id != "a61365e2-969d-4352-b3f8-805027ab9f1d"){
+				
+				jzqt_zonglan(user.org_id);
+				
+			}
+			viewById(user.org_id);			
 		}
 		
 	}
 })
+function viewById(orgID){
+	if(orgID == "jt" || orgID == "a61365e2-969d-4352-b3f8-805027ab9f1d"){
+ 	  jt_flag= true;
+ 	  jt_query(1,jt_flag); 
+ 	  $("#dc_view").hide();
+ 	  $("#jt_view").show();
+   }else{
+ 	  jzqt_zonglan(orgID)
+ 	  $("#dc_view").show();
+ 	  $("#jt_view").hide();
+   }
+}
+
+var initPage = function(page) {
+   	var num_entries = page;
+  	// 创建分页
+  	$("#Pagination").pagination(num_entries, {
+	    num_edge_entries: 1, //边缘页数
+	    num_display_entries: 4, //主体页数
+	    callback: callback,
+	    items_per_page: 1, //每页显示1项
+	    prev_text: "前一页",
+	    next_text: "后一页"
+  	});
+};
+function callback(page_index, jq){
+	//从第一次执行函数中获取参数 重新传入
+	console.log(page_index);
+	
+		
+		jt_query(page_index + 1);
+	
+	
+  	return false;
+}
+var jt_flag= true;
+$("#submit").click(function(){
+	 jt_flag= true;
+	  jt_query(1,jt_flag);
+})
+function jt_query(pagenum){
+   var url = rootPath +"/portal.do?method=getJtJzqtinfo"
+   $.ajax({
+	   url:url,
+	   type: "POST",
+	   data:{
+		   orgid:$("#org_id").val(),
+   		    g_id: $("#g_id").val(),
+   			type:$("#type").val(),
+   			qt_desc:$("#qt_desc").val(),
+   			starttime:$("#startTime").val(),
+   			endtime:$("#endTime").val(),
+   			pagenum:pagenum,
+   			pagesize:7
+	   },
+	   dataType:"json",
+	   success:function(data){
+		   //console.log(data);
+		   if(data.exper.length==0){
+			   $("#Pagination").hide();
+       			return;
+       		}
+	       	var page = Math.ceil(data.total/7);
+	       	if(jt_flag){
+	       		$("#Pagination").show();
+				initPage(page);//分页加载
+				jt_flag=false;
+			}
+	   
+		   $("#jt_huizong").html(preparedata(data.exper,["NAME","STARTTIME","ENDTIME","FIRETIME","RUSHTIME","PARATIME","QT_DESC"],"jt_huizong"))
+		  
+	   }   
+   })
+}
+
+
+$("#type").change(function(){
+	$this = $(this);
+	var type = $this.val();
+	if(type =="TJ"){
+		$("#qt_desc").html('<option></option><option value="A级检修">A级检修</option><option value="B级检修">B级检修</option><option value="C级检修">C级检修</option><option value="D级检修">D级检修</option><option value="电网调停">电网调停</option><option value="故障停机">故障停机</option>')
+	}else{
+		$("#qt_desc").html('<option></option><option value="A级检修后启动">A级检修后启动</option><option value="B级检修后启动">B级检修后启动</option><option value="C级检修后启动">C级检修后启动</option><option value="D级检修后启动">D级检修后启动</option><option value="电网调停后启动">电网调停后启动</option><option value="故障停机后启动">故障停机后启动</option>')
+	}
+})
+
+$("#org_id").change(function(){
+	var org_id = $(this).val();
+	var $zj = $(".form-group").eq(1);
+	
+	if(org_id != "a61365e2-969d-4352-b3f8-805027ab9f1d"){
+		addjz(org_id);
+		$zj.show();
+	}else{
+		$zj.hide();
+	}
+	
+})
+$("#org_id").change()
+function addjz(orgId){
+	$("#g_id").html("<option value=''></option>");
+	
+	
+	var url = rootPath +"/portal/getLhJzInfo.do?orgId="+orgId;
+	$.ajax({
+		url:url,
+		type:"POST",
+		success:function(data){
+			var arr = [];
+			for(var i in data){
+				arr.push(data[i]);
+			}
+			arr.sort()//机组排序
+			//console.log(arr);
+			//机组信息插入到页面当中
+			for(var i = 0;i<arr.length;i++){ 
+				var j = i+1;
+				
+				if(Number(arr[i])){
+					arr[i] = "#"+arr[i];
+
+				}else{
+					j=arr[i];
+				}
+				
+				$("#g_id").append("<option value='"+j+"'>"+arr[i]+"</option>");
+			}
+		}
+	})
+}
+
+
 	
 function jzqt_zonglan(orgID){
     var url = rootPath + "/portal.do";
@@ -52,9 +188,9 @@ function jzqt_zonglan(orgID){
            },function(){
            		$(this).find('a').css({color:"#000"})
            })
-           //转换电厂默认加载 #1启机；
+            //版本1 传  1转换电厂默认加载 #1启机;//版本2  传空字符串的时候，默认显示电厂所有启动条目
    
-           detail(orgID,'1','QD',1,true);
+           detail(orgID,'','',1,true);
         }
     })
 }
@@ -129,6 +265,7 @@ var query_flag=true;
  * @param nub   page——number default ->1
  * @param flag  分页 init 开关;  需要传 true
  */
+
 function detail(orgid,g_id,type,nub,flag){
 	sessionStorage.setItem("org_id",orgid)
 	sessionStorage.setItem("g_id",g_id);
@@ -151,6 +288,8 @@ function detail(orgid,g_id,type,nub,flag){
         dataType:"json",
         success: function(data){
         	if(data.expr.length==0){
+        		$("#Pagination").hide()
+        		$("#detail").html('<td colspan="9" >暂时没有数据</td>');
         		return;
         	}
         	var page = Math.ceil(data.total/5)
@@ -201,10 +340,7 @@ function preparedataDetail(data,type,orgId){
 		var d = data.expr[i];
 		htmlArray.push("<tr>");
 		if(type && type=='TJ'){
-
-			$("#d_head td").eq(5).html("解列时间");
-			$("#d_head td").eq(3).html("打闸时间");
-			$("#d_head td").eq(4).html("灭火时间");
+			$("#d_head td").eq(5).html("解列时间")
 			var msg='';
 			if(d.ADUIT_STATUS=='A'  && orgId==d.ORG_ID){
 				msg='填写';
@@ -227,9 +363,7 @@ function preparedataDetail(data,type,orgId){
 			
 			
 		}else{
-			$("#d_head td").eq(5).html("并网时间");
-			$("#d_head td").eq(4).html("冲车时间")
-			$("#d_head td").eq(3).html("点火时间")
+			$("#d_head td").eq(5).html("并网时间")
 			 msg='';
 			if(d.QT_DESC && d.QT_DESC.length>0){
 				msg=d.QT_DESC+'后启机';

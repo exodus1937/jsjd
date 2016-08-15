@@ -6,7 +6,8 @@
 <link type="text/css" rel="stylesheet" href="css/news.css" />
 <link rel="stylesheet" type="text/css" href="js/tree_themes/SimpleTree.css"/>
 <link rel="stylesheet" type="text/css" href="css/pagination.css"/>
-  
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
 </head>
 
 <body  id="body">
@@ -22,7 +23,7 @@
 <div class="wu_left">
   <div class="st_tree">
     <ul>
-      <li><a href="#">京能集团</a></li>
+      <li title="jt"><a href="#" >京能集团</a></li>
 
       <ul show="true">
         <li title="c21834b4-1cb0-490f-a2a8-deeaf7f7e065"><a href="#" title="岱海发电" >岱海发电</a></li>
@@ -32,38 +33,139 @@
 </div>
 <div class="wu_main" style="border: 1px solid #ccc;">
   <div class="wu_main1">
-    <p id="lh_name">岱海发电</p>
-    <table class="wu_tab1"  style="">
-      <thead>
-        <tr>
-          <td>机组</td>
-          <td>启机次数（次）</td>
-          <td>停机次数（次）</td>
-          <td>最近启动时间</td>
-          <td>最近停机时间</td>
-          <td>连续运行天数</td>
-        </tr>
-      </thead>
-      <tbody id="table1_huizong"> 
-      </tbody>
-    </table>
-
-    <table class="wu_tab1 level4" >
-      <thead>
-        <tr>
-          <td>机组</td>
-          <td>启停项目</td>
-          <td>开始时间</td>
-          <td>结束时间</td>
-          <td>并网/解列时间</td>
-          <td>启停机类别</td>
-          <td>查看趋势</td>
-          <td>查看报告</td>
-        </tr>
-      </thead>
-      <tbody id="detail">        
-      </tbody>
-    </table>    
+  	<div id="jt_view" style="display:none">
+  		<p style="margin:20px 0">京能集团</p>
+	  	<div class="wu_top0 select" style="">
+	        <form class="form-inline">
+	            <!-- <div class="left form-group" style="margin-left:30px;"><a href="kaohe.html">返回</a></div> -->
+	           
+				<div style="float:left;margin-right:5%">
+					<div class="form-group ">
+	                	<label class=" control-label left" style="float:left;    width: 40px;position: relative;top: 5px;" for="org_id">电厂</label>
+	                	<select name="choose" class="form-control col-sm-1" id="org_id">
+							<option value="c21834b4-1cb0-490f-a2a8-deeaf7f7e065">岱海发电</option>
+							<option value="472212af-1977-462b-a74a-a1f36ed6562d">宁东发电</option>
+		                 	<option value="a61365e2-969d-4352-b3f8-805027ab9f1d">京能集团</option>
+		                    
+	               	 	</select>
+	            	</div>
+					<div class="form-group ">
+	                	<label class=" control-label left" style="float:left;    width: 40px;position: relative;top: 5px;" for="g_id">机组</label>
+	                	<select name="choose" class="form-control col-sm-1" id="g_id" style="width:100px;">
+		                 	<option value="" ></option>
+		                    
+	               	 	</select>
+	            	</div>
+	            	
+	            	<div class="form-group ">
+	                	<label class=" control-label left" style="float:left;    width: 60px;position: relative;top: 5px;" for="type">启停类型</label>
+	                	<select name="choose" class="form-control col-sm-1" id="type" style="width:77px;">
+	                		<option value="" ></option>
+		                    <option value="TJ" >停机</option>
+		                    <option value="QD" >启动</option>
+	               	 	</select>
+	            	</div>
+	            	
+	            	<div class="form-group ">
+	                	<label class=" control-label left" style="float:left;    width: 60px;position: relative;top: 5px;" for="qt_desc">启停类别</label>
+	                		 
+		                <select name="choose" class="form-control col-sm-1" id="qt_desc" style="width:134px;">
+		                		<option value-""></option>
+		                    	<option value="A级检修">A级检修</option>
+		                    	<option value="B级检修">B级检修</option>
+		                    	<option value="C级检修">C级检修</option>
+		                    	<option value="D级检修">D级检修</option>
+		                    	<option value="电网调停">电网调停</option>
+		                    	<option value="故障停机">故障停机</option>
+	               	 	</select>
+	            	</div>
+		            <div class="form-group">
+		                <label for="startTime" class=" control-label left">时间</label>
+		                <div class="input-group date form_datetime col-sm-2" data-link-field="dtp_input1" style="">
+		                    <input class="form-control col-sm-12" size="16" type="text" value="" readonly="" style="width:105px" id="startTime">
+		                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+		                    <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+		                </div>
+		
+		                <input type="hidden" id="dtp_input1" value=""><br>
+		            </div>
+		            <div class="form-group">
+		                <label for="endTime" class=" control-label left" style="margin-left:0;">至</label>
+		                <!-- <input class="form-control col-sm-1" type="text" id="endTime" >-->
+		                <div class="input-group date form_datetime col-sm-2" data-link-field="dtp_input1" style="">
+		                    <input class="form-control col-sm-12" size="16" type="text" value=""  readonly="" style="width:105px" id="endTime">
+		                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+		                    <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+		                </div>
+		
+		            </div>
+		            
+		           
+		            <div class="form-group" id="query" style="margin-left:22px;">
+		                <button class ="form-control col-sm-1 btn btn-primary" type="button" id="submit" style="">查询</button>
+		            </div>
+	            </div>
+	        </form>
+		 <div class="fengge"></div>
+	
+	    </div>
+	    <div class="fengge"></div>
+	   	<table class="wu_tab1"  style="">
+		      <thead>
+		        <tr>
+		          <td>启停机项目</td>
+		          <td>开始时间</td>
+		          <td>结束时间</td>
+		          <td>点火、灭火时间</td>
+		          <td>冲车/跳闸时间</td>
+		          <td>并网、解列时间</td>
+		          <td>启停机类别</td>
+		        </tr>
+		      </thead>
+		      <tbody id="jt_huizong"> 
+		      </tbody>
+		 </table>
+	    <div class="fengge"></div>
+    </div>
+    <div id="dc_view">
+    	 <p id="lh_name">岱海发电</p>
+    	 <table class="wu_tab1"  style="">
+		      <thead>
+		        <tr>
+		          <td>机组</td>
+		          <td>启机次数（次）</td>
+		          <td>停机次数（次）</td>
+		          <td>最近启动时间</td>
+		          <td>最近停机时间</td>
+		          <td>连续运行天数</td>
+		        </tr>
+		      </thead>
+		      <tbody id="table1_huizong"> 
+		      </tbody>
+		 </table>
+		
+	    <table class="wu_tab1 level4" >
+		      <thead>
+		        <tr id="d_head">
+		         <!--  <td>机组</td> -->
+		          <td>启停项目</td>
+		          <td>开始时间</td>
+		          <td>结束时间</td>
+		          <td>点火时间</td>
+		          <td>冲车时间</td>         
+		          <td>并网时间</td>
+		          <td>启停机类别</td>
+		          <td>查看趋势</td>
+		          <td>查看报告</td>
+		        </tr>
+		      </thead>
+		      <tbody id="detail">  
+		            
+		      </tbody>
+	    </table>  
+    </div>
+   
+      
     <div id="modal" style="width:  240px;height: auto;background: #ffffff;padding:17px 16px 22px 27px;display:none;">
        <input type="text" id="result"  name="result" value="" style="display: none"   >
       <input type="text" id="style"  name="style" value="" style="display: none"   >
@@ -88,9 +190,14 @@
     <div class="fengge"></div>
     <div id="Pagination" class="pagination" style="float:right"><!-- 这里显示分页 --></div>
   </div>
-
+	
   <div class="fengge"></div>
 </div>
+
+
+
+
+
 <div id = "stock" style = "width:100%;height:600px;"></div>
 <script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
 <!-- <script type="text/javascript" src="js/echarts2.js"></script> -->
@@ -98,7 +205,8 @@
 <script src=  "../webbuilder/controls/ext/ext-all.js" type="text/javascript" ></script>
 <script src=  "../webbuilder/controls/ext/locale/ext-lang-zh_CN.js" type="text/javascript" ></script>
 <link href=   "../webbuilder/controls/ext/resources/css/ext-all.css" rel="stylesheet" type="text/css" />
-
+<script type="text/javascript" src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
 <script type="text/javascript" src="js/SimpleTree.js"></script>
 <script type="text/javascript" src="js/Sweefty.js"></script>
 <script type="text/javascript" src="js/moaModal.minified.js"></script>
@@ -111,7 +219,17 @@
 
     //modal 
     
-
+	$('.form_datetime').datetimepicker({
+	    weekStart: 1,
+	    todayBtn:  1,
+	    autoclose: 1,
+	    todayHighlight: 1,
+	    startView: 4,
+	    minView: 2,
+	    forceParse: 0,
+	    //format: "yyyy-mm"
+	    format: "yyyy-mm-dd"
+	});
     $("#msg").focus(function(){
         $(this).html("");
     })
@@ -120,7 +238,8 @@
      stree.SimpleTree({
        click: function (a) {
           var orgID = $(a).parent().attr("title");
-          jzqt_zonglan(orgID)
+          viewById(orgID)
+         
        }
      })
    }

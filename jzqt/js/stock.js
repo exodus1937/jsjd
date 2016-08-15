@@ -52,7 +52,6 @@ if (!window.location.origin) {
 
 
     function prepare(data){
-       // console.log(data);
         var htmlArray = [];
         var array = data.split(";");
 

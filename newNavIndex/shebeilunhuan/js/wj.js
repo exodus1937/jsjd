@@ -737,7 +737,7 @@ function zTreeOnClick(ev, treeId, treeNode) {
 		var orgId = sessionStorage.getItem("orgid")
 		var url = rootPath + "/portal/getLHSummaryInfo.do?orgId="+orgId;
 		ajax(url,"level1",["x","gId","ysCount","yCount","msCount","mCount","fCount"]);
-		addjz();//加载机组
+		addjz("");//加载机组
 		addzy();//默认加载#1机组的专业
 		$("#g_id").show().siblings().show();
 		query_flag=true;
@@ -795,14 +795,15 @@ function zTreeOnClick(ev, treeId, treeNode) {
 		$("#spec_id").html("<option value=''></option>");
 		var orgId = sessionStorage.getItem("orgid");
 		var g_id = $("#g_id").val();
-		if(!$("#g_id").val()){
-			g_id=gid
-		}
+		var url = "";
 		
-		if(!g_id){
-			g_id="1";
+		if(!$("#g_id").val()){
+			url = rootPath +"/portal/getLhZyInfo.do?orgId="+orgId
 		}
-		var url = rootPath +"/portal/getLhZyInfo.do?orgId="+orgId+"&gId="+g_id;
+		else{
+			
+			url = rootPath +"/portal/getLhZyInfo.do?orgId="+orgId+"&gId="+g_id;
+		}
 		$.ajax({
 			url:url,
 			type:"POST",

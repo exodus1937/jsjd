@@ -15,7 +15,7 @@
 
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
- <script src="../../newNav/js/monitor.js"></script>
+    <script src="../../newNav/js/monitor.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script type="text/javascript" src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link type="text/css" rel="stylesheet" href="../css/pagination.css" />
@@ -74,15 +74,19 @@
             <div class="form-group">
                 <label for="status" class=" control-label left">状态</label>
                 <select  name="choose" class="form-control col-sm-1" id="status">
+                    <option value=""></option>
                     <option value="1">在线</option>
                     <option value="0">离线</option>
                 </select>
             </div>
+			
 
 
-
-            <div class="form-group" id="query" style="margin-left:22px;">
+            <div class="form-group" id="query" style="margin-left:15px;">
                 <button class="form-control col-sm-1 btn btn-primary" type="button" id="submit" style="position: relative;top: -2px;">查询</button>
+            </div>
+            <div class="form-group" id="query" style="margin-left:10px;">
+                <button class="form-control col-sm-1 btn btn-primary" type="button" id="export" style="position: relative;top: -2px;">导出</button>
             </div>
         </form>
     </div>
@@ -91,7 +95,7 @@
     <table class="table table_bordered" style="margin-top:10px;">
         <thead>
             <tr>
-                 <th style="width:8%">序号</th>
+                <th style="width:8%">序号</th>
                 <th style="width:8%">单位</th>
                 <th style="width:8%">姓名</th>
                 <th style="width:28%">登录时间</th>
@@ -166,7 +170,21 @@
         forceParse: 0,
         format: "yyyy-mm-dd"
     });
-
+	$("#export").click(function(){
+		var org_id    = $("#org_id").val();
+		var name      = $("#nameValue").val();
+		var startTime = $("#startTime").val();
+		var endTime   = $("#endTime").val();
+		var status    = $("#status").val();
+		var name_fixed = encodeURIComponent(trim(name));
+		
+		var url = ctx + "/jsjd/portal.do?method=getLogininfo&org_id="+org_id+"&nameValue="+name+"&startTime="+startTime+"&endTime="+endTime+"&status="+status;
+		console.log(url)
+		window.open(url);
+	})
+	function trim(str) {
+		return str.replace(/(^\s*)|(\s*$)/g, "");
+	}
 
 </script>
 </html>

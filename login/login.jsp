@@ -176,7 +176,7 @@ function MM_swapImage() { //v3.0
 <script type="text/javascript"
 		src="<%=request.getContextPath()%>/pub/uip/common/scripts/md5.js"></script>
 	<script language="javascript">
-	if(parent.document.getElementById("empName").value!=""){
+	if(parent.document.getElementById("empName").value==null || parent.document.getElementById("empName").value=undefined   || parent.document.getElementById("empName").value!=""){
 		parent.window.location.reload();
 	};
 	 	function GetIeVar(){
