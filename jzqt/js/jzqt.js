@@ -91,6 +91,7 @@ function jt_query(pagenum){
 	   success:function(data){
 		   //console.log(data);
 		   if(data.exper.length==0){
+			   $("#jt_huizong").html("");
 			   $("#Pagination").hide();
        			return;
        		}
