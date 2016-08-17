@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body onunload="myClose()">
+<iframe id='target' style="width:100%;height:564px;"></iframe>
+<script type="text/javascript">
+ 	//alert(1);
+ 	window.onmessage = function(e){
+ 		e = e||event;
+ 		//alert(e.data)
+ 		document.getElementById("target").src = "http://172.168.100.101:8080/HistoryTrend.aspx?Tag="+e.data;
+ 	}
+	function child_open(){
+ 		//console.log(sessionStorage.getItem("psTag"));
+ 		document.getElementById("target").src = "http://172.168.100.101:8080/HistoryTrend.aspx?Tag=" + sessionStorage.getItem("psTag");;
+ 	}
+ 	child_open();
+ 	function myClose(){
+		alert(1);
+ 		window.postMessage("close","*")
+ 	}
+ 	window.onbeforeunload = function() {
+ 		
+ 		widow.opener.points = ""
+ 		return ("确认关闭吗？");
+ 	}
+ 	
+</script>
+
+</body>
+</html>

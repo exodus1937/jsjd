@@ -189,8 +189,8 @@ function jzqt_zonglan(orgID){
            },function(){
            		$(this).find('a').css({color:"#000"})
            })
-            //版本1 传  1转换电厂默认加载 #1启机;//版本2  传空字符串的时候，默认显示电厂所有启动条目
-   
+           //版本1 传  1转换电厂默认加载 #1启机;//版本2  传空字符串的时候，默认显示电厂所有启动条目
+           
            detail(orgID,'','',1,true);
         }
     })
@@ -284,7 +284,7 @@ function detail(orgid,g_id,type,nub,flag){
             g_id:g_id,
             type:type,
             pagenum:nub,
-			pagesize:5 
+			pagesize:8 
         },
         dataType:"json",
         success: function(data){
@@ -293,7 +293,7 @@ function detail(orgid,g_id,type,nub,flag){
         		$("#detail").html('<td colspan="9" >暂时没有数据</td>');
         		return;
         	}
-        	var page = Math.ceil(data.total/5)
+        	var page = Math.ceil(data.total/8)
         	if(query_flag||flag){
         		$("#Pagination").show()
 				initPagination(page);//分页加载
@@ -340,7 +340,15 @@ function preparedataDetail(data,type,orgId){
 	for(var i = 0; i < data.expr.length; i++){
 		var d = data.expr[i];
 		htmlArray.push("<tr>");
-		if(type && type=='TJ'){
+		//判断从数据里读取
+		if(d.NAME.indexOf("启动")>-1){
+			type = "QD"
+		}
+		if(d.NAME.indexOf("停机")>-1){
+			type = "TJ" 
+		}
+
+		if(type=='TJ'){
 			$("#d_head td").eq(5).html("解列时间")
 			var msg='';
 			if(d.ADUIT_STATUS=='A'  && orgId==d.ORG_ID){
@@ -358,6 +366,7 @@ function preparedataDetail(data,type,orgId){
 				msg=d.QT_DESC;
 			}
 			//console.log(d);
+			
 			htmlArray.push("<td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.FIRETIME+"</td><td>"+d.RUSHTIME+"</td><td>"+d.PARATIME+"</td><td class='button link' id="+d.ID+" onclick=getvalue('"+d.ID+"','"+d.NAME+"',this)>"+msg+"</td>")
 			htmlArray.push("<td class='zhexian' id='"+JSON.stringify(data.KKS_CODE)+";"+JSON.stringify(data.KKS_NAME)+";"+d.STARTTIME+";"+d.ENDTIME+";"+JSON.stringify(data.POINT_MEAS)+"'><p><img src='img/qx.png' /></p></td>");
 			htmlArray.push('<td onclick=daocu("'+d.ID+'","'+type+'") class="link">查看</td>')
