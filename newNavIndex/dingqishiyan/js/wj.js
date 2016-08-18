@@ -496,9 +496,18 @@ function zTreeOnClick(ev, treeId, treeNode) {
 				}
 				arr.sort()//机组排序
 				//机组信息插入到页面当中
+
 				for(var i = 0;i<arr.length;i++){ 
 					var j = i+1;
-					$("#g_id").append("<option value='"+j+"'>#"+arr[i]+"</option>");
+					
+					if(Number(arr[i])){
+						arr[i] = "#"+arr[i];
+
+					}else{
+						j=arr[i];
+					}
+					
+					$("#g_id").append("<option value='"+j+"'>"+arr[i]+"</option>");
 				}
 			}
 		})
@@ -511,7 +520,7 @@ function zTreeOnClick(ev, treeId, treeNode) {
 	})
 	
 	$("#spec_id").on("change",function(){
-		//addzy(g_id);
+		
 		query_flag = true;//重新加载分页
 	})
 	//根据=电厂=机组=添加专业============================================================
@@ -519,13 +528,16 @@ function zTreeOnClick(ev, treeId, treeNode) {
 		$("#spec_id").html("<option value=''></option>");
 		var orgId = sessionStorage.getItem("orgid");
 		var g_id = $("#g_id").val();
+		var url="";
+		//
 		if(!$("#g_id").val()){
-			g_id=gid
+			url = rootPath +"/portal/getSyZyInfo.do?orgId="+orgId
 		}
-		if(!g_id){
-			g_id=1;
+		else{
+			
+			url = rootPath +"/portal/getSyZyInfo.do?orgId="+orgId+"&gId="+g_id;
 		}
-		var url = rootPath +"/portal/getSyZyInfo.do?orgId="+orgId+"&gId="+g_id;
+		//var url = rootPath +"/portal/getSyZyInfo.do?orgId="+orgId+"&gId="+g_id;
 		$.ajax({
 			url:url,
 			type:"POST",

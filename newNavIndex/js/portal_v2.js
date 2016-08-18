@@ -228,10 +228,7 @@ function styleTable(table){
 		
 		$table.find('td:nth-child(4n + 1)').css({textAlign:'left'});
 	}
-	if(table=="#JTjzqt" || table =="#JTycqk"){
-		$table.find('td:nth-child(4n + 3)').css({textAlign:'left'});
-	}
-	
+
 
 }
 /**
@@ -270,7 +267,6 @@ function init() {
 		jtjzqt();//集团机组其他
 		JTtzgg();//集团通知公告
 		jt_kaohe();//集团考核
-		JTjiandubaobiao(); //集团监督报表;
 		huanxingshuju()
 		shengchanbaobiao_jt();
 
@@ -398,12 +394,15 @@ function zhibiaoyilan(orgid) {
 					}
 					if (typeof(ev[i].VALUEDATE) != 'undefined') {
 						if (typeof(ev[i].PI_CODE) != 'undefined') {
-							if (ev[i].QUOTA_NAME === '总装机容量' || ev[i].QUOTA_NAME === '月度计划发电量' || ev[i].QUOTA_NAME === '年计划发电量' || ev[i].QUOTA_NAME === '年度发电量完成率' || ev[i].QUOTA_NAME === '年累计发电量' || ev[i].QUOTA_NAME === '昨日发电量' || ev[i].QUOTA_NAME === '月度累计发电量') {
+							if (ev[i].QUOTA_NAME === '总装机容量' ||ev[i].QUOTA_NAME === '年发电量完成率' || ev[i].QUOTA_NAME === '月度计划发电量' || ev[i].QUOTA_NAME === '年计划发电量' || ev[i].QUOTA_NAME === '年度发电量完成率' || ev[i].QUOTA_NAME === '年累计发电量' || ev[i].QUOTA_NAME === '昨日发电量' || ev[i].QUOTA_NAME === '月度累计发电量') {
 								Bar = '';
 							} else {
 								var d = ev[i].METHOD;
 								
-								Bar = "onclick=clickOpenWindow('" + ev[i].PI_CODE + "','" + ev[i].QUOTA_NAME + "','','','" + d + "','" + ev[i].POINTS + "') href='javascript:void(0)'";
+								//Bar = "onclick=clickOpenWindow('" + ev[i].PI_CODE + "','" + ev[i].QUOTA_NAME + "','','','" + d + "','" + ev[i].POINTS + "') href='javascript:void(0)'";
+								var url = "http://172.168.100.101:8080/HistoryTrend.aspx?Tag="+ev[i].PI_CODE
+							
+								Bar = "onclick=show('"+ev[i].PI_CODE+"') href='javascript:void(0)'";
 							}
 						}
 						
@@ -443,6 +442,77 @@ function zhibiaoyilan(orgid) {
 
 	})
 
+}
+var first = true;
+var points = "";
+function show(point) {
+	
+    var psTag = "";
+    if(points){
+    	points += "|"+point
+    }else{
+    	points += point
+    }
+    
+    //console.log(points);
+    
+   var  subwin = window.open("","历史曲线", "width=" + 900 + ",height=" + 640 + ",directories=no,location=no,menubar=no,scrollbars=no,status=no,toolbar=no,resizable=no");
+   var queryString = "newNavIndex/open.html";
+   sessionStorage.setItem("psTag", points);
+   
+   console.log(subwin.location.href);
+   subwin.postMessage(points,"*")
+   if(subwin.onclosed == true){
+	   points = "";
+   }
+   if(subwin.location.href.indexOf("open") == -1) {
+	   console.log(1);
+       subwin.location = queryString;
+       
+   } else {
+	   console.log(2);
+	   subwin.onload = function(){
+		   
+		   subwin.child_open();
+		   
+	   }
+   }
+   function IfWindowClosed() {
+       if (subwin.closed == true) {
+    	   //alert("子关闭")
+           points="";
+           window.clearInterval(timer)
+       }
+   }
+  
+   timer = window.setInterval(IfWindowClosed, 500);
+   subwin.focus();
+   // var queryString = "http://172.168.100.101:8080/HistoryTrend.aspx?Tag=" + psTag;
+    //
+    
+   /* var subwin = window.open("", "历史曲线", "width=" + 900 + ",height=" + 640 + ",directories=no,location=no,menubar=no,scrollbars=no,status=no,toolbar=no,resizable=no");
+    
+    if (subwin.location.href.indexOf('HistoryTrend.aspx') == -1) {
+        subwin.location = queryString;
+    } else {
+        subwin.RegisterPoint(psTag);
+    }
+    subwin.focus();   */
+}
+window.onmessage = function(e){
+	alert(1);
+	points = "";
+	
+}
+function GetRequest(url) {
+	var url = url.split('?')[1]; //获取url中"?"符后的字串
+	var theRequest ={};
+	strs = url.split("&");
+	//console.log(strs);
+	 for(var i = 0; i < strs.length; i ++) {
+	   theRequest[strs[i].split("=")[0]]=(strs[i].split("=")[1]);
+	}
+return theRequest;
 }
 
 function baoliuliangwei(data){
@@ -525,8 +595,11 @@ function major_pulldown() {
 								$('.circle7').html(data[0].jzm).show();
 								$('.circle7').css({backgroundImage : getYxzt(data[0].yxzt)});														
 						}else if (data.length == 2) {
-							$(".circle_data5").html("<a  onclick=OpenWindow('"+data[0].fhl_pi+"','"+data[0].fhl_name+"','','','"+data[0].METHOD+"','"+data[0].POINTS+"') href='javascript:void(0)' ><div title='1号机组负荷率'>"+Number(data[0].fhl).toFixed(2)+'%'+"</div></a><a onclick=OpenWindow('"+data[0].ssfh_pi+"','"+data[0].ssfh_name+"','','','"+data[0].METHOD+"','"+data[0].POINTS+"') href='javascript:void(0)'><div title='1号机组负荷'>"+Number(data[0].ssfh).toFixed(2)+'MW'+"</div></a>").show();
-							$(".circle_data6").html("<a  onclick=OpenWindow('"+data[1].fhl_pi+"','"+data[1].fhl_name+"','','','"+data[1].METHOD+"','"+data[1].POINTS+"') href='javascript:void(0)' ><div title='2号机组负荷'>"+Number(data[1].fhl).toFixed(2)+'%'+"</div></a><a onclick=OpenWindow('"+data[1].ssfh_pi+"','"+data[1].ssfh_name+"','','','"+data[1].METHOD+"','"+data[1].POINTS+"') href='javascript:void(0)'><div title='2号机组负荷'>"+Number(data[1].ssfh).toFixed(2)+'MW'+"</div></a>").show();
+							//$(".circle_data5").html("<a  onclick=OpenWindow('"+data[0].fhl_pi+"','"+data[0].fhl_name+"','','','"+data[0].METHOD+"','"+data[0].POINTS+"') href='javascript:void(0)' ><div title='1号机组负荷率'>"+Number(data[0].fhl).toFixed(2)+'%'+"</div></a><a onclick=OpenWindow('"+data[0].ssfh_pi+"','"+data[0].ssfh_name+"','','','"+data[0].METHOD+"','"+data[0].POINTS+"') href='javascript:void(0)'><div title='1号机组负荷'>"+Number(data[0].ssfh).toFixed(2)+'MW'+"</div></a>").show();
+							//$(".circle_data6").html("<a  onclick=OpenWindow('"+data[1].fhl_pi+"','"+data[1].fhl_name+"','','','"+data[1].METHOD+"','"+data[1].POINTS+"') href='javascript:void(0)' ><div title='2号机组负荷'>"+Number(data[1].fhl).toFixed(2)+'%'+"</div></a><a onclick=OpenWindow('"+data[1].ssfh_pi+"','"+data[1].ssfh_name+"','','','"+data[1].METHOD+"','"+data[1].POINTS+"') href='javascript:void(0)'><div title='2号机组负荷'>"+Number(data[1].ssfh).toFixed(2)+'MW'+"</div></a>").show();
+							
+							$(".circle_data5").html("<a  onclick=show('"+data[0].fhl_pi+"') href='javascript:void(0)' ><div title='1号机组负荷率'>"+Number(data[0].fhl).toFixed(2)+'%'+"</div></a><a  onclick=show('"+data[0].ssfh_pi+"') href='javascript:void(0)'><div title='1号机组负荷'>"+Number(data[0].ssfh).toFixed(2)+'MW'+"</div></a>").show();
+							$(".circle_data6").html("<a onclick=show('"+data[1].fhl_pi+"') href='javascript:void(0)' ><div title='2号机组负荷'>"+Number(data[1].fhl).toFixed(2)+'%'+"</div></a><a  onclick=show('"+data[1].ssfh_pi+"') href='javascript:void(0)'><div title='2号机组负荷'>"+Number(data[1].ssfh).toFixed(2)+'MW'+"</div></a>").show();
 							
 							$('.circle5').html(data[0].jzm).show();
 							$('.circle6').html(data[1].jzm).show();
@@ -552,8 +625,8 @@ function major_pulldown() {
 							$('.fix_2').hide();
 							$(".circle_data").each(function(i) {
 									
-								$(this).html("<a   onclick=OpenWindow('"+data[i].fhl_pi+"','"+data[i].fhl_name+"','','','"+data[i].METHOD+"','"+data[i].POINTS+"') href='javascript:void(0)' ><div title ="+(i+1)+"号机组负荷率>"+Number(data[i].fhl).toFixed(2)+'%'+"</div></a><a title ="+(i+1)+"号机组负荷  onclick=OpenWindow('"+data[i].ssfh_pi+"','"+data[i].ssfh_name+"','','','"+data[i].METHOD+"','"+data[i].POINTS+"') href='javascript:void(0)' ><div>"+Number(data[i].ssfh).toFixed(2)+'MW'+"</div></a>").show();
-
+								//$(this).html("<a   onclick=OpenWindow('"+data[i].fhl_pi+"','"+data[i].fhl_name+"','','','"+data[i].METHOD+"','"+data[i].POINTS+"') href='javascript:void(0)' ><div title ="+(i+1)+"号机组负荷率>"+Number(data[i].fhl).toFixed(2)+'%'+"</div></a><a title ="+(i+1)+"号机组负荷  onclick=OpenWindow('"+data[i].ssfh_pi+"','"+data[i].ssfh_name+"','','','"+data[i].METHOD+"','"+data[i].POINTS+"') href='javascript:void(0)' ><div>"+Number(data[i].ssfh).toFixed(2)+'MW'+"</div></a>").show();
+								$(this).html("<a   onclick=show('"+data[i].fhl_pi+"') href='javascript:void(0)' ><div title ="+(i+1)+"号机组负荷率>"+Number(data[i].fhl).toFixed(2)+'%'+"</div></a><a title ="+(i+1)+"号机组负荷  onclick=show('"+data[i].ssfh_pi+"') href='javascript:void(0)' ><div>"+Number(data[i].ssfh).toFixed(2)+'MW'+"</div></a>").show();
 							});
 							circleClass = 'circle1';
 							/* 圆环颜色 */
@@ -949,30 +1022,30 @@ function prearData(data, columns, table,diff) {
 				}
 			}
 			if(table == 'shengchanbaobiao'){
-				htmlArray.push("<td  class='ellipsis' style=\"" + color + "\"><a  title='" + columnValue + "' href=" + ctx1 + "/spreadsheet/vision/openresource.jsp?paramsInfo=\[\{\"name\":\"general_id\",\"value\"=" + d.GENERAL_ID + "\}\]&resid=" + d.SMART_BI + "&user=admin&password=manager&refresh=true'>" + columnValue + "</a></td>");
+				htmlArray.push("<td align='left' class='ellipsis' style=\"" + color + "\"><a  title='" + columnValue + "' href=" + ctx1 + "/spreadsheet/vision/openresource.jsp?paramsInfo=\[\{\"name\":\"general_id\",\"value\"=" + d.GENERAL_ID + "\}\]&resid=" + d.SMART_BI + "&user=admin&password=manager&refresh=true'>" + columnValue + "</a></td>");
 			}
 			//异常情况
 			if (table =="ycqktable"||table == "JTycqk") {
-				htmlArray.push("<td  class='ellipsis' ><a  title=\""+columnValue+"\" href='/jsjd/newNavIndex/yichangqingkuang/qchuizong.html'>" + columnValue + "</a></td>");
+				htmlArray.push("<td align='left' class='ellipsis' ><a  title=\""+columnValue+"\" href='/jsjd/newNavIndex/yichangqingkuang/qchuizong.html'>" + columnValue + "</a></td>");
 			};
 			//电厂考核
 			if(table=="dc_kaohe"){
-				htmlArray.push("<td  class='ellipsis' ><a  title=\"" + columnValue + "\" href='/jsjd/newNavIndex/kaohe/kaohe.html'>" + columnValue + "</a></td>");
+				htmlArray.push("<td align='left' class='ellipsis' ><a  title=\"" + columnValue + "\" href='/jsjd/newNavIndex/kaohe/kaohe.html'>" + columnValue + "</a></td>");
 			}
 			//集团定期实验
 			if(table =='JTdqsy'){
-				htmlArray.push("<td  class='ellipsis' ><a  title=\"" + columnValue + "\" href='/jsjd/newNavIndex/dingqishiyan/qchuizong.html' >" + columnValue + "</a></td>");
+				htmlArray.push("<td align='left' class='ellipsis' ><a  title=\"" + columnValue + "\" href='/jsjd/newNavIndex/dingqishiyan/qchuizong.html' >" + columnValue + "</a></td>");
 			}
 			//集团设备轮换
 			if(table=="JTsblh"){
-				htmlArray.push("<td  class='ellipsis' ><a  title=\"" + columnValue + "\" href='/jsjd/newNavIndex/shebeilunhuan/qchuizong.html' >" + columnValue + "</a></td>");
+				htmlArray.push("<td align='left' class='ellipsis' ><a  title=\"" + columnValue + "\" href='/jsjd/newNavIndex/shebeilunhuan/qchuizong.html' >" + columnValue + "</a></td>");
 			}
 			//集团机组起停
 			if(table == "JTjzqt"){
-				htmlArray.push("<td  class='ellipsis' ><a  title=\"" + columnValue + "\" href='/jsjd/jzqt/index.html' >" + columnValue + "</a></td>");
+				htmlArray.push("<td align='left' class='ellipsis' ><a  title=\"" + columnValue + "\" href='/jsjd/jzqt/index.html' >" + columnValue + "</a></td>");
 			}
 			if(table == "kaohehuizong"){
-				htmlArray.push("<td  class='ellipsis' ><a  title=\"" + columnValue + "\" href='/jsjd/newNavIndex/kaohe/kaohe.html' >" + columnValue + "</a></td>");
+				htmlArray.push("<td align='left' class='ellipsis' ><a  title=\"" + columnValue + "\" href='#' >" + columnValue + "</a></td>");
 			}
 			
 		//
@@ -1567,7 +1640,9 @@ function deleteDiv(id){
 		myChart.setOption(option);
 	}
 }
+
 //点击生成折线
+
 function clickOpenWindow(code,name,time_before,time_after,methods,points){ 
 	//获取选择的对比数据  放入到input保存
 	//alert(time_before);
