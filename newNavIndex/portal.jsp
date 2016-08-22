@@ -67,9 +67,12 @@
 	<div id="main" class="fl">
 		<div id="du_main">
 			<div class="wj_top">
-				<span id="time" style="color:#666;"></span>
+				<span id="time" style="color:#666;width:"></span>
 				<div id="FontScroll" style="float: left; height: 28px;line-height: 31px;overflow: hidden;font-size: 16px; font-weight: 100; color: red;">
-				  
+				    <ul>
+				        <li>宁东发电新高： 日发电量   43333万kWh       2016-07-10  月发电量               12.55亿kWh  2016-05 </li>
+				        <li>岱海发电新高： 日发电量   43333万kWh       2016-07-10  月发电量                12.55亿kWh  2016-05</li>
+				    </ul>
 				</div>
 				<ul>
 					<select id="spec" name="language" class="pull_down" style="display:none">
@@ -518,7 +521,7 @@
 						</div>
 						<!-- 集团   canvas1 -->
 						
-						<div class="jt-left-canvas fl" style="positon:relative;padding-top:20px;position:relative;">
+						<div class="jt-left-canvas fl" style="positon:relative;padding-top:20px;position:relative; top:-10px;">
 							<div id="hightchart" style="width:470px;height:240px;position:absolute"></div>							
 						</div>
 						<!-- <div class="jt-cs"><a href="/jsjd/main?xwl=23Z6S7B7RZLA">查询各厂测点指标</a></div>
@@ -539,7 +542,7 @@
 							</div>	
 							<div class="clearfix"></div>			
 						</div>
-						<div class="jt-right-canvas" style="clear:both;position:relative">
+						<div class="jt-right-canvas" style="clear:both;position:relative; top:-10px;">
 							<div id="totalFHL" class="baifenbi" title="运行机组负荷率"></div>
 							<div id="nd" class="baifenbi" title="当年时间进度"></div>
 							<div id="nd1" class="baifenbi"  title='当年发电量完成率'></div>
@@ -554,11 +557,26 @@
 							
 						</div>					
 						 <div class="jt-right-bottom">
-							 <div class="fl" style="width:33.3%;">运行机组负荷率</div>
-							<div class="fl" style="width:33.3%;">年发电量完成率</div>
-							<div class="fl" style="width:33.3%;">月发电量完成率</div>
+							  <div class="fl" style="width:33.3%;">运行机组负荷率</div>
+	                          <div class="fl" style="width:33.3%;">年发电量完成率</div>
+							  <div class="fl" style="width:33.3%;">月发电量完成率</div>
 						
-						</div> 
+						 </div>
+						 <div class="jt-right-bottom" style="top: -34px;">
+							 <div class="fl" style="width:33.3%;text-align:right;position:relative">
+								<div style="width: 45px;height: 5px;background: #008B00;position:absolute;margin: 6px 0;left: 21%;"></div>
+									运行机组负荷率
+	                         </div>
+	                         <div class="fl" style="text-indent: 13%;width:33.3%;position:relative;">
+									<div style="width:45px;height: 5px;background: #1a76cb;position:absolute;margin: 6px 0;left: 21%;"></div>
+									时间进度
+							</div>
+							<div class="fl" style="text-indent: 6%;width:33.3%;position:relative;">
+								<div style="width: 45px;height: 5px;background: #4da9fe;position:absolute;margin: 6px 0;left: 7%;"></div>
+								发电量完成率
+							</div>
+
+						 </div>
 					</div>
 				</div>	
 				<!--table3 -->
@@ -615,6 +633,7 @@
 							
 							<td style="width:23%">本月考核次数</td>
 							<td style="width:23%">本月考核金额</td>
+							
 							
 						</tr>
 					</thead>

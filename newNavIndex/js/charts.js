@@ -4,7 +4,6 @@
 
 function huanxing(id,color,value,shiji){
 			var myChart = echarts.init(document.getElementById(id));
-			
 			var labelTop = {
 				    normal : {
 				    	color:'#C7CEC7',
@@ -13,8 +12,7 @@ function huanxing(id,color,value,shiji){
 				            position : 'center'+5,
 				            formatter : '{b}',
 				            textStyle: {
-				                baseline : 'bottom',
-				                
+				                baseline : 'bottom'
 				            }
 				        },
 				        labelLine : {
@@ -68,12 +66,7 @@ function huanxing(id,color,value,shiji){
 			  	},
 			    series : [
 			        {
-			        	itemStyle:{
-			        		
-			        		normal:{
-			        			
-			        		}
-			        	},
+
 			            type : 'pie',
 			            center : ['50%', '52%'],
 			            radius : radius,
@@ -94,8 +87,6 @@ function huanxing(id,color,value,shiji){
 			
 			
 function huanxingshuju(){
-
-	
  	var url2=ctx+'/syzb.do?method=getAmounts';
 	$.ajax({
 	url:url2,
@@ -157,11 +148,9 @@ function huanxingshuju(){
 
 	
 function baoliuliangwei(data){
-				
 	var a=data.split(".");
 	var b=a[1].split('');
 	if(b.length<=2){
-		
 		return a[0]+'.'+b[0]+'0';
 	}else{
 		return a[0]+"."+b[0]+b[1];
@@ -177,7 +166,6 @@ function fixNumber(data){
 	}
 	
 }
-
 
 //昨日今日发电量
 function zuojin(){
@@ -553,16 +541,19 @@ function kuandu(){
             //name = 'Browser brands',
                     data = [{
                         y: percent,
-                        color: '#1A76CB',
+                        //color: '#1A76CB',
+						color: "#008B00",
                         drilldown: {
                             name: '',
                             categories: ['实时'],
                             data: [edata],
-                            color: colors[0]
+                           // color: colors[0]
+							color: "red",
                         }
                     }, {
                         y: 100 - percent,
                         color: "#9e9e9e",
+						//color: "#000",
                         drilldown: {
                             name: '剩余',
                             categories: ['实时'],

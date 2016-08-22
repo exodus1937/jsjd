@@ -264,7 +264,7 @@ function rootpath() {
 }
 rootpath();
 var rootPath = $('#url').val();
-//var data1={};
+
 
 
 

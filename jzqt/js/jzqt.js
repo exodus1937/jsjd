@@ -102,8 +102,9 @@ function jt_query(pagenum){
 				jt_flag=false;
 			}
 	   
-		   $("#jt_huizong").html(preparedata(data.exper,["NAME","STARTTIME","ENDTIME","FIRETIME","RUSHTIME","PARATIME","QT_DESC"],"jt_huizong"))
-		  
+		  $("#jt_huizong").html(preparedata(data.exper,["NAME","FIRETIME","RUSHTIME","PARATIME","ENDTIME","QT_DESC"],"jt_huizong"));
+		  $("#jt_huizong tr").find('td:nth-child(6n+1)').css({textAlign:"left",paddingLeft:"10px"})
+		  //$table.find('td:nth-child(4n+1)').css({maxWidth:"125px",textAlign:'left'});   
 	   }   
    })
 }
@@ -134,8 +135,11 @@ $("#org_id").change(function(){
 $("#org_id").change()
 function addjz(orgId){
 	$("#g_id").html("<option value=''></option>");
-	
-	
+	//console.log(orgId)
+	if(!orgId){
+		
+		orgId="c21834b4-1cb0-490f-a2a8-deeaf7f7e065"
+	}
 	var url = rootPath +"/portal/getLhJzInfo.do?orgId="+orgId;
 	$.ajax({
 		url:url,
@@ -156,6 +160,7 @@ function addjz(orgId){
 
 				}else{
 					j=arr[i];
+					continue;
 				}
 				
 				$("#g_id").append("<option value='"+j+"'>"+arr[i]+"</option>");
@@ -175,7 +180,7 @@ function jzqt_zonglan(orgID){
             method: "getJzqtNumByOrgid",
             orgid: orgID
         },
-         dataType:"json",
+        dataType:"json",
         success: function(data){
            
             var getTD = preparedata(data.pagedata,["G_ID","QDNUM","TJNUM","QDTIME","TJTIME","DAYS"],'zonglan');
@@ -226,6 +231,7 @@ function getColumnValue(table,column,columnValue,d){
 	if(column == "TJNUM"){
 		return "onclick=detail('"+d.ORGID+"','"+d.G_ID+"','TJ','1','true')";
 	}
+	
 	return columnValue;
 }
 //detail("c21834b4-1cb0-490f-a2a8-deeaf7f7e065",'1','QD');
@@ -341,6 +347,7 @@ function preparedataDetail(data,type,orgId){
 		var d = data.expr[i];
 		htmlArray.push("<tr>");
 		//判断从数据里读取
+		console.log(type)
 		if(d.NAME.indexOf("启动")>-1){
 			type = "QD"
 		}
@@ -348,8 +355,13 @@ function preparedataDetail(data,type,orgId){
 			type = "TJ" 
 		}
 
+
 		if(type=='TJ'){
-			$("#d_head td").eq(5).html("解列时间")
+			
+			$("#d_head td").eq(1).html("灭火时间")
+			$("#d_head td").eq(2).html("打闸时间")
+			$("#d_head td").eq(3).html("解列时间")
+			$("#d_head td").eq(4).html("盘车投入时间")
 			var msg='';
 			if(d.ADUIT_STATUS=='A'  && orgId==d.ORG_ID){
 				msg='填写';
@@ -367,19 +379,22 @@ function preparedataDetail(data,type,orgId){
 			}
 			//console.log(d);
 			
-			htmlArray.push("<td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.FIRETIME+"</td><td>"+d.RUSHTIME+"</td><td>"+d.PARATIME+"</td><td class='button link' id="+d.ID+" onclick=getvalue('"+d.ID+"','"+d.NAME+"',this)>"+msg+"</td>")
+			htmlArray.push("<td style='text-align:left'>"+d.NAME+"</td><td>"+d.FIRETIME+"</td><td>"+d.RUSHTIME+"</td><td>"+d.PARATIME+"</td><td>"+d.ENDTIME+"</td><td class='button link' id="+d.ID+" onclick=getvalue('"+d.ID+"','"+d.NAME+"',this)>"+msg+"</td>")
 			htmlArray.push("<td class='zhexian' id='"+JSON.stringify(data.KKS_CODE)+";"+JSON.stringify(data.KKS_NAME)+";"+d.STARTTIME+";"+d.ENDTIME+";"+JSON.stringify(data.POINT_MEAS)+"'><p><img src='img/qx.png' /></p></td>");
 			htmlArray.push('<td onclick=daocu("'+d.ID+'","'+type+'") class="link">查看</td>')
 			
 			
 		}else{
-			$("#d_head td").eq(5).html("并网时间")
+			$("#d_head td").eq(1).html("点火时间")
+			$("#d_head td").eq(2).html("冲车时间")
+			$("#d_head td").eq(3).html("并网时间")
+			$("#d_head td").eq(4).html("至50%负荷时间")
 			 msg='';
 			if(d.QT_DESC && d.QT_DESC.length>0){
-				msg=d.QT_DESC+'后启机';
+				msg=d.QT_DESC;
 			}
 			//console.log(d);
-		    htmlArray.push("<td>"+d.NAME+"</td><td>"+d.STARTTIME+"</td><td>"+d.ENDTIME+"</td><td>"+d.FIRETIME+"</td><td>"+d.RUSHTIME+"</td><td>"+d.PARATIME+"</td><td  class='button link'>"+msg+"</td>")
+		    htmlArray.push("<td style='text-align:left'>"+d.NAME+"</td><td>"+d.FIRETIME+"</td><td>"+d.RUSHTIME+"</td><td>"+d.PARATIME+"</td><td>"+d.ENDTIME+"</td><td  class='button link'>"+msg+"</td>")
 			htmlArray.push("<td class='zhexian' id='"+JSON.stringify(data.KKS_CODE)+";"+JSON.stringify(data.KKS_NAME)+";"+d.STARTTIME+";"+d.ENDTIME+";"+JSON.stringify(data.POINT_MEAS)+"'><p><img src='img/qx.png' /></p></td>");
 			htmlArray.push('<td onclick=daocu("'+d.ID+'","'+type+'") class="link">查看</td>')
 		}

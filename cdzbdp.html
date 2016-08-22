@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <style>
+        body,
+        button,
+        input,
+        select,
+        textarea,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: Microsoft YaHei, '宋体', Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+        }
+        
+        #wrap {
+            margin: 20px auto 0;
+            width: 96%;
+        }
+        
+        .select {
+            padding: 2px 0 3px 0;
+            height: 42px;
+            line-height: 38px;
+            text-align: center;
+            background-color: #f5f5f5;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #ddd;
+            margin: 0 0 4px 0;
+        }
+    </style>
+    <script>
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="wu_top0 select" style="">
+            <form class="form-inline">
+                <!-- <div class="left form-group" style="margin-left:30px;"><a href="kaohe.html">返回</a></div> -->
+
+                <div style="float:left;margin-right:5%">
+                    <div class="form-group ">
+                        <label class=" control-label left" style="float:left;    width: 40px;position: relative;" for="org">单位</label>
+                        <select  class="form-control col-sm-1" id="org">
+                            <option value="a61365e2-969d-4352-b3f8-805027ab9f1d">京能集团</option>
+                            <option value="c21834b4-1cb0-490f-a2a8-deeaf7f7e065">岱海发电</option>
+                            <option value="472212af-1977-462b-a74a-a1f36ed6562d">宁东发电</option>
+                        </select>
+                    </div>
+                    <div class="form-group ">
+                        <label class=" control-label left" style="float:left;    width: 40px;position: relative;" for="g_id">机组</label>
+                        <select name="g_id" class="form-control col-sm-1" id="g_id">
+                        <option value="1">#1</option>
+                        <option value="2">#2</option>
+                        <option value="3">#3</option>
+                        <option value="4">#4</option>
+                    </select>
+                    </div>
+
+
+                    <div class="form-group ">
+                        <label class=" control-label left" style="float:left;    width: 40px;position: relative;" for="sys">系统</label>
+                        <select name="choose" class="form-control col-sm-1" id="sys" style="width:200px;">
+                            <option>汽轮机本体及调节系统</option>
+                            <option>润滑油系统</option>
+                            <option>密封油系统</option>
+                            <option>EH油系统</option>
+                            <option>氢气系统</option>
+                            <option>旁路系统</option>
+                            <option>凝结水系统</option>
+                            <option>凝补水系统</option>
+                            <option>循环水系统</option>
+                            <option>闭式水系统</option>
+                            <option>定冷水系统</option>
+                            <option>高压加热器系统</option>
+                            <option>除氧器系统</option>
+                            <option>低加系统</option>
+                            <option>轴封系统</option>
+                            <option>抽真空系统</option>
+                            <option>汽水系统</option>
+                            <option>锅炉壁温</option>
+                            <option>风烟系统</option>
+                            <option>二次风系统</option>
+                            <option>制粉系统</option>
+                            <option>密封风系统</option>
+                            <option>燃油与火检系统</option>
+                            <option>环保</option>
+                            <option>化学</option>
+                            <option>电气专业温度监测</option>
+                            <option>密封油油系统</option>
+                            <option>给水泵组系统</option>
+                            <option>开式水系统</option>
+                            <option>低压加热器系统</option>
+                            <option>抽真空系统及疏水排汽系统</option>
+                            <option>锅炉汽水系统</option>
+                            <option>火检系统</option>
+                            <option>抽真空系统系统</option>
+                            <option>螺旋管水冷壁壁温</option>
+                            <option>垂直水冷壁壁温</option>
+                            <option>低温过热器壁温</option>
+                            <option>分隔屏壁温</option>
+                            <option>末级过热器壁温</option>
+                            <option>低温再热器壁温</option>
+                            <option>末级再热器壁温</option>
+                            <option>烟气系统</option>
+                            <option>磨煤机A制粉系统</option>
+                            <option>磨煤机B制粉系统</option>
+                            <option>磨煤机C制粉系统</option>
+                            <option>磨煤机D制粉系统</option>
+                            <option>磨煤机E制粉系统</option>
+                            <option>磨煤机F制粉系统</option>
+                            <option>燃油点火系统</option>
+                            <option>低温省煤器及采暖系统</option>
+                            <option>抽汽系统</option>
+                            <option>间接空冷系统</option>
+                            <option>辅助蒸汽系统</option>
+                            <option>主变</option>
+                            <option>发电机及励磁</option>
+                            <option>停机变</option>
+                            <option>高厂变及6KV厂用</option>
+                            <option>高厂变及7KV厂用</option>
+                            <option>高厂变及8KV厂用</option>
+                            <option>高厂变及9KV厂用</option>
+                            <option>高厂变及10KV厂用</option>
+                            <option>高厂变及11KV厂用</option>
+                            <option>高厂变及12KV厂用</option>
+                            <option>高厂变及13KV厂用</option>
+                            <option>高厂变及14KV厂用</option>
+                            <option>高厂变及15KV厂用</option>
+                            <option>高厂变及16KV厂用</option>
+                            <option>高厂变及17KV厂用</option>
+                            <option>高厂变及18KV厂用</option>
+                            <option>高厂变及19KV厂用</option>
+                            <option>高厂变及20KV厂用</option>
+                            <option>高厂变及21KV厂用</option>
+                            <option>高厂变及22KV厂用</option>
+                            <option>高厂变及23KV厂用</option>
+                            <option>高厂变及24KV厂用</option>
+                            <option>高厂变及25KV厂用</option>
+                            <option>高厂变及26KV厂用</option>
+                            <option>高厂变及27KV厂用</option>
+                            <option>高厂变及28KV厂用</option>
+                            <option>高厂变及29KV厂用</option>
+                            <option>高厂变及30KV厂用</option>
+                            <option>高厂变及31KV厂用</option>
+                            <option>高公变及6KV厂用</option>
+                            <option>高公变及7KV厂用</option>
+                            <option>高公变及8KV厂用</option>
+                            <option>高公变及9KV厂用</option>
+                            <option>高公变及10KV厂用</option>
+                            <option>高公变及11KV厂用</option>
+                            <option>高公变及12KV厂用</option>
+                            <option>高公变及13KV厂用</option>
+                            <option>高公变及14KV厂用</option>
+                            <option>高公变及15KV厂用</option>
+                            <option>高公变及16KV厂用</option>
+                            <option>公用6KV厂用段</option>
+                            <option>公用7KV厂用段</option>
+                            <option>公用8KV厂用段</option>
+                            <option>公用9KV厂用段</option>
+                            <option>公用10KV厂用段</option>
+                            <option>公用11KV厂用段</option>
+                            <option>公用12KV厂用段</option>
+                            <option>公用13KV厂用段</option>
+                            <option>公用14KV厂用段</option>
+                            <option>公用15KV厂用段</option>
+                            <option>公用16KV厂用段</option>
+                            <option>公用17KV厂用段</option>
+                            <option>公用18KV厂用段</option>
+                            <option>公用19KV厂用段</option>
+                            <option>公用20KV厂用段</option>
+                            <option>公用21KV厂用段</option>
+                            <option>公用22KV厂用段</option>
+                            <option>机炉PC段</option>
+                            <option>公用PC段</option>
+                            <option>保安PC段</option>
+                            <option>UPS及直流系统</option>
+                            <option>柴油发电机</option>
+                            <option>锅炉烟气系统</option>
+                            <option>磨煤机E制粉系统 </option>
+                            <option>密封风机系统</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group ">
+                        <label class=" control-label left" style="float:left;    width: 80px;position: relative;" for="code">测点编码</label>
+
+                        <input class="form-control col-sm-1" type="text" id="code" style="width:120px">
+                    </div>
+                    <div class="form-group ">
+                        <label class=" control-label left" style="float:left;    width: 80px;position: relative;" for="desc">测点描述</label>
+
+                        <input class="form-control col-sm-1" type="text" id="desc" style="width:120px">
+                    </div>
+                    <div class="form-group" style="margin-left:22px;">
+                        <button class="form-control col-sm-1 btn btn-primary" id="submit" style="">查询</button>
+                    </div>
+                </div>
+            </form>
+            <div class="fengge"></div>
+
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>单位</th>
+                    <th>专业</th>
+                    <th>机组</th>
+                    <th>系统</th>
+                    <th>测点编码</th>
+                    <th>测点描述</th>
+                    <th>计量单位</th>
+                    <th>量程下限</th>
+                    <th>量程上限</th>
+                    <th>实时值</th>
+
+                </tr>
+            </thead>
+            <tbody id="test">
+
+
+            
+            <tr><td>144</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>汽轮机本体及调节系统</td><td>NMDH:10TSI01AI035XQ01</td><td>汽机偏心度</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>145</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>润滑油系统</td><td>NMDH:10MAV42CE101xq01</td><td>交流润滑油泵电机电流</td><td>A</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>163</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>密封油系统</td><td>NMDH:10MKW02CL101xq01</td><td>发电机氢侧密封油箱油位</td><td>mm</td><td>420</td><td>0</td><td><tr></td></tr>
+            <tr><td>166</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>EH油系统</td><td>NMDH:10MAX12CE101xq01</td><td>EH油泵电机B电流</td><td>A</td><td>120</td><td>0</td><td><tr></td></tr>
+
+
+            <tr><td>174</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>旁路系统</td><td>NMDH:10BPY01AI021xq01</td><td>高旁入口蒸汽压力</td><td>MPa</td><td>20</td><td>0</td><td><tr></td></tr>
+            <tr><td>190</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>旁路系统</td><td>NMDH:10BPY01AI018xq01</td><td>低旁调阀2减温水开度</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>191</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>旁路系统</td><td>NMDH:10BPY01AI006xq01</td><td>低旁调阀1减温水压力</td><td>MPa</td><td>3</td><td>0</td><td><tr></td></tr>
+            <tr><td>192</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>旁路系统</td><td>NMDH:10BPY01AI007xq01</td><td>低旁调阀2减温水压力</td><td>MPa</td><td>3</td><td>0</td><td><tr></td></tr>
+
+            <tr><td>381</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCB10CE101xq01</td><td>凝泵变频器电流</td><td>A</td><td>253</td><td>0</td><td><tr></td></tr>
+            <tr><td>382</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCB10AP101GTxq01</td><td>凝泵变频器频率</td><td>Hz</td><td>50</td><td>0</td><td><tr></td></tr>
+            <tr><td>383</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA20CP101xq01</td><td>凝泵出口母管压力</td><td>MPa</td><td>6</td><td>0</td><td><tr></td></tr>
+            <tr><td>384</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA43CF101XQ01</td><td>#5低加出口凝结水流量1</td><td>T/h</td><td>1600</td><td>0</td><td><tr></td></tr>
+            <tr><td>385</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA43CF901XQ01</td><td>#5低加出口凝结水流量2</td><td>T/h</td><td>1600</td><td>0</td><td><tr></td></tr>
+            <tr><td>386</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA66CF101xq01</td><td>凝结水再循环水流量</td><td>T/h</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>387</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA61AA101GTxq01</td><td>凝结水再循环水调门反馈</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>388</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10MAG10CL101xq01</td><td>高压侧凝汽器液位1</td><td>mm</td><td>1200</td><td>0</td><td><tr></td></tr>
+            <tr><td>389</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10MAG10CL102xq01</td><td>高压侧凝汽器液位2</td><td>mm</td><td>1200</td><td>0</td><td><tr></td></tr>
+            <tr><td>390</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCB11CE101xq01</td><td>#1凝结水泵电动机电流</td><td>A</td><td>400</td><td>0</td><td><tr></td></tr>
+            <tr><td>391</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA11CP101xq01</td><td>#1凝结水泵入口压力</td><td>KPa</td><td>100</td><td>-100</td><td><tr></td></tr>
+            <tr><td>392</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA11CT201xq01</td><td>#1凝泵电机轴承温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>393</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA11CT202xq01</td><td>#1凝泵电机轴承温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>394</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA11CT203xq01</td><td>#1凝泵电机绕组温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>395</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA11CT204xq01</td><td>#1凝泵电机绕组温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>396</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA11CT205xq01</td><td>#1凝泵电机绕组温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>397</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA11CT206xq01</td><td>#1凝泵电机绕组温度4</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>398</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA11CT207xq01</td><td>#1凝泵电机绕组温度5</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>399</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA11CT208xq01</td><td>#1凝泵电机绕组温度6</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>400</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA11CT209xq01</td><td>#1凝泵轴承温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>401</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA11CT210xq01</td><td>#1凝泵轴承温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>402</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA11CT211xq01</td><td>#1凝泵轴承温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>403</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCB12CE101xq01</td><td>#2凝结水泵电动机电流</td><td>A</td><td>400</td><td>0</td><td><tr></td></tr>
+            <tr><td>404</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA12CP101xq01</td><td>#2凝结水泵入口压力</td><td>KPa</td><td>100</td><td>-100</td><td><tr></td></tr>
+            <tr><td>405</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA12CT201xq01</td><td>#2凝泵电机轴承温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>406</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA12CT202xq01</td><td>#2凝泵电机轴承温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>407</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA12CT203xq01</td><td>#2凝泵电机绕组温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>408</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA12CT204xq01</td><td>#2凝泵电机绕组温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>409</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA12CT209xq01</td><td>#2凝泵轴承温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>410</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA12CT210xq01</td><td>#2凝泵轴承温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>411</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝结水系统</td><td>NMDH:10LCA12CT211xq01</td><td>#2凝泵轴承温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>412</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝补水系统</td><td>NMDH:10LCP23CF101xq01</td><td>凝补水至热井流量2</td><td>T/h</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>413</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝补水系统</td><td>NMDH:10LCP01CL101xq01</td><td>凝补水箱液位</td><td>mm</td><td>8000</td><td>0</td><td><tr></td></tr>
+            <tr><td>414</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>凝补水系统</td><td>NMDH:10LCP26AA101gtxq01</td><td>凝补水箱补水调门开度</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>415</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>循环水系统</td><td>NMDH:10PAB21CP101xq01</td><td>凝汽器低压侧循环水进口压力1</td><td>KPa</td><td>400</td><td>0</td><td><tr></td></tr>
+            <tr><td>416</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>循环水系统</td><td>NMDH:10PAB41CP101xq01</td><td>凝汽器高压侧循环水出口压力1</td><td>KPa</td><td>400</td><td>0</td><td><tr></td></tr>
+            <tr><td>417</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>循环水系统</td><td>NMDH:10PAB22CP101xq01</td><td>凝汽器低压侧循环水进口压力2</td><td>KPa</td><td>400</td><td>0</td><td><tr></td></tr>
+            <tr><td>418</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>循环水系统</td><td>NMDH:10PAB42CP101xq01</td><td>凝汽器高压侧循环水出口压力2</td><td>KPa</td><td>400</td><td>0</td><td><tr></td></tr>
+            <tr><td>419</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>循环水系统</td><td>NMDH:10PAC11CE101xq01</td><td>#1循环水泵电流</td><td>A</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>420</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>循环水系统</td><td>NMDH:10PAC10CP101xq01</td><td>#1循泵出口压力</td><td>MPa</td><td>1.6</td><td>0</td><td><tr></td></tr>
+            <tr><td>421</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>循环水系统</td><td>NMDH:10PAC11CT309xq01</td><td>#1循泵电机轴承温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>422</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>循环水系统</td><td>NMDH:10PAC11CT310xq01</td><td>#1循泵电机轴承温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>423</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>循环水系统</td><td>NMDH:10PAC11CT311xq01</td><td>#1循泵电机轴承温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>424</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>循环水系统</td><td>NMDH:10PAC11CT307xq01</td><td>#1循泵轴承温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>425</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>循环水系统</td><td>NMDH:10PAC11CT308xq01</td><td>#1循泵轴承温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>426</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>循环水系统</td><td>NMDH:10PAC12CE101xq01</td><td>#2循环水泵电流</td><td>A</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>427</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>循环水系统</td><td>NMDH:10PAC12CP101xq01</td><td>#2循泵出口压力</td><td>MPa</td><td>1.6</td><td>0</td><td><tr></td></tr>
+            <tr><td>428</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>循环水系统</td><td>NMDH:10PAC12CT309xq01</td><td>#2循泵电机轴承温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>429</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>循环水系统</td><td>NMDH:10PAC12CT310xq01</td><td>#2循泵电机轴承温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>430</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>循环水系统</td><td>NMDH:10PAC12CT311xq01</td><td>#2循泵电机轴承温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>431</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>循环水系统</td><td>NMDH:10PAC12CT307xq01</td><td>#2循泵轴承温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>432</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>循环水系统</td><td>NMDH:10PAC12CT308xq01</td><td>#2循泵轴承温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>433</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>闭式水系统</td><td>NMDH:10PGB11CE101xq01</td><td>#1闭式循环水泵电流</td><td>A</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>434</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>闭式水系统</td><td>NMDH:10PGB12CE101xq01</td><td>#2闭式循环水泵电流</td><td>A</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>435</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>闭式水系统</td><td>NMDH:10PGB25CT301xq01</td><td>闭式水热交换器出口母管水温度</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+
+            <tr><td>470</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>高压加热器系统</td><td>NMDH:10LBQ30CP101xq01</td><td>3段抽汽压力</td><td>MPa</td><td>4</td><td>0</td><td><tr></td></tr>
+            <tr><td>471</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>高压加热器系统</td><td>NMDH:10LBQ30CT601xq01</td><td>3段抽汽温度</td><td>℃</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>472</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>除氧器系统</td><td>NMDH:10LAA10CL101xq01</td><td>除氧器水箱水位1</td><td>mm</td><td>3000</td><td>0</td><td><tr></td></tr>
+            <tr><td>473</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>除氧器系统</td><td>NMDH:10LAA10CL102xq01</td><td>除氧器水箱水位2</td><td>mm</td><td>3000</td><td>0</td><td><tr></td></tr>
+            <tr><td>474</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>除氧器系统</td><td>NMDH:10LAA10CL901xq01</td><td>除氧器水位测点</td><td>mm</td><td>3000</td><td>0</td><td><tr></td></tr>
+            <tr><td>475</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>除氧器系统</td><td>NMDH:10LAA10CP101xq01</td><td>除氧器压力</td><td>MPa</td><td>2</td><td>0</td><td><tr></td></tr>
+            <tr><td>476</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>除氧器系统</td><td>NMDH:10LAA10CT301xq01</td><td>除氧器水箱温度</td><td>℃</td><td>300</td><td>0</td><td><tr></td></tr>
+            <tr><td>477</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>除氧器系统</td><td>NMDH:10LBG18AA101GTxq01</td><td>辅助蒸汽至除氧器压力调节阀位置反馈</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>478</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>除氧器系统</td><td>NMDH:10LBG10CP101xq01</td><td>辅助蒸汽至除氧器供汽压力</td><td>MPa</td><td>2</td><td>0</td><td><tr></td></tr>
+            <tr><td>479</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>除氧器系统</td><td>NMDH:10LBG10CT601xq01</td><td>辅助蒸汽至除氧器供汽温度</td><td>℃</td><td>400</td><td>0</td><td><tr></td></tr>
+            <tr><td>480</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>除氧器系统</td><td>NMDH:10LBS40CP102xq01</td><td>四抽蒸汽至除氧器供汽压力</td><td>MPa</td><td>2</td><td>0</td><td><tr></td></tr>
+            <tr><td>481</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>除氧器系统</td><td>NMDH:10LBS40CT602xq01</td><td>四抽蒸汽至除氧器供汽温度</td><td>℃</td><td>400</td><td>0</td><td><tr></td></tr>
+            <tr><td>482</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>除氧器系统</td><td>NMDH:10LBQ40CP101XQ01</td><td>4段抽汽压力</td><td>MPa</td><td>2.5</td><td>0</td><td><tr></td></tr>
+            <tr><td>483</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>除氧器系统</td><td>NMDH:10LCA40AA101GTxq01</td><td>除氧器水位调节阀反馈</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>484</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>低加系统</td><td>NMDH:10LCC50CL101xq01</td><td>5号低加水位</td><td>mm</td><td>2130</td><td>0</td><td><tr></td></tr>
+            <tr><td>525</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>轴封系统</td><td>NMDH:10LCA30CL101xq01</td><td>轴封加热器液位</td><td>mm</td><td>435</td><td>0</td><td><tr></td></tr>
+            <tr><td>526</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>轴封系统</td><td>NMDH:10LCA30CT306xq01</td><td>轴封加热器入口温度</td><td>℃</td><td>400</td><td>0</td><td><tr></td></tr>
+            <tr><td>527</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>轴封系统</td><td>NMDH:10LCA40CT301xq01</td><td>轴封加热器出口温度</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>528</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>抽真空系统</td><td>NMDH:10MAJ50CE101xq01</td><td>#1真空泵电流</td><td>A</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>529</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>抽真空系统</td><td>NMDH:10MAJ50CP101xq01</td><td>#1真空泵入口压力</td><td>KPa</td><td>100</td><td>-100</td><td><tr></td></tr>
+            <tr><td>530</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>抽真空系统</td><td>NMDH:10MAJ60CE101xq01</td><td>#2真空泵电流</td><td>A</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>531</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>抽真空系统</td><td>NMDH:10MAJ60CP101xq01</td><td>#2真空泵入口压力</td><td>KPa</td><td>100</td><td>-100</td><td><tr></td></tr>
+            <tr><td>532</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>抽真空系统</td><td>NMDH:10MAJ70CE101xq01</td><td>#3真空泵电流</td><td>A</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>533</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>抽真空系统</td><td>NMDH:10MAJ70CP101xq01</td><td>#3真空泵入口压力</td><td>KPa</td><td>100</td><td>-100</td><td><tr></td></tr>
+            <tr><td>534</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>抽真空系统</td><td>NMDH:10MAJ20CE101xq01</td><td>水侧#1真空泵电流</td><td>A</td><td>300</td><td>0</td><td><tr></td></tr>
+            <tr><td>535</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>抽真空系统</td><td>NMDH:10MAJ20CP101xq01</td><td>水侧#1真空泵入口压力</td><td>KPa</td><td>100</td><td>-100</td><td><tr></td></tr>
+            <tr><td>536</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>抽真空系统</td><td>NMDH:10MAC01CT602xq01</td><td>低压缸（高压侧）排汽温度（外缸下半前右）</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>537</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>抽真空系统</td><td>NMDH:10MAC02CT602xq01</td><td>低压缸（低压侧）排汽温度（外缸下半前右）</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>538</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>抽真空系统</td><td>NMDH:10MAC01CT601xq01</td><td>低压缸（高压侧）排汽温度（外缸下半前右）</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>539</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>抽真空系统</td><td>NMDH:10MAC02CT601xq01</td><td>低压缸（低压侧）排汽温度（外缸下半前右）</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>540</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>抽真空系统</td><td>NMDH:10MAG01CP101xq01</td><td>凝汽器真空（高压侧）</td><td>KPa</td><td>100</td><td>-100</td><td><tr></td></tr>
+            <tr><td>541</td><td>岱海电厂</td><td>汽机</td><td>#1</td><td>抽真空系统</td><td>NMDH:10MAG02CP101xq01</td><td>凝汽器真空（低压侧）</td><td>KPa</td><td>100</td><td>-100</td><td><tr></td></tr>
+            <tr><td>542</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LAB40CP6101XQ01</td><td>给水压力1</td><td>MPa</td><td>40</td><td>0</td><td><tr></td></tr>
+            <tr><td>543</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LAB40CP6102XQ01</td><td>给水压力2</td><td>MPa</td><td>40</td><td>0</td><td><tr></td></tr>
+            <tr><td>544</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LAB40CT601XQ01</td><td>给水温度1</td><td>℃</td><td>350</td><td>0</td><td><tr></td></tr>
+            <tr><td>545</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LAB40CT602XQ01</td><td>给水温度2</td><td>℃</td><td>350</td><td>0</td><td><tr></td></tr>
+            <tr><td>546</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LAB40CT603XQ01</td><td>给水温度3</td><td>℃</td><td>350</td><td>0</td><td><tr></td></tr>
+            <tr><td>547</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAC10CT601XQ01</td><td>省煤器左侧出口温度</td><td>℃</td><td>350</td><td>0</td><td><tr></td></tr>
+            <tr><td>548</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAC10CT602XQ01</td><td>省煤器右侧出口温度</td><td>℃</td><td>350</td><td>0</td><td><tr></td></tr>
+            <tr><td>549</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAD01CP101XQ01</td><td>汽包压力1</td><td>MPa</td><td>25</td><td>0</td><td><tr></td></tr>
+            <tr><td>550</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAD01CP102XQ01</td><td>汽包压力2</td><td>MPa</td><td>25</td><td>0</td><td><tr></td></tr>
+            <tr><td>551</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAD01CP103XQ01</td><td>汽包压力3</td><td>MPa</td><td>25</td><td>0</td><td><tr></td></tr>
+            <tr><td>552</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAD01CL901XQ11</td><td>汽包水位1</td><td>mm</td><td>335</td><td>-335</td><td><tr></td></tr>
+            <tr><td>553</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAD01CL901XQ21</td><td>汽包水位2</td><td>mm</td><td>335</td><td>-335</td><td><tr></td></tr>
+            <tr><td>554</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAD01CL901XQ31</td><td>汽包水位3</td><td>mm</td><td>335</td><td>-335</td><td><tr></td></tr>
+            <tr><td>555</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAD01CL901XQ41</td><td>汽包水位4</td><td>mm</td><td>1345</td><td>-335</td><td><tr></td></tr>
+            <tr><td>556</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAD01CT201XQ01</td><td>汽包壁温测点1</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>557</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAD01CT202XQ01</td><td>汽包壁温测点2</td><td>℃</td><td>800</td><td>0</td><td><tr></td></tr>
+            <tr><td>558</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAD01CT203XQ01</td><td>汽包壁温测点3</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>559</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAD01CT204XQ01</td><td>汽包壁温测点4</td><td>℃</td><td>800</td><td>0</td><td><tr></td></tr>
+            <tr><td>560</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAD01CT205XQ01</td><td>汽包壁温测点5</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>561</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAD01CT206XQ01</td><td>汽包壁温测点6</td><td>℃</td><td>800</td><td>0</td><td><tr></td></tr>
+            <tr><td>562</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAD01CT209XQ01</td><td>汽包出口蒸汽温度1</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>563</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAD01CT208XQ01</td><td>汽包出口蒸汽温度2</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>564</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAD01CT207XQ01</td><td>汽包出口蒸汽温度3</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>565</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAH32CT602XQ01</td><td>一级过热器左侧出口温度</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>566</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAH32CT601XQ01</td><td>一级过热器右侧出口温度</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>567</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAH60CT604XQ01</td><td>左侧屏过入口温度1</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>568</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAH60CT605XQ01</td><td>左侧屏过入口温度2</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>569</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAH60CT606XQ01</td><td>左侧屏过入口温度3</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>570</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAH60CT601XQ01</td><td>右侧屏过入口温度1</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>571</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAH60CT602XQ01</td><td>右侧屏过入口温度2</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>572</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAH60CT603XQ01</td><td>右侧屏过入口温度3</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>573</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAH61CT603XQ01</td><td>左侧屏过出口温度1</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>574</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAH61CT604XQ01</td><td>左侧屏过出口温度2</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>575</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAH61CT601XQ01</td><td>右侧屏过出口温度1</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>576</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAH61CT602XQ01</td><td>右侧屏过出口温度2</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>577</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAH70CT601XQ01</td><td>二过入口左侧温度1</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>578</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAH70CT602XQ01</td><td>二过入口左侧温度2</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>579</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAH70CT603XQ01</td><td>二过入口右侧温度1</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>580</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAH70CT604XQ01</td><td>二过入口右侧温度2</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>581</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LBA10CT601XQ01</td><td>二过出口左侧温度1</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>582</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LBA10CT602XQ01</td><td>二过出口左侧温度2</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>583</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LBA10CT603XQ01</td><td>二过出口右侧温度1</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>584</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LBA10CP101XQ01</td><td>过热器出口压力</td><td>MPa</td><td>25</td><td>0</td><td><tr></td></tr>
+            <tr><td>585</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LBC10CP111XQ01</td><td>再热器入口压力</td><td>MPa</td><td>6</td><td>0</td><td><tr></td></tr>
+            <tr><td>586</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LBB10CP101XQ01</td><td>再热器出口压力</td><td>MPa</td><td>6</td><td>0</td><td><tr></td></tr>
+            <tr><td>587</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LBC11CT601XQ01</td><td>再热器入口温度1</td><td>℃</td><td>400</td><td>0</td><td><tr></td></tr>
+            <tr><td>588</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LBC11CT602XQ01</td><td>再热器入口温度2</td><td>℃</td><td>400</td><td>0</td><td><tr></td></tr>
+            <tr><td>589</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LBC11CT603XQ01</td><td>再热器入口温度3</td><td>℃</td><td>400</td><td>0</td><td><tr></td></tr>
+            <tr><td>590</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LBB10CT601XQ01</td><td>再热器出口温度1</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>591</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LBB10CT602XQ01</td><td>再热器出口温度2</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>592</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LBB10CT603XQ01</td><td>再热器出口温度3</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>593</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LAB60CP101XQ01</td><td>过热器减温水压力</td><td>MPa</td><td>40</td><td>0</td><td><tr></td></tr>
+            <tr><td>594</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LAB60CT301XQ01</td><td>过热器减温水温度</td><td>℃</td><td>300</td><td>0</td><td><tr></td></tr>
+            <tr><td>595</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LAB62CF101XQ01</td><td>过热器一级减温水左侧流量</td><td>T/h</td><td>250</td><td>0</td><td><tr></td></tr>
+            <tr><td>596</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LAB61CF101XQ01</td><td>过热器一级减温水右侧流量</td><td>T/h</td><td>250</td><td>0</td><td><tr></td></tr>
+            <tr><td>597</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LAB63CF101XQ01</td><td>过热器二级减温水右侧流量</td><td>T/h</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>598</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LAB64CF101XQ01</td><td>过热器二级减温水左侧流量</td><td>T/h</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>599</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LAB63CF101XQ10</td><td>过热器减温水总量</td><td>T/h</td><td>700</td><td>0</td><td><tr></td></tr>
+            <tr><td>600</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LAB62AA101GTXQ01</td><td>过热器一级减温水左侧调门</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>601</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LAB61AA101GTXQ01</td><td>过热器一级减温水右侧调门</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>602</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LAB64AA101GTXQ01</td><td>过热器二级减温水左侧调门</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>603</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LAB63AA101GTXQ01</td><td>过热器二级减温水右侧调门</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>604</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LAF20CP101XQ01</td><td>再热器减温水压力</td><td>MPa</td><td>20</td><td>0</td><td><tr></td></tr>
+            <tr><td>605</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LAF20CT301XQ01</td><td>再热器减温水温度</td><td>℃</td><td>300</td><td>0</td><td><tr></td></tr>
+            <tr><td>606</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LAF20CF101XQ01</td><td>再热器减温水流量</td><td>T/h</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>607</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LAF20AA101GTXQ01</td><td>再热器减温水调门</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>608</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LCL10CP101XQ01</td><td>连排压力</td><td>MPa</td><td>20</td><td>0</td><td><tr></td></tr>
+            <tr><td>609</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LCL10CF101XQ01</td><td>连排流量</td><td>T/h</td><td>30</td><td>0</td><td><tr></td></tr>
+            <tr><td>610</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LCL10AA101GTXQ01</td><td>连排调门开度</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>611</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LCQ10CL101XQ01</td><td>连排扩容器液位</td><td>mm</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>612</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LCL80AA101GTXQ01</td><td>连排至定排调门</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>613</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LCQ36AA101GTXQ01</td><td>定排减温水调门</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>614</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LCQ30CT301XQ01</td><td>定排水温</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>615</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10LCQ30CL101XQ01</td><td>定排水池液位</td><td>mm</td><td>3500</td><td>0</td><td><tr></td></tr>
+            <tr><td>616</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HCB10CP101XQ01</td><td>屏过吹灰压力</td><td>MPa</td><td>25</td><td>0</td><td><tr></td></tr>
+            <tr><td>617</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAC10AA101GTXQ01</td><td>再热器烟气挡板1</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>618</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAC10AA102GTXQ01</td><td>再热器烟气挡板2</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>619</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAC10AA103GTXQ01</td><td>再热器烟气挡板3</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>620</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAC10AA104GTXQ01</td><td>再热器烟气挡板4</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>621</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAC10AA105GTXQ01</td><td>再热器烟气挡板5</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>622</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAC10AA106GTXQ01</td><td>再热器烟气挡板6</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>623</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAC10AA107GTXQ01</td><td>过热器烟气挡板1</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>624</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAC10AA108GTXQ01</td><td>过热器烟气挡板2</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>625</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAC10AA109GTXQ01</td><td>过热器烟气挡板3</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>626</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAC10AA110GTXQ01</td><td>过热器烟气挡板4</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>627</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAC10AA111GTXQ01</td><td>过热器烟气挡板5</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>628</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAC10AA112GTXQ01</td><td>过热器烟气挡板6</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>629</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAC10AA113GTXQ01</td><td>过热器烟气挡板7</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>630</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>汽水系统</td><td>NMDH:10HAC10AA114GTXQ01</td><td>过热器烟气挡板8</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>631</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>锅炉壁温</td><td>NMDH:10HAH32CT201XQ01</td><td>一级过热汽出口管壁温度1</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>632</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>锅炉壁温</td><td>NMDH:10HAH32CT202XQ01</td><td>一级过热汽出口管壁温度2</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>633</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>锅炉壁温</td><td>NMDH:10HAH32CT203XQ01</td><td>一级过热汽出口管壁温度3</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>634</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>锅炉壁温</td><td>NMDH:10HAH32CT204XQ01</td><td>一级过热汽出口管壁温度4</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>635</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>锅炉壁温</td><td>NMDH:10HAH32CT205XQ01</td><td>一级过热汽出口管壁温度5</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>636</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>锅炉壁温</td><td>NMDH:10HAH32CT206XQ01</td><td>一级过热汽出口管壁温度6</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>637</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>锅炉壁温</td><td>NMDH:10HAH32CT207XQ01</td><td>一级过热汽出口管壁温度7</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>638</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>锅炉壁温</td><td>NMDH:10HAH32CT208XQ01</td><td>一级过热汽出口管壁温度8</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>639</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>锅炉壁温</td><td>NMDH:10HAH32CT209XQ01</td><td>一级过热汽出口管壁温度9</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>640</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>锅炉壁温</td><td>NMDH:10HAH32CT210XQ01</td><td>一级过热汽出口管壁温度10</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>641</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>锅炉壁温</td><td>NMDH:10HAH32CT211XQ01</td><td>一级过热汽出口管壁温度11</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>642</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>锅炉壁温</td><td>NMDH:10HAH32CT212XQ01</td><td>一级过热汽出口管壁温度12</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>643</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>锅炉壁温</td><td>NMDH:10HAH32CT213XQ01</td><td>一级过热汽出口管壁温度13</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>644</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>锅炉壁温</td><td>NMDH:10HAH32CT214XQ01</td><td>一级过热汽出口管壁温度14</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>645</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>锅炉壁温</td><td>NMDH:10HAH32CT215XQ01</td><td>一级过热汽出口管壁温度15</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>646</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>锅炉壁温</td><td>NMDH:10HAH32CT216XQ01</td><td>一级过热汽出口管壁温度16</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>647</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>锅炉壁温</td><td>NMDH:10HAH32CT217XQ01</td><td>一级过热汽出口管壁温度17</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>648</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>锅炉壁温</td><td>NMDH:10HAH32CT218XQ01</td><td>一级过热汽出口管壁温度18</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>649</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>锅炉壁温</td><td>NMDH:10HAH32CT219XQ01</td><td>一级过热汽出口管壁温度19</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>650</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>锅炉壁温</td><td>NMDH:10HAH32CT220XQ01</td><td>一级过热汽出口管壁温度20</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>651</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>锅炉壁温</td><td>NMDH:10HAH32CT221XQ01</td><td>一级过热汽出口管壁温度21</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>652</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>锅炉壁温</td><td>NMDH:10HAH32CT222XQ01</td><td>一级过热汽出口管壁温度22</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+             <tr><td>817</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF10CT317XQ01</td><td>#1一次风机电机线圈温度5</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>818</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF10CT318XQ01</td><td>#1一次风机电机线圈温度6</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>819</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF10CY101XQ01</td><td>#1一次风机振动测点1</td><td>μm</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>820</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF10CY102XQ01</td><td>#1一次风机振动测点2</td><td>μm</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>821</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF10CY103XQ01</td><td>#1一次风机振动测点3</td><td>μm</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>822</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF10CY104XQ01</td><td>#1一次风机振动测点4</td><td>μm</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>823</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20CE101XQ01</td><td>#2一次风机电流</td><td>A</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>824</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLE41CP101XQ01</td><td>#2一次机出口压力</td><td>Kpa</td><td>25</td><td>0</td><td><tr></td></tr>
+            <tr><td>825</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLE41CP102XQ01</td><td>#2冷一次风出口母管压力</td><td>Kpa</td><td>25</td><td>0</td><td><tr></td></tr>
+            <tr><td>826</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20AS101GTXQ01</td><td>#2一次风机动叶</td><td>%</td><td>100</td><td>0%</td><td><tr></td></tr>
+            <tr><td>827</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20DP101XQ01</td><td>#2一次风机入口风量</td><td>T/h</td><td>160</td><td>0</td><td><tr></td></tr>
+            <tr><td>828</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLE41CT301XQ01</td><td>#2一次风机出口风温</td><td>℃</td><td>50</td><td>-50</td><td><tr></td></tr>
+            <tr><td>829</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20CT307XQ01</td><td>#2一次风机推力轴承温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>830</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20CT308XQ01</td><td>#2一次风机推力轴承温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>831</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20CT309XQ01</td><td>#2一次风机推力轴承温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>832</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20CT301XQ01</td><td>#2一次风机驱动端轴承温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>833</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20CT302XQ01</td><td>#2一次风机驱动端轴承温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>834</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20CT303XQ01</td><td>#2一次风机驱动端轴承温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>835</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20CT304XQ01</td><td>#2一次风机非驱动端轴承温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>836</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20CT305XQ01</td><td>#2一次风机非驱动端轴承温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>837</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20CT306XQ01</td><td>#2一次风机非驱动端轴承温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>838</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20CT312XQ01</td><td>#2一次风机电机轴承温度1</td><td>℃</td><td>120</td><td>0</td><td><tr></td></tr>
+            <tr><td>839</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20CT311XQ01</td><td>#2一次风机电机轴承温度2</td><td>℃</td><td>120</td><td>0</td><td><tr></td></tr>
+            <tr><td>840</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20CT313XQ01</td><td>#2一次风机电机线圈温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>841</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20CT314XQ01</td><td>#2一次风机电机线圈温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>842</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20CT315XQ01</td><td>#2一次风机电机线圈温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>843</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20CT316XQ01</td><td>#2一次风机电机线圈温度4</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>844</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20CT317XQ01</td><td>#2一次风机电机线圈温度5</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>845</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20CT318XQ01</td><td>#2一次风机电机线圈温度6</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>846</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20CY101XQ01</td><td>#2一次风机振动测点1</td><td>μm</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>847</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20CY102XQ01</td><td>#2一次风机振动测点2</td><td>μm</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>848</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20CY103XQ01</td><td>#2一次风机振动测点3</td><td>μm</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>849</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLF20CY104XQ01</td><td>#2一次风机振动测点4</td><td>μm</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>850</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HYY00FF901XQ03</td><td>二次风总风量</td><td>T/h</td><td>5555</td><td>0</td><td><tr></td></tr>
+            <tr><td>851</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CE101XQ01</td><td>#1送风机电流</td><td>A</td><td>300</td><td>0</td><td><tr></td></tr>
+            <tr><td>852</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CP102XQ01</td><td>#1送风机出口风压</td><td>KPa</td><td>6</td><td>0</td><td><tr></td></tr>
+            <tr><td>853</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10AS101GTXQ01</td><td>#1送风机动叶</td><td>%</td><td>100</td><td>0%</td><td><tr></td></tr>
+            <tr><td>854</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10DP101XQ01</td><td>#1送风机入口风量</td><td>T/h</td><td>1130</td><td>0</td><td><tr></td></tr>
+            <tr><td>855</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CT330XQ01</td><td>#1送风机入口风温</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>856</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CT304XQ01</td><td>#1送风机推力轴承温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>857</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CT305XQ01</td><td>#1送风机推力轴承温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>858</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CT306XQ01</td><td>#1送风机推力轴承温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>859</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CT301XQ01</td><td>#1送风机驱动端轴承温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>860</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CT302XQ01</td><td>#1送风机驱动端轴承温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>861</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CT303XQ01</td><td>#1送风机驱动端轴承温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>862</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CT307XQ01</td><td>#1送风机非驱动端轴承温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>863</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CT308XQ01</td><td>#1送风机非驱动端轴承温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>864</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CT309XQ01</td><td>#1送风机非驱动端轴承温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>865</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CT312XQ01</td><td>#1送风机电机轴承温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>866</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CT311XQ01</td><td>#1送风机电机轴承温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>867</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CT316XQ01</td><td>#1送风机线圈温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>868</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CT317XQ01</td><td>#1送风机线圈温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>869</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CT318XQ01</td><td>#1送风机线圈温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>870</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CT319XQ01</td><td>#1送风机线圈温度4</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>871</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CT320XQ01</td><td>#1送风机线圈温度5</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>872</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CT321XQ01</td><td>#1送风机线圈温度6</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>873</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CY101XQ01</td><td>#1送风机风机振动测点1</td><td>μm</td><td>250</td><td>0</td><td><tr></td></tr>
+            <tr><td>874</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CY102XQ01</td><td>#1送风机风机振动测点2</td><td>μm</td><td>250</td><td>0</td><td><tr></td></tr>
+            <tr><td>875</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CY103XQ01</td><td>#1送风机风机振动测点3</td><td>μm</td><td>250</td><td>0</td><td><tr></td></tr>
+            <tr><td>876</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB10CY104XQ01</td><td>#1送风机风机振动测点4</td><td>μm</td><td>250</td><td>0</td><td><tr></td></tr>
+            <tr><td>877</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CE101XQ01</td><td>#2送风机电流</td><td>A</td><td>300</td><td>0</td><td><tr></td></tr>
+            <tr><td>878</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CP102XQ01</td><td>#2送风机出口风压</td><td>KPa</td><td>6</td><td>0</td><td><tr></td></tr>
+            <tr><td>879</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20AS101GTXQ01</td><td>#2送风机动叶</td><td>%</td><td>100</td><td>0%</td><td><tr></td></tr>
+            <tr><td>880</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20DP101XQ01</td><td>#2送风机入口风量</td><td>T/h</td><td>1130</td><td>0</td><td><tr></td></tr>
+            <tr><td>881</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CT330XQ01</td><td>#2送风机入口风温</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>882</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CT304XQ01</td><td>#2送风机推力轴承温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>883</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CT305XQ01</td><td>#2送风机推力轴承温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>884</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CT306XQ01</td><td>#2送风机推力轴承温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>885</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CT301XQ01</td><td>#2送风机驱动端轴承温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>886</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CT302XQ01</td><td>#2送风机驱动端轴承温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>887</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CT303XQ01</td><td>#2送风机驱动端轴承温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>888</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CT307XQ01</td><td>#2送风机非驱动端轴承温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>889</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CT308XQ01</td><td>#2送风机非驱动端轴承温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>890</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CT309XQ01</td><td>#2送风机非驱动端轴承温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>891</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CT312XQ01</td><td>#2送风机电机轴承温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>892</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CT311XQ01</td><td>#2送风机电机轴承温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>893</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CT316XQ01</td><td>#2送风机线圈温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>894</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CT317XQ01</td><td>#2送风机线圈温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>895</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CT318XQ01</td><td>#2送风机线圈温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>896</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CT319XQ01</td><td>#2送风机线圈温度4</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>897</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CT320XQ01</td><td>#2送风机线圈温度5</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>898</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CT321XQ01</td><td>#2送风机线圈温度6</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>899</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CY101XQ01</td><td>#2送风机风机振动测点1</td><td>μm</td><td>250</td><td>0</td><td><tr></td></tr>
+            <tr><td>900</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CY102XQ01</td><td>#2送风机风机振动测点2</td><td>μm</td><td>250</td><td>0</td><td><tr></td></tr>
+            <tr><td>901</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CY103XQ01</td><td>#2送风机风机振动测点3</td><td>μm</td><td>250</td><td>0</td><td><tr></td></tr>
+            <tr><td>902</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HLB20CY104XQ01</td><td>#2送风机风机振动测点4</td><td>μm</td><td>250</td><td>0</td><td><tr></td></tr>
+            <tr><td>903</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HNC10CE101XQ01</td><td>#1引风机电流</td><td>A</td><td>800</td><td>0</td><td><tr></td></tr>
+            <tr><td>904</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HNA50CT301XQ01</td><td>#1引风机入口烟温</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>905</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HNA70CT301XQ01</td><td>#1引风机出口烟温</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>906</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HNA50CP101XQ01</td><td>#1引风机入口烟气压力</td><td>KPa</td><td>10</td><td>-10</td><td><tr></td></tr>
+            <tr><td>907</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HNA70CP101XQ01</td><td>#1引风机出口烟气压力</td><td>KPa</td><td>10</td><td>-10</td><td><tr></td></tr>
+            <tr><td>908</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HNC10AS101GTXQ01</td><td>#1引风机动叶</td><td>%</td><td>100</td><td>0%</td><td><tr></td></tr>
+            <tr><td>909</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HNC10CT307XQ01</td><td>#1引风机推力轴承温度1</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>910</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>风烟系统</td><td>NMDH:10HNC10CT308XQ01</td><td>#1引风机推力轴承温度2</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+         <tr><td>1167</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC50CE101XQ01</td><td>15磨煤机电流</td><td>A</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1168</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFB50CE101XQ01</td><td>15给煤机电流</td><td>A</td><td>10</td><td>0</td><td><tr></td></tr>
+            <tr><td>1169</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC50CT322XQ01</td><td>15磨煤机电机非驱动端温度</td><td>℃</td><td>120</td><td>0</td><td><tr></td></tr>
+            <tr><td>1170</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC50CT321XQ01</td><td>15磨煤机电机驱动端温度</td><td>℃</td><td>120</td><td>0</td><td><tr></td></tr>
+            <tr><td>1171</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC50CT318XQ01</td><td>15磨煤机电机线圈温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1172</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC50CT319XQ01</td><td>15磨煤机电机线圈温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1173</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC50CT320XQ01</td><td>15磨煤机电机线圈温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1174</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC50CT323XQ01</td><td>15磨煤机磨辊温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1175</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC50CT324XQ01</td><td>15磨煤机磨辊温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1176</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC50CT325XQ01</td><td>15磨煤机磨辊温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1177</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC50CT312XQ01</td><td>15磨煤机出口温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1178</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC50CT313XQ01</td><td>15磨煤机出口温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1179</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC50CT314XQ01</td><td>15磨煤机出口温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1180</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC50CT315XQ01</td><td>15磨煤机出口温度4</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1181</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC50CT316XQ01</td><td>15磨煤机出口温度5</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1182</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC50CT317XQ01</td><td>15磨煤机出口温度6</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1183</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFE50CT601XQ01</td><td>15磨入口风温</td><td>℃</td><td>350</td><td>0</td><td><tr></td></tr>
+            <tr><td>1184</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10LBG22CT601XQ01</td><td>15磨防爆蒸汽温度</td><td>℃</td><td>300</td><td>0</td><td><tr></td></tr>
+            <tr><td>1185</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFE50CF101XQ02</td><td>15磨煤机一次风流量1</td><td>T/h</td><td>165</td><td>0</td><td><tr></td></tr>
+            <tr><td>1186</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFE50CF102XQ02</td><td>15磨煤机一次风流量2</td><td>T/h</td><td>165</td><td>0</td><td><tr></td></tr>
+            <tr><td>1187</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFE50CP101XQ01</td><td>15磨煤机一次风压力</td><td>KPa</td><td>25</td><td>0</td><td><tr></td></tr>
+            <tr><td>1188</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFW55DP101XQ01</td><td>15磨煤机一次风与密封风差压</td><td>KPa</td><td>10</td><td>0</td><td><tr></td></tr>
+            <tr><td>1189</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC50DP101XQ01</td><td>15磨煤机出入口差压</td><td>KPa</td><td>10</td><td>0</td><td><tr></td></tr>
+            <tr><td>1190</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC50CP101XQ01</td><td>15磨煤机出口压力</td><td>KPa</td><td>20</td><td>0</td><td><tr></td></tr>
+            <tr><td>1191</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFG51CP101XQ01</td><td>15磨煤机加载力</td><td>MPa</td><td>25</td><td>0</td><td><tr></td></tr>
+            <tr><td>1192</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10LBG22CP101XQ01</td><td>15磨防爆蒸汽压力</td><td>MPa</td><td>1</td><td>0</td><td><tr></td></tr>
+            <tr><td>1193</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFE51AA101GTXQ01</td><td>15磨煤机冷一次风调门</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1194</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFE50AA101GTXQ01</td><td>15磨煤机热一次风调门</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1195</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10LFA50CL101XQ01</td><td>15制粉系统煤斗煤位</td><td>m</td><td>12</td><td>0</td><td><tr></td></tr>
+            <tr><td>1196</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFB60AF101GTXQ01</td><td>16制粉系统煤量</td><td>T/h</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1197</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC60CE101XQ01</td><td>16磨煤机电流</td><td>A</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1198</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFB60CE101XQ01</td><td>16给煤机电流</td><td>A</td><td>10</td><td>0</td><td><tr></td></tr>
+            <tr><td>1199</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC60CT322XQ01</td><td>16磨煤机电机非驱动端温度</td><td>℃</td><td>120</td><td>0</td><td><tr></td></tr>
+            <tr><td>1200</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC60CT321XQ01</td><td>16磨煤机电机驱动端温度</td><td>℃</td><td>120</td><td>0</td><td><tr></td></tr>
+            <tr><td>1201</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC60CT318XQ01</td><td>16磨煤机电机线圈温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1202</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC60CT319XQ01</td><td>16磨煤机电机线圈温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1203</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC60CT320XQ01</td><td>16磨煤机电机线圈温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1204</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC60CT323XQ01</td><td>16磨煤机磨辊温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1205</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC60CT324XQ01</td><td>16磨煤机磨辊温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1206</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC60CT325XQ01</td><td>16磨煤机磨辊温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1207</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFE60CT601XQ01</td><td>16磨入口风温</td><td>℃</td><td>350</td><td>0</td><td><tr></td></tr>
+            <tr><td>1208</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC60CT312XQ01</td><td>16磨煤机出口温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1209</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC60CT313XQ01</td><td>16磨煤机出口温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1210</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC60CT314XQ01</td><td>16磨煤机出口温度3</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1211</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC60CT315XQ01</td><td>16磨煤机出口温度4</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1212</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC60CT316XQ01</td><td>16磨煤机出口温度5</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1213</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC60CT317XQ01</td><td>16磨煤机出口温度6</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1214</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10LBG22CT601XQ01</td><td>16磨防爆蒸汽温度</td><td>℃</td><td>300</td><td>0</td><td><tr></td></tr>
+            <tr><td>1215</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFE60CF101XQ02</td><td>16磨煤机一次风流量1</td><td>T/h</td><td>165</td><td>0</td><td><tr></td></tr>
+            <tr><td>1216</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFE60CF102XQ02</td><td>16磨煤机一次风流量2</td><td>T/h</td><td>165</td><td>0</td><td><tr></td></tr>
+            <tr><td>1217</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFE60CP101XQ01</td><td>16磨煤机一次风压力</td><td>KPa</td><td>25</td><td>0</td><td><tr></td></tr>
+            <tr><td>1218</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFW56DP101XQ01</td><td>16磨煤机一次风与密封风差压</td><td>KPa</td><td>10</td><td>0</td><td><tr></td></tr>
+            <tr><td>1219</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC60DP101XQ01</td><td>16磨煤机出入口差压</td><td>KPa</td><td>10</td><td>0</td><td><tr></td></tr>
+            <tr><td>1220</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFC60CP101XQ01</td><td>16磨煤机出口压力</td><td>KPa</td><td>20</td><td>0</td><td><tr></td></tr>
+            <tr><td>1221</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFG61CP101XQ01</td><td>16磨煤机加载力</td><td>MPa</td><td>25</td><td>0</td><td><tr></td></tr>
+            <tr><td>1222</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10LBG22CP101XQ01</td><td>16磨防爆蒸汽压力</td><td>MPa</td><td>1</td><td>0</td><td><tr></td></tr>
+            <tr><td>1223</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFE61AA101GTXQ01</td><td>16磨煤机冷一次风调门</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1224</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10HFE60AA101GTXQ01</td><td>16磨煤机热一次风调门</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1225</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>制粉系统</td><td>NMDH:10LFA60CL101XQ01</td><td>16制粉系统煤斗煤位</td><td>m</td><td>12</td><td>0</td><td><tr></td></tr>
+            <tr><td>1226</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>密封风系统</td><td>NMDH:10HFW50CP101XQ01</td><td>密封风机出口风压</td><td>KPa</td><td>25</td><td>0</td><td><tr></td></tr>
+            <tr><td>1227</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>密封风系统</td><td>NMDH:10HFW10CE101XQ01</td><td>#1密封风机电流</td><td>A</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1228</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>密封风系统</td><td>NMDH:10HFW10CT301XQ01</td><td>#1密封风机轴承温度1</td><td>℃</td><td>120</td><td>0</td><td><tr></td></tr>
+            <tr><td>1229</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>密封风系统</td><td>NMDH:10HFW10CT302XQ01</td><td>#1密封风机轴承温度2</td><td>℃</td><td>120</td><td>0</td><td><tr></td></tr>
+            <tr><td>1230</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>密封风系统</td><td>NMDH:10HFW10CT303XQ01</td><td>#1密封风机电机轴承温度1</td><td>℃</td><td>120</td><td>0</td><td><tr></td></tr>
+            <tr><td>1231</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>密封风系统</td><td>NMDH:10HFW10CT304XQ01</td><td>#1密封风机电机轴承温度2</td><td>℃</td><td>120</td><td>0</td><td><tr></td></tr>
+            <tr><td>1232</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>密封风系统</td><td>NMDH:10HFW10CT306XQ01</td><td>#1密封风机电机线圈温度1</td><td>℃</td><td>120</td><td>0</td><td><tr></td></tr>
+            <tr><td>1233</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>密封风系统</td><td>NMDH:10HFW10CT307XQ01</td><td>#1密封风机电机线圈温度2</td><td>℃</td><td>120</td><td>0</td><td><tr></td></tr>
+      <tr><td>1286</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA40CH111XQ01</td><td>D1油枪火检模拟量</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1287</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA40CH112XQ01</td><td>D2油枪火检模拟量</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1288</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA40CH113XQ01</td><td>D3油枪火检模拟量</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1289</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA40CH114XQ01</td><td>D4油枪火检模拟量</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1290</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA40CH115XQ01</td><td>D5油枪火检模拟量</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1291</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA40CH116XQ01</td><td>D6油枪火检模拟量</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1292</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA40CH101XQ01</td><td>D1磨火检模拟量</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1293</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA40CH102XQ01</td><td>D2磨火检模拟量</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1294</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA40CH103XQ01</td><td>D3磨火检模拟量</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1295</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA40CH104XQ01</td><td>D4磨火检模拟量</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1296</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA40CH105XQ01</td><td>D5磨火检模拟量</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1297</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA40CH106XQ01</td><td>D6磨火检模拟量</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1298</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA50CH111XQ01</td><td>E1油枪火检模拟量</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1299</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA50CH112XQ01</td><td>E2油枪火检模拟量</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1300</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA50CH113XQ01</td><td>E3油枪火检模拟量</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1301</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA50CH114XQ01</td><td>E4油枪火检模拟量</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1302</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA50CH115XQ01</td><td>E5油枪火检模拟量</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1303</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA50CH116XQ01</td><td>E6油枪火检模拟量</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1304</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA50CH101XQ01</td><td>E1磨火检模拟量</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1305</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA50CH102XQ01</td><td>E2磨火检模拟量</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1306</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA50CH103XQ01</td><td>E3磨火检模拟量</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+      <tr><td>1355</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA60CH027ZG01</td><td>F4油枪火检信号</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1356</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA60CH029ZG01</td><td>F5油枪火检信号</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1357</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HHA60CH031ZG01</td><td>F6油枪火检信号</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1358</td><td>岱海电厂</td><td>锅炉</td><td>#1</td><td>燃油与火检系统</td><td>NMDH:10HJQ30CP101XQ01</td><td>火检风机母管压力</td><td>KPa</td><td>10</td><td>0</td><td><tr></td></tr>
+            <tr><td>1359</td><td>岱海电厂</td><td>外围</td><td>#1</td><td>环保</td><td>NMDH:10CJA08DU001XQ10</td><td>机组燃用原煤总量</td><td>t</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1360</td><td>岱海电厂</td><td>外围</td><td>#1</td><td>环保</td><td>NMDH:10HTA50CQ003</td><td>烟尘排放浓度</td><td>mg/m3</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1361</td><td>岱海电厂</td><td>外围</td><td>#1</td><td>环保</td><td>NMDH:10HTA50CQ001</td><td>二氧化硫排放浓度</td><td>mg/m3</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1362</td><td>岱海电厂</td><td>外围</td><td>#1</td><td>环保</td><td>NMDH:10HSA10CT602XQ01</td><td>脱硝A侧入口烟温</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1363</td><td>岱海电厂</td><td>外围</td><td>#1</td><td>环保</td><td>NMDH:10HSA10CQ101XQ01</td><td>脱硝A侧入口Nox浓度</td><td>mg/m3</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1364</td><td>岱海电厂</td><td>外围</td><td>#1</td><td>环保</td><td>NMDH:10HSA10CQ103XQ01</td><td>脱硝A侧出口Nox浓度</td><td>mg/m3</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1365</td><td>岱海电厂</td><td>外围</td><td>#1</td><td>环保</td><td>NMDH:10HSA10CQ101XQ03</td><td>A侧脱硝效率</td><td>%</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1366</td><td>岱海电厂</td><td>外围</td><td>#1</td><td>环保</td><td>NMDH:10HSA20CT602XQ01</td><td>脱硝B侧入口烟温</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1367</td><td>岱海电厂</td><td>外围</td><td>#1</td><td>环保</td><td>NMDH:10HSA20CQ101XQ01</td><td>脱硝B侧入口Nox浓度</td><td>mg/m3</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1368</td><td>岱海电厂</td><td>外围</td><td>#1</td><td>环保</td><td>NMDH:10HSA20CQ103XQ01</td><td>脱硝B侧出口Nox浓度</td><td>mg/m3</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1369</td><td>岱海电厂</td><td>外围</td><td>#1</td><td>环保</td><td>NMDH:10HSA20CQ101XQ03</td><td>B侧脱硝效率</td><td>%</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1370</td><td>岱海电厂</td><td>外围</td><td>#1</td><td>环保</td><td>NMDH:10HTA50CQ004</td><td>脱硫总排口Nox浓度</td><td>mg/m3</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1371</td><td>岱海电厂</td><td>外围</td><td>#1</td><td>环保</td><td>NMDH:10HTA50CQ002</td><td>脱硫出口O2浓度</td><td>mg/m3</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1372</td><td>岱海电厂</td><td>外围</td><td>#1</td><td>环保</td><td>NMDH:10HTA50CF001</td><td>脱硫出口烟气流量</td><td>m3/s</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1373</td><td>岱海电厂</td><td>外围</td><td>#1</td><td>环保</td><td>NMDH:10HTA50CQ002</td><td>脱硫出口O2浓度</td><td>%</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1374</td><td>岱海电厂</td><td>外围</td><td>#1</td><td>环保</td><td>NMDH:30HTA10CQ-CAL</td><td>综合脱硫效率</td><td>mg/m3</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1375</td><td>岱海电厂</td><td>外围</td><td>#1</td><td>化学</td><td>NMDH:QSQY_10QUC10CQ102A</td><td>1号机凝结水泵出口溶氧</td><td>#1</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1376</td><td>岱海电厂</td><td>外围</td><td>#1</td><td>化学</td><td>NMDH:QSQY_10QUC10CQ101A</td><td>1号机凝结水泵出口氢电导率</td><td>μs/cm</td><td>1</td><td>0</td><td><tr></td></tr>
+            <tr><td>1421</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT627XQ01</td><td>发电机定子上层线圈出水温度U相27</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1422</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT628XQ01</td><td>发电机定子上层线圈出水温度U相28</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1423</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT629XQ01</td><td>发电机定子上层线圈出水温度U相29</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1424</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT630XQ01</td><td>发电机定子上层线圈出水温度U相30</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1425</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT631XQ01</td><td>发电机定子上层线圈出水温度U相31</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1426</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT632XQ01</td><td>发电机定子上层线圈出水温度W相32</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1427</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT633XQ01</td><td>发电机定子上层线圈出水温度W相33</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1428</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT634XQ01</td><td>发电机定子上层线圈出水温度W相34</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1429</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT635XQ01</td><td>发电机定子上层线圈出水温度W相35</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1430</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT636XQ01</td><td>发电机定子上层线圈出水温度W相36</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1431</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT637XQ01</td><td>发电机定子上层线圈出水温度W相37</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1432</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT638XQ01</td><td>发电机定子上层线圈出水温度W相38</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1433</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT639XQ01</td><td>发电机定子上层线圈出水温度V相39</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1434</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT640XQ01</td><td>发电机定子上层线圈出水温度V相40</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1435</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT641XQ01</td><td>发电机定子上层线圈出水温度V相41</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1436</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT642XQ01</td><td>发电机定子上层线圈出水温度V相42</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1437</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT643XQ01</td><td>发电机定子下层线圈出水温度V相1</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1438</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT644XQ01</td><td>发电机定子下层线圈出水温度V相2</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1439</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT645XQ01</td><td>发电机定子下层线圈出水温度V相3</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1440</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT646XQ01</td><td>发电机定子下层线圈出水温度V相4</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1441</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT647XQ01</td><td>发电机定子下层线圈出水温度V相5</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1442</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT648XQ01</td><td>发电机定子下层线圈出水温度V相6</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1443</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT649XQ01</td><td>发电机定子下层线圈出水温度V相7</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1444</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT650XQ01</td><td>发电机定子下层线圈出水温度V相8</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1445</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT651XQ01</td><td>发电机定子下层线圈出水温度V相9</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1446</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT652XQ01</td><td>发电机定子下层线圈出水温度V相10</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1447</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT653XQ01</td><td>发电机定子下层线圈出水温度V相11</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1448</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT654XQ01</td><td>发电机定子下层线圈出水温度V相12</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1449</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT655XQ01</td><td>发电机定子下层线圈出水温度V相13</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1450</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT656XQ01</td><td>发电机定子下层线圈出水温度V相14</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1451</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT657XQ01</td><td>发电机定子下层线圈出水温度V相15</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1452</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT658XQ01</td><td>发电机定子下层线圈出水温度V相16</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1453</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT659XQ01</td><td>发电机定子下层线圈出水温度V相17</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1454</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT660XQ01</td><td>发电机定子下层线圈出水温度V相18</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1455</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT661XQ01</td><td>发电机定子下层线圈出水温度V相19</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1456</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT662XQ01</td><td>发电机定子下层线圈出水温度V相20</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1457</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT663XQ01</td><td>发电机定子下层线圈出水温度V相21</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1458</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT664XQ01</td><td>发电机定子下层线圈出水温度V相22</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1459</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT665XQ01</td><td>发电机定子下层线圈出水温度V相23</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1460</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT666XQ01</td><td>发电机定子下层线圈出水温度V相24</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1461</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT667XQ01</td><td>发电机定子下层线圈出水温度V相25</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1462</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT668XQ01</td><td>发电机定子下层线圈出水温度V相26</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1463</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT669XQ01</td><td>发电机定子下层线圈出水温度V相27</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1464</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT670XQ01</td><td>发电机定子下层线圈出水温度V相28</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1465</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT671XQ01</td><td>发电机定子下层线圈出水温度V相29</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1466</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT672XQ01</td><td>发电机定子下层线圈出水温度V相30</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1467</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT673XQ01</td><td>发电机定子下层线圈出水温度V相31</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1468</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT674XQ01</td><td>发电机定子下层线圈出水温度V相32</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1469</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT675XQ01</td><td>发电机定子下层线圈出水温度V相33</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1470</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT676XQ01</td><td>发电机定子下层线圈出水温度V相34</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1471</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT677XQ01</td><td>发电机定子下层线圈出水温度V相35</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1472</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT678XQ01</td><td>发电机定子下层线圈出水温度V相36</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1473</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT679XQ01</td><td>发电机定子下层线圈出水温度V相37</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1474</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT680XQ01</td><td>发电机定子下层线圈出水温度V相38</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1475</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT681XQ01</td><td>发电机定子下层线圈出水温度V相39</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1476</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT682XQ01</td><td>发电机定子下层线圈出水温度V相40</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1477</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT683XQ01</td><td>发电机定子下层线圈出水温度V相41</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1478</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT684XQ01</td><td>发电机定子下层线圈出水温度V相42</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1479</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKA01CT601XQ01</td><td>发电机铁心温度33-34</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1480</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKA01CT602XQ01</td><td>发电机铁心温度35-36</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1481</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKA01CT603XQ01</td><td>发电机铁心温度36-37</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1482</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKA01CT604XQ01</td><td>发电机铁心温度37-38</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1483</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKA01CT606XQ01</td><td>发电机铁心温度40-41</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1484</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKA01CT607XQ01</td><td>发电机铁心温度35-36</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1485</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKA01CT608XQ01</td><td>发电机铁心温度37-38</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1486</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKA01CT609XQ01</td><td>发电机铁心温度39-40</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1487</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKA01CT610XQ01</td><td>发电机铁心温度34</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1488</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKA01CT611XQ01</td><td>发电机铁心温度35</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1489</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKA01CT612XQ01</td><td>发电机铁心温度36</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1490</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKA01CT613XQ01</td><td>发电机铁心温度37</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1491</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKA01CT614XQ01</td><td>发电机铁心温度39</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1492</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKA01CT615XQ01</td><td>发电机铁心温度40</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1493</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKA01CT616XQ01</td><td>发电机铁心温度34-35</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1494</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT685XQ01</td><td>发电机定子线圈出水处温度</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1495</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT686XQ01</td><td>发电机定子线圈出水处温度</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1496</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT687XQ01</td><td>发电机定子线圈出水处温度</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1497</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT688XQ01</td><td>发电机定子线圈出水处温度</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1498</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT689XQ01</td><td>发电机定子线圈出水处温度</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1499</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKE01CT690XQ01</td><td>发电机定子线圈出水处温度</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1500</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10DEH01AI119XQ001</td><td>发电机定冷水出口温度</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1501</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10BAT01CT002XQ001</td><td>主变A相油1</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1502</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10BAT02CT003XQ001</td><td>主变A相油2</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1503</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10BAT02CT002XQ001</td><td>主变B相油1</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1504</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10BAT02CT003XQ001</td><td>主变B相油2</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1505</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10BAT03CT002XQ001</td><td>主变C相油1</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1506</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10BAT03CT003XQ001</td><td>主变C相油2</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1507</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10BAT01CT001XQ001</td><td>主变A相绕组温度</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1508</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10BAT02CT001XQ001</td><td>主变B相绕组温度</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1509</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10BAT03CT001XQ002</td><td>主变C相绕组温度</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1510</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10BBT01CT002XQ001</td><td>高厂变油温</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1511</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10BBT01CT001XQ001</td><td>高厂变绕组温度</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1512</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:AOBHA01A02-WD1</td><td>脱硫变油温</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1513</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:AOBHA01A01-WD1</td><td>脱硫变绕组温度</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1514</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKC01CT301XQ01</td><td>励磁变压器温度1</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1515</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKC01CT302XQ01</td><td>励磁变压器温度2</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1516</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKC01CT303XQ01</td><td>励磁变压器温度3</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1517</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKH01CT345XQ01</td><td>发电机励磁端冷氢温度</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1518</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:10MKH01CT346XQ01</td><td>发电机励磁端热氢温度</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1519</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:QBB2012DZZHKGXQ01</td><td>启备变油温</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1520</td><td>岱海电厂</td><td>电气</td><td>#1</td><td>电气专业温度监测</td><td>NMDH:QBB2011DZZHKGXQ01</td><td>启备变绕组温度</td><td>℃</td><td>--</td><td>--</td><td><tr></td></tr>
+            <tr><td>1521</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20DEH01AI005XQ01</td><td>机组有功功率</td><td></td><td></td><td></td><td><tr></td></tr>
+            <tr><td>1522</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI036XQ01</td><td>汽机转速</td><td>rpm</td><td>5000</td><td>0</td><td><tr></td></tr><tr><td>1583</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20DEH01AI116xq01</td><td>10号轴承金属温度</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>1584</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20DEH01AI117xq01</td><td>11号轴承金属温度</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>1585</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MAD10CT601xq01</td><td>1号轴承回油温度</td><td>℃</td><td>150</td><td>-50</td><td><tr></td></tr>
+            <tr><td>1586</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MAD20CT601xq01</td><td>2号轴承回油温度</td><td>℃</td><td>150</td><td>-50</td><td><tr></td></tr>
+            <tr><td>1587</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MAD23CT601xq01</td><td>推力轴承前轴承回油温度</td><td>℃</td><td>150</td><td>-50</td><td><tr></td></tr>
+            <tr><td>1588</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MAD24CT601xq01</td><td>推力轴承后轴承回油温度</td><td>℃</td><td>150</td><td>-50</td><td><tr></td></tr>
+            <tr><td>1589</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MAD30CT601xq01</td><td>3号轴承回油温度</td><td>℃</td><td>150</td><td>-50</td><td><tr></td></tr>
+            <tr><td>1590</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MAD40CT601xq01</td><td>4号轴承回油温度</td><td>℃</td><td>150</td><td>-50</td><td><tr></td></tr>
+            <tr><td>1591</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MAD50CT601xq01</td><td>5号轴承回油温度</td><td>℃</td><td>150</td><td>-50</td><td><tr></td></tr>
+            <tr><td>1592</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MAD60CT601xq01</td><td>6号轴承回油温度</td><td>℃</td><td>150</td><td>-50</td><td><tr></td></tr>
+            <tr><td>1593</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MAD70CT601xq01</td><td>7号轴承回油温度</td><td>℃</td><td>150</td><td>-50</td><td><tr></td></tr>
+            <tr><td>1594</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MAD80CT601xq01</td><td>8号轴承回油温度</td><td>℃</td><td>150</td><td>-50</td><td><tr></td></tr>
+            <tr><td>1595</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MKD10CT601Axq01</td><td>9号轴承回油温度</td><td>℃</td><td>150</td><td>-50</td><td><tr></td></tr>
+            <tr><td>1596</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MKD20CT601Axq01</td><td>10号轴承回油温度</td><td>℃</td><td>150</td><td>-50</td><td><tr></td></tr>
+            <tr><td>1597</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI037XQ01</td><td>主机缸胀1</td><td>mm</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1598</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI039XQ01</td><td>高压缸胀差</td><td>mm</td><td>10</td><td>-10</td><td><tr></td></tr>
+            <tr><td>1599</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI040XQ01</td><td>低压缸胀差</td><td>mm</td><td>40</td><td>-10</td><td><tr></td></tr>
+            <tr><td>1600</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI038XQ01</td><td>零转速</td><td>rpm</td><td>99.99</td><td>0</td><td><tr></td></tr>
+            <tr><td>1601</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI001XQ01</td><td>相对振动1X</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1602</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI002XQ01</td><td>相对振动1Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1603</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI003XQ01</td><td>绝对振动1Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1604</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI045XQ01</td><td>壳体振动1Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1605</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI004XQ01</td><td>相对振动2X</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1606</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI005XQ01</td><td>相对振动2Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1607</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI006XQ01</td><td>绝对振动2Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1608</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI046XQ01</td><td>壳体振动2Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1609</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI056XQ01</td><td>新增相对振动2X</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1610</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI058XQ01</td><td>新增相对振动2Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1611</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI059XQ01</td><td>新增绝对振动2Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1612</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI057XQ01</td><td>新增壳体振动2Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1613</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI007XQ01</td><td>相对振动3X</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1614</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI008XQ01</td><td>相对振动3Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1615</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI009XQ01</td><td>绝对振动3Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1616</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI047XQ01</td><td>壳体振动3Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1617</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI010XQ01</td><td>相对振动4X</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1618</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI011XQ01</td><td>相对振动4Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1619</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI012XQ01</td><td>绝对振动4Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1620</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI048XQ01</td><td>壳体振动4Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1621</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI013XQ01</td><td>相对振动5X</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1622</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI014XQ01</td><td>相对振动5Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1623</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI015XQ01</td><td>绝对振动5Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1624</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI049XQ01</td><td>壳体振动5Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1625</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI016XQ01</td><td>相对振动6X</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1626</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI017XQ01</td><td>相对振动6Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1627</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI018XQ01</td><td>绝对振动6Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1628</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI050XQ01</td><td>壳体振动6Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1629</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI019XQ01</td><td>相对振动7X</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1630</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI020XQ01</td><td>相对振动7Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1631</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI021XQ01</td><td>绝对振动7Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1632</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI051XQ01</td><td>壳体振动7Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1633</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI022XQ01</td><td>相对振动8X</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1634</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI023XQ01</td><td>相对振动8Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1635</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI024XQ01</td><td>绝对振动8Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1636</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI052XQ01</td><td>壳体振动8Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1637</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI025XQ01</td><td>相对振动9X</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1638</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI026XQ01</td><td>相对振动9Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1639</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI027XQ01</td><td>绝对振动9Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1640</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI053XQ01</td><td>壳体振动9Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1641</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI028XQ01</td><td>相对振动10X</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1642</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI01AI029XQ01</td><td>相对振动10Y</td><td>μm</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1664</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>润滑油系统</td><td>NMDH:20MAV42CE101xq01</td><td>交流润滑油泵电机电流</td><td>A</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1665</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>润滑油系统</td><td>NMDH:20MAV41CE101xq01</td><td>直流油泵电机电流</td><td>A</td><td>400</td><td>0</td><td><tr></td></tr>
+            <tr><td>1666</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>润滑油系统</td><td>NMDH:20MAV10CE101xq01</td><td>高备泵电机电流</td><td>A</td><td>60</td><td>0</td><td><tr></td></tr>
+            <tr><td>1667</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>润滑油系统</td><td>NMDH:20MAV50CT302xq01</td><td>润滑油温度</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1668</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>润滑油系统</td><td>NMDH:20MAV50CP101xq01</td><td>润滑油压力</td><td>MPa</td><td>1</td><td>0</td><td><tr></td></tr>
+            <tr><td>1669</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>润滑油系统</td><td>NMDH:20MAV61CE101xq01</td><td>顶轴油泵1电流</td><td>A</td><td>250</td><td>0</td><td><tr></td></tr>
+            <tr><td>1670</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>润滑油系统</td><td>NMDH:20MAV62CE101xq01</td><td>顶轴油泵2电流</td><td>A</td><td>250</td><td>0</td><td><tr></td></tr>
+            <tr><td>1671</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>润滑油系统</td><td>NMDH:20MAV63CP101xq01</td><td>顶轴油母管压力</td><td>MPa</td><td>16</td><td>0</td><td><tr></td></tr>
+            <tr><td>1672</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>润滑油系统</td><td>NMDH:20MAV01CL101xq01</td><td>主油箱油位</td><td>mm</td><td>2000</td><td>0</td><td><tr></td></tr>
+            <tr><td>1673</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>润滑油系统</td><td>NMDH:20MAK10CE101xq01</td><td>盘车电流</td><td>A</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1674</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>润滑油系统</td><td>NMDH:20MKW01CP101xq01</td><td>发电机排烟风机真空压力1</td><td>Pa</td><td>1000</td><td>-4000</td><td><tr></td></tr>
+            <tr><td>1675</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>密封油油系统</td><td>NMDH:20MKW42CE101xq01</td><td>发电机空侧#1密封油泵电流</td><td>A</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1676</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>密封油油系统</td><td>NMDH:20MKW43CE101xq01</td><td>发电机直流密封油泵电流</td><td>A</td><td>400</td><td>0</td><td><tr></td></tr>
+            <tr><td>1677</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>密封油油系统</td><td>NMDH:20MKW71CE101xq01</td><td>发电机氢侧#1密封油泵电流</td><td>A</td><td>60</td><td>0</td><td><tr></td></tr>
+            <tr><td>1678</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>密封油油系统</td><td>NMDH:20MKW72CE101xq01</td><td>发电机氢侧#2密封油泵电流</td><td>A</td><td>60</td><td>0</td><td><tr></td></tr>
+            <tr><td>1679</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>密封油油系统</td><td>NMDH:20MKW62CT301xq01</td><td>发电机空侧密封油温度</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1680</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>密封油油系统</td><td>NMDH:20MKW82CT302xq01</td><td>发电机励端氢侧密封油温度</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1681</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>密封油油系统</td><td>NMDH:20MKW82CT301xq01</td><td>发电机汽端氢侧密封油温度</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1682</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>密封油油系统</td><td>NMDH:20MKW02CL101xq01</td><td>发电机氢侧密封油箱油位</td><td>mm</td><td>420</td><td>0</td><td><tr></td></tr>
+            <tr><td>1683</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>密封油油系统</td><td>NMDH:20DEH01AI120xq01</td><td>氢油侧差压</td><td>MPa</td><td>0.2</td><td>0</td><td><tr></td></tr>
+            <tr><td>1684</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>EH油系统</td><td>NMDH:20MAX20CP107xq01</td><td>EH油压力</td><td>MPa</td><td>20</td><td>0</td><td><tr></td></tr>
+            <tr><td>1685</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>EH油系统</td><td>NMDH:20MAX11CE101xq01</td><td>EH油泵电机A电流</td><td>A</td><td>120</td><td>0</td><td><tr></td></tr>
+            <tr><td>1686</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>EH油系统</td><td>NMDH:20MAX12CE101xq01</td><td>EH油泵电机B电流</td><td>A</td><td>120</td><td>0</td><td><tr></td></tr>
+            <tr><td>1687</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>EH油系统</td><td>NMDH:20MAX01CL101xq01</td><td>EH油箱油位</td><td>mm</td><td>1000</td><td>0</td><td><tr></td></tr>
+            <tr><td>1688</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>氢气系统</td><td>NMDH:20DEH01AI122xq01</td><td>氢气纯度</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1689</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>氢气系统</td><td>NMDH:20MKH01CT345xq01</td><td>励端冷氢温度</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1690</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>氢气系统</td><td>NMDH:20MKH01CT343xq01</td><td>汽端冷氢温度</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1691</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>氢气系统</td><td>NMDH:20MKH01CT344xq01</td><td>汽端热氢温度</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1692</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>氢气系统</td><td>NMDH:20MKH01CT346xq01</td><td>励端热氢温度</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1693</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>氢气系统</td><td>NMDH:20DEH01AI121xq01</td><td>氢气压力</td><td>MPa</td><td>0.85</td><td>0</td><td><tr></td></tr>
+            <tr><td>1694</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>旁路系统</td><td>NMDH:20BPY01AI021xq01</td><td>高旁入口蒸汽压力</td><td>MPa</td><td>20</td><td>0</td><td><tr></td></tr>
+            <tr><td>1695</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>旁路系统</td><td>NMDH:20BPY01AI003xq01</td><td>高旁入口蒸汽温度</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>1696</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>旁路系统</td><td>NMDH:20BPY01AI022xq01</td><td>高旁后温度</td><td>℃</td><td>400</td><td>200</td><td><tr></td></tr>
+            <tr><td>1697</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>旁路系统</td><td>NMDH:20BPY01AI013xq01</td><td>高旁后流量</td><td>T/h</td><td>750</td><td>0</td><td><tr></td></tr>
+            <tr><td>1698</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>旁路系统</td><td>NMDH:20BPY01AI015xq01</td><td>高旁调阀开度</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1699</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>旁路系统</td><td>NMDH:20BPY01AI016xq01</td><td>高旁减温水调门开度</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1700</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>旁路系统</td><td>NMDH:20BPY01AI023xq01</td><td>低旁入口蒸汽压力</td><td>MPa</td><td>6</td><td>0</td><td><tr></td></tr>
+            <tr><td>1701</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>旁路系统</td><td>NMDH:20LBB13CP101xq01</td><td>低压旁路后蒸汽压力</td><td>MPa</td><td>4</td><td>0</td><td><tr></td></tr>
+            <tr><td>1702</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>旁路系统</td><td>NMDH:20LBB14CP101xq01</td><td>低压旁路后蒸汽压力</td><td>MPa</td><td>4</td><td>0</td><td><tr></td></tr>
+            <tr><td>1703</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>旁路系统</td><td>NMDH:20BPY01AI004xq01</td><td>低旁入口蒸汽温度</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>1704</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>旁路系统</td><td>NMDH:20LBB13CT601xq01</td><td>低压旁路后蒸汽温度</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>1705</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>旁路系统</td><td>NMDH:20LBB14CT601xq01</td><td>低压旁路后蒸汽温度</td><td>℃</td><td>600</td><td>0</td><td><tr></td></tr>
+            <tr><td>1706</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>旁路系统</td><td>NMDH:20BPY01AI014xq01</td><td>低旁后流量</td><td>T/h</td><td>750</td><td>0</td><td><tr></td></tr>
+            <tr><td>1707</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>旁路系统</td><td>NMDH:20BPY01AI017xq01</td><td>低旁调阀1开度</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1708</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>旁路系统</td><td>NMDH:20BPY01AI020xq01</td><td>低旁调阀2开度</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1709</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>旁路系统</td><td>NMDH:20BPY01AI019xq01</td><td>低旁调阀1减温水开度</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1710</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>旁路系统</td><td>NMDH:20BPY01AI018xq01</td><td>低旁调阀2减温水开度</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1711</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>旁路系统</td><td>NMDH:20BPY01AI006xq01</td><td>低旁调阀1减温水压力</td><td>MPa</td><td>3</td><td>0</td><td><tr></td></tr>
+            <tr><td>1712</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td>旁路系统</td><td>NMDH:20BPY01AI007xq01</td><td>低旁调阀2减温水压力</td><td>MPa</td><td>3</td><td>0</td><td><tr></td></tr>
+            <tr><td>1713</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20HAD01CP101xq01</td><td>汽包压力1</td><td>MPa</td><td>25</td><td>0</td><td><tr></td></tr>
+            <tr><td>1714</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20lba10cf901xq01</td><td>主蒸汽流量</td><td>T/h</td><td>2500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1715</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAB40CF103xq01</td><td>锅炉给水流量3</td><td>T/h</td><td>2500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1716</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAB40CF101xq01</td><td>锅炉给水流量1</td><td>T/h</td><td>2500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1717</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAB40CF102xq01</td><td>锅炉给水流量2</td><td>T/h</td><td>2500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1718</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MEH01FA101xq01</td><td>#1小汽机转速</td><td>rpm</td><td>5700</td><td>0</td><td><tr></td></tr>
+            <tr><td>1719</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAB10CP101xq01</td><td>#1汽动给水泵入口压力</td><td>MPa</td><td>2</td><td>0</td><td><tr></td></tr>
+            <tr><td>1720</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAB10CP102xq01</td><td>#1汽动给水泵出口压力</td><td>MPa</td><td>40</td><td>0</td><td><tr></td></tr>
+            <tr><td>1721</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAE21CP101xq01</td><td>#1汽动给水泵增压级压力</td><td>MPa</td><td>40</td><td>0</td><td><tr></td></tr>
+            <tr><td>1722</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAF21CP101xq01</td><td>#1汽动给水泵中间抽头压力</td><td>MPa</td><td>16</td><td>0</td><td><tr></td></tr>
+            <tr><td>1723</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAC10CE101xq01</td><td>#1汽动给水泵前置泵电机电流</td><td>A</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1724</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAW25CT301xq01</td><td>#1汽泵非驱动端密封液温度</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1725</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK21CT201xq01</td><td>#1汽泵非驱动端轴承温度</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1726</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAW21CT301xq01</td><td>#1汽泵驱动端密封液温度</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1727</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK20CT201xq01</td><td>#1汽泵驱动端轴承温度</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1728</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK22CT203xq01</td><td>#1汽泵推力轴承温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1729</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK22CT204xq01</td><td>#1汽泵推力轴承温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1730</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK33CT201Axq01</td><td>#1汽泵前置泵电机后轴承温度</td><td>℃</td><td>160</td><td>0</td><td><tr></td></tr>
+            <tr><td>1731</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK32CT201Axq01</td><td>#1汽泵前置泵电机前轴承温度</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1732</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAC03CT307xq01</td><td>#1汽泵前置泵电机绕组温度1</td><td>℃</td><td>160</td><td>0</td><td><tr></td></tr>
+            <tr><td>1733</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAC03CT308xq01</td><td>#1汽泵前置泵电机绕组温度2</td><td>℃</td><td>160</td><td>0</td><td><tr></td></tr>
+            <tr><td>1734</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAC03CT309xq01</td><td>#1汽泵前置泵电机绕组温度3</td><td>℃</td><td>160</td><td>0</td><td><tr></td></tr>
+            <tr><td>1735</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAC03CT310xq01</td><td>#1汽泵前置泵电机绕组温度4</td><td>℃</td><td>160</td><td>0</td><td><tr></td></tr>
+            <tr><td>1736</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAC03CT311xq01</td><td>#1汽泵前置泵电机绕组温度5</td><td>℃</td><td>160</td><td>0</td><td><tr></td></tr>
+            <tr><td>1737</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAC03CT312xq01</td><td>#1汽泵前置泵电机绕组温度6</td><td>℃</td><td>160</td><td>0</td><td><tr></td></tr>
+            <tr><td>1738</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAW33CT301xq01</td><td>#1汽泵前置泵非驱动端机械密封循环液温度</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1739</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK30CT201xq01</td><td>#1汽泵前置泵非驱动端轴承温度TAZ010</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1740</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAW31CT301xq01</td><td>#1汽泵前置泵驱动端机械密封循环液温度</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1741</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK31CT201xq01</td><td>#1汽泵前置泵驱动端轴承温度TAZ010</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1742</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MEH10AI018xq01</td><td>#1小机非驱动端轴承温度</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1743</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MEH10AI019xq01</td><td>#1小机驱动端轴承温度</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1744</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MEH10AI009xq01</td><td>#1小机推力轴承温度1</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1745</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MEH10AI010xq01</td><td>#1小机推力轴承温度2</td><td> </td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1746</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MEH10AI011xq01</td><td>#1小机推力轴承温度3</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1747</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MEH10AI012xq01</td><td>#1小机推力轴承温度4</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1748</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MEH10AI013xq01</td><td>#1小机推力轴承温度5</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1749</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MEH10AI014xq01</td><td>#1小机推力轴承温度6</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1750</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI03FY106xq01</td><td>#1小汽机后轴承振动</td><td>μm</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1751</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI03FY107xq01</td><td>#1小汽机后轴承振动</td><td>μm</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1752</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI03FY104xq01</td><td>#1小汽机前轴承振动</td><td>μm</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1753</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI03FY105xq01</td><td>#1小汽机前轴承振动</td><td>μm</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1754</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI03FY101xq01</td><td>#1小汽机轴向位移</td><td>mm</td><td>1</td><td>-1</td><td><tr></td></tr>
+            <tr><td>1755</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI03FY102xq01</td><td>#1小汽机轴向位移</td><td>mm</td><td>1</td><td>-1</td><td><tr></td></tr>
+            <tr><td>1756</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI03FY103xq01</td><td>#1小汽机轴向位移</td><td>mm</td><td>1</td><td>-1</td><td><tr></td></tr>
+            <tr><td>1757</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI03FY110xq01</td><td>#1汽动给水泵后轴承振动</td><td>μm</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1758</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI03FY111xq01</td><td>#1汽动给水泵后轴承振动</td><td>μm</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1759</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI03FY108xq01</td><td>#1汽动给水泵前轴承振动</td><td>μm</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1760</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI03FY109xq01</td><td>#1汽动给水泵前轴承振动</td><td>μm</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1761</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAB10CF103xq01</td><td>#1汽泵前置泵入口流量3</td><td>T/h</td><td>1400</td><td>0</td><td><tr></td></tr>
+            <tr><td>1762</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAB10CF102xq01</td><td>#1汽泵前置泵入口流量2</td><td>T/h</td><td>1400</td><td>0</td><td><tr></td></tr>
+            <tr><td>1763</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAB10CF101xq01</td><td>#1汽泵前置泵入口流量1</td><td>T/h</td><td>1400</td><td>0</td><td><tr></td></tr>
+            <tr><td>1764</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAB12AA101GTxq01</td><td>#1汽动给水泵最小流量调阀位置反馈</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1765</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LBC31CP102xq01</td><td>#1小汽机低压进汽压力</td><td>MPa</td><td>4</td><td>0</td><td><tr></td></tr>
+            <tr><td>1766</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20XAG10CP101xq01</td><td>#1小汽机排汽压力</td><td>KPa</td><td>0</td><td>-100</td><td><tr></td></tr>
+            <tr><td>1767</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20XAV20CP101xq01</td><td>#1小汽机事故油泵出口压力</td><td>MPa</td><td>1.6</td><td>0</td><td><tr></td></tr>
+            <tr><td>1768</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20XAV20ET101xq01</td><td>#1小汽机事故油泵电流</td><td>A</td><td>80</td><td>0</td><td><tr></td></tr>
+            <tr><td>1769</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20XAV21CE101xq01</td><td>#1小汽机1号主油泵电流</td><td>A</td><td>300</td><td>0</td><td><tr></td></tr>
+            <tr><td>1770</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20XAV22CE101xq01</td><td>#1小汽机2号主油泵电流</td><td>A</td><td>300</td><td>0</td><td><tr></td></tr>
+            <tr><td>1771</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20XAV25CP101xq01</td><td>#1汽泵润滑油供油母管压力</td><td>MPa</td><td>1.6</td><td>0</td><td><tr></td></tr>
+            <tr><td>1772</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20XAV26CE101xq01</td><td>#1汽泵顶轴油泵马达电流</td><td>A</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1773</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20XAG10CT301xq01</td><td>#1小汽机排汽温度</td><td>℃</td><td>400</td><td>0</td><td><tr></td></tr>
+            <tr><td>1774</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LBC35CP101xq01</td><td>#1小汽机高压进汽压力</td><td>MPa</td><td>4</td><td>0</td><td><tr></td></tr>
+            <tr><td>1775</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LBR20CF101xq01</td><td>#1小汽机低压进汽流量</td><td>T/h</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1776</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LBR20CP101xq01</td><td>#1小汽机低压进汽压力</td><td>MPa</td><td>4</td><td>0</td><td><tr></td></tr>
+            <tr><td>1777</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20XAV22CP101xq01</td><td>#1小汽机主油泵出口母管压力</td><td>MPa</td><td>1.6</td><td>0</td><td><tr></td></tr>
+            <tr><td>1778</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20XAV25CT301xq01</td><td>#1汽泵润滑油供油母管温度</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1779</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20XAB01CT601xq01</td><td>#1汽泵汽轮机进汽温度</td><td>℃</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1780</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MEH02FA101xq01</td><td>#2小汽机转速</td><td>rpm</td><td>5700</td><td>0</td><td><tr></td></tr>
+            <tr><td>1781</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAB20CP101xq01</td><td>#2汽动给水泵入口压力</td><td>MPa</td><td>2</td><td>0</td><td><tr></td></tr>
+            <tr><td>1782</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAB20CP102xq01</td><td>#2汽动给水泵出口压力</td><td>MPa</td><td>40</td><td>0</td><td><tr></td></tr>
+            <tr><td>1783</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAE31CP101xq01</td><td>#2汽动给水泵增压级压力</td><td>MPa</td><td>40</td><td>0</td><td><tr></td></tr>
+            <tr><td>1784</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAF31CP101xq01</td><td>#2汽动给水泵中间抽头压力</td><td>MPa</td><td>16</td><td>0</td><td><tr></td></tr>
+            <tr><td>1785</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAC20CE101xq01</td><td>#2汽动给水泵前置泵电机电流</td><td>A</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1786</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAW45CT301xq01</td><td>#2汽泵非驱动端密封液温度</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1787</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK41CT201xq01</td><td>#2汽泵非驱动端轴承温度</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1788</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAW41CT301xq01</td><td>#2汽泵驱动端密封液温度</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1789</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK40CT201xq01</td><td>#2汽泵驱动端轴承温度</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1790</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK42CT203xq01</td><td>#2汽泵推力轴承温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1791</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK42CT204xq01</td><td>#2汽泵推力轴承温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1792</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK53CT201Axq01</td><td>#2汽泵前置泵电机后轴承温度</td><td>℃</td><td>160</td><td>0</td><td><tr></td></tr>
+            <tr><td>1793</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK52CT201Axq01</td><td>#2汽泵前置泵电机前轴承温度</td><td>℃</td><td>160</td><td>0</td><td><tr></td></tr>
+            <tr><td>1794</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAC05CT308xq01</td><td>#2汽泵前置泵电机绕组温度1</td><td>℃</td><td>160</td><td>0</td><td><tr></td></tr>
+            <tr><td>1795</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAC05CT309xq01</td><td>#2汽泵前置泵电机绕组温度2</td><td>℃</td><td>160</td><td>0</td><td><tr></td></tr>
+            <tr><td>1796</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAC05CT310xq01</td><td>#2汽泵前置泵电机绕组温度3</td><td>℃</td><td>160</td><td>0</td><td><tr></td></tr>
+            <tr><td>1797</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAC05CT311xq01</td><td>#2汽泵前置泵电机绕组温度4</td><td>℃</td><td>160</td><td>0</td><td><tr></td></tr>
+            <tr><td>1798</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAC05CT312xq01</td><td>#2汽泵前置泵电机绕组温度5</td><td>℃</td><td>160</td><td>0</td><td><tr></td></tr>
+            <tr><td>1799</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAC05CT307xq01</td><td>#2汽泵前置泵电机绕组温度6</td><td>℃</td><td>160</td><td>0</td><td><tr></td></tr>
+            <tr><td>1800</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAW53CT301xq01</td><td>#2汽泵前置泵非驱动端机械密封循环液温度</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1801</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK50CT201xq01</td><td>#2汽泵前置泵非驱动端轴承温度</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1802</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAW51CT301xq01</td><td>#2汽泵前置泵驱动端机械密封循环液温度</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1803</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK51CT201xq01</td><td>#2汽泵前置泵驱动端轴承温度</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1804</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MEH20AI018xq01</td><td>#2小机非驱动端轴承温度</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1805</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MEH20AI019xq01</td><td>#2小机驱动端轴承温度</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1806</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MEH20AI009xq01</td><td>#2小机推力轴承温度1</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1807</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MEH20AI010xq01</td><td>#2小机推力轴承温度2</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1808</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MEH20AI011xq01</td><td>#2小机推力轴承温度3</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1809</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MEH20AI012xq01</td><td>#2小机推力轴承温度4</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1810</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MEH20AI013xq01</td><td>#2小机推力轴承温度5</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1811</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20MEH20AI014xq01</td><td>#2小机推力轴承温度6</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1812</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI04FY106xq01</td><td>#2小汽机后轴承振动</td><td>μm</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1813</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI04FY107xq01</td><td>#2小汽机后轴承振动</td><td>μm</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1814</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI04FY104xq01</td><td>#2小汽机前轴承振动</td><td>μm</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1815</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI04FY105xq01</td><td>#2小汽机前轴承振动</td><td>μm</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1816</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI04FY101xq01</td><td>#2小汽机轴向位移</td><td>mm</td><td>1</td><td>-1</td><td><tr></td></tr>
+            <tr><td>1817</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI04FY102xq01</td><td>#2小汽机轴向位移</td><td>mm</td><td>1</td><td>-1</td><td><tr></td></tr>
+            <tr><td>1818</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI04FY103xq01</td><td>#2小汽机轴向位移</td><td>mm</td><td>1</td><td>-1</td><td><tr></td></tr>
+            <tr><td>1819</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI04FY110xq01</td><td>#2汽泵后轴振动X</td><td>μm</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1820</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI04FY111xq01</td><td>#2汽泵后轴振动Y</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1821</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI04FY108xq01</td><td>#2汽动给水泵前轴承振动</td><td>μm</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1822</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20TSI04FY109xq01</td><td>#2汽泵前轴振动Y</td><td>μm</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1823</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAB20CF103xq01</td><td>#2汽泵前置泵入口流量3</td><td>T/h</td><td>1400</td><td>0</td><td><tr></td></tr>
+            <tr><td>1824</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAB20CF102xq01</td><td>#2汽泵前置泵入口流量2</td><td>T/h</td><td>1400</td><td>0</td><td><tr></td></tr>
+            <tr><td>1825</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAB20CF101xq01</td><td>#2汽泵前置泵入口流量1</td><td>T/h</td><td>1400</td><td>0</td><td><tr></td></tr>
+            <tr><td>1826</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAB22AA101GTxq01</td><td>#2汽动给水泵最小流量调阀位置反馈</td><td>%</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1827</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LBC32CP102xq01</td><td>#2小汽机高压进汽压力</td><td>MPa</td><td>4</td><td>0</td><td><tr></td></tr>
+            <tr><td>1828</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20XAG20CP101xq01</td><td>#2小汽机排汽压力</td><td>KPa</td><td>0</td><td>-100</td><td><tr></td></tr>
+            <tr><td>1829</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20XAV30CP101xq01</td><td>#2小汽机事故油泵出口压力</td><td>MPa</td><td>1.6</td><td>0</td><td><tr></td></tr>
+            <tr><td>1830</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20XAV30ce101xq01</td><td>#2小汽机事故油泵电流</td><td>A</td><td>80</td><td>0</td><td><tr></td></tr>
+            <tr><td>1831</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20XAV31CE101xq01</td><td>#2小汽机1号主油泵电流</td><td>A</td><td>300</td><td>0</td><td><tr></td></tr>
+            <tr><td>1832</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20XAV32CE101xq01</td><td>#2小汽机2号主油泵电流</td><td>A</td><td>300</td><td>0</td><td><tr></td></tr>
+            <tr><td>1833</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20XAV35CP101xq01</td><td>#2汽泵润滑油供油母管压力</td><td>MPa</td><td>1.6</td><td>0</td><td><tr></td></tr>
+            <tr><td>1834</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20XAV36CE101xq01</td><td>#2汽泵顶轴油泵马达电流</td><td>A</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1835</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20XAG20CT301xq01</td><td>#2小汽机排汽温度</td><td>℃</td><td>400</td><td>0</td><td><tr></td></tr>
+            <tr><td>1836</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LBR20CF101xq01</td><td>#2小汽机低压进汽流量</td><td>T/h</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1837</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LBR20CP101xq01</td><td>#2小汽机低压进汽压力</td><td>MPa</td><td>4</td><td>0</td><td><tr></td></tr>
+            <tr><td>1838</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20XAV32CP101xq01</td><td>#2小汽机主油泵出口母管压力</td><td>MPa</td><td>1.6</td><td>0</td><td><tr></td></tr>
+            <tr><td>1839</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20XAV35CT301xq01</td><td>#2汽泵润滑油供油母管温度</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1840</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20XAB02CT601xq01</td><td>#2汽泵汽轮机进汽温度</td><td>℃</td><td>500</td><td>0</td><td><tr></td></tr>
+            <tr><td>1841</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK02CS101xq01</td><td>电动给水泵转速</td><td>rpm</td><td>6000</td><td>0</td><td><tr></td></tr>
+            <tr><td>1842</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAE11CP101xq01</td><td>电动给水泵增压级压力</td><td>MPa</td><td>40</td><td>0</td><td><tr></td></tr>
+            <tr><td>1843</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAF11CP101xq01</td><td>电动给水泵中间抽头压力</td><td>MPa</td><td>40</td><td>0</td><td><tr></td></tr>
+            <tr><td>1844</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAH10CP102xq01</td><td>电动给水泵出口压力</td><td>MPa</td><td>40</td><td>0</td><td><tr></td></tr>
+            <tr><td>1845</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAJ10CE101xq01</td><td>电动给水泵电机电流</td><td>A</td><td>1000</td><td>0</td><td><tr></td></tr>
+            <tr><td>1846</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAW13CT301xq01</td><td>电泵吐出端机械密封循环液温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1847</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAW11CT301xq01</td><td>电泵吐出端机械密封循环液温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1848</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK14CT201xq01</td><td>电动泵电动机非驱动端径向轴承温度</td><td>℃</td><td>160</td><td>0</td><td><tr></td></tr>
+            <tr><td>1849</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK15CT201xq01</td><td>电动泵电动机驱动端径向轴承温度</td><td>℃</td><td>160</td><td>0</td><td><tr></td></tr>
+            <tr><td>1850</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK10CT201xq01</td><td>电动给水泵出水端径向轴承温度</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1851</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAC01CT301xq01</td><td>电动给水泵电机绕组温度1</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1852</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAC01CT302xq01</td><td>电动给水泵电机绕组温度2</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1853</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAC01CT303xq01</td><td>电动给水泵电机绕组温度3</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1854</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAC01CT304xq01</td><td>电动给水泵电机绕组温度4</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1855</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAC01CT305xq01</td><td>电动给水泵电机绕组温度5</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1856</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAC01CT306xq01</td><td>电动给水泵电机绕组温度6</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1857</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK12CT201xq01</td><td>电动给水泵进水端径向轴承温度</td><td>℃</td><td>200</td><td>0</td><td><tr></td></tr>
+            <tr><td>1858</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAP11CT301xq01</td><td>电动泵工作油冷却器出口温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1859</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAP11CT302xq01</td><td>电动泵工作油冷却器出口温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1860</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAP10CT301xq01</td><td>电动泵工作油冷却器入口温度1</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1861</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAP10CT303xq01</td><td>电动泵工作油冷却器入口温度2</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1862</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAV13CT301xq01</td><td>电动泵润滑油冷却器出口油温度1</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1863</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAV13CT302xq01</td><td>电动泵润滑油冷却器出口油温度2</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1864</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAV12CT301xq01</td><td>电动泵润滑油冷却器入口油温度1</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1865</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAV12CT302xq01</td><td>电动泵润滑油冷却器入口油温度2</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1866</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK16CT015xq01</td><td>电泵前置泵非驱动端机械密封循环液温度</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1867</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK17CT014xq01</td><td>电泵前置泵驱动端机械密封循环液温度</td><td>℃</td><td>150</td><td>0</td><td><tr></td></tr>
+            <tr><td>1868</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK17CT201xq01</td><td>电动泵前置泵非驱动端径向轴承温度</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1869</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAK16CT201xq01</td><td>电动泵前置泵驱动端径向轴承温度</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1870</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAG17CT202xq01</td><td>电动泵偶合器#1（B1）径向轴承温度</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1871</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAG17CT201xq01</td><td>电动泵偶合器#1（B1）径向轴承温度</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1872</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAG10CT202xq01</td><td>电动泵偶合器#10（B10）径向轴承温度</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1873</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAG10CT201xq01</td><td>电动泵偶合器#10（B10）径向轴承温度</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1874</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAG16CT201xq01</td><td>电动泵偶合器#2（B2）径向轴承温度</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+            <tr><td>1875</td><td>岱海电厂</td><td>汽机</td><td>#2</td><td></td><td>NMDH:20LAG16CT202xq01</td><td>电动泵偶合器#2（B2）径向轴承温度</td><td>℃</td><td>100</td><td>0</td><td><tr></td></tr>
+
+            <tr><td>12804</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>发电机及励磁</td><td>NXND:DCS2_20MKC50CT001</td><td>#2励磁变A相温度</td><td>℃</td><td>0</td><td>200</td><td><tr></td></tr>
+            <tr><td>12805</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>发电机及励磁</td><td>NXND:DCS2_20MKC50CT002</td><td>#2励磁变B相温度</td><td>℃</td><td>0</td><td>200</td><td><tr></td></tr>
+            <tr><td>12806</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>发电机及励磁</td><td>NXND:DCS2_20MKC50CT003</td><td>#2励磁变C相温度</td><td>℃</td><td>0</td><td>200</td><td><tr></td></tr>
+            <tr><td>12807</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>电气专业温度监测</td><td>NXND:DCS2_20MKA00CT101</td><td>1T上层线棒出水温度</td><td>℃</td><td>0</td><td>100</td><td><tr></td></tr>
+            <tr><td>12808</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>电气专业温度监测</td><td>NXND:DCS2_20MKA00CT102</td><td>2T上层线棒出水温度</td><td>℃</td><td>0</td><td>150</td><td><tr></td></tr>
+            <tr><td>12809</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>电气专业温度监测</td><td>NXND:DCS2_20MKA00CT103</td><td>3T上层线棒出水温度</td><td>℃</td><td>0</td><td>150</td><td><tr></td></tr>
+            <tr><td>12810</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>电气专业温度监测</td><td>NXND:DCS2_20MKA00CT104</td><td>4T上层线棒出水温度</td><td>℃</td><td>0</td><td>150</td><td><tr></td></tr>
+            <tr><td>12811</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>电气专业温度监测</td><td>NXND:DCS2_20MKA00CT105</td><td>5T上层线棒出水温度</td><td>℃</td><td>0</td><td>150</td><td><tr></td></tr>
+            <tr><td>12812</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>电气专业温度监测</td><td>NXND:DCS2_20MKA00CT106</td><td>6T上层线棒出水温度</td><td>℃</td><td>0</td><td>150</td><td><tr></td></tr>
+            <tr><td>12813</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>电气专业温度监测</td><td>NXND:DCS2_20MKA00CT107</td><td>7T上层线棒出水温度</td><td>℃</td><td>0</td><td>150</td><td><tr></td></tr>
+            <tr><td>12814</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>电气专业温度监测</td><td>NXND:DCS2_20MKA00CT108</td><td>8T上层线棒出水温度</td><td>℃</td><td>0</td><td>150</td><td><tr></td></tr>
+            <tr><td>12815</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>电气专业温度监测</td><td>NXND:DCS2_20MKA00CT109</td><td>9T上层线棒出水温度</td><td>℃</td><td>0</td><td>150</td><td><tr></td></tr>
+            <tr><td>12977</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>电气专业温度监测</td><td>NXND:DCS2_20MKA00CT373</td><td>励端外部进水管定子绕组进水温度</td><td>℃</td><td>0</td><td>100</td><td><tr></td></tr>
+            <tr><td>13024</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>机炉PC段</td><td>NXND:DCS2_20BFA00CE101</td><td>#2机380V汽机PC21段母线电压</td><td>V</td><td>0</td><td>450</td><td><tr></td></tr>
+            <tr><td>13025</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>机炉PC段</td><td>NXND:DCS2_20BFA01CE202</td><td>#2机21汽机变低压侧电流IB</td><td>A</td><td>0</td><td>4000</td><td><tr></td></tr>
+            <tr><td>13026</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>机炉PC段</td><td>NXND:DCS2_20BFA03CE202</td><td>#2机机PC1段至机MCC21段馈线电流</td><td>A</td><td>0</td><td>600</td><td><tr></td></tr>
+            <tr><td>13027</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>机炉PC段</td><td>NXND:DCS2_20BFA04CE202</td><td>#2机机PC1段至机MCC23段馈线电流</td><td>A</td><td>0</td><td>1000</td><td><tr></td></tr>
+            <tr><td>13028</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>机炉PC段</td><td>NXND:DCS2_20BFA06CE202</td><td>#2机机PC1段至循泵房MCC馈线电流</td><td>A</td><td>0</td><td>400</td><td><tr></td></tr>
+            <tr><td>13029</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>机炉PC段</td><td>NXND:DCS2_20BFA07CE202</td><td>#2机380V汽机PC段母联开关电流IB</td><td>A</td><td>0</td><td>3000</td><td><tr></td></tr>
+            <tr><td>13068</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>保安PC段</td><td>NXND:DCS2_20BMB06CE205</td><td>保安PC22至#2炉电动门电源B电流</td><td>A</td><td>0</td><td>300</td><td><tr></td></tr>
+            <tr><td>13069</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>保安PC段</td><td>NXND:DCS2_20BMB09CE202</td><td>保安PC22至事故照明MCC馈线电流</td><td>A</td><td>0</td><td>400</td><td><tr></td></tr>
+            <tr><td>13070</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>UPS及直流系统</td><td>NXND:DCS2_20BRA01CE101</td><td>#2机UPS交流输出电压</td><td>V</td><td>0</td><td>300</td><td><tr></td></tr>
+            <tr><td>13071</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>UPS及直流系统</td><td>NXND:DCS2_20BRA01CE201</td><td>#2机UPS交流输出电流</td><td>A</td><td>0</td><td>600</td><td><tr></td></tr>
+            <tr><td>13072</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>UPS及直流系统</td><td>NXND:DCS2_20BRA01CE501</td><td>#2机UPS输出频率</td><td>Hz</td><td>45</td><td>55</td><td><tr></td></tr>
+            <tr><td>13073</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>UPS及直流系统</td><td>NXND:DCS2_20BTA01CE101</td><td>#2机直流220V蓄电池电压</td><td>V</td><td>0</td><td>300</td><td><tr></td></tr>
+            <tr><td>13074</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>UPS及直流系统</td><td>NXND:DCS2_20BTA01CE201</td><td>#2机直流220V蓄电池电流</td><td>A</td><td>-600</td><td>600</td><td><tr></td></tr>
+            <tr><td>13075</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>UPS及直流系统</td><td>NXND:DCS2_20BTB01CE101</td><td>#2机直流110V#2蓄电池组输出电压</td><td>V</td><td>0</td><td>150</td><td><tr></td></tr>
+            <tr><td>13076</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>UPS及直流系统</td><td>NXND:DCS2_20BTB01CE201</td><td>#2机直流110V#2蓄电池组输出电流</td><td>A</td><td>-1250</td><td>1250</td><td><tr></td></tr>
+            <tr><td>13077</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>UPS及直流系统</td><td>NXND:DCS2_20BTB02CE101</td><td>#2机直流110V#2蓄电池组输出电压</td><td>V</td><td>0</td><td>150</td><td><tr></td></tr>
+            <tr><td>13078</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>UPS及直流系统</td><td>NXND:DCS2_20BTB02CE201</td><td>#2机直流110V#2蓄电池组输出电流</td><td>A</td><td>-1250</td><td>1250</td><td><tr></td></tr>
+            <tr><td>13079</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>UPS及直流系统</td><td>NXND:DCS2_20BTL01CE101</td><td>#2机直流220V充电器输出电压</td><td>V</td><td>0</td><td>300</td><td><tr></td></tr>
+            <tr><td>13080</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>UPS及直流系统</td><td>NXND:DCS2_20BTL01CE201</td><td>#2机直流220V充电器输出电流</td><td>A</td><td>0</td><td>400</td><td><tr></td></tr>
+            <tr><td>13081</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>UPS及直流系统</td><td>NXND:DCS2_20BTM01CE101</td><td>#2机直流110V#2充电器输出电压</td><td>V</td><td>0</td><td>150</td><td><tr></td></tr>
+            <tr><td>13082</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>UPS及直流系统</td><td>NXND:DCS2_20BTM01CE201</td><td>#2机直流110V#2充电器输出电流</td><td>A</td><td>0</td><td>300</td><td><tr></td></tr>
+            <tr><td>13083</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>UPS及直流系统</td><td>NXND:DCS2_20BTM02CE101</td><td>#2机直流110V#2充电器输出电压</td><td>V</td><td>0</td><td>150</td><td><tr></td></tr>
+            <tr><td>13084</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>UPS及直流系统</td><td>NXND:DCS2_20BTM02CE201</td><td>#2机直流110V#2充电器输出电流</td><td>A</td><td>0</td><td>300</td><td><tr></td></tr>
+            <tr><td>13085</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>UPS及直流系统</td><td>NXND:DCS2_20BUA10CE101</td><td>#2机直流220V母线电压</td><td>V</td><td>0</td><td>300</td><td><tr></td></tr>
+            <tr><td>13086</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>UPS及直流系统</td><td>NXND:DCS2_20BUB10CE101</td><td>#2机直流110V#2母线电压</td><td>V</td><td>0</td><td>150</td><td><tr></td></tr>
+            <tr><td>13087</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>UPS及直流系统</td><td>NXND:DCS2_20BUB20CE101</td><td>#2机直流110V#2母线电压</td><td>V</td><td>0</td><td>150</td><td><tr></td></tr>
+            <tr><td>13088</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>柴油发电机</td><td>NXND:DCS2_20XJA01CE101</td><td>#2柴油发电机出口电压Ua</td><td>V</td><td>0</td><td>250</td><td><tr></td></tr>
+            <tr><td>13089</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>柴油发电机</td><td>NXND:DCS2_20XJA01CE102</td><td>#2柴油发电机出口电压Ub</td><td>V</td><td>0</td><td>250</td><td><tr></td></tr>
+            <tr><td>13090</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>柴油发电机</td><td>NXND:DCS2_20XJA01CE103</td><td>#2柴油发电机出口电压Uc</td><td>V</td><td>0</td><td>250</td><td><tr></td></tr>
+            <tr><td>13091</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>柴油发电机</td><td>NXND:DCS2_20XJA01CE201</td><td>#2柴油发电机输出电流Ia</td><td>A</td><td>0</td><td>2500</td><td><tr></td></tr>
+            <tr><td>13092</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>柴油发电机</td><td>NXND:DCS2_20XJA01CE202</td><td>#2柴油发电机输出电流Ib</td><td>A</td><td>0</td><td>2500</td><td><tr></td></tr>
+            <tr><td>13093</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>柴油发电机</td><td>NXND:DCS2_20XJA01CE203</td><td>#2柴油发电机输出电流Ic</td><td>A</td><td>0</td><td>2500</td><td><tr></td></tr>
+            <tr><td>13094</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>柴油发电机</td><td>NXND:DCS2_20XJA01CE301</td><td>#2柴油发电机输出有功功率</td><td>KW</td><td>0</td><td>1200</td><td><tr></td></tr>
+            <tr><td>13095</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>柴油发电机</td><td>NXND:DCS2_1XJA01GH001CE6</td><td>#2柴油发电机功率因素</td><td>℃</td><td>0</td><td>100</td><td><tr></td></tr>
+            <tr><td>13096</td><td>宁东电厂</td><td>电气</td><td>#2</td><td>柴油发电机</td><td>NXND:DCS2_1XJA01GH001CE7</td><td>#2柴油发电机频率</td><td>Hz</td><td>0</td><td>60</td><td><tr></td></tr>
+            <tr><td>13097</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA70CQ103</td><td>#2炉脫硝入口NO上传浓度</td><td>mg/m³</td><td>0</td><td>100</td><td><tr></td></tr>
+            <tr><td>13098</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA80CQ103</td><td>#2炉脫硝出口NO上传浓度</td><td>mg/m³</td><td>0</td><td>100</td><td><tr></td></tr>
+            <tr><td>13099</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA10CQ101</td><td>#21反应器 AIG前烟道烟气NOX浓度</td><td>mg/m³</td><td>0</td><td>100</td><td><tr></td></tr>
+            <tr><td>13100</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA30CQ101</td><td>#21 SCR反应器出口烟气NOX浓度</td><td>mg/m³</td><td>0</td><td>100</td><td><tr></td></tr>
+            <tr><td>13101</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA40CQ101</td><td>#22反应器AIG前烟道烟气NOX浓度</td><td>mg/m³</td><td>0</td><td>100</td><td><tr></td></tr>
+            <tr><td>13102</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA60CQ101</td><td>#22SCR反应器出口烟气NOX浓度</td><td>mg/m³</td><td>0</td><td>100</td><td><tr></td></tr>
+            <tr><td>13103</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA20EF101</td><td>#2炉脫硝效率上传</td><td>%</td><td>0</td><td>100</td><td><tr></td></tr>
+            <tr><td>13104</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSK70CQ101</td><td>#21側脫硝氨逃逸</td><td>ppm</td><td>0</td><td>15</td><td><tr></td></tr>
+            <tr><td>13105</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSK70CQ102</td><td>#22側脫硝氨逃逸</td><td>ppm</td><td>0</td><td>15</td><td><tr></td></tr>
+            <tr><td>13106</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSJ44CP101</td><td>自氨储区来氨蒸汽母管压力</td><td>MPa</td><td>0</td><td>1</td><td><tr></td></tr>
+            <tr><td>13107</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSJ44CT301</td><td>自氨储区来氨蒸汽母管温度</td><td>℃</td><td>-40</td><td>300</td><td><tr></td></tr>
+            <tr><td>13108</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSK20CQ101</td><td>#21氨/空气混合器氨气泄露量</td><td>ppm</td><td>0</td><td>100</td><td><tr></td></tr>
+            <tr><td>13109</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSK60CQ101</td><td>#22氨/空气混合器氨气泄露量</td><td>ppm</td><td>0</td><td>100</td><td><tr></td></tr>
+            <tr><td>13110</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSF10CP101</td><td>吹灰器压缩空气入口压力</td><td>MPa</td><td>0</td><td>1</td><td><tr></td></tr>
+            <tr><td>13111</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSX20CP101</td><td>1#机组仪用压缩空气罐出口压力</td><td>KPa</td><td>0</td><td>1</td><td><tr></td></tr>
+            <tr><td>13112</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSG10AN001CE</td><td>#21稀释风机电流</td><td>A</td><td>0</td><td>150</td><td><tr></td></tr>
+            <tr><td>13113</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSG40AN001CE</td><td>#22稀释风机电流</td><td>A</td><td>0</td><td>150</td><td><tr></td></tr>
+            <tr><td>13114</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20BJP00GT000CE</td><td>#1 SCR区隔离变压器 B相绕组温度</td><td>℃</td><td>0</td><td>100</td><td><tr></td></tr>
+            <tr><td>13115</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20BJP01GS002CE1</td><td>#1 SCR区MCC变压器侧进线A相电流</td><td>A</td><td>0</td><td>100</td><td><tr></td></tr>
+            <tr><td>13116</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20BJP01GS002CE2</td><td>#1 SCR区MCC变压器侧进线B相电流</td><td>A</td><td>0</td><td>100</td><td><tr></td></tr>
+            <tr><td>13117</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20BJP01GS002CE3</td><td>#1 SCR区MCC变压器侧进线C相电流</td><td>A</td><td>0</td><td>100</td><td><tr></td></tr>
+            <tr><td>13118</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA10CQ102</td><td>#21 SCR反应器 AIG前烟道O2浓度</td><td>mg/m³</td><td>0</td><td>25</td><td><tr></td></tr>
+            <tr><td>13119</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA10CQ112</td><td>#21 SCR入口氧量</td><td>%</td><td>0</td><td>21</td><td><tr></td></tr>
+            <tr><td>13120</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA20CT301</td><td>#21 SCR反应器入口烟气温度1</td><td>℃</td><td>0</td><td>500</td><td><tr></td></tr>
+            <tr><td>13121</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA20CT302</td><td>#21 SCR反应器入口烟气温度2</td><td>℃</td><td>0</td><td>500</td><td><tr></td></tr>
+            <tr><td>13122</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA20CT303</td><td>#21 SCR反应器入口烟气温度3</td><td>℃</td><td>0</td><td>500</td><td><tr></td></tr>
+            <tr><td>13123</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA20CT304</td><td>#21 SCR反应器入口烟气温度4</td><td>℃</td><td>0</td><td>500</td><td><tr></td></tr>
+            <tr><td>13124</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA30CQ102</td><td>#21 SCR反应器出口烟气O2浓度</td><td>mg/m³</td><td>0</td><td>25</td><td><tr></td></tr>
+            <tr><td>13125</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA30CQ112</td><td>#21 SCR出口氧量</td><td>%</td><td>0</td><td>21</td><td><tr></td></tr>
+            <tr><td>13126</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA30CT301</td><td>#21 SCR反应器出口烟气温度</td><td>℃</td><td>0</td><td>500</td><td><tr></td></tr>
+            <tr><td>13127</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA40CQ102</td><td>#22SCR反应器AIG前烟道O2浓度</td><td>mg/m³</td><td>0</td><td>25</td><td><tr></td></tr>
+            <tr><td>13128</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA40CQ112</td><td>#22 SCR入口氧量</td><td>%</td><td>0</td><td>21</td><td><tr></td></tr>
+            <tr><td>13129</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA50CT301</td><td>#22SCR反应器入口烟气温度1</td><td>℃</td><td>0</td><td>500</td><td><tr></td></tr>
+            <tr><td>13130</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA50CT302</td><td>#22SCR反应器入口烟气温度2</td><td>℃</td><td>0</td><td>500</td><td><tr></td></tr>
+            <tr><td>13131</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA50CT303</td><td>#22SCR反应器入口烟气温度3</td><td>℃</td><td>0</td><td>500</td><td><tr></td></tr>
+            <tr><td>13132</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA50CT304</td><td>#22SCR反应器入口烟气温度4</td><td>℃</td><td>0</td><td>500</td><td><tr></td></tr>
+            <tr><td>13133</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA60CQ102</td><td>#22SCR反应器出口烟气O2浓度</td><td>mg/m³</td><td>0</td><td>25</td><td><tr></td></tr>
+            <tr><td>13134</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA60CQ112</td><td>#22SCR出口氧量</td><td>%</td><td>0</td><td>21</td><td><tr></td></tr>
+            <tr><td>13135</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA60CT301</td><td>#22SCR反应器出口烟气温度</td><td>℃</td><td>0</td><td>500</td><td><tr></td></tr>
+            <tr><td>13136</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA90CF001</td><td>#21脱硝入口烟气流量</td><td>t/h</td><td>0</td><td>2000000</td><td><tr></td></tr>
+            <tr><td>13137</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSA90CF002</td><td>#22脱硝入口烟气流量</td><td>t/h</td><td>0</td><td>2000000</td><td><tr></td></tr>
+            <tr><td>13138</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSD10CP101</td><td>#21 SCR反应器入口烟气压力</td><td>KPa</td><td>-1</td><td>1</td><td><tr></td></tr>
+            <tr><td>13139</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSD10DP101</td><td>#21 SCR反应器进出口差压</td><td>KPa</td><td>0</td><td>1</td><td><tr></td></tr>
+            <tr><td>13140</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSD20CP101</td><td>#22 SCR反应器入口烟气压力</td><td>KPa</td><td>-1</td><td>1</td><td><tr></td></tr>
+            <tr><td>13141</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSD20DP101</td><td>#22 SCR反应器进出口差压</td><td>KPa</td><td>0</td><td>1</td><td><tr></td></tr>
+            <tr><td>13142</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSG30CF101</td><td>至#21 SCR反应器稀释风流量</td><td>t/h</td><td>0</td><td>4</td><td><tr></td></tr>
+            <tr><td>13143</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSG60CF101</td><td>至#22 SCR反应器稀释风流量</td><td>t/h</td><td>0</td><td>4</td><td><tr></td></tr>
+            <tr><td>13144</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSJ45AA001AO</td><td>至#21氨/空气混合器氨流量调阀指</td><td>%</td><td>0</td><td>100</td><td><tr></td></tr>
+            <tr><td>13145</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSJ45AA001ZZ</td><td>至#21氨/空气混合器氨流量调阀阀</td><td>%</td><td>0</td><td>100</td><td><tr></td></tr>
+            <tr><td>13146</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSJ45CF101</td><td>至#21氨/空气混合器氨蒸汽质量流</td><td>kg/h</td><td>0</td><td>100</td><td><tr></td></tr>
+            <tr><td>13147</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSJ46AA001AO</td><td>氨气至#22氨/空寂混合器调节阀指</td><td>%</td><td>0</td><td>100</td><td><tr></td></tr>
+            <tr><td>13148</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSJ46AA001ZZ</td><td>氨气至#22氨/空寂混合器调节阀阀</td><td>%</td><td>0</td><td>100</td><td><tr></td></tr>
+            <tr><td>13149</td><td>宁东电厂</td><td>外围</td><td>#2</td><td>环保</td><td>NXND:DCS2_20HSJ46CF101</td><td>至#22氨/空气混合器氨蒸汽质量流</td><td>kg/h</td><td>0</td><td>100</td><td><tr></td></tr>
+
+        </table>
+    </div>
+    <script>
+
+        //TEST
+
+       /* $("#org").on("change",function(){
+            var org = $(this).val();
+
+            switch (org) {
+                case "a61365e2-969d-4352-b3f8-805027ab9f1d":
+                    var dc = $("#test tr ").find('td:nth-child(11n+2)').html();
+                        console.log(dc);
+                    break;
+                case "dh":
+
+                    break;
+                case "nd":
+
+                    break;
+                default:
+                    break;
+            }
+
+           
+        })*/
+
+
+
+
+        //TEST END
+
+        if (!window.location.origin) {
+            window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
+        }
+        var ctx = window.location.origin;
+
+        function ajax(url, type) {
+            $.ajax({
+                url: url,
+                dataType: "json",
+                success: function(data) {
+                    prepareDate(data, type)
+                }
+            })
+        }
+
+        //添加电厂
+        function add_org() {
+            var url = ctx + "/jsjd/test.do";
+            ajax(url, "org")
+        }
+        //电厂改变=》》机组改变=》》
+        /*$("#org").on("change", function() {
+            addsys()
+            addjz();
+        });*/
+
+        function addjz() {
+            var org_id = $("#org").val();
+            var url = "";
+            ajax(url, "jz")
+        }
+
+        function addsys() {
+            var org_id = $("#org").val();
+            var url = ctx + "";
+            ajax(url, "sys")
+
+        }
+
+        function prepareDate(data, type) {
+            var key;
+            switch (type) {
+                case "org":
+                    for (key in data) {
+
+                        $("#org").html("").append("<option value='" + key + "'>" + data[key] + "</option>");
+                    }
+                    break;
+                case "jz":
+                    for (key in data) {
+                        $("#g_id").html("").append("<option value='" + key + "'>#" + data[key] + "</option>");
+                    }
+                    break;
+                case "sys":
+
+                    break;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

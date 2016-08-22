@@ -1,0 +1,8 @@
+.svn
+newNavIndex/.svn
+newNavIndex/kaohe/.svn
+.DS_Store
+.svn-base
+node_modules
+public
+npm-debug.log

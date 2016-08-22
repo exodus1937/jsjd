@@ -42,15 +42,16 @@
 				<div class="form-group ">
                 	<label class="w60 control-label left" for="org_id">单位</label>
                 	<select name="choose" class="form-control col-sm-1" id="org_id">
-	                    <option value="" ></option>
-	                    <option value="c21834b4-1cb0-490f-a2a8-deeaf7f7e065" >岱海电厂</option>
+	                   <!--  <option value="" ></option> --> 
+	                    <option value="a61365e2-969d-4352-b3f8-805027ab9f1d">京能集团</option>
+	                    <option value="c21834b4-1cb0-490f-a2a8-deeaf7f7e065" >岱海发电</option>
 	
-	                    <option value="472212af-1977-462b-a74a-a1f36ed6562d">宁东电厂</option>
-                	    <option value="a61365e2-969d-4352-b3f8-805027ab9f1d">京能集团</option>
+	                    <option value="472212af-1977-462b-a74a-a1f36ed6562d">宁东发电</option>
+                	    
                	 	</select>
             	</div>
 	            <div class="form-group">
-	                <label for="startTime" class=" control-label left">申述时间</label>
+	                <label for="startTime" class=" control-label left">申诉时间</label>
 	                <!--<input class="form-control col-sm-1" type="text" id="startTime" >-->
 				
 	
@@ -183,6 +184,7 @@
             alert("请返回到首页")
         }
         $("#query").click(function(){
+        		flag=true;
         	  kaohe_detail(org_id_orgin,1)
         })
         /* 默认显示  */
